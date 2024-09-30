@@ -1,0 +1,8 @@
+__MACOSX
+*.zip
+Ex_*
+workspace*
+.DS*
+.ipynb*
+_to_del*
+mongodb/*

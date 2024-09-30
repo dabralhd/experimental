@@ -1,0 +1,54 @@
+F2_PeakToPeak_on_ACC_Y <= 0.0257297
+|   F9_MIN_on_ACC_Z <= 0.948571
+|   |   F2_PeakToPeak_on_ACC_Y <= 0.00366211: stationary_not_upright (319.0)
+|   |   F2_PeakToPeak_on_ACC_Y > 0.00366211
+|   |   |   F9_MIN_on_ACC_Z <= -0.0644531: motion (5.0)
+|   |   |   F9_MIN_on_ACC_Z > -0.0644531: stationary_not_upright (11.0)
+|   F9_MIN_on_ACC_Z > 0.948571: stationary_upright (298.0)
+F2_PeakToPeak_on_ACC_Y > 0.0257297
+|   F11_MAX_on_ACC_Z <= 1.1392
+|   |   F12_VAR_on_ACC_X <= 0.136388
+|   |   |   F8_MIN_on_ACC_Y <= -1.02693
+|   |   |   |   F2_PeakToPeak_on_ACC_Y <= 0.601074
+|   |   |   |   |   F2_PeakToPeak_on_ACC_Y <= 0.231445: stationary_not_upright (2.0)
+|   |   |   |   |   F2_PeakToPeak_on_ACC_Y > 0.231445: motion (3.0)
+|   |   |   |   F2_PeakToPeak_on_ACC_Y > 0.601074: shaken (3.0)
+|   |   |   F8_MIN_on_ACC_Y > -1.02693: motion (259.0)
+|   |   F12_VAR_on_ACC_X > 0.136388
+|   |   |   F11_MAX_on_ACC_Z <= 1.01563
+|   |   |   |   F1_PeakToPeak_on_ACC_Z <= 1.1875: motion (6.0)
+|   |   |   |   F1_PeakToPeak_on_ACC_Z > 1.1875: shaken (6.0)
+|   |   |   F11_MAX_on_ACC_Z > 1.01563: shaken (22.0)
+|   F11_MAX_on_ACC_Z > 1.1392
+|   |   F12_VAR_on_ACC_X <= 0.0281239
+|   |   |   F2_PeakToPeak_on_ACC_Y <= 0.86084
+|   |   |   |   F2_PeakToPeak_on_ACC_Y <= 0.162109: shaken (2.0)
+|   |   |   |   F2_PeakToPeak_on_ACC_Y > 0.162109: motion (16.0)
+|   |   |   F2_PeakToPeak_on_ACC_Y > 0.86084: shaken (11.0)
+|   |   F12_VAR_on_ACC_X > 0.0281239
+|   |   |   F6_MAX_on_ACC_Y <= -0.320804: motion (1.0)
+|   |   |   F6_MAX_on_ACC_Y > -0.320804: shaken (191.0/1.0)
+
+Number of Leaves : 16
+Size of the tree : 31
+
+=============================== Confusion Matrix ===============================
+	motion	shaken	stationary_not_upright	stationary_upright	<-- classified as
+motion	290	1	0	0	
+shaken	0	235	0	0	
+stationary_not_upright	0	0	332	0	
+stationary_upright	0	0	0	298	
+
+Total Number of Instances        : 1156
+Correctly Classified Instances   : 1155
+Incorrectly Classified Instances : 1
+Kappa Statistic: 0.253587
+Accuracy: 99.9135%
+
+Report  :	precision	recall	support	
+motion   	0.997    	1	 291
+shaken   	1    	0.996	 235
+stationa	1    	1	 332
+stationa	1    	1	 298
+
+avg/total	0.999    	0.999	 1156
