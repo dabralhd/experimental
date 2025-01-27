@@ -39,7 +39,7 @@ def app_create_training(user, body, project_name, model_name):  # noqa: E501
     
     if connexion.request.is_json:
         new_training = NewTraining.from_dict(connexion.request.get_json())  # noqa: E501
-        print(new_training)
+        logger.debug(new_training)
         user_workspace_path = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
         project_repo = ProjectFileRepo(user_workspace_path)
        
@@ -84,7 +84,7 @@ def app_patch_training(user, body, project_name, model_name):  # noqa: E501
     
     if connexion.request.is_json:
         updated_training = NewTraining.from_dict(connexion.request.get_json())  # noqa: E501
-        print(updated_training)
+        logger.debug(updated_training)
         user_workspace_path = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
         project_repo = ProjectFileRepo(user_workspace_path)
 
@@ -221,9 +221,9 @@ def app_get_training_items(user_ws_dir: str,
                                          "training",
                                          os.path.basename(artifact_name))
 
-        # print(f'artifact_path: {artifact_path}')
-        # print(f'artifact_type: {artifact_type}')
-        # print(f'artifact_name: {artifact_name}')
+        logger.debug(f'artifact_path: {artifact_path}')
+        logger.debug(f'artifact_type: {artifact_type}')
+        logger.debug(f'artifact_name: {artifact_name}')
         if os.path.exists(artifact_path):
             return send_file(
             artifact_path,
@@ -245,7 +245,7 @@ def app_get_training_items(user_ws_dir: str,
         return Response('wrong resource type requested', status=400)
 
 def app_download_training_artifacts(user, body, project_name, model_name):
-    # print('- app_download_training_artifacts')
+    logger.debug('- app_download_training_artifacts')
     
     if connexion.request.is_json:
         # job_artifact = JobArtifact.from_dict(connexion.request.get_json())   
@@ -256,17 +256,15 @@ def app_download_training_artifacts(user, body, project_name, model_name):
                 '''
                 url: pre signed aws-s3 url
                 fname_zip: absolute name of zip file after downloading
-                dir_dest: directory in which zip contents are to be moved
+                dir_dest: directory in which zip contents are to be extracted
                 '''
                 try:
-                    # print(f'url: {url}')
-                    # print(f'fpath_zip: {fpath_zip}')
-                    # print(f'dir_dest: {dir_dest}')
+                    logger.debug(f'url: {url},\n fpath_zip: {fpath_zip},\n dir_dest: {dir_dest}')
                     
                     response = get(url)
-                    # print(f'download_from_s3:  response code: {response.status_code}')
+                    logger.debug(f'download_from_s3:  response code: {response.status_code}')
                     if response.status_code != 200:
-                        print(f'NOK received while downloading from url {url}')
+                        logger.debug(f'NOK received while downloading from url {url}')
                         return Response(status=response.status_code) 
 
                     with open(fpath_zip, 'wb') as f:
@@ -274,58 +272,55 @@ def app_download_training_artifacts(user, body, project_name, model_name):
                     with ZipFile(fpath_zip, 'r') as zip_ref:
                         zip_ref.extractall(dir_dest)
                     k_name_workspace_dir = 'workspace'
-                    # print('download_from_s3: zip file extracted successfully')
-                    dir_workspace = os.path.join(dir_dest, 'workspace')
-                    # print(f'Removing {fpath_zip} ')
+                    logger.debug('download_from_s3: zip file extracted successfully')
+
+                    logger.debug(f'Removing {fpath_zip} ')
                     os.remove(fpath_zip)                      
 
                     # return Response(status=200) 
                 except Exception as e:
-                    print(e)
+                    logger.error(e, exc_info=True)
                     return Response(status=500)
                 
-            zip_name = 'workspace.zip'          
-            training_dir = os.path.join(GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user), 
+            zip_name = 'workspace.zip'     
+            model_dir = os.path.join(GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user), 
                                          project_name,
                                          "models",
-                                         model_name,
-                                         "training")         
+                                         model_name)         
             
-            zip_fpath = os.path.join(training_dir, zip_name)
+            zip_fpath = os.path.join(model_dir, zip_name)
             
-            # print(f'training_dir: {training_dir}')  
-            # print(f'zip_fpath: {zip_fpath}')      
+            logger.debug(f'zip_fpath: {zip_fpath} ')  
 
             download_from_s3(job_artifact["s3_url"],
                             zip_fpath,
-                            training_dir)
+                            model_dir)
 
             user_workspace_path = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
             project_repo = ProjectFileRepo(user_workspace_path)
-
+            logger.debug(f'user_workspace_path: {user_workspace_path}')
             # adapt for expert mode
             # if downloaded artifacts contains dt and ucf file than create a copy configuration.json to configuration_processed.json
-            training_dir_path = os.path.join(project_repo, project_name, 'training')
-            config_file_path = os.path.join(training_dir_path, 'configuration.json')
-            dst_file_path = os.path.join(training_dir_path, 'configuration_processed.json')
+            training_dir = os.path.join(model_dir, "training")         
+            config_file_path = os.path.join(training_dir, 'configuration.json')
+            dst_file_path = os.path.join(training_dir, 'configuration_processed.json')
             
-            logger.debug(f'training_dir_path: {training_dir_path}\n config_file_path: {config_file_path}\n, dst_file_path: {dst_file_path}')
+            logger.debug(f'dst_file_path: {dst_file_path}\n config_file_path: {config_file_path}\n, dst_file_path: {dst_file_path}')
 
             if os.path.exists(config_file_path):
                 logger.debug(f'file exists: {config_file_path}\nproceeding to copy!')
                 try:
                     shutil.copy(src=config_file_path, dst=dst_file_path)
                 except Exception as e:
-                    print(e)
-                    logger.exception('failed to copy configuration after downloading trainig artifacts', exc_info=True)
+                    logger.error(e, exc_info=True)
                     return Response('failed to copy configuration after downloading trainig artifacts', status=500)
-            
+                       
             # Add the job to the job list in the training runtime
             if "job" in job_artifact:
                 new_job = Job.from_dict(job_artifact["job"])
-                # print(f'job version: {new_job.version}')
-                # print(f'job name: {new_job.name}')
-                # print(f'job template_id: {new_job.template_id}')
+                logger.debug(f'job version: {new_job.version}')
+                logger.debug(f'job name: {new_job.name}')
+                logger.debug(f'job template_id: {new_job.template_id}')
 
                 project_repo.create_job(project_name=project_name, model_uuid_or_name=model_name, 
                                             name=new_job.name, version=new_job.version, template_id=new_job.template_id)
@@ -344,7 +339,7 @@ def app_download_training_artifacts(user, body, project_name, model_name):
             return Response(status=200, headers=headers) # disable caching for downloaded artifact
         
         except Exception as e:
-            print(e)
+            logger.error(e, exc_info=True)
             return Response(status=500)    
 
 def app_create_training_configuration(user, body, project_name, model_name):
@@ -421,9 +416,9 @@ def app_get_public_projects_training(project_name: str, model_name: str):
     artifact_name = connexion.request.args.get('name')    
     public_prj_path = GlobalObjects.getInstance().getPublicProjectsPath()
     
-    print(f'artifact_type: {artifact_type}')
-    print(f'artifact_name: {artifact_name}')
-    print(f'public_prj_path: {public_prj_path}')
+    logger.debug(f'artifact_type: {artifact_type}')
+    logger.debug(f'artifact_name: {artifact_name}')
+    logger.debug(f'public_prj_path: {public_prj_path}')
     
     return do_get_training_item(public_prj_path, project_name, model_name, artifact_type, artifact_name)
     
