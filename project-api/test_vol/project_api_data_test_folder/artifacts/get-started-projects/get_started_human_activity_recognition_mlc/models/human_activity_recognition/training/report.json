@@ -1,0 +1,33 @@
+{
+    "confusion_matrix": {
+        "running": {
+            "running": "44",
+            "walking": "0",
+            "standing": "0",
+            "sitting": "0"
+        },
+        "walking": {
+            "running": "0",
+            "walking": "43",
+            "standing": "0",
+            "sitting": "0"
+        },
+        "standing": {
+            "running": "0",
+            "walking": "0",
+            "standing": "43",
+            "sitting": "0"
+        },
+        "sitting": {
+            "running": "0",
+            "walking": "0",
+            "standing": "0",
+            "sitting": "54"
+        }
+    },
+    "total_instances": "184",
+    "correctly_classified_instances": "184",
+    "incorrectly_classified_instances": "0",
+    "accuracy": "100.00%",
+    "kappa_statistic": "25.25%"
+}

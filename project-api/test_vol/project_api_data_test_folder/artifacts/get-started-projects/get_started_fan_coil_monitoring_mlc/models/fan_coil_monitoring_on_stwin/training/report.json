@@ -1,0 +1,24 @@
+{
+    "confusion_matrix": {
+        "high_vibration": {
+            "high_vibration": "1849",
+            "still": "0",
+            "low_vibration": "6"
+        },
+        "still": {
+            "high_vibration": "0",
+            "still": "1860",
+            "low_vibration": "0"
+        },
+        "low_vibration": {
+            "high_vibration": "0",
+            "still": "0",
+            "low_vibration": "1932"
+        }
+    },
+    "total_instances": "5647",
+    "correctly_classified_instances": "5641",
+    "incorrectly_classified_instances": "6",
+    "accuracy": "99.89%",
+    "kappa_statistic": "33.35%"
+}

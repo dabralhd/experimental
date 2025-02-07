@@ -1,0 +1,291 @@
+{
+    "name": "ISM330DHCX",
+    "accelerometer_fs": "16 g",
+    "accelerometer_odr": "6667 Hz",
+    "gyroscope_fs": null,
+    "gyroscope_odr": null,
+    "mlc_odr": "104 Hz",
+    "input_type": "accelerometer_only",
+    "window_length": "255",
+    "datalogs": [
+        {
+            "filename": "screwing/20240917_14_12_12_0_z6sc4am2.csv",
+            "label": "screwing",
+            "accelerometer_fs": "16 g",
+            "accelerometer_odr": "6667 Hz"
+        },
+        {
+            "filename": "drilling/20240917_14_12_12_0_op3jzwsu.csv",
+            "label": "drilling",
+            "accelerometer_fs": "16 g",
+            "accelerometer_odr": "6667 Hz"
+        },
+        {
+            "filename": "percussive_drilling/20240917_14_12_12_0_q6xwkf4a.csv",
+            "label": "percussive_drilling",
+            "accelerometer_fs": "16 g",
+            "accelerometer_odr": "6667 Hz"
+        },
+        {
+            "filename": "percussive_drilling/20240917_14_12_12_0_zc3lw4hd.csv",
+            "label": "percussive_drilling",
+            "accelerometer_fs": "16 g",
+            "accelerometer_odr": "6667 Hz"
+        },
+        {
+            "filename": "idle/20240917_14_12_12_0_5zooz6am.csv",
+            "label": "idle",
+            "accelerometer_fs": "16 g",
+            "accelerometer_odr": "6667 Hz"
+        }
+    ],
+    "subgroups_per_dt": 8,
+    "max_dectrees": 8,
+    "max_results_per_dt": 256,
+    "filters": [
+        {
+            "input": "Acc_XYZ",
+            "b1": 0.011282211547375333,
+            "b2": 0.0,
+            "b3": -0.011282211547375333,
+            "a2": 1.0694999610343374,
+            "a3": 0.9774355769052494,
+            "gain": 1.0,
+            "filter_id": "filter_1",
+            "filter_type": "IIR2"
+        }
+    ],
+    "features": [
+        {
+            "feature_name": "ENERGY",
+            "input": "Acc_Y",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "PEAK_TO_PEAK",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "MAXIMUM",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "VARIANCE",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "MINIMUM",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Acc_Z",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "ENERGY",
+            "input": "Acc_Z",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Acc_V",
+            "signed": false,
+            "threshold": false
+        },
+        {
+            "feature_name": "ENERGY",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "MAXIMUM",
+            "input": "Acc_Y_filter_1",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "ENERGY",
+            "input": "Acc_Y_filter_1",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "VARIANCE",
+            "input": "Acc_Z_filter_1",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "PEAK_TO_PEAK",
+            "input": "Acc_Z_filter_1",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "ENERGY",
+            "input": "Acc_Z_filter_1",
+            "signed": true,
+            "threshold": false
+        }
+    ],
+    "decision_tree_count": 1,
+    "dectrees": [
+        {
+            "metaclassifier": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "results": [
+                {
+                    "label": "idle",
+                    "value": 0
+                },
+                {
+                    "label": "screwing",
+                    "value": 32
+                },
+                {
+                    "label": "drilling",
+                    "value": 64
+                },
+                {
+                    "label": "percussive_drilling",
+                    "value": 96
+                }
+            ]
+        }
+    ],
+    "calculated_filters": [
+        {
+            "input": "Acc_XYZ",
+            "f_low": 35.269140625,
+            "f_high": 35.646875,
+            "b1": 0.011282211547375333,
+            "b2": 0.0,
+            "b3": -0.011282211547375333,
+            "a2": 1.0694999610343374,
+            "a3": 0.9774355769052494,
+            "gain": 1.0,
+            "filter_id": "filter_1",
+            "filter_type": "IIR2"
+        }
+    ],
+    "calculated_features": [
+        {
+            "feature_name": "ENERGY",
+            "input": "Acc_Y",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "PEAK_TO_PEAK",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "MAXIMUM",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "VARIANCE",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "MINIMUM",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Acc_Z",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "ENERGY",
+            "input": "Acc_Z",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Acc_V",
+            "signed": false,
+            "threshold": false
+        },
+        {
+            "feature_name": "ENERGY",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "MAXIMUM",
+            "input": "Acc_Y_filter_1",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "ENERGY",
+            "input": "Acc_Y_filter_1",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "VARIANCE",
+            "input": "Acc_Z_filter_1",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "PEAK_TO_PEAK",
+            "input": "Acc_Z_filter_1",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "ENERGY",
+            "input": "Acc_Z_filter_1",
+            "signed": true,
+            "threshold": false
+        }
+    ],
+    "calculated_window_length": "255"
+}

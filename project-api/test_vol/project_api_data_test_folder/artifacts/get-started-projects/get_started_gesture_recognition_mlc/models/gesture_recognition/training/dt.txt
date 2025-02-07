@@ -1,0 +1,50 @@
+F3_ENERGY_on_ACC_X <= 45.3453
+|   F1_ENERGY_on_ACC_Y <= 7.83984: pointing (34.0)
+|   F1_ENERGY_on_ACC_Y > 7.83984: waving (33.0)
+F3_ENERGY_on_ACC_X > 45.3453
+|   F2_MIN_on_ACC_X <= -0.994629: thumbs_down (33.0)
+|   F2_MIN_on_ACC_X > -0.994629: thumbs_up (35.0)
+
+Number of Leaves: 4
+Size of the tree: 7
+
+Classes:
+=> thumbs_up, thumbs_down, pointing, waving
+
+Features:
+=> F1_ENERGY_on_ACC_Y, F2_MIN_on_ACC_X, F3_ENERGY_on_ACC_X, F4_MAX_on_ACC_Y, F5_MIN_on_ACC_Z, F6_MEAN_on_ACC_X, F7_MEAN_on_ACC_Z, F8_MAX_on_ACC_X, F9_MEAN_on_ACC_Y, F10_PeakToPeak_on_ACC_X, F11_MIN_on_ACC_Y, F12_ABS_MAX_on_ACC_V, F13_MAX_on_ACC_Z, F14_PeakToPeak_on_ACC_Y, F15_PeakToPeak_on_filter_IIR2_on_A_X
+
+========================== Cross-Validation: 5 fold/s ==========================
+
+Accuracy iter 1:	92.59 %
+Accuracy iter 2:	100.00 %
+Accuracy iter 3:	95.83 %
+Accuracy iter 4:	100.00 %
+Accuracy iter 5:	90.00 %
+
+Average accuracy:	95.69 %
+Std dev accuracy:	3.98 %
+
+=============== Whole data training with Confidence Factor: 0.90 ===============
+
+Confusion Matrix:
+thumbs_up	thumbs_down	pointing	waving	<-- classified as
+thumbs_up	35	0	0	0	
+thumbs_down	0	33	0	0	
+pointing	0	0	34	0	
+waving	0	0	0	33	
+
+Total Number of Instances:	135
+Correctly Classified Instances:	135
+Incorrectly Classified Instances:	0
+
+Accuracy:	100.00 % 
+Cohen's kappa:	25.02 %
+
+Report:	precision	recall	support
+thumbs_up	1.00	1.00	35
+thumbs_down	1.00	1.00	33
+pointing	1.00	1.00	34
+waving	1.00	1.00	33
+
+avg/total	1.00	1.00	135

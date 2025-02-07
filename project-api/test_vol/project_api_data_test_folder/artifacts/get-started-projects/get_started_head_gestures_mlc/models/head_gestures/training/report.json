@@ -1,0 +1,24 @@
+{
+    "confusion_matrix": {
+        "other": {
+            "other": "33",
+            "nod": "0",
+            "shake": "0"
+        },
+        "nod": {
+            "other": "0",
+            "nod": "33",
+            "shake": "0"
+        },
+        "shake": {
+            "other": "0",
+            "nod": "0",
+            "shake": "31"
+        }
+    },
+    "total_instances": "97",
+    "correctly_classified_instances": "97",
+    "incorrectly_classified_instances": "0",
+    "accuracy": "100.00%",
+    "kappa_statistic": "33.36%"
+}

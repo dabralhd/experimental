@@ -1,0 +1,48 @@
+F2_PeakToPeak_on_GY_Z <= 2.24609
+|   F1_ABS_MEAN_on_GY_V <= 1.07422: other (31.0)
+|   F1_ABS_MEAN_on_GY_V > 1.07422: shake (31.0)
+F2_PeakToPeak_on_GY_Z > 2.24609
+|   F3_ENERGY_on_filter_IIR2_on_G_X <= 5.71484: nod (33.0)
+|   F3_ENERGY_on_filter_IIR2_on_G_X > 5.71484: other (2.0)
+
+Number of Leaves: 4
+Size of the tree: 7
+
+Classes:
+=> other, nod, shake
+
+Features:
+=> F1_ABS_MEAN_on_GY_V, F2_PeakToPeak_on_GY_Z, F3_ENERGY_on_filter_IIR2_on_G_X, F4_MAX_on_filter_IIR2_on_G_Z, F5_MEAN_on_filter_IIR2_on_G_Z, F6_ABS_MIN_on_filter_IIR2_on_A_V, F7_ABS_VAR_on_filter_IIR2_on_A_V, F8_ABS_MEAN_on_filter_IIR2_on_A_V, F9_ABS_PeakToPeak_on_filter_IIR2_on_G_V, F10_ABS_ENERGY_on_filter_IIR2_on_G_V, F11_ABS_VAR_on_filter_IIR2_on_G_V, F12_ABS_MEAN_on_filter_IIR2_on_G_V, F13_ABS_MIN_on_filter_IIR2_on_G_V, F14_ABS_MAX_on_filter_IIR2_on_G_V, F15_ABS_MEAN_on_filter_IIR2_on_G_V
+
+========================== Cross-Validation: 5 fold/s ==========================
+
+Accuracy iter 1:	100.00 %
+Accuracy iter 2:	100.00 %
+Accuracy iter 3:	100.00 %
+Accuracy iter 4:	91.30 %
+Accuracy iter 5:	100.00 %
+
+Average accuracy:	98.26 %
+Std dev accuracy:	3.48 %
+
+=============== Whole data training with Confidence Factor: 0.90 ===============
+
+Confusion Matrix:
+other	nod	shake	<-- classified as
+other	33	0	0	
+nod	0	33	0	
+shake	0	0	31	
+
+Total Number of Instances:	97
+Correctly Classified Instances:	97
+Incorrectly Classified Instances:	0
+
+Accuracy:	100.00 % 
+Cohen's kappa:	33.36 %
+
+Report:	precision	recall	support
+other	1.00	1.00	33
+nod	1.00	1.00	33
+shake	1.00	1.00	31
+
+avg/total	1.00	1.00	97

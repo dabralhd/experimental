@@ -1,0 +1,317 @@
+{
+    "name": "ISM330DHCX",
+    "accelerometer_fs": "16 g",
+    "accelerometer_odr": "6667 Hz",
+    "gyroscope_fs": null,
+    "gyroscope_odr": null,
+    "mlc_odr": "104 Hz",
+    "input_type": "accelerometer_only",
+    "window_length": "14",
+    "datalogs": [
+        {
+            "filename": "high_vibration/20241007_09_44_59_0_utsml2sn.csv",
+            "label": "high_vibration",
+            "accelerometer_fs": "16 g",
+            "accelerometer_odr": "6667 Hz"
+        },
+        {
+            "filename": "still/20241007_09_44_59_0_edbwgkxc.csv",
+            "label": "still",
+            "accelerometer_fs": "16 g",
+            "accelerometer_odr": "6667 Hz"
+        },
+        {
+            "filename": "low_vibration/20241007_09_44_59_0_6hln5ffn.csv",
+            "label": "low_vibration",
+            "accelerometer_fs": "16 g",
+            "accelerometer_odr": "6667 Hz"
+        },
+        {
+            "filename": "still/20241008_09_19_24_0_hava4c55.csv",
+            "label": "still",
+            "accelerometer_fs": "16 g",
+            "accelerometer_odr": "6667 Hz"
+        },
+        {
+            "filename": "low_vibration/20241008_09_19_24_0_2kft22kb.csv",
+            "label": "low_vibration",
+            "accelerometer_fs": "16 g",
+            "accelerometer_odr": "6667 Hz"
+        },
+        {
+            "filename": "high_vibration/20241008_09_19_24_0_mqckwxjn.csv",
+            "label": "high_vibration",
+            "accelerometer_fs": "16 g",
+            "accelerometer_odr": "6667 Hz"
+        }
+    ],
+    "subgroups_per_dt": 8,
+    "max_dectrees": 8,
+    "max_results_per_dt": 256,
+    "filters": [
+        {
+            "input": "Acc_XYZ",
+            "b1": 0.011282211547375322,
+            "b2": 0.0,
+            "b3": -0.011282211547375322,
+            "a2": 1.61112957408425,
+            "a3": 0.9774355769052494,
+            "gain": 1.0,
+            "filter_id": "filter_1",
+            "filter_type": "IIR2"
+        },
+        {
+            "input": "Acc_V",
+            "b1": 0.6325683348458223,
+            "b2": 1.2651366696916446,
+            "b3": 0.6325683348458223,
+            "a2": 1.1252377115084897,
+            "a3": 0.4050356278747993,
+            "gain": 1.0,
+            "filter_id": "filter_2",
+            "filter_type": "IIR2"
+        }
+    ],
+    "features": [
+        {
+            "feature_name": "MINIMUM",
+            "input": "Acc_V",
+            "signed": false,
+            "threshold": false
+        },
+        {
+            "feature_name": "MAXIMUM",
+            "input": "Acc_V",
+            "signed": false,
+            "threshold": false
+        },
+        {
+            "feature_name": "PEAK_TO_PEAK",
+            "input": "Acc_Y",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "VARIANCE",
+            "input": "Acc_Y",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "PEAK_TO_PEAK",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "VARIANCE",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "ENERGY",
+            "input": "Acc_V",
+            "signed": false,
+            "threshold": false
+        },
+        {
+            "feature_name": "MAXIMUM",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "MINIMUM",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "MINIMUM",
+            "input": "Acc_X_filter_1",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "MAXIMUM",
+            "input": "Acc_X_filter_1",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "PEAK_TO_PEAK",
+            "input": "Acc_X_filter_1",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "ENERGY",
+            "input": "Acc_X_filter_1",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Acc_Y_filter_1",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "ENERGY",
+            "input": "Acc_V_filter_2",
+            "signed": false,
+            "threshold": false
+        }
+    ],
+    "decision_tree_count": 1,
+    "dectrees": [
+        {
+            "metaclassifier": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "results": [
+                {
+                    "label": "still",
+                    "value": 0
+                },
+                {
+                    "label": "low_vibration",
+                    "value": 32
+                },
+                {
+                    "label": "high_vibration",
+                    "value": 64
+                }
+            ]
+        }
+    ],
+    "calculated_filters": [
+        {
+            "input": "Acc_XYZ",
+            "f_low": 41.57236328125,
+            "f_high": 41.95009765625,
+            "b1": 0.011282211547375322,
+            "b2": 0.0,
+            "b3": -0.011282211547375322,
+            "a2": 1.61112957408425,
+            "a3": 0.9774355769052494,
+            "gain": 1.0,
+            "filter_id": "filter_1",
+            "filter_type": "IIR2"
+        },
+        {
+            "input": "Acc_V",
+            "f_low": 0,
+            "f_high": 41.3724609375,
+            "b1": 0.6325683348458223,
+            "b2": 1.2651366696916446,
+            "b3": 0.6325683348458223,
+            "a2": 1.1252377115084897,
+            "a3": 0.4050356278747993,
+            "gain": 1.0,
+            "filter_id": "filter_2",
+            "filter_type": "IIR2"
+        }
+    ],
+    "calculated_features": [
+        {
+            "feature_name": "MINIMUM",
+            "input": "Acc_V",
+            "signed": false,
+            "threshold": false
+        },
+        {
+            "feature_name": "MAXIMUM",
+            "input": "Acc_V",
+            "signed": false,
+            "threshold": false
+        },
+        {
+            "feature_name": "PEAK_TO_PEAK",
+            "input": "Acc_Y",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "VARIANCE",
+            "input": "Acc_Y",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "PEAK_TO_PEAK",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "VARIANCE",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "ENERGY",
+            "input": "Acc_V",
+            "signed": false,
+            "threshold": false
+        },
+        {
+            "feature_name": "MAXIMUM",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "MINIMUM",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "MINIMUM",
+            "input": "Acc_X_filter_1",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "MAXIMUM",
+            "input": "Acc_X_filter_1",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "PEAK_TO_PEAK",
+            "input": "Acc_X_filter_1",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "ENERGY",
+            "input": "Acc_X_filter_1",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Acc_Y_filter_1",
+            "signed": true,
+            "threshold": false
+        },
+        {
+            "feature_name": "ENERGY",
+            "input": "Acc_V_filter_2",
+            "signed": false,
+            "threshold": false
+        }
+    ],
+    "calculated_window_length": "14"
+}

@@ -1,0 +1,66 @@
+F4_PeakToPeak_on_ACC_X <= 0.0250649: still (1754.0)
+F4_PeakToPeak_on_ACC_X > 0.0250649
+|   F2_VAR_on_ACC_X <= 0.00585938
+|   |   F9_MAX_on_ACC_Y <= 0.330324: low_vibration (1510.0/25.0)
+|   |   F9_MAX_on_ACC_Y > 0.330324
+|   |   |   F8_MIN_on_ACC_Y <= -0.290771
+|   |   |   |   F4_PeakToPeak_on_ACC_X <= 0.253906
+|   |   |   |   |   F4_PeakToPeak_on_ACC_X <= 0.220215: high_vibration (2.0)
+|   |   |   |   |   F4_PeakToPeak_on_ACC_X > 0.220215: low_vibration (1.0)
+|   |   |   |   F4_PeakToPeak_on_ACC_X > 0.253906: high_vibration (44.0)
+|   |   |   F8_MIN_on_ACC_Y > -0.290771
+|   |   |   |   F10_ENERGY_on_ACC_Z <= 0.716797
+|   |   |   |   |   F4_PeakToPeak_on_ACC_X <= 0.26123: low_vibration (10.0)
+|   |   |   |   |   F4_PeakToPeak_on_ACC_X > 0.26123
+|   |   |   |   |   |   F4_PeakToPeak_on_ACC_X <= 0.287109: high_vibration (2.0)
+|   |   |   |   |   |   F4_PeakToPeak_on_ACC_X > 0.287109
+|   |   |   |   |   |   |   F4_PeakToPeak_on_ACC_X <= 0.334473: low_vibration (2.0)
+|   |   |   |   |   |   |   F4_PeakToPeak_on_ACC_X > 0.334473: high_vibration (1.0)
+|   |   |   |   F10_ENERGY_on_ACC_Z > 0.716797: high_vibration (8.0)
+|   F2_VAR_on_ACC_X > 0.00585938
+|   |   F10_ENERGY_on_ACC_Z <= 0.489744
+|   |   |   F1_MEAN_on_ACC_X <= 0.980957: high_vibration (1.0)
+|   |   |   F1_MEAN_on_ACC_X > 0.980957: low_vibration (169.0)
+|   |   F10_ENERGY_on_ACC_Z > 0.489744: high_vibration (1680.0/9.0)
+
+Number of Leaves: 13
+Size of the tree: 25
+
+Classes:
+=> low_vibration, high_vibration, still
+
+Features:
+=> F1_MEAN_on_ACC_X, F2_VAR_on_ACC_X, F3_ENERGY_on_ACC_X, F4_PeakToPeak_on_ACC_X, F5_MIN_on_ACC_X, F6_MAX_on_ACC_X, F7_MEAN_on_ACC_Y, F8_MIN_on_ACC_Y, F9_MAX_on_ACC_Y, F10_ENERGY_on_ACC_Z, F11_ABS_MEAN_on_ACC_V, F12_ABS_ENERGY_on_ACC_V, F13_ABS_MEAN_on_filter_IIR2_on_A_V
+
+========================== Cross-Validation: 5 fold/s ==========================
+
+Accuracy iter 1:	99.18 %
+Accuracy iter 2:	99.27 %
+Accuracy iter 3:	98.70 %
+Accuracy iter 4:	99.18 %
+Accuracy iter 5:	99.10 %
+
+Average accuracy:	99.08 %
+Std dev accuracy:	0.20 %
+
+=============== Whole data training with Confidence Factor: 0.90 ===============
+
+Confusion Matrix:
+low_vibration	high_vibration	still	<-- classified as
+low_vibration	1692	9	0	
+high_vibration	25	1738	0	
+still	0	0	1754	
+
+Total Number of Instances:	5218
+Correctly Classified Instances:	5184
+Incorrectly Classified Instances:	34
+
+Accuracy:	99.35 % 
+Cohen's kappa:	33.34 %
+
+Report:	precision	recall	support
+low_vibration	0.99	0.99	1701
+high_vibration	0.99	0.99	1763
+still	1.00	1.00	1754
+
+avg/total	0.99	0.99	5218

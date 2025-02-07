@@ -39,7 +39,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "ai_project_name": "test-project-4",
+  "ai_project_name": "test-project-1",
   "type": "industrial",
   "description": "My Project description",
   "version": "0.0.1"

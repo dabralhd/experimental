@@ -1,0 +1,60 @@
+F3_ABS_PeakToPeak_on_ACC_V <= 0.0156164
+|   F1_MEAN_on_ACC_Z <= 0.969616: stationary_not_upright (639.0/31.0)
+|   F1_MEAN_on_ACC_Z > 0.969616: stationary_upright (840.0/11.0)
+F3_ABS_PeakToPeak_on_ACC_V > 0.0156164
+|   F3_ABS_PeakToPeak_on_ACC_V <= 0.328167: motion (679.0/13.0)
+|   F3_ABS_PeakToPeak_on_ACC_V > 0.328167
+|   |   F2_ABS_MEAN_on_ACC_V <= 1.0559
+|   |   |   F3_ABS_PeakToPeak_on_ACC_V <= 0.509766: motion (12.0)
+|   |   |   F3_ABS_PeakToPeak_on_ACC_V > 0.509766
+|   |   |   |   F1_MEAN_on_ACC_Z <= 0.601074: shaken (11.0)
+|   |   |   |   F1_MEAN_on_ACC_Z > 0.601074
+|   |   |   |   |   F2_ABS_MEAN_on_ACC_V <= 0.979004: shaken (4.0)
+|   |   |   |   |   F2_ABS_MEAN_on_ACC_V > 0.979004
+|   |   |   |   |   |   F3_ABS_PeakToPeak_on_ACC_V <= 1.27051: motion (5.0)
+|   |   |   |   |   |   F3_ABS_PeakToPeak_on_ACC_V > 1.27051: shaken (2.0)
+|   |   F2_ABS_MEAN_on_ACC_V > 1.0559: shaken (495.0/1.0)
+
+Number of Leaves: 9
+Size of the tree: 17
+
+Classes:
+=> motion, stationary_upright, shaken, stationary_not_upright
+
+Features:
+=> F1_MEAN_on_ACC_Z, F2_ABS_MEAN_on_ACC_V, F3_ABS_PeakToPeak_on_ACC_V
+
+========================== Cross-Validation: 5 fold/s ==========================
+
+Accuracy iter 1:	97.85 %
+Accuracy iter 2:	98.21 %
+Accuracy iter 3:	97.81 %
+Accuracy iter 4:	96.14 %
+Accuracy iter 5:	97.17 %
+
+Average accuracy:	97.44 %
+Std dev accuracy:	0.73 %
+
+=============== Whole data training with Confidence Factor: 0.90 ===============
+
+Confusion Matrix:
+motion	stationary_upright	shaken	stationary_not_upright	<-- classified as
+motion	696	6	1	31	
+stationary_upright	6	840	0	0	
+shaken	1	5	512	0	
+stationary_not_upright	6	0	0	639	
+
+Total Number of Instances:	2743
+Correctly Classified Instances:	2687
+Incorrectly Classified Instances:	56
+
+Accuracy:	97.96 % 
+Cohen's kappa:	25.76 %
+
+Report:	precision	recall	support
+motion	0.95	0.98	734
+stationary_upright	0.99	0.99	846
+shaken	0.99	1.00	518
+stationary_not_upright	0.99	0.95	645
+
+avg/total	0.98	0.98	2743

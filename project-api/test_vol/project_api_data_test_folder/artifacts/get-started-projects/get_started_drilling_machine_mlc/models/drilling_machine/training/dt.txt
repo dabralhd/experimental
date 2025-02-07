@@ -1,0 +1,50 @@
+F1_ENERGY_on_ACC_Y <= 1663
+|   F2_PeakToPeak_on_ACC_X <= 0.0741577: idle (6.0)
+|   F2_PeakToPeak_on_ACC_X > 0.0741577: screwing (7.0)
+F1_ENERGY_on_ACC_Y > 1663
+|   F2_PeakToPeak_on_ACC_X <= 16.0625: drilling (6.0)
+|   F2_PeakToPeak_on_ACC_X > 16.0625: percussive_drilling (5.0)
+
+Number of Leaves: 4
+Size of the tree: 7
+
+Classes:
+=> screwing, drilling, percussive_drilling, idle
+
+Features:
+=> F1_ENERGY_on_ACC_Y, F2_PeakToPeak_on_ACC_X, F3_MAX_on_ACC_X, F4_VAR_on_ACC_X, F5_MIN_on_ACC_X, F6_MEAN_on_ACC_Z, F7_ENERGY_on_ACC_Z, F8_ABS_MEAN_on_ACC_V, F9_ENERGY_on_ACC_X, F10_MEAN_on_ACC_X, F11_MAX_on_filter_IIR2_on_A_Y, F12_ENERGY_on_filter_IIR2_on_A_Y, F13_VAR_on_filter_IIR2_on_A_Z, F14_PeakToPeak_on_filter_IIR2_on_A_Z, F15_ENERGY_on_filter_IIR2_on_A_Z
+
+========================== Cross-Validation: 5 fold/s ==========================
+
+Accuracy iter 1:	100.00 %
+Accuracy iter 2:	50.00 %
+Accuracy iter 3:	50.00 %
+Accuracy iter 4:	66.67 %
+Accuracy iter 5:	80.00 %
+
+Average accuracy:	69.33 %
+Std dev accuracy:	19.02 %
+
+=============== Whole data training with Confidence Factor: 0.90 ===============
+
+Confusion Matrix:
+screwing	drilling	percussive_drilling	idle	<-- classified as
+screwing	7	0	0	0	
+drilling	0	6	0	0	
+percussive_drilling	0	0	5	0	
+idle	0	0	0	6	
+
+Total Number of Instances:	24
+Correctly Classified Instances:	24
+Incorrectly Classified Instances:	0
+
+Accuracy:	100.00 % 
+Cohen's kappa:	25.35 %
+
+Report:	precision	recall	support
+screwing	1.00	1.00	7
+drilling	1.00	1.00	6
+percussive_drilling	1.00	1.00	5
+idle	1.00	1.00	6
+
+avg/total	1.00	1.00	24

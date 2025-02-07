@@ -1,0 +1,33 @@
+{
+    "confusion_matrix": {
+        "screwing": {
+            "screwing": "7",
+            "drilling": "0",
+            "percussive_drilling": "0",
+            "idle": "0"
+        },
+        "drilling": {
+            "screwing": "0",
+            "drilling": "6",
+            "percussive_drilling": "0",
+            "idle": "0"
+        },
+        "percussive_drilling": {
+            "screwing": "0",
+            "drilling": "0",
+            "percussive_drilling": "5",
+            "idle": "0"
+        },
+        "idle": {
+            "screwing": "0",
+            "drilling": "0",
+            "percussive_drilling": "0",
+            "idle": "6"
+        }
+    },
+    "total_instances": "24",
+    "correctly_classified_instances": "24",
+    "incorrectly_classified_instances": "0",
+    "accuracy": "100.00%",
+    "kappa_statistic": "25.35%"
+}

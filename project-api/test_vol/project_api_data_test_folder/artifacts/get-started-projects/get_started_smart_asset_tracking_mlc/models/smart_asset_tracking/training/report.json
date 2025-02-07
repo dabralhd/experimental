@@ -1,0 +1,33 @@
+{
+    "confusion_matrix": {
+        "motion": {
+            "motion": "696",
+            "stationary_upright": "6",
+            "shaken": "1",
+            "stationary_not_upright": "6"
+        },
+        "stationary_upright": {
+            "motion": "6",
+            "stationary_upright": "840",
+            "shaken": "5",
+            "stationary_not_upright": "0"
+        },
+        "shaken": {
+            "motion": "1",
+            "stationary_upright": "0",
+            "shaken": "512",
+            "stationary_not_upright": "0"
+        },
+        "stationary_not_upright": {
+            "motion": "31",
+            "stationary_upright": "0",
+            "shaken": "0",
+            "stationary_not_upright": "639"
+        }
+    },
+    "total_instances": "2743",
+    "correctly_classified_instances": "2687",
+    "incorrectly_classified_instances": "56",
+    "accuracy": "97.96%",
+    "kappa_statistic": "25.76%"
+}

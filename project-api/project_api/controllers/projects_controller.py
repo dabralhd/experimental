@@ -48,18 +48,17 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
 
     if connexion.request.is_json:
         new_project = NewProject.from_dict(connexion.request.get_json())  # noqa: E501
+        new_project_name = new_project.ai_project_name
+        dest_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
+        
+        if os.path.isdir(os.path.join(dest_folder, new_project_name)):    # check if dest folder already exist
+                logger.error(f'destination project already exists - {new_project_name}')
+                return Response(status=400)
 
         if  new_project.project_name_to_clone != None:
             logger.info(f"Cloning project {new_project.project_name_to_clone} to {new_project.ai_project_name}")
             project_name_to_clone = new_project.project_name_to_clone
-            new_project_name = new_project.ai_project_name
-            dest_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
-            
-            # check if dest folder already exists
-            if os.path.isdir(os.path.join(dest_folder, new_project_name)):
-                    logger.error(f'destination project already exists - {new_project_name}')
-                    return Response(status=400)
-                
+      
             if(_check_reserved_char(new_project_name)):
                 return Response(status=400)
             

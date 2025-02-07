@@ -30,7 +30,7 @@ The test data needs to be structured as in the folder ```test_vol/```. Please go
     -  ```[source create_docker_volume.sh]``` to create the necessary docker volume which will be mounted by the docker container.
 
 - To run the debug container locally:
-	- ```docker-compose --file docker-compose-dev.yaml --env-file env.devel up -d```
+	- ```docker compose --file docker-compose-dev.yaml --env-file env.devel up -d```
 
 Sample http routes are available in [api.http](./api.http)
 
