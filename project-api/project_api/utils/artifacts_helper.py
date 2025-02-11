@@ -26,6 +26,20 @@ logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
 
 def download_from_s3(user, project_name, model_name, url, fpath_zip):
+    """
+    Downloads a zip file from an S3 URL, extracts its contents, and processes the files.
+    Args:
+        user (str): The user ID.
+        project_name (str): The name of the project.
+        model_name (str): The name of the model.
+        url (str): The S3 URL to download the zip file from.
+        fpath_zip (str): The file path where the downloaded zip file will be saved.
+    Returns:
+        bool: True if an expert mode file is found and processed, False otherwise.
+    Raises:
+        Response: If the download fails or if there are issues during file extraction or copying.
+    """
+    
     expert_mode_flag = False
     try:
         training_dir = os.path.join(GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user), 
@@ -59,18 +73,6 @@ def download_from_s3(user, project_name, model_name, url, fpath_zip):
                         expert_mode_flag = True
                         logger.info(f'match found in the downloaded artifacts.\n setting expert_mode_flag to: {expert_mode_flag}')
 
-        # logging.info(f'checking if {training_dir} exists')
-        # if os.path.exists(training_dir):
-        #     logging.info(f'exists {training_dir}')
-        # else:
-        #     logging.error(f'does not exist {training_dir}')
-        # xyz = os.path.join(temp_dir, 'training')
-        # logging.info(f'checking if {xyz} exists')  
-        # if os.path.exists(xyz):
-        #     logging.info(f'exists {xyz}')
-        # else:
-        #     logging.error(f'does not exist {xyz}')
-
         temp_training_dir = os.path.join(temp_dir, 'training')
         logging.error(f'doing a walk on the extracted dir: {temp_training_dir}')
         for dir_path, _, fname in os.walk(temp_training_dir):  
@@ -103,6 +105,20 @@ def download_from_s3(user, project_name, model_name, url, fpath_zip):
     return expert_mode_flag
 
 def get_sensor_name(user: str, project_name: str, model_name: str):
+    """
+    Retrieves the sensor name from the configuration file of a specified model.
+    Args:
+        user (str): The user ID.
+        project_name (str): The name of the project.
+        model_name (str): The name of the model.
+    Returns:
+        str: The sensor name if found in the configuration file, otherwise an empty string.
+    Raises:
+        FileNotFoundError: If the configuration file does not exist.
+        json.JSONDecodeError: If the configuration file is not a valid JSON.
+        KeyError: If the 'name' key is not present in the configuration file.
+    """
+
     config_file_path = os.path.join(GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user), 
                                          project_name,
                                          'models',
