@@ -11,6 +11,7 @@ from project_api.services.project_models import (
     generate_project_uuid,
     generate_project_uuid_custom_project,
     substitute_artifacts_project_name,
+    user_project_exists,
 )
 from project_api.services.templates_repo import extract_get_started_project, extract_user_project
 from project_api.util import _check_reserved_char, response_error
@@ -24,6 +25,7 @@ from project_api.utils.generate_icon import (
     generate_icon
 )
 from project_api.globals import VESPUCCI_ENVIRONMENT
+from project_api.utils.error_types import (client_side_error, ErrorType)
 import logging
 
 logger = logging.getLogger(__name__)
@@ -51,9 +53,11 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
         new_project_name = new_project.ai_project_name
         dest_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
         
-        if os.path.isdir(os.path.join(dest_folder, new_project_name)):    # check if dest folder already exist
-                logger.error(f'destination project already exists - {new_project_name}')
-                return Response(status=400)
+        logger.debug(f'Checking if project exists for user: {user}, project name: {new_project_name}')
+        if user_project_exists(user, new_project_name):    # check if dest folder already exist
+            logger.error(f'destination project already exists - {new_project_name}')
+            return Response(status=client_side_error(ErrorType.CONFLICT))
+        logger.debug('Project does not exist, proceeding with creation')
 
         if  new_project.project_name_to_clone != None:
             logger.info(f"Cloning project {new_project.project_name_to_clone} to {new_project.ai_project_name}")

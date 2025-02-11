@@ -11,6 +11,10 @@ from project_api.utils.vespucci_to_controller_model_converters import (
 from project_api.util import response_error
 
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
+
+from project_api.services.project_models import ( user_project_exists )
+from project_api.utils.error_types import (client_side_error, ErrorType)
 
 def app_get_project_icon(user: str, project_name: str):  # noqa: E501
     """Project template icon
@@ -24,6 +28,12 @@ def app_get_project_icon(user: str, project_name: str):  # noqa: E501
     jpg_file  = os.path.join(icon_path, "icon.jpg")
     jpeg_file = os.path.join(icon_path, "icon.jpeg")
     png_file  = os.path.join(icon_path, "icon.png")
+
+    logger.debug(f'Checking if project exists for user: {user}, project name: {project_name}')
+    if not user_project_exists(user, project_name):    
+        logger.error(f'project not found - {project_name}')
+        return Response(status=client_side_error(ErrorType.NOT_FOUND))
+    logger.debug('Project exists, proceeding further')    
 
     if os.path.exists(png_file):
             return send_from_directory(icon_path, "icon.png", as_attachment=True)
@@ -45,6 +55,11 @@ def app_delete_project(user, project_name):  # noqa: E501
     :rtype: None
     """
     project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)
+    logger.debug(f'Checking if project exists for user: {user}, project name: {project_name}')
+    if not user_project_exists(user, project_name):    
+        logger.error(f'project not found - {project_name}')
+        return Response(status=client_side_error(ErrorType.NOT_FOUND))
+    logger.debug('Project exists, proceeding further')  
 
     project: Project = None
     try:
@@ -75,6 +90,11 @@ def app_get_project(user: str, project_name: str):  # noqa: E501
     """
 
     project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)
+    logger.debug(f'Checking if project exists for user: {user}, project name: {project_name}')
+    if not user_project_exists(user, project_name):    
+        logger.error(f'project not found - {project_name}')
+        return Response(status=client_side_error(ErrorType.NOT_FOUND))
+    logger.debug('Project exists, proceeding further')      
 
     project_domain_obj = None
     try:

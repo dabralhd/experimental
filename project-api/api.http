@@ -29,7 +29,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-GET {{base_url}}/projects/test-project-cloned-fan/icon
+GET {{base_url}}/projects/test-project-1/icon
 Authorization: Bearer {{token}}
 Content-Type: application/json
 ###
@@ -667,7 +667,6 @@ Content-Type: application/json
 GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/data_sufficiency?type=artifacts&name=my_tree.txt
 Authorization: Bearer {{token}}
 Content-Type: application/json
-
 ###
 
 GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/data_sufficiency?type=artifacts&name=hnne.pkl
@@ -715,3 +714,36 @@ GET {{base_url}}/users/334c65a5-1495-453a-a6de-4d384a781000/resource/efs
 Authorization: Bearer {{token}}
 Content-Type: application/json
 ###
+
+### UCF present in the training zip
+POST {{base_url}}/projects/get_started_smart_asset_tracking_mlc_clone_1/models/smart_asset_tracking/training/artifacts
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "s3_url": "https://storage.googleapis.com/projectapi_testing/training.zip",
+  "job": {
+    "job_id": "test_job_id",
+    "tool": "test_tool",
+    "version": "t3.1.18"
+  },
+  "artifacts": ["test_artifacts"],
+  "reports": ["test_report_name"]
+}
+
+### UCF NOT present in the training zip
+POST {{base_url}}/projects/get_started_smart_asset_tracking_mlc_clone_1/models/smart_asset_tracking/training/artifacts
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "s3_url": "https://storage.googleapis.com/projectapi_testing/training_no_ucf.zip",
+  "job": {
+    "job_id": "test_job_id",
+    "tool": "test_tool",
+    "version": "t3.1.18"
+  },
+  "artifacts": ["test_artifacts"],
+  "reports": ["test_report_name"]
+}
+

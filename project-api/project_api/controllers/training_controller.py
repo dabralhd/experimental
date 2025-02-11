@@ -258,7 +258,7 @@ def app_download_training_artifacts(user, body, project_name, model_name):
                 fname_zip: absolute name of zip file after downloading
                 dir_dest: directory in which zip contents are to be extracted
                 '''
-                flag_ucf = False
+                expert_mode_flag = False
                 try:
                     logger.debug(f'url: {url},\n fpath_zip: {fpath_zip},\n dir_dest: {dir_dest}')
                     
@@ -272,16 +272,17 @@ def app_download_training_artifacts(user, body, project_name, model_name):
                         f.write(response.content)
                     with ZipFile(fpath_zip, 'r') as zip_ref:
                         zip_ref.extractall(dir_dest)
+                        logger.info(f'zip file extracted successfully.\n Checking for UCF file OR lsm6dsv16x_mlc.json in the downloaded artifacts.')
                         for name in zip_ref.namelist():
-                            if name.lower().endswith('ucf'):
-                                flag_ucf = True
-                                logger.info(f'UCF file exists in the downloaded artifacts.\n setting flag_ucf to: {flag_ucf}')
+                            if name.lower().endswith('ucf') or name.lower().startswith('lsm6dsv16x_mlc.json'):
+                                expert_mode_flag = True
+                                logger.info(f'match found in the downloaded artifacts.\n setting expert_mode_flag to: {expert_mode_flag}')
                     logger.debug('download_from_s3: zip file extracted successfully.\n Removing {fpath_zip}')
                     os.remove(fpath_zip)                      
                 except Exception as e:
                     logger.error(e, exc_info=True)
                     return Response(status=500)
-                return flag_ucf
+                return expert_mode_flag
                 
             zip_name = 'workspace.zip'     
             model_dir = os.path.join(GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user), 
@@ -294,7 +295,7 @@ def app_download_training_artifacts(user, body, project_name, model_name):
         
             logger.debug(f'zip_fpath: {zip_fpath} ')  
 
-            flag_ucf = download_from_s3(job_artifact["s3_url"],
+            expert_mode_flag = download_from_s3(job_artifact["s3_url"],
                             zip_fpath,
                             training_dir)
 
@@ -308,8 +309,8 @@ def app_download_training_artifacts(user, body, project_name, model_name):
             
             logger.debug(f'dst_file_path: {dst_file_path}\n config_file_path: {config_file_path}\n, dst_file_path: {dst_file_path}')
 
-            if flag_ucf: #os.path.exists(config_file_path):
-                logger.debug(f'UCF file exists.\nproceeding to copy {config_file_path}!')
+            if expert_mode_flag: 
+                logger.debug(f'expert_mode_flag is True.\nproceeding to copy {config_file_path}!')
                 try:
                     shutil.copy(src=config_file_path, dst=dst_file_path)
                 except Exception as e:

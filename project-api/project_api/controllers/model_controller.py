@@ -12,8 +12,11 @@ from project_api.vespucciprjmng.domain.model import ModelMetadata, ModelType
 from project_api.vespucciprjmng.repository.filesystem.project_file_repo import (
     ProjectFileRepo,
 )
+from project_api.services.project_models import ( user_project_exists )
+from project_api.utils.error_types import (client_side_error, ErrorType)
 
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 def app_clone_model(user, project_name, model_name):  # noqa: E501):
     """Clone a model associated to the given name.
@@ -56,6 +59,7 @@ def app_delete_model(user, project_name, model_name):  # noqa: E501
             logger.error(f"Error deleting model '{model_name}': {e}")
     else:
         logger.error(f"Model Path '{user_project_model_path_folder}' does not exist.")
+        return Response(status=client_side_error(ErrorType.NOT_FOUND))
 
     return Response(status=200)
 
