@@ -1,0 +1,115 @@
+import json
+import os
+from zipfile import ZipFile
+
+import connexion
+from flask import Response
+from requests import get
+
+from project_api.globals import GlobalObjects
+from project_api.models.job import Job
+from project_api.models.new_training import NewTraining
+from project_api.util import response_error
+from project_api.utils.vespucci_to_controller_model_converters import (
+    convert_training,
+)
+from project_api.vespucciprjmng.repository.filesystem.project_file_repo import (
+    ProjectFileRepo,
+)
+import logging
+import json
+from project_api.utils.zipfolder import zip_directory
+import shutil
+import tempfile
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.ERROR)
+
+def download_from_s3(user, project_name, model_name, url, fpath_zip):
+    expert_mode_flag = False
+    try:
+        training_dir = os.path.join(GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user), 
+                                        project_name,
+                                        'models',
+                                        model_name,
+                                        'training')
+        temp_dir = os.path.join(GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user), 
+                                        project_name,
+                                        'models',
+                                        model_name,
+                                        '_temp_training')
+
+        logger.debug(f'url: {url},\n fpath_zip: {fpath_zip},\n dir_dest: {training_dir}\n temp_dir: {temp_dir}')
+        
+        response = get(url)
+        logger.debug(f'response code: {response.status_code}')
+        if response.status_code != 200:
+            logger.debug(f'NOK received while downloading from url {url}')
+            return Response(status=response.status_code) 
+
+        with open(fpath_zip, 'wb') as f:
+            f.write(response.content)
+            with ZipFile(fpath_zip, 'r') as zip_ref:
+                zip_ref.extractall(temp_dir)
+                logger.info(f'zip file extracted successfully to {temp_dir}.\n Checking for UCF file OR lsm6dsv16x_mlc.json in the downloaded artifacts.')
+                for name in zip_ref.namelist():
+                    sensor_config_json_fname = get_sensor_name(user, project_name, model_name) + '_acc' + '.json'
+                    logger.debug(f'sensor_config_json_fname: {sensor_config_json_fname}')
+                    if name.lower().endswith('ucf') or name.lower().startswith(sensor_config_json_fname):
+                        expert_mode_flag = True
+                        logger.info(f'match found in the downloaded artifacts.\n setting expert_mode_flag to: {expert_mode_flag}')
+
+        # logging.info(f'checking if {training_dir} exists')
+        # if os.path.exists(training_dir):
+        #     logging.info(f'exists {training_dir}')
+        # else:
+        #     logging.error(f'does not exist {training_dir}')
+        # xyz = os.path.join(temp_dir, 'training')
+        # logging.info(f'checking if {xyz} exists')  
+        # if os.path.exists(xyz):
+        #     logging.info(f'exists {xyz}')
+        # else:
+        #     logging.error(f'does not exist {xyz}')
+
+        temp_training_dir = os.path.join(temp_dir, 'training')
+        logging.error(f'doing a walk on the extracted dir: {temp_training_dir}')
+        for dir_path, _, fname in os.walk(temp_training_dir):  
+            logging.info(dir_path)  
+            logging.info(fname)  
+            for f in fname:
+                logger.info(f'copying {f} to {training_dir}')                                   
+                try:
+                    shutil.copy(src=os.path.join(dir_path, f), dst=os.path.join(training_dir, f))
+                except Exception as e:
+                    logger.error(e, exc_info=True)
+                    return Response(f'failed to copy {f} after downloading trainig artifacts', status=500)
+
+            if expert_mode_flag:
+                config_file_path = os.path.join(dir_path, 'configuration.json')
+                dst_file_path = os.path.join(training_dir, 'configuration_processed.json')                    
+                logger.info(f'expert_mode_flag is True.\nproceeding to copy {config_file_path} to {dst_file_path}!')
+                try:
+                    shutil.copy(src=config_file_path, dst=dst_file_path)
+                except Exception as e:
+                    logger.error(e, exc_info=True)
+                    return Response('failed to copy configuration after downloading trainig artifacts', status=500)                
+                
+        logger.debug(f'Removing {temp_dir} \n Removing {fpath_zip}')
+        os.remove(fpath_zip)               
+        shutil.rmtree(temp_dir)       
+    except Exception as e:
+        logger.error(e, exc_info=True)
+        return Response(status=500)
+    return expert_mode_flag
+
+def get_sensor_name(user: str, project_name: str, model_name: str):
+    config_file_path = os.path.join(GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user), 
+                                         project_name,
+                                         'models',
+                                         model_name,
+                                         'training',
+                                         'configuration.json')
+    with open(config_file_path) as f:
+        obj = json.load(f)
+        return obj['name']
+    return ''

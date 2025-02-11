@@ -55,7 +55,7 @@ Content-Type: application/json
 
 {
   "project_name_to_clone": "get_started_smart_asset_tracking_mlc",
-  "ai_project_name": "get_started_smart_asset_tracking_mlc_clone_1"
+  "ai_project_name": "get_started_smart_asset_tracking_mlc"
 }
 
 ###
@@ -80,7 +80,7 @@ Content-Type: application/json
 
 
 ###
-DELETE {{base_url}}/projects/test-project-4
+DELETE {{base_url}}/projects/test-project-1
 Authorization: Bearer {{token}}
 ###
 POST {{base_url}}/projects/test-project-2/models
@@ -716,7 +716,7 @@ Content-Type: application/json
 ###
 
 ### UCF present in the training zip
-POST {{base_url}}/projects/get_started_smart_asset_tracking_mlc_clone_1/models/smart_asset_tracking/training/artifacts
+POST {{base_url}}/projects/get_started_smart_asset_tracking_mlc/models/smart_asset_tracking/training/artifacts
 Authorization: Bearer {{token}}
 Content-Type: application/json
 

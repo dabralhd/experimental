@@ -13,6 +13,10 @@ from project_api.util import response_error
 from project_api.utils.vespucci_to_controller_model_converters import (
     convert_training,
 )
+from project_api.utils.artifacts_helper import (
+    download_from_s3,
+)
+
 from project_api.vespucciprjmng.repository.filesystem.project_file_repo import (
     ProjectFileRepo,
 )
@@ -22,7 +26,7 @@ from project_api.utils.zipfolder import zip_directory
 import shutil
 
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.ERROR)
 
 def app_create_training(user, body, project_name, model_name):  # noqa: E501
     """Create new training or update whole training section
@@ -252,37 +256,6 @@ def app_download_training_artifacts(user, body, project_name, model_name):
         job_artifact = connexion.request.get_json()
         
         try:
-            def download_from_s3(url, fpath_zip, dir_dest):
-                '''
-                url: pre signed aws-s3 url
-                fname_zip: absolute name of zip file after downloading
-                dir_dest: directory in which zip contents are to be extracted
-                '''
-                expert_mode_flag = False
-                try:
-                    logger.debug(f'url: {url},\n fpath_zip: {fpath_zip},\n dir_dest: {dir_dest}')
-                    
-                    response = get(url)
-                    logger.debug(f'download_from_s3: response code: {response.status_code}')
-                    if response.status_code != 200:
-                        logger.debug(f'NOK received while downloading from url {url}')
-                        return Response(status=response.status_code) 
-
-                    with open(fpath_zip, 'wb') as f:
-                        f.write(response.content)
-                    with ZipFile(fpath_zip, 'r') as zip_ref:
-                        zip_ref.extractall(dir_dest)
-                        logger.info(f'zip file extracted successfully.\n Checking for UCF file OR lsm6dsv16x_mlc.json in the downloaded artifacts.')
-                        for name in zip_ref.namelist():
-                            if name.lower().endswith('ucf') or name.lower().startswith('lsm6dsv16x_mlc.json'):
-                                expert_mode_flag = True
-                                logger.info(f'match found in the downloaded artifacts.\n setting expert_mode_flag to: {expert_mode_flag}')
-                    logger.debug('download_from_s3: zip file extracted successfully.\n Removing {fpath_zip}')
-                    os.remove(fpath_zip)                      
-                except Exception as e:
-                    logger.error(e, exc_info=True)
-                    return Response(status=500)
-                return expert_mode_flag
                 
             zip_name = 'workspace.zip'     
             model_dir = os.path.join(GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user), 
@@ -295,9 +268,11 @@ def app_download_training_artifacts(user, body, project_name, model_name):
         
             logger.debug(f'zip_fpath: {zip_fpath} ')  
 
-            expert_mode_flag = download_from_s3(job_artifact["s3_url"],
-                            zip_fpath,
-                            training_dir)
+            expert_mode_flag = download_from_s3(user, 
+                                                project_name, 
+                                                model_name, 
+                                                job_artifact["s3_url"], 
+                                                zip_fpath)
 
             user_workspace_path = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
             project_repo = ProjectFileRepo(user_workspace_path)
@@ -309,13 +284,13 @@ def app_download_training_artifacts(user, body, project_name, model_name):
             
             logger.debug(f'dst_file_path: {dst_file_path}\n config_file_path: {config_file_path}\n, dst_file_path: {dst_file_path}')
 
-            if expert_mode_flag: 
-                logger.debug(f'expert_mode_flag is True.\nproceeding to copy {config_file_path}!')
-                try:
-                    shutil.copy(src=config_file_path, dst=dst_file_path)
-                except Exception as e:
-                    logger.error(e, exc_info=True)
-                    return Response('failed to copy configuration after downloading trainig artifacts', status=500)
+            # if expert_mode_flag: 
+            #     logger.debug(f'expert_mode_flag is True.\nproceeding to copy {config_file_path}!')
+            #     try:
+            #         shutil.copy(src=config_file_path, dst=dst_file_path)
+            #     except Exception as e:
+            #         logger.error(e, exc_info=True)
+            #         return Response('failed to copy configuration after downloading trainig artifacts', status=500)
                        
             # Add the job to the job list in the training runtime
             if "job" in job_artifact:
