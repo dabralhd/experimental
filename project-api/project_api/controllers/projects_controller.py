@@ -26,6 +26,7 @@ from project_api.utils.generate_icon import (
 )
 from project_api.globals import VESPUCCI_ENVIRONMENT
 from project_api.utils.error_types import (client_side_error, ErrorType)
+from project_api.utils.error_helper import (model_exists, example_project_exists)
 import logging
 
 logger = logging.getLogger(__name__)
@@ -59,11 +60,7 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
             return Response(status=client_side_error(ErrorType.CONFLICT))
         logger.debug('Project does not exist, proceeding with creation')
 
-        if  new_project.project_name_to_clone != None:
-            if not user_project_exists(user, new_project.project_name_to_clone):    
-                logger.error(f'project does not exists - {new_project.project_name_to_clone}')
-                return Response(status=client_side_error(ErrorType.NOT_FOUND))
-            
+        if  new_project.project_name_to_clone != None:            
             logger.info(f"Cloning project {new_project.project_name_to_clone} to {new_project.ai_project_name}")
             project_name_to_clone = new_project.project_name_to_clone
       
@@ -73,6 +70,10 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
             #if new_project.project_name_to_clone.startswith('get_started'):
             if  is_user_project==False:
                 # This is a get_started project, check if source project exists
+                if not example_project_exists(new_project.project_name_to_clone):    
+                    logger.error(f'project does not exists - {new_project.project_name_to_clone}')
+                    return Response(status=client_side_error(ErrorType.NOT_FOUND))
+
                 [project_folder, project_file_path, error_code] = extract_get_started_project(project_name_to_clone, new_project_name, dest_folder)
                 if error_code != 200:
                     return Response(status=400)

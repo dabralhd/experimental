@@ -21,6 +21,10 @@ import json
 from project_api.utils.zipfolder import zip_directory
 import shutil
 import tempfile
+from project_api.globals import (
+    GET_STARTED_PROJECTS_PATH,
+)
+
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
@@ -40,3 +44,14 @@ def model_exists(user, project_name, model_name):
                                     'models',
                                     model_name)
     return os.path.isdir(model_dir)
+
+def example_project_exists(get_started_project_name):
+    """
+    Checks if an example project exists in the workspace.
+    Args:
+        project_name (str): The name of the project.
+    Returns:
+        bool: True if the example project exists, False otherwise.
+    """
+    example_project_dir = os.path.join(os.path.join(GET_STARTED_PROJECTS_PATH, get_started_project_name))
+    return os.path.isdir(example_project_dir)
