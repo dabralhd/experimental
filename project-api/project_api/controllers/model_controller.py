@@ -14,6 +14,8 @@ from project_api.vespucciprjmng.repository.filesystem.project_file_repo import (
 )
 from project_api.services.project_models import ( user_project_exists )
 from project_api.utils.error_types import (client_side_error, ErrorType)
+from project_api.utils.error_helper import (model_exists)
+
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -30,6 +32,9 @@ def app_clone_model(user, project_name, model_name):  # noqa: E501):
 
     :rtype: None
     """
+    if not model_exists(user, project_name, model_name):
+        return Response(status=client_side_error(ErrorType.NOT_FOUND))
+    
     return Response(status=200)
 
 def app_delete_model(user, project_name, model_name):  # noqa: E501
@@ -44,6 +49,8 @@ def app_delete_model(user, project_name, model_name):  # noqa: E501
 
     :rtype: None
     """
+    if not model_exists(user, project_name, model_name):
+        return Response(status=client_side_error(ErrorType.NOT_FOUND))
     
     project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)
     project_repo.dao_factory.get_model_dao_instance().delete(project_name=project_name, model_uuid_or_name=model_name)
@@ -64,6 +71,9 @@ def app_delete_model(user, project_name, model_name):  # noqa: E501
     return Response(status=200)
 
 def app_patch_model(user, project_name, model_name):  # noqa: E501
+    if not model_exists(user, project_name, model_name):
+        return Response(status=client_side_error(ErrorType.NOT_FOUND))
+
     project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)
 
     if connexion.request.is_json:

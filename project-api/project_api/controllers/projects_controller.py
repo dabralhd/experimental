@@ -60,6 +60,10 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
         logger.debug('Project does not exist, proceeding with creation')
 
         if  new_project.project_name_to_clone != None:
+            if not user_project_exists(user, new_project.project_name_to_clone):    
+                logger.error(f'project does not exists - {new_project.project_name_to_clone}')
+                return Response(status=client_side_error(ErrorType.NOT_FOUND))
+            
             logger.info(f"Cloning project {new_project.project_name_to_clone} to {new_project.ai_project_name}")
             project_name_to_clone = new_project.project_name_to_clone
       
@@ -119,6 +123,7 @@ def app_get_projects(user: str):  # noqa: E501
 
     :rtype: List[Project]
     """    
+    
     project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)
     project_domain_objs = project_repo.get_projects()
     project_api_objs = []

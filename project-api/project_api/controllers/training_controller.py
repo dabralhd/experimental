@@ -24,6 +24,8 @@ import logging
 import json
 from project_api.utils.zipfolder import zip_directory
 import shutil
+from project_api.utils.error_types import (client_side_error, ErrorType)
+from project_api.utils.error_helper import (model_exists)
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.ERROR)
@@ -40,6 +42,8 @@ def app_create_training(user, body, project_name, model_name):  # noqa: E501
 
     :rtype: None
     """ 
+    if not model_exists(user, project_name, model_name):
+        return Response(status=client_side_error(ErrorType.NOT_FOUND))
     
     if connexion.request.is_json:
         new_training = NewTraining.from_dict(connexion.request.get_json())  # noqa: E501
@@ -71,6 +75,9 @@ def app_update_training(user, body, project_name, model_name):  # noqa: E501
 
     :rtype: None
     """ 
+    if not model_exists(user, project_name, model_name):
+        return Response(status=client_side_error(ErrorType.NOT_FOUND))
+
     return app_create_training
 
 def app_patch_training(user, body, project_name, model_name):  # noqa: E501
@@ -85,6 +92,8 @@ def app_patch_training(user, body, project_name, model_name):  # noqa: E501
 
     :rtype: None
     """ 
+    if not model_exists(user, project_name, model_name):
+        return Response(status=client_side_error(ErrorType.NOT_FOUND))
     
     if connexion.request.is_json:
         updated_training = NewTraining.from_dict(connexion.request.get_json())  # noqa: E501
@@ -171,6 +180,8 @@ def app_get_training(user: str, project_name: str, model_name: str):  # noqa: E5
 
     :rtype: Training
     """
+    if not model_exists(user, project_name, model_name):
+        return Response(status=client_side_error(ErrorType.NOT_FOUND))
     
     artifact_type = connexion.request.args.get('type')
     artifact_name = connexion.request.args.get('name')    
@@ -194,6 +205,8 @@ def app_delete_training(user, project_name, model_name):  # noqa: E501
 
     :rtype: None
     """
+    if not model_exists(user, project_name, model_name):
+        return Response(status=client_side_error(ErrorType.NOT_FOUND))
     
     return Response(status=200)
 
@@ -249,19 +262,20 @@ def app_get_training_items(user_ws_dir: str,
         return Response('wrong resource type requested', status=400)
 
 def app_download_training_artifacts(user, body, project_name, model_name):
-    logger.debug('- app_download_training_artifacts')
+    if not model_exists(user, project_name, model_name):
+        return Response(status=client_side_error(ErrorType.NOT_FOUND))
     
     if connexion.request.is_json:
         # job_artifact = JobArtifact.from_dict(connexion.request.get_json())   
         job_artifact = connexion.request.get_json()
         
-        try:
-                
+        try:                
             zip_name = 'workspace.zip'     
             model_dir = os.path.join(GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user), 
                                          project_name,
                                          "models",
                                          model_name)
+
             training_dir = os.path.join(model_dir, "training")         
                  
             zip_fpath = os.path.join(model_dir, zip_name)
@@ -320,6 +334,9 @@ def app_download_training_artifacts(user, body, project_name, model_name):
             return Response(status=500)    
 
 def app_create_training_configuration(user, body, project_name, model_name):
+    if not model_exists(user, project_name, model_name):
+        return Response(status=client_side_error(ErrorType.NOT_FOUND))
+
     if connexion.request.is_json:
         mlc_configuration = connexion.request.get_json()  # noqa: E501
         
@@ -353,6 +370,9 @@ def app_create_training_configuration(user, body, project_name, model_name):
     return Response(status=400)
 
 def app_patch_training_configuration(user, body, project_name, model_name):
+    if not model_exists(user, project_name, model_name):
+        return Response(status=client_side_error(ErrorType.NOT_FOUND))
+
 
     if connexion.request.is_json:
         patch_configuration = connexion.request.get_json()  # noqa: E501

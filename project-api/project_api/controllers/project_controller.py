@@ -23,6 +23,10 @@ def app_get_project_icon(user: str, project_name: str):  # noqa: E501
     
     :rtype: image/*
     """
+    if not user_project_exists(user, project_name):    
+        logger.error(f'project does not exists - {project_name}')
+        return Response(status=client_side_error(ErrorType.NOT_FOUND))
+
     project_path = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
     icon_path = os.path.join(project_path, project_name, "icons")
     jpg_file  = os.path.join(icon_path, "icon.jpg")
@@ -54,6 +58,10 @@ def app_delete_project(user, project_name):  # noqa: E501
 
     :rtype: None
     """
+    if not user_project_exists(user, project_name):    
+        logger.error(f'project does not exists - {project_name}')
+        return Response(status=client_side_error(ErrorType.NOT_FOUND))
+
     project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)
     logger.debug(f'Checking if project exists for user: {user}, project name: {project_name}')
     if not user_project_exists(user, project_name):    
@@ -88,6 +96,9 @@ def app_get_project(user: str, project_name: str):  # noqa: E501
 
     :rtype: Project
     """
+    if not user_project_exists(user, project_name):    
+        logger.error(f'project does not exists - {project_name}')
+        return Response(status=client_side_error(ErrorType.NOT_FOUND))
 
     project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)
     logger.debug(f'Checking if project exists for user: {user}, project name: {project_name}')
