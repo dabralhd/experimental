@@ -8,7 +8,7 @@
 @remote_dev_url = https://dev.stm-vespucci.com:{{remote_port}}{{remote_api_base_path_3}}
 @base_url = {{local_url}}
 @token-dummy = dev
-@token-dev = eyJraWQiOiJcL3JIS3FCbG5JVldiU2RqdEJqODRQaDNyUk5SWWh4cnR6RFwvOXFTK0Q3aWc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIyNmE5ZDNiOS01NDU0LTQwMmQtYWU3Zi0wYjYzMmJmNGQyNmUiLCJjb2duaXRvOmdyb3VwcyI6WyJ3aGl0ZWxpc3QiLCJmd2RiLWF1dGhvcnMiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfOXdlbnNFNVJaIiwidmVyc2lvbiI6MiwiY2xpZW50X2lkIjoiNHNoYjE3OGdsbWxsc3I3NWdmb2JoZmRzYmEiLCJvcmlnaW5fanRpIjoiODI5ODY4ZmEtM2E3OS00ZmJkLWE2OTctYmFjMWQ3NTg2MmZiIiwiZXZlbnRfaWQiOiJjNjMyZDQ3My1jZWY2LTRmOGItODliMy0yNDhiN2YwMDJkZDEiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIGh0dHBzOlwvXC9vYXV0aDIuZGV2LnN0bS12ZXNwdWNjaS5jb21cL3Rlc3QgcGhvbmUgb3BlbmlkIHByb2ZpbGUgZW1haWwiLCJhdXRoX3RpbWUiOjE3MzQ1MDIyNzEsImV4cCI6MTczNjgzMTgxMCwiaWF0IjoxNzM2NzQ1NDEwLCJqdGkiOiJiMGU4MzEwNy0yMmM0LTRkNTktYTBjNy05OGY3MGViNmEwMGUiLCJ1c2VybmFtZSI6IjI2YTlkM2I5LTU0NTQtNDAyZC1hZTdmLTBiNjMyYmY0ZDI2ZSJ9.Y83t1vKcx3zdGEvOC221a_TQqRYcbckQWleVIUORWJZcsi37GhTUYejD1rixZqAxs3spy0mDC-P7CB_ttfkhf1MZ-7KjRR4PliQP5DfSjtlz_jHo-EyUOFwlcewPbyezn2D6rwKXsI-ejZFZnbzMaIrDAJ5i9saPNZrFkU-hl2zny3HKrpsZlenqT507tuIy7MbLQtmoKwzlmIXp3W7RA_QWL6qLqkxiqr5cceb0zPU3LOho3DbySx0lWNkulNw6sfX3iFl-i80wfSGTrTg-rvYg-JGzTK7rXI9C5UHtlHedlV7zDOdbQ1dx5oP2TsHBIHxWtSvwErdJExpRx5Sr5g
+@token-dev = eyJraWQiOiJcL3JIS3FCbG5JVldiU2RqdEJqODRQaDNyUk5SWWh4cnR6RFwvOXFTK0Q3aWc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIzMzRjNjVhNS0xNDk1LTQ1M2EtYTZkZS00ZDM4NGE3ODEwMDAiLCJjb2duaXRvOmdyb3VwcyI6WyJ3aGl0ZWxpc3QiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfOXdlbnNFNVJaIiwidmVyc2lvbiI6MiwiY2xpZW50X2lkIjoiNHNoYjE3OGdsbWxsc3I3NWdmb2JoZmRzYmEiLCJvcmlnaW5fanRpIjoiMDFmYjRmMTMtOWRhOS00MjRmLWFiOTItN2E1MWVlZWMzYzZiIiwiZXZlbnRfaWQiOiI0MWI2ZjMxNC0zNGMyLTRkYjQtOTI3OS05OGVhODBkMjU1OTIiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIGh0dHBzOlwvXC9vYXV0aDIuZGV2LnN0bS12ZXNwdWNjaS5jb21cL3Rlc3QgcGhvbmUgb3BlbmlkIHByb2ZpbGUgZW1haWwiLCJhdXRoX3RpbWUiOjE3Mzc2MzY4NDIsImV4cCI6MTczOTQyODc4MSwiaWF0IjoxNzM5MzQyMzgxLCJqdGkiOiJhM2U2OGU5Mi1hNTk5LTQxNDMtYjg0OS1mZGViMGU0YjcyYjgiLCJ1c2VybmFtZSI6IjMzNGM2NWE1LTE0OTUtNDUzYS1hNmRlLTRkMzg0YTc4MTAwMCJ9.bGLnKGTkyVeWeBobby_svPf1xoZwmTMKbpGDvvlUZBLiIODpUGE4OYXC4xHmCv3VxpUCNrZPaGJFWwMiFYKlcvgGua_qdgAjE2Vuvz3RdTCLVB2pTxL4sxKZ2ZoocnM2WoTY8P7H5dzaE_L9k7Au9VUBPnXpGlQpdZ8RRiq7UCuU14b7kNRAK0kWdeqi5pvX4aTn0_gE827Y_NSL-6IyZa3UD8DRuqTqm8c_m1ls4AV63Xj4Ll6C9uvoubsOnco9-IXQD5L8YDzDtdHk_5idefM-mg70uPg06G1c9riSU3T7mYqDEVz3k0J0_OH18zIhvjbRzzjETN5ENjNl8uWNIQ
 @token = {{token-dev}}
 
 @probe_url = http://127.0.0.1:{{local_port}}
@@ -29,6 +29,11 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
+DELETE {{base_url}}/projects/get_started_smart_asset_tracking_mlc1
+Authorization: Bearer {{token}}
+
+
+###
 GET {{base_url}}/projects/test-project-1/icon
 Authorization: Bearer {{token}}
 Content-Type: application/json
@@ -45,7 +50,7 @@ Content-Type: application/json
   "version": "0.0.1"
 }
 ###
-GET {{base_url}}/projects/smart_asset_tracking_mlc_clone3
+GET {{base_url}}/projects/get_started_smart_asset_tracking_mlc
 Authorization: Bearer {{token}}
 Content-Type: application/json
 ###
@@ -55,7 +60,7 @@ Content-Type: application/json
 
 {
   "project_name_to_clone": "get_started_smart_asset_tracking_mlc",
-  "ai_project_name": "get_started_smart_asset_tracking_mlc"
+  "ai_project_name": "get_started_smart_asset_tracking_mlc1"
 }
 
 ###
@@ -64,8 +69,8 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "project_name_to_clone": "get_started_smart_asset_tracking_mlc_clone_4",
-  "ai_project_name": "get_started_smart_asset_tracking_mlc_clone_2"
+  "project_name_to_clone": "clone1",
+  "ai_project_name": "get_started_smart_asset_tracking_mlc"
 }
 
 ###
@@ -74,8 +79,8 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "project_name_to_clone": "smart_asset_tracking_mlc_clone6",
-  "ai_project_name": "smart_asset_tracking_mlc_clone7"
+  "project_name_to_clone": "get_started_smart_asset_tracking_mlc87987",
+  "ai_project_name": "smart_asset_tracking_mlc_clone767"
 }
 
 
@@ -148,7 +153,7 @@ Content-Type: application/json
 
 
 ###
-GET {{base_url}}/projects/smart_asset_tracking_mlc_clone6
+GET {{base_url}}/projects/get_started_smart_asset_tracking_mlc1
 Authorization: Bearer {{token}}
 Content-Type: application/json
 ###
@@ -185,7 +190,7 @@ Content-Type: application/json
 
 ###
 
-GET {{base_url}}/projects/test-project-2/models/test-model-3/training
+GET {{base_url}}/projects/get_started_smart_asset_tracking_mlc1/models/smart_asset_tracking/training
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -328,7 +333,7 @@ Content-Type: application/json
 }
 
 ###
-@project_var = smart_asset_tracking_mlc_clone6
+@project_var = get_started_smart_asset_tracking_mlc1
 @model_var = smart_asset_tracking
 ###
 GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training
@@ -360,7 +365,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training?type=config&name=../../../../../../3f6c9746-e86d-4492-96a0-28091e20bb32/get_started_stredl/ai_get_started_stredl.json
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training?type=config&name=configuration.json
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -716,7 +721,7 @@ Content-Type: application/json
 ###
 
 ### UCF present in the training zip
-POST {{base_url}}/projects/get_started_smart_asset_tracking_mlc/models/smart_asset_tracking/training/artifacts
+POST {{base_url}}/projects/get_started_smart_asset_tracking_mlc1/models/smart_asset_tracking/training/artifacts
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -732,7 +737,7 @@ Content-Type: application/json
 }
 
 ### UCF NOT present in the training zip
-POST {{base_url}}/projects/get_started_smart_asset_tracking_mlc_clone_1/models/smart_asset_tracking/training/artifacts
+POST {{base_url}}/projects/get_started_smart_asset_tracking_mlc/models/smart_asset_tracking/training/artifacts
 Authorization: Bearer {{token}}
 Content-Type: application/json
 

@@ -13,7 +13,7 @@ from project_api.services.models.templates import (
 import logging
 
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.WARNING)
+logger.setLevel(logging.DEBUG)
 
 def get_started_projects():
     get_started_project_names = os.listdir(GET_STARTED_PROJECTS_PATH)

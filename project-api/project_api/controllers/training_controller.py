@@ -28,7 +28,7 @@ from project_api.utils.error_types import (client_side_error, ErrorType)
 from project_api.utils.error_helper import (model_exists)
 
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.ERROR)
+logger.setLevel(logging.DEBUG)
 
 def app_create_training(user, body, project_name, model_name):  # noqa: E501
     """Create new training or update whole training section
@@ -128,17 +128,12 @@ def do_get_training_item(user_ws_dir: str,
             zip_fname = output_fname + '.zip'
             zip_fpath = os.path.join(model_dir_path, zip_fname)
             output_file_path = os.path.join(model_dir_path, output_fname)
-            logger.debug(f'model_dir_path: {model_dir_path}')
-            logger.debug(f'training_dir_name: {training_dir_name}')
-            logger.debug(f'training_dir_path: {training_dir_path}')
-            logger.debug(f'output_fname: {output_fname}')
-            logger.debug(f'zip_fname: {zip_fname}')
-            logger.debug(f'output_file_path: {output_file_path}')
-            logger.debug(f'zip_fpath: {zip_fpath}')
+            logger.info(f'model_dir_path: {model_dir_path}\ntraining_dir_name: {training_dir_name}\ntraining_dir_path: {training_dir_path}')
+            logger.info(f'output_fname: {output_fname}\nzip_fname: {zip_fname}\nzip_fpath: {zip_fpath}')
 
             try:
                 zip_directory(output_file_path, training_dir_path)
-                #logger.info(f'zip file created successfully, now returning the file to client.')
+                logger.info(f'zip file created successfully, now returning the file to client.')
             except Exception as e:
                 logger.exception(f'Error while creating zip file: {e}')
                 return Response(status=500) # internal server error
@@ -151,13 +146,13 @@ def do_get_training_item(user_ws_dir: str,
             cache_timeout=0
             ) 
         else:
-            #logger.info(f'requested training artifacts with specifying artifact_name.')   
+            logger.info(f'requested training artifacts with specifying artifact_name.')   
             return app_get_training_items(user_ws_dir, project_name, model_name, artifact_type, artifact_name)
     elif artifact_type in ['config', 'runtime', 'reports']:
-        #logger.info(f'requested training {artifact_type} without specifying artifact_name.')
+        logger.info(f'requested training {artifact_type} without specifying artifact_name.')
         return app_get_training_items(user_ws_dir, project_name, model_name, artifact_type, artifact_name)
     elif artifact_type is None and artifact_name is None:
-        #logger.info(f'requested training without specifying artifact_type and artifact_name.')
+        logger.info(f'requested training without specifying artifact_type and artifact_name.')
         project_repo = ProjectFileRepo(user_ws_dir)
 
         training_domain_obj = None
@@ -238,9 +233,7 @@ def app_get_training_items(user_ws_dir: str,
                                          "training",
                                          os.path.basename(artifact_name))
 
-        logger.debug(f'artifact_path: {artifact_path}')
-        logger.debug(f'artifact_type: {artifact_type}')
-        logger.debug(f'artifact_name: {artifact_name}')
+        logger.info(f'artifact_path: {artifact_path}\nartifact_type: {artifact_type}\nartifact_name: {artifact_name}')
         if os.path.exists(artifact_path):
             return send_file(
             artifact_path,
@@ -250,7 +243,8 @@ def app_get_training_items(user_ws_dir: str,
             cache_timeout=0
             ) 
         else:
-            return Response('artifact not found', status=404)
+            logger.error(f'artifact not found: {artifact_path}')
+            return Response(f'artifact not found: {artifact_path}', status=404)
     elif artifact_type=='runtime':
         project_repo = ProjectFileRepo(user_ws_dir)        
         training_domain_obj = None
@@ -259,6 +253,7 @@ def app_get_training_items(user_ws_dir: str,
         
         return training_api_obj.runtime
     else:
+        logger.error(f'wrong resource type requested: {artifact_type}')
         return Response('wrong resource type requested', status=400)
 
 def app_download_training_artifacts(user, body, project_name, model_name):
