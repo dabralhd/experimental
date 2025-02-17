@@ -55,25 +55,30 @@ def download_from_s3(user, project_name, model_name, url, fpath_zip):
 
         logger.debug(f'url: {url},\n fpath_zip: {fpath_zip},\n dir_dest: {training_dir}\n temp_dir: {temp_dir}')
         
-        response = get(url)
-        logger.debug(f'response code: {response.status_code}')
-        if response.status_code != 200:
-            logger.debug(f'NOK received while downloading from url {url}')
-            return Response(status=response.status_code) 
+        try:
+            response = get(url, stream=True)
+            logger.info(f'response code: {response.status_code}')
+            if response.status_code != 200:
+                logger.error(f'NOK received while downloading from url {url}')
+                return Response(status=response.status_code)             
+            with open(fpath_zip, 'wb') as f:
+                shutil.copyfileobj(response.raw, f)
+        except Exception as e:
+            logger.error(e, exc_info=True)
+            return Response(f'failed to download from url {url}', status=500)
 
-        with open(fpath_zip, 'wb') as f:
-            f.write(response.content)
-            with ZipFile(fpath_zip, 'r') as zip_ref:
-                zip_ref.extractall(temp_dir)
-                logger.info(f'zip file extracted successfully to {temp_dir}.\n Checking for UCF file OR lsm6dsv16x_mlc.json in the downloaded artifacts.')
-                for name in zip_ref.namelist():
-                    sensor_config_json_fname = get_sensor_name(user, project_name, model_name) + '_acc' + '.json'
-                    logger.debug(f'sensor_config_json_fname: {sensor_config_json_fname}')
-                    if name.lower().endswith('ucf') or name.lower().startswith(sensor_config_json_fname):
-                        expert_mode_flag = True
-                        logger.info(f'match found in the downloaded artifacts.\n setting expert_mode_flag to: {expert_mode_flag}')
+        with ZipFile(fpath_zip, 'r') as zip_ref:
+            zip_ref.extractall(temp_dir)
+            logger.info(f'zip file extracted successfully to {temp_dir}.\n Checking for UCF file OR lsm6dsv16x_mlc.json in the downloaded artifacts.')
+            for name in zip_ref.namelist():
+                sensor_config_json_fname = get_sensor_name(user, project_name, model_name) + '_acc' + '.json'
+                logger.debug(f'sensor_config_json_fname: {sensor_config_json_fname}')
+                if name.lower().endswith('ucf') or name.lower().startswith(sensor_config_json_fname):
+                    expert_mode_flag = True
+                    logger.info(f'match found in the downloaded artifacts.\n setting expert_mode_flag to: {expert_mode_flag}')
 
         temp_training_dir = os.path.join(temp_dir, 'training')
+
         logging.error(f'doing a walk on the extracted dir: {temp_training_dir}')
         for dir_path, _, fname in os.walk(temp_training_dir):  
             logging.info(dir_path)  
@@ -87,7 +92,7 @@ def download_from_s3(user, project_name, model_name, url, fpath_zip):
                     return Response(f'failed to copy {f} after downloading trainig artifacts', status=500)
 
             if expert_mode_flag:
-                config_file_path = os.path.join(dir_path, 'configuration.json')
+                config_file_path = os.path.join(training_dir, 'configuration.json')
                 dst_file_path = os.path.join(training_dir, 'configuration_processed.json')                    
                 logger.info(f'expert_mode_flag is True.\nproceeding to copy {config_file_path} to {dst_file_path}!')
                 try:
@@ -97,8 +102,9 @@ def download_from_s3(user, project_name, model_name, url, fpath_zip):
                     return Response('failed to copy configuration after downloading trainig artifacts', status=500)                
                 
         logger.debug(f'Removing {temp_dir} \n Removing {fpath_zip}')
+        shutil.rmtree(temp_dir)   
         os.remove(fpath_zip)               
-        shutil.rmtree(temp_dir)       
+
     except Exception as e:
         logger.error(e, exc_info=True)
         return Response(status=500)

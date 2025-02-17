@@ -293,13 +293,13 @@ def app_download_training_artifacts(user, body, project_name, model_name):
             
             logger.debug(f'dst_file_path: {dst_file_path}\n config_file_path: {config_file_path}\n, dst_file_path: {dst_file_path}')
 
-            # if expert_mode_flag: 
-            #     logger.debug(f'expert_mode_flag is True.\nproceeding to copy {config_file_path}!')
-            #     try:
-            #         shutil.copy(src=config_file_path, dst=dst_file_path)
-            #     except Exception as e:
-            #         logger.error(e, exc_info=True)
-            #         return Response('failed to copy configuration after downloading trainig artifacts', status=500)
+            if expert_mode_flag: 
+                logger.debug(f'expert_mode_flag is True.\nproceeding to copy {config_file_path}!')
+                try:
+                    shutil.copy(src=config_file_path, dst=dst_file_path)
+                except Exception as e:
+                    logger.error(e, exc_info=True)
+                    return Response('failed to copy configuration after downloading trainig artifacts', status=500)
                        
             # Add the job to the job list in the training runtime
             if "job" in job_artifact:
