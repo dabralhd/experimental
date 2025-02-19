@@ -1,0 +1,98 @@
+[2025-02-17 07:42:18 +0000] [1] [INFO] Starting gunicorn 23.0.0
+[2025-02-17 07:42:18 +0000] [1] [INFO] Listening at: http://0.0.0.0:9090 (1)
+[2025-02-17 07:42:18 +0000] [1] [INFO] Using worker: sync
+[2025-02-17 07:42:18 +0000] [7] [INFO] Booting worker with pid: 7
+[2025-02-17 07:42:18 +0000] [8] [INFO] Booting worker with pid: 8
+[2025-02-17 07:42:18 +0000] [9] [INFO] Booting worker with pid: 9
+[2025-02-17 07:42:18 +0000] [10] [INFO] Booting worker with pid: 10
+INFO:project_api.utils.resource_allocation:efs_size_ok: True
+DEBUG:project_api.controllers.projects_controller:Checking if project exists for user: 334c65a5-1495-453a-a6de-4d384a781000, project name: clone4
+DEBUG:project_api.controllers.projects_controller:Project does not exist, proceeding with creation
+INFO:project_api.controllers.projects_controller:Cloning project get_started_smart_asset_tracking_mlc to clone4
+DEBUG:project_api.controllers.project_controller:Checking if project exists for user: 334c65a5-1495-453a-a6de-4d384a781000, project name: clone4
+DEBUG:project_api.controllers.project_controller:Project exists, proceeding further
+DEBUG:project_api.controllers.project_controller:Checking if project exists for user: 334c65a5-1495-453a-a6de-4d384a781000, project name: clone4
+DEBUG:project_api.controllers.project_controller:Project exists, proceeding further
+INFO:project_api.controllers.training_controller:requested training artifacts with specifying artifact_name.
+INFO:project_api.controllers.training_controller:artifact_path: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/training/lsm6dsv16x_mlc.ucf
+artifact_type: artifacts
+artifact_name: lsm6dsv16x_mlc.ucf
+DEBUG:project_api.controllers.project_controller:Checking if project exists for user: 334c65a5-1495-453a-a6de-4d384a781000, project name: clone4
+DEBUG:project_api.controllers.project_controller:Project exists, proceeding further
+INFO:project_api.controllers.training_controller:requested training artifacts with specifying artifact_name.
+INFO:project_api.controllers.training_controller:artifact_path: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/training/configuration_processed.json
+artifact_type: artifacts
+artifact_name: configuration_processed.json
+ERROR:project_api.controllers.training_controller:artifact not found: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/training/configuration_processed.json
+INFO:project_api.controllers.training_controller:requested training artifacts with specifying artifact_name.
+INFO:project_api.controllers.training_controller:artifact_path: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/training/lsm6dsv16x_mlc.h
+artifact_type: artifacts
+artifact_name: lsm6dsv16x_mlc.h
+INFO:project_api.controllers.training_controller:requested training config without specifying artifact_name.
+INFO:project_api.controllers.training_controller:artifact_path: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/training/configuration.json
+artifact_type: config
+artifact_name: configuration.json
+INFO:project_api.controllers.training_controller:requested training reports without specifying artifact_name.
+INFO:project_api.controllers.training_controller:artifact_path: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/training/report.json
+artifact_type: reports
+artifact_name: report.json
+INFO:project_api.controllers.training_controller:requested training config without specifying artifact_name.
+INFO:project_api.controllers.training_controller:artifact_path: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/training/configuration.json
+artifact_type: config
+artifact_name: configuration.json
+DEBUG:project_api.controllers.training_controller:zip_fpath: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/workspace.zip 
+ERROR:root:doing a walk on the extracted dir: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/_temp_training/training
+DEBUG:project_api.controllers.training_controller:user_workspace_path: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects
+DEBUG:project_api.controllers.training_controller:dst_file_path: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/training/configuration_processed.json
+ config_file_path: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/training/configuration.json
+, dst_file_path: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/training/configuration_processed.json
+DEBUG:project_api.controllers.project_controller:Checking if project exists for user: 334c65a5-1495-453a-a6de-4d384a781000, project name: clone4
+DEBUG:project_api.controllers.project_controller:Project exists, proceeding further
+INFO:project_api.controllers.training_controller:requested training artifacts with specifying artifact_name.
+INFO:project_api.controllers.training_controller:artifact_path: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/training/lsm6dsv16x_mlc.json
+artifact_type: artifacts
+artifact_name: lsm6dsv16x_mlc.json
+ERROR:project_api.controllers.training_controller:artifact not found: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/training/lsm6dsv16x_mlc.json
+DEBUG:project_api.controllers.project_controller:Checking if project exists for user: 334c65a5-1495-453a-a6de-4d384a781000, project name: clone4
+DEBUG:project_api.controllers.project_controller:Project exists, proceeding further
+INFO:project_api.controllers.training_controller:requested training artifacts with specifying artifact_name.
+INFO:project_api.controllers.training_controller:artifact_path: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/training/lsm6dsv16x_mlc.h
+artifact_type: artifacts
+artifact_name: lsm6dsv16x_mlc.h
+INFO:project_api.controllers.training_controller:requested training config without specifying artifact_name.
+INFO:project_api.controllers.training_controller:artifact_path: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/training/configuration.json
+artifact_type: config
+artifact_name: configuration.json
+INFO:project_api.controllers.training_controller:requested training reports without specifying artifact_name.
+INFO:project_api.controllers.training_controller:artifact_path: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/training/report.json
+artifact_type: reports
+artifact_name: report.json
+INFO:project_api.controllers.training_controller:requested training config without specifying artifact_name.
+INFO:project_api.controllers.training_controller:artifact_path: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/training/configuration.json
+artifact_type: config
+artifact_name: configuration.json
+DEBUG:project_api.controllers.training_controller:{'artifacts': ['lsm6dsv16x_mlc.json', 'lsm6dsv16x_mlc.h'],
+ 'configuration': 'configuration.json',
+ 'creation_time': 'None',
+ 'last_update_time': 'None',
+ 'reports': ['report.json'],
+ 'type': 'job'}
+DEBUG:project_api.controllers.project_controller:Checking if project exists for user: 334c65a5-1495-453a-a6de-4d384a781000, project name: clone2
+DEBUG:project_api.controllers.project_controller:Project exists, proceeding further
+DEBUG:project_api.controllers.project_controller:Checking if project exists for user: 334c65a5-1495-453a-a6de-4d384a781000, project name: clone1
+DEBUG:project_api.controllers.project_controller:Project exists, proceeding further
+DEBUG:project_api.controllers.project_controller:Checking if project exists for user: 334c65a5-1495-453a-a6de-4d384a781000, project name: clone4
+DEBUG:project_api.controllers.project_controller:Project exists, proceeding further
+INFO:project_api.controllers.training_controller:requested training artifacts with specifying artifact_name.
+INFO:project_api.controllers.training_controller:artifact_path: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/training/lsm6dsv16x_mlc.json
+artifact_type: artifacts
+artifact_name: lsm6dsv16x_mlc.json
+ERROR:project_api.controllers.training_controller:artifact not found: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/training/lsm6dsv16x_mlc.json
+INFO:project_api.controllers.training_controller:requested training artifacts with specifying artifact_name.
+INFO:project_api.controllers.training_controller:artifact_path: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/training/lsm6dsv16x_mlc.h
+artifact_type: artifacts
+artifact_name: lsm6dsv16x_mlc.h
+INFO:project_api.controllers.training_controller:requested training reports without specifying artifact_name.
+INFO:project_api.controllers.training_controller:artifact_path: /usr/storage/334c65a5-1495-453a-a6de-4d384a781000/workspace/projects/clone4/models/smart_asset_tracking/training/report.json
+artifact_type: reports
+artifact_name: report.json
