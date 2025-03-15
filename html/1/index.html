@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML with Embedded JavaScript</title>
+  </head>
+  <body>
+    <h1>Welcome to my webpage!</h1>
+    <p>This is some sample text.</p>
+    <button id="button2">button2</button>
+    <div id="div">simple div</div>
+    <script>
+      var div,
+        container = document.getElementById('container');
+      for (var i = 0; i < 5; i++) {
+        div = document.createElement('div');
+        div.onClick = function () {
+          alert('You clicked on a div id: ' + i);
+        };
+        container.appendChild(div);
+      }
+    </script>
+  </body>
+</html>
