@@ -1,0 +1,24 @@
+version: '3.9'
+services:
+    project-api:
+        image: 303868523198.dkr.ecr.eu-west-1.amazonaws.com/project-api:${PROJECT_API_IMAGE_TAG}
+        container_name: project-api
+        build:
+            context: .
+            dockerfile: Dockerfile
+            target: project-api-${PROJECT_API_BUILD_STAGE}
+        ports:
+            - ${PROJECT_API_PORT}:${PROJECT_API_PORT}
+        environment:
+            - FLASK_ENV=${FLASK_ENV}
+            - REST_API_PORT=${PROJECT_API_PORT}
+            - STORAGE_PATH=${PROJECT_API_STORAGE_PATH}
+            - ARTIFACTS_FOLDER=${ARTIFACTS_FOLDER}
+            - ASSETS_FOLDER_PATH=${ASSETS_FOLDER_PATH}
+            - TRACKING_API_PATH=${TRACKING_API_PATH}
+        volumes:
+            - project_api_data_test_volume:${PROJECT_API_DATA_TEST_FOLDER}
+
+volumes:
+    project_api_data_test_volume:
+        external: true
