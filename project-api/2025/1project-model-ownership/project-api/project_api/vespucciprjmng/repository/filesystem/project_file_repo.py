@@ -78,19 +78,20 @@ class ProjectFileRepo(ProjectRepo):
             model_metadata=model_metadata,
             model_target=model_target,
             creation_time=str(datetime.now()),
-            last_update_time=str(datetime.now())
+            last_update_time=str(datetime.now()),
+            model_owner_uuid=model_metadata.model_owner_uuid
         )        
         self.dao_factory.get_model_dao_instance().save(project_name=project_name, model=new_model)
         
         return self.dao_factory.get_model_dao_instance().get(project_name=project_name, model_uuid_or_name=model_name)
 
-    def clone_model(self, project_name: str, clone_model_uuid_or_name: str, model_uuid_or_name: str) -> Model:
+    def clone_model(self, project_name: str, clone_model_uuid_or_name: str, model_uuid_or_name: str, model_owner_uuid: str) -> Model:
         existing_models = self.dao_factory.get_model_dao_instance().get_all(project_name=project_name)
         for existing_model in existing_models:
             if existing_model.name == model_uuid_or_name:
                 raise ResourceAlreadyExisting(existing_model.uuid, existing_model.name, ResourceKind.MODEL)
             
-        self.dao_factory.get_model_dao_instance().clone(project_name=project_name, clone_model_uuid_or_name=clone_model_uuid_or_name, model_uuid_or_name=model_uuid_or_name)
+        self.dao_factory.get_model_dao_instance().clone(project_name=project_name, clone_model_uuid_or_name=clone_model_uuid_or_name, model_uuid_or_name=model_uuid_or_name, model_owner_uuid=model_owner_uuid)
         self.dao_factory.get_training_dao_instance().clone(project_name=project_name, clone_model_uuid_or_name=clone_model_uuid_or_name, model_uuid_or_name=model_uuid_or_name)
         return self.dao_factory.get_model_dao_instance().get(project_name=project_name, model_uuid_or_name=model_uuid_or_name)
     

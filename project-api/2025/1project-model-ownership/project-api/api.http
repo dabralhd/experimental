@@ -29,7 +29,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-GET {{base_url}}/projects/test-project-cloned-fan/icon
+GET {{base_url}}/projects/asset-tracking-mlc-test-project-new-26-march/icon
 Authorization: Bearer {{token}}
 Content-Type: application/json
 ###
@@ -39,13 +39,19 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "ai_project_name": "test-project-4",
+  "ai_project_name": "test-project-new-25-march-1",
   "type": "industrial",
   "description": "My Project description",
   "version": "0.0.1"
 }
+
 ###
-GET {{base_url}}/projects/smart_asset_tracking_mlc_clone3
+GET {{base_url}}/projects/asset-tracking-mlc-test-project-new-4-April-1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/projects/get_started_smart_asset_tracking_mlc_clone_2
 Authorization: Bearer {{token}}
 Content-Type: application/json
 ###
@@ -64,7 +70,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "project_name_to_clone": "get_started_smart_asset_tracking_mlc_clone_4",
+  "project_name_to_clone": "get_started_smart_asset_tracking_mlc_clone_1",
   "ai_project_name": "get_started_smart_asset_tracking_mlc_clone_2"
 }
 
@@ -74,21 +80,22 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "project_name_to_clone": "smart_asset_tracking_mlc_clone6",
-  "ai_project_name": "smart_asset_tracking_mlc_clone7"
+  "project_name_to_clone": "get_started_smart_asset_tracking_mlc",
+  "ai_project_name": "get_started_smart_asset_tracking_mlc_clone_1"
 }
 
 
 ###
-DELETE {{base_url}}/projects/test-project-4
+DELETE {{base_url}}/projects/test-project-new-25-march-1
 Authorization: Bearer {{token}}
 ###
-POST {{base_url}}/projects/test-project-2/models
+
+POST {{base_url}}/projects/get_started_smart_asset_tracking_mlc_clone_1/models
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "name": "test-model-3",
+  "name": "test-model-1",
   "description": "MyTestModelWithDTRef",
   "model_type": "classifier",
   "dataset": 
@@ -110,13 +117,13 @@ Content-Type: application/json
 }
 
 ###
-POST {{base_url}}/projects/test-project-2/models
+POST {{base_url}}/projects/get_started_smart_asset_tracking_mlc_clone_2/models
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "model_name_to_clone": "test-model-2",
-  "name": "cloned-model-1"
+  "model_name_to_clone": "test-model-1",
+  "name": "test-model-2"
 }
 
 ###
@@ -129,7 +136,6 @@ Content-Type: application/json
 
 
 ###
-
 PATCH {{base_url}}/projects/test-project-2/models/test-model-3
 Authorization: Bearer {{token}}
 Content-Type: application/json
@@ -148,7 +154,7 @@ Content-Type: application/json
 
 
 ###
-GET {{base_url}}/projects/smart_asset_tracking_mlc_clone6
+GET {{base_url}}/projects/test-project-new-25-march/models/test-model-3
 Authorization: Bearer {{token}}
 Content-Type: application/json
 ###

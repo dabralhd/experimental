@@ -91,7 +91,7 @@ class ModelFileDAO(ModelDAO):
         self.data_session.save()
         self.data_session.dispose()
 
-    def clone(self, project_name: str, clone_model_uuid_or_name: str, model_uuid_or_name: str) -> None:
+    def clone(self, project_name: str, clone_model_uuid_or_name: str, model_uuid_or_name: str, model_owner_uuid: str) -> None:
         self.data_session.connect(get_project_file_name(project_name))
 
         selected_json_model_obj = None
@@ -99,7 +99,7 @@ class ModelFileDAO(ModelDAO):
             if json_model_obj["uuid"] == clone_model_uuid_or_name or json_model_obj["name"] == clone_model_uuid_or_name:
                 selected_json_model_obj = json_model_obj
 
-        cloned_json_model_obj = self.__copy_model(selected_json_model_obj, model_uuid_or_name)
+        cloned_json_model_obj = self.__copy_model(selected_json_model_obj, model_uuid_or_name, model_owner_uuid=model_owner_uuid)
 
         self.data_session.json_file["models"].append(cloned_json_model_obj)
 
@@ -154,6 +154,8 @@ class ModelFileDAO(ModelDAO):
             model_domain_obj.creation_time = str(json_model_obj["creation_time"])
         if "last_update_time" in json_model_obj:
             model_domain_obj.last_update_time = json_model_obj["last_update_time"]
+        if "model_owner_uuid" in json_model_obj:
+            model_domain_obj.model_owner_uuid = json_model_obj["model_owner_uuid"]
         
         return model_domain_obj
 
@@ -182,10 +184,11 @@ class ModelFileDAO(ModelDAO):
         }
         json_model_obj["creation_time"] = model_domain_obj.creation_time
         json_model_obj["last_update_time"] = model_domain_obj.last_update_time
+        json_model_obj["model_owner_uuid"] = model_domain_obj.model_owner_uuid
         
         return json_model_obj
     
-    def __copy_model(self, json_model_obj, model_name) -> Any:
+    def __copy_model(self, json_model_obj, model_name: str, model_owner_uuid: str) -> Any:
         copy_json_model_obj = dict({})
 
         copy_json_model_obj["uuid"] = str(uuid4())
@@ -205,5 +208,7 @@ class ModelFileDAO(ModelDAO):
             "component": json_model_obj["target"]["component"],
             "device": json_model_obj["target"]["device"]
         }
+
+        copy_json_model_obj["model_owner_uuid"] = model_owner_uuid
         
         return copy_json_model_obj

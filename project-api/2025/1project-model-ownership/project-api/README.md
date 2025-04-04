@@ -19,7 +19,7 @@ Build a docker image and run the image mounted with test data.
 Internally this project uses [poetry](https://python-poetry.org/) to manage dependencies.
 
 - Build DEBUG image:
-	- ```docker build --target 'run-debug' --output type=image,oci-types=true,compression=zstd,compression-level=22,push=true -t 303868523198.dkr.ecr.eu-west-1.amazonaws.com/project-api:poetryrel-debug-build1 .```
+	- ```docker build --target 'run-debug' --output type=image,oci-types=true,compression=zstd,compression-level=22,push=false -t 303868523198.dkr.ecr.eu-west-1.amazonaws.com/project-api:poetryrel-debug-build1 .```
 	
 - Build RELEASE image:
 	- ```docker build --target 'run-release' --output type=image,oci-types=true,compression=zstd,compression-level=22,push=true -t 303868523198.dkr.ecr.eu-west-1.amazonaws.com/project-api:poetryrel-build1 .```
@@ -30,7 +30,7 @@ The test data needs to be structured as in the folder ```test_vol/```. Please go
     -  ```[source create_docker_volume.sh]``` to create the necessary docker volume which will be mounted by the docker container.
 
 - To run the debug container locally:
-	- ```docker-compose --file docker-compose-dev.yaml --env-file env.devel up -d```
+	- ```docker compose --file docker-compose-dev.yaml --env-file env.devel up -d```
 
 Sample http routes are available in [api.http](./api.http)
 

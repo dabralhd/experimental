@@ -34,6 +34,10 @@ class ModelMetadata():
     def classes(self) -> List[str]:
         return self.__classes
 
+    @property
+    def model_owner_uuid(self) -> List[str]:
+        return self.__model_owner_uuid
+
     @type.setter 
     def type(self, value: ModelType):
         self.__model_type = value
@@ -42,9 +46,14 @@ class ModelMetadata():
     def classes(self, value: List[str]):
         self.__classes = value
 
-    def __init__(self, classes: List[str], model_type: ModelType = None):
+    @model_owner_uuid.setter
+    def model_owner_uuid(self, value: str):
+        self.__model_owner_uuid = value
+
+    def __init__(self, classes: List[str], model_type: ModelType = None, model_owner_uuid=None):
         self.__classes = classes
         self.__model_type = model_type
+        self.__model_owner_uuid = model_owner_uuid
         pass
 
 class ModelTarget():
@@ -178,6 +187,16 @@ class Model(DomainOBJ):
         :rtype: str
         """
         return self.__last_update_time
+    
+    @property
+    def model_owner_uuid(self) -> str:
+        """Gets the uuid of model owner
+
+
+        :return: The model_owner_uuid of this Mode.
+        :rtype: str
+        """
+        return self.__model_owner_uuid 
 
     @last_update_time.setter
     def last_update_time(self, last_update_time: str):
@@ -188,9 +207,18 @@ class Model(DomainOBJ):
         :type last_update_time: str
         """
         self.__last_update_time = last_update_time
-        
 
-    def __init__(self, uuid: str = None, name: str = None, model_ref: Model = None, dataset: Dataset = None, model_metadata: ModelMetadata = None, model_target: ModelTarget = None, model_training: Training=None, data_sufficiency: Training=None, creation_time: str=None, last_update_time: str=None):
+    @model_owner_uuid.setter
+    def model_owner_uuid(self, model_owner_uuid: str):
+        """Sets the uuid of model owner.
+
+
+        :param model_owner_uuid: uuid of model owner
+        :type model_owner_uuid: str
+        """
+        self.__model_owner_uuid = model_owner_uuid        
+
+    def __init__(self, uuid: str = None, name: str = None, model_ref: Model = None, dataset: Dataset = None, model_metadata: ModelMetadata = None, model_target: ModelTarget = None, model_training: Training=None, data_sufficiency: Training=None, creation_time: str=None, last_update_time: str=None, model_owner_uuid: str=None):
         self.__uuid             = uuid
         self.__name             = name
         self.__model_ref        = model_ref
@@ -201,4 +229,5 @@ class Model(DomainOBJ):
         self.__data_sufficiency = data_sufficiency
         self.__creation_time = creation_time
         self.__last_update_time = last_update_time
+        self.__model_owner_uuid = model_owner_uuid
     

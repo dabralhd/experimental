@@ -136,7 +136,8 @@ def convert_model(model: VespucciModel) -> APIModel:
         model_training=convert_training(model.training),
         data_sufficiency=convert_training(model.data_sufficiency),
         creation_time=model.creation_time,
-        last_update_time=model.last_update_time
+        last_update_time=model.last_update_time,
+        model_owner_uuid=model.model_owner_uuid
     )
 
     return api_model

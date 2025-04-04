@@ -20,7 +20,7 @@ class NewModel(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, model_name_to_clone: str=None, name: str=None, model_type: ModelType=None, dataset: Dataset=None, classes: List[str]=None, model_target: ModelTarget=None, creation_time: str=None, last_update_time: str=None, owner_uuid: str=None):  # noqa: E501
+    def __init__(self, model_name_to_clone: str=None, name: str=None, model_type: ModelType=None, dataset: Dataset=None, classes: List[str]=None, model_target: ModelTarget=None, creation_time: str=None, last_update_time: str=None, model_owner_uuid: str=None):  # noqa: E501
         """NewModel - a model defined in Swagger
 
         :param name: The name of this NewModel.  # noqa: E501
@@ -45,7 +45,7 @@ class NewModel(Model):
             # 'output_type': OutputType,
             'creation_time': str,
             'last_update_time': str,
-            'owner_uuid': str
+            'model_owner_uuid': str
         }
 
         self.attribute_map = {
@@ -59,7 +59,7 @@ class NewModel(Model):
             # 'output_type': 'output_type',
             'creation_time': 'creation_time',
             'last_update_time': 'last_update_time',
-            'owner_uuid': 'owner_uuid'
+            'model_owner_uuid': 'model_owner_uuid'
 
         }
         self._model_name_to_clone = model_name_to_clone
@@ -70,7 +70,7 @@ class NewModel(Model):
         # self._training_type = training_type
         self._target = model_target
         # self._output_type = output_type
-        self._owner_uuid = owner_uuid
+        self._model_owner_uuid = model_owner_uuid
 
     @classmethod
     def from_dict(cls, dikt) -> 'NewModel':
@@ -311,22 +311,22 @@ class NewModel(Model):
         self._last_update_time = last_update_time
 
     @property
-    def owner_uuid(self) -> str:
-        """Gets the owner_uuid of this NewModel.
+    def model_owner_uuid(self) -> str:
+        """Gets the model_owner_uuid of this NewModel.
 
 
-        :return: The owner_uuid of this NewModel.
+        :return: The model_owner_uuid of this NewModel.
         :rtype: str
         """
-        return self._owner_uuid
+        return self._model_owner_uuid
 
-    @owner_uuid.setter
-    def owner_uuid(self, owner_uuid: str):
-        """Sets the owner_uuid of this NewModel.
+    @model_owner_uuid.setter
+    def model_owner_uuid(self, model_owner_uuid: str):
+        """Sets the model_owner_uuid of this NewModel.
 
 
-        :param owner_uuid: The owner_uuid of this NewModel.
-        :type owner_uuid: str
+        :param model_owner_uuid: The model_owner_uuid of this NewModel.
+        :type model_owner_uuid: str
         """
 
-        self._owner_uuid = owner_uuid
+        self._model_owner_uuid = model_owner_uuid

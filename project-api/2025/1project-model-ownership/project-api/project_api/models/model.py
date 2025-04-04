@@ -20,7 +20,7 @@ class Model(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, uuid: str=None, name: str=None, dataset: Dataset=None, model_metadata: ModelModelMetadata=None, model_target: ModelTarget=None, model_training: Training=None, data_sufficiency: Training=None, creation_time: str=None, last_update_time: str=None, owner_uuid: str=None):  # noqa: E501
+    def __init__(self, uuid: str=None, name: str=None, dataset: Dataset=None, model_metadata: ModelModelMetadata=None, model_target: ModelTarget=None, model_training: Training=None, data_sufficiency: Training=None, creation_time: str=None, last_update_time: str=None, model_owner_uuid: str=None):  # noqa: E501
         """Model - a model defined in Swagger
 
         :param uuid: The uuid of this Model.  # noqa: E501
@@ -48,7 +48,7 @@ class Model(Model):
             'data_sufficiency': Training,
             'creation_time': str,
             'last_update_time': str,
-            'owner_uuid': str
+            'model_owner_uuid': str
         }
 
         self.attribute_map = {
@@ -61,7 +61,7 @@ class Model(Model):
             'data_sufficiency': 'data_sufficiency',
             'creation_time': 'creation_time',
             'last_update_time': 'last_update_time',
-            'owner_uuid': 'owner_uuid'            
+            'model_owner_uuid': 'model_owner_uuid'            
         }
         self._uuid = uuid
         self._name = name
@@ -72,7 +72,7 @@ class Model(Model):
         self._data_sufficiency = data_sufficiency
         self._creation_time = creation_time
         self._last_update_time = last_update_time     
-        self._owner_uuid = owner_uuid
+        self._model_owner_uuid = model_owner_uuid
 
     @classmethod
     def from_dict(cls, dikt) -> 'Model':
@@ -286,24 +286,24 @@ class Model(Model):
         """
         self._last_update_time = str(datetime.now())
     @property
-    def owner_uuid(self) -> str:
-        """Gets the owner_uuid of this Model.
+    def model_owner_uuid(self) -> str:
+        """Gets the model_owner_uuid of this Model.
 
 
-        :return: The owner_uuid of this Model.
+        :return: The model_owner_uuid of this Model.
         :rtype: str
         """
-        return self._owner_uuid
+        return self._model_owner_uuid
 
-    @owner_uuid.setter
-    def owner_uuid(self, owner_uuid: str):
-        """Sets the owner_uuid of this Model.
+    @model_owner_uuid.setter
+    def model_owner_uuid(self, model_owner_uuid: str):
+        """Sets the model_owner_uuid of this Model.
 
 
-        :param owner_uuid: The owner_uuid of this Model.
-        :type owner_uuid: str
+        :param model_owner_uuid: The model_owner_uuid of this Model.
+        :type model_owner_uuid: str
         """
-        if owner_uuid is None:
-            raise ValueError("Invalid value for `owner_uuid`, must not be `None`")  # noqa: E501
+        if model_owner_uuid is None:
+            raise ValueError("Invalid value for `model_owner_uuid`, must not be `None`")  # noqa: E501
 
-        self._owner_uuid = owner_uuid
+        self._model_owner_uuid = model_owner_uuid

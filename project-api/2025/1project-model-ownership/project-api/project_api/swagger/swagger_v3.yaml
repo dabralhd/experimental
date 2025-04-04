@@ -278,7 +278,7 @@ paths:
         explode: false
         schema:
           type: string
-      - name: owner_uuid
+      - name: model_owner_uuid
         in: query
         description: Owner `uuid` identifier
         required: false
@@ -1461,7 +1461,7 @@ components:
           type: string
         last_update_time:
           type: string
-        owner_uuid:
+        model_owner_uuid:
           type: string
       example:
         name: model_example
@@ -1477,7 +1477,7 @@ components:
           type: type
           component: component
           device: device
-        owner_uuid: owner_uuid  
+        model_owner_uuid: model_owner_uuid  
     Model:
       required:
       - dataset
@@ -1486,7 +1486,7 @@ components:
       - metadata
       - training
       - uuid
-      - owner_uuid
+      - model_owner_uuid
       type: object
       properties:
         dataset:
@@ -1505,7 +1505,7 @@ components:
           type: string
         last_update_time:
           type: string
-        owner_uuid:
+        model_owner_uuid:
           type: string 
       example:
         name: name
@@ -1533,7 +1533,7 @@ components:
             - artifacts
           reports:
             - reports
-          owner_uuid: owner_uuid  
+          model_owner_uuid: model_owner_uuid  
     NewTraining:
       required:
       - type
