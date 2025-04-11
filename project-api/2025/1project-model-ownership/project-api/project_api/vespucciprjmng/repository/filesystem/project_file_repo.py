@@ -65,7 +65,7 @@ class ProjectFileRepo(ProjectRepo):
         self.dao_factory.get_project_dao_instance().save(new_project)
         return self.dao_factory.get_project_dao_instance().get(name=name)
 
-    def create_model(self, project_name:str, model_name: str, dataset_ref: Dataset, model_metadata: ModelMetadata, model_target: ModelTarget, input_type: InputType = None, output_type: OutputType = None, model_uuid: str = None) -> Model:
+    def create_model(self, project_name:str, model_name: str, dataset_ref: Dataset, model_metadata: ModelMetadata, model_target: ModelTarget, input_type: InputType = None, output_type: OutputType = None, model_uuid: str = None, model_owner_uuid: str = None) -> Model:
         existing_models = self.dao_factory.get_model_dao_instance().get_all(project_name=project_name)
         for existing_model in existing_models:
             if existing_model.name == model_name:
@@ -79,7 +79,7 @@ class ProjectFileRepo(ProjectRepo):
             model_target=model_target,
             creation_time=str(datetime.now()),
             last_update_time=str(datetime.now()),
-            model_owner_uuid=model_metadata.model_owner_uuid
+            model_owner_uuid=model_owner_uuid
         )        
         self.dao_factory.get_model_dao_instance().save(project_name=project_name, model=new_model)
         

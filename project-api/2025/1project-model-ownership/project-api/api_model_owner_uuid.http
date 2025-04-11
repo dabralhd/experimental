@@ -8,8 +8,8 @@
 @remote_dev_url = https://dev.stm-vespucci.com:{{remote_port}}{{remote_api_base_path_3}}
 @base_url = {{local_url}}
 @token-dummy = dev
-@token-dev = eyJraWQiOiIzeDZEbWo4NjBWWXlyemRBb2ltQStvUFdoYU81bkZ2ZCtTOUFZQUZOUG5nPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJhYjM3ODdmNi1jMTY2LTQ0OTAtYWE3MS02YmViYTg4MWE5NGYiLCJjb2duaXRvOmdyb3VwcyI6WyJldS13ZXN0LTFfbmdYc2xBTkRrX2VEU1Byb2R1Y3Rpb25TVFBpbmdJZGVudGl0eSJdLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAuZXUtd2VzdC0xLmFtYXpvbmF3cy5jb21cL2V1LXdlc3QtMV9uZ1hzbEFORGsiLCJ2ZXJzaW9uIjoyLCJjbGllbnRfaWQiOiIzbzFmcjJqc2hvY2VzazllZzBqdGE5YWllYiIsIm9yaWdpbl9qdGkiOiI1MzQ1NGE5MS05ZmQzLTQ3ZDMtYjA2ZS0zZGZlY2FmNjVlYWQiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIHBob25lIG9wZW5pZCBwcm9maWxlIGVtYWlsIiwiYXV0aF90aW1lIjoxNzM4NjUzNDE4LCJleHAiOjE3Mzg3Mzk4MTgsImlhdCI6MTczODY1MzQxOCwianRpIjoiYWUyYzdjMTQtM2E2My00MjVmLThjZDgtYWUwZDcxMTNmMjExIiwidXNlcm5hbWUiOiJlRFNQcm9kdWN0aW9uU1RQaW5nSWRlbnRpdHlfZGhhbmFuamF5LnNoYXJtYUBzdC5jb20ifQ.Yt9hF_RX2q3iGAWCXhXGuNHWRGn-aVrspOqaeuu6OGFeUbNptPeeg5j3cE2rvIOwaXkv6Om5NZQvPlXtC3y0IMXVx4sjUsnc9VyoSkes4M0qqhj2W_tlkZvF_OiljEqDGljJBBOfTMo4xYMwKFCi9cGkW1-UyOSW1HR2abZ0wFncPKyfS9YnT51Xdb1C8g7MSPjWaANYkJwSCuuXZ2wYXQFzCfKEnQhB3bX_x34wv98zLrWoWIkNWiMSxJR48q_HHe0HhZ3COV5uNvbt6RheXgkrG--GqP2W40LkHEICHtvadk8381PLqOJhYHnwtuxjA5emvBAZ_Ez3qBRYAEYEGw
-@token = {{token-dev}}
+@token-dev = eyJraWQiOiJcL3JIS3FCbG5JVldiU2RqdEJqODRQaDNyUk5SWWh4cnR6RFwvOXFTK0Q3aWc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIzMzRjNjVhNS0xNDk1LTQ1M2EtYTZkZS00ZDM4NGE3ODEwMDAiLCJjb2duaXRvOmdyb3VwcyI6WyJ3aGl0ZWxpc3QiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfOXdlbnNFNVJaIiwidmVyc2lvbiI6MiwiY2xpZW50X2lkIjoiNHNoYjE3OGdsbWxsc3I3NWdmb2JoZmRzYmEiLCJvcmlnaW5fanRpIjoiNGI0MDljNDAtYzljYy00OWE4LThhMmUtOTBmZTI0NTUxMWFlIiwiZXZlbnRfaWQiOiI5MjgwNTI1NS1lNTViLTQzNWEtYmFmZC0xOGQ3NGMyMGIyYWYiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIGh0dHBzOlwvXC9vYXV0aDIuZGV2LnN0bS12ZXNwdWNjaS5jb21cL3Rlc3QgcGhvbmUgb3BlbmlkIHByb2ZpbGUgZW1haWwiLCJhdXRoX3RpbWUiOjE3NDQzNjU0NjYsImV4cCI6MTc0NDQ1MTg2NiwiaWF0IjoxNzQ0MzY1NDY2LCJqdGkiOiIzNWI1OTRjZS03NTJiLTQxNDYtYmNmYS0xMzExZDA0NDEwMTQiLCJ1c2VybmFtZSI6IjMzNGM2NWE1LTE0OTUtNDUzYS1hNmRlLTRkMzg0YTc4MTAwMCJ9.nWaLOOPAuEVRIhlbkVEk0MyRYvQUMbY-sgn-6Wqcujb8TzI1_Q3bkZRECfdNSYgdGeHkTCh_2pjtvQoEsLGQx4ut0sKuEEtjde7LKQ4SgB55oeZQlH8jAdAbCDgT2f1ZiMr4J019Kvk8l3HM8qUaG1Vf0RLk5vwxnuYyztUnpdIOXAM0NjJRP5A1YBEb4XW_fZO2Tcf9picv8DD5qweOGy_8x4rY3P1K0tSQqcJ1XbS1NFf7-R9ciGveOwMnrOwkwXZxuAoWNCRcuyjvxMoSrXV0zihLOjWCRw1mvtis97NpY19E1OFKgir3o-UHJGoujVynqd5IY5zAl6tJW9l_ag
+@token = {{token-dummy}}
 
 @probe_url = http://127.0.0.1:{{local_port}}
 
@@ -29,15 +29,10 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-DELETE {{base_url}}/projects/get_started_smart_asset_tracking_mlc_clone_2
+DELETE {{base_url}}/projects/test_project_1
 Authorization: Bearer {{token}}
 
 ###
-GET {{base_url}}/projects/asset-tracking-mlc-test-project-new-26-march/icon
-Authorization: Bearer {{token}}
-Content-Type: application/json
-###
-
 POST {{base_url}}/projects
 Authorization: Bearer {{token}}
 Content-Type: application/json
@@ -77,15 +72,6 @@ Content-Type: application/json
 }
 
 ###
-GET {{base_url}}/projects/asset-tracking-mlc-test-project-new-4-April-1
-Authorization: Bearer {{token}}
-Content-Type: application/json
-
-###
-GET {{base_url}}/projects/get_started_smart_asset_tracking_mlc_clone_2
-Authorization: Bearer {{token}}
-Content-Type: application/json
-###
 POST {{base_url}}/projects
 Authorization: Bearer {{token}}
 Content-Type: application/json
@@ -121,7 +107,7 @@ DELETE {{base_url}}/projects/test-project-new-25-march-1
 Authorization: Bearer {{token}}
 ###
 
-POST {{base_url}}/projects/get_started_smart_asset_tracking_mlc_clone_1/models
+POST {{base_url}}/projects/test-project-new-11-April-1/models
 Authorization: Bearer {{token}}
 Content-Type: application/json
 

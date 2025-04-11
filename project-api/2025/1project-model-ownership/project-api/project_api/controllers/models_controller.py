@@ -53,7 +53,7 @@ def app_create_model(user, body, project_name):  # noqa: E501
             project_repo = ProjectFileRepo(user_workspace_path)
 
             try:
-                project_repo.clone_model(project_name=project_name, clone_model_uuid_or_name=model_name_to_clone, model_uuid_or_name=new_model_name)
+                project_repo.clone_model(project_name=project_name, clone_model_uuid_or_name=model_name_to_clone, model_uuid_or_name=new_model_name, model_owner_uuid=user)
             except Exception as e:
                 print(e)
                 return Response(status=409)
@@ -71,7 +71,8 @@ def app_create_model(user, body, project_name):  # noqa: E501
                 model_name=new_model.name,
                 dataset_ref=Dataset(new_model.dataset.name, new_model.dataset.dataset_id),
                 model_metadata=ModelMetadata(new_model.classes, ModelType(new_model.model_type)),
-                model_target=ModelTarget(new_model.target.type, new_model.target.component, new_model.target.device)
+                model_target=ModelTarget(new_model.target.type, new_model.target.component, new_model.target.device),
+                model_owner_uuid=user
             )
 
             user_workspace_path = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
