@@ -1,0 +1,2036 @@
+openapi: 3.0.2
+info:
+  title: Vespucci - REST API
+  description: Main REST API need to access to Vespucci back-end web-services
+  version: 2.7.0
+servers:
+- url: /2
+paths:
+  /templates/projects:
+    summary: Project templates data resource
+    description: ""
+    get:
+      tags:
+      - Project templates
+      summary: Project templates list
+      description: ""
+      operationId: app_get_templates_projects
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Project'
+                x-content-type: application/json
+      x-openapi-router-controller: project_api.controllers.project_templates_controller
+  /templates/experiments:
+    summary: Templates data resource
+    description: ""
+    get:
+      tags:
+      - Experiment templates
+      summary: Experiment templates list
+      description: ""
+      operationId: app_get_templates_experiments
+      responses:
+        "200":
+          description: OK.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                x-content-type: application/json
+        "401":
+          description: Unauthorized.
+      security:
+      - bearerAuth:
+        - secret
+      x-openapi-router-controller: project_api.controllers.experiment_templates_controller
+  /templates/projects/{project_name}/models/{model_name}/experiments/{experiment_name}/tests/{test_name}/outputs/{output_name}:
+    summary: Output templates data resource
+    description: ""
+    get:
+      tags:
+      - Project templates
+      summary: Get generated output file for given test
+      description: ""
+      operationId: app_get_templates_test_output
+      parameters:
+      - name: project_name
+        in: path
+        description: Project `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: model_name
+        in: path
+        description: Model `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: experiment_name
+        in: path
+        description: Experiment `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: test_name
+        in: path
+        description: Test `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: output_name
+        in: path
+        description: Output `file name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Binary file
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+                x-content-type: application/octet-stream
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not found
+      x-openapi-router-controller: project_api.controllers.test_templates_controller
+  /templates/projects/{project_name}/models/{model_name}/experiments/{experiment_name}/tests/{test_name}/reports/{report_name}:
+    summary: Report templates data resource
+    description: ""
+    get:
+      tags:
+      - Project templates
+      summary: Get generated report file for given test
+      description: ""
+      operationId: app_get_templates_test_report
+      parameters:
+      - name: project_name
+        in: path
+        description: Project `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: model_name
+        in: path
+        description: Model `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: experiment_name
+        in: path
+        description: Experiment `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: test_name
+        in: path
+        description: Test `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: report_name
+        in: path
+        description: Output `file name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Report file
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+                x-content-type: application/octet-stream
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not found
+      x-openapi-router-controller: project_api.controllers.test_templates_controller
+  /projects:
+    summary: Projects data resource
+    description: ""
+    get:
+      tags:
+      - Projects
+      summary: Projects list
+      description: ""
+      operationId: app_get_projects
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Project'
+                x-content-type: application/json
+      security:
+      - bearerAuth:
+        - secret
+      x-openapi-router-controller: project_api.controllers.projects_controller
+    post:
+      tags:
+      - Projects
+      summary: Create new project
+      description: ""
+      operationId: app_create_project
+      requestBody:
+        description: New project model
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewProject'
+      responses:
+        "201":
+          description: Created.
+        "400":
+          description: Bad request.
+        "401":
+          description: Unauthorized.
+      security:
+      - bearerAuth:
+        - secret
+      x-openapi-router-controller: project_api.controllers.projects_controller
+  /projects/{project_name}:
+    summary: Project data resource
+    description: ""
+    get:
+      tags:
+      - Project
+      summary: Get project associated to the given name.
+      description: ""
+      operationId: app_get_project
+      parameters:
+      - name: project_name
+        in: path
+        description: Project `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Project'
+        "401":
+          description: Unauthorized.
+        "404":
+          description: Not found.
+      security:
+      - bearerAuth:
+        - secret
+      x-openapi-router-controller: project_api.controllers.project_controller
+    delete:
+      tags:
+      - Project
+      summary: Delete project associated to the given name.
+      description: ""
+      operationId: app_delete_project
+      parameters:
+      - name: project_name
+        in: path
+        description: Project `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK.
+        "401":
+          description: Unauthorized.
+        "404":
+          description: Not found.
+      security:
+      - bearerAuth:
+        - secret
+      x-openapi-router-controller: project_api.controllers.project_controller
+  /projects/{project_name}/models:
+    summary: Models data resource
+    description: ""
+    post:
+      tags:
+      - Models
+      summary: Create new model
+      description: ""
+      operationId: app_create_model
+      parameters:
+      - name: project_name
+        in: path
+        description: Project `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: The model to be added.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewModel'
+        required: true
+      responses:
+        "201":
+          description: OK.
+        "400":
+          description: Bad request.
+        "401":
+          description: Unauthorized.
+        "404":
+          description: Not found.
+      security:
+      - bearerAuth:
+        - secret
+      x-openapi-router-controller: project_api.controllers.models_controller
+  /projects/{project_name}/models/{model_name}:
+    summary: Model data resource
+    description: ""
+    delete:
+      tags:
+      - Model
+      summary: Delete model associated to the given name.
+      description: ""
+      operationId: app_delete_model
+      parameters:
+      - name: project_name
+        in: path
+        description: Project `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: model_name
+        in: path
+        description: Model `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK.
+        "401":
+          description: Unauthorized.
+        "404":
+          description: Not found.
+      security:
+      - bearerAuth:
+        - secret
+      x-openapi-router-controller: project_api.controllers.model_controller
+  /projects/{project_name}/models/{model_name}/upload-folder:
+    post:
+      summary: Upload a log folder
+      operationId: app_create_log_upload
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                foldername:
+                  type: string
+                  description: The name of the folder to save the uploaded files to
+                filename:
+                  type: string
+                  description: The name of the current file being uploaded
+                filesize:
+                  type: integer
+                  description: The size of the current file being uploaded
+                filecount:
+                  type: integer
+                  description: The total number of files in the folder being uploaded
+                fileindex:
+                  type: integer
+                  description: The index of the current file being uploaded
+                chunkcount:
+                  type: integer
+                  description: The total number of chunks for the current file being uploaded
+                chunkindex:
+                  type: integer
+                  description: The current chunk index from the current file being uploaded
+                chunk:
+                  type: array
+                  items: 
+                    type: string
+                    format: binary
+                  description: The chunked file data blob
+      parameters:
+      - name: project_name
+        in: path
+        description: Project `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: model_name
+        in: path
+        description: Model `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: log_uuid
+        in: query
+        description: Existing input source uuid reference
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      responses:
+        '204':
+          description: A file chunk uploaded successfully          
+        '201':
+          description: Folder uploaded successfully and created and converted successfully          
+        '200':
+          description: Folder uploaded successfully successfully but may not have been converted successfully
+        '503':
+          description: Not all chunks received
+      security:
+      - bearerAuth:
+        - secret
+      x-openapi-router-controller: project_api.controllers.logs_controller
+  /projects/{project_name}/models/{model_name}/logs:
+    summary: Logs data resource
+    description: ""
+    post:
+      tags:
+      - Logs
+      summary: Upload raw acquisition for specified project and model
+      description: |
+        Upload raw acquisition zip file for specified project and model, trigger related conversion script and update project model
+      operationId: app_create_log
+      parameters:
+      - name: project_name
+        in: path
+        description: Project `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: model_name
+        in: path
+        description: Model `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: log_uuid
+        in: query
+        description: Existing input source uuid reference
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+      - name: split
+        in: query
+        description: Current chunk file counter
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      - name: total
+        in: query
+        description: Amount of file chuncks
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      requestBody:
+        description: Raw zip log file or log metadata
+        content:
+          application/octet-stream:
+            schema:
+              type: string
+              format: binary
+          application/json:
+            schema:
+              type: object
+      responses:
+        "200":
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        "400":
+          description: Bad request.
+        "401":
+          description: Unauthorized.
+        "404":
+          description: Not found.
+      security:
+      - bearerAuth:
+        - secret
+      x-openapi-router-controller: project_api.controllers.logs_controller
+  /projects/{project_name}/models/{model_name}/experiments:
+    summary: Experiments data resource
+    description: ""
+    post:
+      tags:
+      - Experiments
+      summary: Create new experiment
+      description: ""
+      operationId: app_create_experiment
+      parameters:
+      - name: project_name
+        in: path
+        description: Project `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: model_name
+        in: path
+        description: Model `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: The experiment to be added.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewExperiment'
+        required: true
+      responses:
+        "201":
+          description: Created.
+        "400":
+          description: Bad request.
+        "401":
+          description: Unauthorized.
+        "404":
+          description: Not found.
+      security:
+      - bearerAuth:
+        - secret
+      x-openapi-router-controller: project_api.controllers.experiments_controller
+  /projects/{project_name}/models/{model_name}/experiments/{experiment_name}:
+    summary: Experiment data resource
+    description: ""
+    delete:
+      tags:
+      - Experiment
+      summary: Delete the experiment associated to the given name.
+      description: ""
+      operationId: app_delete_experiment
+      parameters:
+      - name: project_name
+        in: path
+        description: Project `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: model_name
+        in: path
+        description: Model `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: experiment_name
+        in: path
+        description: Experiment `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "400":
+          description: Bad request
+        "401":
+          description: Unathorized
+        "404":
+          description: Not found
+      security:
+      - bearerAuth:
+        - secret
+      x-openapi-router-controller: project_api.controllers.experiment_controller
+  /projects/{project_name}/models/{model_name}/experiments/{experiment_name}/artifacts:
+    summary: Experiment artifacts data resource
+    description: ""
+    get:
+      tags:
+      - Experiment
+      summary: List artifacts generated for selected experiment.
+      description: ""
+      operationId: app_get_artifacts_experiment
+      parameters:
+      - name: project_name
+        in: path
+        description: Project `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: model_name
+        in: path
+        description: Model `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: experiment_name
+        in: path
+        description: Experiment `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                
+        "400":
+          description: Bad request
+        "401":
+          description: Unathorized
+        "404":
+          description: Not found
+      security:
+      - bearerAuth:
+        - secret
+      x-openapi-router-controller: project_api.controllers.experiment_controller
+  /projects/{project_name}/models/{model_name}/experiments/{experiment_name}/tests:
+    summary: Tests data resource
+    description: ""
+    post:
+      tags:
+      - Tests
+      summary: Create new test
+      description: ""
+      operationId: app_create_test
+      parameters:
+      - name: project_name
+        in: path
+        description: Project `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: model_name
+        in: path
+        description: Model `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: experiment_name
+        in: path
+        description: Experiment `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      requestBody:
+        description: The test to be added.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NewTest'
+        required: true
+      responses:
+        "400":
+          description: Bad request
+        "401":
+          description: Unathorized
+        "404":
+          description: Not found
+      security:
+      - bearerAuth:
+        - secret
+      x-openapi-router-controller: project_api.controllers.tests_controller
+  /projects/{project_name}/models/{model_name}/experiments/{experiment_name}/tests/{test_name}:
+    summary: Test data resource
+    description: ""
+    delete:
+      tags:
+      - Test
+      summary: Delete test associated to the given name
+      description: ""
+      operationId: app_delete_test
+      parameters:
+      - name: project_name
+        in: path
+        description: Project `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: model_name
+        in: path
+        description: Model `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: experiment_name
+        in: path
+        description: Experiment `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: test_name
+        in: path
+        description: Test `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "400":
+          description: Bad request.
+        "401":
+          description: Unathorized.
+        "404":
+          description: Not found.
+      security:
+      - bearerAuth:
+        - secret
+      x-openapi-router-controller: project_api.controllers.test_controller
+    put:
+      security:
+        - bearerAuth:
+          - secret
+      tags:
+        - Outputs
+      summary: Set best test
+      operationId: app_set_model_output_best_test
+      description: "Sets the best test if is_best is true. If it is false and test_name is the current best test, the best test becomes NULL. Does nothing otherwise."
+      parameters:
+        - name: project_name
+          in: path
+          description: Project `name` identifier
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+        - name: model_name
+          in: path
+          description: Model `name` identifier
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+        - name: experiment_name
+          in: path
+          description: Experiment `name` identifier
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+        - name: test_name
+          in: path
+          description: Test `name` identifier
+          required: true
+          style: simple
+          explode: false
+          schema:
+            type: string
+        - name: is_best
+          in: query
+          description: When used with PUT, set this test as the best one. Does nothing otherwise.
+          schema:
+            type: boolean
+          required: true
+      responses:
+        "200":
+          description: OK.
+        "400":
+          description: Bad request.
+        "401":
+          description: Unauthorized.
+        "404":
+          description: Not found.
+      x-openapi-router-controller: project_api.controllers.model_controller
+
+  /projects/{project_name}/models/{model_name}/experiments/{experiment_name}/tests/{test_name}/outputs/{output_name}:
+    summary: Output data resource
+    description: ""
+    get:
+      tags:
+      - Test
+      summary: Get generated output file for given test
+      description: ""
+      operationId: app_get_test_output
+      parameters:
+      - name: project_name
+        in: path
+        description: Project `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: model_name
+        in: path
+        description: Model `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: experiment_name
+        in: path
+        description: Experiment `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: test_name
+        in: path
+        description: Test `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: output_name
+        in: path
+        description: Output `file name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Binary file
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+                x-content-type: application/octet-stream
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not found
+      security:
+      - bearerAuth:
+        - secret
+      x-openapi-router-controller: project_api.controllers.test_controller
+  /projects/{project_name}/models/{model_name}/experiments/{experiment_name}/tests/{test_name}/reports/{report_name}:
+    summary: Report  data resource
+    description: ""
+    get:
+      tags:
+      - Test
+      summary: Get generated report file for given test
+      description: ""
+      operationId: app_get_test_report
+      parameters:
+      - name: project_name
+        in: path
+        description: Project `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: model_name
+        in: path
+        description: Model `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: experiment_name
+        in: path
+        description: Experiment `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: test_name
+        in: path
+        description: Test `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: report_name
+        in: path
+        description: Output `file name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: Report file
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+                x-content-type: application/octet-stream
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not found
+      security:
+      - bearerAuth:
+        - secret
+      x-openapi-router-controller: project_api.controllers.test_controller
+
+  /projects/{project_name}/deployments/{deployment_id}/leaf/{device_id}:
+    get:
+      security:
+      - bearerAuth:
+        - secret
+      parameters:
+        - in: path
+          name: device_id
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: project_name
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: deployment_id
+          schema:
+            type: string
+          required: true
+        - in: query
+          name: resource
+          schema:
+            type: string
+            enum: [datalogging_device_config_uri,datalogging_device_template_uri,datalogging_firmware_uri,inference_device_template_uri,inference_firmware_uri,inference_ml_uri]
+          required: true
+      tags:
+      - Deployment
+      summary: Get files relating to a leaf device
+      description: ""
+      operationId: app_get_deployment_leaf
+      responses:
+        "200":
+          description: OK.
+        "400":
+          description: Bad request.
+        "401":
+          description: Unauthorized.
+        "404":
+          description: Not found.
+      x-openapi-router-controller: project_api.controllers.deployment_controller
+
+  /projects/{project_name}/deployments/{deployment_id}/gateway/{device_id}:
+    get:
+      security:
+      - bearerAuth:
+        - secret
+      parameters:
+        - in: path
+          name: device_id
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: project_name
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: deployment_id
+          schema:
+            type: string
+          required: true
+        - in: query
+          name: resource
+          schema:
+            type: string
+            enum: [configuration_uri,device_manifest_uri,device_template_uri]
+          required: true
+      tags:
+      - Deployment
+      summary: Get files relating to a gateway device
+      description: ""
+      operationId: app_get_deployment_gateway
+      responses:
+        "200":
+          description: OK.
+        "400":
+          description: Bad request.
+        "401":
+          description: Unauthorized.
+        "404":
+          description: Not found.
+      x-openapi-router-controller: project_api.controllers.deployment_controller
+
+  /projects/{project_name}/deployments/{deployment_id}:
+    put:
+      security:
+      - bearerAuth:
+        - secret
+      parameters:
+        - in: path
+          name: project_name
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: deployment_id
+          schema:
+            type: string
+          required: true
+      tags:
+      - Deployment
+      summary: Update deployment of a project
+      description: ""
+      operationId: app_update_deployment_id
+      requestBody:
+        description: The deployment to be added.
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - leaf
+                - gateway
+              properties:
+                last_deploy_time:
+                  type: string
+                  format: date-time
+                last_deploy_result:
+                  type: string
+                  enum: [deploy_success,deploy_error,undeploy_success,undeploy_error]
+                cloud_params:
+                  type: object
+                  properties:
+                    app_url:
+                      type: string
+                leaf:
+                  type: array
+                  items: 
+                    type: object
+                    properties:
+                      _device_id:
+                        type: string
+                      device_id:
+                        type: string
+                      selected_model_name:
+                        type: string
+                gateway:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      _device_id:
+                        type: string
+                      device_id:
+                        type: string
+      responses:
+        "200":
+          description: OK.
+        "400":
+          description: Bad request.
+        "401":
+          description: Unauthorized.
+        "404":
+          description: Not found.
+      x-openapi-router-controller: project_api.controllers.deployment_controller
+
+  /projects/{project_name}/deployments/{deployment_name}/devices/{device_id}/artifacts:
+    summary: Deployments data resource
+    description: ""
+    get: 
+      operationId: get_artifacts
+      tags:
+      - Deployment artifacts
+      summary: Get deployment artifacts of a project
+      parameters:
+      - name: project_name
+        in: path
+        description: Project `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: deployment_name
+        in: path
+        description: Deployment `name` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: device_id
+        in: path
+        description: Device `ID` identifier
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      - name: log_uuid
+        in: query
+        description: Existing input source uuid reference
+        required: true
+        style: form
+        explode: true
+        schema:
+          type: string
+          enum:
+            - inference_app_device_model
+            - datalogging_app_device_model
+            - inference_app_binary
+            - datalogging_app_binary
+      responses:
+        "200":
+          description: OK.
+        "400":
+          description: Bad request.
+        "401":
+          description: Unauthorized.
+        "404":
+          description: Not found.
+      x-openapi-router-controller: project_api.controllers.deployment_controller
+  /jobs:
+    summary: Jobs data resource
+    description: |
+      Job data resource within user workspace. A job contains metadata related to background processes lunched by an executer (vscode-ext, docker container applications, etc.)
+    get:
+      tags:
+      - Jobs
+      summary: Job list
+      operationId: app_get_jobs
+      responses:
+        "200":
+          description: OK.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Job'
+                x-content-type: application/json
+        "401":
+          description: Unauthorized
+      security:
+      - bearerAuth:
+        - secret
+      x-openapi-router-controller: project_api.controllers.jobs_controller
+  /jobs/{job_uuid}:
+    summary: Job data resource
+    description: |
+      Job data resource within user workspace. A job contains metadata related to background processes lunched by an executer (vscode-ext, docker container applications, etc.)
+    get:
+      tags:
+      - Jobs
+      summary: Get job data model associated to given ID
+      operationId: app_get_job
+      parameters:
+      - name: job_uuid
+        in: path
+        required: true
+        style: simple
+        explode: false
+        schema:
+          type: string
+      responses:
+        "200":
+          description: OK.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Job'
+        "401":
+          description: Unauthorized
+        "404":
+          description: Not found
+      security:
+      - bearerAuth:
+        - secret
+      x-openapi-router-controller: project_api.controllers.job_controller
+components:
+  schemas:
+    NewProject:
+      type: object
+      properties:
+        project_name_to_clone:
+          type: string
+        ai_project_name:
+          type: string
+        description:
+          type: string
+        reference:
+          type: string
+        version:
+          type: string
+      example:
+        ai_project_name: project_example
+        description: Project example description
+        version: 0.0.1
+    Project:
+      required:
+      - ai_project_name
+      - description
+      - inputs
+      - models
+      - outputs
+      - uuid
+      - version
+      type: object
+      properties:
+        uuid:
+          type: string
+        ai_project_name:
+          type: string
+        display_name:
+          type: string
+        description:
+          type: string
+        reference:
+          type: string
+        version:
+          type: string
+        inputs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Input'
+        models:
+          type: array
+          items:
+            $ref: '#/components/schemas/Model'
+        outputs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Output'
+        deployments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Deployment'
+      example:
+        ai_project_name: ai_project_name
+        reference: reference
+        outputs:
+        - model_ref: model_ref
+          tests:
+          - model_file: model_file
+            outputs:
+            - outputs
+            - outputs
+            reports:
+            - reports
+            - reports
+            name: name
+            uuid: uuid
+            parameters: {}
+            experiment_ref: experiment_ref
+          - model_file: model_file
+            outputs:
+            - outputs
+            - outputs
+            reports:
+            - reports
+            - reports
+            name: name
+            uuid: uuid
+            parameters: {}
+            experiment_ref: experiment_ref
+          output_type: mlc
+          best_test: best_test
+          uuid: uuid
+          tools:
+          - null
+          - null
+        - model_ref: model_ref
+          tests:
+          - model_file: model_file
+            outputs:
+            - outputs
+            - outputs
+            reports:
+            - reports
+            - reports
+            name: name
+            uuid: uuid
+            parameters: {}
+            experiment_ref: experiment_ref
+          - model_file: model_file
+            outputs:
+            - outputs
+            - outputs
+            reports:
+            - reports
+            - reports
+            name: name
+            uuid: uuid
+            parameters: {}
+            experiment_ref: experiment_ref
+          output_type: mlc
+          best_test: best_test
+          uuid: uuid
+          tools:
+          - null
+          - null
+        models:
+        - stage: definition
+          experiments:
+          - name: name
+            description: description
+            model_dev_file: model_dev_file
+            uuid: uuid
+          - name: name
+            description: description
+            model_dev_file: model_dev_file
+            uuid: uuid
+          name: name
+          model_type: classifier
+          training_type: offline
+          model_metadata:
+            classes:
+            - classes
+            - classes
+          uuid: uuid
+        - stage: definition
+          experiments:
+          - name: name
+            description: description
+            model_dev_file: model_dev_file
+            uuid: uuid
+          - name: name
+            description: description
+            model_dev_file: model_dev_file
+            uuid: uuid
+          name: name
+          model_type: classifier
+          training_type: offline
+          model_metadata:
+            classes:
+            - classes
+            - classes
+          uuid: uuid
+        inputs:
+        - model_ref: model_ref
+          input_type: binary_hsd
+          augmentation:
+          - augmentation
+          - augmentation
+          uuid: uuid
+          logs:
+          - start_time: start_time
+            device_description: {}
+            name: name
+            end_time: end_time
+            description: description
+            uuid: uuid
+            annotated: true
+          - start_time: start_time
+            device_description: {}
+            name: name
+            end_time: end_time
+            description: description
+            uuid: uuid
+            annotated: true
+          tools:
+          - container_name: container_name
+            name: name
+            description: description
+            version: version
+            parameters: {}
+            container_version: container_version
+          - container_name: container_name
+            name: name
+            description: description
+            version: version
+            parameters: {}
+            container_version: container_version
+        - model_ref: model_ref
+          input_type: binary_hsd
+          augmentation:
+          - augmentation
+          - augmentation
+          uuid: uuid
+          logs:
+          - start_time: start_time
+            device_description: {}
+            name: name
+            end_time: end_time
+            description: description
+            uuid: uuid
+            annotated: true
+          - start_time: start_time
+            device_description: {}
+            name: name
+            end_time: end_time
+            description: description
+            uuid: uuid
+            annotated: true
+          tools:
+          - container_name: container_name
+            name: name
+            description: description
+            version: version
+            parameters: {}
+            container_version: container_version
+          - container_name: container_name
+            name: name
+            description: description
+            version: version
+            parameters: {}
+            container_version: container_version
+        description: description
+        uuid: uuid
+        version: version
+    Input:
+      required:
+      - augmentation
+      - input_type
+      - logs
+      - model_ref
+      - tools
+      - uuid
+      type: object
+      properties:
+        uuid:
+          type: string
+        input_type:
+          $ref: '#/components/schemas/InputType'
+        model_ref:
+          type: string
+        augmentation:
+          type: array
+          items:
+            type: string
+        logs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Log'
+        tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tool'
+      example:
+        model_ref: model_ref
+        input_type: binary_hsd
+        augmentation:
+        - augmentation
+        - augmentation
+        uuid: uuid
+        logs:
+        - start_time: start_time
+          device_description: {}
+          name: name
+          end_time: end_time
+          description: description
+          uuid: uuid
+          annotated: true
+        - start_time: start_time
+          device_description: {}
+          name: name
+          end_time: end_time
+          description: description
+          uuid: uuid
+          annotated: true
+        tools:
+        - container_name: container_name
+          name: name
+          description: description
+          version: version
+          parameters: {}
+          container_version: container_version
+        - container_name: container_name
+          name: name
+          description: description
+          version: version
+          parameters: {}
+          container_version: container_version
+    Log:
+      required:
+      - annotated
+      - description
+      - device_description
+      - end_time
+      - name
+      - start_time
+      - uuid
+      type: object
+      properties:
+        uuid:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        annotated:
+          type: boolean
+        start_time:
+          type: string
+        end_time:
+          type: string
+        device_description:
+          type: object
+      example:
+        start_time: start_time
+        device_description: {}
+        name: name
+        end_time: end_time
+        description: description
+        uuid: uuid
+        annotated: true
+    NewModel:
+      required:
+      - input_type
+      - model_type
+      - name
+      - output_type
+      - training_type
+      type: object
+      properties:
+        name:
+          type: string
+        model_type:
+          $ref: '#/components/schemas/ModelType'
+        classes:
+          type: array
+          items:
+            type: string
+        training_type:
+          $ref: '#/components/schemas/TrainingType'
+        input_type:
+          $ref: '#/components/schemas/InputType'
+        output_type:
+          $ref: '#/components/schemas/OutputType'
+      example:
+        name: model_example
+        model_type: classifier
+        classes:
+        - c1
+        - c2
+        training_type: offline
+        input_type: binary_hsd
+        output_type: mlc
+    Model:
+      required:
+      - model_metadata
+      - model_type
+      - name
+      - stage
+      - training_type
+      - uuid
+      type: object
+      properties:
+        uuid:
+          type: string
+        name:
+          type: string
+        model_type:
+          $ref: '#/components/schemas/ModelType'
+        training_type:
+          $ref: '#/components/schemas/TrainingType'
+        stage:
+          type: string
+          enum:
+          - definition
+          - log_collection
+          - modeling
+          - validation_on_target
+          - deployment
+        model_metadata:
+          $ref: '#/components/schemas/Model_model_metadata'
+        experiments:
+          type: array
+          items:
+            $ref: '#/components/schemas/Experiment'
+      example:
+        stage: definition
+        experiments:
+        - name: name
+          description: description
+          model_dev_file: model_dev_file
+          uuid: uuid
+        - name: name
+          description: description
+          model_dev_file: model_dev_file
+          uuid: uuid
+        name: name
+        model_type: classifier
+        training_type: offline
+        model_metadata:
+          classes:
+          - classes
+          - classes
+        uuid: uuid
+    NewExperiment:
+      required:
+      - description
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        model_dev_file:
+          type: string
+      example:
+        name: experiment_example
+        description: Experiment example description
+        model_dev_file: empty
+    Experiment:
+      required:
+      - description
+      - name
+      - uuid
+      type: object
+      properties:
+        uuid:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        model_dev_file:
+          type: string
+      example:
+        name: name
+        description: description
+        model_dev_file: model_dev_file
+        uuid: uuid
+    Output:
+      required:
+      - model_ref
+      - output_type
+      - tests
+      - tools
+      - uuid
+      type: object
+      properties:
+        uuid:
+          type: string
+        output_type:
+          $ref: '#/components/schemas/OutputType'
+        model_ref:
+          type: string
+        best_test:
+          type: string
+        tests:
+          type: array
+          items:
+            $ref: '#/components/schemas/Test'
+        tools:
+          type: array
+          items:
+            $ref: '#/components/schemas/Tool'
+      example:
+        model_ref: model_ref
+        tests:
+        - model_file: model_file
+          outputs:
+          - outputs
+          - outputs
+          reports:
+          - reports
+          - reports
+          name: name
+          uuid: uuid
+          parameters: {}
+          experiment_ref: experiment_ref
+        - model_file: model_file
+          outputs:
+          - outputs
+          - outputs
+          reports:
+          - reports
+          - reports
+          name: name
+          uuid: uuid
+          parameters: {}
+          experiment_ref: experiment_ref
+        output_type: mlc
+        best_test: best_test
+        uuid: uuid
+        tools:
+        - null
+        - null
+    NewTest:
+      required:
+      - name
+      type: object
+      properties:
+        name:
+          type: string
+      example:
+        name: test_example
+    Test:
+      required:
+      - experiment_ref
+      - name
+      - outputs
+      - parameters
+      - reports
+      - uuid
+      type: object
+      properties:
+        uuid:
+          type: string
+        name:
+          type: string
+        experiment_ref:
+          type: string
+        model_file:
+          type: string
+        parameters:
+          type: object
+        reports:
+          type: array
+          items:
+            type: string
+        outputs:
+          type: array
+          items:
+            type: string
+      example:
+        model_file: model_file
+        outputs:
+        - outputs
+        - outputs
+        reports:
+        - reports
+        - reports
+        name: name
+        uuid: uuid
+        parameters: {}
+        experiment_ref: experiment_ref
+    Tool:
+      required:
+      - description
+      - name
+      - parameters
+      - version
+      type: object
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        version:
+          type: string
+        container_name:
+          type: string
+        container_version:
+          type: string
+        parameters:
+          type: object
+      example:
+        container_name: container_name
+        name: name
+        description: description
+        version: version
+        parameters: {}
+        container_version: container_version
+    TrainingType:
+      type: string
+      enum:
+      - offline
+      - online
+    InputType:
+      type: string
+      enum:
+      - binary_hsd
+      - csv_unico
+      - image
+    ModelType:
+      type: string
+      enum:
+      - classifier
+      - anomaly_detector
+    OutputType:
+      type: string
+    Job:
+      required:
+      - executer_id
+      - name
+      - operation_type
+      - uuid
+      type: object
+      properties:
+        uuid:
+          type: string
+        name:
+          type: string
+        operation_type:
+          type: string
+          enum:
+          - log_uploading
+          - log_conversion
+          - model_training
+          - output_generation
+          - unknown
+        state:
+          type: string
+        executer_id:
+          type: string
+        start_time:
+          type: string
+        end_time:
+          type: string
+      example:
+        start_time: start_time
+        operation_type: log_uploading
+        executer_id: executer_id
+        name: name
+        end_time: end_time
+        state: state
+        uuid: uuid
+    Model_model_metadata:
+      type: object
+      properties:
+        classes:
+          type: array
+          items:
+            type: string
+      example:
+        classes:
+        - classes
+        - classes
+    Deployment:
+      required:
+      - uuid
+      - display_name
+      - cloud_params
+      - configuration
+      type: object
+      properties:
+        uuid:
+          type: string
+        display_name:
+          type: string
+        description:
+          type: string
+        last_deploy_time:
+          type: string
+          format: date-time
+        last_deploy_result:
+          type: string
+          enum: [deploy_success,deploy_error,undeploy_success,undeploy_error]
+        cloud_params:
+          required:
+          - type
+          - app_url
+          type: object
+          properties:
+            type:
+              type: string
+            app_url:
+              type: string
+        configuration:
+          type: object
+          required:
+          - leaf
+          - gateway
+          properties:
+            leaf:
+              type: array
+              items:
+                $ref: '#/components/schemas/Device'
+            gateway:
+              type: array
+              items:
+                $ref: '#/components/schemas/Device'
+      example:
+        uuid: uuid
+        name: name
+        display_name: display_name
+        description: description
+        cloud_state: cloud_state
+        cloud_credentials:
+          application_name: application_name
+        leaf_devices:
+        - gateway_name: gateway_name
+          name: name
+          display_name: display_name
+          description: description
+          cloud_credentials:
+            id: id
+          inference_app:
+            device_model_uri: device_model_uri
+            device_model_project_uri: ""
+            firmware_uri: ""
+            firmware_project_uri: firmware_project_uri
+          datalogging_app:
+            device_model_uri: device_model_uri
+            device_model_project_uri: ""
+            firmware_uri: ""
+            firmware_project_uri: firmware_project_uri
+        gateway_devices:
+        - gateway_name: gateway_name
+          name: name
+          display_name: display_name
+          description: description
+          cloud_credentials:
+            id: id
+          inference_app:
+            device_model_uri: device_model_uri
+            device_model_project_uri: ""
+            firmware_uri: ""
+            firmware_project_uri: firmware_project_uri
+          datalogging_app:
+            device_model_uri: device_model_uri
+            device_model_project_uri: ""
+            firmware_uri: ""
+            firmware_project_uri: firmware_project_uri
+    Device:
+      required:
+      - device_id
+      - description
+      type: object
+      properties:
+        device_id:
+          type: string
+        description:
+          type: string
+        gateway_id:
+          type: string
+        selected_model_name:
+          type: string
+        module_id:
+          type: string
+        configuration_uri:
+          type: string
+        device_manifest_uri:
+          type: string
+        device_template_uri:
+          type: string
+        device_template_id:
+          type: string
+        wifi_mode:
+          type: string
+        models:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              datalogging:
+                $ref: '#/components/schemas/DeviceApplication'
+              inference:
+                $ref: '#/components/schemas/DeviceApplication'
+    DeviceApplication:
+      type: object
+      properties:
+        device_template_uri:
+          type: string
+        device_template_id:
+          type: string
+        protocol:
+          type: number
+        firmware_uri:
+          type: string
+    UpdateDeployment:
+      type: object
+      properties:
+        cloud_credentials:
+          type: object
+          properties:
+            application_name:
+              type: string
+        leaf_devices:
+          $ref: '#/components/schemas/UpdateDevice'
+        gateways:
+          $ref: '#/components/schemas/UpdateDevice'  
+    UpdateDevice:
+      type: object
+      properties:
+        cloud_credentials:
+          type: object
+          properties:
+            id: 
+              type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      x-bearerInfoFunc: project_api.controllers.authorization_controller.check_bearerAuth
+
