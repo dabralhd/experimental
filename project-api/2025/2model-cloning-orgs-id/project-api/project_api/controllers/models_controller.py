@@ -19,6 +19,7 @@ from project_api.utils.resource_allocation import (
     is_efs_size_ok
 )
 from project_api.globals import VESPUCCI_ENVIRONMENT
+from project_api.utils.error_helper import (model_exists)
 import logging
 
 logger = logging.getLogger(__name__)
@@ -40,15 +41,15 @@ def app_create_model(user, body, project_name):  # noqa: E501
     if connexion.request.is_json:
         new_model = NewModel.from_dict(connexion.request.get_json())  # noqa: E501
         
-        if  new_model.model_name_to_clone != None:
-            org_id = connexion.request.args.get('as_org')
-            if org_id is None:
-                # Clone model
-                model_name_to_clone = new_model.model_name_to_clone
-                new_model_name = new_model.name
-                
+        if  new_model.model_name_to_clone != None: # clone model
+            as_org = connexion.request.args.get('as_org')
+            model_name_to_clone = new_model.model_name_to_clone
+            new_model_name = new_model.name
+            
+            def clone_model(user, project_name, model_name_to_clone, new_model_name):
                 user_workspace_path = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
                 user_project_models_path_folder = os.path.join(user_workspace_path, project_name, "models")
+                project_repo_uuid = user
 
                 # Copy/create a new model entry in project-json with new model name
                 project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)            
@@ -63,11 +64,17 @@ def app_create_model(user, body, project_name):  # noqa: E501
                 # Copy file-system contents
                 create_model_fs_copy(model_name_to_copy=model_name_to_clone, new_model_name=new_model_name, dest_folder=user_project_models_path_folder)
 
-                return Response(status=201)
+                return Response(status=201)                
+            
+            # Clone model
+            if as_org and model_exists(as_org, project_name, model_name_to_clone) and not model_exists(as_org, project_name, new_model_name):
+                # TODO: verify that uuid is member of the as_org organization using orgs-api, for the time being set to True
+                return clone_model(as_org, project_name, model_name_to_clone, new_model_name)
+            elif as_org is None and model_exists(user, project_name, model_name_to_clone) and not model_exists(user, project_name, new_model_name):   
+                    return clone_model(user, project_name, model_name_to_clone, new_model_name)
             else:
-                return Response(status=501)
-        else:
-
+                return Response(status=409)
+        else: # create a new model from scratch
             project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)
 
             project_repo.create_model(
