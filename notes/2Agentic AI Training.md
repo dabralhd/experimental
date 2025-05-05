@@ -48,3 +48,9 @@ two architecture: autonomous chat, sequenctial chat
 
 Creating an agentic workflow: UserProxyAgent (proxy for receiving inputs from user), AssistantAgent (powered by LLM, returns structured reqplies, uses skills)
 
+4. Giving tools to agent
+application code provides llm with function-definitions and prompt. when llm needs to call a function, it will dispatch a call to our application with function-name and arguments. application will call the function and return results back to llm. 
+skills == tools and python functions
+- use build tab to create a skill
+
+*local models can also be used by agents*
