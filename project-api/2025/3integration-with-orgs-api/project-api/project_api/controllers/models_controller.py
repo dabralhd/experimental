@@ -20,6 +20,7 @@ from project_api.utils.resource_allocation import (
 )
 from project_api.globals import VESPUCCI_ENVIRONMENT
 from project_api.utils.error_helper import (model_exists)
+from project_api.utils.orgs_api_wrapper import(check_orgs_membership)
 import logging
 
 logger = logging.getLogger(__name__)
@@ -69,6 +70,7 @@ def app_create_model(user, body, project_name):  # noqa: E501
             # Clone model
             if as_org and model_exists(as_org, project_name, model_name_to_clone) and not model_exists(as_org, project_name, new_model_name):
                 # TODO: verify that uuid is member of the as_org organization using orgs-api, for the time being set to True
+                check_orgs_membership(user, as_org)
                 return clone_model(as_org, project_name, model_name_to_clone, new_model_name)
             elif as_org is None and model_exists(user, project_name, model_name_to_clone) and not model_exists(user, project_name, new_model_name):   
                     return clone_model(user, project_name, model_name_to_clone, new_model_name)

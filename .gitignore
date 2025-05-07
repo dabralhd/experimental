@@ -6,3 +6,4 @@ workspace*
 .ipynb*
 _to_del*
 mongodb/*
+notes/11gha_token
