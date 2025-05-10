@@ -1,18 +1,23 @@
 # Ongoing
 
 # Activity Stack
-[Weekly presentation](#Weekly-Presentation-Update)
+[Discussion-on-Performance-Feedback](#Discussion-on-Performance-Feedback)
+[STAIoTCraft-Chatbot-Feature](#STAIoTCraft-Chatbot-Feature)
 [integration with orgs-api](#Integration-with-orgs-api)
 [Model cloning using orgs API](#Clone-model-using-as_org )
 [Feedback for techweek 2025 work](#Feedback-for-techweek-2025-work)
 [Dhananjay testing activity](#Testing-activity)
+[DONE] (# Tasks-completed)
+[Github PAT](#github-PAT)
+[Common-online-platform](#Common-online-platform)
+[Riddhima-UI/UX-Internship](#Riddhima-UI/UX-Internship)
+[SRA-ASR-Team-Meeting](#SRA-ASR-Team-Meeting)
+[Weekly presentation](#Weekly-Presentation-Update)
+pnpl commands
 Generative AI @
 Meet Inder @
 Project sharing documentation -> asked davide, andrea for feedback @
 renode study with Mridu @
-[DONE] (# Tasks-completed)
-[Github PAT](#github-PAT)
-[Common-online-platform](#Common-online-platform)
 
 # Activity List
 ## Clone model using as_org 
@@ -29,7 +34,19 @@ integration with orgs-api -> 1215 - 130
 ### Dhananjay PRG-REG-UNI Access 
 approved by Giovanni ZICHELLA, approval is still  with Maurizio Di-benedetto - monday
 ### Dhananjay project-api testing
+Token access problem -> Mridu says it is token expired 
+Admin access required to update secrets -> Daniele has admin setttings
+**refresh token to be updated by someone having admin rights -> Daniele **
+** ask Daniele for admin privileges on vepuscci-test repository **
 ### Dhananjay job control api testing
+Mridu -> It should be possible to test job-control api directly using api.http, 
+mridu to check token aspects!
+
+conversion of datalogs: 2 jobs, are templates
+- csv conversion jobs
+- HS data logger conversion jobs
+using simple python scripts -> **Mridu to request Alberto to use existing templates.**
+
 ## Feedback for techweek 2025 work
 email sent to Chander
 
@@ -37,7 +54,8 @@ email sent to Chander
 Meeting done.
 
 ## Agentic AI: https://www.perplexity.ai/search/i-am-a-software-engineer-and-h-09MrUWRHRdqiOO3hv5GxUQ
-watch presentation by Dr. Nitin Chawla
+watch presentation by Dr. Nitin Chawla 
+link: https://engage.cloud.microsoft/main/events/14998efa-a922-4b7a-9d5a-e5fd34326572?eventReferrer=GlammerAttendeeLink
 
 
 ## Tasks-completed
@@ -58,3 +76,38 @@ all online tools to be adapted to common online platform.
 business architecture should also be thought about, because ppl can ask any common services, and management will need justifications on costs.
 
 E-design suite has some common services, we can use these services as common online platform services. and then resuse these service to prove that common services can be used.
+
+## Riddhima-UI/UX-Internship
+For figma license we need a cost center usable Geneva. Forwarded Valentina's message to Chadner!
+
+## Devhub Seminar - Github Copilot ST
+SW Affinity team action 4.2 (SW methodology automation and quality)
+objective of this affinity team: access productivity of github copilot and user experience
+#### Github + ST Copilot presentation
+Github copilot increases Developer Experience (DevEx) - increased happiness, productivity, innovation
+Github copilot infra coming from: OpenAI, Github, Microsoft   
+how github copilot works: [devloper context including code, files, language etc.] --> Copilot Proxy --> LLM
+Copilot business: Github copilot offerring to enterprises
+- code completion, comments
+- copilot chat: context aware discussion, withing chat developer can switch models
+- copilot chat modes
+Edit mode
+Agent mode: you can chat and interact with terminal and other applications,can also talk to 3rd party applications like Figma.
+Is there any plan to integrate copilot with STM32 Cube IDE : STM32 Cube IDE is based on Eclipse, so there may be possibility to use it through copilot-chat support which is available for eclipse.
+
+## SRA-ASR-Team-Meeting
+create presentations including: (1) ongoing activities in projects (2)
+
+## STAIoTCraft-Chatbot-Feature
+Drop an email to Davide asking if someone is working on that feature now?
+
+## Discussion-on-Performance-Feedback
+Schedule a discussion on evaluation feedback filled by Mridu in system.
+
+# Weekly-Presentation-Update
+Multi tenancy support: orgs api integration in proj api
+
+Project API Test: 
+Updated refresh-token in vespucci-test
+
+CSV and Datalog Conversion Jobs test:
