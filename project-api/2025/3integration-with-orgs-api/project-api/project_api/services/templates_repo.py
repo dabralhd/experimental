@@ -72,25 +72,40 @@ def extract_get_started_project(get_started_project_name: str, new_project_name:
 import os
 import shutil
 
-def extract_user_project(src_project_name: str, new_project_name: str, user_ws_folder: str):
-    """
-    Extracts a user project by copying and renaming the project folder and JSON file.
+
+
+def extract_user_project_helper(src_project_name: str, new_project_name: str, src_ws_folder: str, dest_ws_folder: str):
+    """Extracts a user project by copying and renaming the project folder and JSON file.
+
+    This function takes the name of an existing project, a desired new name,
+    the source workspace folder, and the destination workspace folder as input.
+    It copies the source project folder and renames it to the new project name
+    in the destination workspace. It also finds the associated JSON file
+    (assuming a naming convention of 'ai_{project_name}.json' within the
+    source project folder), copies it to the new project folder, and renames
+    it accordingly.
 
     Args:
-        src_project_name (str): The name of the source project.
-        new_project_name (str): The name of the new project.
-        user_ws_folder (str): The path to the user's workspace folder.
+        src_project_name (str): The name of the source project to extract.
+        new_project_name (str): The desired name for the new, extracted project.
+        src_ws_folder (str): The absolute path to the workspace folder containing the source project.
+        dest_ws_folder (str): The absolute path to the workspace folder where the new project will be created.
 
     Returns:
-        list: A list containing the destination project folder path and the destination project JSON file path.
+        list: A list containing the following elements:
+            - str: The absolute path to the destination project folder.
+            - str: The absolute path to the destination project JSON file.
+            - int: An HTTP status code indicating the outcome of the operation (e.g., 200 for success, 400 for failure).
+                 Returns [None, None, 400] if the source project folder does not exist.
     """
+    
     # Prepare folder/file paths
-    src_project_folder_path = os.path.join(user_ws_folder, src_project_name)
+    src_project_folder_path = os.path.join(src_ws_folder, src_project_name)
     if not os.path.isdir(src_project_folder_path):
             logger.error(f'source project does not exists - {src_project_folder_path}')
             return [None, None, 400]
 
-    dest_project_folder_path = os.path.join(user_ws_folder, new_project_name)
+    dest_project_folder_path = os.path.join(dest_ws_folder, new_project_name)
 
     src_project_json_file_path = os.path.join(dest_project_folder_path, f'ai_{src_project_name}.json')
     dest_project_json_file_path = os.path.join(dest_project_folder_path, f'ai_{new_project_name}.json')
@@ -102,6 +117,37 @@ def extract_user_project(src_project_name: str, new_project_name: str, user_ws_f
     
     return [dest_project_folder_path, dest_project_json_file_path, 200]
 
+def extract_user_project_(src_project_name: str, new_project_name: str, user_ws_folder: str):
+    """Extracts a user project by copying and renaming the project folder and JSON file within the same workspace.
+
+    This function takes the name of an existing project, a desired new name,
+    and the user's workspace folder as input. It leverages the
+    `extract_user_project_helper` function to copy the source project folder
+    and rename it to the new project name within the same workspace. It also
+    handles the associated JSON file (assuming a naming convention of
+    'ai_{project_name}.json' within the source project folder), copying and
+    renaming it in the new project folder.
+
+    Args:
+        src_project_name (str): The name of the source project to extract.
+        new_project_name (str): The desired name for the new, extracted project.
+        user_ws_folder (str): The absolute path to the user's workspace folder
+                               containing the source project and where the new
+                               project will be created.
+
+    Returns:
+        list: A list containing the following elements, as returned by the
+            `extract_user_project_helper` function:
+            - str: The absolute path to the destination project folder.
+            - str: The absolute path to the destination project JSON file.
+            - int: An HTTP status code indicating the outcome of the operation
+                 (e.g., 200 for success, 400 for failure if the source project
+                 folder does not exist).
+    """
+    extract_user_project_helper(src_project_name=src_project_name, 
+                                new_project_name=new_project_name, 
+                                src_ws_folder=user_ws_folder, 
+                                dest_ws_folder=user_ws_folder)
 
 def project_name_substitution(config_file_path: str, script_file_path: str, original_project_name: str, new_project_name: str):
     # Config file substitution 

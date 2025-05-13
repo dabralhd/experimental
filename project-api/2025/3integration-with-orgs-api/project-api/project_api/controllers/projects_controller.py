@@ -68,8 +68,8 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
                 return Response(status=400)
             
             #if new_project.project_name_to_clone.startswith('get_started'):
-            if  is_user_project==False:
-                # This is a get_started project, check if source project exists
+            if  is_user_project==False: 
+                logger.debug(f'cloning get_started project, check if source project exists')
                 if not example_project_exists(new_project.project_name_to_clone):    
                     logger.error(f'project does not exists - {new_project.project_name_to_clone}')
                     return Response(status=client_side_error(ErrorType.NOT_FOUND))
@@ -82,16 +82,23 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
                 substitute_artifacts_project_name(project_folder, project_file_path, new_project_name)
                 project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)      
             else:
-                logger.info(f"Cloning project {project_name_to_clone} to {new_project_name}")
-                [project_folder, project_file_path, error_code] = extract_user_project(project_name_to_clone, new_project_name, dest_folder)
-                if error_code != 200:
-                    return Response(status=400)
+                logger.debug(f'cloning a user project')
+                to_org = connexion.request.args.get('to_org')                   
+                
+                if to_org:
+                    logger.debug(f'to_org: {to_org}')
+                    pass
+                else:
+                    logger.info(f"Cloning project {project_name_to_clone} to {new_project_name}")
+                    [project_folder, project_file_path, error_code] = extract_user_project(project_name_to_clone, new_project_name, dest_folder)
+                    if error_code != 200:
+                        return Response(status=400)
 
-                logger.info(f"Project folder: {project_folder}, Project file path: {project_file_path}")
-                generate_project_uuid_custom_project(project_file_path)
-                substitute_artifacts_project_name(project_folder, project_file_path, new_project_name)
+                    logger.info(f"Project folder: {project_folder}, Project file path: {project_file_path}")
+                    generate_project_uuid_custom_project(project_file_path)
+                    substitute_artifacts_project_name(project_folder, project_file_path, new_project_name)
 
-                project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)      
+                    project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)      
             return Response(status=201)
             
         else:

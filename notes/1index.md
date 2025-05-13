@@ -1,26 +1,37 @@
 # Ongoing
 
 # Activity Stack
+
+## [Todo](#Todo)
+[Weekly presentation](#Weekly-Presentation-Update) **
+
+[STAIoTCraft-Chatbot-Feature](#STAIoTCraft-Chatbot-Feature)
+
+[integration with orgs-api](#Integration-with-orgs-api)
+
+[Model cloning using orgs API](#Clone-model-using-as_org)
+
 ## Study
 [Webinar-on-Device-Models](#Webinar-on-Device-Models) 
+
 [Common-online-platform](#Common-online-platform)
+
+[Paper-publishing](#Paper-publishing)
+
+pnpl commands
+renode study with Mridu @
 
 ## [Follow-Ups](#Follow-Ups)
 [Feedback for techweek 2025 work](#Feedback-for-techweek-2025-work)
+
 [Dhananjay testing activity](#Testing-activity)
+
 [Riddhima-UI/UX-Internship](#Riddhima-UI/UX-Internship)
+
 [SRA-ASR-Team-Meeting](#SRA-ASR-Team-Meeting)
-[Weekly presentation](#Weekly-Presentation-Update) **
 
-## [Todo](#Todo)
-[STAIoTCraft-Chatbot-Feature](#STAIoTCraft-Chatbot-Feature)
-[integration with orgs-api](#Integration-with-orgs-api)
-[Model cloning using orgs API](#Clone-model-using-as_org )
-
-pnpl commands
 Meet Inder @
 Project sharing documentation -> asked davide, andrea for feedback @
-renode study with Mridu @
 
 # Activity List
 ## Clone model using as_org 
@@ -38,8 +49,6 @@ integration with orgs-api -> 1215 - 130
 
 ## Testing activity
 
-### Dhananjay PRG-REG-UNI Access 
-approved by Giovanni ZICHELLA, approval is still  with Maurizio Di-benedetto - monday
 ### Dhananjay project-api testing
 Token access problem -> Mridu says it is token expired 
 Admin access required to update secrets -> Daniele has admin setttings
@@ -54,7 +63,7 @@ conversion of datalogs: 2 jobs, are templates
 - HS data logger conversion jobs
 using simple python scripts -> **Mridu to request Alberto to use existing templates.**
 
-## Feedback for techweek 2025 work
+## Feedback-for-techweek-2025-work
 email sent to Chander
 
 ## Meeting with Daniele regarding Backend Testing
@@ -63,11 +72,6 @@ Meeting done.
 ## Agentic AI: https://www.perplexity.ai/search/i-am-a-software-engineer-and-h-09MrUWRHRdqiOO3hv5GxUQ
 watch presentation by Dr. Nitin Chawla 
 link: https://engage.cloud.microsoft/main/events/14998efa-a922-4b7a-9d5a-e5fd34326572?eventReferrer=GlammerAttendeeLink
-
-
-## Tasks-completed
-Email to Shweta regarding Riddhima joining date
-Requested Dhananjay to keep me posted regarding PRG-UNI approval request progress
 
 
 ## Common-online-platform
@@ -102,8 +106,7 @@ Edit mode
 Agent mode: you can chat and interact with terminal and other applications,can also talk to 3rd party applications like Figma.
 Is there any plan to integrate copilot with STM32 Cube IDE : STM32 Cube IDE is based on Eclipse, so there may be possibility to use it through copilot-chat support which is available for eclipse.
 
-## SRA-ASR-Team-Meeting
-create presentations including: (1) ongoing activities in projects (2)
+
 
 ## STAIoTCraft-Chatbot-Feature
 Dropped email to Davide Aliprandi regarding the activity
@@ -115,9 +118,16 @@ Schedule a discussion on evaluation feedback filled by Mridu in system.
 
 ## ST AI-Chatbot/Agent
 
+## Paper-publishing
+
+
+# Done
+
 ## Laptop-warranty-Check
 goto https://support.hp.com/in-en/check-warranty
 Serial Number: 5CG2391H82
 ProdId: 4Y9T4EC
 Warranty valid till: October 11, 2025 
 
+## SRA-ASR-Team-Meeting
+create presentations including: (1) ongoing activities in projects (2)
