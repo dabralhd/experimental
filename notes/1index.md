@@ -3,11 +3,12 @@
 # Activity Stack
 
 ## [Todo](#Todo)
+
+[integration with orgs-api](#Integration-with-orgs-api)
+
 [Weekly presentation](#Weekly-Presentation-Update) **
 
 [STAIoTCraft-Chatbot-Feature](#STAIoTCraft-Chatbot-Feature)
-
-[integration with orgs-api](#Integration-with-orgs-api)
 
 [Model cloning using orgs API](#Clone-model-using-as_org)
 
@@ -43,6 +44,7 @@ Project sharing documentation -> asked davide, andrea for feedback @
 12-May: Discussion with Andrea, Projects can be cloned using same mechanism as a dataset as discussed with Andrea
 
 ### Integration with orgs-api
+- continue work using learn repository
 integration with orgs-api -> 1215 - 130 
 -> merged PR https://github.com/PRG-RES-UNIVERSITY/vespucci-app/pull/1226 
 -> test in dev cluster
