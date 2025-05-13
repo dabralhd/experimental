@@ -24,7 +24,7 @@ from project_api.utils.orgs_api_wrapper import(check_orgs_membership)
 import logging
 
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.ERROR)
+logger.setLevel(logging.DEBUG)
 
 
 def app_create_model(user, body, project_name):  # noqa: E501
@@ -46,11 +46,14 @@ def app_create_model(user, body, project_name):  # noqa: E501
             as_org = connexion.request.args.get('as_org')
             model_name_to_clone = new_model.model_name_to_clone
             new_model_name = new_model.name
+            logger.debug(f'cloning existing model.\nuser: {user}\nas_org: {as_org}\n model_name_to_clone: {model_name_to_clone}\nnew_model_name: {new_model_name}')
             
             def clone_model(user, project_name, model_name_to_clone, new_model_name):
+                logger.debug('> clone_model')
                 user_workspace_path = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
                 user_project_models_path_folder = os.path.join(user_workspace_path, project_name, "models")
                 project_repo_uuid = user
+                logger.debug(f'user_workspace_path: {user_workspace_path} \nuser_project_models_path_folder: {user_project_models_path_folder}')
 
                 # Copy/create a new model entry in project-json with new model name
                 project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)            
@@ -59,7 +62,7 @@ def app_create_model(user, body, project_name):  # noqa: E501
                 try:
                     project_repo.clone_model(project_name=project_name, clone_model_uuid_or_name=model_name_to_clone, model_uuid_or_name=new_model_name, model_owner_uuid=user)
                 except Exception as e:
-                    print(e)
+                    logger.exception(f'exception occurred: {e}')
                     return Response(status=409)
 
                 # Copy file-system contents

@@ -150,7 +150,15 @@ paths:
           description: Boolean flag which indicates whether 'project_name_to_clone' is a user project
           required: false
           schema:
-            type: boolean      
+            type: boolean    
+        - name: to_org
+          in: query
+          description: |
+            sometimes a user will share a project with an org
+          required: false
+          schema:
+            type: string
+            example: 8s28038jgmf8cn8a7ka2hzhj10                 
       operationId: app_create_project
       requestBody:
         description: New project model

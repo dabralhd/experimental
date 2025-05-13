@@ -12,8 +12,15 @@ ORGS_API_INCLUSTER_TOKEN_DEFAULT_PATH = "/run/secrets/orgs.vespucci.st.com/servi
 
 # @cached(TTLCache(maxsize=1, ttl=60), key=lambda: "")
 def orgs_token() -> str:
-    with open(ORGS_API_INCLUSTER_TOKEN_DEFAULT_PATH, 'r') as file:
-        token = file.read()
+    logger.debug(f'> orgs_token')
+
+    try:
+        with open(ORGS_API_INCLUSTER_TOKEN_DEFAULT_PATH, 'r') as file:
+            token = file.read()
+    except Exception as e:
+        logger.exception(f'could not read token: f{e}', exc_info=True)
+        
+    logger.debug(f'- token: {token}\n<')
     return token
 
 def check_orgs_membership(userid: str, orgid: str):  # noqa: E501
@@ -24,7 +31,7 @@ def check_orgs_membership(userid: str, orgid: str):  # noqa: E501
     :rtype: bool
     """
 
-    logger.info(f'orgs API returned status_code: {r.status_code}')
+    logger.debug(f'orgs API returned status_code: {r.status_code}')
 
     try:
         # endpoint for retrieving member list: /orgs/i/{org-id}/membership
@@ -37,27 +44,24 @@ def check_orgs_membership(userid: str, orgid: str):  # noqa: E501
         # params = {'OrgId': f'{orgid}' }
     
         r = requests.get(user_url, headers=headers)
-        logger.info(f'orgs API returned status_code: {r.status_code}')
+        logger.debug(f'orgs API returned status_code: {r.status_code}')
         if r.status_code == 200:
             # r_bytes = r.content
             # byte_str = r_bytes.decode('utf-8')
             # json_obj = json.loads(byte_str)
             # logger.debug(json_obj)
             return False # go through the list of members returned by orgs-API and return True if membership status is ok False otherwise
-
     except Exception as e:
-        logger.warning(f'- caught {type(e)}: {e}')
-        raise
+        logger.exception(f'exception occurred')
     return False
 
 def is_user_org_member(userid: str, orgid: str):  # noqa: E501
     membership_status = False # default value of orgs membership flag
     try:        
         membership_status = check_orgs_membership(userid, orgid)
-        logger.info(f'- membership status for USER {userid} in ORG {orgid}: {membership_status}')
+        logger.debug(f'- membership status for USER {userid} in ORG {orgid}: {membership_status}')
     except Exception as e:
-        logger.warning('- Exception occurred while accessing membership status.\n continuing without checking membership status in orgs api.')
-        logger.warning(f'- caught {type(e)}: {e}')
+        logger.exception(f'Exception occurred :{e} \n')
 
-    logger.info(f'membership_status: {membership_status}')
+    logger.debug(f'membership_status: {membership_status}')
     return membership_status
