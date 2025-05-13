@@ -1,20 +1,23 @@
 # Ongoing
 
 # Activity Stack
-[Discussion-on-Performance-Feedback](#Discussion-on-Performance-Feedback)
+## Study
+[Webinar-on-Device-Models](#Webinar-on-Device-Models) 
+[Common-online-platform](#Common-online-platform)
+
+## [Follow-Ups](#Follow-Ups)
+[Feedback for techweek 2025 work](#Feedback-for-techweek-2025-work)
+[Dhananjay testing activity](#Testing-activity)
+[Riddhima-UI/UX-Internship](#Riddhima-UI/UX-Internship)
+[SRA-ASR-Team-Meeting](#SRA-ASR-Team-Meeting)
+[Weekly presentation](#Weekly-Presentation-Update) **
+
+## [Todo](#Todo)
 [STAIoTCraft-Chatbot-Feature](#STAIoTCraft-Chatbot-Feature)
 [integration with orgs-api](#Integration-with-orgs-api)
 [Model cloning using orgs API](#Clone-model-using-as_org )
-[Feedback for techweek 2025 work](#Feedback-for-techweek-2025-work)
-[Dhananjay testing activity](#Testing-activity)
-[DONE] (# Tasks-completed)
-[Github PAT](#github-PAT)
-[Common-online-platform](#Common-online-platform)
-[Riddhima-UI/UX-Internship](#Riddhima-UI/UX-Internship)
-[SRA-ASR-Team-Meeting](#SRA-ASR-Team-Meeting)
-[Weekly presentation](#Weekly-Presentation-Update)
+
 pnpl commands
-Generative AI @
 Meet Inder @
 Project sharing documentation -> asked davide, andrea for feedback @
 renode study with Mridu @
@@ -24,7 +27,11 @@ renode study with Mridu @
 - test case in api.http
 - how is user id being propagated to project-api from api.http 
 
-## Integration with orgs-api
+## Project Sharing Use Case
+## Cloning a project
+12-May: Discussion with Andrea, Projects can be cloned using same mechanism as a dataset as discussed with Andrea
+
+### Integration with orgs-api
 integration with orgs-api -> 1215 - 130 
 -> merged PR https://github.com/PRG-RES-UNIVERSITY/vespucci-app/pull/1226 
 -> test in dev cluster
@@ -40,7 +47,7 @@ Admin access required to update secrets -> Daniele has admin setttings
 ** ask Daniele for admin privileges on vepuscci-test repository **
 ### Dhananjay job control api testing
 Mridu -> It should be possible to test job-control api directly using api.http, 
-mridu to check token aspects!
+Dhananjay has to be whitelisted in AWS User management console by Mridu.
 
 conversion of datalogs: 2 jobs, are templates
 - csv conversion jobs
@@ -62,9 +69,6 @@ link: https://engage.cloud.microsoft/main/events/14998efa-a922-4b7a-9d5a-e5fd343
 Email to Shweta regarding Riddhima joining date
 Requested Dhananjay to keep me posted regarding PRG-UNI approval request progress
 
-## Github PAT
-Token name: ST Jira access token
-status: permission pending on May 5th
 
 ## Common-online-platform
 meeting date: 5-may-2025
@@ -78,7 +82,10 @@ business architecture should also be thought about, because ppl can ask any comm
 E-design suite has some common services, we can use these services as common online platform services. and then resuse these service to prove that common services can be used.
 
 ## Riddhima-UI/UX-Internship
-For figma license we need a cost center usable Geneva. Forwarded Valentina's message to Chadner!
+12-May
+1. For Figma license Lucie to confirm if cross-charging possible using SRA-ASR cost centre.
+2. In case option (1) above is not possible, request Chander to get Geneva cost center to unblock. 
+
 
 ## Devhub Seminar - Github Copilot ST
 SW Affinity team action 4.2 (SW methodology automation and quality)
@@ -99,15 +106,18 @@ Is there any plan to integrate copilot with STM32 Cube IDE : STM32 Cube IDE is b
 create presentations including: (1) ongoing activities in projects (2)
 
 ## STAIoTCraft-Chatbot-Feature
-Drop an email to Davide asking if someone is working on that feature now?
+Dropped email to Davide Aliprandi regarding the activity
+12 May => Discussed with Chander to add me to the activity after discussion with Diego!
 
 ## Discussion-on-Performance-Feedback
 Schedule a discussion on evaluation feedback filled by Mridu in system.
+12-May => Chander to come back on this
 
-# Weekly-Presentation-Update
-Multi tenancy support: orgs api integration in proj api
+## ST AI-Chatbot/Agent
 
-Project API Test: 
-Updated refresh-token in vespucci-test
+## Laptop-warranty-Check
+goto https://support.hp.com/in-en/check-warranty
+Serial Number: 5CG2391H82
+ProdId: 4Y9T4EC
+Warranty valid till: October 11, 2025 
 
-CSV and Datalog Conversion Jobs test:
