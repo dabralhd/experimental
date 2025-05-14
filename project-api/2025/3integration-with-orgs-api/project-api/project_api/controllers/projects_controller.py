@@ -30,7 +30,7 @@ from project_api.utils.error_helper import (model_exists, example_project_exists
 import logging
 
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.ERROR)
+logger.setLevel(logging.DEBUG)
 
 def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E501
     """Create new user project
@@ -52,7 +52,9 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
     if connexion.request.is_json:
         new_project = NewProject.from_dict(connexion.request.get_json())  # noqa: E501
         new_project_name = new_project.ai_project_name
-        dest_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
+
+        if(_check_reserved_char(new_project_name)):
+            return Response(status=400)
         
         logger.debug(f'Checking if project exists for user: {user}, project name: {new_project_name}')
         if user_project_exists(user, new_project_name):    # check if dest folder already exist
@@ -60,28 +62,32 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
             return Response(status=client_side_error(ErrorType.CONFLICT))
         logger.debug('Project does not exist, proceeding with creation')
 
-        if  new_project.project_name_to_clone != None:            
-            logger.info(f"Cloning project {new_project.project_name_to_clone} to {new_project.ai_project_name}")
-            project_name_to_clone = new_project.project_name_to_clone
-      
-            if(_check_reserved_char(new_project_name)):
+        if  new_project.project_name_to_clone is None:    
+            logger.debug(f'creating new project.\nuser: {user}\nnew_project_name: {new_project_name}')
+            project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)
+
+            if(_check_reserved_char(new_project.ai_project_name)):
                 return Response(status=400)
             
+            project_repo.create_project(name=new_project.ai_project_name, type=new_project.type, description=new_project.description, version=new_project.version)
+            
+            user_workspace_path = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
+            user_project_models_path_folder = os.path.join(user_workspace_path, new_project.ai_project_name, "models")
+            os.makedirs(user_project_models_path_folder, exist_ok=True)
+
+            # Create project icon
+            icon_path = os.path.join(user_workspace_path, new_project.ai_project_name, "icons")
+            generate_icon(new_project.ai_project_name, out_dir=icon_path)
+                
+            return Response(status=201)
+        else:                    
+            logger.debug(f"Cloning project {new_project.project_name_to_clone} to {new_project.ai_project_name}")
+            dest_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
+
+            project_name_to_clone = new_project.project_name_to_clone
+            
             #if new_project.project_name_to_clone.startswith('get_started'):
-            if  is_user_project==False: 
-                logger.debug(f'cloning get_started project, check if source project exists')
-                if not example_project_exists(new_project.project_name_to_clone):    
-                    logger.error(f'project does not exists - {new_project.project_name_to_clone}')
-                    return Response(status=client_side_error(ErrorType.NOT_FOUND))
-
-                [project_folder, project_file_path, error_code] = extract_get_started_project(project_name_to_clone, new_project_name, dest_folder)
-                if error_code != 200:
-                    return Response(status=400)
-
-                generate_project_uuid(project_file_path)
-                substitute_artifacts_project_name(project_folder, project_file_path, new_project_name)
-                project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)      
-            else:
+            if  is_user_project:
                 logger.debug(f'cloning a user project')
                 to_org = connexion.request.args.get('to_org')                   
                 
@@ -98,26 +104,21 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
                     generate_project_uuid_custom_project(project_file_path)
                     substitute_artifacts_project_name(project_folder, project_file_path, new_project_name)
 
-                    project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)      
-            return Response(status=201)
-            
-        else:
-            # Create project from scratch
-            project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)
+                    project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)  
+            else:                 
+                logger.debug(f'cloning get_started project, check if source project exists')
+                if not example_project_exists(new_project.project_name_to_clone):    
+                    logger.error(f'project does not exists - {new_project.project_name_to_clone}')
+                    return Response(status=client_side_error(ErrorType.NOT_FOUND))
 
-            if(_check_reserved_char(new_project.ai_project_name)):
-                return Response(status=400)
-            
-            project_repo.create_project(name=new_project.ai_project_name, type=new_project.type, description=new_project.description, version=new_project.version)
-            
-            user_workspace_path = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
-            user_project_models_path_folder = os.path.join(user_workspace_path, new_project.ai_project_name, "models")
-            os.makedirs(user_project_models_path_folder, exist_ok=True)
+                [project_folder, project_file_path, error_code] = extract_get_started_project(project_name_to_clone, new_project_name, dest_folder)
+                if error_code != 200:
+                    return Response(status=400)
 
-            # Create project icon
-            icon_path = os.path.join(user_workspace_path, new_project.ai_project_name, "icons")
-            generate_icon(new_project.ai_project_name, out_dir=icon_path)
-                
+                generate_project_uuid(project_file_path)
+                substitute_artifacts_project_name(project_folder, project_file_path, new_project_name)
+                project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)         
+                    
             return Response(status=201)
 
     return Response(status=400)

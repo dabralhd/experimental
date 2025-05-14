@@ -117,7 +117,7 @@ def extract_user_project_helper(src_project_name: str, new_project_name: str, sr
     
     return [dest_project_folder_path, dest_project_json_file_path, 200]
 
-def extract_user_project_(src_project_name: str, new_project_name: str, user_ws_folder: str):
+def extract_user_project(src_project_name: str, new_project_name: str, user_ws_folder: str):
     """Extracts a user project by copying and renaming the project folder and JSON file within the same workspace.
 
     This function takes the name of an existing project, a desired new name,
@@ -144,7 +144,7 @@ def extract_user_project_(src_project_name: str, new_project_name: str, user_ws_
                  (e.g., 200 for success, 400 for failure if the source project
                  folder does not exist).
     """
-    extract_user_project_helper(src_project_name=src_project_name, 
+    return extract_user_project_helper(src_project_name=src_project_name, 
                                 new_project_name=new_project_name, 
                                 src_ws_folder=user_ws_folder, 
                                 dest_ws_folder=user_ws_folder)

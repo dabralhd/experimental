@@ -1,4 +1,4 @@
-@hdtest_group_id = sp4n95r2rc4he7b4rpzdpqtj10
+@hdtest_org_id = sp4n95r2rc4he7b4rpzdpqtj10
 @local_port = 9090
 @remote_port = 443
 @local_api_base_path = /3
