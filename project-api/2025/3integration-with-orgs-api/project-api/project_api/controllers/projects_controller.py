@@ -96,10 +96,11 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
                 
                 if to_org:
                     logger.debug(f'cloning project to org-id: {to_org}')
+                    src_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)                    
                     dest_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=to_org)
                 else:
-                    dest_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
-                    src_folder = dest_folder
+                    src_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
+                    dest_folder = src_folder
 
                 project_name_to_clone = new_project.project_name_to_clone                    
                 logger.info(f"src-prjname {project_name_to_clone} dest-prjname {new_project_name}")
