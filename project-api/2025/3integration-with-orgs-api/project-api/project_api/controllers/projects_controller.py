@@ -11,9 +11,8 @@ from project_api.services.project_models import (
     generate_project_uuid,
     generate_project_uuid_custom_project,
     substitute_artifacts_project_name,
-    user_project_exists,
 )
-from project_api.services.templates_repo import extract_get_started_project, extract_user_project
+from project_api.services.templates_repo import (copy_get_started_project, copy_prj, copy_project_for_user)
 from project_api.util import _check_reserved_char, response_error
 from project_api.utils.vespucci_to_controller_model_converters import (
     convert_project,
@@ -26,7 +25,13 @@ from project_api.utils.generate_icon import (
 )
 from project_api.globals import VESPUCCI_ENVIRONMENT
 from project_api.utils.error_types import (client_side_error, ErrorType)
-from project_api.utils.error_helper import (model_exists, example_project_exists)
+from project_api.utils.error_helper import (
+    model_exists, 
+    example_prj_exists,
+    user_prj_exists,
+    is_valid_name,
+    is_valid_new_prj_for_user,
+    )
 import logging
 
 logger = logging.getLogger(__name__)
@@ -43,8 +48,8 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
     :rtype: None
     """
 
-    if is_efs_size_ok(user) == False:
-        logger.error('EFS size limit has been breached for this user.')
+    if not is_efs_size_ok(user):
+        logger.debug('EFS size limit has been breached for this user.')
         if VESPUCCI_ENVIRONMENT != "dev":
             logger.error('Refusing this request')
             return response_error(msg="Storage limit exceeded", status_code=507) # 507 == Insufficient Storage
@@ -56,18 +61,16 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
         if(_check_reserved_char(new_project_name)):
             return Response(status=400)
         
-        logger.debug(f'Checking if project exists for user: {user}, project name: {new_project_name}')
-        if user_project_exists(user, new_project_name):    # check if dest folder already exist
-            logger.error(f'destination project already exists - {new_project_name}')
+        logger.debug(f'Verifying if new project name is valid for user: {user}, project name: {new_project_name}')
+        if not is_valid_new_prj_for_user(user, new_project_name):    
+            logger.error(f'Invalid project name for user: {user}, project name: {new_project_name}')
             return Response(status=client_side_error(ErrorType.CONFLICT))
+        
         logger.debug('Project does not exist, proceeding with creation')
 
         if  new_project.project_name_to_clone is None:    
             logger.debug(f'creating new project.\nuser: {user}\nnew_project_name: {new_project_name}')
             project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)
-
-            if(_check_reserved_char(new_project.ai_project_name)):
-                return Response(status=400)
             
             project_repo.create_project(name=new_project.ai_project_name, type=new_project.type, description=new_project.description, version=new_project.version)
             
@@ -81,37 +84,42 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
                 
             return Response(status=201)
         else:                    
-            logger.debug(f"Cloning project {new_project.project_name_to_clone} to {new_project.ai_project_name}")
-            dest_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
-
-            project_name_to_clone = new_project.project_name_to_clone
-            
+            logger.debug(f'cloning existing project.\nuser: {user}\nproject_name_to_clone: {new_project.project_name_to_clone}\nnew_project_name: {new_project_name}')            
             #if new_project.project_name_to_clone.startswith('get_started'):
             if  is_user_project:
+                if not user_prj_exists(user, new_project.project_name_to_clone):
+                    logger.error(f'project does not exists - {new_project.project_name_to_clone}')
+                    return Response(status=client_side_error(ErrorType.NOT_FOUND))
+                
                 logger.debug(f'cloning a user project')
                 to_org = connexion.request.args.get('to_org')                   
                 
                 if to_org:
-                    logger.debug(f'to_org: {to_org}')
-                    pass
+                    logger.debug(f'cloning project to org-id: {to_org}')
+                    dest_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=to_org)
                 else:
-                    logger.info(f"Cloning project {project_name_to_clone} to {new_project_name}")
-                    [project_folder, project_file_path, error_code] = extract_user_project(project_name_to_clone, new_project_name, dest_folder)
-                    if error_code != 200:
-                        return Response(status=400)
+                    dest_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
+                    src_folder = dest_folder
 
-                    logger.info(f"Project folder: {project_folder}, Project file path: {project_file_path}")
-                    generate_project_uuid_custom_project(project_file_path)
-                    substitute_artifacts_project_name(project_folder, project_file_path, new_project_name)
+                project_name_to_clone = new_project.project_name_to_clone                    
+                logger.info(f"src-prjname {project_name_to_clone} dest-prjname {new_project_name}")
+                [project_folder, project_file_path, error_code] = copy_prj(project_name_to_clone, new_project_name, src_folder, dest_folder)
+                if error_code != 200:
+                    return Response(status=400)
 
-                    project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)  
+                logger.info(f"Project folder: {project_folder}, Project file path: {project_file_path}")
+                generate_project_uuid_custom_project(project_file_path)
+                substitute_artifacts_project_name(project_folder, project_file_path, new_project_name)
+
+                project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)  
             else:                 
                 logger.debug(f'cloning get_started project, check if source project exists')
-                if not example_project_exists(new_project.project_name_to_clone):    
+                if not example_prj_exists(new_project.project_name_to_clone):    
                     logger.error(f'project does not exists - {new_project.project_name_to_clone}')
                     return Response(status=client_side_error(ErrorType.NOT_FOUND))
-
-                [project_folder, project_file_path, error_code] = extract_get_started_project(project_name_to_clone, new_project_name, dest_folder)
+                
+                dest_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
+                [project_folder, project_file_path, error_code] = copy_get_started_project(new_project.project_name_to_clone, new_project_name, dest_folder)
                 if error_code != 200:
                     return Response(status=400)
 

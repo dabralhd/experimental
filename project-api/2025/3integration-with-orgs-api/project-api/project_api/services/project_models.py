@@ -6,6 +6,10 @@ from datetime import datetime
 from uuid import uuid4
 import json
 from project_api.globals import GlobalObjects
+import logging
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 def generate_project_uuid(project_file_path: str):
     txt = None
@@ -170,20 +174,4 @@ def _substitute_conf_cell(configuration, jupyter):
                     configuration_cell["source"].append(row)
     
     return jupyter
-
-
-def user_project_exists(user: str, prj_name: str):
-    """
-    Check if a project directory exists for a given user.
-    Args:
-        user (str): The user identifier.
-        prj_name (str): The name of the project.
-    Returns:
-        bool: True if the project directory exists, False otherwise.
-    """
-    
-    if os.path.isdir(os.path.join(GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user), prj_name)):    
-        return True
-    
-    return False
     

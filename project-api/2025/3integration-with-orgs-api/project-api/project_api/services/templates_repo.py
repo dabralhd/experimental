@@ -51,7 +51,7 @@ def get_started_projects_artifacts(project_name: str, model_name: str, experimen
         bytes = f.buffer.read()
     return bytes
 
-def extract_get_started_project(get_started_project_name: str, new_project_name: str, dest_folder: str):
+def copy_get_started_project(get_started_project_name: str, new_project_name: str, dest_folder: str):
 
     # Prepare folder/file paths
     get_started_project_folder_path = os.path.join(GET_STARTED_PROJECTS_PATH, get_started_project_name)
@@ -72,9 +72,7 @@ def extract_get_started_project(get_started_project_name: str, new_project_name:
 import os
 import shutil
 
-
-
-def extract_user_project_helper(src_project_name: str, new_project_name: str, src_ws_folder: str, dest_ws_folder: str):
+def copy_prj(src_project_name: str, new_project_name: str, src_ws_folder: str, dest_ws_folder: str):
     """Extracts a user project by copying and renaming the project folder and JSON file.
 
     This function takes the name of an existing project, a desired new name,
@@ -117,12 +115,12 @@ def extract_user_project_helper(src_project_name: str, new_project_name: str, sr
     
     return [dest_project_folder_path, dest_project_json_file_path, 200]
 
-def extract_user_project(src_project_name: str, new_project_name: str, user_ws_folder: str):
-    """Extracts a user project by copying and renaming the project folder and JSON file within the same workspace.
+def copy_project_for_user(src_project_name: str, new_project_name: str, user_ws_folder: str):
+    """Clones a user project by copying and renaming the project folder and JSON file within the same workspace.
 
     This function takes the name of an existing project, a desired new name,
     and the user's workspace folder as input. It leverages the
-    `extract_user_project_helper` function to copy the source project folder
+    `copy_prj` function to copy the source project folder
     and rename it to the new project name within the same workspace. It also
     handles the associated JSON file (assuming a naming convention of
     'ai_{project_name}.json' within the source project folder), copying and
@@ -137,14 +135,14 @@ def extract_user_project(src_project_name: str, new_project_name: str, user_ws_f
 
     Returns:
         list: A list containing the following elements, as returned by the
-            `extract_user_project_helper` function:
+            `copy_prj` function:
             - str: The absolute path to the destination project folder.
             - str: The absolute path to the destination project JSON file.
             - int: An HTTP status code indicating the outcome of the operation
                  (e.g., 200 for success, 400 for failure if the source project
                  folder does not exist).
     """
-    return extract_user_project_helper(src_project_name=src_project_name, 
+    return copy_prj(src_project_name=src_project_name, 
                                 new_project_name=new_project_name, 
                                 src_ws_folder=user_ws_folder, 
                                 dest_ws_folder=user_ws_folder)

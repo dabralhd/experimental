@@ -12,7 +12,7 @@ from project_api.vespucciprjmng.domain.model import ModelMetadata, ModelType
 from project_api.vespucciprjmng.repository.filesystem.project_file_repo import (
     ProjectFileRepo,
 )
-from project_api.services.project_models import ( user_project_exists )
+from project_api.utils.error_helper import (user_prj_exists)
 from project_api.utils.error_types import (client_side_error, ErrorType)
 from project_api.utils.error_helper import (model_exists)
 
