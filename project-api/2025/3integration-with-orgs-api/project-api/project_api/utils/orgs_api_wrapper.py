@@ -46,6 +46,10 @@ def check_orgs_membership(userid: str, orgid: str):  # noqa: E501
         r = requests.get(user_url, headers=headers)
         logger.debug(f'orgs API returned status_code: {r.status_code}')
         if r.status_code == 200:
+            logger.debug(f'orgs API returned status_code: {r.status_code}')
+            logger.debug(f'orgs API returned content: {r.content}')
+            logger.debug(f'orgs API returned content: {r.text}')
+            logger.debug(f'orgs API returned content: {r.json()}')    
             # r_bytes = r.content
             # byte_str = r_bytes.decode('utf-8')
             # json_obj = json.loads(byte_str)

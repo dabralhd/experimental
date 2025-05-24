@@ -44,7 +44,7 @@ Content-Type: application/json
   "version": "0.0.1"
 }
 ###
-GET {{base_url}}/projects/test-project-1
+GET {{base_url}}/projects/test-project-4
 Authorization: Bearer {{token}}
 Content-Type: application/json
 ###
@@ -99,6 +99,16 @@ Content-Type: application/json
 {
   "project_name_to_clone": "test-project-1",
   "ai_project_name": "test-project-3"
+}
+
+###
+POST {{base_url}}/projects/test-project-4/models?as_org={{hdtest_group_id}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "model_name_to_clone": "smart_asset_tracking",
+  "name": "clone1"
 }
 
 
