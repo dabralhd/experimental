@@ -33,6 +33,7 @@ from project_api.utils.error_helper import (
     is_valid_new_prj_for_user,
     )
 import logging
+from project_api.utils.orgs_api_wrapper import(is_user_org_member)
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
@@ -94,10 +95,14 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
                 logger.debug(f'cloning a user project')
                 to_org = connexion.request.args.get('to_org')                   
                 
-                if to_org:
-                    logger.debug(f'cloning project to org-id: {to_org}')
-                    src_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)                    
-                    dest_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=to_org)
+                if to_org: 
+                    if is_user_org_member(user, to_org):
+                        logger.debug(f'cloning project to org-id: {to_org}')
+                        src_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)                    
+                        dest_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=to_org)
+                    else:
+                        logger.error(f'user {user} is not a member of org {to_org}')
+                        return Response(status=client_side_error(ErrorType.FORBIDDEN))
                 else:
                     src_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
                     dest_folder = src_folder

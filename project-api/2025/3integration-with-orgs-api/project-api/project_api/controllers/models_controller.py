@@ -20,7 +20,7 @@ from project_api.utils.resource_allocation import (
 )
 from project_api.globals import VESPUCCI_ENVIRONMENT
 from project_api.utils.error_helper import (model_exists)
-from project_api.utils.orgs_api_wrapper import(check_orgs_membership)
+from project_api.utils.orgs_api_wrapper import(check_orgs_membership, is_user_org_member)
 import logging
 
 logger = logging.getLogger(__name__)
