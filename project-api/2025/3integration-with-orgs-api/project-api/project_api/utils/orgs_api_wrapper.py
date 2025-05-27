@@ -42,7 +42,7 @@ def check_orgs_membership(userid: str, orgid: str):  # noqa: E501
         logger.debug(f'orgs API returned status_code: {response.status_code}')
         if response.status_code == 200:
             logger.debug(f'orgs API returned content: {response.json().items}')    
-            for item in response.json().items:
+            for item in response.json()['items']:
                 logger.debug(f'verifying membership for org-id returned item: {item}')
                 if item['user_id'] == userid:
                     logger.debug(f'User {userid} is a member of org {orgid}')
