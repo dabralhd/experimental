@@ -35,26 +35,21 @@ def check_orgs_membership(userid: str, orgid: str):  # noqa: E501
 
     try:
         # endpoint for retrieving member list: /orgs/i/{org-id}/membership
-        base_url =  f"http://orgs-api.orgs-api.svc.cluster.local:5006/svc/orgs/v1alpha1/orgs/i/{orgid}/membership"  ## there is no env reference for orgs-API
+        user_url =  f"http://orgs-api.orgs-api.svc.cluster.local:5006/svc/orgs/v1alpha1/orgs/i/{orgid}/membership/{userid}"  ## there is no env reference for orgs-API
         headers={
             "Authorization": "Bearer " + orgs_token()
         }
 
-        user_url = base_url + userid
-        # params = {'OrgId': f'{orgid}' }
-    
-        r = requests.get(user_url, headers=headers)
-        logger.debug(f'orgs API returned status_code: {r.status_code}')
-        if r.status_code == 200:
-            logger.debug(f'orgs API returned status_code: {r.status_code}')
-            logger.debug(f'orgs API returned content: {r.content}')
-            logger.debug(f'orgs API returned content: {r.text}')
-            logger.debug(f'orgs API returned content: {r.json()}')    
-            # r_bytes = r.content
-            # byte_str = r_bytes.decode('utf-8')
-            # json_obj = json.loads(byte_str)
-            # logger.debug(json_obj)
-            return False # go through the list of members returned by orgs-API and return True if membership status is ok False otherwise
+        response = requests.get(user_url, headers=headers)
+        logger.debug(f'orgs API returned status_code: {response.status_code}')
+        if response.status_code == 200:
+            logger.debug(f'orgs API returned status_code: {response.status_code}')
+            logger.debug(f'orgs API returned content: {response.content}')
+            logger.debug(f'orgs API returned content: {response.text}')
+            logger.debug(f'orgs API returned content: {response.json()}')    
+            json_obj = json.json
+            logger.debug(f'orgs API returned json: {json_obj}')
+            return True # go through the list of members returned by orgs-API and return True if membership status is ok False otherwise
     except Exception as e:
         logger.exception(f'exception occurred')
     return False
