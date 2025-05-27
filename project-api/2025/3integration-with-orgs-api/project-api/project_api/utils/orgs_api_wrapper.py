@@ -41,13 +41,13 @@ def check_orgs_membership(userid: str, orgid: str):  # noqa: E501
         response = requests.get(user_url, headers=headers)
         logger.debug(f'orgs API returned status_code: {response.status_code}')
         if response.status_code == 200:
-            logger.debug(f'orgs API returned status_code: {response.status_code}')
-            logger.debug(f'orgs API returned content: {response.content}')
-            logger.debug(f'orgs API returned content: {response.text}')
-            logger.debug(f'orgs API returned content: {response.json()}')    
-            json_obj = json.json
-            logger.debug(f'orgs API returned json: {json_obj}')
-            return True # go through the list of members returned by orgs-API and return True if membership status is ok False otherwise
+            logger.debug(f'orgs API returned content: {response.json().items}')    
+            for item in response.json().items:
+                logger.debug(f'verifying membership for org-id returned item: {item}')
+                if item['user_id'] == userid:
+                    logger.debug(f'User {userid} is a member of org {orgid}')
+                    return True
+            return False 
     except Exception as e:
         logger.exception(f'exception occurred')
     return False
