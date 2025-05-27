@@ -151,7 +151,7 @@ def app_get_projects(user: str):  # noqa: E501
         if not is_user_org_member(user, as_org):
             logger.error(f'user {user} is not a member of org {as_org}')
             return Response(status=client_side_error(ErrorType.FORBIDDEN))
-
+        logger.debug(f'Getting projects for org: {as_org}')
         user = as_org
     logger.debug(f'Getting projects for user/group: {user}')
     project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)
