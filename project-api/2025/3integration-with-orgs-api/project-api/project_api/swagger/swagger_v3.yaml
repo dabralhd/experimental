@@ -125,6 +125,15 @@ paths:
       summary: Projects list
       description: ""
       operationId: app_get_projects
+      parameters:
+        - name: as_org
+          in: query
+          description: |
+            sometimes a user will share a project with an org
+          required: false
+          schema:
+            type: string
+            example: 8s28038jgmf8cn8a7ka2hzhj10
       responses:
         "200":
           description: Successful operation
@@ -151,7 +160,7 @@ paths:
           required: false
           schema:
             type: boolean    
-        - name: to_org
+        - name: as_org
           in: query
           description: |
             sometimes a user will share a project with an org
@@ -195,6 +204,14 @@ paths:
         explode: false
         schema:
           type: string
+      - name: as_org
+        in: query
+        description: |
+          sometimes a user will share a project with an org
+        required: false
+        schema:
+          type: string
+          example: 8s28038jgmf8cn8a7ka2hzhj10  
       responses:
         "200":
           description: OK.

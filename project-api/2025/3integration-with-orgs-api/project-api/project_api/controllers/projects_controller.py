@@ -93,15 +93,15 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
                     return Response(status=client_side_error(ErrorType.NOT_FOUND))
                 
                 logger.debug(f'cloning a user project')
-                to_org = connexion.request.args.get('to_org')                   
+                as_org = connexion.request.args.get('as_org')                   
                 
-                if to_org: 
-                    if is_user_org_member(user, to_org):
-                        logger.debug(f'cloning project to org-id: {to_org}')
+                if as_org: 
+                    if is_user_org_member(user, as_org):
+                        logger.debug(f'cloning project to org-id: {as_org}')
                         src_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)                    
-                        dest_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=to_org)
+                        dest_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=as_org)
                     else:
-                        logger.error(f'user {user} is not a member of org {to_org}')
+                        logger.error(f'user {user} is not a member of org {as_org}')
                         return Response(status=client_side_error(ErrorType.FORBIDDEN))
                 else:
                     src_folder = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
@@ -145,8 +145,15 @@ def app_get_projects(user: str):  # noqa: E501
 
 
     :rtype: List[Project]
-    """    
-    
+    """   
+    as_org = connexion.request.args.get('as_org')              
+    if as_org:
+        if not is_user_org_member(user, as_org):
+            logger.error(f'user {user} is not a member of org {as_org}')
+            return Response(status=client_side_error(ErrorType.FORBIDDEN))
+
+        user = as_org
+    logger.debug(f'Getting projects for user/group: {user}')
     project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)
     project_domain_objs = project_repo.get_projects()
     project_api_objs = []
