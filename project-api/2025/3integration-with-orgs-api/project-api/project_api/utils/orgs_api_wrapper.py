@@ -33,7 +33,7 @@ def check_orgs_membership(userid: str, orgid: str):  # noqa: E501
     logger.debug(f'> check_orgs_membership(userid={userid}, orgid={orgid})')
     try:
         # endpoint for retrieving member list: /orgs/i/{org-id}/membership
-        user_url =  f"http://orgs-api.orgs-api.svc.cluster.local:5006/svc/orgs/v1alpha1/orgs/i/{orgid}/membership/{userid}"  ## there is no env reference for orgs-API
+        user_url =  f"http://orgs-api.orgs-api.svc.cluster.local:5006/svc/orgs/v1alpha1/orgs/i/{orgid}/membership"  ## there is no env reference for orgs-API
         headers={
             "Authorization": "Bearer " + orgs_token()
         }
