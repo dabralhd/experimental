@@ -64,6 +64,11 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 ###
 
+GET {{base_url}}/projects?as_org={{hdtest_org_id}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
+
 GET {{base_url}}/projects/test-project-6
 Authorization: Bearer {{token}}
 Content-Type: application/json
@@ -101,7 +106,7 @@ Content-Type: application/json
   "ai_project_name": "smart_asset_tracking_mlc_clone7"
 }
 ###
-POST {{base_url}}/projects?is_user_project=True&to_org={{hdtest_org_id}}
+POST {{base_url}}/projects?is_user_project=True&as_org={{hdtest_org_id}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 

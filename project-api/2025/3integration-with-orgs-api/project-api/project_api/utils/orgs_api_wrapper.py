@@ -12,16 +12,15 @@ ORGS_API_INCLUSTER_TOKEN_DEFAULT_PATH = "/run/secrets/orgs.vespucci.st.com/servi
 
 # @cached(TTLCache(maxsize=1, ttl=60), key=lambda: "")
 def orgs_token() -> str:
-    logger.debug(f'> orgs_token')
-
+    """Retrieve the token for accessing the orgs API."""
+    logger.debug('Retrieving orgs API token...')
     try:
         with open(ORGS_API_INCLUSTER_TOKEN_DEFAULT_PATH, 'r') as file:
-            token = file.read()
+            token = file.read().strip()
+            return token
     except Exception as e:
-        logger.exception(f'could not read token: f{e}', exc_info=True)
-        
-    logger.debug(f'- token: {token}\n<')
-    return token
+        logger.exception(f'Could not read token: {e}', exc_info=True)
+        raise RuntimeError("Failed to retrieve orgs API token")
 
 def check_orgs_membership(userid: str, orgid: str):  # noqa: E501
     """check if userid is member of given orgid
@@ -30,7 +29,7 @@ def check_orgs_membership(userid: str, orgid: str):  # noqa: E501
 
     :rtype: bool
     """
-    logger.debug(f'> check_orgs_membership(userid={userid}, orgid={orgid})')
+    logger.debug(f'parameters: userid={userid}, orgid={orgid}')
     try:
         # endpoint for retrieving member list: /orgs/i/{org-id}/membership
         user_url =  f"http://orgs-api.orgs-api.svc.cluster.local:5006/svc/orgs/v1alpha1/orgs/i/{orgid}/membership"  ## there is no env reference for orgs-API
@@ -40,25 +39,33 @@ def check_orgs_membership(userid: str, orgid: str):  # noqa: E501
 
         response = requests.get(user_url, headers=headers)
         logger.debug(f'orgs API returned status_code: {response.status_code}')
+
         if response.status_code == 200:
-            logger.debug(f'orgs API returned content: {response.json().items}')    
-            for item in response.json()['items']:
-                logger.debug(f'verifying membership for org-id returned item: {item}')
-                if item['user_id'] == userid:
-                    logger.debug(f'User {userid} is a member of org {orgid}')
-                    return True
-            return False 
+            try:
+                response_data = response.json()
+                logger.debug(f'orgs API response: {response_data}')
+                if 'items' in response_data:
+                    for item in response_data['items']:
+                        if item.get('user_id') == userid:
+                            logger.debug(f'User {userid} is a member of org {orgid}')
+                            return True
+                else:
+                    logger.warning(f'Unexpected response structure: {response_data}')
+            except json.JSONDecodeError as e:
+                logger.exception(f'Failed to decode JSON response: {e}', exc_info=True)
+        else:
+            logger.warning(f'orgs API returned non-200 status code: {response.status_code}')
     except Exception as e:
-        logger.exception(f'exception occurred')
+        logger.exception(f'Exception occurred while checking membership: {e}', exc_info=True)
+
+    logger.debug(f'User {userid} is NOT a member of org {orgid}')
+    # If we reach here, the user is not a member of the org
     return False
 
-def is_user_org_member(userid: str, orgid: str):  # noqa: E501
-    membership_status = False # default value of orgs membership flag
-    try:        
-        membership_status = check_orgs_membership(userid, orgid)
-        logger.debug(f'- membership status for USER {userid} in ORG {orgid}: {membership_status}')
+def is_user_org_member(userid: str, orgid: str) -> bool:
+    """Wrapper function to check org membership."""
+    try:
+        return check_orgs_membership(userid, orgid)
     except Exception as e:
-        logger.exception(f'Exception occurred :{e} \n')
-
-    logger.debug(f'membership_status: {membership_status}')
-    return membership_status
+        logger.exception(f'Exception occurred in is_user_org_member: {e}', exc_info=True)
+        return False
