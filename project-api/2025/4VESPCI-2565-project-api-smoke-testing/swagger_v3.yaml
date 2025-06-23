@@ -1519,6 +1519,8 @@ components:
           efs_usage_breached: true
     NewProject:
       type: object
+      required:
+      - ai_project_name
       properties:
         project_name_to_clone:
           type: string
@@ -1634,6 +1636,8 @@ components:
         version: version
     NewModel:
       type: object
+      required:
+      - name
       properties:
         model_name_to_clone:
           type: string
