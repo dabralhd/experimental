@@ -56,6 +56,36 @@ Content-Type: application/json
 }
 
 ###
+POST {{base_url}}/projects
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "project_name_to_clone": "get_started_smart_asset_tracking_mlc",
+  "ai_project_name": "test-project-2"
+}
+
+###
+POST {{base_url}}/projects?as_org={{hdtest_org_id}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "project_name_to_clone": "get_started_smart_asset_tracking_mlc",
+  "ai_project_name": "test-project-2"
+}
+
+###
+GET {{base_url}}/projects
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/projects?as_org={{hdtest_org_id}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
 
 POST {{base_url}}/projects
 Authorization: Bearer {{token}}
