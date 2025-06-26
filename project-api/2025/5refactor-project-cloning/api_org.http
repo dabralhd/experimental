@@ -75,6 +75,61 @@ Content-Type: application/json
   "ai_project_name": "test-project-2"
 }
 
+### create a new model for a group by scratch
+POST {{base_url}}/projects/test-project-2/models
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "test-model-1",
+  "description": "MyTestModelWithDTRef",
+  "model_type": "classifier",
+  "dataset": 
+    {
+      "dataset_id": "dataset-abcxyz-999",
+      "name": "test-dataset-1"
+    }
+  ,
+  "classes": [
+    "x",
+    "y",
+    "z"
+  ],
+  "target": {
+    "type": "mlc",
+    "component": "lsm6dsv16x",
+    "device": "steval-mkboxpro"
+  }  
+}
+
+### create a new model for a group by scratch
+POST {{base_url}}/projects/test-project-2/models?as_org={{hdtest_org_id}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "test-model-1",
+  "description": "MyTestModelWithDTRef",
+  "model_type": "classifier",
+  "dataset": 
+    {
+      "dataset_id": "dataset-abcxyz-999",
+      "name": "test-dataset-1"
+    }
+  ,
+  "classes": [
+    "x",
+    "y",
+    "z"
+  ],
+  "target": {
+    "type": "mlc",
+    "component": "lsm6dsv16x",
+    "device": "steval-mkboxpro"
+  }  
+}
+
+
 ###
 GET {{base_url}}/projects
 Authorization: Bearer {{token}}
