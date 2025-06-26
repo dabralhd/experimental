@@ -75,14 +75,9 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
 
         dest_workspace = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=effective_user_id)
         logger.debug(f'post using effective_user_id: {effective_user_id}\ndest_workspace: {dest_workspace}')
-
-        # TODO: error check for template project
-        logger.debug(f'Verifying if src and target project names are valid for user.\n {effective_user_id}, project name: {new_project.ai_project_name}')
-        if user_prj_exists(user, new_project.project_name_to_clone) and is_valid_new_prj_for_user(user, new_project.ai_project_name): 
-            pass
-        else:   
-            logger.error(f'Invalid project name for user: {user}, project name: {new_project.ai_project_name}')
-            return Response(status=client_side_error(ErrorType.CONFLICT))                
+        if os.path.exists(os.path.join(dest_workspace, new_project.ai_project_name)):
+            logger.error(f'dest project exists: {os.path.join(dest_workspace, new_project.ai_project_name)}')
+            return Response(status=client_side_error(ErrorType.CONFLICT))        
 
         if  new_project.project_name_to_clone is None:    
             logger.debug(f'creating new project.\neffective_user_id: {effective_user_id}\ntarget-prj-name: {new_project.ai_project_name}')
@@ -101,15 +96,17 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
             return Response(status=201)
         elif is_user_project:                  
             logger.debug(f'cloning user project.')   
-            src_workspace = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=effective_user_id)    
+            src_workspace = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)    
         else: 
             logger.debug(f'cloning get-started project.')   
             src_workspace = GET_STARTED_PROJECTS_PATH
 
+        logger.debug(f'src_workspace: {src_workspace}')
+            
+        # TODO: error check for template project
         if not os.path.exists(os.path.join(src_workspace, new_project.project_name_to_clone)):
+            logger.error(f'src project does not exists: {os.path.join(src_workspace, new_project.project_name_to_clone)}')           
             return Response(status=client_side_error(ErrorType.NOT_FOUND))
-        if os.path.exists(os.path.join(dest_workspace, new_project.ai_project_name)):
-            return Response(status=client_side_error(ErrorType.CONFLICT))
 
         logger.info(f"src-prjname {new_project.project_name_to_clone} dest-prjname {new_project.ai_project_name}")
         [project_folder, project_file_path, error_code] = copy_prj(new_project.project_name_to_clone, new_project.ai_project_name, src_workspace, dest_workspace)
