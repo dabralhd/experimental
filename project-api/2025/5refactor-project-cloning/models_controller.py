@@ -56,6 +56,8 @@ def app_create_model(user, body, project_name):  # noqa: E501
         src_model = new_model.model_name_to_clone
         dest_model = new_model.name  
 
+        logger.debug(f'user: {user} \neffective_user_id: {effective_user_id}\nas_org: {as_org}\nproject_name: {project_name}\n src_model: {src_model}\ndest_model: {dest_model}')
+
         # source model name check
         if not model_exists(effective_user_id, project_name, src_model):
             logger.error(f'model {src_model} does not exist in project {project_name}')
@@ -66,7 +68,6 @@ def app_create_model(user, body, project_name):  # noqa: E501
             logger.error(f'model {dest_model} already exists in project {project_name}')
             return Response(status=client_side_error(ErrorType.CONFLICT)) # TODO: return a more specific error message
 
-        logger.debug(f'creating new model.\neffective_user_id: {effective_user_id}\nas_org: {as_org}\n dest_model: {dest_model}')
         if  new_model.model_name_to_clone != None: # clone model
             logger.debug(f'cloning existing model.\neffective_user_id: {effective_user_id}\nas_org: {as_org}\n src_model: {src_model}\nnew_model_name: {dest_model}')
             
