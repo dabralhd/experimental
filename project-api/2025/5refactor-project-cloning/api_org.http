@@ -27,6 +27,15 @@ GET {{base_url}}/templates/projects/get_started_smart_asset_tracking_mlc/icon
 GET {{base_url}}/projects
 Authorization: Bearer {{token}}
 Content-Type: application/json
+###
+
+GET {{base_url}}/projects?as_org={{hdtest_org_id}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+DELETE {{base_url}}/projects/test-project-group-from-scratch-1?as_org={{hdtest_org_id}}
+Authorization: Bearer {{token}}
 
 ###
 GET {{base_url}}/projects/test-project-cloned-fan/icon
@@ -81,7 +90,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "name": "test-model-1",
+  "name": "test-model-2",
   "description": "MyTestModelWithDTRef",
   "model_type": "classifier",
   "dataset": 
@@ -108,7 +117,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "name": "test-model-1",
+  "name": "test-model-3",
   "description": "MyTestModelWithDTRef",
   "model_type": "classifier",
   "dataset": 
