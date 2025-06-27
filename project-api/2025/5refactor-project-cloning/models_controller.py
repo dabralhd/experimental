@@ -59,7 +59,7 @@ def app_create_model(user, body, project_name):  # noqa: E501
         logger.debug(f'user: {user} \neffective_user_id: {effective_user_id}\nas_org: {as_org}\nproject_name: {project_name}\n src_model: {src_model}\ndest_model: {dest_model}')
 
         # source model name check
-        if not model_exists(effective_user_id, project_name, src_model):
+        if src_model and not model_exists(effective_user_id, project_name, src_model):
             logger.error(f'model {src_model} does not exist in project {project_name}')
             return Response(status=client_side_error(ErrorType.NOT_FOUND)) # TODO: return a more specific error message
 
@@ -68,10 +68,10 @@ def app_create_model(user, body, project_name):  # noqa: E501
             logger.error(f'model {dest_model} already exists in project {project_name}')
             return Response(status=client_side_error(ErrorType.CONFLICT)) # TODO: return a more specific error message
 
-        if  new_model.model_name_to_clone != None: # clone model
+        if  src_model: # clone model
             logger.debug(f'cloning existing model.\neffective_user_id: {effective_user_id}\nas_org: {as_org}\n src_model: {src_model}\nnew_model_name: {dest_model}')
             
-            def clone_model(effective_user_id, project_name, src_model, dest_model):
+            def clone_model(user_id, effective_user_id, project_name, src_model, dest_model):
                 logger.debug(f'cloning model.\neffective_user_id: {effective_user_id}\nas_org: {as_org}\n src_model: {src_model}\nnew_model_name: {dest_model}')
                 user_workspace_path = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=effective_user_id)
                 models_dir_path = os.path.join(user_workspace_path, project_name, "models")
@@ -83,7 +83,7 @@ def app_create_model(user, body, project_name):  # noqa: E501
                 project_repo = ProjectFileRepo(user_workspace_path)
 
                 try:
-                    project_repo.clone_model(project_name=project_name, clone_model_uuid_or_name=src_model, model_uuid_or_name=dest_model, model_owner_uuid=effective_user_id)
+                    project_repo.clone_model(project_name=project_name, clone_model_uuid_or_name=src_model, model_uuid_or_name=dest_model, model_owner_uuid=user_id)
                 except Exception as e:
                     logger.exception(f'exception occurred: {e}')
                     return Response(status=409)
@@ -96,9 +96,9 @@ def app_create_model(user, body, project_name):  # noqa: E501
             # Clone model
             if as_org and model_exists(as_org, project_name, src_model) and not model_exists(as_org, project_name, dest_model):
                 if is_user_org_member(effective_user_id, as_org):   # verify that uuid is member of the as_org organization using orgs-api, for the time being set to True
-                    return clone_model(as_org, project_name, src_model, dest_model)
+                    return clone_model(user, effective_user_id, project_name, src_model, dest_model)
             elif as_org is None and model_exists(effective_user_id, project_name, src_model) and not model_exists(effective_user_id, project_name, dest_model):   
-                    return clone_model(effective_user_id, project_name, src_model, dest_model)
+                    return clone_model(user, effective_user_id, project_name, src_model, dest_model)
             else:
                 return Response(status=409)
         else: # create a new model from scratch
