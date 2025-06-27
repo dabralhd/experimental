@@ -72,7 +72,7 @@ def app_create_model(user, body, project_name):  # noqa: E501
             logger.debug(f'cloning existing model.\neffective_user_id: {effective_user_id}\nas_org: {as_org}\n src_model: {src_model}\nnew_model_name: {dest_model}')
             
             def clone_model(user_id, effective_user_id, project_name, src_model, dest_model):
-                logger.debug(f'cloning model.\neffective_user_id: {effective_user_id}\nas_org: {as_org}\n src_model: {src_model}\nnew_model_name: {dest_model}')
+                logger.debug(f'cloning model.user_id: {user_id}\neffective_user_id: {effective_user_id}\nas_org: {effective_user_id}\n src_model: {src_model}\nnew_model_name: {dest_model}')
                 user_workspace_path = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=effective_user_id)
                 models_dir_path = os.path.join(user_workspace_path, project_name, "models")
                 project_repo_uuid = effective_user_id
