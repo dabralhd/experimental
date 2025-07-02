@@ -10,6 +10,7 @@ from project_api.services.db import synch_project_into_db
 from project_api.services.project_models import (
     generate_project_uuid,
     generate_project_uuid_custom_project,
+    set_model_owner_uuid,
     substitute_artifacts_project_name,
 )
 from project_api.services.templates_repo import (copy_get_started_project, copy_prj, copy_project_for_user)
@@ -120,6 +121,7 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
             generate_project_uuid(project_file_path)
         substitute_artifacts_project_name(project_folder, project_file_path, new_project.ai_project_name)
 
+        set_model_owner_uuid(project_file_path, user)
         return Response(status=201)
 
     return Response(status=400)
