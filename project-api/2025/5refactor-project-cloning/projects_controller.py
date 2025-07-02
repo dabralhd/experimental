@@ -84,7 +84,7 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
             logger.debug(f'creating new project.\neffective_user_id: {effective_user_id}\ntarget-prj-name: {new_project.ai_project_name}')
             project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=effective_user_id)
             
-            project_repo.create_project(name=new_project.ai_project_name, type=new_project.type, description=new_project.description, version=new_project.version)
+            project_repo.create_project(name=new_project.ai_project_name, type=new_project.type, description=new_project.description, version=new_project.version, project_owner_uuid=user)
             
             user_workspace_path = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=effective_user_id)
             user_project_models_path_folder = os.path.join(user_workspace_path, new_project.ai_project_name, "models")

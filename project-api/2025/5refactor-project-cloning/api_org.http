@@ -35,7 +35,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-DELETE {{base_url}}/projects/test-project-2?as_org={{hdtest_org_id}}
+DELETE {{base_url}}/projects/clone-TBC-group-1?as_org={{hdtest_org_id}}
 Authorization: Bearer {{token}}
 
 ###
@@ -60,7 +60,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "ai_project_name": "test-project-group-from-scratch-2",
+  "ai_project_name": "test-group-project-1",
   "description": "My Project description",
   "version": "0.0.1"
 }
@@ -72,7 +72,7 @@ Content-Type: application/json
 
 {
   "project_name_to_clone": "get_started_smart_asset_tracking_mlc",
-  "ai_project_name": "TBC-group-1"
+  "ai_project_name": "TBC-group-5"
 }
 
 ###
@@ -82,7 +82,7 @@ Content-Type: application/json
 
 {
   "project_name_to_clone": "TBC-group-1",
-  "ai_project_name": "clone-TBC-group-2"
+  "ai_project_name": "clone-TBC-group-4"
 }
 
 ### create a new model for a group by scratch
@@ -113,12 +113,12 @@ Content-Type: application/json
 }
 
 ### create a new model for a group by scratch
-POST {{base_url}}/projects/test-project-2/models?as_org={{hdtest_org_id}}
+POST {{base_url}}/projects/test-group-project-1/models?as_org={{hdtest_org_id}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "name": "test-model-3",
+  "name": "test-model-4",
   "description": "MyTestModelWithDTRef",
   "model_type": "classifier",
   "dataset": 
