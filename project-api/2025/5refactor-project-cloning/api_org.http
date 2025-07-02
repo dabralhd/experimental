@@ -60,7 +60,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "ai_project_name": "test-group-project-1",
+  "ai_project_name": "test-group-project-4",
   "description": "My Project description",
   "version": "0.0.1"
 }
@@ -82,7 +82,7 @@ Content-Type: application/json
 
 {
   "project_name_to_clone": "TBC-group-1",
-  "ai_project_name": "clone-TBC-group-4"
+  "ai_project_name": "clone-TBC-group-5"
 }
 
 ### create a new model for a group by scratch
