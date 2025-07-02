@@ -72,6 +72,24 @@ def app_create_model(user, body, project_name):  # noqa: E501
             logger.debug(f'cloning existing model.\neffective_user_id: {effective_user_id}\nas_org: {as_org}\n src_model: {src_model}\nnew_model_name: {dest_model}')
             
             def clone_model(user_id, effective_user_id, project_name, src_model, dest_model):
+                """
+                Clone an existing model within a project.
+
+                This function creates a new model by cloning the contents and metadata of an existing model
+                in the specified project. It performs the following steps:
+                  - Copies the model entry in the project JSON with the new model name.
+                  - Copies the file-system contents of the source model to the destination model directory.
+
+                Args:
+                    user_id (str): The ID of the user requesting the clone.
+                    effective_user_id (str): The effective user or organization ID under which the operation is performed.
+                    project_name (str): The name of the project containing the models.
+                    src_model (str): The name of the source model to clone.
+                    dest_model (str): The name for the new cloned model.
+
+                Returns:
+                    Response: A Flask Response object indicating the result of the operation.
+                """
                 logger.debug(f'cloning model.user_id: {user_id}\neffective_user_id: {effective_user_id}\nas_org: {effective_user_id}\n src_model: {src_model}\nnew_model_name: {dest_model}')
                 user_workspace_path = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=effective_user_id)
                 models_dir_path = os.path.join(user_workspace_path, project_name, "models")
