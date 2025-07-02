@@ -82,7 +82,7 @@ Content-Type: application/json
 
 {
   "project_name_to_clone": "TBC-group-1",
-  "ai_project_name": "clone-TBC-group-1"
+  "ai_project_name": "clone-TBC-group-2"
 }
 
 ### create a new model for a group by scratch

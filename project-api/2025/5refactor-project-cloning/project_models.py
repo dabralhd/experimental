@@ -40,9 +40,10 @@ def generate_project_uuid_custom_project(project_file_path: str):
         json.dump(obj, f)
 
 
-def set_model_owner_uuid(project_file_path: str, model_owner_uuid: str):
+def set_owner_uuids(project_file_path: str, model_owner_uuid: str):
     with open(project_file_path, "r") as f:
         project_json_obj = json.load(f)
+        project_json_obj["project_owner_uuid"] = model_owner_uuid
         for model in project_json_obj["models"]:
             model["model_owner_uuid"] = model_owner_uuid
     with open(project_file_path, "w") as f:
