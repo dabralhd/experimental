@@ -9,7 +9,8 @@
 @remote_dev_url = https://dev.stm-vespucci.com:{{remote_port}}{{remote_api_base_path_3}}
 @base_url = {{remote_dev_url}}
 @token-dummy = dev
-@token-dev = eyJraWQiOiJcL3JIS3FCbG5JVldiU2RqdEJqODRQaDNyUk5SWWh4cnR6RFwvOXFTK0Q3aWc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIzMzRjNjVhNS0xNDk1LTQ1M2EtYTZkZS00ZDM4NGE3ODEwMDAiLCJjb2duaXRvOmdyb3VwcyI6WyJ3aGl0ZWxpc3QiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfOXdlbnNFNVJaIiwidmVyc2lvbiI6MiwiY2xpZW50X2lkIjoiNHNoYjE3OGdsbWxsc3I3NWdmb2JoZmRzYmEiLCJvcmlnaW5fanRpIjoiNjNiMjhhOGMtNGUxYy00NzI0LTg5NTAtMDdlYTg4NDQ5MjEyIiwiZXZlbnRfaWQiOiI4ZmNmN2EyNi04ZTgzLTQ1NWYtYWIxMS02MTlhMTk1YjBlZGUiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIGh0dHBzOlwvXC9vYXV0aDIuZGV2LnN0bS12ZXNwdWNjaS5jb21cL3Rlc3QgcGhvbmUgb3BlbmlkIHByb2ZpbGUgZW1haWwiLCJhdXRoX3RpbWUiOjE3NDk3MTE0NjcsImV4cCI6MTc1MTk0NjgxMSwiaWF0IjoxNzUxODYwNDExLCJqdGkiOiJkYzJmNGRmNC0yZjMyLTQyZDUtODM0MS0wMDE0NmQ5NGVkOWIiLCJ1c2VybmFtZSI6IjMzNGM2NWE1LTE0OTUtNDUzYS1hNmRlLTRkMzg0YTc4MTAwMCJ9.M8MOECMOf_jbolGk-Sc17wmtTEtIi_-_uXruo-k9sjvK3Ei8TxUSr2A1c8D-403uBi3MXaOwvE0L5FSIvij8WUZrhjYGzd_w27SZ0K9yW6WJM1K2MY4t9GgXjQIWueWtdeFnnvItYjis9TsIeH9NxJKeXcDoR2PlrMsPmBIpGFPmAhVgFv3yetSSVTrZ_cZLg-9o-7k90UGEOa8ZRiTnpHOs1E7PJqE-DtRW7Ma96qY8vviI3yQ24MiGRbi5pVTVg460w0Axp09P38PXagXQXpG6Jjy7dMtZrrnZIHdKL11iJrM7v-EeQc5eJBhaIcQGJhfoxbLTaWxi_u2D-mYBsQ
+@token-dev = eyJraWQiOiJcL3JIS3FCbG5JVldiU2RqdEJqODRQaDNyUk5SWWh4cnR6RFwvOXFTK0Q3aWc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIzMzRjNjVhNS0xNDk1LTQ1M2EtYTZkZS00ZDM4NGE3ODEwMDAiLCJjb2duaXRvOmdyb3VwcyI6WyJ3aGl0ZWxpc3QiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfOXdlbnNFNVJaIiwidmVyc2lvbiI6MiwiY2xpZW50X2lkIjoiNHNoYjE3OGdsbWxsc3I3NWdmb2JoZmRzYmEiLCJvcmlnaW5fanRpIjoiNjNiMjhhOGMtNGUxYy00NzI0LTg5NTAtMDdlYTg4NDQ5MjEyIiwiZXZlbnRfaWQiOiI4ZmNmN2EyNi04ZTgzLTQ1NWYtYWIxMS02MTlhMTk1YjBlZGUiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIGh0dHBzOlwvXC9vYXV0aDIuZGV2LnN0bS12ZXNwdWNjaS5jb21cL3Rlc3QgcGhvbmUgb3BlbmlkIHByb2ZpbGUgZW1haWwiLCJhdXRoX3RpbWUiOjE3NDk3MTE0NjcsImV4cCI6MTc1MTcwOTI3NCwiaWF0IjoxNzUxNjIyODc0LCJqdGkiOiJjNjQ0ZDU1Zi0xYjQ0LTQwNTQtYTI2NC00ZjFkMGE1OGQ4M2YiLCJ1c2VybmFtZSI6IjMzNGM2NWE1LTE0OTUtNDUzYS1hNmRlLTRkMzg0YTc4MTAwMCJ9.kjEMKQxIPThTUOW13kKm2d--n0Zt-f7g71worZkFUaKmWptuDzxNaUQzBu1xMewMPz2TlYgavgA7Aj2pXfpkUzArY1Yb9rwA5inCnR6CIOWiGBKXrqqJdq1lYOuIGf553Oxzx3LCDuBsqGWo9C3FMLyy5OXXaeoujrWITNZAiVFUEBclhvRXPBttfTMg_b9MSIkp97ZrVebTIbgOGEnv6JkkKW2U2_oVMYyie4bkCW8CpVw1Yd19WxRfWrKPm0dZVtCGVj9dm6L7ov3sTvjJkAURyXd9LbORBsll7dm6DH_894UDNiQ03j1y8ftn3h1jTEas9Sk66Yr-kPEokJb9rg
+
 @token = {{token-dev}}
 
 @probe_url = http://127.0.0.1:{{local_port}}
@@ -34,11 +35,11 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-DELETE {{base_url}}/projects/clone-TBC-group-6?as_org={{hdtest_org_id}}
+DELETE {{base_url}}/projects/test-group-project-4?as_org={{hdtest_org_id}}
 Authorization: Bearer {{token}}
 
 ###
-GET {{base_url}}/projects/test-project-2/icon?as_org={{hdtest_org_id}}
+GET {{base_url}}/projects/clone-TBC-group-5/icon?as_org={{hdtest_org_id}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 ###
@@ -85,12 +86,12 @@ Content-Type: application/json
 }
 
 ### create a new model for a group by scratch
-POST {{base_url}}/projects/test-project-2/models
+POST {{base_url}}/projects/clone-TBC-group-5/models?as_org={{hdtest_org_id}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "name": "test-model-2",
+  "name": "test-model-1",
   "description": "MyTestModelWithDTRef",
   "model_type": "classifier",
   "dataset": 
@@ -278,7 +279,7 @@ Content-Type: application/json
 }
 
 ###
-PATCH {{base_url}}/projects/clone-TBC-group-6/models/smart_asset_tracking?as_org={{hdtest_org_id}}
+PATCH {{base_url}}/projects/clone-TBC-group-5/models/smart_asset_tracking?as_org={{hdtest_org_id}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
