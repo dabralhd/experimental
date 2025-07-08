@@ -33,6 +33,7 @@ from project_api.utils.error_helper import (
     is_valid_name,
     is_valid_new_prj_for_user,
     )
+from project_api.utils.func_dec import (with_effective_user_id)
 import logging
 from project_api.utils.orgs_api_wrapper import(is_user_org_member)
 
@@ -42,8 +43,6 @@ from project_api.globals import (
 
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.DEBUG)
-
-from functools import wraps
 
 def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E501
     """Create new user project
@@ -127,21 +126,6 @@ def app_create_project(user: str, body=None, is_user_project=False):  # noqa: E5
         return Response(status=201)
 
     return Response(status=400)
-
-def with_effective_user_id(func):
-    @wraps(func)
-    def wrapper(user, *args, **kwargs):
-        as_org = connexion.request.args.get('as_org')
-        effective_user_id = user
-        if as_org:
-            if is_user_org_member(user, as_org):
-                effective_user_id = as_org
-            else:
-                logger.error(f'user {user} is not a member of org {as_org}')
-                return Response(status=client_side_error(ErrorType.FORBIDDEN))
-        # Pass effective_user_id to the view functiond
-        return func(user, *args, effective_user_id=effective_user_id, **kwargs)
-    return wrapper
 
 @with_effective_user_id 
 def app_get_projects(user: str, effective_user_id: str):  # noqa: E501
