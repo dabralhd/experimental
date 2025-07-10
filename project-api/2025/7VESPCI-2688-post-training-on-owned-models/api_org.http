@@ -9,7 +9,7 @@
 @remote_dev_url = https://dev.stm-vespucci.com:{{remote_port}}{{remote_api_base_path_3}}
 @base_url = {{remote_dev_url}}
 @token-dummy = dev
-@token-dev = eyJraWQiOiJcL3JIS3FCbG5JVldiU2RqdEJqODRQaDNyUk5SWWh4cnR6RFwvOXFTK0Q3aWc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIzMzRjNjVhNS0xNDk1LTQ1M2EtYTZkZS00ZDM4NGE3ODEwMDAiLCJjb2duaXRvOmdyb3VwcyI6WyJ3aGl0ZWxpc3QiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfOXdlbnNFNVJaIiwidmVyc2lvbiI6MiwiY2xpZW50X2lkIjoiNHNoYjE3OGdsbWxsc3I3NWdmb2JoZmRzYmEiLCJvcmlnaW5fanRpIjoiNjNiMjhhOGMtNGUxYy00NzI0LTg5NTAtMDdlYTg4NDQ5MjEyIiwiZXZlbnRfaWQiOiI4ZmNmN2EyNi04ZTgzLTQ1NWYtYWIxMS02MTlhMTk1YjBlZGUiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIGh0dHBzOlwvXC9vYXV0aDIuZGV2LnN0bS12ZXNwdWNjaS5jb21cL3Rlc3QgcGhvbmUgb3BlbmlkIHByb2ZpbGUgZW1haWwiLCJhdXRoX3RpbWUiOjE3NDk3MTE0NjcsImV4cCI6MTc1MjAzMjM3NCwiaWF0IjoxNzUxOTQ1OTc0LCJqdGkiOiI0MTc2OWM2MS02NjdhLTQzZjItYjE2Zi00ZGU4MjI4ZTI3YTAiLCJ1c2VybmFtZSI6IjMzNGM2NWE1LTE0OTUtNDUzYS1hNmRlLTRkMzg0YTc4MTAwMCJ9.oI_G5vOYXTveGRA-Q5j6XBGHNbl3av-jSdkp8BPNC6fALx8b9stzZjhtL0ZnOl8WfBVEEVcgKWBIuZ0KQIykD8ofk40-YvpZgoxRvLe4PcgyN8wfmyFYQQzQCvExY_daHFHfS3hjG3o06tcz3FWRtJ0-AG-qXXmg-M5lwXhezPuBinKLunkCgHbNI5gFdDviloZVb3rggRbNFWL24qxv6LANtutkDmHOyfdbkvomf5yBJ6GDo_3EEOXJ3ib6M5L0H5uppf9gpXgdXJuutEGtfQPMfue17cNSkUk9P17kRj7i3fKNe0TT90FbVkDHn1e6VODS4iQihWedCmO2v9tfCQ
+@token-dev = eyJraWQiOiJcL3JIS3FCbG5JVldiU2RqdEJqODRQaDNyUk5SWWh4cnR6RFwvOXFTK0Q3aWc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIzMzRjNjVhNS0xNDk1LTQ1M2EtYTZkZS00ZDM4NGE3ODEwMDAiLCJjb2duaXRvOmdyb3VwcyI6WyJ3aGl0ZWxpc3QiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfOXdlbnNFNVJaIiwidmVyc2lvbiI6MiwiY2xpZW50X2lkIjoiNHNoYjE3OGdsbWxsc3I3NWdmb2JoZmRzYmEiLCJvcmlnaW5fanRpIjoiNjNiMjhhOGMtNGUxYy00NzI0LTg5NTAtMDdlYTg4NDQ5MjEyIiwiZXZlbnRfaWQiOiI4ZmNmN2EyNi04ZTgzLTQ1NWYtYWIxMS02MTlhMTk1YjBlZGUiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIGh0dHBzOlwvXC9vYXV0aDIuZGV2LnN0bS12ZXNwdWNjaS5jb21cL3Rlc3QgcGhvbmUgb3BlbmlkIHByb2ZpbGUgZW1haWwiLCJhdXRoX3RpbWUiOjE3NDk3MTE0NjcsImV4cCI6MTc1MTcwOTI3NCwiaWF0IjoxNzUxNjIyODc0LCJqdGkiOiJjNjQ0ZDU1Zi0xYjQ0LTQwNTQtYTI2NC00ZjFkMGE1OGQ4M2YiLCJ1c2VybmFtZSI6IjMzNGM2NWE1LTE0OTUtNDUzYS1hNmRlLTRkMzg0YTc4MTAwMCJ9.kjEMKQxIPThTUOW13kKm2d--n0Zt-f7g71worZkFUaKmWptuDzxNaUQzBu1xMewMPz2TlYgavgA7Aj2pXfpkUzArY1Yb9rwA5inCnR6CIOWiGBKXrqqJdq1lYOuIGf553Oxzx3LCDuBsqGWo9C3FMLyy5OXXaeoujrWITNZAiVFUEBclhvRXPBttfTMg_b9MSIkp97ZrVebTIbgOGEnv6JkkKW2U2_oVMYyie4bkCW8CpVw1Yd19WxRfWrKPm0dZVtCGVj9dm6L7ov3sTvjJkAURyXd9LbORBsll7dm6DH_894UDNiQ03j1y8ftn3h1jTEas9Sk66Yr-kPEokJb9rg
 
 @token = {{token-dev}}
 
@@ -35,7 +35,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-DELETE {{base_url}}/projects/test-group-project-1?as_org={{hdtest_org_id}}
+DELETE {{base_url}}/projects/test-group-project-4?as_org={{hdtest_org_id}}
 Authorization: Bearer {{token}}
 
 ###
@@ -60,7 +60,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "ai_project_name": "test-group-project-3",
+  "ai_project_name": "test-group-project-4",
   "description": "My Project description",
   "version": "0.0.1"
 }
@@ -82,7 +82,7 @@ Content-Type: application/json
 
 {
   "project_name_to_clone": "TBC-group-5",
-  "ai_project_name": "clone-TBC-group-5-1"
+  "ai_project_name": "clone-TBC-group-5"
 }
 
 ### create a new model for a group by scratch
@@ -91,7 +91,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "name": "test-model-4",
+  "name": "test-model-1",
   "description": "MyTestModelWithDTRef",
   "model_type": "classifier",
   "dataset": 
@@ -151,11 +151,6 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-GET {{base_url}}/projects/clone-TBC-group-5?as_org={{hdtest_org_id}}
-Authorization: Bearer {{token}}
-Content-Type: application/json
-
-###
 
 POST {{base_url}}/projects
 Authorization: Bearer {{token}}
@@ -168,17 +163,21 @@ Content-Type: application/json
 }
 
 ###
+GET {{base_url}}/projects/test-project-101
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+
+
+###
 POST {{base_url}}/projects/test-project-2/models
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ### create a new project for a group from scratch
-POST {{base_url}}/projects/clone-TBC-group-5/models?as_org={{hdtest_org_id}}
-Authorization: Bearer {{token}}
-Content-Type: application/json
-
+POST {{base_url}}/projects/test-project-5-from-scratch-1/models?as_org={{hdtest_org_id}}
 {
-  "name": "test-model-2",
+  "name": "test-model-3",
   "description": "MyTestModelWithDTRef",
   "model_type": "classifier",
   "dataset": 
@@ -200,7 +199,7 @@ Content-Type: application/json
 }
 
 ### create a new model for a group by scratch
-POST {{base_url}}/projects/clone-TBC-group-5/models?as_org={{hdtest_org_id}}
+POST {{base_url}}/projects/test-project-2/models
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -227,13 +226,56 @@ Content-Type: application/json
 }
 
 ###
-POST {{base_url}}/projects/clone-TBC-group-5/models?as_org={{hdtest_org_id}}
+
+GET {{base_url}}/projects
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
+POST {{base_url}}/projects?is_user_project=True&as_org={{hdtest_org_id}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "project_name_to_clone": "test-project-101",
+  "ai_project_name": "group-project-101"
+}
+###
+GET {{base_url}}/projects?as_org={{hdtest_org_id}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
+
+GET {{base_url}}/projects/test-project-6
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+DELETE {{base_url}}/projects/get_started_smart_asset_tracking_mlc_clone_1
+Authorization: Bearer {{token}}
+
+###
+POST {{base_url}}/projects?is_user_project=True
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "project_name_to_clone": "test-project-4",
+  "ai_project_name": "test-project-6"
+}
+
+###
+GET {{base_url}}/projects?as_org={{hdtest_org_id}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+POST {{base_url}}/projects/group_project_6/models?as_org={{hdtest_org_id}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
   "model_name_to_clone": "smart_asset_tracking",
-  "name": "smart_asset_tracking_clone_8July"
+  "name": "smart_asset_tracking_clone_29May_2"
 }
 
 ###
@@ -274,6 +316,48 @@ Content-Type: application/json
   "ai_project_name": "smart_asset_tracking_mlc_clone7"
 }
 
+
+###
+DELETE {{base_url}}/projects/test_project_name_TC_508
+Authorization: Bearer {{token}}
+###
+POST {{base_url}}/projects/test-project-2/models
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "test-model-3",
+  "description": "MyTestModelWithDTRef",
+  "model_type": "classifier",
+  "dataset": 
+    {
+      "dataset_id": "dataset-abcxyz-999",
+      "name": "test-dataset-1"
+    }
+  ,
+  "classes": [
+    "x",
+    "y",
+    "z"
+  ],
+  "target": {
+    "type": "mlc",
+    "component": "lsm6dsv16x",
+    "device": "steval-mkboxpro"
+  }  
+}
+
+###
+POST {{base_url}}/projects/group_project_24June2025/models?as_org={{hdtest_org_id}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "model_name_to_clone": "smart_asset_tracking",
+  "name": "smart_asset_tracking_clone1"
+}
+
+
 ###
 POST {{base_url}}/projects/test-project-2/models
 Authorization: Bearer {{token}}
@@ -292,25 +376,56 @@ Content-Type: application/json
 {
 }
 
+
 ###
-POST {{base_url}}/projects/clone-TBC-group-5/models//training?as_org={{hdtest_org_id}}
-Authorization: Bearer {{token}}smart_asset_tracking
+
+PATCH {{base_url}}/projects/test-project-2/models/test-model-3
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "dataset": 
+    {
+      "dataset_id": "dataset-abcxyz-15",
+      "name": "name-updated"
+    },
+  "classes": [
+    "d",
+    "e"
+  ]
+}
+
+
+###
+GET {{base_url}}/projects/smart_asset_tracking_mlc_clone6
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
+POST {{base_url}}/projects/TBC-group-6/models/smart_asset_tracking/training
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
     "type": "job",
-    "configuration": "configuration2.json",
+    "configuration": "configuration.json",
     "artifacts": [],
     "reports": []
 }
 
 ###
-GET {{base_url}}/projects?as_org={{hdtest_org_id}}
+POST {{base_url}}/projects/clone-TBC-group-5/models/smart_asset_tracking/training?as_org={{hdtest_org_id}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
+{
+    "type": "job",
+    "configuration": "configuration.json",
+    "artifacts": [],
+    "reports": []
+}
+
 ###
-PATCH {{base_url}}/projects/clone-TBC-group-5/models/smart_asset_tracking/training?as_org={{hdtest_org_id}}
+PATCH {{base_url}}/projects/test-project-2/models/test-model-3/training?as_org={{hdtest_org_id}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -319,7 +434,7 @@ Content-Type: application/json
 }
 
 ###
-PATCH {{base_url}}/projects/clone-TBC-group-5/models/smart_asset_tracking/training/job?as_org={{hdtest_org_id}}
+POST {{base_url}}/projects/test-project-2/models/test-model-3/training/job
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -613,9 +728,9 @@ Content-Type: application/json
 ###
 
 @deployment_id=4afaf293-9856-412f-ba62-86f9778b3d2d
-@project_id=clone-TBC-group-5
+@project_id=asset-cloned-project-1
 ###
-GET {{base_url}}/projects/{{project_id}}/deployments/{{deployment_id}}/leaf/leaf_0?resource=datalogging_device_template_uri?as_org={{hdtest_org_id}}
+GET {{base_url}}/projects/{{project_id}}/deployments/{{deployment_id}}/leaf/leaf_0?resource=datalogging_device_template_uri
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
