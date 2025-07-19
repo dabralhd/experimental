@@ -1,0 +1,32 @@
+# config.yaml for Python Client Generation
+
+# The name of the generator to use (for a Python client)
+generatorName: python
+
+# Path to your OpenAPI/Swagger specification file
+# Replace 'path/to/your_api_spec.yaml' with the actual path to your spec.
+# This can be a local file or a URL.
+inputSpec: ./swagger_v3.yaml
+
+# The directory where the generated client code will be placed.
+# This directory will be created if it doesn't exist.
+outputDir: ./project-api-client
+
+# Additional properties specific to the Python generator.
+# You can uncomment and modify these as needed.
+additionalProperties:
+  # The name of the Python package for your client.
+  # This will be used in 'setup.py' and for import statements (e.g., 'import my_api_client').
+  packageName: project_api_client
+
+  # Whether to generate a README.md file. (default: true)
+  # generateReadme: true
+
+  # Whether to generate tests for the client. (default: true)
+  # generateTests: true
+
+  # Set the Python version target. Common values are 3.6, 3.7, 3.8, etc.
+  # pythonVersion: 3.9
+
+  # Whether to use the latest Python features (e.g., f-strings, walrus operator for Python 3.8+)
+  # enablePostProcessFile: true # This might require additional setup like 'black' or 'autopep8'
