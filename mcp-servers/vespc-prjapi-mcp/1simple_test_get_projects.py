@@ -16,7 +16,6 @@ from pprint import pprint
 # @token = {{token-dev}}
 
 remote_dev_url = 'https://dev.stm-vespucci.com:443/svc/project-api/3'
-token = ''
 
 print(f"Using remote_dev_url: {remote_dev_url}")
 
@@ -48,4 +47,4 @@ with project_api_client.ApiClient(configuration) as api_client:
         print("Exception when calling ActivityApi->app_get_projects: %s\n" % e)
     except Exception as e:
         print("Exception when calling ActivityApi->app_get_projects: %s\n" % e)
-    print(prjs)
+    pprint(prjs)
