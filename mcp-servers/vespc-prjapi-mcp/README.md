@@ -12,9 +12,12 @@ This MCP server that provides STAIoT Craft Project-API capabilities.
 ## Helper commands
 
 1. installing prjapi-api-client library
+- first build the prjapi client library
+cd experimental\mcp-servers\vespc-prjapi-mcp\prjapi_client\project-api-client\setup.py
 ```
 python setup.py install --user
 ```
+
 
 1. running a python script
 ```
@@ -25,6 +28,11 @@ uv run python 1simple_test_get_projects.py
 ```
 npx @modelcontextprotocol/inspector
 
-2. command: /Users/hemduttdabral/.local/bin/uv
-3. arguments: --directory /Users/hemduttdabral/projects/experimental/mcp-servers/vespc-prjapi-mcp run tools.py
-```
+2. command: 
+/Users/hemduttdabral/.local/bin/uv
+OR
+C:\Users\hem\.local\bin\uv.exe
+3. 
+arguments: --directory /Users/hemduttdabral/projects/experimental/mcp-servers/vespc-prjapi-mcp run tools.py
+OR
+arguments: --directory C:\\projects\\experimental\\mcp-servers\\vespc-prjapi-mcp run tools.py
