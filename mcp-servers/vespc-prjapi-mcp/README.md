@@ -11,6 +11,11 @@ This MCP server that provides STAIoT Craft Project-API capabilities.
 
 ## Helper commands
 
+1. installing prjapi-api-client library
+```
+python setup.py install --user
+```
+
 1. running a python script
 ```
 uv run python 1simple_test_get_projects.py
