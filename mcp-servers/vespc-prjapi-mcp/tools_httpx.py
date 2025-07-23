@@ -1,5 +1,16 @@
 import httpx
 import json
+import prjapi_endpoints
+import logging
+
+logger = logging.getLogger("tools-httpx")
+logger.setLevel(logging.INFO)
+# Add this block to ensure logs are shown in the console
+if not logger.hasHandlers():
+    handler = logging.StreamHandler()
+    formatter = logging.Formatter('%(levelname)s %(name)s: %(message)s')
+    handler.setFormatter(formatter)
+    logger.addHandler(handler)
 
 # --- Configuration ---
 # Replace with the actual base URL of your API
@@ -33,29 +44,30 @@ if ORG_ID:
 try:
     # Use httpx.Client for persistent connections if making multiple requests
     with httpx.Client() as client:
-        print(f"Making GET request to: {request_url}")
-        print(f"Headers: {headers}")
+        logger.info(f"Making GET request to: {request_url}")
+        logger.debug(f"Headers: {headers}")
         if params:
-            print(f"Params: {params}")
+            logger.info(f"Params: {params}")
 
         response = client.get(request_url, headers=headers, params=params)
 
         # --- Handle the Response ---
         response.raise_for_status()  # Raise an exception for HTTP errors (4xx or 5xx)
 
-        print(f"\nStatus Code: {response.status_code}")
-        print("Response Body:")
+        logger.debug(f"\nStatus Code: {response.status_code}")
+        logger.debug("Response Body:")
         try:
             # The spec indicates application/json content
             projects_list = response.json()
-            print(json.dumps(projects_list, indent=2))
+            logger.info(json.dumps(projects_list, indent=2))
+
         except json.JSONDecodeError:
-            print("Response was not valid JSON.")
-            print(response.text)
+            logger.error("Response was not valid JSON.")
+            logger.error(response.text)
 
 except httpx.HTTPStatusError as e:
-    print(f"HTTP error occurred: {e.response.status_code} - {e.response.text}")
+    logger.debug(f"HTTP error occurred: {e.response.status_code} - {e.response.text}")
 except httpx.RequestError as e:
-    print(f"An error occurred while requesting {e.request.url!r}: {e}")
+    logger.debug(f"An error occurred while requesting {e.request.url!r}: {e}")
 except Exception as e:
-    print(f"An unexpected error occurred: {e}")
+    logger.debug(f"An unexpected error occurred: {e}")
