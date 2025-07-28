@@ -49,7 +49,7 @@ def with_org_admin_access(func):
                 logger.error(f'user {user} is not an admin of org {as_org}')
                 return Response(status=client_side_error(ErrorType.FORBIDDEN))
         # Pass effective_user_id to the view functiond
-        return func(user=effective_user_id, *args, **kwargs)
+        return func(effective_user_id, *args, **kwargs)
     return wrapper
 
 def with_model_owner_uuid(func):
@@ -72,7 +72,7 @@ def with_model_owner_uuid(func):
                 logger.error(f'user {user} is not a member of org {as_org}')
                 return Response(status=client_side_error(ErrorType.FORBIDDEN))
         # Pass effective_user_id to the view functiond
-        return func(user=effective_user_id, *args, **kwargs)
+        return func(effective_user_id, *args, **kwargs)
     return wrapper
 
 def not_supported_for_org(func):
