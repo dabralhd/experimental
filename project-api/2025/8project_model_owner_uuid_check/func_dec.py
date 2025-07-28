@@ -7,7 +7,7 @@ import logging
 from http import HTTPStatus
 from project_api.utils.error_helper import (user_prj_exists, get_prj_path, get_prj_json_path)
 import os
-from project_api.utils.project_model_helper import (get_model_owner_uuid)
+from project_api.utils.project_model_helper import (get_project_owner_uuid, get_model_owner_uuid)
 
 logger = logging.getLogger(__name__)
 formatter = logging.Formatter(
@@ -24,7 +24,7 @@ def with_effective_user_id(func):
         as_org = connexion.request.args.get('as_org')
         effective_user_id = user
         if as_org:
-            status, rights = is_user_org_member(user, as_org)
+            status, _ = is_user_org_member(user, as_org)
             if status:
                 logger.debug(f'{user} is a member of {as_org}')                
                 effective_user_id = as_org
@@ -58,8 +58,10 @@ def with_model_owner_uuid(func):
         as_org = connexion.request.args.get('as_org')
         effective_user_id = user
         if as_org:
-            status, rights = is_user_org_member(user, as_org)
+            #user = kwargs.get('user')
+            status, _ = is_user_org_member(user, as_org)
             model_owner_uuid = get_model_owner_uuid(user, kwargs.get('project_name'), kwargs.get('model_name'))
+            logger.debug(f'model_owner_uuid: {model_owner_uuid}')
             if status and user == model_owner_uuid:
                 logger.debug(f'{user} is a member of {as_org} and is the model owner')                
                 effective_user_id = as_org
@@ -77,19 +79,19 @@ def not_supported_for_org(func):
     @wraps(func)
     def wrapper(user, *args, **kwargs):
         as_org = connexion.request.args.get('as_org')
-        effective_user_id = user
+        #effective_user_id = user
         if as_org:
             logging.error(f'this operation is not implemented for project sharing usecase.\n i.e. as_org query param not suported! \n as_org: {as_org}')
             return Response(status=HTTPStatus.NOT_IMPLEMENTED)     
-        return func(user=effective_user_id, *args, **kwargs)   
+        return func(user, *args, **kwargs)   
     
     return wrapper
 
 def default_except(func):
     @wraps(func)
-    def wrapper(*args, **kwargs):
+    def wrapper(user, *args, **kwargs):
         try:
-            return func(*args, **kwargs)  
+            return func(user, *args, **kwargs)  
         except Exception as e:
             logger.error(f'exception occurred {e}')
             return Response('bad request', status=400)              
