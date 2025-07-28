@@ -11,10 +11,9 @@ from project_api.globals import VESPUCCI_ENVIRONMENT
 import logging
 from project_api.utils.orgs_api_wrapper import(check_orgs_membership, is_user_org_member)
 from project_api.utils.error_types import (client_side_error, ErrorType)
-from project_api.utils.func_dec import (with_effective_user_id, with_org_admin_access, default_except)
+from project_api.utils.func_dec import (with_effective_user_id, with_org_admin_access, with_model_owner_uuid, default_except)
 
 from project_api.utils.error_helper import (model_exists)
-from project_api.utils.project_model_helper import (get_model_owner_uuid)
 
 logger = logging.getLogger(__name__)
 formatter = logging.Formatter(
@@ -26,7 +25,7 @@ logger.addHandler(handler)
 logger.setLevel(logging.DEBUG)
 
 @default_except
-@with_org_admin_access
+@with_model_owner_uuid
 def app_create_activity(user, body, project_name, model_name, activity_type):  # noqa: E501
     """Create new activity or update whole activity section
 
@@ -55,7 +54,7 @@ def app_create_activity(user, body, project_name, model_name, activity_type):  #
     return response_error(msg="Connexion request not a JSON", status_code=400) # bad request
 
 @default_except
-@with_org_admin_access
+@with_model_owner_uuid
 def app_update_activity(user, body, project_name, model_name, activity_type):  # noqa: E501
     """Create new activity or update whole activity section
 
@@ -79,7 +78,7 @@ def app_update_activity(user, body, project_name, model_name, activity_type):  #
     return response_error(msg="Connexion request not a JSON", status_code=400) # bad request
 
 @default_except
-@with_org_admin_access
+@with_model_owner_uuid
 def app_patch_activity(user, body, project_name, model_name, activity_type):  # noqa: E501
     """Create new activity
 
@@ -117,7 +116,7 @@ def app_get_activity(user: str, project_name: str, model_name: str, activity_typ
 
     :rtype: Activity
     """
-    
+   
     if activity_type ==  Activity_Name.Activity_Name_Training.value:
         logger.debug('training activity detecting. forwarding request')
         return training_controller.app_get_training(user, project_name, model_name)
@@ -127,7 +126,7 @@ def app_get_activity(user: str, project_name: str, model_name: str, activity_typ
     return Response(status=501) # not implemented
 
 @default_except
-@with_org_admin_access
+@with_model_owner_uuid
 def app_delete_activity(user, project_name, model_name, activity_type):  # noqa: E501
     """Delete activity associated to the given name
 
@@ -164,7 +163,7 @@ def app_download_activity_artifacts(user, body, project_name, model_name, activi
     return response_error(msg="Connexion request not a JSON", status_code=400)
 
 @default_except
-@with_org_admin_access
+@with_model_owner_uuid
 def app_create_activity_configuration(user, body, project_name, model_name, activity_type):
 
     if connexion.request.is_json:
@@ -176,7 +175,7 @@ def app_create_activity_configuration(user, body, project_name, model_name, acti
     return response_error(msg="Connexion request not a JSON", status_code=400)
 
 @default_except
-@with_org_admin_access
+@with_model_owner_uuid
 def app_patch_activity_configuration(user, body, project_name, model_name, activity_type):
 
     if connexion.request.is_json:
@@ -197,10 +196,12 @@ def app_get_public_projects_activity(project_name: str, model_name: str, activit
     return Response(status=501) # not implemented
 
 @default_except
-@with_org_admin_access    
+@with_model_owner_uuid  
 def app_create_job_for_activity(user, body, project_name: str, model_name: str, activity_type: str):
     if connexion.request.is_json:
         if activity_type ==  Activity_Name.Activity_Name_Training.value:
+            logger.debug(f'app_create_job_for_activity: user: {user}, project_name: {project_name}, model_name: {model_name}, activity_type: {activity_type}')
+            # Forward the request to job_controller
             return job_controller.app_create_job(user, body, project_name, model_name)
         else:
             return Response(status=501) # not implemented

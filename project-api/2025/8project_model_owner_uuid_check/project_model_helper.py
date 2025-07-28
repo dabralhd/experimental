@@ -24,6 +24,7 @@ def get_project_owner_uuid(user, project_name):
     :param project_name: The name of the project.
     :return: The owner UUID of the project.
     """
+    logger.debug(f'Getting project owner UUID for user: {user}, project: {project_name}')
     project_repo = ProjectFileRepo(GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user))
     project_domain_obj = project_repo.get_project(project_name=project_name)
     
@@ -45,6 +46,7 @@ def get_model_owner_uuid(user, project_name, model_name):
     :param model_name: The name of the model.
     :return: The owner UUID of the model.
     """
+    logger.debug(f'get_model_owner_uuid: user: {user}, project_name: {project_name}, model_name: {model_name}')
     project_repo = ProjectFileRepo(GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user))
     project_domain_obj = project_repo.get_project(project_name=project_name)
     
