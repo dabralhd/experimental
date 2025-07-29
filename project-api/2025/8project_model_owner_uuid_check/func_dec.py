@@ -24,7 +24,7 @@ def with_effective_user_id(func):
         as_org = connexion.request.args.get('as_org')
         effective_user_id = user
         if as_org:
-            status, _ = is_user_org_member(user, as_org)
+            status, rights = is_user_org_member(user, as_org)
             if status:
                 logger.debug(f'{user} is a member of {as_org}')                
                 effective_user_id = as_org
@@ -32,7 +32,7 @@ def with_effective_user_id(func):
                 logger.error(f'user {user} is not a member of org {as_org}')
                 return Response(status=client_side_error(ErrorType.FORBIDDEN))
         # Pass effective_user_id to the view functiond
-        return func(user=effective_user_id, *args, **kwargs)
+        return func(effective_user_id, *args, **kwargs)
     return wrapper
 
 def with_org_admin_access(func):
@@ -49,7 +49,7 @@ def with_org_admin_access(func):
                 logger.error(f'user {user} is not an admin of org {as_org}')
                 return Response(status=client_side_error(ErrorType.FORBIDDEN))
         # Pass effective_user_id to the view functiond
-        return func(user=effective_user_id, *args, **kwargs)
+        return func(effective_user_id, *args, **kwargs)
     return wrapper
 
 def with_model_owner_uuid(func):
@@ -58,20 +58,19 @@ def with_model_owner_uuid(func):
         as_org = connexion.request.args.get('as_org')
         effective_user_id = user
         if as_org:
-            #user = kwargs.get('user')
             status, _ = is_user_org_member(user, as_org)
-            model_owner_uuid = get_model_owner_uuid(user, kwargs.get('project_name'), kwargs.get('model_name'))
-            logger.debug(f'model_owner_uuid: {model_owner_uuid}')
-            if status and user == model_owner_uuid:
-                logger.debug(f'{user} is a member of {as_org} and is the model owner')                
+            if status:
                 effective_user_id = as_org
-            elif status and user != model_owner_uuid:
-                logger.debug(f'{user} is a member of {as_org}\n is not owner of the model, model_owner_uuid: {model_owner_uuid}')  
-                return Response(status=client_side_error(ErrorType.FORBIDDEN))
+                model_owner_uuid = get_model_owner_uuid(effective_user_id, kwargs.get('project_name'), kwargs.get('model_name'))
+                logger.debug(f'model_owner_uuid: {model_owner_uuid}')
+                if user != model_owner_uuid:
+                    logger.debug(f'{user} is a member of {as_org}\n is not owner of the model, \nmodel_owner_uuid: {model_owner_uuid}')  
+                    return Response(status=client_side_error(ErrorType.FORBIDDEN))
             else:
                 logger.error(f'user {user} is not a member of org {as_org}')
                 return Response(status=client_side_error(ErrorType.FORBIDDEN))
         # Pass effective_user_id to the view functiond
+        logger.debug(f'{user} is a member of {as_org} and is the model owner')
         return func(user=effective_user_id, *args, **kwargs)
     return wrapper
 
@@ -79,11 +78,11 @@ def not_supported_for_org(func):
     @wraps(func)
     def wrapper(user, *args, **kwargs):
         as_org = connexion.request.args.get('as_org')
-        #effective_user_id = user
+        effective_user_id = user
         if as_org:
             logging.error(f'this operation is not implemented for project sharing usecase.\n i.e. as_org query param not suported! \n as_org: {as_org}')
             return Response(status=HTTPStatus.NOT_IMPLEMENTED)     
-        return func(user, *args, **kwargs)   
+        return func(effective_user_id, *args, **kwargs)   
     
     return wrapper
 

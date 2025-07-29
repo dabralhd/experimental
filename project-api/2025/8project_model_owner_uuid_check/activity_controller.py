@@ -198,6 +198,7 @@ def app_get_public_projects_activity(project_name: str, model_name: str, activit
 @default_except
 @with_model_owner_uuid  
 def app_create_job_for_activity(user, body, project_name: str, model_name: str, activity_type: str):
+    logger.debug(f'app_create_job_for_activity: user: {user}, project_name: {project_name}, model_name: {model_name}, activity_type: {activity_type}')  
     if connexion.request.is_json:
         if activity_type ==  Activity_Name.Activity_Name_Training.value:
             logger.debug(f'app_create_job_for_activity: user: {user}, project_name: {project_name}, model_name: {model_name}, activity_type: {activity_type}')
