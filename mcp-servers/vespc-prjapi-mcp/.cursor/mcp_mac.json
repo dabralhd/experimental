@@ -1,17 +1,18 @@
 {
     "mcpServers": {
         "prjapi-mcp": {
-            "command": "C:\\Users\\hem\\.local\\bin\\uv.exe",
+            "command": "/Users/hemduttdabral/.local/bin/uv",
             "args": [
               "--directory",
-              "C:\\projects\\experimental\\mcp-servers\\vespc-prjapi-mcp",
+              "/Users/hemduttdabral/projects/experimental/mcp-servers/vespc-prjapi-mcp",
               "run",
               "tools_httpx_1.py"
             ]
           },
           "filesystem": {
-            "command": "C:\\Program Files\\nodejs\\npx.psl",
+            "command": "npx",
             "args": ["-y", "mcp-server-filesystem"]
           }
     }
-}
+  }
+  
