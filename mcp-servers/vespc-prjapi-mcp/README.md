@@ -1,5 +1,17 @@
 # README
 
+## Usage with Cursor
+
+1. install uv
+
+2. run the server using following command
+
+```
+uv run tools_httpx_1.py
+```
+
+3. 
+
 This MCP server that provides STAIoT Craft Project-API capabilities. 
 
 ## Supported Tools

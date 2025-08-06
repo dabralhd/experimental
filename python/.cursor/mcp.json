@@ -1,0 +1,14 @@
+{
+    "mcpServers": {
+        "prjapi-mcp": {
+            "command": "/Users/hemduttdabral/.local/bin/uv",
+            "args": [
+              "--directory",
+              "/Users/hemduttdabral/projects/experimental/mcp-servers/vespc-prjapi-mcp",
+              "run",
+              "tools_httpx_1.py"
+            ]
+          }
+    }
+  }
+  
