@@ -6,7 +6,7 @@ from mcp.server.fastmcp import FastMCP
 
 mcp_server = FastMCP('prjapi-mcp-server')
 
-BEARER_TOKEN = "eyJraWQiOiJcL3JIS3FCbG5JVldiU2RqdEJqODRQaDNyUk5SWWh4cnR6RFwvOXFTK0Q3aWc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIzMzRjNjVhNS0xNDk1LTQ1M2EtYTZkZS00ZDM4NGE3ODEwMDAiLCJjb2duaXRvOmdyb3VwcyI6WyJ3aGl0ZWxpc3QiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfOXdlbnNFNVJaIiwidmVyc2lvbiI6MiwiY2xpZW50X2lkIjoiNHNoYjE3OGdsbWxsc3I3NWdmb2JoZmRzYmEiLCJvcmlnaW5fanRpIjoiZDk4OTE1MzgtMjcyYy00NWM2LWFmNzQtZjJhN2UyNjI4ZjcyIiwiZXZlbnRfaWQiOiI1NWNmY2UxNi03ZWMzLTQzZWEtYTMyMi03ODQ3Nzg3YTgwMzEiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIGh0dHBzOlwvXC9vYXV0aDIuZGV2LnN0bS12ZXNwdWNjaS5jb21cL3Rlc3QgcGhvbmUgb3BlbmlkIHByb2ZpbGUgZW1haWwiLCJhdXRoX3RpbWUiOjE3NTMyMDU4MDIsImV4cCI6MTc1MzcyMTM2MiwiaWF0IjoxNzUzNjM0OTYyLCJqdGkiOiI2MmE5MGJlMS0wYjFiLTRjY2YtYjdkNy1iMDJkOGMyYWZiN2EiLCJ1c2VybmFtZSI6IjMzNGM2NWE1LTE0OTUtNDUzYS1hNmRlLTRkMzg0YTc4MTAwMCJ9.F1H1thkq_jHu4WvZO93LULgrcM5k3U_u7wfsaYh5D63_WlxEzEzc1eiqiti8bU1aYkd2oMICHDUEAOaQTahmsZ5HfSfeUtHHmHdfa-a2W_xU5-y2vqomyfZ2q-r0F-7hmu6KsF1HMwFNnfTP0truktd7ZD3qxHzFJAPVUlKvofIrjRr9gRWHRsbCfuq0fNMraCnoD_SPzSxdOd62FoVDA7Lt_DvQVcFz23zQje9oXr4EUY8tFTd72VSPnvwfiZKgsT08O5qWPTZyFW2aGi3mV-rupmFPh5Z1s7_TvyMauISY_bE9UbrVbYMrgqio_-xpsVIG4HZVr7j5E8xWmIQaSQ"
+BEARER_TOKEN = "eyJraWQiOiJcL3JIS3FCbG5JVldiU2RqdEJqODRQaDNyUk5SWWh4cnR6RFwvOXFTK0Q3aWc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIzMzRjNjVhNS0xNDk1LTQ1M2EtYTZkZS00ZDM4NGE3ODEwMDAiLCJjb2duaXRvOmdyb3VwcyI6WyJ3aGl0ZWxpc3QiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfOXdlbnNFNVJaIiwidmVyc2lvbiI6MiwiY2xpZW50X2lkIjoiNHNoYjE3OGdsbWxsc3I3NWdmb2JoZmRzYmEiLCJvcmlnaW5fanRpIjoiZDk4OTE1MzgtMjcyYy00NWM2LWFmNzQtZjJhN2UyNjI4ZjcyIiwiZXZlbnRfaWQiOiI1NWNmY2UxNi03ZWMzLTQzZWEtYTMyMi03ODQ3Nzg3YTgwMzEiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIGh0dHBzOlwvXC9vYXV0aDIuZGV2LnN0bS12ZXNwdWNjaS5jb21cL3Rlc3QgcGhvbmUgb3BlbmlkIHByb2ZpbGUgZW1haWwiLCJhdXRoX3RpbWUiOjE3NTMyMDU4MDIsImV4cCI6MTc1NDQxMjU4OCwiaWF0IjoxNzU0MzI2MTg4LCJqdGkiOiJjMjY4MWViNC0zMDVhLTRjMzctOWZmYy1lMjIyZGFkNDZjOGQiLCJ1c2VybmFtZSI6IjMzNGM2NWE1LTE0OTUtNDUzYS1hNmRlLTRkMzg0YTc4MTAwMCJ9.f5Sh8Zdr9RHx4B411jGnYS8RaGrpNis5cX5RCT27KkYqcAZw2iGJ4AhQUPs2XHhxCnUFwCvxE6b6YydVz7uNbUe-jNBry5knxHClHf_duoaKjbuJ0HdrEoV-dvwpUhhw1PJtpDTsDEsSy9mqfgcus3ZZK3-o7QgJ9yj8YqC1mqNiUHvKOINq4V2iotM-z3gveqd7colhbHVnob9q2TM23WIyrSzzH5e0ggrqZBHj-gUCBwHk1sC-zjZ5eFvoVRjbqdYq31H1vgCrK4BOJ-CDiENLYbMWwGGXIFRCG5cWtlZ3L9c_YNKLaudYbGyTKCzu_GL5c31ejtaTdzjOGBB2cw"
 BASE_URL = "https://dev.stm-vespucci.com:443/svc/project-api/3"
 
 
@@ -385,20 +385,6 @@ def fetch_usr_prj_attr(attr: str='ai_project_name'):
     logger.debug('Exiting fetch_usr_prj_list')     
 
 @mcp_server.tool()
-def fetch_template_prjs():
-    '''Fetch template projects from STAIoT Craft tool's workspace.'''
-
-    logger.debug('Entered fetch_example_prjs')
-    logger.debug('Calling the /template/projects endpoint...')
-    usr_prjs = get_template_projects()
-    if usr_prjs:
-        logger.info(f"Fetched {len(usr_prjs)} projects successfully.")
-        return usr_prjs
-    else:
-        logger.error("Failed to fetch projects or no projects found.")
-    logger.debug('Exiting fetch_example_prjs') 
-
-@mcp_server.tool()
 def fetch_template_prj_list():
     '''Fetch list of template projects from STAIoT Craft tool's workspace.'''
 
@@ -556,8 +542,8 @@ if __name__ == "__main__":
     mcp_server.run(transport='stdio')    
 
 # if __name__ == "__main__":
-#     #test_get_usr_prjs()
-#     test_get_template_prjs()
+#     test_get_usr_prjs()
+#     #test_get_template_prjs()
 #     #test_delete_usr_prjs()
 #     #test_create_usr_prj()
 #     #test_clone_usr_prj()

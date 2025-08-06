@@ -3,6 +3,11 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
+    
+    def insert_next(self, node, data):
+        new_node = Node(data)
+        node.next = new_node
+
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -38,7 +43,15 @@ class LinkedList:
             prev.next = None
 
         self.size = self.size - 1
-        return data        
+        return data    
+
+    def to_list(self):
+        ret = []
+        curr = self.head
+        while curr:
+            ret.append(curr.data)
+            curr = curr.next
+        return ret
 
     def __str__(self):
         curr = self.head
@@ -48,18 +61,31 @@ class LinkedList:
             curr = curr.next
         else:
             s = s + "X"
-        return s       
+        return s   
 
-if __name__ == "__main__":
-    l1 = LinkedList()
-    l1.append(1)
-    l1.append(2)
-    l1.append(3)
-    l1.append(4)
-    l1.append(5)
-    l1.append(6)           
+def make_ll(arr: list[int]) -> Node:
+    '''
+    although we dan use helper LinkedList class defined above for inserting new nodes,
+    however for practice purpose using bare Node class
 
-    print(l1)
+    '''
+    first = Node()
 
-    while l1.head:
-        print(f'size: {l1.size}, value: {l1.pop_last()}')
+    for val in arr:
+        second = first.insert_next(val)
+        second = second.next
+    return first.next
+
+# if __name__ == "__main__":
+#     l1 = LinkedList()
+#     l1.append(1)
+#     l1.append(2)
+#     l1.append(3)
+#     l1.append(4)
+#     l1.append(5)
+#     l1.append(6)           
+
+#     print(l1)
+
+#     while l1.head:
+#         print(f'size: {l1.size}, value: {l1.pop_last()}')

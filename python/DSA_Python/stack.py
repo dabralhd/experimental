@@ -9,6 +9,15 @@ class Stack(LinkedList):
         super.append(data)
 
     def pop() -> Any:
+        return super.pop_last()
+    
+if __name__ == '__main__':
+    s = Stack()
+    s.push(1)    
+    s.push(2)    
+    s.push(3)    
+    s.push(4)
+
         
 
 
