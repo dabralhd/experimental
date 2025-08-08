@@ -10,8 +10,13 @@
             ]
           },
           "filesystem": {
-            "command": "C:\\Program Files\\nodejs\\npx.psl",
-            "args": ["-y", "mcp-server-filesystem"]
-          }
+          "command": "npx",
+          "args": [
+            "-y",
+            "@modelcontextprotocol/server-filesystem",
+            "C:\\projects\\experimental\\mcp-servers\\vespc-prjapi-mcp\\filesystem-server-dirs\\dir1",
+            "C:\\projects\\experimental\\mcp-servers\\vespc-prjapi-mcp\\filesystem-server-dirs\\dir2"
+          ]
+    }    
     }
 }

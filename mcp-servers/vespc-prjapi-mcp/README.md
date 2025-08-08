@@ -3,17 +3,9 @@
 ## Usage with Cursor
 
 1. Windows
-run following commands:
-
 ```
 cd C:\projects\experimental\mcp-servers\vespc-prjapi-mcp
-uv run .\tools_httpx_1.py
 ```
-
-- setup mcp.json
-
-- start mcp server in ide
-
 
 2. run the server using following command
 
