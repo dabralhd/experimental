@@ -5,6 +5,14 @@
 1. Windows
 ```
 cd C:\projects\experimental\mcp-servers\vespc-prjapi-mcp
+
+# Activate python dev env on windows
+.venv\Scripts\activate
+
+# Activate python dev env on Mac
+
+# For mcp-inspector based debugging
+npx @modelcontextprotocol/inspector uv run server.py
 ```
 
 2. run the server using following command

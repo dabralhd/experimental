@@ -1,6 +1,7 @@
-@mygroup = sp4n95r2rc4he7b4rpzdpqtj10
-@andrea_org = fv7er6m9prcy7emqeb531xwj10
-@andrea_org = wav5ndzp5e89pe210zbqnqzj10
+@hd_group = sp4n95r2rc4he7b4rpzdpqtj10
+@jana_group = fv7er6m9prcy7emqeb531xwj10
+@andrea_group = wav5ndzp5e89pe210zbqnqzj10
+@harsh_admin_group = mq1zcse1zpzjff9bxpmwsg2k10
 @local_port = 9090
 @remote_port = 443
 @local_api_base_path = /3
@@ -11,19 +12,21 @@
 @remote_dev_url = https://dev.stm-vespucci.com:{{remote_port}}{{remote_api_base_path_3}}
 @base_url = {{remote_dev_url}}
 @token-dummy = dev
-@token-dev = eyJraWQiOiJcL3JIS3FCbG5JVldiU2RqdEJqODRQaDNyUk5SWWh4cnR6RFwvOXFTK0Q3aWc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIzMzRjNjVhNS0xNDk1LTQ1M2EtYTZkZS00ZDM4NGE3ODEwMDAiLCJjb2duaXRvOmdyb3VwcyI6WyJ3aGl0ZWxpc3QiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfOXdlbnNFNVJaIiwidmVyc2lvbiI6MiwiY2xpZW50X2lkIjoiNHNoYjE3OGdsbWxsc3I3NWdmb2JoZmRzYmEiLCJvcmlnaW5fanRpIjoiYzhkYWZjMjQtZWY0ZS00YTYwLTlmNmQtODdiYjFlMTY0YzM0IiwiZXZlbnRfaWQiOiJlNzlmMTcwMy04MzQxLTRhOGYtYTI0ZS1hYmZjMTBmYjc5YjQiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIGh0dHBzOlwvXC9vYXV0aDIuZGV2LnN0bS12ZXNwdWNjaS5jb21cL3Rlc3QgcGhvbmUgb3BlbmlkIHByb2ZpbGUgZW1haWwiLCJhdXRoX3RpbWUiOjE3NTI0NzQ2MTcsImV4cCI6MTc1NDY1MDU2MiwiaWF0IjoxNzU0NTY0MTYyLCJqdGkiOiI4YjcxMzYzOS0yZmIwLTQzOGQtODE4My05MDM2MmRiZWYwNTgiLCJ1c2VybmFtZSI6IjMzNGM2NWE1LTE0OTUtNDUzYS1hNmRlLTRkMzg0YTc4MTAwMCJ9.KR-P0uky3Rcvl_rAA666wZVngbYdDXM0xuwnprSnFWsSdok92R52NQCeIT2CLYuQSKjH43gS0BGexQLr_5LEd39SZNCH1hHhVxqGEh8h-3WzKpjj587g8kIRGdHGkKXAA0JZ4VloUzdCoXdmlqt9HAg5o-2-4uO_9UJUzbbrJWr_Q1ar77XjMv_o6uu5dAUHsDzZ2gw-OwyKmXGrYqsFfV2HgNXM4URQkDCWtxEu48eIBgIE7IIploOxVEkIBZ1-IyaDNA1GVqPHaIvTPB5lubp5edL54N0pERUqbHoJoXCuV541GIZZ0qvF1wZPEVIvFD1iUeX9BBhMJt9eBX-OLA
+@token-dev = eyJraWQiOiJcL3JIS3FCbG5JVldiU2RqdEJqODRQaDNyUk5SWWh4cnR6RFwvOXFTK0Q3aWc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIzMzRjNjVhNS0xNDk1LTQ1M2EtYTZkZS00ZDM4NGE3ODEwMDAiLCJjb2duaXRvOmdyb3VwcyI6WyJ3aGl0ZWxpc3QiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfOXdlbnNFNVJaIiwidmVyc2lvbiI6MiwiY2xpZW50X2lkIjoiNHNoYjE3OGdsbWxsc3I3NWdmb2JoZmRzYmEiLCJvcmlnaW5fanRpIjoiYzhkYWZjMjQtZWY0ZS00YTYwLTlmNmQtODdiYjFlMTY0YzM0IiwiZXZlbnRfaWQiOiJlNzlmMTcwMy04MzQxLTRhOGYtYTI0ZS1hYmZjMTBmYjc5YjQiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIGh0dHBzOlwvXC9vYXV0aDIuZGV2LnN0bS12ZXNwdWNjaS5jb21cL3Rlc3QgcGhvbmUgb3BlbmlkIHByb2ZpbGUgZW1haWwiLCJhdXRoX3RpbWUiOjE3NTI0NzQ2MTcsImV4cCI6MTc1NTA2MTUzNiwiaWF0IjoxNzU0OTc1MTM2LCJqdGkiOiI3MjJmMGRmNC1lZDY4LTQyZTctODg1MS1mYzI4NzAyZjJmZmUiLCJ1c2VybmFtZSI6IjMzNGM2NWE1LTE0OTUtNDUzYS1hNmRlLTRkMzg0YTc4MTAwMCJ9.Cfh-s6IWNcJnZqWYiSj-APLyRaVahPTYgKNjUVLkVPFGBmnL3r9cRyBRUmdNHN_vXN7BEOyhy1Z0mylUzQoFgo1S9UNfJJ_6R_TPME4cjc0ldvqUYMPSfB9Ylhbbz7qKoGhE3GODZlKuZyU0-pCHqxNkgN15AO0e1rKgHQCDipgdUX4l1BnLHcfgMGzRc8kDa77Wl_UxpuAyPa8A8n3XcKuzaRNU9IPh9VnQg0c9rJj2My-1OH3di1FvJBqYc_USH6ouGk4saNpim0wbcQy2op5u1sEEYH2Fg_7bnWlJuHoKWouZnMtFYze68W5hSV74rA802kh0QQ_nNCBM6cBaAQ
 
 @token = {{token-dev}}
 
 @probe_url = http://127.0.0.1:{{local_port}}
 
-@unique_project_name = sat-shared
-
+@test_group_name = {{harsh_admin_group}}
+@unique_project_name = smart_asset_tracking_clone-1
+@andrea_owned_project = "TestPrj"
+@unique_model_name = smart_asset_tracking
 ###
 GET {{probe_url}}/livez HTTP/1.1
 
 ###
-GET {{base_url}}/templates/projects/
+GET {{base_url}}/templates/projects
 ###
 
 GET {{base_url}}/templates/projects/get_started_smart_asset_tracking_mlc/icon
@@ -38,23 +41,21 @@ DELETE {{base_url}}/projects/TBC-group-1
 Authorization: Bearer {{token}}
 
 ###
-
-
-GET {{base_url}}/projects?as_org={{andrea_org}}
+GET {{base_url}}/projects?as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 ###
 
-GET {{base_url}}/projects/{{unique_project_name}}?as_org={{andrea_org}}
+GET {{base_url}}/projects/{{unique_project_name}}?as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-DELETE {{base_url}}/projects/{{unique_project_name}}?as_org={{andrea_org}}
+DELETE {{base_url}}/projects/{{unique_project_name}}?as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 
 ###
-DELETE {{base_url}}/projects/{{unique_project_name}}/models/shared-model-test-30July?as_org={{andrea_org}}
+DELETE {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}?as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 
 ###
@@ -80,17 +81,17 @@ Content-Type: application/json
 }
 
 ###
-POST {{base_url}}/projects?as_org={{andrea_org}}&is_user_project=True
+POST {{base_url}}/projects?as_org={{test_group_name}}&is_user_project=True
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "project_name_to_clone": "{{unique_project_name}}",
-  "ai_project_name": "{{unique_project_name}}"
+  "project_name_to_clone": "test-project-1",
+  "ai_project_name": "test-project-1"
 }
 
 ###
-POST {{base_url}}/projects?as_org={{andrea_org}}
+POST {{base_url}}/projects?as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -100,7 +101,7 @@ Content-Type: application/json
 }
 
 ### create a new model for a group by scratch
-POST {{base_url}}/projects/get_started_smart_asset_tracking_mlc_clone_5aug/models?as_org={{andrea_org}}
+POST {{base_url}}/projects/get_started_smart_asset_tracking_mlc_clone_5aug/models?as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -127,7 +128,7 @@ Content-Type: application/json
 }
 
 ###
-POST {{base_url}}/projects/get_started_smart_asset_tracking_mlc_clone_5aug/models?as_org={{andrea_org}}
+POST {{base_url}}/projects/get_started_smart_asset_tracking_mlc_clone_5aug/models?as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -137,7 +138,7 @@ Content-Type: application/json
 }
 
 ### create a new model for a group by scratch
-POST {{base_url}}/projects/test-group-project-1/models?as_org={{andrea_org}}
+POST {{base_url}}/projects/test-group-project-1/models?as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -170,7 +171,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-GET {{base_url}}/projects?as_org={{andrea_org}}
+GET {{base_url}}/projects?as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -199,7 +200,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ### create a new project for a group from scratch
-POST {{base_url}}/projects/test-project-5-from-scratch-1/models?as_org={{andrea_org}}
+POST {{base_url}}/projects/test-project-5-from-scratch-1/models?as_org={{test_group_name}}
 {
   "name": "test-model-3",
   "description": "MyTestModelWithDTRef",
@@ -255,7 +256,7 @@ GET {{base_url}}/projects
 Authorization: Bearer {{token}}
 Content-Type: application/json
 ###
-POST {{base_url}}/projects?is_user_project=True&as_org={{andrea_org}}
+POST {{base_url}}/projects?is_user_project=True&as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -264,7 +265,7 @@ Content-Type: application/json
   "ai_project_name": "group-project-101"
 }
 ###
-GET {{base_url}}/projects?as_org={{andrea_org}}
+GET {{base_url}}/projects?as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 ###
@@ -288,12 +289,12 @@ Content-Type: application/json
 }
 
 ###
-GET {{base_url}}/projects?as_org={{andrea_org}}
+GET {{base_url}}/projects?as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-POST {{base_url}}/projects/clone-TBC-group-5/models?as_org={{andrea_org}}
+POST {{base_url}}/projects/{{unique_project_name}}/models?as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -303,7 +304,7 @@ Content-Type: application/json
 }
 
 ###
-PATCH {{base_url}}/projects/clone-TBC-group-5/models/smart_asset_tracking?as_org={{andrea_org}}
+PATCH {{base_url}}/projects/{{unique_project_name}}/models/smart_asset_tracking?as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -320,7 +321,7 @@ Content-Type: application/json
 }
 
 ###
-POST {{base_url}}/projects?is_user_project=True&as_org={{andrea_org}}
+POST {{base_url}}/projects?is_user_project=True&as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -372,7 +373,7 @@ Content-Type: application/json
 }
 
 ###
-POST {{base_url}}/projects/{{unique_project_name}}/models?as_org={{andrea_org}}
+POST {{base_url}}/projects/{{unique_project_name}}/models?as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -403,7 +404,7 @@ Content-Type: application/json
 
 ###
 
-PATCH {{base_url}}/projects/clone-TBC-group-5/models/test-model-1?as_org={{andrea_org}}
+PATCH {{base_url}}/projects/{{unique_project_name}}/models/test-model-1?as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -437,7 +438,7 @@ Content-Type: application/json
 }
 
 ###
-POST {{base_url}}/projects/clone-TBC-group-5/models/smart_asset_tracking/training?as_org={{andrea_org}}
+POST {{base_url}}/projects/{{unique_project_name}}/models/smart_asset_tracking/training?as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -449,7 +450,7 @@ Content-Type: application/json
 }
 
 ###
-PATCH {{base_url}}/projects/{{unique_project_name}}/models/test-model-3/training?as_org={{andrea_org}}
+PATCH {{base_url}}/projects/{{unique_project_name}}/models/test-model-3/training?as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -469,9 +470,8 @@ Content-Type: application/json
 }
 
 ###
-POST {{base_url}}/projects/{{unique_project_name}}/models/smart_asset_tracking_clone_28July/training/job?as_org={{andrea_org}}
-Authorization: Bearer {{token}}
-Content-Type: application/json
+POST {{base_url}}/projects/{{unique_project_name}}/models/smart_asset_tracking_clone_28July/training/job?as_org={{test_group_name}}
+Authorization: Bearer {{token}}Content-Type: application/json
 
 {
     "name": "afs",
@@ -480,7 +480,7 @@ Content-Type: application/json
 }
 ###
 
-GET {{base_url}}/projects/{{unique_project_name}}/models/smart_asset_tracking_clone_28July/training?as_org={{andrea_org}}
+GET {{base_url}}/projects/{{unique_project_name}}/models/smart_asset_tracking_clone_28July/training?as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -623,87 +623,101 @@ Content-Type: application/json
 }
 
 ###
-@project_var = smart_asset_tracking_mlc_clone6
-@model_var = smart_asset_tracking
-###
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training
-Authorization: Bearer {{token}}
-Content-Type: application/json
-###
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training?type=something&name=mlc.h
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/training
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training?type=reports&name=something.h
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/training?as_org={{test_group_name}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/training?type=something&name=mlc.h
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training?type=artifacts&name=lsm6dsv16x_mlc.h
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/training?type=reports&name=something.h
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training?type=artifacts&name=lsm6dsv16x_mlc.ucf
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/training?type=artifacts&name=lsm6dsv16x_mlc.h
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/training?type=artifacts&name=lsm6dsv16x_mlc.h&as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training?type=reports&name=report.json
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/training?type=artifacts&name=lsm6dsv16x_mlc.ucf
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/training?type=artifacts&name=lsm6dsv16x_mlc.ucf&as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training?type=config&name=../../../../../../3f6c9746-e86d-4492-96a0-28091e20bb32/get_started_stredl/ai_get_started_stredl.json
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/training?type=reports&name=report.json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/training?type=reports&name=report.json&as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training?type=runtime
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/training?type=config&name=../../../../../../3f6c9746-e86d-4492-96a0-28091e20bb32/get_started_stredl/ai_get_started_stredl.json
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-
-
-###
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training
-Authorization: Bearer {{token}}
-Content-Type: application/json
-
-###
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training?type=artifacts
-Authorization: Bearer {{token}}
-Content-Type: application/json
-
-###
-
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training?item=reports
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/training?type=runtime
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
 
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training
+
+###
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/training
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/training?type=artifacts
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/training?item=reports
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/training
   ?item=artifacts
 Authorization: Bearer {{token}}
 
 ###
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/training
   ?item=config
 Authorization: Bearer {{token}}
 ###
 
 ###
-POST {{base_url}}/projects/{{project_var}}/models/{{model_var}}/logs?log_uuid=0000&split=1&total=1
+POST {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/logs?log_uuid=0000&split=1&total=1
 Authorization: Bearer {{token}}
 Content-Type: application/octet-stream
 
 < ../tests/test-datalog-openmv.zip
 
 ###
-POST {{base_url}}/projects/{{project_var}}/models/{{model_var}}/logs?log_uuid=0000&split=1&total=1
+POST {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/logs?log_uuid=0000&split=1&total=1
 Authorization: Bearer {{token}}
 Content-Type: application/octet-stream
 
@@ -712,26 +726,26 @@ Content-Type: application/octet-stream
 
 
 ###
-GET {{base_url}}/templates/projects/{{project_var}}/models/{{model_var}}/data_sufficiency
+GET {{base_url}}/templates/projects/{{unique_project_name}}/models/{{unique_model_name}}/data_sufficiency
 Authorization: Bearer {{token}}
 Content-Type: application/json
 ###
-GET {{base_url}}/templates/projects/{{project_var}}/models/{{model_var}}/training?type=config&name=configuration.json
-Authorization: Bearer {{token}}
-Content-Type: application/json
-
-###
-GET {{base_url}}/templates/projects/{{project_var}}/models/{{model_var}}/training?type=artifacts&name=lsm6dsv16x_mlc.h
+GET {{base_url}}/templates/projects/{{unique_project_name}}/models/{{unique_model_name}}/training?type=config&name=configuration.json
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-GET {{base_url}}/templates/projects/{{project_var}}/models/{{model_var}}/training?type=artifacts&name=lsm6dsv16x_mlc.ucf
+GET {{base_url}}/templates/projects/{{unique_project_name}}/models/{{unique_model_name}}/training?type=artifacts&name=lsm6dsv16x_mlc.h
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-GET {{base_url}}/templates/projects/{{project_var}}/models/{{model_var}}/training?type=artifacts&name=report.json
+GET {{base_url}}/templates/projects/{{unique_project_name}}/models/{{unique_model_name}}/training?type=artifacts&name=lsm6dsv16x_mlc.ucf
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/templates/projects/{{unique_project_name}}/models/{{unique_model_name}}/training?type=artifacts&name=report.json
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -739,17 +753,17 @@ Content-Type: application/json
 ### Data-Sufficiency Templates 
 ###
 ###
-GET {{base_url}}/templates/projects/{{project_var}}/models/{{model_var}}/data_sufficiency?type=artifacts
+GET {{base_url}}/templates/projects/{{unique_project_name}}/models/{{unique_model_name}}/data_sufficiency?type=artifacts
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-GET {{base_url}}/templates/projects/{{project_var}}/models/{{model_var}}/data_sufficiency?type=artifacts&name=count.json
+GET {{base_url}}/templates/projects/{{unique_project_name}}/models/{{unique_model_name}}/data_sufficiency?type=artifacts&name=count.json
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-GET {{base_url}}/templates/projects/{{project_var}}/models/{{model_var}}/data_sufficiency?type=artifacts&name=counts.json
+GET {{base_url}}/templates/projects/{{unique_project_name}}/models/{{unique_model_name}}/data_sufficiency?type=artifacts&name=counts.json
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -1038,38 +1052,38 @@ Content-Type: application/json
 
 
 ###
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/data_sufficiency?type=artifacts&name=counts.json
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/data_sufficiency?type=artifacts&name=counts.json
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/data_sufficiency?type=runtime
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/data_sufficiency?type=runtime
 Authorization: Bearer {{token}}
 Content-Type: application/json
 ###
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/data_sufficiency?type=artifacts
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/data_sufficiency?type=artifacts
 Authorization: Bearer {{token}}
 Content-Type: application/json
 ###
 
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/data_sufficiency?type=artifacts&name=my_tree.txt
-Authorization: Bearer {{token}}
-Content-Type: application/json
-
-###
-
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/data_sufficiency?type=artifacts&name=hnne.pkl
-Authorization: Bearer {{token}}
-Content-Type: application/json
-
-###
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/data_sufficiency?type=config&name=configuration.json
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/data_sufficiency?type=artifacts&name=my_tree.txt
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
 
-GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/data_sufficiency
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/data_sufficiency?type=artifacts&name=hnne.pkl
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/data_sufficiency?type=config&name=configuration.json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+
+GET {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}/data_sufficiency
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
