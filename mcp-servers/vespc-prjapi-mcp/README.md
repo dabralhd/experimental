@@ -6,8 +6,9 @@
 ```
 cd C:\projects\experimental\mcp-servers\vespc-prjapi-mcp
 
-# Activate python dev env on windows
-.venv\Scripts\activate
+# Activate python dev env
+
+when using uv activating python virtual env is not necessary, just run uv run command. However if you still want to activate uv. Use command  '.venv\Scripts\activate'
 
 # Activate python dev env on Mac
 
@@ -18,7 +19,7 @@ npx @modelcontextprotocol/inspector uv run server.py
 2. run the server using following command
 
 ```
-uv run tools_httpx_1.py
+uv run server.py
 ```
 
 3. 
@@ -59,3 +60,15 @@ C:\Users\hem\.local\bin\uv.exe
 arguments: --directory /Users/hemduttdabral/projects/experimental/mcp-servers/vespc-prjapi-mcp run tools.py
 OR
 arguments: --directory C:\\projects\\experimental\\mcp-servers\\vespc-prjapi-mcp run tools.py
+
+4. ollama serve
+
+5. ngrok setup 
+    1. follow instructions at https://ngrok.com/downloads/mac-os
+
+    2. to read ollama port use command (generally ollama port is 11434)
+    ```
+    ollama serve
+    ```
+
+    3. ngrok run <llm-port>

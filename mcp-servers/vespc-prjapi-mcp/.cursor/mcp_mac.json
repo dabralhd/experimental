@@ -6,7 +6,7 @@
               "--directory",
               "/Users/hemduttdabral/projects/experimental/mcp-servers/vespc-prjapi-mcp",
               "run",
-              "tools_httpx_1.py"
+              "server.py"
             ]
           },
           "filesystem": {
