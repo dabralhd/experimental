@@ -1,22 +1,22 @@
 {
-    "mcpServers": {
-        "prjapi-mcp": {
-            "command": "C:\\Users\\hem\\.local\\bin\\uv.exe",
-            "args": [
-              "--directory",
-              "C:\\projects\\experimental\\mcp-servers\\vespc-prjapi-mcp",
-              "run",
-              "tools_httpx_1.py"
-            ]
-          },
-          "filesystem": {
-          "command": "npx",
+  "mcpServers": {
+      "prjapi-mcp": {
+          "command": "C:\\Users\\hem\\.local\\bin\\uv.exe",
           "args": [
-            "-y",
-            "@modelcontextprotocol/server-filesystem",
-            "C:\\projects\\experimental\\mcp-servers\\vespc-prjapi-mcp\\filesystem-server-dirs\\dir1",
-            "C:\\projects\\experimental\\mcp-servers\\vespc-prjapi-mcp\\filesystem-server-dirs\\dir2"
+            "--directory",
+            "C:\\projects\\experimental\\mcp-servers\\vespc-prjapi-mcp",
+            "run",
+            "server_async.py"
           ]
-    }    
-    }
+        },
+        "filesystem": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-filesystem",
+          "C:\\projects\\experimental\\mcp-servers\\vespc-prjapi-mcp\\filesystem-server-dirs\\dir1",
+          "C:\\projects\\experimental\\mcp-servers\\vespc-prjapi-mcp\\filesystem-server-dirs\\dir2"
+        ]
+  }    
+  }
 }
