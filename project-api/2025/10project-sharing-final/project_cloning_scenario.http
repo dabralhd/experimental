@@ -12,14 +12,14 @@
 @remote_dev_url = https://dev.stm-vespucci.com:{{remote_port}}{{remote_api_base_path_3}}
 @base_url = {{remote_dev_url}}
 @token-dummy = dev
-@token-dev = eyJraWQiOiJcL3JIS3FCbG5JVldiU2RqdEJqODRQaDNyUk5SWWh4cnR6RFwvOXFTK0Q3aWc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIzMzRjNjVhNS0xNDk1LTQ1M2EtYTZkZS00ZDM4NGE3ODEwMDAiLCJjb2duaXRvOmdyb3VwcyI6WyJ3aGl0ZWxpc3QiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfOXdlbnNFNVJaIiwidmVyc2lvbiI6MiwiY2xpZW50X2lkIjoiNHNoYjE3OGdsbWxsc3I3NWdmb2JoZmRzYmEiLCJvcmlnaW5fanRpIjoiZGU4MzMxYTMtZDg0Zi00OWYyLWFmYTEtNDY2OTI3MDFhZTEzIiwiZXZlbnRfaWQiOiI4ZWJhOTgyOS1iYWQwLTRiNDUtYjVhYS05ZmM1NzYzZjY2MTgiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIGh0dHBzOlwvXC9vYXV0aDIuZGV2LnN0bS12ZXNwdWNjaS5jb21cL3Rlc3QgcGhvbmUgb3BlbmlkIHByb2ZpbGUgZW1haWwiLCJhdXRoX3RpbWUiOjE3NTUwNTgwMDMsImV4cCI6MTc1NTY4NTYxOCwiaWF0IjoxNzU1NTk5MjE4LCJqdGkiOiJlYzFhZGE5OC1jNDQ5LTQzNGEtOGJmZC02Nzc1MzVkYjBjMTgiLCJ1c2VybmFtZSI6IjMzNGM2NWE1LTE0OTUtNDUzYS1hNmRlLTRkMzg0YTc4MTAwMCJ9.bPnn0nmi-FW4dHC4_ki_10bmOiH00QxWS7gW0T77Ld9fyjKx5Dhe5zvNMXpXEIGAB4nBdQKJ_6yNTpYGZcg_c4q8CL6VjXSObp1ZTxhRTGGyuCboSjIdbZOL7P7_mglQEAfbVSaSzPHmHvYgBIVNIXAByBrd4uNH81aAtxVaFQDP2UAvEacefElBlJR8bv24bvMwyCRFA-RhRzr9OvnLIPZLULoquZKrNxuZvuTWZvfb3lhhcUkF_d-D9jhfE5BB0R2Hl5q6m3Emgh3Lhtmt227C1yKM1zETltNmR_722mce21f11CbkW-v0l1PK4C6MOX7IxOo_Z6xjjUmqZCvrbg
+@token-dev = eyJraWQiOiJcL3JIS3FCbG5JVldiU2RqdEJqODRQaDNyUk5SWWh4cnR6RFwvOXFTK0Q3aWc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIzMzRjNjVhNS0xNDk1LTQ1M2EtYTZkZS00ZDM4NGE3ODEwMDAiLCJjb2duaXRvOmdyb3VwcyI6WyJ3aGl0ZWxpc3QiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfOXdlbnNFNVJaIiwidmVyc2lvbiI6MiwiY2xpZW50X2lkIjoiNHNoYjE3OGdsbWxsc3I3NWdmb2JoZmRzYmEiLCJvcmlnaW5fanRpIjoiZGU4MzMxYTMtZDg0Zi00OWYyLWFmYTEtNDY2OTI3MDFhZTEzIiwiZXZlbnRfaWQiOiI4ZWJhOTgyOS1iYWQwLTRiNDUtYjVhYS05ZmM1NzYzZjY2MTgiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIGh0dHBzOlwvXC9vYXV0aDIuZGV2LnN0bS12ZXNwdWNjaS5jb21cL3Rlc3QgcGhvbmUgb3BlbmlkIHByb2ZpbGUgZW1haWwiLCJhdXRoX3RpbWUiOjE3NTUwNTgwMDMsImV4cCI6MTc1NTc3MTEyMCwiaWF0IjoxNzU1Njg0NzIwLCJqdGkiOiJlZDE5MjkzNS1hMzI4LTQxOGYtOWJmZC1lMWIzODE1N2NiYWUiLCJ1c2VybmFtZSI6IjMzNGM2NWE1LTE0OTUtNDUzYS1hNmRlLTRkMzg0YTc4MTAwMCJ9.TfKnTOkMMInypfuXpBW_2dkUPWZi_sPa_XEI7DswCiWCMCxaklV594a-G1FJOySmh_sgfd0mZPDuntVRjF0CePF59jXvUEk9QjKzcH6q8csKekRN5PrJmZxc9dFunAKucUy00Q-o-YZLCE9sdXu5HVAiG7WeltphwB3hk3UZhy0hi9Hr0AcGX_D-Qyb_Ev2sGtrMclyE1S_Je5tD15krmWUGxkvF2Di197cA-Sm_EPge0AQtqKmQf_lr5BNI_uPo51LeTCWHPwhnJtthYh8ff8_Q0AGUeDkWWbOWyxqO7_cvnLM7LH0fo4RHmBUOYmRQBYom-S_NMMdHZm47SpqZWw
 
 @token = {{token-dev}}
 
 @probe_url = http://127.0.0.1:{{local_port}}
 
 @test_group_name = {{hd_group}}
-@unique_project_name = smart_asset_tracking_clone-1
+@unique_project_name = test-project-111
 @andrea_owned_project = "TestPrj"
 @unique_model_name = smart_asset_tracking
 
@@ -32,6 +32,9 @@
 # scenario-6: from user to within group ws
 # scenario-7: from group withing group ws
 # scenario-8: from group to user ws
+
+## Model related scenarios
+# scenario-9: Delete model as a model owner
 
 ###
 GET {{probe_url}}/livez HTTP/1.1
@@ -65,7 +68,7 @@ Content-Type: application/json
 DELETE {{base_url}}/projects/{{unique_project_name}}?as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 
-###
+### Scenario-9
 DELETE {{base_url}}/projects/{{unique_project_name}}/models/{{unique_model_name}}?as_org={{test_group_name}}
 Authorization: Bearer {{token}}
 
@@ -77,7 +80,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "ai_project_name": "test-project-110",
+  "ai_project_name": "test-project-210",
   "description": "My Project description",
   "version": "0.0.1"
 }
@@ -90,7 +93,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "ai_project_name": "test-project-110",
+  "ai_project_name": "test-project-210",
   "description": "My Project description",
   "version": "0.0.1"
 }
@@ -142,8 +145,8 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "project_name_to_clone": "test-project-112",
-  "ai_project_name": "test-project-114"
+  "project_name_to_clone": "test-project-210",
+  "ai_project_name": "test-project-211"
 }
 
 ### scenario-8
