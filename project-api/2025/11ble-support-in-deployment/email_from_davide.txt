@@ -1,0 +1,36 @@
+Hi Mridu, Hem,
+Thank you for the time spent today about the updates needed to the Project-API to support the new elements in the ai-project.json files, needed by the BLE scenario.
+
+The goal is:
+•	To support BLE-based IoT systems in ST AIoT Craft;
+•	All 6 get-started projects will be available with both USB and BLE connectivity flavors; concerning BLE, let’s start with the four SensorTile.box PRO-based projects, the other two projects will come later, as we need to complete the porting of the AI_SSM firmware to the other two boards;
+•	User defined use cases have to be supported too (custom MLC model, same AI_SSM firmware).
+
+As said, in the json file there will be:
+•	A new deployment element dedicated to the BLE deployment, in addition to the already existing serial deployment;
+•	A new application element targeting the AI_SSM BLE firmware, in addition to the already existing serial application targeting the AI-Inertial serial firmware;
+o	This application will have
+	“protocol”: 0  BLE
+	"bluestv3_payload" as a new field to allow a client (e.g., gateway) to decode a BlueSTv3 binary payload sent over BLE in advertisement messages (beacon);
+            "bluestv3_payload": {
+                "device_id": "0xXX",
+                "fw_id": "0xYY",
+                "payload_id": "0xZZWW",
+                "decoding_schema": [
+                    {
+                        "telemetry": "label_id",
+                        "type": "int8"
+                    }
+                ]
+            }
+
+See attached file as an example. I will edit the 4 ai-project.json files in the next days and push them on a branch.
+
+ACTION: The Project-API has to be updated to get this new field. Post is not needed for the time being, as the content is pre-canned and will not change; il will be needed in future when the development flow will tbe ready.
+
+There is a new Jira issue fir this: https://jira.st.com/browse/VESPCI-2776.
+Reference to the BlueSTv3 protocol is here:   20220505_BlueSTSDK_v3_v.0.0.1.docx
+
+Thank you,
+Davide
+ 

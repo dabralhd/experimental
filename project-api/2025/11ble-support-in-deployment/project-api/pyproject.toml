@@ -1,0 +1,53 @@
+[tool.poetry]
+name = "project-api"
+version = "3.1.0"
+description = ""
+authors = []
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.8, <3.13"
+flask = "<2"
+flask-cors = "<4"
+flask-oidc = "<2"
+six = "<2"
+connexion = {version = "<3", extras = ["swagger-ui"]}
+pyjwt = "<2"
+cryptography = "^43.0.0"
+jsonpatch = "<2"
+jsonmerge = "<2"
+jsonschema = "<4"
+requests = "<3"
+markupsafe = "2.0.1"
+pycognito = "2022.8.0"
+pyrsistent = "<0.17"
+more-itertools = "<10"
+urllib3 = "<2"
+certifi = "^2024.8.30"
+jinja2 = "~3.0"
+itsdangerous = "~2.0"
+werkzeug = "~2.0"
+gunicorn = "^23.0.0"
+gevent = "^24.2.1"
+loguru = "^0.7.2"
+pillow = "^10.4.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.8.0"
+isort = "^5.13.2"
+ruff = "^0.6.3"
+mypy = "^1.11.2"
+
+[tool.poetry.group.debug.dependencies]
+debugpy = "^1.8.5"
+
+[tool.poetry.group.build.dependencies]
+nuitka = "^2.4.8"
+gunicorn = "^23.0.0"
+setuptools = "~75.1.0"
+python-minifier = "^2.11.3"
+packaging = "^25.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
