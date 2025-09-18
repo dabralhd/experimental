@@ -6,7 +6,7 @@ from datetime import date, datetime  # noqa: F401
 from typing import List, Dict  # noqa: F401
 
 from project_api.models.base_model_ import Model
-from project_api.models.device_models import DeviceModels  # noqa: F401,E501
+from swagger_server.models.bluest_v3_payload import BluestV3Payload  # noqa: F401,E501
 from project_api import util
 
 
@@ -15,10 +15,31 @@ class DeploymentApplication(Model):
 
     Do not edit the class manually.
     """
-    def __init__(self, uuid:str=None, type:str=None, device_template_uri: str=None, device_template_id: str=None, device_manifest_uri: str=None, 
-                 image_uri: str=None, module_id: str=None, binary_uri: str=None, binary_id: str=None, protocol: str=None):  # noqa: E501
-        """DeploymentApplication
+    def __init__(self, uuid: str=None, type: str=None, device_template_uri: str=None, device_template_id: str=None, device_manifest_uri: str=None, image_uri: str=None, module_id: str=None, binary_uri: str=None, binary_id: int=None, protocol: int=None, bluestv3_payload: BluestV3Payload=None):  # noqa: E501
+        """DeploymentApplication - a model defined in Swagger
 
+        :param uuid: The uuid of this DeploymentApplication.  # noqa: E501
+        :type uuid: str
+        :param type: The type of this DeploymentApplication.  # noqa: E501
+        :type type: str
+        :param device_template_uri: The device_template_uri of this DeploymentApplication.  # noqa: E501
+        :type device_template_uri: str
+        :param device_template_id: The device_template_id of this DeploymentApplication.  # noqa: E501
+        :type device_template_id: str
+        :param device_manifest_uri: The device_manifest_uri of this DeploymentApplication.  # noqa: E501
+        :type device_manifest_uri: str
+        :param image_uri: The image_uri of this DeploymentApplication.  # noqa: E501
+        :type image_uri: str
+        :param module_id: The module_id of this DeploymentApplication.  # noqa: E501
+        :type module_id: str
+        :param binary_uri: The binary_uri of this DeploymentApplication.  # noqa: E501
+        :type binary_uri: str
+        :param binary_id: The binary_id of this DeploymentApplication.  # noqa: E501
+        :type binary_id: int
+        :param protocol: The protocol of this DeploymentApplication.  # noqa: E501
+        :type protocol: int
+        :param bluestv3_payload: The bluestv3_payload of this DeploymentApplication.  # noqa: E501
+        :type bluestv3_payload: BluestV3Payload
         """
         self.swagger_types = {
             'uuid': str,
@@ -30,7 +51,8 @@ class DeploymentApplication(Model):
             'module_id': str,
             'binary_uri': str,
             'binary_id': int,
-            'protocol': int
+            'protocol': int,
+            'bluestv3_payload': BluestV3Payload
         }
 
         self.attribute_map = {
@@ -43,7 +65,8 @@ class DeploymentApplication(Model):
             'module_id': 'module_id',
             'binary_uri': 'binary_uri',
             'binary_id': 'binary_id',
-            'protocol': 'protocol'
+            'protocol': 'protocol',
+            'bluestv3_payload': 'bluestv3_payload'
         }
         self._uuid = uuid
         self._type = type
@@ -55,7 +78,7 @@ class DeploymentApplication(Model):
         self._binary_uri = binary_uri
         self._binary_id = binary_id
         self._protocol = protocol
-
+        self._bluestv3_payload = bluestv3_payload
 
     @classmethod
     def from_dict(cls, dikt) -> 'DeploymentApplication':
@@ -63,8 +86,8 @@ class DeploymentApplication(Model):
 
         :param dikt: A dict.
         :type: dict
-        :return: The DeviceApplication of this DeviceApplication.  # noqa: E501
-        :rtype: DeviceApplication
+        :return: The DeploymentApplication of this DeploymentApplication.  # noqa: E501
+        :rtype: DeploymentApplication
         """
         return util.deserialize_model(dikt, cls)
 
@@ -90,7 +113,7 @@ class DeploymentApplication(Model):
         self._uuid = uuid
 
     @property
-    def type(self) -> bool:
+    def type(self) -> str:
         """Gets the type of this DeploymentApplication.
 
 
@@ -100,11 +123,11 @@ class DeploymentApplication(Model):
         return self._type
 
     @type.setter
-    def type(self, type: bool):
+    def type(self, type: str):
         """Sets the type of this DeploymentApplication.
 
 
-        :param type: The firmware_update of this DeploymentApplication.
+        :param type: The type of this DeploymentApplication.
         :type type: str
         """
 
@@ -171,7 +194,7 @@ class DeploymentApplication(Model):
         :type device_manifest_uri: str
         """
 
-        self._device_manifest_uri = device_manifest_uri   
+        self._device_manifest_uri = device_manifest_uri
 
     @property
     def image_uri(self) -> str:
@@ -192,8 +215,8 @@ class DeploymentApplication(Model):
         :type image_uri: str
         """
 
-        self._image_uri = image_uri  
-    
+        self._image_uri = image_uri
+
     @property
     def module_id(self) -> str:
         """Gets the module_id of this DeploymentApplication.
@@ -212,8 +235,9 @@ class DeploymentApplication(Model):
         :param module_id: The module_id of this DeploymentApplication.
         :type module_id: str
         """
+
         self._module_id = module_id
-    
+
     @property
     def binary_uri(self) -> str:
         """Gets the binary_uri of this DeploymentApplication.
@@ -234,7 +258,7 @@ class DeploymentApplication(Model):
         """
 
         self._binary_uri = binary_uri
-    
+
     @property
     def binary_id(self) -> int:
         """Gets the binary_id of this DeploymentApplication.
@@ -255,7 +279,7 @@ class DeploymentApplication(Model):
         """
 
         self._binary_id = binary_id
-    
+
     @property
     def protocol(self) -> int:
         """Gets the protocol of this DeploymentApplication.
@@ -271,8 +295,29 @@ class DeploymentApplication(Model):
         """Sets the protocol of this DeploymentApplication.
 
 
-        :param protocol: The binary_id of this DeploymentApplication.
+        :param protocol: The protocol of this DeploymentApplication.
         :type protocol: int
         """
 
         self._protocol = protocol
+
+    @property
+    def bluestv3_payload(self) -> BluestV3Payload:
+        """Gets the bluestv3_payload of this DeploymentApplication.
+
+
+        :return: The bluestv3_payload of this DeploymentApplication.
+        :rtype: BluestV3Payload
+        """
+        return self._bluestv3_payload
+
+    @bluestv3_payload.setter
+    def bluestv3_payload(self, bluestv3_payload: BluestV3Payload):
+        """Sets the bluestv3_payload of this DeploymentApplication.
+
+
+        :param bluestv3_payload: The bluestv3_payload of this DeploymentApplication.
+        :type bluestv3_payload: BluestV3Payload
+        """
+
+        self._bluestv3_payload = bluestv3_payload
