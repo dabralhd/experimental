@@ -6,7 +6,7 @@ from datetime import date, datetime  # noqa: F401
 from typing import List, Dict  # noqa: F401
 
 from project_api.models.base_model_ import Model
-from swagger_server.models.bluest_v3_payload import BluestV3Payload  # noqa: F401,E501
+from project_api.models.bluest_v3_payload import BluestV3Payload  # noqa: F401,E501
 from project_api import util
 
 

@@ -6,6 +6,7 @@ from datetime import date, datetime  # noqa: F401
 from typing import List, Dict  # noqa: F401
 
 from project_api.models.base_model_ import Model
+from project_api.models.deployment import Deployment  # noqa: F401,E501
 from project_api.models.input import Input  # noqa: F401,E501
 from project_api.models.model import Model  # noqa: F401,E501
 from project_api.models.deployment_application import DeploymentApplication
@@ -39,6 +40,8 @@ class Project(Model):
         :type last_update_time: str
         :param models: The models of this Project.  # noqa: E501
         :type models: List[Model]
+        :param deployments: The deployments of this Project.  # noqa: E501
+        :type deployments: List[Deployment]
         :param applications: The applications of this Project.  # noqa: E501
         :type applications: List[DeploymentApplication]
         :param deployments: The deployments of this Project.  # noqa: E501
@@ -52,12 +55,13 @@ class Project(Model):
             'description': str,
             'reference': str,
             'version': str,
-            'models': List[Model],
-            'applications': List[DeploymentApplication],
-            'deployments': List[object],
             'creation_time': str,
             'last_update_time': str,
-            'project_owner_uuid': str
+            'project_owner_uuid': str,
+            'models': List[Model],
+            'deployments': List[Deployment],
+            'applications': List[DeploymentApplication]
+
         }
 
         self.attribute_map = {
