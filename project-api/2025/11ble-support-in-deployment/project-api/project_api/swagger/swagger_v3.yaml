@@ -1806,6 +1806,10 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Deployment'
+        applications:
+          type: array
+          items:
+            $ref: '#/components/schemas/DeploymentApplication'
       example:
         ai_project_name: ai_project_name
         reference: reference
@@ -2334,6 +2338,50 @@ components:
           type: number
         firmware_uri:
           type: string
+    DeploymentApplication:
+      type: object
+      properties:
+        uuid:
+          type: string
+        type:
+          type: string
+        device_template_uri:
+          type: string
+        device_template_id:
+          type: string
+        device_manifest_uri:
+          type: string
+        image_uri:
+          type: string
+        module_id:
+          type: string
+        binary_uri:
+          type: string
+        binary_id:
+          type: integer
+        protocol:
+          type: integer
+        bluestv3_payload:
+            $ref: '#/components/schemas/BluestV3Payload'
+    BluestV3Payload:
+      type: object
+      description: Optional metadata payload for BlueST v3 applications
+      properties:
+        device_id:
+          type: string
+        fw_id:
+          type: string
+        payload_id:
+          type: string
+        decoding_schema:
+          type: array
+          items:
+            type: object
+            properties:
+              telemetry:
+                type: string
+              type:
+                type: string
     UpdateDeployment:
       type: object
       properties:
