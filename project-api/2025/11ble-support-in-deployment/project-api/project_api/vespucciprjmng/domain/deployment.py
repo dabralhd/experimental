@@ -38,6 +38,105 @@ class InfModel():
         self._model_name_reference: str = model_name_reference
 
 
+class Bluestv3PayloadDecodingSchemaInstance():
+    def __init__(self, telemetry: str = "", type_: str = ""):
+        self.telemetry = telemetry
+        self.type = type_
+
+    @property
+    def telemetry(self) -> str:
+        return self._telemetry
+
+    @telemetry.setter
+    def telemetry(self, value: str):
+        self._telemetry = value
+
+    @property
+    def type(self) -> str:
+        return self._type
+
+    @type.setter
+    def type(self, value: str):
+        self._type = value
+
+    def to_dict(self) -> dict:
+        return {
+            "telemetry": self.telemetry,
+            "type": self.type
+        }
+
+
+class Bluestv3PayloadDecodingSchema:
+    def __init__(self, instances: List[Bluestv3PayloadDecodingSchemaInstance] = None):
+        self.instances = instances if instances is not None else []
+
+    @property
+    def instances(self) -> List[Bluestv3PayloadDecodingSchemaInstance]:
+        return self._instances
+
+    @instances.setter
+    def instances(self, value: List[Bluestv3PayloadDecodingSchemaInstance]):
+        self._instances = value
+
+    def to_dict(self) -> dict:
+        return {
+            "instances": [instance.to_dict() for instance in self.instances]
+        }
+
+
+class Bluestv3Payload:
+    def __init__(
+        self,
+        device_id: str = "",
+        fw_id: str = "",
+        payload_id: str = "",
+        decoding_schema: list = None
+    ):
+        self.device_id = device_id
+        self.fw_id = fw_id
+        self.payload_id = payload_id
+        self.decoding_schema = decoding_schema if decoding_schema is not None else []
+
+    @property
+    def device_id(self) -> str:
+        return self._device_id
+
+    @device_id.setter
+    def device_id(self, value: str):
+        self._device_id = value
+
+    @property
+    def fw_id(self) -> str:
+        return self._fw_id
+
+    @fw_id.setter
+    def fw_id(self, value: str):
+        self._fw_id = value
+
+    @property
+    def payload_id(self) -> str:
+        return self._payload_id
+
+    @payload_id.setter
+    def payload_id(self, value: str):
+        self._payload_id = value
+
+    @property
+    def decoding_schema(self) -> Bluestv3PayloadDecodingSchema:
+        return self._decoding_schema
+
+    @decoding_schema.setter
+    def decoding_schema(self, value: Bluestv3PayloadDecodingSchema):
+        self._decoding_schema = value
+
+    def to_dict(self) -> dict:
+        return {
+            "device_id": self.device_id,
+            "fw_id": self.fw_id,
+            "payload_id": self.payload_id,
+            "decoding_schema": [ds.to_dict() for ds in self.decoding_schema]
+        }
+
 class Application():
 
     @property
@@ -120,33 +219,17 @@ class Application():
     def protocol(self, protocol: int):
         self._protocol = protocol
 
-    @property
-    def device_id(self) -> str:
-        return self._device_id
-
-    @device_id.setter
-    def device_id(self, device_id: str):
-        self._device_id = device_id
-
-    @property
-    def fw_id(self) -> str:
-        return self._fw_id
-
-    @fw_id.setter
-    def fw_id(self, fw_id: str):
-        self._fw_id = fw_id
-
-    @property
-    def payload_id(self) -> str:
-        return self._payload_id
-
-    @payload_id.setter
-    def payload_id(self, payload_id: str):
-        self._payload_id = payload_id
+    @property 
+    def bluestv3_payload(self) -> dict:
+        return self._bluestv3_payload
+    
+    @bluestv3_payload.setter
+    def bluestv3_payload(self, bluestv3_payload: dict):
+        self._bluestv3_payload = bluestv3_payload   
 
     def __init__(self, uuid: str = "", type: bool = True, device_template_uri: str = "", device_template_id: str = "", 
                  device_manifest_uri: str = "", image_uri: str = "", module_id: str = "", binary_uri: str = "", 
-                 binary_id: int = 0, protocol: int = 0, device_id: str = "", fw_id: str = "", payload_id: str = ""):
+                 binary_id: int = 0, protocol: int = 0, bluestv3_payload: Bluestv3Payload=  None):
         self._uuid = uuid
         self._type = type
         self._device_template_uri = device_template_uri
@@ -157,9 +240,7 @@ class Application():
         self._binary_uri = binary_uri
         self._binary_id = binary_id
         self._protocol = protocol
-        self._device_id = device_id
-        self._fw_id = fw_id
-        self._payload_id = payload_id
+        self._bluestv3_payload = bluestv3_payload
 
 
 class Device():
@@ -364,84 +445,3 @@ class Deployment(DomainOBJ):
         self.__leaf_devices     = leaf_devices
         self.__gateway_devices  = gateway_devices
 
-
-class Bluestv3Payload:
-    def __init__(
-        self,
-        device_id: str = "",
-        fw_id: str = "",
-        payload_id: str = "",
-        decoding_schema: list = None
-    ):
-        self.device_id = device_id
-        self.fw_id = fw_id
-        self.payload_id = payload_id
-        self.decoding_schema = decoding_schema if decoding_schema is not None else []
-
-    @property
-    def device_id(self) -> str:
-        return self._device_id
-
-    @device_id.setter
-    def device_id(self, value: str):
-        self._device_id = value
-
-    @property
-    def fw_id(self) -> str:
-        return self._fw_id
-
-    @fw_id.setter
-    def fw_id(self, value: str):
-        self._fw_id = value
-
-    @property
-    def payload_id(self) -> str:
-        return self._payload_id
-
-    @payload_id.setter
-    def payload_id(self, value: str):
-        self._payload_id = value
-
-    @property
-    def decoding_schema(self) -> list:
-        return self._decoding_schema
-
-    @decoding_schema.setter
-    def decoding_schema(self, value: list):
-        self._decoding_schema = value
-
-    def to_dict(self) -> dict:
-        return {
-            "device_id": self.device_id,
-            "fw_id": self.fw_id,
-            "payload_id": self.payload_id,
-            "decoding_schema": [ds.to_dict() for ds in self.decoding_schema]
-        }
-
-
-class Bluestv3PayloadDecodingSchema:
-    def __init__(self, telemetry: str = "", type_: str = ""):
-        self.telemetry = telemetry
-        self.type = type_
-
-    @property
-    def telemetry(self) -> str:
-        return self._telemetry
-
-    @telemetry.setter
-    def telemetry(self, value: str):
-        self._telemetry = value
-
-    @property
-    def type(self) -> str:
-        return self._type
-
-    @type.setter
-    def type(self, value: str):
-        self._type = value
-
-    def to_dict(self) -> dict:
-        return {
-            "telemetry": self.telemetry,
-            "type": self.type
-        }
