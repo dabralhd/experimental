@@ -8,3 +8,4 @@ workspace*
 _to_del*
 mongodb/*
 notes/11gha_token
+project-api/2025/11ble-support-in-deployment/project-api/project_api/swagger/swagger_server/*

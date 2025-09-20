@@ -1,4 +1,3 @@
-
 from typing import List, Any
 from uuid import uuid4
 from project_api.vespucciprjmng.dao.filesystem.json_data_connector import JSONDataConnector
@@ -153,7 +152,18 @@ class DeploymentApplicationFileDAO(DeploymentDAO):
         if "protocol" in json_application_obj:
             application_domain_obj.protocol             = json_application_obj["protocol"]        
         else:
-            application_domain_obj.protocol             = None
+            application_domain_obj.protocol             = None            
+        if "bluestv3_payload" in json_application_obj:
+            payload = json_application_obj.get("bluestv3_payload", {})
+            application_domain_obj.bluestv3_payload_device_id = payload.get("device_id")
+            application_domain_obj.bluestv3_payload_fw_id = payload.get("fw_id")
+            application_domain_obj.bluestv3_payload_payload_id = payload.get("payload_id")
+
+            decoding_schema = payload.get("decoding_schema", [{}])
+            application_domain_obj.bluestv3_payload_decoding_schema_telemetry = decoding_schema[0].get("telemetry")
+            application_domain_obj.bluestv3_payload_decoding_schema_type = decoding_schema[0].get("type")
+        else:
+            application_domain_obj.bluestv3_payload             = None
             
         return application_domain_obj
 
@@ -177,6 +187,30 @@ class DeploymentApplicationFileDAO(DeploymentDAO):
         if application_obj.binary_id is not None:
             json_application_domain_obj["binary_id"] = application_obj.binary_id
         if application_obj.protocol is not None:
-            json_application_domain_obj["protocol"] = application_obj.protocol       
-        
+            json_application_domain_obj["protocol"] = application_obj.protocol 
+        if application_obj.device_id:
+            json_application_domain_obj["device_id"] = application_obj.device_id
+
+        # Serialize bluestv3_payload fields
+        if (
+            application_obj.bluestv3_payload_device_id or
+            application_obj.bluestv3_payload_fw_id or
+            application_obj.bluestv3_payload_payload_id or
+            application_obj.bluestv3_payload_decoding_schema_telemetry or
+            application_obj.bluestv3_payload_decoding_schema_type
+        ):
+            json_application_domain_obj["bluestv3_payload"] = {}
+            if application_obj.bluestv3_payload_device_id:
+                json_application_domain_obj["bluestv3_payload"]["device_id"] = application_obj.bluestv3_payload_device_id
+            if application_obj.bluestv3_payload_fw_id:
+                json_application_domain_obj["bluestv3_payload"]["fw_id"] = application_obj.bluestv3_payload_fw_id
+            if application_obj.bluestv3_payload_payload_id:
+                json_application_domain_obj["bluestv3_payload"]["payload_id"] = application_obj.bluestv3_payload_payload_id
+            # Decoding schema as a list of dicts
+            if application_obj.bluestv3_payload_decoding_schema_telemetry or application_obj.bluestv3_payload_decoding_schema_type:
+                json_application_domain_obj["bluestv3_payload"]["decoding_schema"] = [{
+                    "telemetry": application_obj.bluestv3_payload_decoding_schema_telemetry,
+                    "type": application_obj.bluestv3_payload_decoding_schema_type
+                }]
+
         return json_application_domain_obj
