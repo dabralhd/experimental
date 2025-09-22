@@ -78,7 +78,8 @@ class DeploymentApplication(Model):
         self._binary_uri = binary_uri
         self._binary_id = binary_id
         self._protocol = protocol
-        self._bluestv3_payload = bluestv3_payload
+        self._bluestv3_payload = 'bluestv3_payload'
+        # self._bluestv3_payload = bluestv3_payload.to_dict() if bluestv3_payload else None
 
     @classmethod
     def from_dict(cls, dikt) -> 'DeploymentApplication':
