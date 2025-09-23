@@ -26,6 +26,7 @@ def app_get_project_icon(user: str, project_name: str):  # noqa: E501
     
     :rtype: image/*
     """
+    logger.debug(f'user: {user}, projec_name: {project_name}')
 
     if not user_prj_exists(user, project_name):    
         logger.error(f'project does not exists - {project_name} for user {user}')
