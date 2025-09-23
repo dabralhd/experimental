@@ -5,6 +5,13 @@ from project_api.vespucciprjmng.dao.filesystem.project_file_dao import ProjectFi
 from project_api.vespucciprjmng.dao.filesystem.util import get_project_file_name
 from project_api.vespucciprjmng.dao.deployment_dao import DeploymentDAO
 from project_api.vespucciprjmng.domain.deployment import Application
+from project_api.vespucciprjmng.domain.deployment import Bluestv3Payload, Bluestv3PayloadDecodingSchemaInstance
+
+import logging
+import json
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
 class DeploymentApplicationFileDAO(DeploymentDAO):
     """Deployment Application data access object for JSON file"""
@@ -155,22 +162,31 @@ class DeploymentApplicationFileDAO(DeploymentDAO):
             application_domain_obj.protocol             = None            
         if "bluestv3_payload" in json_application_obj:
             payload = json_application_obj.get("bluestv3_payload", {})
-            application_domain_obj.bluestv3_payload = payload.get("device_id")
-            application_domain_obj.bluestv3_payload_fw_id = payload.get("fw_id")
-            application_domain_obj.bluestv3_payload_payload_id = payload.get("payload_id")
+            logger.debug(f'collecting bluestv3_payload \nbluestv3_payload: {json.dumps(payload)}')
+            if payload != {}:            
+                p = Bluestv3Payload()
+                p.device_id = payload.get("device_id", "")
+                p.fw_id = payload.get("fw_id", "")
+                p.payload_id = payload.get("payload_id", "")
 
-            decoding_schema = payload.get("decoding_schema", [{}])
-            for ds in decoding_schema:
-                if not isinstance(ds, dict):
-                    raise ValueError("Decoding schema must be a list of dictionaries")
-                application_domain_obj.bluestv3_payload.decoding_schema.instances.append({"telemetry": ds.get("telemetry"), 
-                                                                                "type": ds.get("type")})
+                schema_list = payload.get("decoding_schema", [{}])
+                if not isinstance(schema_list, list):
+                    raise ValueError("decoding_schema must be a list")                
+                p.decoding_schema = [ Bluestv3PayloadDecodingSchemaInstance(
+                        telemetry=ds.get("telemetry", ""), type_=ds.get("type", "")
+                    )
+                    for ds in schema_list if isinstance(ds, dict)
+                ]                                                          "type": ds.get("type", "")})
+            application_domain_obj.bluestv3_payload = p
         else:
             application_domain_obj.bluestv3_payload             = None
+        logger.debug(f'< DeploymentApplicationFileDAO.De__deserialize_application')
             
         return application_domain_obj
 
     def __serialize_application(self, application_obj: Application) -> Any:
+        logger.debug(f'> DeploymentApplicationFileDAO.__serialize_application')
+        
         json_application_domain_obj = dict({})
 
         json_application_domain_obj["uuid"] = application_obj.uuid
@@ -194,7 +210,7 @@ class DeploymentApplicationFileDAO(DeploymentDAO):
         if application_obj.device_id:
             json_application_domain_obj["device_id"] = application_obj.device_id
 
-        # Serialize bluestv3_payload fields
+        logger.debug(f'DeploymentApplicationFileDAO.__serialize_application: Serialize bluestv3_payload fields')
         if (
             application_obj.bluestv3_payload.device_id or
             application_obj.bluestv3_payload.fw_id or
@@ -202,7 +218,12 @@ class DeploymentApplicationFileDAO(DeploymentDAO):
             application_obj.bluestv3_payload.decoding_schema.telemetry or
             application_obj.bluestv3_payload.decoding_schema.type
         ):
+            
             json_application_domain_obj["bluestv3_payload"] = {}
             if application_obj.bluestv3_payload.device_id:
+                logger.debug(f'DeploymentApplicationFileDAO.__serialize_application: converting bluestv3_payload to_dict')        
                 json_application_domain_obj["bluestv3_payload"] = application_obj.bluestv3_payload.to_dict()
+                
+        logger.debug(f'< DeploymentApplicationFileDAO.__serialize_application')
+                
         return json_application_domain_obj
