@@ -17,8 +17,10 @@ from project_api.vespucciprjmng.repository.exceptions.resource_already_exist imp
     ResourceAlreadyExisting,
 )
 from datetime import datetime
+from project_api.utils.error_helper import (get_prj_api_log_level)
 
 logger = logging.getLogger(__name__)
+logger.setLevel(get_prj_api_log_level())
 
 def normalize_value(value):
     if value == '' or value == "":
@@ -29,12 +31,15 @@ def normalize_value(value):
 @default_except
 @not_supported_for_org
 def app_create_deployment_id(user, project_name, body: dict):
+    logger.info(f"app_create_deployment_id: user={user}, project={project_name}")
     if connexion.request.is_json:
         body = connexion.request.get_json()
+        logger.debug(f"Incoming body keys: {list(body.keys())}")
         applications = body.get("applications")
         deployment = body.get("deployment")
         
         if not deployment:
+            logger.warning("Missing 'deployment' in request body")
             return response_error(msg="Missing deployment in the request body", status_code=400)
         
         project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)
@@ -45,6 +50,7 @@ def app_create_deployment_id(user, project_name, body: dict):
         new_apps = []
 
         if applications:
+            logger.debug(f"Applications received: {len(applications)}")
             for app in applications:
                 existing_app = next(
                     (
@@ -71,14 +77,16 @@ def app_create_deployment_id(user, project_name, body: dict):
                     new_uuid = str(uuid4())
                     uuid_mapping[app['uuid']] = new_uuid
                     app['uuid'] = new_uuid
-                    logger.debug("Depl App Match not found, generating new uuid: {new_uuid}")
+                    logger.debug(f"Depl App Match not found, generating new uuid: {new_uuid}")
                     new_apps.append(app)
+        logger.info(f"UUID mapping created for {len(uuid_mapping)} apps; new apps to create: {len(new_apps)}")
     
         # Replace UUIDs in deployment gateway and leaf devices
         for gateway in deployment['gateway']:
             if gateway['application'] in uuid_mapping:
                 gateway['application'] = uuid_mapping[gateway['application']]
             elif gateway['application'] not in curr_app_uuids:
+                logger.warning(f"Non-existing gw application UUID referenced: {gateway['application']}")
                 return response_error(msg=f"Deployment references non-existing gw application UUID: {gateway['application']}", status_code=404)
 
         for leaf in deployment['leaf']:
@@ -86,11 +94,13 @@ def app_create_deployment_id(user, project_name, body: dict):
                 if leaf['datalogging']['application'] in uuid_mapping:
                     leaf['datalogging']['application'] = uuid_mapping[leaf['datalogging']['application']]
                 elif leaf['datalogging']['application'] not in curr_app_uuids:
+                    logger.warning(f"Non-existing datalogging application UUID referenced: {leaf['datalogging']['application']}")
                     return response_error(msg=f"Deployment references non-existing datalogging application UUID: {leaf['datalogging']['application']}", status_code=404)
             if 'inference' in leaf:
                 if leaf['inference']['application'] in uuid_mapping:
                     leaf['inference']['application'] = uuid_mapping[leaf['inference']['application']]
                 elif leaf['inference']['application'] not in curr_app_uuids:
+                    logger.warning(f"Non-existing inference application UUID referenced: {leaf['inference']['application']}")
                     return response_error(msg=f"Deployment references non-existing inference application UUID: {leaf['inference']['application']}", status_code=404)
         
         # Create new deployment object
@@ -113,7 +123,9 @@ def app_create_deployment_id(user, project_name, body: dict):
                 applications=apps
             )
         except ResourceAlreadyExisting as e:
+            logger.warning(f"Deployment already exists: {new_deployment.display_name}")
             return response_error(msg="Deployment resource already existing", status_code=400)
+        logger.info(f"Deployment created: name={new_deployment.display_name}, apps_created={len(apps)}")
     
         return Response(status=201)
         
@@ -122,17 +134,20 @@ def app_create_deployment_id(user, project_name, body: dict):
 @default_except
 @not_supported_for_org
 def app_delete_deployment_id (user, project_name, deployment_id):
+    logger.info(f"app_delete_deployment_id: user={user}, project={project_name}, deployment_id={deployment_id}")
     project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)
     project_repo.dao_factory.get_deployment_dao_instance().delete(project_name=project_name, deployment_uuid_or_name=deployment_id)
-
+    logger.info(f"Deployment deleted: {deployment_id}")
     return Response(status=200)
 
 @default_except
 @not_supported_for_org
 def app_update_deployment_id(user, project_name, deployment_id, body: dict):
+    logger.info(f"app_update_deployment_id: user={user}, project={project_name}, deployment_id={deployment_id}")
     workspace = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
     project_path = get_project_file_name(project_name=project_name)
     j = os.path.join(workspace, project_path)
+    logger.debug(f"Project file path: {j}")
     
     try:
         with open(j, 'rt') as jf:
@@ -144,6 +159,7 @@ def app_update_deployment_id(user, project_name, deployment_id, body: dict):
             logger.debug(f"Current apps: {curr_app_uuids}")
             
             if deploy is None:
+                logger.warning(f"Deployment not found: {deployment_id}")
                 return response_error(msg="Deployment not found", status_code=404)
 
             update_flag = False
@@ -152,11 +168,13 @@ def app_update_deployment_id(user, project_name, deployment_id, body: dict):
             if body.get("display_name") is not None:
                 deploy["display_name"] = body["display_name"]
                 update_flag = True
+                logger.debug("Updated deployment display_name")
 
             # Update last_deploy_result
             if body.get("last_deploy_result") is not None:
                 deploy["last_deploy_result"] = body["last_deploy_result"]
                 update_flag = True
+                logger.debug("Updated last_deploy_result")
 
             # Update cloud_params
             if body.get("cloud_params") is not None:
@@ -165,6 +183,7 @@ def app_update_deployment_id(user, project_name, deployment_id, body: dict):
                 if body["cloud_params"].get("type") is not None:
                     deploy["cloud_params"]["type"] = body["cloud_params"]["type"]
                 update_flag = True
+                logger.debug("Updated cloud_params")
 
             if "leaf" in deploy:
                 deploy_leaves: list = deploy["leaf"]
@@ -191,12 +210,14 @@ def app_update_deployment_id(user, project_name, deployment_id, body: dict):
                             if in_gateway.get("wifi_mode") is not None:
                                 my_gateway["wifi_mode"] = in_gateway["wifi_mode"]
                             update_flag = True
+                            logger.debug(f"Updated gateway device: {in_gateway.get('device_id')}")
 
                             # Update gateway_id in leaf devices which used this GW
                             for my_leaf in deploy_leaves:
                                 if my_leaf["gateway_id"] == in_gateway.get("device_id"):
                                     my_leaf["gateway_id"] = in_gateway["device_id"]
                         else:
+                            logger.warning("Gateway device not found for update")
                             return response_error(msg="Gateway device not found", status_code=404)
                         
             # Update leaf devices
@@ -240,14 +261,18 @@ def app_update_deployment_id(user, project_name, deployment_id, body: dict):
                                 if in_leaf["inference"].get("models") is not None:
                                     my_leaf["inference"]["models"] = in_leaf["inference"]["models"] # The whole models list is updated currently
                             update_flag = True
+                            logger.debug(f"Updated leaf device: {in_leaf.get('device_id')}")
                         else:
+                            logger.warning("Leaf Device not found for update")
                             return response_error(msg="Leaf Device not found", status_code=404)            
                 
             # If deployment object has been updated, set the timestamp
             if update_flag:
                 deploy["last_update_time"] = str(datetime.now())
+                logger.info(f"Deployment updated: {deployment_id}")
                 
     except OSError as e:
+        logger.exception("Failed reading project file for update")
         return Response(status=400)
 
     # Now actually write the file
@@ -255,6 +280,7 @@ def app_update_deployment_id(user, project_name, deployment_id, body: dict):
         with open(j, 'wt') as jf:
             json.dump(project, jf, indent=4)
     except OSError as e:
+        logger.exception("Failed writing updated project file")
         return Response(status=400)
 
     return Response(status=200)
@@ -262,10 +288,12 @@ def app_update_deployment_id(user, project_name, deployment_id, body: dict):
 @default_except
 @not_supported_for_org
 def app_get_deployment_leaf (user, project_name, deployment_id, device_id, resource):
+    logger.info(f"app_get_deployment_leaf: user={user}, project={project_name}, deployment_id={deployment_id}, device_id={device_id}, resource={resource}")
     workspace = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
     project_path = get_project_file_name(project_name=project_name)         # get_started_motor_classification
 
     j = os.path.join(workspace, project_path)
+    logger.debug(f"Project file path: {j}")
 
     try:
         with open(j, 'r') as jf:
@@ -273,11 +301,14 @@ def app_get_deployment_leaf (user, project_name, deployment_id, device_id, resou
             deploys : list = project["deployments"]                         # uuid_to_replace_deployment1
             deploy = next((el for el in deploys if el["uuid"] == deployment_id), None)
             if deploy is None:
+                logger.warning(f"Deployment not found: {deployment_id}")
                 return Response(status=404)
             device = next((el for el in deploy["leaf"] if el["device_id"] == device_id), None)
             if device is None:
+                logger.warning(f"Leaf device not found: {device_id}")
                 return Response(status=404)
     except OSError:
+        logger.exception("Failed reading project file for leaf resource")
         return Response(status=400)
 
     # selected = next((el for el in device["models"] if el["name"] == device["selected_model_name"]), None)
@@ -324,6 +355,7 @@ def app_get_deployment_leaf (user, project_name, deployment_id, device_id, resou
     if (target is not None):
         workspace = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
         path = os.path.join(workspace, project_name, target)
+        logger.debug(f"Resolved leaf resource path: {path}")
         if (os.path.isfile(path)):
             return send_file(path)
         else:
@@ -335,10 +367,12 @@ def app_get_deployment_leaf (user, project_name, deployment_id, device_id, resou
 @default_except
 @not_supported_for_org
 def app_get_deployment_gateway (user, project_name, deployment_id, device_id, resource):
+    logger.info(f"app_get_deployment_gateway: user={user}, project={project_name}, deployment_id={deployment_id}, device_id={device_id}, resource={resource}")
     workspace = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
     project_path = get_project_file_name(project_name=project_name)         # get_started_motor_classification
 
     j = os.path.join(workspace, project_path)
+    logger.debug(f"Project file path: {j}")
     
     try:
         with open(j, 'r') as jf:
@@ -346,11 +380,14 @@ def app_get_deployment_gateway (user, project_name, deployment_id, device_id, re
             deploys : list = project["deployments"]                         # uuid_to_replace_deployment1
             deploy = next((el for el in deploys if el["uuid"] == deployment_id), None)
             if deploy is None:
+                logger.warning(f"Deployment not found: {deployment_id}")
                 return Response(status=404)
             device = next((el for el in deploy["gateway"] if el["device_id"] == device_id), None)
             if device is None:
+                logger.warning(f"Gateway device not found: {device_id}")
                 return Response(status=404)
     except OSError:
+        logger.exception("Failed reading project file for gateway resource")
         return Response(status=400)
 
     apps : list = project["applications"]
@@ -379,6 +416,7 @@ def app_get_deployment_gateway (user, project_name, deployment_id, device_id, re
     if (target is not None):
         workspace = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
         path = os.path.join(workspace, project_name, target)
+        logger.debug(f"Resolved gateway resource path: {path}")
         if (os.path.isfile(path)):
             return send_file(path)
         else:
@@ -390,9 +428,10 @@ def app_get_deployment_gateway (user, project_name, deployment_id, device_id, re
 @default_except
 @not_supported_for_org
 def app_delete_application_id (user, project_name, application_id):
+    logger.info(f"app_delete_application_id: user={user}, project={project_name}, application_id={application_id}")
     project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)
     project_repo.dao_factory.get_deployment_app_dao_instance().delete(project_name=project_name, application_uuid_or_name=application_id)
-
+    logger.info(f"Application deleted: {application_id}")
     return Response(status=200)
 
 @default_except
@@ -401,10 +440,11 @@ def app_update_application_id (user, project_name, application_id, body: dict):
     if connexion.request.is_json:
         body = connexion.request.get_json()
         updated_app = DeploymentApplication.from_dict(body)  # noqa: E501
-        logger.info(f"Patch body: {body}")
+        logger.info(f"app_update_application_id: user={user}, project={project_name}, application_id={application_id}")
+        logger.debug(f"Patch body keys: {list(body.keys())}")
         project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)
         project_repo.dao_factory.get_deployment_app_dao_instance().patch(project_name=project_name, application_uuid_or_name=application_id, app = updated_app)
-
+        logger.info(f"Application updated: {application_id}")
         return Response(status=200)
     return response_error(msg="JSON Body error", status_code=400)
 
