@@ -256,19 +256,14 @@ class DeploymentApplicationFileDAO(DeploymentDAO):
         if application_obj.protocol is not None:
             json_application_domain_obj["protocol"] = application_obj.protocol 
 
+        payload = application_obj.bluestv3_payload if hasattr(application_obj, "bluestv3_payload") else None
         logger.debug(f'DeploymentApplicationFileDAO.__serialize_application: Serialize bluestv3_payload fields')
-        if (
-            application_obj.bluestv3_payload.device_id or
-            application_obj.bluestv3_payload.fw_id or
-            application_obj.bluestv3_payload.payload_id or
-            application_obj.bluestv3_payload.decoding_schema.telemetry or
-            application_obj.bluestv3_payload.decoding_schema.type
-        ):
-            
-            json_application_domain_obj["bluestv3_payload"] = {}
-            if application_obj.bluestv3_payload.device_id:
-                logger.debug(f'DeploymentApplicationFileDAO.__serialize_application: converting bluestv3_payload to_dict')        
-                json_application_domain_obj["bluestv3_payload"] = application_obj.bluestv3_payload.to_dict()
+        if payload is not None:
+            try:
+                logger.debug(f'serializing bluestv3_payload')
+                json_application_domain_obj["bluestv3_payload"] = payload.to_dict()
+            except AttributeError:
+                logger.warning('bluestv3_payload object missing to_dict; skipping serialization')
                 
         logger.debug(f'< DeploymentApplicationFileDAO.__serialize_application')
                 
