@@ -1,7 +1,6 @@
 
 
 import logging
-from project_api.utils.error_helper import (user_prj_exists, get_prj_api_log_level)
 from typing import List, Any
 from datetime import date, datetime  # noqa: F401
 
@@ -27,7 +26,7 @@ from project_api.vespucciprjmng.repository.project_repo import ProjectRepo
 import os
 
 logger = logging.getLogger(__name__)
-logger.setLevel(get_prj_api_log_level())
+logger.setLevel(logging.DEBUG)
 
 class ProjectFileRepo(ProjectRepo):
 
@@ -39,15 +38,18 @@ class ProjectFileRepo(ProjectRepo):
         return self.dao_factory.get_project_dao_instance().get_all()
     
     def get_project(self, project_name: str) -> Project:        
-        logger.debug(f"ProjectFileRepo.get_project: project_name={project_name}")
+        logger.debug(f"> ProjectFileRepo.get_project: project_name={project_name}")
         project: Project    = self.dao_factory.get_project_dao_instance().get(name=project_name)
 
         # TODO: Support Project Schema and Check supported project schemas by the main-api?
         
         models: List[Model] = self.dao_factory.get_model_dao_instance().get_all(project_name=project_name)
+        logger.debug(f'obtaining deployments')
         deploys: List[Deployment] = self.dao_factory.get_deployment_dao_instance().get_all(project_name=project_name)
+        logger.debug(f'obtaining applications')
         applications: List[Application] = self.dao_factory.get_deployment_app_dao_instance().get_all(project_name=project_name)
-        
+        logger.debug(f'collecting models')
+    
         for model in models:
             training = self.dao_factory.get_training_dao_instance().get(project_name=project.name, model_uuid_or_name=model.uuid)
             model.training = training
@@ -62,6 +64,8 @@ class ProjectFileRepo(ProjectRepo):
             f"ProjectFileRepo.get_project: assembled project with models={len(models)}, "
             f"applications={len(applications)}, deployments={len(deploys)}"
         )
+        logger.debug(f"< ProjectFileRepo.get_project")
+        
         return project
 
     def create_project(self, name: str, type: str="", description: str = "", version: str = "0.0.1", uuid = None,project_owner_uuid: str = None) -> Project:

@@ -27,7 +27,7 @@ class DataSufficiencyFileDAO(TrainingDAO):
         
         for json_model_obj in self.data_session.json_file["models"]:
             if json_model_obj["uuid"] == model_uuid_or_name or json_model_obj["name"] == model_uuid_or_name:
-                if "data_sufficiency" in json_model_obj:
+                if "data_sufficiency" in json_model_obj and json_model_obj["data_sufficiency"]:
                     training_json_obj = self.__deserialize_training(json_model_obj["data_sufficiency"])
                 break
 

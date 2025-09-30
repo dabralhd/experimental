@@ -14,9 +14,6 @@ from project_api.util import response_error
 from project_api.utils.vespucci_to_controller_model_converters import (
     convert_training,
 )
-from project_api.vespucciprjmng.repository.filesystem.project_file_repo import (
-    ProjectFileRepo,
-)
 import logging
 import json
 from project_api.utils.zipfolder import zip_directory

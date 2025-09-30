@@ -67,7 +67,7 @@ def convert_application(application=VespucciDeploymentApplication):
                             binary_uri=application.binary_uri,
                             binary_id=application.binary_id,
                             protocol=application.protocol,
-                            payload = application.payload
+                            bluestv3_payload = application.bluestv3_payload
                             ) if application else None
     
     return deployment_application

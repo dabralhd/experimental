@@ -220,11 +220,11 @@ class Application():
         self._protocol = protocol
 
     @property 
-    def bluestv3_payload(self) -> dict:
+    def bluestv3_payload(self) -> Bluestv3Payload:
         return self._bluestv3_payload
     
     @bluestv3_payload.setter
-    def bluestv3_payload(self, bluestv3_payload: dict):
+    def bluestv3_payload(self, bluestv3_payload: Bluestv3Payload):
         self._bluestv3_payload = bluestv3_payload   
 
     def __init__(self, uuid: str = "", type: bool = True, device_template_uri: str = "", device_template_id: str = "", 

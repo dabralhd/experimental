@@ -32,7 +32,7 @@ class ModelFileDAO(ModelDAO):
         """Get all stored models (without details) inside project(s)"""
         if not project_name:
             raise Exception("'get_all' models with project_id=" +project_name+ " is not implemented")
-
+        logger.debug(f'ModelFileDAO.get_all project_name: {project_name}')
         self.data_session.connect(get_project_file_name(project_name))
 
         model_domain_objs = []
