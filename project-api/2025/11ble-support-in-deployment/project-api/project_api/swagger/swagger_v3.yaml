@@ -1116,6 +1116,71 @@ paths:
         - secret
       x-openapi-router-controller: project_api.controllers.activity_controller
   /projects/{project_name}/deployments/{deployment_id}/leaf/{device_id}:
+    patch:
+      security:
+      - bearerAuth:
+        - secret  
+      parameters:
+        - in: path
+          name: device_id
+          schema:
+            type: string
+            minLength: 1
+            pattern: "^[a-zA-Z0-9_-]+$"
+          required: true
+        - in: path
+          name: project_name
+          schema:
+            type: string
+            minLength: 1
+            pattern: "^[a-zA-Z0-9_-]+$"
+          required: true
+        - in: path
+          name: deployment_id
+          schema:
+            type: string
+            minLength: 1
+            pattern: "^[a-zA-Z0-9_-]+$"
+          required: true
+        - name: as_org
+          in: query
+          description: |
+            sometimes a user will share a project with an org
+          required: false
+          schema:
+            type: string
+            example: 8s28038jgmf8cn8a7ka2hzhj10            
+            minLength: 1
+            pattern: "^[a-zA-Z0-9_-]+$"   
+        - name: resource_type
+          in: query          
+          description: string identifying resource to patch
+          schema:
+            type: string
+            enum: [datalogging, inference]
+          required: false         
+        - name: resource_name
+          in: query
+          description: identify resource_name within the category resource_type, at present 
+          schema:
+            type: string
+            enum: [application]
+          required: false
+      tags:
+      - Deployment
+      summary: Get files relating to a leaf device
+      description: ""
+      operationId: app_patch_deployment_leaf
+      responses:
+        "200":
+          description: OK.
+        "400":
+          description: Bad request.
+        "401":
+          description: Unauthorized.
+        "404":
+          description: Not found.
+      x-openapi-router-controller: project_api.controllers.deployment_controller
     get:
       security:
       - bearerAuth:
@@ -1231,6 +1296,61 @@ paths:
         "404":
           description: Not found.
       x-openapi-router-controller: project_api.controllers.deployment_controller
+  /projects/{project_name}/deployments/{deployment_id}/leaf/{device_id}/inference:
+      patch:
+        tags:
+          - Deployment
+          - Inference
+        summary: Patch inference model reference for a leaf device
+        description: |
+          Updates the 'model_name_reference' in the leaf device's inference configuration.
+          The resource must exist, otherwise a 404 error is returned.
+        operationId: app_patch_leaf_inference_model
+        security:
+          - bearerAuth:
+              - secret
+        parameters:
+          - name: project_name
+            in: path
+            description: Project `name` identifier
+            required: true
+            schema:
+              type: string
+              minLength: 1
+              pattern: "^[a-zA-Z0-9_-]+$"
+          - name: deployment_id
+            in: path
+            description: Deployment `id` identifier
+            required: true
+            schema:
+              type: string
+              minLength: 1
+              pattern: "^[a-zA-Z0-9_-]+$"
+          - name: device_id
+            in: path
+            description: Leaf Device `id` identifier
+            required: true
+            schema:
+              type: string
+              minLength: 1
+              pattern: "^[a-zA-Z0-9_-]+$"
+        requestBody:
+          description: Partial payload to update the model reference.
+          required: true
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PatchInferenceModelReference'
+        responses:
+          "204":
+            description: Success. Model reference updated. (No Content returned)
+          "400":
+            description: Bad request. Invalid payload format.
+          "401":
+            description: Unauthorized.
+          "404":
+            description: Not found. The project, deployment, or device does not exist.
+        x-openapi-router-controller: project_api.controllers.inference_controller # Example controller      
   /projects/{project_name}/deployments:
     post:
       security:
