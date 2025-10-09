@@ -367,7 +367,7 @@ def app_get_deployment_leaf (user, project_name, deployment_id, device_id, resou
 @default_except
 @not_supported_for_org
 def app_get_deployment_gateway (user, project_name, deployment_id, device_id, resource):
-    logger.info(f"app_get_deployment_gateway: user={user}, project={project_name}, deployment_id={deployment_id}, device_id={device_id}, resource={resource}")
+    logger.debug(f"app_get_deployment_gateway: user={user}, project={project_name}, deployment_id={deployment_id}, device_id={device_id}, resource={resource}")
     workspace = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
     project_path = get_project_file_name(project_name=project_name)         # get_started_motor_classification
 
@@ -453,4 +453,92 @@ def app_update_application_id (user, project_name, application_id, body: dict):
 def get_artifacts (project_name, deployment_name, device_id, log_uuid):
     # Unused
     return Response(status=501)
+
+
+@default_except
+@not_supported_for_org
+def app_patch_deployment_leaf(user, project_name, deployment_id, device_id, resource_type = None, resource_name = None):  # noqa: E501
+    """Get files relating to a leaf device
+
+     # noqa: E501
+
+    :param device_id: 
+    :type device_id: str
+    :param project_name: 
+    :type project_name: str
+    :param deployment_id: 
+    :type deployment_id: str
+    :param resource_type: string identifying resource to patch
+    :type resource_type: str
+    :param resource_name: identify resource_name within the category resource_type, at present
+    :type resource_name: str
+
+    :rtype: None
+    """
+    logger.debug(f"> app_patch_deployment_leaf:\n user={user}\n, project={project_name}\n, deployment_id={deployment_id}\n, device_id={device_id}\n, resource_type={resource_type}\n, resource_name={resource_name}\n")
+    workspace = GlobalObjects.getInstance().getFSUserWorkspaceFolder(user_id=user)
+    project_path = get_project_file_name(project_name=project_name)         # get_started_motor_classification
+
+    j = os.path.join(workspace, project_path)
+    logger.debug(f"Project file path: {j}")
+    
+    if connexion.request.is_json:
+        body = connexion.request.get_json()
+        logger.debug(f'requestBody: {body}')    
+    
+    try:
+        project = None
+        found_and_patched = False
+        with open(j, 'r') as jf:
+            project = json.load(jf)
+        deploys : list = project["deployments"]
+        for deploy in deploys: 
+            if deployment_id == deploy.get("uuid"):
+                for lf in deploy["leaf"]:
+                    if lf.get("device_id") == device_id:
+                        logger.debug(f"resource_type: {resource_type}, resource_name: {resource_name}")    
+                        if resource_type == "datalogging" and resource_name == "application":
+                            dtlg = lf.get("datalogging")
+                            dtlg["application"] = body.get("application")
+                            found_and_patched = True
+                            break
+                        elif resource_type == "datalogging" and resource_name != "application":
+                            lf["datalogging"] = dict()
+                            found_and_patched = True
+                            break
+                        elif resource_type == "inference" and resource_name == "application":
+                            infr = lf.get("inference")
+                            if infr and infr["application"]:
+                                logger.debug(f"setting infr.application")
+                                infr["application"] = body.get("application")
+                                found_and_patched = True
+                                break
+                        elif resource_type == "inference" and resource_name == "model_name_reference":
+                            infr = lf.get("inference")
+                            models = infr.get("models")
+                            if len(models)==1:
+                                models[0]["model_name_reference"] = body.get("model_name_reference")
+                                found_and_patched = True
+                                break                            
+                        else:
+                            logger.debug(f"Device found, but invalid query param combination")  
+                            return Response(status=404)                
+                        
+                if found_and_patched:
+                    break
+            
+        if not found_and_patched:
+            logger.warning(f"Device with id '{device_id}' not found in project '{project_name}'.")
+            return Response(status=404) # Not Found                
+                
+            logger.info(f"-writing back ai project json\n: project: {project} ")
+            
+        with open(j, 'w') as jf:     
+            json.dump(project, jf)            
+    except OSError:
+        logger.exception("Failed reading project file for device resource")
+        return Response(status=400)
+    logger.info(f"< app_patch_deployment_leaf\npatch operation completed")
+    return Response(status=200)                                
+                                    
 

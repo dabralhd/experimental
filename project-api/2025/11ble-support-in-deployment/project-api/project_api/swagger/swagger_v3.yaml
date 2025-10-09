@@ -1164,13 +1164,25 @@ paths:
           description: identify resource_name within the category resource_type, at present 
           schema:
             type: string
-            enum: [application]
+            enum: [application, model_name_reference]
           required: false
       tags:
       - Deployment
       summary: Get files relating to a leaf device
       description: ""
       operationId: app_patch_deployment_leaf
+      requestBody:
+        description:  requestbody for patching leaf device
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                datalogging:
+                  type: string
+                application:
+                  type: string
+        required: true      
       responses:
         "200":
           description: OK.
@@ -1449,9 +1461,17 @@ paths:
                                 type: string
                               firmware_update:
                                 type: boolean
+                              supported_applications:
+                                type: array
+                                items:
+                                  $ref: '#/components/schemas/Supported_Application'
                           inference:
                             type: object
                             properties:
+                              supported_applications:
+                                type: array
+                                items:
+                                  $ref: '#/components/schemas/Supported_Application'                            
                               application:
                                 type: string
                               firmware_update:
@@ -1855,6 +1875,24 @@ paths:
 
 components:
   schemas:
+    PatchInferenceModelReference:
+        type: object
+        description: A partial payload containing the new model reference for the inference configuration.
+        properties:
+          new_model_name_reference:
+            type: object
+            description: Key representing the model update object.
+            properties:
+              model_name_reference:
+                type: string
+                description: The new model name reference to be used for inference.
+            required:
+              - new_model_name_reference
+        required:
+          - models
+        example:
+          models:
+            new_model_name_reference: "new_value"  
     EFSUsage:
       type: object
       properties:
@@ -2514,6 +2552,10 @@ components:
           $ref: '#/components/schemas/UpdateDevice'
         gateways:
           $ref: '#/components/schemas/UpdateDevice'  
+    Supported_Application:
+        type: string
+        description: uuid of supported application.
+        example: "uuid_to_replace_application1"
     UpdateDevice:
       type: object
       properties:
