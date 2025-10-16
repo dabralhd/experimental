@@ -34,6 +34,10 @@ def app_create_deployment_id(user, project_name, body: dict):
     logger.info(f"app_create_deployment_id: user={user}, project={project_name}")
     if connexion.request.is_json:
         body = connexion.request.get_json()
+        try:
+            logger.debug(f"Incoming raw body:\n{json.dumps(body, indent=2)}")
+        except Exception:
+            logger.debug("Incoming body could not be pretty-printed (non-serializable)")
         logger.debug(f"Incoming body keys: {list(body.keys())}")
         applications = body.get("applications")
         deployment = body.get("deployment")
@@ -41,6 +45,17 @@ def app_create_deployment_id(user, project_name, body: dict):
         if not deployment:
             logger.warning("Missing 'deployment' in request body")
             return response_error(msg="Missing deployment in the request body", status_code=400)
+        if not isinstance(deployment, dict):
+            logger.error(f"Invalid 'deployment' type: {type(deployment)}")
+            raise TypeError("deployment must be an object")
+        if 'gateway' not in deployment:
+            logger.error("Missing 'deployment.gateway' array")
+            raise KeyError("deployment.gateway missing")
+        if 'leaf' not in deployment:
+            logger.error("Missing 'deployment.leaf' array")
+            raise KeyError("deployment.leaf missing")
+        logger.debug(f"Deployment.gateway count: {len(deployment.get('gateway', []))}")
+        logger.debug(f"Deployment.leaf count: {len(deployment.get('leaf', []))}")
         
         project_repo = GlobalObjects.getInstance().getFSProjectRepo(user_id=user)
         project = project_repo.get_project(project_name=project_name)
@@ -51,7 +66,11 @@ def app_create_deployment_id(user, project_name, body: dict):
 
         if applications:
             logger.debug(f"Applications received: {len(applications)}")
-            for app in applications:
+            for idx, app in enumerate(applications):
+                logger.debug(f"applications[{idx}] => {app}")
+                if 'uuid' not in app:
+                    logger.error(f"applications[{idx}] missing required 'uuid' field: {app}")
+                    raise KeyError("applications[].uuid missing")
                 existing_app = next(
                     (
                         _app for _app in project.applications
@@ -71,7 +90,7 @@ def app_create_deployment_id(user, project_name, body: dict):
                 if existing_app:
                     # Use the UUID of the existing application
                     uuid_mapping[app['uuid']] = existing_app.uuid
-                    logger.debug(f"Depl App Match found uuid: {existing_app.uuid}!")
+                    logger.debug(f"Depl App Match found uuid: {existing_app.uuid} for placeholder {app['uuid']}")
                 else:                    
                     # Generate a new UUID for the new application
                     new_uuid = str(uuid4())
@@ -80,6 +99,7 @@ def app_create_deployment_id(user, project_name, body: dict):
                     logger.debug(f"Depl App Match not found, generating new uuid: {new_uuid}")
                     new_apps.append(app)
         logger.info(f"UUID mapping created for {len(uuid_mapping)} apps; new apps to create: {len(new_apps)}")
+        logger.debug(f"UUID mapping detail: {uuid_mapping}")
     
         # Replace UUIDs in deployment gateway and leaf devices
         for gateway in deployment['gateway']:
@@ -104,6 +124,7 @@ def app_create_deployment_id(user, project_name, body: dict):
                     return response_error(msg=f"Deployment references non-existing inference application UUID: {leaf['inference']['application']}", status_code=404)
         
         # Create new deployment object
+        logger.debug(f"Deployment object to deserialize: {deployment}")
         new_deployment = NewDeployment.from_dict(deployment)  # noqa: E501
         apps = []
         if new_apps:
@@ -112,6 +133,14 @@ def app_create_deployment_id(user, project_name, body: dict):
                 apps.append(new_app)
 
         try:
+            logger.debug(
+                f"Calling project_repo.create_deployment with: name={new_deployment.display_name}, "
+                f"cloud_type={getattr(new_deployment.cloud_params, 'type', None)}, "
+                f"cloud_app_url={getattr(new_deployment.cloud_params, 'app_url', None)}, "
+                f"leaf_devices={len(new_deployment.leaf) if new_deployment.leaf else 0}, "
+                f"gw_devices={len(new_deployment.gateway) if new_deployment.gateway else 0}, "
+                f"applications_to_create={len(apps)}"
+            )
             project_repo.create_deployment(
                 project_name=project_name,
                 deployment_name=new_deployment.display_name,
