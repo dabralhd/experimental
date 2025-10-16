@@ -206,9 +206,8 @@ class ProjectFileRepo(ProjectRepo):
                             inference_fwupdate=leaf.inference.firmware_update, 
                             datalogging_app=leaf.datalogging.application, 
                             datalogging_fwupdate=leaf.datalogging.firmware_update, 
-                            inference_models=_inf_models,
-                            supported_applications=leaf.supported_applications
-                          )
+                            inference_models=_inf_models                          
+                            )
             _leaf_devices.append(_leaf)
 
         for gw in gw_devices:

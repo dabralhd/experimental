@@ -73,7 +73,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-POST {{base_url}}/projects/test-sat-2/deployments
+POST {{base_url}}/projects/test-sat-1/deployments
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -190,7 +190,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-DELETE {{base_url}}/projects/test-sat-2
+DELETE {{base_url}}/projects/test-sat-1
 Authorization: Bearer {{token}}
 
 ###
