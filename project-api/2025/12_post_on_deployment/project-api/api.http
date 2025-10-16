@@ -9,7 +9,7 @@
 @remote_dev_url = https://dev.stm-vespucci.com:{{remote_port}}{{remote_api_base_path_3}}
 @base_url = {{remote_dev_url}}
 @token-dummy = dev
-@token-dev = eyJraWQiOiJcL3JIS3FCbG5JVldiU2RqdEJqODRQaDNyUk5SWWh4cnR6RFwvOXFTK0Q3aWc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIzMzRjNjVhNS0xNDk1LTQ1M2EtYTZkZS00ZDM4NGE3ODEwMDAiLCJjb2duaXRvOmdyb3VwcyI6WyJ3aGl0ZWxpc3QiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfOXdlbnNFNVJaIiwidmVyc2lvbiI6MiwiY2xpZW50X2lkIjoiNHNoYjE3OGdsbWxsc3I3NWdmb2JoZmRzYmEiLCJvcmlnaW5fanRpIjoiZDgzZmE0N2MtYzk0ZS00ZjYxLTlmMWMtN2NkOTY3ZTYwZWU0IiwiZXZlbnRfaWQiOiJkYzM3ZGIxYi0zNjNlLTQ0ZmMtOWMzMC05YmFiYWY0NzIxZjUiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIGh0dHBzOlwvXC9vYXV0aDIuZGV2LnN0bS12ZXNwdWNjaS5jb21cL3Rlc3QgcGhvbmUgb3BlbmlkIHByb2ZpbGUgZW1haWwiLCJhdXRoX3RpbWUiOjE3NTgwMDAzMzIsImV4cCI6MTc1ODY5MTUxMCwiaWF0IjoxNzU4NjA1MTEwLCJqdGkiOiIzNTNhZDQ5NS01MTY2LTRlNTAtYjMxOS04NzkzZTU0Y2E0M2MiLCJ1c2VybmFtZSI6IjMzNGM2NWE1LTE0OTUtNDUzYS1hNmRlLTRkMzg0YTc4MTAwMCJ9.UUcb4q0oT1VcY1HWcunq67_8PcH0tKZsR5_e3yNEk0jheTv2RZNLEAFq--IC27ejjcD6F3oZfh8V-aTL0xGkXV07kCe8wG3A-7xXudM_uRpGS-DfcmCkj64nsDRpi0W6BtSywCpr5-xrjw9qMDU6BWKHIBQP3x55BCn9EhnFqFm-0IAOqJgjUczTr-tjM4xMpn6zDmkfIqCkJgFK-qvXXudkO3ZBpgzxMK4TCG_EbfLOhvCrVYQBelk45BaQQQssHv4rlNh5EiAq4gj04bueAe_DJgLizxQy19U3ih54LWc8zJBzTM6DCwVAD9wu4qMZVnJaAINZREwI-4B4McZo8A
+@token-dev = eyJraWQiOiJcL3JIS3FCbG5JVldiU2RqdEJqODRQaDNyUk5SWWh4cnR6RFwvOXFTK0Q3aWc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIzMzRjNjVhNS0xNDk1LTQ1M2EtYTZkZS00ZDM4NGE3ODEwMDAiLCJjb2duaXRvOmdyb3VwcyI6WyJ3aGl0ZWxpc3QiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfOXdlbnNFNVJaIiwidmVyc2lvbiI6MiwiY2xpZW50X2lkIjoiNHNoYjE3OGdsbWxsc3I3NWdmb2JoZmRzYmEiLCJvcmlnaW5fanRpIjoiODc2Nzc5ZDMtOTZmMy00ZjNlLWFhZDEtMTIzMmU5YjMwOWZiIiwiZXZlbnRfaWQiOiI3ODhhYjY0Yi0wOGQzLTQzMjAtYjIyMC1kZjMyZGNkNzE2NWQiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIGh0dHBzOlwvXC9vYXV0aDIuZGV2LnN0bS12ZXNwdWNjaS5jb21cL3Rlc3QgcGhvbmUgb3BlbmlkIHByb2ZpbGUgZW1haWwiLCJhdXRoX3RpbWUiOjE3NjA1MDg1NjksImV4cCI6MTc2MDY3ODkyMCwiaWF0IjoxNzYwNTkyNTIwLCJqdGkiOiI3ZWQ5YzdhMC01YTU3LTQ1MjctYjAxMi0wMWU5OWRkMzRkZWQiLCJ1c2VybmFtZSI6IjMzNGM2NWE1LTE0OTUtNDUzYS1hNmRlLTRkMzg0YTc4MTAwMCJ9.b2XWef2Vt-Moel7ch4iLYQPP06PCVZ5gUsNX8uo_0Y4G8oXlxBEG8qahoSxmLTEydriD_SQqn7k3l5txJKbHHLvnxirgXaH64kh3ekz8aK-MmEnWWFQWWcdUKzEp_SNGtQY6ew0-dyyxLOj3pdCgvh0758Ejlqo9ZGEXxAwB_yWEq_vD1JHsnVN7ZOuTMun3-xg-T8YfHvAiOHZAQ49KUZZcHEvPE_zzUc8EEt6pP3UDGhBdm9vbX00erebzVw9beUp6X3c6LOCNnXNfscRSoPtVgoe4MrozFGa136RCE5_fthjgNSjj2SN6bk6wNfzQtaxtb-RHw---fzXs4Aqokw
 @token = {{token-dev}}
 
 @probe_url = http://127.0.0.1:{{local_port}}
@@ -43,9 +43,20 @@ Content-Type: application/json
   "version": "0.0.1"
 }
 ###
-GET {{base_url}}/projects/test-sat-1
+GET {{base_url}}/projects/test-sat-2
 Authorization: Bearer {{token}}
 Content-Type: application/json
+
+###
+POST {{base_url}}/projects?is_user_project=True
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "project_name_to_clone": "test-sat-1",
+  "ai_project_name": "test-sat-2"
+}
+
 ###
 
 POST {{base_url}}/projects
@@ -57,10 +68,87 @@ Content-Type: application/json
   "ai_project_name": "test-sat-1"
 }
 ###
-GET {{base_url}}/projects/test-sat-1
+GET {{base_url}}/projects/test-sat-2
 Authorization: Bearer {{token}}
 Content-Type: application/json
+
 ###
+POST {{base_url}}/projects/test-sat-2/deployments
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ 
+  "applications": [
+      {
+      "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-5.manifest.arm64v8.json",
+      "device_template_id": "dtmi:appconfig:gateway:MLC_GATEWAY;5",
+      "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-5.expanded.json",
+      "image_uri": "/e2e_systems/gateway/images/raspberrypi/edge_gateway_production_20241001_1_2_0_rc1.img.gz",
+      "module_id": "edgeMLC",
+      "type": "gateway",
+      "uuid": "1"
+      },
+      {
+        "binary_id": 281,
+        "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_2_2_0.bin",
+        "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;5",
+        "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-5.expanded.json",
+        "protocol": 2,
+        "type": "datalogging",
+        "uuid": "2"
+      },
+      {
+        "binary_id": 282,
+        "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-INFERENCE2_Inference2_2_2_0.bin",
+        "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_INFERENCE2_Inference2;5",
+        "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_INFERENCE2_Inference2-5.expanded.json",
+        "protocol": 2,
+        "type": "inference",
+        "uuid": "3"
+      }
+  ],  
+  "deployment": {
+        "display_name": "POST Deployment 3",
+        "description": "deployment desc", 
+        "cloud_params": {
+            "type": "aws",
+            "app_url": "http://aws_app.com"
+        },
+        "gateway": [{
+              "application": "1",
+              "description": "Gateway device at position 0.",
+              "device_id": "gw_0",
+              "display_name": "Device-Display-Name",
+              "wifi_mode": "off"
+            }],
+        "leaf": [
+            {
+                "datalogging": {
+                  "application": "2",
+                  "firmware_update": false,
+                  "supported_applications": [ "0397bdf5-516f-4fe8-98a7-f91f2768702e" ]
+                },
+                "description": "Leaf device at position 0.",
+                "device_id": "leaf_0",
+                "display_name": "Device-Display-Name",
+                "gateway_id": "gw_0",
+                "inference": {
+                  "application": "3",
+                  "firmware_update": false,
+                  "models": [
+                    {
+                      "artifact_type": "ucf",
+                      "component_name": "lsm6dsv16x_mlc",
+                      "model_name_reference": "smart_asset_tracking"
+                    }
+                  ],
+                "supported_applications": [ "0397bdf5-516f-4fe8-98a7-f91f2768702e" ]                  
+                }
+            }
+        ]
+    }
+  }
+
 
 GET {{base_url}}/projects
 Authorization: Bearer {{token}}
@@ -72,7 +160,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 ###
-DELETE {{base_url}}/projects/test-project-1
+DELETE {{base_url}}/projects/test-sat-2
 Authorization: Bearer {{token}}
 
 ###
@@ -116,7 +204,7 @@ Content-Type: application/json
 
 
 ###
-DELETE {{base_url}}/projects/test-project-3
+DELETE {{base_url}}/projects/test-sat-2
 Authorization: Bearer {{token}}
 ###
 POST {{base_url}}/projects/test-project-201/models
