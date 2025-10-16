@@ -68,9 +68,39 @@ Content-Type: application/json
   "ai_project_name": "test-sat-1"
 }
 ###
-GET {{base_url}}/projects/test-sat-2
+GET {{base_url}}/projects/test-sat-1
 Authorization: Bearer {{token}}
 Content-Type: application/json
+
+###
+POST {{base_url}}/projects/test-sat-2/deployments
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "applications": [
+    { "uuid": "1", "type": "gateway" },
+    { "uuid": "2", "type": "datalogging" },
+    { "uuid": "3", "type": "inference" }
+  ],
+  "deployment": {
+    "display_name": "My Deployment",
+    "cloud_params": { "type": "aws", "app_url": "http://example.com" },
+    "gateway": [ { "application": "1", "device_id": "gw_0" } ],
+    "leaf": [
+      {
+        "device_id": "leaf_0",
+        "gateway_id": "gw_0",
+        "datalogging": { "application": "2", "firmware_update": false },
+        "inference": {
+          "application": "3",
+          "firmware_update": false,
+          "models": [ { "artifact_type": "ucf", "component_name": "lsm6dsv16x_mlc", "model_name_reference": "smart_asset_tracking" } ]
+        }
+      }
+    ]
+  }
+}
 
 ###
 POST {{base_url}}/projects/test-sat-2/deployments

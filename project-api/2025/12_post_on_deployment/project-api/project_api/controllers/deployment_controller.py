@@ -116,12 +116,19 @@ def app_create_deployment_id(user, project_name, body: dict):
                 elif leaf['datalogging']['application'] not in curr_app_uuids:
                     logger.warning(f"Non-existing datalogging application UUID referenced: {leaf['datalogging']['application']}")
                     return response_error(msg=f"Deployment references non-existing datalogging application UUID: {leaf['datalogging']['application']}", status_code=404)
+                elif leaf['datalogging']['supported_applications'] not in curr_app_uuids:
+                    logger.warning(f"Non-existing supported_applications application UUID referenced: {leaf['datalogging']['supported_applications']}")
+                    return response_error(msg=f"Deployment references non-existing datalogging supported_applications UUID: {leaf['datalogging']['supported_applications']}", status_code=404)
             if 'inference' in leaf:
                 if leaf['inference']['application'] in uuid_mapping:
                     leaf['inference']['application'] = uuid_mapping[leaf['inference']['application']]
                 elif leaf['inference']['application'] not in curr_app_uuids:
                     logger.warning(f"Non-existing inference application UUID referenced: {leaf['inference']['application']}")
                     return response_error(msg=f"Deployment references non-existing inference application UUID: {leaf['inference']['application']}", status_code=404)
+                elif leaf['inference']['supported_applications'] not in curr_app_uuids:
+                    logger.warning(f"Non-existing inference supported_applications UUID referenced: {leaf['inference']['supported_applications']}")
+                    return response_error(msg=f"Deployment references non-existing inference supported_applications UUID: {leaf['inference']['supported_applications']}", status_code=404)
+
         
         # Create new deployment object
         logger.debug(f"Deployment object to deserialize: {deployment}")

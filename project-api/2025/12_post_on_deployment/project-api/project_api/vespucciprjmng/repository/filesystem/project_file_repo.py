@@ -197,11 +197,17 @@ class ProjectFileRepo(ProjectRepo):
                 model = InfModel(artifact_type=model.artifact_type, component_name=model.component_name,model_name_reference=model.model_name_reference)
                 _inf_models.append(model)
 
-            _leaf = Device(gateway_id=leaf.gateway_id, device_id=leaf.device_id, 
-                          display_name=leaf.display_name, description=leaf.description, 
-                          application=leaf.application, inference_app=leaf.inference.application,
-                          inference_fwupdate=leaf.inference.firmware_update, datalogging_app=leaf.datalogging.application, 
-                          datalogging_fwupdate=leaf.datalogging.firmware_update, inference_models=_inf_models
+            _leaf = Device(gateway_id=leaf.gateway_id, 
+                            device_id=leaf.device_id, 
+                            display_name=leaf.display_name, 
+                            description=leaf.description, 
+                            application=leaf.application, 
+                            inference_app=leaf.inference.application,
+                            inference_fwupdate=leaf.inference.firmware_update, 
+                            datalogging_app=leaf.datalogging.application, 
+                            datalogging_fwupdate=leaf.datalogging.firmware_update, 
+                            inference_models=_inf_models,
+                            supported_applications=leaf.supported_applications
                           )
             _leaf_devices.append(_leaf)
 
