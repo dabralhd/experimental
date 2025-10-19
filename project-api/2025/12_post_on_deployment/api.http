@@ -1,0 +1,1060 @@
+@hdtest_group_id = sp4n95r2rc4he7b4rpzdpqtj10
+@local_port = 9090
+@remote_port = 443
+@local_api_base_path = /3
+@remote_api_base_path = /svc/project-api
+@remote_api_base_path_3 = /svc/project-api/3
+@local_url = http://127.0.0.1:{{local_port}}{{local_api_base_path}}
+@remote_url = https://vespucci.st.com:{{remote_port}}{{remote_api_base_path}}
+@remote_dev_url = https://dev.stm-vespucci.com:{{remote_port}}{{remote_api_base_path_3}}
+@base_url = {{remote_dev_url}}
+@token-dummy = dev
+@token-dev = eyJraWQiOiJcL3JIS3FCbG5JVldiU2RqdEJqODRQaDNyUk5SWWh4cnR6RFwvOXFTK0Q3aWc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIzMzRjNjVhNS0xNDk1LTQ1M2EtYTZkZS00ZDM4NGE3ODEwMDAiLCJjb2duaXRvOmdyb3VwcyI6WyJ3aGl0ZWxpc3QiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfOXdlbnNFNVJaIiwidmVyc2lvbiI6MiwiY2xpZW50X2lkIjoiNHNoYjE3OGdsbWxsc3I3NWdmb2JoZmRzYmEiLCJvcmlnaW5fanRpIjoiODc2Nzc5ZDMtOTZmMy00ZjNlLWFhZDEtMTIzMmU5YjMwOWZiIiwiZXZlbnRfaWQiOiI3ODhhYjY0Yi0wOGQzLTQzMjAtYjIyMC1kZjMyZGNkNzE2NWQiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIGh0dHBzOlwvXC9vYXV0aDIuZGV2LnN0bS12ZXNwdWNjaS5jb21cL3Rlc3QgcGhvbmUgb3BlbmlkIHByb2ZpbGUgZW1haWwiLCJhdXRoX3RpbWUiOjE3NjA1MDg1NjksImV4cCI6MTc2MDg4MTkyMSwiaWF0IjoxNzYwNzk1NTIxLCJqdGkiOiJlYzM2OTliNy04NTFiLTQxNTEtODZmYy0wY2E4OGRlYzU5OTkiLCJ1c2VybmFtZSI6IjMzNGM2NWE1LTE0OTUtNDUzYS1hNmRlLTRkMzg0YTc4MTAwMCJ9.N6Acctrfmp0bp6uHZV0vv2LuPwHhopqmqjY7ryEsoRu9rYHldFcO3CekkGR1_NhooMh-zkYqXLSTuWpmLt27VmOMdB9WttGrWGbSFu3AFrS6SuOKm92us8JqrGxS_c2k4m7aFwKOQd2WiZhju0yDXyrtk3-BRLLlAbaKFaaiIAhy_imapx6cVJvgLLyCM-hoWkCh7i7sgNDz8RhY3abVy_br8Jc1A-ifJbvN-ETwTpUsd_Zzon1lbBsAlkNn80PcUE6x52SM5BBA17EVpHi1C40oDkRQqTf4xkre4tNBC_eJdpO_qvEVIQ15xd1nfjXQz465zZlo4a6Ucbt-Jo3GoA
+@token = {{token-dev}}
+
+@probe_url = http://127.0.0.1:{{local_port}}
+
+###
+GET {{probe_url}}/livez HTTP/1.1
+
+###
+GET {{base_url}}/templates/projects
+###
+
+GET {{base_url}}/templates/projects/get_started_smart_asset_tracking_mlc/icon
+###
+
+GET {{base_url}}/projects
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/projects/test-project-cloned-fan/icon
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
+
+POST {{base_url}}/projects
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "description": "My Project description",
+  "version": "0.0.1"
+}
+###
+GET {{base_url}}/projects/test-sat-1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+POST {{base_url}}/projects?is_user_project=True
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "project_name_to_clone": "test-sat-1",
+  "ai_project_name": "test-sat-2"
+}
+
+###
+
+POST {{base_url}}/projects
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "project_name_to_clone": "get_started_smart_asset_tracking_mlc",
+  "ai_project_name": "test-sat-1"
+}
+###
+GET {{base_url}}/projects/test-sat-1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+### Andrea's UC
+POST {{base_url}}/projects/test-sat-1/deployments
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+"applications": [
+        {
+      "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.1.manifest.arm64v8.json",
+      "device_template_id": "dtmi:appconfig:gateway:MLC_Gateway;8",
+      "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.expanded.json",
+      "image_uri": "/e2e_systems/gateway/images/raspberrypi/staiotcraft_rpi_gateway_1_5_0.img.gz",
+      "module_id": "edgeMLC",
+      "type": "gateway",
+      "uuid": "2c1846c2-d2e6-487c-8550-59035f25ec12"
+    },
+    {
+      "binary_id": 381,
+      "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_3_1_0.bin",
+      "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;7",
+      "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-7.expanded.json",
+      "protocol": 2,
+      "type": "datalogging",
+      "uuid": "5b0ea628-06f8-48cb-bdcb-e6bdd569bb80"
+    },
+    {
+      "binary_id": 418,
+      "binary_uri": "/usb/bin/steval-mkboxpro/FP-SNS-STAIOTCFT_AI_Inertial_AssetTrackingOnMLC_1_0_0.bin",
+      "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_STAIOTCFT_AI_Inertial;1",
+      "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_STAIOTCFT_AI_Inertial-1.expanded.json",
+      "protocol": 1,
+      "type": "inference",
+      "uuid": "0ba1a3fd-3eb1-4b5c-a33a-3fcc0afe8b6b"
+    },
+    {
+      "binary_id": 438,
+      "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/AI-SSM_1_0_0.bin",
+      "bluest_v3_payload": {
+        "decoding_schema": [
+          {
+            "component": "lsm6dsv16x_mlc",
+            "telemetry": "label_id",
+            "type": "int8"
+          }
+        ],
+        "device_id": "0x0D",
+        "fw_id": "0x25",
+        "payload_id": "0x0001"
+      },
+      "device_template_id": "dtmi:appconfig:steval_mkboxpro:AI_SSM;1",
+      "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/AI_SSM-1.expanded.json",
+      "protocol": 0,
+      "type": "inference",
+      "uuid": "562ba64d-29db-466b-996a-ff674df131cb"
+    }
+  ],
+  "deployment":        {
+      "cloud_params": {
+        "type": "azure_iotc"
+      },
+      "description": "End-to-end system deployment for Smart Asset Tracking use case on the SensorTile.box PRO using the LSM6DSV16X sensor.",
+      "display_name": "Smart Asset Tracking with SensorTile.box PRO and LSM6DSV16X sensor. - 1",
+      "gateway": [
+        {
+          "application": "2c1846c2-d2e6-487c-8550-59035f25ec12",
+          "description": "Gateway device at position 0.",
+          "device_id": "gateway_0",
+          "display_name": "gateway_0",
+          "wifi_mode": "off"
+        }
+      ],
+      "leaf": [
+        {
+          "datalogging": {
+            "application": "5b0ea628-06f8-48cb-bdcb-e6bdd569bb80",
+            "firmware_update": false,
+            "supported_applications": [
+              "5b0ea628-06f8-48cb-bdcb-e6bdd569bb80"
+            ]
+          },
+          "description": "Leaf device at position 0.",
+          "device_id": "leaf_0",
+          "display_name": "leaf_0",
+          "gateway_id": "gateway_0",
+          "inference": {
+            "application": "0ba1a3fd-3eb1-4b5c-a33a-3fcc0afe8b6b",
+            "firmware_update": false,
+            "models": [
+              {
+                "artifact_type": "json",
+                "component_name": "lsm6dsv16x_mlc",
+                "model_name_reference": "smart_asset_tracking"
+              }
+            ],
+            "supported_applications": [
+              "0ba1a3fd-3eb1-4b5c-a33a-3fcc0afe8b6b",
+              "562ba64d-29db-466b-996a-ff674df131cb"
+            ]
+          }
+        }
+      ],
+      "uuid": "bb1685de-3471-451e-b11a-6404b172fc6a"
+    }
+}
+
+
+###
+POST {{base_url}}/projects/test-sat-2/deployments
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ 
+  "applications": [
+      {
+      "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-5.manifest.arm64v8.json",
+      "device_template_id": "dtmi:appconfig:gateway:MLC_GATEWAY;5",
+      "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-5.expanded.json",
+      "image_uri": "/e2e_systems/gateway/images/raspberrypi/edge_gateway_production_20241001_1_2_0_rc1.img.gz",
+      "module_id": "edgeMLC",
+      "type": "gateway",
+      "uuid": "1"
+      },
+      {
+        "binary_id": 281,
+        "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_2_2_0.bin",
+        "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;5",
+        "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-5.expanded.json",
+        "protocol": 2,
+        "type": "datalogging",
+        "uuid": "2"
+      },
+      {
+        "binary_id": 282,
+        "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-INFERENCE2_Inference2_2_2_0.bin",
+        "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_INFERENCE2_Inference2;5",
+        "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_INFERENCE2_Inference2-5.expanded.json",
+        "protocol": 2,
+        "type": "inference",
+        "uuid": "3"
+      }
+  ],  
+  "deployment": {
+        "display_name": "POST Deployment 3",
+        "description": "deployment desc", 
+        "cloud_params": {
+            "type": "aws",
+            "app_url": "http://aws_app.com"
+        },
+        "gateway": [{
+              "application": "1",
+              "description": "Gateway device at position 0.",
+              "device_id": "gw_0",
+              "display_name": "Device-Display-Name",
+              "wifi_mode": "off"
+            }],
+        "leaf": [
+            {
+                "datalogging": {
+                  "application": "2",
+                  "firmware_update": false,
+                  "supported_applications": [ "0397bdf5-516f-4fe8-98a7-f91f2768702e" ]
+                },
+                "description": "Leaf device at position 0.",
+                "device_id": "leaf_0",
+                "display_name": "Device-Display-Name",
+                "gateway_id": "gw_0",
+                "inference": {
+                  "application": "3",
+                  "firmware_update": false,
+                  "models": [
+                    {
+                      "artifact_type": "ucf",
+                      "component_name": "lsm6dsv16x_mlc",
+                      "model_name_reference": "smart_asset_tracking"
+                    }
+                  ],
+                "supported_applications": [ "0397bdf5-516f-4fe8-98a7-f91f2768702e" ]                  
+                }
+            }
+        ]
+    }
+  }
+
+
+GET {{base_url}}/projects
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
+
+GET {{base_url}}/projects/test-project-2
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+DELETE {{base_url}}/projects/test-sat-1
+Authorization: Bearer {{token}}
+
+###
+POST {{base_url}}/projects?is_user_project=True
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "project_name_to_clone": "test-project-1",
+  "ai_project_name": "test-project-3"
+}
+###
+POST {{base_url}}/projects?is_user_project=True&to_org={{hdtest_group_id}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "project_name_to_clone": "test-project-1",
+  "ai_project_name": "test-project-3"
+}
+
+###
+POST {{base_url}}/projects
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "project_name_to_clone": "test-project-1",
+  "ai_project_name": "test-project-3"
+}
+
+###
+POST {{base_url}}/projects/test-project-4/models?as_org={{hdtest_group_id}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "model_name_to_clone": "smart_asset_tracking",
+  "name": "clone1"
+}
+
+
+###
+DELETE {{base_url}}/projects/test-sat-1
+Authorization: Bearer {{token}}
+###
+POST {{base_url}}/projects/test-project-201/models
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "test-model-8",
+  "description": "MyTestModelWithDTRef",
+  "model_type": "classifier",
+  "dataset": 
+    {
+      "dataset_id": "dataset-abcxyz-999",
+      "name": "test-dataset-1"
+    }
+  ,
+  "classes": [
+    "x",
+    "y",
+    "z"
+  ],
+  "target": {
+    "type": "mlc",
+    "component": "lsm6dsv16x",
+    "device": "steval-mkboxpro"
+  }  
+}
+
+###
+POST {{base_url}}/projects/test-project-2/models
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "model_name_to_clone": "test-model-2",
+  "name": "cloned-model-1"
+}
+
+###
+DELETE {{base_url}}/projects/TBC-group-6/models/clone_smart_asset_tracking
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+}
+
+
+###
+
+PATCH {{base_url}}/projects/TBC-group-6/models/smart_asset_tracking
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "dataset": 
+    {
+      "dataset_id": "dataset-abcxyz-15",
+      "name": "name-updated-4"
+    },
+  "classes": [
+    "d",
+    "e"
+  ]
+}
+
+###
+
+PATCH {{base_url}}/projects/TBC-group-6/models/smart_asset_tracking
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name":  "something"
+}
+
+
+###
+GET {{base_url}}/projects/smart_asset_tracking_mlc_clone6
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
+POST {{base_url}}/projects/TBC-group-6/models/smart_asset_tracking/training
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "type": "job",
+    "configuration": "configuration.json",
+    "artifacts": [],
+    "reports": []
+}
+
+###
+PATCH {{base_url}}/projects/test-project/models/test-model-3/training
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "reportsqq": ["report.json"]
+}
+
+###
+POST {{base_url}}/projects/TBC-group-6/models/smart_asset_tracking/training/job
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "name": "afs",
+    "version": "0.0.3",
+    "template_id": "registry.io/arff_template_job"
+}
+
+###
+POST {{base_url}}/projects/TBC-group-6/models/smart_asset_tracking/training/job
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "version": "0.0.3",
+    "template_id": "registry.io/arff_template_job"
+}
+
+###
+
+GET {{base_url}}/projects/test-project-2/models/test-model-3/training
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+DELETE {{base_url}}/projects/test-project-2/models/test-model-1/training
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+
+###
+POST {{base_url}}/projects/test-project-2/models/test-model-1/training/artifacts
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+ "s3_url": "https://stm-vespucci-dev-sharing-storage.s3.eu-west-1.amazonaws.com/mlc_test_artifacts_repository/workspace.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAUNP7ZWK7NJIXCNUO%2F20240612%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20240612T062426Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5710cf120002e9c5958f170084d484fcfafb6fb519fcf5f314d10f445fcfacfb"
+}    
+
+
+###
+POST {{base_url}}/projects/test-project-2/models/test-model-3/training/artifacts
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+ "s3_url": "https://stm-vespucci-dev-sharing-storage.s3.eu-west-1.amazonaws.com/mlc_test_artifacts_repository/workspace.zip?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAUNP7ZWK7NJIXCNUO%2F20240612%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20240612T062426Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5710cf120002e9c5958f170084d484fcfafb6fb519fcf5f314d10f445fcfacfb",
+ "job": {
+    "name": "mlctools-job-1",
+    "version": "0.0.9",
+    "template_id": "ABCDEFx"
+  },
+ "artifacts": ["check1", "check2"],
+ "reports": ["rep1", "rep2"]
+}    
+
+###
+
+POST {{base_url}}/projects/test-project-2/models/test-model-3/training/configuration
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "configuration": {
+        "accelerometer_fs": "2 g",
+        "accelerometer_odr": "30 Hz",
+        "arff": "./features.arff",
+        "datalogs": [
+            {
+                "filename": "<path>/20240212_12_44_00_0_4zbd3g5l.csv",
+                "label": "stationary_upright"
+            },
+            {
+                "filename": "<path>/20240212_12_44_00_0_ypdnaczg.csv",
+                "label": "stationary_not_upright"
+            },
+            {
+                "filename": "<path>/20240212_12_44_00_0_3kuuupqu.csv",
+                "label": "motion"
+            },
+            {
+                "filename": "<path>/20240212_12_44_00_0_l2p7w2ku.csv",
+                "label": "shaken"
+            }
+        ],
+        "decision_tree_count": 1,
+        "dectrees": [
+            {
+                "confidence_factor": 0.9,
+                "filename": "./dt.txt",
+                "max_nodes": 15,
+                "metaclassifier": [
+                    0,
+                    0,
+                    0,
+                    0
+                ],
+                "results": [
+                    {
+                        "label": "stationary_upright",
+                        "value": 0
+                    },
+                    {
+                        "label": "stationary_not_upright",
+                        "value": 4
+                    },
+                    {
+                        "label": "motion",
+                        "value": 8
+                    },
+                    {
+                        "label": "shaken",
+                        "value": 12
+                    }
+                ]
+            }
+        ],
+        "features": [],
+        "filters": [],
+        "gyroscope_fs": "2000 dps",
+        "gyroscope_odr": "30 Hz",
+        "input_type": "accelerometer+gyroscope",
+        "max_dectrees": 4,
+        "max_results_per_dt": 16,
+        "mlc_odr": "30 Hz",
+        "name": "LSM6DSV16X",
+        "subgroups_per_dt": 4,
+        "thresh_accu_to_take_default": 0.05,
+        "thresh_n_percentage_default": 0.05,
+        "ucf": "./lsm6dsv16x_mlc.ucf",
+        "window_length": "15"
+    }
+}
+
+###
+
+PATCH {{base_url}}/projects/test-project-2/models/test-model-3/training/configuration
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "configuration": {
+      "features": [
+            {
+                "feature_name": "MEAN",
+                "input": "Acc_Z",
+                "signed": true
+            },
+            {
+                "feature_name": "MEAN",
+                "input": "Acc_V",
+                "signed": true
+            },
+            {
+                "feature_name": "PEAK_TO_PEAK",
+                "input": "Acc_V",
+                "signed": true
+            }
+        ]
+    }
+}
+
+###
+@project_var = smart_asset_tracking_mlc_clone6
+@model_var = smart_asset_tracking
+###
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training?type=something&name=mlc.h
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training?type=reports&name=something.h
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training?type=artifacts&name=lsm6dsv16x_mlc.h
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training?type=artifacts&name=lsm6dsv16x_mlc.ucf
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training?type=reports&name=report.json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training?type=config&name=../../../../../../3f6c9746-e86d-4492-96a0-28091e20bb32/get_started_stredl/ai_get_started_stredl.json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training?type=runtime
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+
+
+###
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training?type=artifacts
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training?item=reports
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training
+  ?item=artifacts
+Authorization: Bearer {{token}}
+
+###
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/training
+  ?item=config
+Authorization: Bearer {{token}}
+###
+
+###
+POST {{base_url}}/projects/{{project_var}}/models/{{model_var}}/logs?log_uuid=0000&split=1&total=1
+Authorization: Bearer {{token}}
+Content-Type: application/octet-stream
+
+< ../tests/test-datalog-openmv.zip
+
+###
+POST {{base_url}}/projects/{{project_var}}/models/{{model_var}}/logs?log_uuid=0000&split=1&total=1
+Authorization: Bearer {{token}}
+Content-Type: application/octet-stream
+
+< ../../../../k8s/log-conversion-job/tests/inputs/datalog-stwinbx1-mcu.zip
+
+
+
+###
+GET {{base_url}}/templates/projects/{{project_var}}/models/{{model_var}}/data_sufficiency
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
+GET {{base_url}}/templates/projects/{{project_var}}/models/{{model_var}}/training?type=config&name=configuration.json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/templates/projects/{{project_var}}/models/{{model_var}}/training?type=artifacts&name=lsm6dsv16x_mlc.h
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/templates/projects/{{project_var}}/models/{{model_var}}/training?type=artifacts&name=lsm6dsv16x_mlc.ucf
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/templates/projects/{{project_var}}/models/{{model_var}}/training?type=artifacts&name=report.json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+### Data-Sufficiency Templates 
+###
+###
+GET {{base_url}}/templates/projects/{{project_var}}/models/{{model_var}}/data_sufficiency?type=artifacts
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/templates/projects/{{project_var}}/models/{{model_var}}/data_sufficiency?type=artifacts&name=count.json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/templates/projects/{{project_var}}/models/{{model_var}}/data_sufficiency?type=artifacts&name=counts.json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+###
+GET {{base_url}}/projects/test-project-cloned-fan-coil
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+
+@deployment_id=4afaf293-9856-412f-ba62-86f9778b3d2d
+@project_id=asset-cloned-project-1
+###
+GET {{base_url}}/projects/{{project_id}}/deployments/{{deployment_id}}/leaf/leaf_0?resource=datalogging_device_template_uri
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/projects/{{project_id}}/deployments/{{deployment_id}}/leaf/leaf_0?resource=datalogging_firmware_uri
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
+
+GET {{base_url}}/projects/{{project_id}}/deployments/{{deployment_id}}/leaf/leaf_0?resource=inference_device_template_uri
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+
+GET {{base_url}}/projects/{{project_id}}/deployments/{{deployment_id}}/leaf/leaf_0?resource=inference_firmware_uri
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+
+GET {{base_url}}/projects/{{project_id}}/deployments/{{deployment_id}}/leaf/leaf_0?resource=inference_ml_uri
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+
+GET {{base_url}}/projects/{{project_id}}/deployments/{{deployment_id}}/gateway/gateway_0?resource=configuration_uri
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
+
+GET {{base_url}}/projects/{{project_id}}/deployments/{{deployment_id}}/gateway/gateway_0?resource=device_template_uri
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+
+GET {{base_url}}/projects/{{project_id}}/deployments/{{deployment_id}}/gateway/gateway_0?resource=device_manifest_uri
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
+
+GET {{base_url}}/projects/{{project_id}}/deployments/{{deployment_id}}/gateway/gateway_0?resource=image_uri
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+PUT {{base_url}}/projects/{{project_id}}/deployments/{{deployment_id}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "display_name": "Test Display Name change 4",
+    
+    "cloud_params": {
+        "type": "something 4",
+        "app_url": "http://test2.com"
+    }
+    
+}
+
+
+###
+GET {{base_url}}/projects
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
+DELETE {{base_url}}/projects/test-project-cloned-fan-1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+
+GET {{base_url}}/projects/test-project-cloned-asset
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
+@project_id1=test-project-cloned-asset
+@deployment_id1=f930d00c-4d7e-4c23-b951-3711b0a1f54d
+DELETE {{base_url}}/projects/{{project_id1}}/deployments/{{deployment_id1}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+
+POST {{base_url}}/projects/{{project_id1}}/deployments
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ 
+  "applications": [
+      {
+      "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-5.manifest.arm64v8.json",
+      "device_template_id": "dtmi:appconfig:gateway:MLC_GATEWAY;5",
+      "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-5.expanded.json",
+      "image_uri": "/e2e_systems/gateway/images/raspberrypi/edge_gateway_production_20241001_1_2_0_rc1.img.gz",
+      "module_id": "edgeMLC",
+      "type": "gateway",
+      "uuid": "1"
+      },
+      {
+        "binary_id": 281,
+        "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_2_2_0.bin",
+        "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;5",
+        "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-5.expanded.json",
+        "protocol": 2,
+        "type": "datalogging",
+        "uuid": "2"
+      },
+      {
+        "binary_id": 282,
+        "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-INFERENCE2_Inference2_2_2_0.bin",
+        "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_INFERENCE2_Inference2;5",
+        "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_INFERENCE2_Inference2-5.expanded.json",
+        "protocol": 2,
+        "type": "inference",
+        "uuid": "3"
+      }
+  ],  
+  "deployment": {
+        "display_name": "POST Deployment 3",
+        "description": "deployment desc", 
+        "cloud_params": {
+            "type": "aws",
+            "app_url": "http://aws_app.com"
+        },
+        "gateway": [{
+              "application": "1",
+              "description": "Gateway device at position 0.",
+              "device_id": "gw_0",
+              "display_name": "Device-Display-Name",
+              "wifi_mode": "off"
+            }],
+        "leaf": [
+            {
+                "datalogging": {
+                  "application": "2",
+                  "firmware_update": false
+                },
+                "description": "Leaf device at position 0.",
+                "device_id": "leaf_0",
+                "display_name": "Device-Display-Name",
+                "gateway_id": "gw_0",
+                "inference": {
+                  "application": "3",
+                  "firmware_update": false,
+                  "models": [
+                    {
+                      "artifact_type": "ucf",
+                      "component_name": "lsm6dsv16x_mlc",
+                      "model_name_reference": "smart_asset_tracking"
+                    }
+                  ]
+                }
+            }
+        ]
+    }
+  }
+
+###
+POST {{base_url}}/projects/{{project_id1}}/deployments
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{ 
+  "applications": [
+      {
+        "binary_id": 282,
+        "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-INFERENCE2_Inference2_2_2_0.bin",
+        "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_INFERENCE2_Inference2;5",
+        "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_INFERENCE2_Inference2-5.expanded.json",
+        "protocol": 2,
+        "type": "inference",
+        "uuid": "3"
+      }
+  ],  
+  "deployment": {
+        "display_name": "POST Deployment 6",
+        "description": "deployment desc", 
+        "cloud_params": {
+            "type": "aws",
+            "app_url": "http://aws_app.com"
+        },
+        "gateway": [{
+              "application": "5a6edf2f-87ed-48ff-b2ce-d56bd54c8ec8",
+              "description": "Gateway device at position 0.",
+              "device_id": "gw_0",
+              "display_name": "Device-Display-Name",
+              "wifi_mode": "off"
+            }],
+        "leaf": [
+            {
+                "datalogging": {
+                  "application": "cfe4cf52-1310-4b55-ba1a-c69f7cbb3f8a",
+                  "firmware_update": false
+                },
+                "description": "Leaf device at position 0.",
+                "device_id": "leaf_0",
+                "display_name": "Device-Display-Name",
+                "gateway_id": "gw_0",
+                "inference": {
+                  "application": "3",
+                  "firmware_update": false,
+                  "models": [
+                    {
+                      "artifact_type": "ucf",
+                      "component_name": "lsm6dsv16x_mlc",
+                      "model_name_reference": "smart_asset_tracking"
+                    }
+                  ]
+                }
+            }
+        ]
+    }
+  }
+
+###
+@project_id2=test-project-cloned-asset
+PATCH {{base_url}}/projects/{{project_id2}}/applications/fe303034-6eb1-41bb-946c-b49677551c84
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+        "binary_id": 666,
+        "binary_uri": "uribaba",
+        "device_template_id": "dtmi:appconfig:gateway:MLC_GATEWAY;7",
+        "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-7.expanded.json",
+        "protocol": 555  
+}
+###
+GET {{base_url}}/projects/{{project_id2}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+PUT {{base_url}}/projects/{{project_id1}}/deployments/{{deployment_id1}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+    "display_name": "Test Display Name change 5",
+    "cloud_params": {
+        "type": "something 5",
+        "app_url": "http://test5.com"
+    },
+    "leaf": [
+      {
+        "_device_id": "leaf_new_1",
+        "device_id": "leaf_new_2",
+        "datalogging": {
+                  "application": "cfe4cf52-1310-4b55-ba1a-c69f7cbb3f8a",
+                  "firmware_update": true
+                },
+        "inference": {
+                  "application": "cfe4cf52-1310-4b55-ba1a-c69f7cbb3f8a",
+                  "firmware_update": false
+                },
+        "gateway_id": "gw_new_3"
+      }
+    ],
+    "gateway": [
+      {
+        "_device_id": "gw_new_2",
+        "device_id": "gw_new_3",
+
+        "wifi_mode": "kuchbhi"
+      }
+    ]
+}
+
+
+###
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/data_sufficiency?type=artifacts&name=counts.json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/data_sufficiency?type=runtime
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/data_sufficiency?type=artifacts
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
+
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/data_sufficiency?type=artifacts&name=my_tree.txt
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/data_sufficiency?type=artifacts&name=hnne.pkl
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/data_sufficiency?type=config&name=configuration.json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+
+GET {{base_url}}/projects/{{project_var}}/models/{{model_var}}/data_sufficiency
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+###
+# For testing resource allocation API
+#@scheme=http
+#@host=127.0.0.1
+#@port=5004
+#@base_url = {{scheme}}://{{host}}:{{port}}
+
+###
+
+GET {{base_url}}/svc/alloc/v1alpha1/external/resources/consumption?resources=cpu
+Authorization: Bearer dummy
+
+###
+GET {{base_url}}/svc/alloc/v1alpha1/resources/users/b5feedda-585f-476d-9e40-52acec908605?allocation=[{"quantity": 1, "resource": "cpu"}, {"quantity": 1572864000, "resource": "memory"}]
+Authorization: Bearer dummy
+###
+
+@remote_dev_url = https://dev.stm-vespucci.com:{{remote_port}}{{remote_api_base_path_3}}
+@test_user_id = 334c65a5-1495-453a-a6de-4d384a781000
+GET http://127.0.0.1:5004/svc/alloc/v1alpha1/resources/users/{{test_user_id}}?allocation=[{"quantity": 1, "resource": "efs"}]
+Authorization: Bearer {{token}}
+###
+
+@test_user_id = 334c65a5-1495-453a-a6de-4d384a781000
+@test_user_id = 334c65a5-1495-453a-a6de-4d384a781000
+
+GET {{base_url}}/users/334c65a5-1495-453a-a6de-4d384a781000/resource/efs
+Authorization: Bearer {{token}}
+Content-Type: application/json
+###
