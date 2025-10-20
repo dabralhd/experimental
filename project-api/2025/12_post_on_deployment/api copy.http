@@ -38,8 +38,7 @@ POST {{base_url}}/projects
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
-{ 
-  "ai_project_name": "test-project-1",
+{
   "description": "My Project description",
   "version": "0.0.1"
 }
@@ -87,7 +86,7 @@ Content-Type: application/json
       "image_uri": "/e2e_systems/gateway/images/raspberrypi/staiotcraft_rpi_gateway_1_5_0.img.gz",
       "module_id": "edgeMLC",
       "type": "gateway",
-      "uuid": "d1e73fa0-86c1-4175-9390-0793083979b3"
+      "uuid": "3ab2c5d7-2fa1-4ff2-8bfa-e886c7f9e059"
     },
     {
       "binary_id": 381,
@@ -96,7 +95,7 @@ Content-Type: application/json
       "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-7.expanded.json",
       "protocol": 2,
       "type": "datalogging",
-      "uuid": "0aa0edcc-0d6d-43cd-9b9e-c49cba74ad0e"
+      "uuid": "d83105f1-54c2-487d-aec5-ab3867938c60"
     },
     {
       "binary_id": 418,
@@ -105,10 +104,31 @@ Content-Type: application/json
       "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_STAIOTCFT_AI_Inertial-1.expanded.json",
       "protocol": 1,
       "type": "inference",
-      "uuid": "bb2276d2-aa43-4a0c-a59f-474442f11cc1"
+      "uuid": "e6137040-1d20-49d0-a866-944fdc2ce0ad"
+    },
+    {
+      "binary_id": 438,
+      "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/AI-SSM_1_0_0.bin",
+      "bluest_v3_payload": {
+        "decoding_schema": [
+          {
+            "component": "lsm6dsv16x_mlc",
+            "telemetry": "label_id",
+            "type": "int8"
+          }
+        ],
+        "device_id": "0x0D",
+        "fw_id": "0x25",
+        "payload_id": "0x0001"
+      },
+      "device_template_id": "dtmi:appconfig:steval_mkboxpro:AI_SSM;1",
+      "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/AI_SSM-1.expanded.json",
+      "protocol": 0,
+      "type": "inference",
+      "uuid": "dcb1d322-8b11-4f59-b6e3-f02b6243da03"
     }
   ],
-  "deployment": {
+  "deployment":          {
       "cloud_params": {
         "type": "azure_iotc"
       },
@@ -116,7 +136,7 @@ Content-Type: application/json
       "display_name": "Smart Asset Tracking with SensorTile.box PRO and LSM6DSV16X sensor. - 1",
       "gateway": [
         {
-          "application": "d1e73fa0-86c1-4175-9390-0793083979b3",
+          "application": "3ab2c5d7-2fa1-4ff2-8bfa-e886c7f9e059",
           "description": "Gateway device at position 0.",
           "device_id": "gateway_0",
           "display_name": "gateway_0",
@@ -126,10 +146,10 @@ Content-Type: application/json
       "leaf": [
         {
           "datalogging": {
-            "application": "0aa0edcc-0d6d-43cd-9b9e-c49cba74ad0e",
+            "application": "d83105f1-54c2-487d-aec5-ab3867938c60",
             "firmware_update": false,
             "supported_applications": [
-              "0aa0edcc-0d6d-43cd-9b9e-c49cba74ad0e"
+              "d83105f1-54c2-487d-aec5-ab3867938c60"
             ]
           },
           "description": "Leaf device at position 0.",
@@ -137,7 +157,7 @@ Content-Type: application/json
           "display_name": "leaf_0",
           "gateway_id": "gateway_0",
           "inference": {
-            "application": "bb2276d2-aa43-4a0c-a59f-474442f11cc1",
+            "application": "e6137040-1d20-49d0-a866-944fdc2ce0ad",
             "firmware_update": false,
             "models": [
               {
@@ -147,100 +167,94 @@ Content-Type: application/json
               }
             ],
             "supported_applications": [
-              "bb2276d2-aa43-4a0c-a59f-474442f11cc1",
-              "0ca39aec-af7e-4486-a3ab-27175839e827"
+              "e6137040-1d20-49d0-a866-944fdc2ce0ad",
+              "dcb1d322-8b11-4f59-b6e3-f02b6243da03"
             ]
           }
         }
       ],
-      "uuid": "f34877bb-c70c-4aad-9c7f-e186133db462"
+      "uuid": "017dbb53-382d-4f38-905d-e431757e6925"
     }
 }
 
 
-### Modified Andrea's UC - Created new project from scratch and then create deployment
-POST {{base_url}}/projects/test-project-1/deployments
+###
+POST {{base_url}}/projects/test-sat-2/deployments
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
-{
-"applications": [
-{
-      "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.1.manifest.arm64v8.json",
-      "device_template_id": "dtmi:appconfig:gateway:MLC_Gateway;8",
-      "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.expanded.json",
-      "image_uri": "/e2e_systems/gateway/images/raspberrypi/staiotcraft_rpi_gateway_1_5_0.img.gz",
+{ 
+  "applications": [
+      {
+      "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-5.manifest.arm64v8.json",
+      "device_template_id": "dtmi:appconfig:gateway:MLC_GATEWAY;5",
+      "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-5.expanded.json",
+      "image_uri": "/e2e_systems/gateway/images/raspberrypi/edge_gateway_production_20241001_1_2_0_rc1.img.gz",
       "module_id": "edgeMLC",
       "type": "gateway",
-      "uuid": "d1e73fa0-86c1-4175-9390-0793083979b3"
-    },
-    {
-      "binary_id": 381,
-      "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_3_1_0.bin",
-      "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;7",
-      "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-7.expanded.json",
-      "protocol": 2,
-      "type": "datalogging",
-      "uuid": "0aa0edcc-0d6d-43cd-9b9e-c49cba74ad0e"
-    },
-    {
-      "binary_id": 418,
-      "binary_uri": "/usb/bin/steval-mkboxpro/FP-SNS-STAIOTCFT_AI_Inertial_AssetTrackingOnMLC_1_0_0.bin",
-      "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_STAIOTCFT_AI_Inertial;1",
-      "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_STAIOTCFT_AI_Inertial-1.expanded.json",
-      "protocol": 1,
-      "type": "inference",
-      "uuid": "bb2276d2-aa43-4a0c-a59f-474442f11cc1"
-    }
-  ],
-  "deployment": {
-      "cloud_params": {
-        "type": "azure_iotc"
+      "uuid": "1"
       },
-      "description": "End-to-end system deployment for Smart Asset Tracking use case on the SensorTile.box PRO using the LSM6DSV16X sensor.",
-      "display_name": "Smart Asset Tracking with SensorTile.box PRO and LSM6DSV16X sensor. - 1",
-      "gateway": [
-        {
-          "application": "d1e73fa0-86c1-4175-9390-0793083979b3",
-          "description": "Gateway device at position 0.",
-          "device_id": "gateway_0",
-          "display_name": "gateway_0",
-          "wifi_mode": "off"
-        }
-      ],
-      "leaf": [
-        {
-          "datalogging": {
-            "application": "0aa0edcc-0d6d-43cd-9b9e-c49cba74ad0e",
-            "firmware_update": false,
-            "supported_applications": [
-              "0aa0edcc-0d6d-43cd-9b9e-c49cba74ad0e"
-            ]
-          },
-          "description": "Leaf device at position 0.",
-          "device_id": "leaf_0",
-          "display_name": "leaf_0",
-          "gateway_id": "gateway_0",
-          "inference": {
-            "application": "bb2276d2-aa43-4a0c-a59f-474442f11cc1",
-            "firmware_update": false,
-            "models": [
-              {
-                "artifact_type": "json",
-                "component_name": "lsm6dsv16x_mlc",
-                "model_name_reference": "smart_asset_tracking"
-              }
-            ],
-            "supported_applications": [
-              "bb2276d2-aa43-4a0c-a59f-474442f11cc1",
-              "0ca39aec-af7e-4486-a3ab-27175839e827"
-            ]
-          }
-        }
-      ],
-      "uuid": "f34877bb-c70c-4aad-9c7f-e186133db462"
+      {
+        "binary_id": 281,
+        "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_2_2_0.bin",
+        "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;5",
+        "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-5.expanded.json",
+        "protocol": 2,
+        "type": "datalogging",
+        "uuid": "2"
+      },
+      {
+        "binary_id": 282,
+        "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-INFERENCE2_Inference2_2_2_0.bin",
+        "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_INFERENCE2_Inference2;5",
+        "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_INFERENCE2_Inference2-5.expanded.json",
+        "protocol": 2,
+        "type": "inference",
+        "uuid": "3"
+      }
+  ],  
+  "deployment": {
+        "display_name": "POST Deployment 3",
+        "description": "deployment desc", 
+        "cloud_params": {
+            "type": "aws",
+            "app_url": "http://aws_app.com"
+        },
+        "gateway": [{
+              "application": "1",
+              "description": "Gateway device at position 0.",
+              "device_id": "gw_0",
+              "display_name": "Device-Display-Name",
+              "wifi_mode": "off"
+            }],
+        "leaf": [
+            {
+                "datalogging": {
+                  "application": "2",
+                  "firmware_update": false,
+                  "supported_applications": [ "0397bdf5-516f-4fe8-98a7-f91f2768702e" ]
+                },
+                "description": "Leaf device at position 0.",
+                "device_id": "leaf_0",
+                "display_name": "Device-Display-Name",
+                "gateway_id": "gw_0",
+                "inference": {
+                  "application": "3",
+                  "firmware_update": false,
+                  "models": [
+                    {
+                      "artifact_type": "ucf",
+                      "component_name": "lsm6dsv16x_mlc",
+                      "model_name_reference": "smart_asset_tracking"
+                    }
+                  ],
+                "supported_applications": [ "0397bdf5-516f-4fe8-98a7-f91f2768702e" ]                  
+                }
+            }
+        ]
     }
-}
+  }
+
 
 GET {{base_url}}/projects
 Authorization: Bearer {{token}}

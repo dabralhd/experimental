@@ -1,0 +1,44 @@
+F13_VARIANCE_ACC_Z_FILTER_1 <= 0.002165 : idle (21)
+F13_VARIANCE_ACC_Z_FILTER_1 > 0.002165
+|   F1_ENERGY_ACC_Y <= 1132.500000
+|   |   F9_ENERGY_ACC_X <= 1197.500000 : screwing (26)
+|   |   F9_ENERGY_ACC_X > 1197.500000 : percussive_drilling (1)
+|   F1_ENERGY_ACC_Y > 1132.500000
+|   |   F5_MINIMUM_ACC_X <= -11.980450 : percussive_drilling (18)
+|   |   F5_MINIMUM_ACC_X > -11.980450
+|   |   |   F2_PEAK_TO_PEAK_ACC_X <= 18.476601 : drilling (21)
+|   |   |   F2_PEAK_TO_PEAK_ACC_X > 18.476601
+|   |   |   |   F8_ABS_MEAN_ACC_V <= 3.362305 : screwing (1)
+|   |   |   |   F8_ABS_MEAN_ACC_V > 3.362305 : drilling (1)
+
+Number of Leaves: 7
+Size of the tree: 13
+
+Classes:
+=> screwing, drilling, percussive_drilling, idle
+
+Features:
+=> F1_ENERGY_ACC_Y, F2_PEAK_TO_PEAK_ACC_X, F3_MAXIMUM_ACC_X, F4_VARIANCE_ACC_X, F5_MINIMUM_ACC_X, F6_MEAN_ACC_Z, F7_ENERGY_ACC_Z, F8_ABS_MEAN_ACC_V, F9_ENERGY_ACC_X, F10_MEAN_ACC_X, F11_MAXIMUM_ACC_Y_FILTER_1, F12_ENERGY_ACC_Y_FILTER_1, F13_VARIANCE_ACC_Z_FILTER_1, F14_PEAK_TO_PEAK_ACC_Z_FILTER_1, F15_ENERGY_ACC_Z_FILTER_1
+
+=============== Complete trainging data statistics ===============
+
+Confusion Matrix:
+                    screwing	drilling	percussive_drilling	idle	  <- classified as
+screwing            27	0	0	0	
+drilling            0	22	0	0	
+percussive_drilling 0	0	19	0	
+idle                0	0	0	21	
+
+Total Number of Instances: 89
+Correctly Classified Instances: 89
+Incorrectly Classified Instances: 0
+
+Accuracy:       100.00 %
+Cohen's kappa:  100.00 %
+
+Report:             precision	recall	support
+screwing            1.00	1.00	27
+drilling            1.00	1.00	22
+percussive_drilling 1.00	1.00	19
+idle                1.00	1.00	21
+avg/total           1.00	1.00	89

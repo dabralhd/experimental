@@ -1,0 +1,43 @@
+
+0_Autocorrelation <= 398.897: idle
+0_Autocorrelation > 398.897
+|   1_Median <= 0.238
+|   |   2_Spectral kurtosis <= 3.362
+|   |   |   1_Spectral kurtosis <= 4.243
+|   |   |   |   2_Spectral decrease <= -0.021: screwing
+|   |   |   |   2_Spectral decrease > -0.021: percursive_drilling
+|   |   |   1_Spectral kurtosis > 4.243: drilling
+|   |   2_Spectral kurtosis > 3.362
+|   |   |   1_Spectral spread <= 550.083
+|   |   |   |   1_Median <= -0.148: screwing
+|   |   |   |   1_Median > -0.148: drilling
+|   |   |   1_Spectral spread > 550.083
+|   |   |   |   2_Area under the curve <= 0.269
+|   |   |   |   |   1_Mean <= -0.1
+|   |   |   |   |   |   3_Spectral positive turning points <= 71.5: drilling
+|   |   |   |   |   |   3_Spectral positive turning points > 71.5: screwing
+|   |   |   |   |   1_Mean > -0.1
+|   |   |   |   |   |   1_Spectral roll-off <= 1986.21
+|   |   |   |   |   |   |   0_Spectral centroid <= 811.387: drilling
+|   |   |   |   |   |   |   0_Spectral centroid > 811.387: screwing
+|   |   |   |   |   |   1_Spectral roll-off > 1986.21
+|   |   |   |   |   |   |   0_Spectral kurtosis <= 24.433: screwing
+|   |   |   |   |   |   |   0_Spectral kurtosis > 24.433: drilling
+|   |   |   |   2_Area under the curve > 0.269
+|   |   |   |   |   1_Spectral kurtosis <= 5.13
+|   |   |   |   |   |   2_Absolute energy <= 17789.893: screwing
+|   |   |   |   |   |   2_Absolute energy > 17789.893: percursive_drilling
+|   |   |   |   |   1_Spectral kurtosis > 5.13: drilling
+|   1_Median > 0.238
+|   |   0_Median <= -0.969
+|   |   |   2_Median absolute deviation <= 0.797: percursive_drilling
+|   |   |   2_Median absolute deviation > 0.797: drilling
+|   |   0_Median > -0.969
+|   |   |   2_Mean <= 0.178: percursive_drilling
+|   |   |   2_Mean > 0.178
+|   |   |   |   0_Spectral decrease <= -0.093: screwing
+|   |   |   |   0_Spectral decrease > -0.093: percursive_drilling
+
+Number of Leaves  : 	 20
+
+Size of the Tree : 	 39

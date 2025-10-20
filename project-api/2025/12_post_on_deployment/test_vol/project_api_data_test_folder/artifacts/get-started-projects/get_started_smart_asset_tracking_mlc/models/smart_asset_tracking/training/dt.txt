@@ -1,0 +1,52 @@
+F3_ABS_PEAK_TO_PEAK_ACC_V <= 0.014893
+|   F1_MEAN_ACC_Z <= 0.988526
+|   |   F3_ABS_PEAK_TO_PEAK_ACC_V <= 0.003174 : stationary_not_upright (628/12.0)
+|   |   F3_ABS_PEAK_TO_PEAK_ACC_V > 0.003174
+|   |   |   F2_ABS_MEAN_ACC_V <= 0.993653 : motion (15)
+|   |   |   F2_ABS_MEAN_ACC_V > 0.993653
+|   |   |   |   F3_ABS_PEAK_TO_PEAK_ACC_V <= 0.009033 : stationary_not_upright (19/1.0)
+|   |   |   |   F3_ABS_PEAK_TO_PEAK_ACC_V > 0.009033
+|   |   |   |   |   F1_MEAN_ACC_Z <= -0.014624 : motion (3)
+|   |   |   |   |   F1_MEAN_ACC_Z > -0.014624
+|   |   |   |   |   |   F3_ABS_PEAK_TO_PEAK_ACC_V <= 0.010010 : motion (1)
+|   |   |   |   |   |   F3_ABS_PEAK_TO_PEAK_ACC_V > 0.010010 : stationary_not_upright (2)
+|   F1_MEAN_ACC_Z > 0.988526 : stationary_upright (848/9.0)
+F3_ABS_PEAK_TO_PEAK_ACC_V > 0.014893
+|   F3_ABS_PEAK_TO_PEAK_ACC_V <= 0.329102 : motion (693/13.0)
+|   F3_ABS_PEAK_TO_PEAK_ACC_V > 0.329102
+|   |   F2_ABS_MEAN_ACC_V <= 1.056150
+|   |   |   F3_ABS_PEAK_TO_PEAK_ACC_V <= 0.545166 : motion (12)
+|   |   |   F3_ABS_PEAK_TO_PEAK_ACC_V > 0.545166 : shaken (22/5.0)
+|   |   F2_ABS_MEAN_ACC_V > 1.056150 : shaken (496/1.0)
+
+Number of Leaves: 11
+Size of the tree: 21
+
+Classes:
+=> motion, stationary_upright, shaken, stationary_not_upright
+
+Features:
+=> F1_MEAN_ACC_Z, F2_ABS_MEAN_ACC_V, F3_ABS_PEAK_TO_PEAK_ACC_V
+
+=============== Complete trainging data statistics ===============
+
+Confusion Matrix:
+                       motion	stationary_upright	shaken	stationary_not_upright	  <- classified as
+motion                 711	4	6	13	
+stationary_upright     6	839	0	0	
+shaken                 1	5	512	0	
+stationary_not_upright 6	0	0	636	
+
+Total Number of Instances: 2739
+Correctly Classified Instances: 2698
+Incorrectly Classified Instances: 41
+
+Accuracy:       98.50 %
+Cohen's kappa:  97.98 %
+
+Report:                precision	recall	support
+motion                 0.98	0.97	734
+stationary_upright     0.99	0.99	845
+shaken                 0.99	0.99	518
+stationary_not_upright 0.98	0.99	642
+avg/total              0.99	0.99	2739

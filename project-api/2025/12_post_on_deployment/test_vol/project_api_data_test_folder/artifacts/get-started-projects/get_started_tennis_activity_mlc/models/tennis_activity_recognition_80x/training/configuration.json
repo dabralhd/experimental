@@ -1,0 +1,352 @@
+{
+    "name": "LSM6DSV80X",
+    "type": "auto",
+    "accelerometer_fs": "16 g",
+    "accelerometer_odr": "480 Hz",
+    "accelerometer_high_g_fs": "80 g",
+    "accelerometer_high_g_odr": "480 Hz",
+    "gyroscope_fs": "2000 dps",
+    "gyroscope_odr": "480 Hz",
+    "mlc_odr": "480 Hz",
+    "input_type": "accelerometer+gyroscope+accelerometer_high_g",
+    "window_length": "255",
+    "datalogs": [
+        {
+            "filename": "backhand/20250910_14_28_17_0_etqkimua.csv",
+            "label": "backhand",
+            "accelerometer_fs": "16 g",
+            "accelerometer_odr": "480 Hz",
+            "accelerometer_high_g_fs": "80 g",
+            "accelerometer_high_g_odr": "480 Hz",
+            "gyroscope_fs": "2000 dps",
+            "gyroscope_odr": "480 Hz"
+        },
+        {
+            "filename": "backhand_slice/20250910_14_28_17_0_fxmqdxnu.csv",
+            "label": "backhand_slice",
+            "accelerometer_fs": "16 g",
+            "accelerometer_odr": "480 Hz",
+            "accelerometer_high_g_fs": "80 g",
+            "accelerometer_high_g_odr": "480 Hz",
+            "gyroscope_fs": "2000 dps",
+            "gyroscope_odr": "480 Hz"
+        },
+        {
+            "filename": "forehand/20250910_14_28_17_0_6b3sr77f.csv",
+            "label": "forehand",
+            "accelerometer_fs": "16 g",
+            "accelerometer_odr": "480 Hz",
+            "accelerometer_high_g_fs": "80 g",
+            "accelerometer_high_g_odr": "480 Hz",
+            "gyroscope_fs": "2000 dps",
+            "gyroscope_odr": "480 Hz"
+        },
+        {
+            "filename": "forehand_slice/20250910_14_28_17_0_zotxt2a7.csv",
+            "label": "forehand_slice",
+            "accelerometer_fs": "16 g",
+            "accelerometer_odr": "480 Hz",
+            "accelerometer_high_g_fs": "80 g",
+            "accelerometer_high_g_odr": "480 Hz",
+            "gyroscope_fs": "2000 dps",
+            "gyroscope_odr": "480 Hz"
+        },
+        {
+            "filename": "serve/20250910_14_28_17_0_a253e235.csv",
+            "label": "serve",
+            "accelerometer_fs": "16 g",
+            "accelerometer_odr": "480 Hz",
+            "accelerometer_high_g_fs": "80 g",
+            "accelerometer_high_g_odr": "480 Hz",
+            "gyroscope_fs": "2000 dps",
+            "gyroscope_odr": "480 Hz"
+        },
+        {
+            "filename": "no_shot/20250908_15_11_47_1_5fn2b3e5.csv",
+            "label": "no_shot",
+            "accelerometer_fs": "16 g",
+            "accelerometer_odr": "480 Hz",
+            "accelerometer_high_g_fs": "80 g",
+            "accelerometer_high_g_odr": "480 Hz",
+            "gyroscope_fs": "2000 dps",
+            "gyroscope_odr": "480 Hz"
+        }
+    ],
+    "subgroups_per_dt": 4,
+    "max_dectrees": 8,
+    "max_results_per_dt": 16,
+    "filters": [],
+    "features": [
+        {
+            "feature_name": "MEAN",
+            "input": "AccHg_Z",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Gyr_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Acc_Z",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Gyr_V",
+            "signed": false,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Gyr_Y",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MAXIMUM",
+            "input": "Gyr_Y",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "VARIANCE",
+            "input": "AccHg_Y",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "AccHg_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "VARIANCE",
+            "input": "Gyr_Z",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "ENERGY",
+            "input": "AccHg_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "VARIANCE",
+            "input": "Gyr_Y",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MAXIMUM",
+            "input": "Gyr_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "ENERGY",
+            "input": "AccHg_Y",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "VARIANCE",
+            "input": "AccHg_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MAXIMUM",
+            "input": "Gyr_Z",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        }
+    ],
+    "decision_tree_count": 1,
+    "dectrees": [
+        {
+            "metaclassifier": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "results": [
+                {
+                    "label": "no_shot",
+                    "value": 0
+                },
+                {
+                    "label": "serve",
+                    "value": 4
+                },
+                {
+                    "label": "backhand_slice",
+                    "value": 8
+                },
+                {
+                    "label": "forehand_slice",
+                    "value": 12
+                },
+                {
+                    "label": "backhand",
+                    "value": 1
+                },
+                {
+                    "label": "forehand",
+                    "value": 5
+                }
+            ],
+            "filename": "/tmp/workspace/dt.txt"
+        }
+    ],
+    "calculated_filters": [],
+    "calculated_features": [
+        {
+            "feature_name": "MEAN",
+            "input": "AccHg_Z",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Gyr_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Acc_Z",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Gyr_V",
+            "signed": false,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Gyr_Y",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MAXIMUM",
+            "input": "Gyr_Y",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "VARIANCE",
+            "input": "AccHg_Y",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "AccHg_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "VARIANCE",
+            "input": "Gyr_Z",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "ENERGY",
+            "input": "AccHg_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "VARIANCE",
+            "input": "Gyr_Y",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MAXIMUM",
+            "input": "Gyr_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "ENERGY",
+            "input": "AccHg_Y",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "VARIANCE",
+            "input": "AccHg_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MAXIMUM",
+            "input": "Gyr_Z",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        }
+    ],
+    "calculated_window_length": "255",
+    "features_output_filename": "/tmp/workspace/features.arff",
+    "dectree_features": [
+        "F1_MEAN_ACCHG_Z",
+        "F2_MEAN_GYR_X",
+        "F3_MEAN_ACC_Z",
+        "F4_ABS_MEAN_GYR_V",
+        "F5_MEAN_GYR_Y",
+        "F6_MAXIMUM_GYR_Y",
+        "F7_VARIANCE_ACCHG_Y",
+        "F8_MEAN_ACCHG_X",
+        "F9_VARIANCE_GYR_Z",
+        "F10_ENERGY_ACCHG_X",
+        "F11_VARIANCE_GYR_Y",
+        "F12_MAXIMUM_GYR_X",
+        "F13_ENERGY_ACCHG_Y",
+        "F14_VARIANCE_ACCHG_X",
+        "F15_MAXIMUM_GYR_Z"
+    ],
+    "config_output_filename": "/tmp/workspace/lsm6dsv80x_mlc.json"
+}

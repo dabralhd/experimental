@@ -1,0 +1,9 @@
+
+2_Peak to peak distance <= 0.446
+|   3_Spectral roll-off <= 488.913: still
+|   3_Spectral roll-off > 488.913: low_vibration
+2_Peak to peak distance > 0.446: high_vibration
+
+Number of Leaves  : 	 3
+
+Size of the Tree : 	 5

@@ -1,0 +1,38 @@
+F9_MEAN_ACC_Y <= -0.453919 : waving (35)
+F9_MEAN_ACC_Y > -0.453919
+|   F6_MEAN_ACC_X <= -0.615234 : thumbs_down (35)
+|   F6_MEAN_ACC_X > -0.615234
+|   |   F6_MEAN_ACC_X <= 0.721679 : pointing (36)
+|   |   F6_MEAN_ACC_X > 0.721679 : thumbs_up (37)
+
+Number of Leaves: 4
+Size of the tree: 7
+
+Classes:
+=> thumbs_up, thumbs_down, pointing, waving
+
+Features:
+=> F1_ENERGY_ACC_Y, F2_MINIMUM_ACC_X, F3_ENERGY_ACC_X, F4_MAXIMUM_ACC_Y, F5_MINIMUM_ACC_Z, F6_MEAN_ACC_X, F7_MEAN_ACC_Z, F8_MAXIMUM_ACC_X, F9_MEAN_ACC_Y, F10_PEAK_TO_PEAK_ACC_X, F11_MINIMUM_ACC_Y, F12_ABS_MAXIMUM_ACC_V, F13_MAXIMUM_ACC_Z, F14_PEAK_TO_PEAK_ACC_Y, F15_PEAK_TO_PEAK_ACC_X_FILTER_1
+
+=============== Complete trainging data statistics ===============
+
+Confusion Matrix:
+            thumbs_up	thumbs_down	pointing	waving	  <- classified as
+thumbs_up   37	0	0	0	
+thumbs_down 0	35	0	0	
+pointing    0	0	36	0	
+waving      0	0	0	35	
+
+Total Number of Instances: 143
+Correctly Classified Instances: 143
+Incorrectly Classified Instances: 0
+
+Accuracy:       100.00 %
+Cohen's kappa:  100.00 %
+
+Report:     precision	recall	support
+thumbs_up   1.00	1.00	37
+thumbs_down 1.00	1.00	35
+pointing    1.00	1.00	36
+waving      1.00	1.00	35
+avg/total   1.00	1.00	143

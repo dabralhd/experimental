@@ -1,0 +1,13 @@
+
+5_Sum absolute diff <= 233.185
+|   4_Variance <= 2573.312
+|   |   0_Signal distance <= 29.052: other
+|   |   0_Signal distance > 29.052: nod
+|   4_Variance > 2573.312: shake
+5_Sum absolute diff > 233.185
+|   4_Min <= -78.42: shake
+|   4_Min > -78.42: nod
+
+Number of Leaves  : 	 5
+
+Size of the Tree : 	 9

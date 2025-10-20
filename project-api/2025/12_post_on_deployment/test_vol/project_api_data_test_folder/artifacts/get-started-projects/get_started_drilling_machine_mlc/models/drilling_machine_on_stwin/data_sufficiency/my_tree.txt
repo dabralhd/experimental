@@ -1,0 +1,57 @@
+
+1_Min <= 0.614
+|   1_Spectral decrease <= -0.167
+|   |   1_Mean <= 0.313
+|   |   |   2_Spectral decrease <= -12.906: drilling
+|   |   |   2_Spectral decrease > -12.906: percussive_drilling
+|   |   1_Mean > 0.313
+|   |   |   1_Spectral kurtosis <= 3.995
+|   |   |   |   2_Spectral distance <= -920255.984: percussive_drilling
+|   |   |   |   2_Spectral distance > -920255.984: screwing
+|   |   |   1_Spectral kurtosis > 3.995
+|   |   |   |   0_Spectral spread <= 834.326
+|   |   |   |   |   2_Area under the curve <= 0.012: percussive_drilling
+|   |   |   |   |   2_Area under the curve > 0.012
+|   |   |   |   |   |   2_Slope <= 0.0: screwing
+|   |   |   |   |   |   2_Slope > 0.0
+|   |   |   |   |   |   |   1_Skewness <= -0.238: screwing
+|   |   |   |   |   |   |   1_Skewness > -0.238: percussive_drilling
+|   |   |   |   0_Spectral spread > 834.326: percussive_drilling
+|   1_Spectral decrease > -0.167
+|   |   0_Negative turning points <= 228.5
+|   |   |   2_Median <= 3.666
+|   |   |   |   0_Median absolute diff <= 0.864
+|   |   |   |   |   2_Median <= 0.203
+|   |   |   |   |   |   1_Median diff <= 0.023: percussive_drilling
+|   |   |   |   |   |   1_Median diff > 0.023
+|   |   |   |   |   |   |   0_Min <= -5.534: drilling
+|   |   |   |   |   |   |   0_Min > -5.534: screwing
+|   |   |   |   |   2_Median > 0.203: drilling
+|   |   |   |   0_Median absolute diff > 0.864
+|   |   |   |   |   2_Sum absolute diff <= 10532.669: percussive_drilling
+|   |   |   |   |   2_Sum absolute diff > 10532.669: drilling
+|   |   |   2_Median > 3.666: drilling
+|   |   0_Negative turning points > 228.5
+|   |   |   3_Variance <= 8.095
+|   |   |   |   1_Median absolute deviation <= 0.472
+|   |   |   |   |   1_Average power <= 2470.188: drilling
+|   |   |   |   |   1_Average power > 2470.188: percussive_drilling
+|   |   |   |   1_Median absolute deviation > 0.472
+|   |   |   |   |   1_Spectral roll-off <= 2591.796
+|   |   |   |   |   |   3_Maximum frequency <= 2686.245: drilling
+|   |   |   |   |   |   3_Maximum frequency > 2686.245: percussive_drilling
+|   |   |   |   |   1_Spectral roll-off > 2591.796
+|   |   |   |   |   |   1_Mean <= 0.334
+|   |   |   |   |   |   |   1_Spectral decrease <= 0.021
+|   |   |   |   |   |   |   |   1_Sum absolute diff <= 526.907
+|   |   |   |   |   |   |   |   |   3_Spectral roll-off <= 2800.14: percussive_drilling
+|   |   |   |   |   |   |   |   |   3_Spectral roll-off > 2800.14: drilling
+|   |   |   |   |   |   |   |   1_Sum absolute diff > 526.907: drilling
+|   |   |   |   |   |   |   1_Spectral decrease > 0.021: percussive_drilling
+|   |   |   |   |   |   1_Mean > 0.334: percussive_drilling
+|   |   |   3_Variance > 8.095: percussive_drilling
+1_Min > 0.614: idle
+
+Number of Leaves  : 	 27
+
+Size of the Tree : 	 53

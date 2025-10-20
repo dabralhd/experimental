@@ -1,0 +1,63 @@
+{
+    "accuracy": "100.00%",
+    "accuracy_metaclassifiers": "100.0%",
+    "confusion_matrix": {
+        "pointing": {
+            "pointing": "36",
+            "thumbs_down": "0",
+            "thumbs_up": "0",
+            "waving": "0"
+        },
+        "thumbs_down": {
+            "pointing": "0",
+            "thumbs_down": "35",
+            "thumbs_up": "0",
+            "waving": "0"
+        },
+        "thumbs_up": {
+            "pointing": "0",
+            "thumbs_down": "0",
+            "thumbs_up": "37",
+            "waving": "0"
+        },
+        "waving": {
+            "pointing": "0",
+            "thumbs_down": "0",
+            "thumbs_up": "0",
+            "waving": "35"
+        }
+    },
+    "confusion_matrix_metaclassifiers": {
+        "pointing": {
+            "pointing": "36",
+            "thumbs_down": "0",
+            "thumbs_up": "0",
+            "waving": "0"
+        },
+        "thumbs_down": {
+            "pointing": "0",
+            "thumbs_down": "35",
+            "thumbs_up": "0",
+            "waving": "0"
+        },
+        "thumbs_up": {
+            "pointing": "0",
+            "thumbs_down": "0",
+            "thumbs_up": "37",
+            "waving": "0"
+        },
+        "waving": {
+            "pointing": "0",
+            "thumbs_down": "0",
+            "thumbs_up": "0",
+            "waving": "35"
+        }
+    },
+    "correctly_classified_instances": "143",
+    "correctly_classified_instances_metaclassifiers": "143",
+    "incorrectly_classified_instances": "0",
+    "incorrectly_classified_instances_metaclassifiers": "0",
+    "kappa_statistic": "100.00%",
+    "total_instances": "143",
+    "total_instances_metaclassifiers": "143"
+}

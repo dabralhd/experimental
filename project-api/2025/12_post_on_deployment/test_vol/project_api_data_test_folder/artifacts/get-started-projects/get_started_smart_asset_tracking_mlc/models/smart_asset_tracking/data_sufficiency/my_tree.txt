@@ -1,0 +1,51 @@
+
+2_Min <= 0.981
+|   3_Sum absolute diff <= 0.047
+|   |   3_Min <= 0.987
+|   |   |   3_Skewness <= -0.551: stationary_not_upright
+|   |   |   3_Skewness > -0.551: motion
+|   |   3_Min > 0.987
+|   |   |   0_Skewness <= -3.379: motion
+|   |   |   0_Skewness > -3.379
+|   |   |   |   0_Kurtosis <= -1.982: motion
+|   |   |   |   0_Kurtosis > -1.982
+|   |   |   |   |   0_Median diff <= 0.0
+|   |   |   |   |   |   1_Spectral distance <= -1.321: stationary_not_upright
+|   |   |   |   |   |   1_Spectral distance > -1.321
+|   |   |   |   |   |   |   1_Min <= -0.006: motion
+|   |   |   |   |   |   |   1_Min > -0.006: stationary_not_upright
+|   |   |   |   |   0_Median diff > 0.0
+|   |   |   |   |   |   2_Slope <= -0.011: stationary_not_upright
+|   |   |   |   |   |   2_Slope > -0.011: motion
+|   3_Sum absolute diff > 0.047
+|   |   3_Average power <= 36.331
+|   |   |   0_Median absolute diff <= 0.005
+|   |   |   |   2_Median <= 0.034
+|   |   |   |   |   1_Skewness <= -1.84: stationary_not_upright
+|   |   |   |   |   1_Skewness > -1.84: motion
+|   |   |   |   2_Median > 0.034
+|   |   |   |   |   2_Area under the curve <= 0.857: stationary_not_upright
+|   |   |   |   |   2_Area under the curve > 0.857
+|   |   |   |   |   |   1_Average power <= 0.039: stationary_upright
+|   |   |   |   |   |   1_Average power > 0.039
+|   |   |   |   |   |   |   3_Min <= 0.949: shaken
+|   |   |   |   |   |   |   3_Min > 0.949: motion
+|   |   |   0_Median absolute diff > 0.005
+|   |   |   |   3_Min <= 0.442: shaken
+|   |   |   |   3_Min > 0.442: motion
+|   |   3_Average power > 36.331: shaken
+2_Min > 0.981
+|   2_Autocorrelation <= 29.279
+|   |   3_Negative turning points <= 8.5: motion
+|   |   3_Negative turning points > 8.5: shaken
+|   2_Autocorrelation > 29.279
+|   |   1_Min <= -0.064: motion
+|   |   1_Min > -0.064
+|   |   |   2_Mean <= 1.01: stationary_upright
+|   |   |   2_Mean > 1.01
+|   |   |   |   1_Positive turning points <= 4.0: stationary_upright
+|   |   |   |   1_Positive turning points > 4.0: shaken
+
+Number of Leaves  : 	 24
+
+Size of the Tree : 	 47

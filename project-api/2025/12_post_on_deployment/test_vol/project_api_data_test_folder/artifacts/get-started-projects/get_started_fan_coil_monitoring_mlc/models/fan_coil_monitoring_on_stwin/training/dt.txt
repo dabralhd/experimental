@@ -1,0 +1,34 @@
+F3_PEAK_TO_PEAK_ACC_Y <= 0.057373 : still (1932)
+F3_PEAK_TO_PEAK_ACC_Y > 0.057373
+|   F4_VARIANCE_ACC_Y <= 0.035141 : low_vibration (2019/15.0)
+|   F4_VARIANCE_ACC_Y > 0.035141 : high_vibration (1915/10.0)
+
+Number of Leaves: 3
+Size of the tree: 5
+
+Classes:
+=> high_vibration, still, low_vibration
+
+Features:
+=> F1_ABS_MINIMUM_ACC_V, F2_ABS_MAXIMUM_ACC_V, F3_PEAK_TO_PEAK_ACC_Y, F4_VARIANCE_ACC_Y, F5_PEAK_TO_PEAK_ACC_X, F6_VARIANCE_ACC_X, F7_ABS_ENERGY_ACC_V, F8_MAXIMUM_ACC_X, F9_MINIMUM_ACC_X, F10_MINIMUM_ACC_X_FILTER_1, F11_MAXIMUM_ACC_X_FILTER_1, F12_PEAK_TO_PEAK_ACC_X_FILTER_1, F13_ENERGY_ACC_X_FILTER_1, F14_MEAN_ACC_Y_FILTER_1, F15_ABS_ENERGY_ACC_V_FILTER_2
+
+=============== Complete trainging data statistics ===============
+
+Confusion Matrix:
+               high_vibration	still	low_vibration	  <- classified as
+high_vibration 1905	0	15	
+still          0	1932	0	
+low_vibration  10	0	2004	
+
+Total Number of Instances: 5866
+Correctly Classified Instances: 5841
+Incorrectly Classified Instances: 25
+
+Accuracy:       99.57 %
+Cohen's kappa:  99.36 %
+
+Report:        precision	recall	support
+high_vibration 0.99	0.99	1920
+still          1.00	1.00	1932
+low_vibration  0.99	1.00	2014
+avg/total      1.00	1.00	5866
