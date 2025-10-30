@@ -1,9 +1,0 @@
-
-0_Spectral distance <= -749388.531: high_vibration
-0_Spectral distance > -749388.531
-|   3_Max <= 1.11: still
-|   3_Max > 1.11: low_vibration
-
-Number of Leaves  : 	 3
-
-Size of the Tree : 	 5
