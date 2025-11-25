@@ -13,7 +13,7 @@ when using uv activating python virtual env is not necessary, just run uv run co
 # Activate python dev env on Mac
 
 # For mcp-inspector based debugging
-npx @modelcontextprotocol/inspector uv run server.py
+npx @modelcontextprotocol/inspector uv run server_async.py
 ```
 
 2. run the server using following command
