@@ -1,0 +1,15 @@
+{
+	"servers": {
+		"st-aiot-craft-mcp-server-cff49d3d": {
+			"type": "stdio",
+			"command": "/Users/hemduttdabral/.local/bin/uv",
+			"args": [
+              "--directory",
+              "/Users/hemduttdabral/projects/experimental/mcp-servers/vespc-prjapi-mcp/vespc_prjapi_agent",
+              "run",
+              "server_async.py"
+      ]
+		}
+	},
+	"inputs": []
+}
