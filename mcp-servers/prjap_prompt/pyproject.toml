@@ -1,16 +1,10 @@
 [project]
-name = "vespc-prjapi-mcp"
+name = "prjap-prompt"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "httpx>=0.28.1",
-    "logging>=0.4.9.6",
-    "mcp[cli]>=1.12.0",
-]
-
-[tool.uv.workspace]
-members = [
-    "prjapi_agent",
+    "mcp[cli]>=1.24.0",
 ]

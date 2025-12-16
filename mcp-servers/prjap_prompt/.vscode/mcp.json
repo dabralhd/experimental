@@ -1,0 +1,13 @@
+{
+	"servers": {
+		"my-mcp-server-7028f7e1": {
+			"type": "stdio",
+			"command": "uv",
+			"args": [
+				"run",
+				"test_httpx_1.py"
+			]
+		}
+	},
+	"inputs": []
+}
