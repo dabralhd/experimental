@@ -1,11 +1,11 @@
 {
 	"servers": {
-		"my-mcp-server-7028f7e1": {
+		"staiotcraft_server": {
 			"type": "stdio",
 			"command": "uv",
 			"args": [
 				"run",
-				"test_httpx_1.py"
+				"server_async.py"
 			]
 		}
 	},

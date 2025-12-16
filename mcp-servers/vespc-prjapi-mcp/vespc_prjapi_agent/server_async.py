@@ -3,11 +3,12 @@ import json
 import prjapi_endpoints
 import logging
 from mcp.server.fastmcp import FastMCP
+from fastmcp.prompts import Message
 import asyncio
 
-mcp_server = FastMCP('prjapi-mcp-server')
+staiotcraft_server = FastMCP('staiotcraft_server')
 
-BEARER_TOKEN = ""
+BEARER_TOKEN = "eyJraWQiOiJcL3JIS3FCbG5JVldiU2RqdEJqODRQaDNyUk5SWWh4cnR6RFwvOXFTK0Q3aWc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIzMzRjNjVhNS0xNDk1LTQ1M2EtYTZkZS00ZDM4NGE3ODEwMDAiLCJjb2duaXRvOmdyb3VwcyI6WyJ3aGl0ZWxpc3QiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfOXdlbnNFNVJaIiwidmVyc2lvbiI6MiwiY2xpZW50X2lkIjoiNHNoYjE3OGdsbWxsc3I3NWdmb2JoZmRzYmEiLCJvcmlnaW5fanRpIjoiYmI0MzAzMDQtMTJjNi00MjAwLTkwYWItOWUxODk4OWJhOGI5IiwiZXZlbnRfaWQiOiIzMmI3YzZmNy1hYTBjLTRlMWMtOGFiMi03OGQ0MjdhMDkzN2UiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIGh0dHBzOlwvXC9vYXV0aDIuZGV2LnN0bS12ZXNwdWNjaS5jb21cL3Rlc3QgcGhvbmUgb3BlbmlkIHByb2ZpbGUgZW1haWwiLCJhdXRoX3RpbWUiOjE3NjM2MjM2MjEsImV4cCI6MTc2NTk3ODUxNSwiaWF0IjoxNzY1ODkyMTE1LCJqdGkiOiI5M2I4ZGZjYy03MWVlLTQ1MWQtOWRmYy1lODE4ZWIzZWY3OWUiLCJ1c2VybmFtZSI6IjMzNGM2NWE1LTE0OTUtNDUzYS1hNmRlLTRkMzg0YTc4MTAwMCJ9.hkie8iiZdul06iCrLUNvW6I7EqYt1CPLzyGgDA3Qlc6EseX0DihIEP3m2SlPuYAr78INwzUp7TUVVdK9ClA5cq2-kIGona2XpMYXY9NhMhUxXyh2mSLkPOvl_afmi21MGzPE2keVRA_KT4wJBE8rf2SBTd0IcyIs_VT8pC8kyBvBThkksa-EWU4vlSIKx7v6Dg5jfHKVpvFnik5tzI6P8wvuDcv1xK3Vx-UFfTIft03qY7RVdUIT7C_egqzBJGzlC9xKzMTvNtzimua2PV2m7EmJPMKRSFk2eRYnBNCTQn568-cbcy0RSMBq0vk2_HvBbmqjxavfbtsW9gE19gtFWA"
 BASE_URL = "https://dev.stm-vespucci.com:443/svc/project-api/3"
 
 def setup_logger(name="tools-httpx", level=logging.ERROR):
@@ -31,7 +32,7 @@ def setup_logger(name="tools-httpx", level=logging.ERROR):
         logger.addHandler(handler)
     return logger
 
-logger = setup_logger(name='logger_mcp_server', level=logging.DEBUG)
+logger = setup_logger(name='logger_staiotcraft_server', level=logging.DEBUG)
 logger.debug("logger test line")
 
 def get_headers(token):
@@ -329,7 +330,7 @@ async def delete_project(ai_project_name: str):
     logger.debug("Exiting delete_project()")
     return response
 
-@mcp_server.tool()
+@staiotcraft_server.tool()
 async def fetch_usr_prjs():
     '''Fetch user projects from STAIoT Craft tool's workspace.'''
 
@@ -344,7 +345,7 @@ async def fetch_usr_prjs():
     logger.debug('Exiting fetch_usr_prjs')
 
 
-@mcp_server.tool()
+@staiotcraft_server.tool()
 async def fetch_template_prjs():
     '''Fetch template projects from STAIoT Craft tool.'''
 
@@ -358,7 +359,7 @@ async def fetch_template_prjs():
         logger.error("Failed to fetch projects or no projects found.")
     logger.debug('Exiting fetch_template_prjs')
 
-@mcp_server.tool()
+@staiotcraft_server.tool()
 async def fetch_usr_prj_list():
     '''Fetch list of projects from STAIoT Craft tool's workspace.'''
 
@@ -374,7 +375,7 @@ async def fetch_usr_prj_list():
     logger.debug('Exiting fetch_usr_prj_list')  
 
 
-@mcp_server.tool()
+@staiotcraft_server.tool()
 async def fetch_usr_prj_using_name(ai_project_name: str):
     '''Fetch details of given project for a given user from STAIoT Craft tool's workspace.
     
@@ -396,7 +397,7 @@ async def fetch_usr_prj_using_name(ai_project_name: str):
         logger.error("Failed to fetch projects or no projects found.")
     logger.debug('Exiting fetch_usr_prj_list')           
 
-@mcp_server.tool()
+@staiotcraft_server.tool()
 async def delete_usr_prj_using_name(ai_project_name: str):
     '''Delete given project for a given user from STAIoT Craft tool's workspace.
     
@@ -413,7 +414,7 @@ async def delete_usr_prj_using_name(ai_project_name: str):
     logger.debug('Exiting fetch_usr_prj_list')  
     return response          
 
-@mcp_server.tool()
+@staiotcraft_server.tool()
 async def fetch_usr_prj_attr(attr: str='ai_project_name'):
     '''Fetch specific attributes for all projects from STAIoT Craft tool's workspace.
     
@@ -430,7 +431,7 @@ async def fetch_usr_prj_attr(attr: str='ai_project_name'):
         logger.error("Failed to fetch projects or no projects found.")
     logger.debug('Exiting fetch_usr_prj_list')     
 
-@mcp_server.tool()
+@staiotcraft_server.tool()
 async def fetch_template_prj_list():
     '''Fetch list of template projects from STAIoT Craft tool's workspace.'''
 
@@ -446,7 +447,7 @@ async def fetch_template_prj_list():
     logger.debug('Exiting fetch_template_prj_list')  
 
 
-@mcp_server.tool()
+@staiotcraft_server.tool()
 async def fetch_template_prj_using_name(ai_project_name: str):
     '''Fetch details of given template project from STAIoT Craft tool's workspace.
     
@@ -467,7 +468,7 @@ async def fetch_template_prj_using_name(ai_project_name: str):
         logger.error("Failed to fetch projects or no projects found.")
     logger.debug('Exiting fetch_template_prj_using_name') 
 
-@mcp_server.tool()
+@staiotcraft_server.tool()
 async def create_usr_prj(ai_project_name: str, description: str = "project description", version: str = '0.0.1'):
     '''Create a new project user project from scratch in STAIoT Craft tool's workspace.
     
@@ -483,7 +484,7 @@ async def create_usr_prj(ai_project_name: str, description: str = "project descr
         logger.error(f"Failed to create project '{ai_project_name}'.")
     logger.debug('Exiting create_usr_prj')
 
-@mcp_server.tool()
+@staiotcraft_server.tool()
 async def clone_usr_prj(ai_project_name: str, project_name_to_clone: str):
     '''Clone a user project in STAIoT Craft tool's workspace.
     
@@ -504,7 +505,7 @@ async def clone_usr_prj(ai_project_name: str, project_name_to_clone: str):
         logger.error(f"Failed to create project '{ai_project_name}'.")
     logger.debug('Exiting create_usr_prj')    
 
-@mcp_server.tool()
+@staiotcraft_server.tool()
 async def clone_template_prj(ai_project_name: str, project_name_to_clone: str):
     '''Clone a template or an example project in STAIoT Craft tool's workspace.
     
@@ -603,9 +604,128 @@ async def test_fetch_usr_prj_list():
     return None
 
 
+@staiotcraft_server.prompt()
+def explore_staiotcraft_templates() -> str:
+    """
+    Prompt template exported by the MCP server to help users explore
+    the STAIoT Craft online platform using the `fetch_template_prjs` tool.
+
+    MCP clients can invoke this prompt to get an instruction text that
+    tells the model how to use the tool and how to present the results.
+    """
+    return (
+        "You are helping a user explore and understand the capabilities of "
+        "the STAIoT Craft online platform.\n\n"
+        "You have access to an MCP tool named `fetch_template_prjs` which, "
+        "when called with no arguments, returns the list of available "
+        "STAIoT Craft template projects as JSON.\n\n"
+        "First, call the `fetch_template_prjs` tool (no arguments) to obtain "
+        "the latest template projects. Then, based on the tool output:\n"
+        "- Identify each template project and briefly describe its purpose and "
+        "  likely use cases.\n"
+        "- Infer what kinds of applications, workflows, or domains STAIoT "
+        "  Craft supports from these templates.\n"
+        "- Provide a concise summary of the overall capabilities of STAIoT "
+        "  Craft, organized with clear bullet points or short sections.\n\n"
+        "Always ground your explanation in the actual data returned by "
+        "`fetch_template_prjs`, and explicitly mention any assumptions you "
+        "need to make if the data is incomplete or ambiguous."
+    )
+
+
+@staiotcraft_server.prompt()
+def delete_projects_with_confirmation() -> str:
+    """
+    Prompt template exported by the MCP server to help users safely delete
+    projects from their STAIoT Craft workspace, one by one, with explicit
+    confirmation before each deletion.
+    """
+    return (
+        "You are assisting a user in managing (and potentially deleting) AI "
+        "projects in their STAIoT Craft workspace.\n\n"
+        "Available MCP tools that you should use:\n"
+        "- `fetch_usr_prj_list`: returns a list of existing user project names.\n"
+        "- `delete_usr_prj_using_name(ai_project_name)`: deletes the given "
+        "  user project from the workspace.\n\n"
+        "Your behavior MUST follow this protocol:\n"
+        "1. Start by calling `fetch_usr_prj_list` to show the user the current "
+        "   projects in their workspace.\n"
+        "2. Ask the user which project they want to delete (by name). Do not "
+        "   call the delete tool yet.\n"
+        "3. Once the user specifies a project name, clearly restate it and ask "
+        "   for an explicit confirmation, e.g. "
+        "   \"Please confirm: delete project '<name>' from your STAIoT Craft "
+        "   workspace? (yes/no)\".\n"
+        "4. ONLY IF the user replies with an unambiguous confirmation (such as "
+        "   \"yes\", \"confirm\", or \"delete it\"), call "
+        "   `delete_usr_prj_using_name` with that exact project name.\n"
+        "5. After the tool responds, inform the user whether the deletion "
+        "   succeeded or failed.\n"
+        "6. Ask the user if they want to delete another project; if they do, "
+        "   repeat steps 1–5 for each project, one at a time.\n\n"
+        "Under no circumstances should you delete a project without the user’s "
+        "explicit confirmation for that specific project name."
+    )
+
+
+@staiotcraft_server.prompt()
+def clone_example_project_with_filtering(
+    application_area: str | None = None,
+    project_description: str | None = None,
+) -> str:
+    """
+    Prompt template exported by the MCP server to help users clone an
+    example/template project, chosen based on selection criteria such as
+    application/target area, description, or both.
+
+    Parameters:
+    - application_area: a short phrase describing the desired domain or
+      target area (e.g., \"predictive maintenance\", \"energy optimization\").
+    - project_description: free-text description of what the user wants
+      the example project to cover.
+    """
+    return (
+        "You are helping a user clone an example (template) project in the "
+        "STAIoT Craft online platform.\n\n"
+        f"User selection criteria provided by the client:\n"
+        f"- Application / target area: {application_area or 'not specified'}\n"
+        f"- Desired project description: {project_description or 'not specified'}\n\n"
+        "Available MCP tools that you should use:\n"
+        "- `fetch_template_prjs`: returns detailed information about all "
+        "  available template/example projects.\n"
+        "- `clone_template_prj(ai_project_name, project_name_to_clone)`: "
+        "  creates a new user project by cloning a chosen template.\n\n"
+        "Your behavior MUST follow this protocol:\n"
+        "1. Use the selection criteria already provided above "
+        "   (application area and/or desired description) as the primary "
+        "   filter for candidate templates.\n"
+        "2. Call `fetch_template_prjs` to retrieve the full list of templates.\n"
+        "3. Filter the templates locally according to these criteria "
+        "   (by matching target area fields, description text, or both).\n"
+        "4. Present the user with a short, ranked list of the best-matching "
+        "   templates. For each candidate, show at least:\n"
+        "   - the template’s `ai_project_name`,\n"
+        "   - its target area (if available),\n"
+        "   - a brief summary of its description.\n"
+        "5. Ask the user which specific template they want to clone, and what "
+        "   name they would like for the new cloned project (`ai_project_name`).\n"
+        "6. Once the user has selected a template and provided a new project "
+        "   name, restate both and ask for explicit confirmation, e.g. "
+        "   \"Please confirm: clone template '<template_name>' as new project "
+        "   '<new_project_name>' (yes/no)\".\n"
+        "7. ONLY IF the user confirms unambiguously, call "
+        "   `clone_template_prj` with:\n"
+        "   - `ai_project_name` = the new project name provided by the user,\n"
+        "   - `project_name_to_clone` = the chosen template’s `ai_project_name`.\n"
+        "8. Report the result of the cloning operation back to the user, "
+        "   including any status messages or errors.\n\n"
+        "You must never call `clone_template_prj` without a clear user choice "
+        "of template and explicit confirmation of the new project name."
+    )
+
 if __name__ == "__main__":
     # Initialize and run the server
-    mcp_server.run(transport='stdio')    
+    staiotcraft_server.run(transport='stdio')    
 
 # async def main():
 #     await test_fetch_usr_prj_list()
@@ -618,3 +738,4 @@ if __name__ == "__main__":
 # if __name__ == "__main__":
 #     asyncio.run(main())
 #     logger.info("Script executed directly, running test_get_usr_projects()")    
+
