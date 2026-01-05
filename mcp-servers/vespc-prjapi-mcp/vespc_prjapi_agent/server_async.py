@@ -2,6 +2,8 @@ import httpx
 import json
 import prjapi_endpoints
 import logging
+import time
+from functools import wraps
 from mcp.server.fastmcp import FastMCP
 from fastmcp.prompts import Message
 import asyncio
@@ -34,6 +36,52 @@ def setup_logger(name="tools-httpx", level=logging.ERROR):
 
 logger = setup_logger(name='logger_staiotcraft_server', level=logging.DEBUG)
 logger.debug("logger test line")
+
+
+def time_tool(func):
+    """
+    Decorator to measure and log execution time for async tool functions.
+    Logs timing information in milliseconds to terminal.
+    """
+    @wraps(func)
+    async def wrapper(*args, **kwargs):
+        tool_name = func.__name__
+        start_time = time.perf_counter()
+        try:
+            result = await func(*args, **kwargs)
+            end_time = time.perf_counter()
+            duration_ms = (end_time - start_time) * 1000
+            logger.info(f"[TOOL_TIMING] {tool_name} - Duration: {duration_ms:.2f} ms - Status: SUCCESS")
+            return result
+        except Exception as e:
+            end_time = time.perf_counter()
+            duration_ms = (end_time - start_time) * 1000
+            logger.info(f"[TOOL_TIMING] {tool_name} - Duration: {duration_ms:.2f} ms - Status: ERROR - {type(e).__name__}: {str(e)}")
+            raise
+    return wrapper
+
+
+def time_prompt(func):
+    """
+    Decorator to measure and log execution time for sync prompt functions.
+    Logs timing information in milliseconds to terminal.
+    """
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        prompt_name = func.__name__
+        start_time = time.perf_counter()
+        try:
+            result = func(*args, **kwargs)
+            end_time = time.perf_counter()
+            duration_ms = (end_time - start_time) * 1000
+            logger.info(f"[PROMPT_TIMING] {prompt_name} - Duration: {duration_ms:.2f} ms - Status: SUCCESS")
+            return result
+        except Exception as e:
+            end_time = time.perf_counter()
+            duration_ms = (end_time - start_time) * 1000
+            logger.info(f"[PROMPT_TIMING] {prompt_name} - Duration: {duration_ms:.2f} ms - Status: ERROR - {type(e).__name__}: {str(e)}")
+            raise
+    return wrapper
 
 def get_headers(token):
     """
@@ -75,6 +123,7 @@ async def make_http_request(url, headers, http_method: str = 'get', params=None,
     """
     Make an HTTP request (GET or POST) to the specified URL with given headers and parameters.
     Logs request and response details if a logger is provided.
+    Measures and logs the time taken for each API call in milliseconds.
 
     Args:
         url (str): The full URL to send the HTTP request to.
@@ -88,6 +137,10 @@ async def make_http_request(url, headers, http_method: str = 'get', params=None,
     """
     response = {}
     logger.info("Entered make_http_request()")
+    
+    # Record start time for API call timing
+    start_time = time.perf_counter()
+    
     try:
         async with httpx.AsyncClient() as client:
             logger.info(f"Preparing to make {http_method.upper()} request.")
@@ -97,16 +150,28 @@ async def make_http_request(url, headers, http_method: str = 'get', params=None,
             if http_method.lower() == 'get':
                 response = await client.get(url, headers=headers, params=params)
                 logger.info("GET request sent.")
+                # Calculate and log timing
+                end_time = time.perf_counter()
+                duration_ms = (end_time - start_time) * 1000
+                logger.info(f"[TIMING] {http_method.upper()} {url} - Duration: {duration_ms:.2f} ms - Status: {response.status_code}")
                 if response.status_code == 200:
                     #logger.debug(f'response: {response.json()}')
                     return response.json()
             elif http_method.lower() == 'post':
                 response = await client.post(url, headers=headers, params=params, json=body)
                 logger.info("POST request sent.")
+                # Calculate and log timing
+                end_time = time.perf_counter()
+                duration_ms = (end_time - start_time) * 1000
+                logger.info(f"[TIMING] {http_method.upper()} {url} - Duration: {duration_ms:.2f} ms - Status: {response.status_code}")
                 return response.status_code           
             elif http_method.lower() == 'delete':
                 response = await client.delete(url, headers=headers, params=params)
-                logger.info("DELETE request sent.")  
+                logger.info("DELETE request sent.")
+                # Calculate and log timing
+                end_time = time.perf_counter()
+                duration_ms = (end_time - start_time) * 1000
+                logger.info(f"[TIMING] {http_method.upper()} {url} - Duration: {duration_ms:.2f} ms - Status: {response.status_code}")
                 return response.status_code           
             else:
                 logger.error(f"Unsupported HTTP method: {http_method}")
@@ -117,12 +182,24 @@ async def make_http_request(url, headers, http_method: str = 'get', params=None,
             logger.debug("Response Body:")
     
     except httpx.HTTPStatusError as e:
+        # Calculate and log timing even on error
+        end_time = time.perf_counter()
+        duration_ms = (end_time - start_time) * 1000
+        logger.info(f"[TIMING] {http_method.upper()} {url} - Duration: {duration_ms:.2f} ms - Status: {e.response.status_code} (ERROR)")
         logger.debug(f"HTTP error occurred: {e.response.status_code} - {e.response.text}")
         logger.debug("Exiting make_http_request() due to HTTPStatusError.")
     except httpx.RequestError as e:
+        # Calculate and log timing even on error
+        end_time = time.perf_counter()
+        duration_ms = (end_time - start_time) * 1000
+        logger.info(f"[TIMING] {http_method.upper()} {url} - Duration: {duration_ms:.2f} ms - Request Error")
         logger.debug(f"An error occurred while requesting {e.request.url!r}: {e}")
         logger.debug("Exiting make_http_request() due to RequestError.")
     except Exception as e:
+        # Calculate and log timing even on error
+        end_time = time.perf_counter()
+        duration_ms = (end_time - start_time) * 1000
+        logger.info(f"[TIMING] {http_method.upper()} {url} - Duration: {duration_ms:.2f} ms - Exception: {type(e).__name__}")
         logger.debug(f"An unexpected error occurred: {e}")
         logger.debug("Exiting make_http_request() due to Exception.")
         logger.debug("Exiting make_http_request() with None.")
@@ -331,6 +408,7 @@ async def delete_project(ai_project_name: str):
     return response
 
 @staiotcraft_server.tool()
+@time_tool
 async def fetch_usr_prjs():
     '''Fetch user projects from STAIoT Craft tool's workspace.'''
 
@@ -346,6 +424,7 @@ async def fetch_usr_prjs():
 
 
 @staiotcraft_server.tool()
+@time_tool
 async def fetch_template_prjs():
     '''Fetch template projects from STAIoT Craft tool.'''
 
@@ -360,6 +439,7 @@ async def fetch_template_prjs():
     logger.debug('Exiting fetch_template_prjs')
 
 @staiotcraft_server.tool()
+@time_tool
 async def fetch_usr_prj_list():
     '''Fetch list of projects from STAIoT Craft tool's workspace.'''
 
@@ -376,6 +456,7 @@ async def fetch_usr_prj_list():
 
 
 @staiotcraft_server.tool()
+@time_tool
 async def fetch_usr_prj_using_name(ai_project_name: str):
     '''Fetch details of given project for a given user from STAIoT Craft tool's workspace.
     
@@ -398,6 +479,7 @@ async def fetch_usr_prj_using_name(ai_project_name: str):
     logger.debug('Exiting fetch_usr_prj_list')           
 
 @staiotcraft_server.tool()
+@time_tool
 async def delete_usr_prj_using_name(ai_project_name: str):
     '''Delete given project for a given user from STAIoT Craft tool's workspace.
     
@@ -415,6 +497,7 @@ async def delete_usr_prj_using_name(ai_project_name: str):
     return response          
 
 @staiotcraft_server.tool()
+@time_tool
 async def fetch_usr_prj_attr(attr: str='ai_project_name'):
     '''Fetch specific attributes for all projects from STAIoT Craft tool's workspace.
     
@@ -432,6 +515,7 @@ async def fetch_usr_prj_attr(attr: str='ai_project_name'):
     logger.debug('Exiting fetch_usr_prj_list')     
 
 @staiotcraft_server.tool()
+@time_tool
 async def fetch_template_prj_list():
     '''Fetch list of template projects from STAIoT Craft tool's workspace.'''
 
@@ -448,6 +532,7 @@ async def fetch_template_prj_list():
 
 
 @staiotcraft_server.tool()
+@time_tool
 async def fetch_template_prj_using_name(ai_project_name: str):
     '''Fetch details of given template project from STAIoT Craft tool's workspace.
     
@@ -469,6 +554,7 @@ async def fetch_template_prj_using_name(ai_project_name: str):
     logger.debug('Exiting fetch_template_prj_using_name') 
 
 @staiotcraft_server.tool()
+@time_tool
 async def create_usr_prj(ai_project_name: str, description: str = "project description", version: str = '0.0.1'):
     '''Create a new project user project from scratch in STAIoT Craft tool's workspace.
     
@@ -485,6 +571,7 @@ async def create_usr_prj(ai_project_name: str, description: str = "project descr
     logger.debug('Exiting create_usr_prj')
 
 @staiotcraft_server.tool()
+@time_tool
 async def clone_usr_prj(ai_project_name: str, project_name_to_clone: str):
     '''Clone a user project in STAIoT Craft tool's workspace.
     
@@ -506,6 +593,7 @@ async def clone_usr_prj(ai_project_name: str, project_name_to_clone: str):
     logger.debug('Exiting create_usr_prj')    
 
 @staiotcraft_server.tool()
+@time_tool
 async def clone_template_prj(ai_project_name: str, project_name_to_clone: str):
     '''Clone a template or an example project in STAIoT Craft tool's workspace.
     
@@ -605,6 +693,7 @@ async def test_fetch_usr_prj_list():
 
 
 @staiotcraft_server.prompt()
+@time_prompt
 def explore_staiotcraft_templates() -> str:
     """
     Prompt template exported by the MCP server to help users explore
@@ -634,6 +723,7 @@ def explore_staiotcraft_templates() -> str:
 
 
 @staiotcraft_server.prompt()
+@time_prompt
 def delete_projects_with_confirmation() -> str:
     """
     Prompt template exported by the MCP server to help users safely delete
@@ -669,6 +759,7 @@ def delete_projects_with_confirmation() -> str:
 
 
 @staiotcraft_server.prompt()
+@time_prompt
 def clone_example_project_with_filtering(
     application_area: str | None = None,
     project_description: str | None = None,
