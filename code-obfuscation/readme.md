@@ -1,4 +1,6 @@
-# Using Nuitka
+# Code obfuscation experiments
+
+## Nuitka
 
 1. using nuitka to create a module
 
@@ -12,4 +14,7 @@ uv run python -m nuitka --standalone --onefile main.py
 
 uv run python -m nuitka --remove-output main.py
 
-4. 
+## Reverse Engineering
+
+1. simple experiments
+strings <bin_name>
