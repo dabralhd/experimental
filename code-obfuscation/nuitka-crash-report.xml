@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf8'?>
+<nuitka-compilation-report nuitka_version="4.0.1" nuitka_commercial_version="not installed" mode="module" completion="error exit message (1)" exit_message="Failed unexpectedly in Scons C backend compilation.">
+  <module name="main" kind="CompiledPythonModule" usage="root_module" reason="Root module" source_path="main.py">
+    <optimization-time pass="1" time="0.00" micro_passes="3" />
+    <optimization-time pass="2" time="0.00" micro_passes="1" />
+    <code-generation-time time="0.11" />
+    <module_usages />
+  </module>
+  <performance>
+    <memory_usage name="after_launch" value="70754304" />
+    <memory_usage name="before_c_code_generation" value="70889472" />
+    <memory_usage name="before_running_scons" value="71282688" />
+  </performance>
+  <data_composer blob_size="975" total="107">
+    <module_data filename="__bytecode.const" blob_name=".bytecode" blob_size="3" input_size="0" />
+    <module_data filename="__constants.const" blob_name="" blob_size="839" input_size="2115" />
+    <module_data filename="module.main.const" blob_name="main" blob_size="97" input_size="185" />
+  </data_composer>
+  <command_line>
+    <option value="--module" />
+    <option value="main.py" />
+  </command_line>
+  <plugins>
+    <plugin name="anti-bloat" user_enabled="no" />
+    <plugin name="eventlet" user_enabled="no" />
+    <plugin name="gi" user_enabled="no" />
+    <plugin name="implicit-imports" user_enabled="no" />
+    <plugin name="options-nanny" user_enabled="no" />
+    <plugin name="pkg-resources" user_enabled="no" />
+    <plugin name="transformers" user_enabled="no" />
+  </plugins>
+  <distributions />
+  <python python_exe="${sys.prefix}/bin/python3" python_flavor="Python Build Standalone" python_version="3.14.3" os_name="Linux" os_release="Ubuntu-Debian-22.04.5" arch_name="x86_64" filesystem_encoding="utf-8" gil="yes">
+    <search_path>
+      <path value="${cwd}" />
+      <path value="${sys.real_prefix}/lib/python3.14" />
+      <path value="${sys.real_prefix}/lib/python3.14/lib-dynload" />
+      <path value="${sys.prefix}/lib/python3.14/site-packages" />
+    </search_path>
+  </python>
+  <output run_filename="${cwd}/main.cpython-314-x86_64-linux-gnu.so" />
+</nuitka-compilation-report>
