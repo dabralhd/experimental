@@ -1,0 +1,13 @@
+{
+	"servers": {
+		"staiotcraft_server": {
+			"type": "stdio",
+			"command": "uv",
+			"args": [
+				"run",
+				"server_async.py"
+			]
+		}
+	},
+	"inputs": []
+}
