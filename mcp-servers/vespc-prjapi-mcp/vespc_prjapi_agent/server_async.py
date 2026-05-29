@@ -10,7 +10,7 @@ import asyncio
 
 staiotcraft_server = FastMCP('staiotcraft_server')
 
-BEARER_TOKEN = ""
+BEARER_TOKEN = "eyJraWQiOiJcL3JIS3FCbG5JVldiU2RqdEJqODRQaDNyUk5SWWh4cnR6RFwvOXFTK0Q3aWc9IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiIzMzRjNjVhNS0xNDk1LTQ1M2EtYTZkZS00ZDM4NGE3ODEwMDAiLCJjb2duaXRvOmdyb3VwcyI6WyJ3aGl0ZWxpc3QiXSwiaXNzIjoiaHR0cHM6XC9cL2NvZ25pdG8taWRwLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tXC9ldS13ZXN0LTFfOXdlbnNFNVJaIiwidmVyc2lvbiI6MiwiY2xpZW50X2lkIjoiNHNoYjE3OGdsbWxsc3I3NWdmb2JoZmRzYmEiLCJvcmlnaW5fanRpIjoiYTQ0OWYwYTEtNGE3Yy00ZjliLTgwMjUtOTZjZTE3MmQ4MDQxIiwiZXZlbnRfaWQiOiI3NjNiMzc0ZC1mZDllLTRkNDAtYjc3Yy1iOGZlYTlhNWI2YzUiLCJ0b2tlbl91c2UiOiJhY2Nlc3MiLCJzY29wZSI6ImF3cy5jb2duaXRvLnNpZ25pbi51c2VyLmFkbWluIGh0dHBzOlwvXC9vYXV0aDIuZGV2LnN0bS12ZXNwdWNjaS5jb21cL3Rlc3QgcGhvbmUgb3BlbmlkIHByb2ZpbGUgZW1haWwiLCJhdXRoX3RpbWUiOjE3NjU5NjQwNzUsImV4cCI6MTc2NzkzODE2MCwiaWF0IjoxNzY3ODUxNzYwLCJqdGkiOiJlM2JiNmM2NS0xMmM4LTQ5ZjgtYWY5Zi0wMWFhMGE4NWU0YmEiLCJ1c2VybmFtZSI6IjMzNGM2NWE1LTE0OTUtNDUzYS1hNmRlLTRkMzg0YTc4MTAwMCJ9.nMw3K2A73vM1B5LyP63dWlSWqxf_RSJrr4xXkrCnYbqRvECSprruY56ziNf9CLrNN1O7n0Ojt_7ftQxacmJwqJGX8qKlmo8uIieZONc_fcYR0hskB1KlWWc8m5-TUC5jQpcqeb7qx90xHN38bkzwVMVGuIK6fIuTzdYqFxT20x0RY2FupMKzlT609gskx30pFEW2ZumSEQBJ0zI-XiUoxCVKboYkFRbwBgaKufeSLxNihqB7bp81K15ypNqs6Kkf7YdWQ74PYr7zNku48b8gm7uTFqlT69qTY29voTXjcGuknSxXQFM2pbkMMhHkxBGlRXJKg56RnCWwJm_BZj7rhw"
 BASE_URL = "https://dev.stm-vespucci.com:443/svc/project-api/3"
 
 def setup_logger(name="tools-httpx", level=logging.ERROR):
@@ -35,7 +35,7 @@ def setup_logger(name="tools-httpx", level=logging.ERROR):
     return logger
 
 logger = setup_logger(name='logger_staiotcraft_server', level=logging.DEBUG)
-logger.debug("logger test line")
+logger.debug("Logger initialized for staiotcraft_server.")
 
 
 def time_tool(func):
@@ -136,7 +136,7 @@ async def make_http_request(url, headers, http_method: str = 'get', params=None,
         dict or None: Parsed JSON response if successful, None otherwise.
     """
     response = {}
-    logger.info("Entered make_http_request()")
+    logger.debug("Entered make_http_request()")
     
     # Record start time for API call timing
     start_time = time.perf_counter()
@@ -148,31 +148,31 @@ async def make_http_request(url, headers, http_method: str = 'get', params=None,
             logger.debug(f"Headers: {headers}")
             logger.debug(f"Params: {params}")
             if http_method.lower() == 'get':
+                logger.debug(f'sending GET')
                 response = await client.get(url, headers=headers, params=params)
                 logger.info("GET request sent.")
-                # Calculate and log timing
                 end_time = time.perf_counter()
                 duration_ms = (end_time - start_time) * 1000
                 logger.info(f"[TIMING] {http_method.upper()} {url} - Duration: {duration_ms:.2f} ms - Status: {response.status_code}")
-                if response.status_code == 200:
-                    #logger.debug(f'response: {response.json()}')
-                    return response.json()
+                try:
+                    body = response.json()
+                except Exception:
+                    body = response.text
+                return {"status_code": response.status_code, "body": body}
             elif http_method.lower() == 'post':
                 response = await client.post(url, headers=headers, params=params, json=body)
                 logger.info("POST request sent.")
-                # Calculate and log timing
                 end_time = time.perf_counter()
                 duration_ms = (end_time - start_time) * 1000
                 logger.info(f"[TIMING] {http_method.upper()} {url} - Duration: {duration_ms:.2f} ms - Status: {response.status_code}")
-                return response.status_code           
+                return {"status_code": response.status_code, "body": response.text}
             elif http_method.lower() == 'delete':
                 response = await client.delete(url, headers=headers, params=params)
                 logger.info("DELETE request sent.")
-                # Calculate and log timing
                 end_time = time.perf_counter()
                 duration_ms = (end_time - start_time) * 1000
                 logger.info(f"[TIMING] {http_method.upper()} {url} - Duration: {duration_ms:.2f} ms - Status: {response.status_code}")
-                return response.status_code           
+                return {"status_code": response.status_code, "body": response.text}
             else:
                 logger.error(f"Unsupported HTTP method: {http_method}")
                 raise ValueError(f"Unsupported HTTP method: {http_method}")
@@ -204,7 +204,7 @@ async def make_http_request(url, headers, http_method: str = 'get', params=None,
         logger.debug("Exiting make_http_request() due to Exception.")
         logger.debug("Exiting make_http_request() with None.")
     logger.debug(f'response: {response}')
-    return { 'response-status-code': response.status_code }
+    return response.status_code 
 
 
 async def make_http_request_old(url, headers, http_method: str = 'get', params=None, body = None):
@@ -223,7 +223,7 @@ async def make_http_request_old(url, headers, http_method: str = 'get', params=N
         dict or None: Parsed JSON response if successful, None otherwise.
     """
     response = {}
-    logger.info("Entered make_http_request()")
+    logger.debug("Entered make_http_request_old()")
     try:
         async with httpx.AsyncClient() as client:
             logger.info(f"Preparing to make {http_method.upper()} request.")
@@ -268,7 +268,7 @@ async def make_http_request_old(url, headers, http_method: str = 'get', params=N
         logger.debug("Exiting make_http_request() due to Exception.")
         logger.debug("Exiting make_http_request() with None.")
     logger.debug(f'response: {response}')
-    return { 'response-status-code': response.status_code }
+    return None
 
 async def invoke_url_with_http_method(request_url: str, headers: dict, params: dict = None, org_id: str=None, http_method: str = 'get', body = None):
     """
@@ -284,7 +284,7 @@ async def invoke_url_with_http_method(request_url: str, headers: dict, params: d
     Returns:
         None
     """
-    logger.debug("Entered invoke_projects_endpoint_with_http_method()")
+    logger.debug("Entered invoke_url_with_http_method()")
 
     if params is None:
         params = {}
@@ -311,7 +311,7 @@ async def get_projects():
 
 async def get_template_projects():
     """ Fetch template projects for STAIoT Craft tool. """
-    logger.debug("Entered get_projects()")
+    logger.debug("Entered get_template_projects()")
 
     request_url = f"{BASE_URL}{prjapi_endpoints.ENDPOINT_TEMPLATES_PROJECTS}"
     headers=get_headers(BEARER_TOKEN)
@@ -332,7 +332,7 @@ async def create_project(ai_project_name: str, description: str, version: str):
         description (str): Description of the AI project.
         version (str): Version of the AI project.
     """
-    logger.debug("Entered create_projects()")
+    logger.debug(f"Entered create_project() with ai_project_name={ai_project_name}, description={description}, version={version}")
 
     request_url = f"{BASE_URL}{prjapi_endpoints.ENDPOINT_PROJECTS}" + "?" + "is_user_project=True"
     logger.debug(f"Request URL: {request_url}")
@@ -359,7 +359,7 @@ async def clone_project(ai_project_name: str, project_name_to_clone: str, is_use
         project_name_to_clone (str): project name to clone.
         version (str): Version of the AI project.
     """
-    logger.debug("Entered create_projects()")
+    logger.debug(f"Entered clone_project() with ai_project_name={ai_project_name}, project_name_to_clone={project_name_to_clone}, is_user_project={is_user_project}")
 
     request_url = f"{BASE_URL}{prjapi_endpoints.ENDPOINT_PROJECTS}"
     logger.debug(f"Request URL: {request_url}")
@@ -390,7 +390,7 @@ async def delete_project(ai_project_name: str):
     Returns:
         None
     """
-    logger.debug("Entered delete_project()")
+    logger.debug(f"Entered delete_project() with ai_project_name={ai_project_name}")
 
     request_url = f"{BASE_URL}{prjapi_endpoints.ENDPOINT_PROJECTS}/{ai_project_name}"
     headers=get_headers(BEARER_TOKEN)
@@ -413,13 +413,14 @@ async def fetch_usr_prjs():
     '''Fetch user projects from STAIoT Craft tool's workspace.'''
 
     logger.debug('Entered fetch_usr_prjs')
+    logger.debug('fetch_usr_prjs: Starting user project fetch.')
     logger.debug('Calling the /projects endpoint...')
-    usr_prjs = await get_projects()
-    if usr_prjs:
-        logger.info(f"Fetched {len(usr_prjs)} projects successfully.")
-        return usr_prjs
+    result = await get_projects()
+    if result and result.get("status_code") == 200 and isinstance(result.get("body"), list):
+        logger.info(f"Fetched {len(result['body'])} projects successfully.")
+        return result["body"]
     else:
-        logger.error("Failed to fetch projects or no projects found.")
+        logger.error(f"Failed to fetch projects or no projects found. Status: {result.get('status_code')}, Body: {result.get('body')}")
     logger.debug('Exiting fetch_usr_prjs')
 
 
@@ -429,6 +430,7 @@ async def fetch_template_prjs():
     '''Fetch template projects from STAIoT Craft tool.'''
 
     logger.debug('Entered fetch_template_prjs')
+    logger.debug('fetch_template_prjs: Starting template project fetch.')
     logger.debug('Calling the /projects endpoint...')
     usr_prjs = await get_template_projects()
     if usr_prjs:
@@ -444,15 +446,19 @@ async def fetch_usr_prj_list():
     '''Fetch list of projects from STAIoT Craft tool's workspace.'''
 
     logger.debug('Entered fetch_usr_prj_list')
+    logger.debug('fetch_usr_prj_list: Starting user project list fetch.')
     logger.debug('Calling the /projects endpoint...')
-    usr_prjs = await get_projects()
-    if usr_prjs:
-        logger.info(f"Fetched {len(usr_prjs)} projects successfully.")
+    result = await get_projects()
+    if result and result.get("status_code") == 200 and isinstance(result.get("body"), list):
+        logger.info(f"Fetched {len(result['body'])} projects successfully.")
         key = 'ai_project_name'
-        return [usr_prjs[i][key] for i in range(len(usr_prjs)) if key in usr_prjs[i]]
+        project_names = [prj[key] for prj in result["body"] if key in prj]
+        logger.debug(f"Returning project names: {project_names}")
+        return project_names
     else:
-        logger.error("Failed to fetch projects or no projects found.")
-    logger.debug('Exiting fetch_usr_prj_list')  
+        logger.error(f"Failed to fetch projects or no projects found. Status: {result.get('status_code')}, Body: {result.get('body')}")
+        logger.debug("Returning None from fetch_usr_prj_list due to error or missing data.")
+    logger.debug('Exiting fetch_usr_prj_list')
 
 
 @staiotcraft_server.tool()
@@ -463,7 +469,7 @@ async def fetch_usr_prj_using_name(ai_project_name: str):
     Args: 'ai_project_name' - name of the project to fetch.'
     '''
 
-    logger.debug('Entered fetch_usr_prj_list')
+    logger.debug(f'Entered fetch_usr_prj_using_name with ai_project_name={ai_project_name}')
     logger.debug('Calling the /projects endpoint...')
     usr_prjs = await get_projects()
     if usr_prjs:
@@ -486,7 +492,7 @@ async def delete_usr_prj_using_name(ai_project_name: str):
     Args: 'ai_project_name' - name of the project to fetch.'
     '''
 
-    logger.debug('Entered fetch_usr_prj_list')
+    logger.debug(f'Entered delete_usr_prj_using_name with ai_project_name={ai_project_name}')
     logger.debug('Calling the /projects endpoint...')
     response = await delete_project(ai_project_name=ai_project_name)
     if response:
@@ -504,7 +510,7 @@ async def fetch_usr_prj_attr(attr: str='ai_project_name'):
     Args: 'ai_project_name', 'ai_project_id', 'description', 'models', 'deployments'.
     '''
 
-    logger.debug('Entered fetch_usr_prj_list')
+    logger.debug(f'Entered fetch_usr_prj_attr with attr={attr}')
     logger.debug('Calling the /projects endpoint...')
     usr_prjs = await get_projects()
     if usr_prjs:
@@ -520,6 +526,7 @@ async def fetch_template_prj_list():
     '''Fetch list of template projects from STAIoT Craft tool's workspace.'''
 
     logger.debug('Entered fetch_template_prj_list')
+    logger.debug('fetch_template_prj_list: Starting template project list fetch.')
     logger.debug('Calling the /projects endpoint...')
     usr_prjs = await get_template_projects()
     if usr_prjs:
@@ -539,7 +546,7 @@ async def fetch_template_prj_using_name(ai_project_name: str):
     Args: 'ai_project_name' - name of the project to fetch.'
     '''
 
-    logger.debug('Entered fetch_template_prj_using_name')
+    logger.debug(f'Entered fetch_template_prj_using_name with ai_project_name={ai_project_name}')
     usr_prjs = await get_template_projects()
     if usr_prjs:
         logger.info(f"Fetched {len(usr_prjs)} projects successfully.")
@@ -561,7 +568,7 @@ async def create_usr_prj(ai_project_name: str, description: str = "project descr
     Args: 'ai_project_name', 'description', 'version'.
     '''
 
-    logger.debug('Entered create_usr_prj')
+    logger.debug(f'Entered create_usr_prj with ai_project_name={ai_project_name}, description={description}, version={version}')
     response = await create_project(ai_project_name=ai_project_name, description=description, version=version)
     if response:
         logger.info(f"Project '{ai_project_name}' created successfully.")
@@ -578,7 +585,7 @@ async def clone_usr_prj(ai_project_name: str, project_name_to_clone: str):
     Args: 'ai_project_name', 'project_name_to_clone'.
     '''
 
-    logger.debug('Entered create_usr_prj')
+    logger.debug(f'Entered clone_usr_prj with ai_project_name={ai_project_name}, project_name_to_clone={project_name_to_clone}')
     response = await clone_project(ai_project_name=ai_project_name, project_name_to_clone=project_name_to_clone, is_user_project=True)
     if response == 200:
         fstr = f"Project '{ai_project_name}' created successfully."
@@ -600,7 +607,7 @@ async def clone_template_prj(ai_project_name: str, project_name_to_clone: str):
     Args: 'ai_project_name', 'project_name_to_clone'.
     '''
 
-    logger.debug('Entered clone_template_prj')
+    logger.debug(f'Entered clone_template_prj with ai_project_name={ai_project_name}, project_name_to_clone={project_name_to_clone}')
     response = await clone_project(ai_project_name=ai_project_name, project_name_to_clone=project_name_to_clone, is_user_project=False)
     if response:
         logger.info(f"Project '{ai_project_name}' created successfully.")
@@ -612,6 +619,7 @@ async def clone_template_prj(ai_project_name: str, project_name_to_clone: str):
 async def test_delete_usr_prjs():
     '''Test function to delete user projects.'''
     logger.debug('Entered test_delete_usr_prjs')
+    logger.debug('test_delete_usr_prjs: Starting test for user project deletion.')
     ai_project_name = 'test_project'
     response = await delete_usr_prj_using_name(ai_project_name)
     if response:
@@ -623,6 +631,7 @@ async def test_delete_usr_prjs():
 async def test_get_usr_prjs():
     '''Test function to delete user projects.'''
     logger.debug('Entered test_get_usr_prjs')
+    logger.debug('test_get_usr_prjs: Starting test for user project fetch.')
     response = await get_projects()
     if response:
         json_response = json.dumps(response, indent=2)
@@ -636,7 +645,8 @@ async def test_get_usr_prjs():
          
 async def test_get_template_prjs():
     '''Test function to get template projects.'''
-    logger.debug('Entered test_get_usr_prjs')
+    logger.debug('Entered test_get_template_prjs')
+    logger.debug('test_get_template_prjs: Starting test for template project fetch.')
     response = await get_template_projects()
     if response:
         json_response = json.dumps(response, indent=2)
@@ -650,6 +660,7 @@ async def test_get_template_prjs():
 async def test_create_usr_prj():
     '''Test function to create a user project.'''
     logger.debug('Entered test_create_usr_prj')
+    logger.debug('test_create_usr_prj: Starting test for user project creation.')
     ai_project_name = 'test_project'
     description = 'This is a test project created via API.'
     version = '1.0'
@@ -664,6 +675,7 @@ async def test_create_usr_prj():
 async def test_clone_usr_prj():
     '''Test function to create a user project.'''
     logger.debug('Entered test_clone_usr_prj')
+    logger.debug('test_clone_usr_prj: Starting test for user project cloning.')
     project_name_to_clone = 'test_project'
     ai_project_name = 'cloned_test_project_2'
     logger.debug(f"Cloning project '{project_name_to_clone}' as '{ai_project_name}'")
@@ -678,7 +690,8 @@ async def test_clone_usr_prj():
 
 async def test_fetch_usr_prj_list():
     '''Test function to create a user project.'''
-    logger.debug('Entered test_clone_usr_prj')
+    logger.debug('Entered test_fetch_usr_prj_list')
+    logger.debug('test_fetch_usr_prj_list: Starting test for user project list fetch.')
     project_name_to_clone = 'test_project'
     ai_project_name = 'cloned_test_project_2'
     logger.debug(f"Cloning project '{project_name_to_clone}' as '{ai_project_name}'")
