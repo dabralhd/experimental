@@ -1,0 +1,14 @@
+{
+    "uuid": "8142a7d2-b9f6-4176-ae65-c6b4abe85201",
+    "ai_project_name": "SmartDrillOrientation",
+    "type": null,
+    "display_name": null,
+    "description": "A project to develop a smart drill that detects its orientation (horizontal or vertical) using sensor data.",
+    "version": "1.0.0",
+    "last_update_time": "2025-11-11 10:41:25.128571",
+    "creation_time": "2025-11-11 10:41:25.128571",
+    "project_owner_uuid": "e846e79f-079d-4b0c-9d5b-beb127b84012",
+    "models": [],
+    "deployments": [],
+    "applications": []
+}

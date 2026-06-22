@@ -1,0 +1,106 @@
+{
+    "uuid": "4514b961-ffa6-432f-ad73-8e0272c13bc7",
+    "ai_project_name": "project-1",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "schema_version": null,
+    "last_update_time": "2026-06-04 10:52:19.904926",
+    "creation_time": "2026-06-04 10:33:55.704881",
+    "project_owner_uuid": "ea66524a-2778-4966-a6ed-340abc5bc04b",
+    "models": [
+        {
+            "uuid": "5c4f0fc5-8258-4a30-83dd-81b26bf83430",
+            "name": "model-1",
+            "dataset": {
+                "name": "lsm6dsv16x_stationary_walking",
+                "dataset_id": "01kt92mb2wx93ng9zkfsnnz65d"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary",
+                    "walking"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-06-04 10:33:57.994932",
+            "last_update_time": "2026-06-04 10:33:57.994943",
+            "model_owner_uuid": "ea66524a-2778-4966-a6ed-340abc5bc04b",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.json",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2026-06-04 10:35:00.657185",
+                "creation_time": "2026-06-04 10:35:00.657182"
+            }
+        },
+        {
+            "uuid": "3d7561eb-d7f9-4d8e-8aca-8eb98ed04dcf",
+            "name": "model-1-acconly",
+            "dataset": {
+                "name": "lsm6dsv16x_stationary_walking",
+                "dataset_id": "01kt92mb2wx93ng9zkfsnnz65d"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary",
+                    "walking"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-06-04 10:52:19.873984",
+            "last_update_time": "2026-06-04 10:52:19.873994",
+            "model_owner_uuid": "ea66524a-2778-4966-a6ed-340abc5bc04b",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.json",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2026-06-04 10:53:00.542580",
+                "creation_time": "2026-06-04 10:53:00.542575"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

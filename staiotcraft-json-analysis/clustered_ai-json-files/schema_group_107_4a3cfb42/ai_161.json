@@ -1,0 +1,181 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v11",
+    "ai_project_name": "Tennis_01",
+    "display_name": "Tennis Activity Recognition",
+    "description": "Classification of tennis shots using the MLC, including forehand, backhand, slice-forehand, slice-backhand, and serve strokes.\n\nThis example leverages both the accelerometer and the gyroscope sensors to better detect the movements. To use this example effectively, plug the DIL24 extension onto the board and place the board on the outside of the right wrist and secure it firmly. Make sure it is oriented in such a way that the two buttons are facing toward your shoulder, with the LEDs and logos visible and facing outward. In case you need a different placement on the wrist or want to add some more movements of your own, just clone the project into your workspace, collect a new dataset, and retrain the model.",
+    "type": "entertainment",
+    "uuid": "3056e7fd-d283-4db7-882f-41fc88287bbf",
+    "version": "1.0.0",
+    "creation_time": "2025-10-10 12:36:26.659779",
+    "last_update_time": "2025-10-10 12:36:26.659779",
+    "project_owner_uuid": "29836f82-9246-4b16-9f1b-7481e067c8d3",
+    "models": [
+        {
+            "uuid": "c2ad78b3-a293-4c53-87a4-911864506c30",
+            "name": "tennis_activity_recognition_80x",
+            "description": "Model to recognize tennis shots, with an Auto-ML based approach.",
+            "creation_time": "2025-10-10 12:36:26.659794",
+            "last_update_time": "2025-10-10 12:36:26.659800",
+            "model_owner_uuid": "29836f82-9246-4b16-9f1b-7481e067c8d3",
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "no_shot",
+                    "serve",
+                    "backhand_slice",
+                    "forehand_slice",
+                    "backhand",
+                    "forehand"
+                ]
+            },
+            "dataset": {
+                "dataset_id": "01k771yr1pkn3qtvgye8f0gkrr",
+                "name": "tennis_activity_80x"
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv80x",
+                "device": "steval-mkboxpro"
+            },
+            "data_sufficiency": null,
+            "training": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": null
+                        },
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "artifacts": [
+                    "lsm6dsv80x_mlc.json",
+                    "lsm6dsv80x_mlc.h"
+                ],
+                "reports": [
+                    "report.json"
+                ]
+            },
+            "codegen": null,
+            "building": null
+        },
+        {
+            "uuid": "ffe1ed6e-4c67-47b6-aaad-4df7dcd3fc8d",
+            "name": "tennis_activity_recognition_320x",
+            "description": "Model to recognize tennis shots, with an Auto-ML based approach.",
+            "creation_time": "2025-10-10 12:36:26.659797",
+            "last_update_time": "2025-10-10 12:36:26.659803",
+            "model_owner_uuid": "29836f82-9246-4b16-9f1b-7481e067c8d3",
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "no_shot",
+                    "serve",
+                    "backhand_slice",
+                    "forehand_slice",
+                    "backhand",
+                    "forehand"
+                ]
+            },
+            "dataset": {
+                "dataset_id": "01k771ysjy6etgz52szrx0gaeh",
+                "name": "tennis_activity_320"
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv320x",
+                "device": "steval-mkboxpro"
+            },
+            "data_sufficiency": null,
+            "training": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": null
+                        },
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "artifacts": [
+                    "lsm6dsv320x_mlc.json",
+                    "lsm6dsv320x_mlc.h"
+                ],
+                "reports": [
+                    "report.json"
+                ]
+            },
+            "codegen": null,
+            "building": null
+        }
+    ],
+    "applications": [
+        {
+            "uuid": "a8f291f6-a3c1-4775-98df-ca0d501e8425",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-7.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_Gateway;7",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-7.2.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/staiotcraft_rpi_gateway_1_4_0.img.gz",
+            "module_id": "edgeMLC"
+        },
+        {
+            "uuid": "7c1ba5f3-8474-4f47-a247-7e5ea2e45961",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-7.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;7",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_3_1_0.bin",
+            "binary_id": 381,
+            "protocol": 2
+        },
+        {
+            "uuid": "a162b0a5-b57f-41f3-b09c-2200543e40f7",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_STAIOTCFT_AI_Inertial-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_STAIOTCFT_AI_Inertial;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/FP-SNS-STAIOTCFT_AI_Inertial_AssetTrackingOnMLC_1_0_0.bin",
+            "binary_id": 418,
+            "protocol": 1
+        },
+        {
+            "uuid": "ab63218f-a382-4046-bf4f-db18879eefe3",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/AI_SSM-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:AI_SSM;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/AI_SSM_1_0_0.bin",
+            "binary_id": -1,
+            "protocol": 0,
+            "bluestv3_payload": {
+                "device_id": "0xXX",
+                "fw_id": "0xYY",
+                "payload_id": "0xZZWW",
+                "decoding_schema": [
+                    {
+                        "telemetry": "label_id",
+                        "type": "int8"
+                    }
+                ]
+            }
+        }
+    ],
+    "deployments": []
+}

@@ -1,0 +1,309 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "Models Schema.",
+    "description": "Models Schema for the models section of an AI project file.",
+    "version": "v8",
+    "default": {},
+    "required": [
+        "models"
+    ],
+    "additionalProperties": true,
+    "properties": {
+        "models": {
+            "$id": "#/properties/models",
+            "type": "array",
+            "title": "Models section.",
+            "description": "Models of an AI project.",
+            "default": [],
+            "additionalItems": true,
+            "items": {
+                "anyOf": [
+                    {
+                        "$id": "#/properties/models/items/anyOf/0",
+                        "type": "object",
+                        "title": "A model instance.",
+                        "description": "Description of the model instance.",
+                        "default": {},
+                        "required": [
+                            "uuid",
+                            "name",
+                            "description", 
+                            "creation_time",
+                            "last_update_time",
+                            "metadata",
+                            "dataset",
+                            "target",
+                            "training"
+                        ],
+                        "additionalProperties": true,
+                        "properties": {
+                            "uuid": {
+                                "$id": "#/properties/models/items/anyOf/0/properties/uuid",
+                                "type": "string",
+                                "title": "Model UUID.",
+                                "description": "UUID of this model.",
+                                "default": ""
+                            },
+                            "name": {
+                                "$id": "#/properties/models/items/anyOf/0/properties/name",
+                                "type": "string",
+                                "title": "Model name.",
+                                "description": "Name of the model.",
+                                "default": ""
+                            },
+                            "description": {
+                                "$id": "#/properties/models/items/anyOf/0/properties/description",
+                                "type": [
+                                    "string",
+                                    "null"
+                                ],
+                                "title": "Model description.",
+                                "description": "Description of the model.",
+                                "default": ""
+                            },
+                            "creation_time": {
+                                "$id": "#/properties/models/items/anyOf/0/properties/creation_time",
+                                "type": "string",
+                                "title": "The Model creation time.",
+                                "description": "The creation timestamp of the Model (x.y.z).",
+                                "pattern": "YYYY-MM-DDTHH:MM:SS.mmmZ",
+                                "default": ""
+                            },
+                            "last_update_time": {
+                                "$id": "#/properties/models/items/anyOf/0/properties/last_update_time",
+                                "type": "string",
+                                "title": "The Model last update time.",
+                                "description": "The last update timestamp of the Model (x.y.z).",
+                                "pattern": "YYYY-MM-DDTHH:MM:SS.mmmZ",
+                                "default": ""
+                            },
+                            "metadata": {
+                                "$id": "#/properties/models/items/anyOf/0/properties/metadata",
+                                "type": "object",
+                                "title": "Model metadata.",
+                                "description": "Classes or parameter sets.",
+                                "default": {},
+                                "required": [
+                                    "type",
+                                    "classes"
+                                ],
+                                "additionalProperties": true,
+                                "properties": {
+                                    "type": {
+                                        "$id": "#/properties/models/items/anyOf/0/properties/model_type",
+                                        "type": "string",
+                                        "title": "Model type.",
+                                        "description": "The type of the AI model.",
+                                        "default": "",
+                                        "enum": [
+                                            "classifier",
+                                            "anomaly_detector",
+                                            "predictor"
+                                        ]
+                                    },
+                                    "classes": {
+                                        "$id": "#/properties/models/items/anyOf/0/properties/metadata/properties/classes",
+                                        "type": "array",
+                                        "title": "Classes.",
+                                        "description": "The target classes.",
+                                        "default": [],
+                                        "additionalItems": true,
+                                        "items": {
+                                            "anyOf": [
+                                                {
+                                                    "$id": "#/properties/models/items/anyOf/0/properties/metadata/properties/classes/items/anyOf/0",
+                                                    "type": "string",
+                                                    "title": "Class name",
+                                                    "description": "Name of the class.",
+                                                    "default": ""
+                                                }
+                                            ],
+                                            "$id": "#/properties/models/items/anyOf/0/properties/metadata/properties/classes/items"
+                                        }
+                                    }
+                                }
+                            },
+                            "dataset": {
+                                "$id": "#/properties/models/items/anyOf/0/properties/dataset",
+                                "type": "object",
+                                "title": "Model Dataset",
+                                "description": "Dataset used by the model",
+                                "default": {},
+                                "required": [
+                                    "dataset_id",
+                                    "name"
+                                ],
+                                "additionalProperties": true,
+                                "properties": {
+                                    "dataset_id": {
+                                        "$id": "#/properties/models/items/anyOf/0/properties/dataset/properties/dataset_id",
+                                        "type": "string",
+                                        "title": "Dataset ID",
+                                        "description": "Dataset ID",
+                                        "default": ""
+                                    },
+                                    "name": {
+                                        "$id": "#/properties/models/items/anyOf/0/properties/dataset/properties/dataset_name",
+                                        "type": "string",
+                                        "title": "Dataset name",
+                                        "description": "Dataset name",
+                                        "default": ""
+                                    }
+                                }
+                            },
+                            "target": {
+                                "$id": "#/properties/models/items/anyOf/0/properties/target",
+                                "type": "object",
+                                "title": "Model Target Device",
+                                "description": "Model Target ST HW Device",
+                                "default": {},
+                                "required": [
+                                    "type",
+                                    "component",
+                                    "device"
+                                ],
+                                "additionalProperties": true,
+                                "properties": {
+                                    "type": {
+                                        "$id": "#/properties/models/items/anyOf/0/properties/target/properties/target_type",
+                                        "type": "string",
+                                        "title": "Target type",
+                                        "description": "Target type",
+                                        "default": ""
+                                    },
+                                    "component": {
+                                        "$id": "#/properties/models/items/anyOf/0/properties/target/properties/target_component",
+                                        "type": "string",
+                                        "title": "Target Component",
+                                        "description": "Target Component",
+                                        "default": ""
+                                    },
+                                    "device": {
+                                        "$id": "#/properties/models/items/anyOf/0/properties/target/properties/target_device",
+                                        "type": "string",
+                                        "title": "Target Device",
+                                        "description": "Target Device",
+                                        "default": ""
+                                    }
+                                }
+                            },
+                            "training": {
+                                "$id": "#/properties/models/items/anyOf/0/properties/training",
+                                "type": "object",
+                                "title": "Model Training Configuration",
+                                "description": "Model Training Configuration",
+                                "default": {},
+                                "required": [
+                                    "creation_time",
+                                    "last_update_time",
+                                    "runtime",
+                                    "configuration",
+                                    "artifacts",
+                                    "reports"
+                                ],
+                                "additionalProperties": true,
+                                "properties": {
+                                    "creation_time": {
+                                        "$id": "#/properties/models/items/anyOf/0/properties/training/properties/creation_time",
+                                        "type": "string",
+                                        "title": "The Model creation time.",
+                                        "description": "The creation timestamp of the Model Training (x.y.z).",
+                                        "pattern": "YYYY-MM-DDTHH:MM:SS.mmmZ",
+                                        "default": ""
+                                    },
+                                    "last_update_time": {
+                                        "$id": "#/properties/models/items/anyOf/0/properties/training/properties/last_update_time",
+                                        "type": "string",
+                                        "title": "The Model last update time.",
+                                        "description": "The last update timestamp of the Model Training (x.y.z).",
+                                        "pattern": "YYYY-MM-DDTHH:MM:SS.mmmZ",
+                                        "default": ""
+                                    },
+                                    "runtime": {
+                                        "$id": "#/properties/models/items/anyOf/0/properties/training/properties/runtime",
+                                        "type": "object",
+                                        "title": "Training Runtime Configuration",
+                                        "description": "Training Runtime Configuration",
+                                        "default": {},
+                                        "required": [
+                                            "type",
+                                            "jobs"
+                                        ],
+                                        "additionalProperties": true,
+                                        "properties": {
+                                            "type": {
+                                                "$id": "#/properties/models/items/anyOf/0/properties/training/properties/runtime/properties/job_type",
+                                                "type": "string",
+                                                "title": "Runtime Job type",
+                                                "description": "The type of the Job in the runtime",
+                                                "default": "",
+                                                "enum": [
+                                                    "job",
+                                                    "jupyter_notebook"
+                                                ]
+                                            },
+                                            "jobs": {
+                                                "$id": "#/properties/models/items/anyOf/0/properties/training/properties/runtime/properties/jobs",
+                                                "type": "array",
+                                                "title": "Jobs",
+                                                "description": "The Jobs list in this runtime",
+                                                "default": [],
+                                                "additionalItems": true,
+                                                "items": {
+                                                    "anyOf": [
+                                                        {
+                                                            "$id": "#/properties/models/items/anyOf/0/properties/training/properties/runtime/properties/jobs/items/anyOf/0",
+                                                            "type": "object",
+                                                            "title": "Job Object Description",
+                                                            "description": "Job Object Description",
+                                                            "default": {},
+                                                            "required": [
+                                                                "name",
+                                                                "version",
+                                                                "template_id"
+                                                            ],
+                                                            "additionalProperties": true,
+                                                            "properties": {
+                                                                "name": {
+                                                                    "$id": "#/properties/models/items/anyOf/0/properties/training/properties/runtime/properties/jobs/items/anyOf/0/properties/job_name",
+                                                                    "type": "string",
+                                                                    "title": "Job Name",
+                                                                    "description": "Name of the Job being run",
+                                                                    "default": ""
+                                                                },
+                                                                "version": {
+                                                                    "$id": "#/properties/models/items/anyOf/0/properties/training/properties/runtime/properties/jobs/items/anyOf/0/properties/version",
+                                                                    "type": "string",
+                                                                    "title": "Job Version",
+                                                                    "description": "Version of the template ID",
+                                                                    "default": ""
+                                                                },
+                                                                "template_id": {
+                                                                    "$id": "#/properties/models/items/anyOf/0/properties/training/properties/runtime/properties/jobs/items/anyOf/0/properties/template_id",
+                                                                    "type": "string",
+                                                                    "title": "Template ID",
+                                                                    "description": "JobControl Template ID",
+                                                                    "default": ""
+                                                                }
+                                                            }
+                                                        }
+                                                    ],
+                                                    "$id": "#/properties/models/items/anyOf/0/properties/training/properties/runtime/properties/jobs/items"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "codegen": {},
+                            "building": {}
+                        }
+                    }
+                ],
+                "$id": "#/properties/models/items"
+            }
+        }
+    }
+}

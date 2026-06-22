@@ -1,0 +1,342 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "$id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "ai_project_name": {
+          "type": "object",
+          "properties": {
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "default": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "$id",
+            "default",
+            "description",
+            "title",
+            "type"
+          ]
+        },
+        "display_name": {
+          "type": "object",
+          "properties": {
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "default": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "$id",
+            "default",
+            "description",
+            "title",
+            "type"
+          ]
+        },
+        "description": {
+          "type": "object",
+          "properties": {
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "default": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "$id",
+            "default",
+            "description",
+            "title",
+            "type"
+          ]
+        },
+        "uuid": {
+          "type": "object",
+          "properties": {
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "examples": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "$id",
+            "description",
+            "examples",
+            "title",
+            "type"
+          ]
+        },
+        "version": {
+          "type": "object",
+          "properties": {
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "pattern": {
+              "type": "string"
+            },
+            "default": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "$id",
+            "default",
+            "description",
+            "pattern",
+            "title",
+            "type"
+          ]
+        },
+        "creation_time": {
+          "type": "object",
+          "properties": {
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "pattern": {
+              "type": "string"
+            },
+            "default": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "$id",
+            "default",
+            "description",
+            "pattern",
+            "title",
+            "type"
+          ]
+        },
+        "last_update_time": {
+          "type": "object",
+          "properties": {
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "pattern": {
+              "type": "string"
+            },
+            "default": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "$id",
+            "default",
+            "description",
+            "pattern",
+            "title",
+            "type"
+          ]
+        },
+        "owner": {
+          "type": "object",
+          "properties": {
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "$id",
+            "description",
+            "title",
+            "type"
+          ]
+        },
+        "reference": {
+          "type": "object",
+          "properties": {
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "default": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "$id",
+            "default",
+            "description",
+            "title",
+            "type"
+          ]
+        },
+        "models": {
+          "type": "object",
+          "properties": {
+            "$ref": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "$ref",
+            "description"
+          ]
+        },
+        "deployments": {
+          "type": "object",
+          "properties": {
+            "$ref": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "$ref",
+            "description"
+          ]
+        }
+      },
+      "required": [
+        "ai_project_name",
+        "creation_time",
+        "deployments",
+        "description",
+        "display_name",
+        "last_update_time",
+        "models",
+        "owner",
+        "reference",
+        "uuid",
+        "version"
+      ]
+    }
+  },
+  "required": [
+    "$id",
+    "$schema",
+    "description",
+    "properties",
+    "required",
+    "title",
+    "type",
+    "version"
+  ]
+}

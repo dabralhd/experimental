@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "ai_project_name": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "array"
+    },
+    "models": {
+      "type": "array"
+    },
+    "outputs": {
+      "type": "array"
+    },
+    "deployments": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "$schema",
+    "ai_project_name",
+    "deployments",
+    "description",
+    "inputs",
+    "models",
+    "outputs",
+    "uuid",
+    "version"
+  ]
+}

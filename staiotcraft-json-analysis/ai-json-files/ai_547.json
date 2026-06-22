@@ -1,0 +1,54 @@
+{
+    "uuid": "64ee8195-0f63-485b-84f0-4f70e706c92e",
+    "ai_project_name": "In_pocket",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2024-11-20 15:45:10.086572",
+    "creation_time": "2024-11-20 15:44:56.411325",
+    "models": [
+        {
+            "uuid": "06a2b23d-5d55-48eb-9007-51f63e38b011",
+            "name": "In_pocket",
+            "dataset": {
+                "name": "In_pocket",
+                "dataset_id": "01jd4zq3td30g3n0skyw1qjjk5"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "worn_on_right_shoulder",
+                    "worn_on_left_shoulder",
+                    "worn_correctly",
+                    "not_worn"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2024-11-20 15:45:10.048708",
+            "last_update_time": "2024-11-20 15:45:10.048718",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2024-11-22 15:33:54.679194",
+                "creation_time": "2024-11-22 15:33:54.679190"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

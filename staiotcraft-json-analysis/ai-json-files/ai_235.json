@@ -1,0 +1,33 @@
+{
+    "uuid": "ca177c4b-8924-43f7-b3ca-976fe5cb7854",
+    "ai_project_name": "new_project_name_991651",
+    "type": null,
+    "display_name": null,
+    "description": "Project example description",
+    "version": "1.0.0",
+    "last_update_time": "2024-10-28 13:42:19.305959",
+    "creation_time": "2024-10-28 13:42:19.305959",
+    "models": [
+        {
+            "uuid": "3f1ba88c-6361-4863-a347-4ecf3ad855b5",
+            "name": "model_example",
+            "dataset": {
+                "name": "01hy0rzc8jfhk5svwbb9reze42",
+                "dataset_id": "01hy0rzc8jfhk5svwbb9reze42"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": null
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2024-10-28 13:42:20.696439",
+            "last_update_time": "2024-10-28 13:42:20.696452"
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

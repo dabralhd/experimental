@@ -1,0 +1,13 @@
+{
+    "uuid": "d14e6511-24f6-4111-a4be-6e67cbbc1789",
+    "ai_project_name": "RoboticsDataSet",
+    "type": null,
+    "display_name": null,
+    "description": "Robotics Data Set can be stored here",
+    "version": "1.0.0",
+    "last_update_time": "2025-03-19 10:06:00.100506",
+    "creation_time": "2025-03-19 10:06:00.100506",
+    "models": [],
+    "deployments": [],
+    "applications": []
+}

@@ -1,0 +1,53 @@
+{
+    "uuid": "a4dd4f5c-c53e-498c-a97b-f722c379aeda",
+    "ai_project_name": "ExampleTestRun",
+    "type": null,
+    "display_name": null,
+    "description": "This is a dry-test run setup",
+    "version": null,
+    "last_update_time": "2026-05-04 15:13:33.844305",
+    "creation_time": "2026-05-04 15:13:32.340851",
+    "project_owner_uuid": "d2a55444-90f1-7018-9a49-b90c3a197d0b",
+    "models": [
+        {
+            "uuid": "1606b869-e7cb-40cd-b3e1-1ed37bd7ced0",
+            "name": "ThisIsADryRunTest",
+            "dataset": {
+                "name": "tennis_activity_recognition_80x_on_steval_mkboxpro",
+                "dataset_id": "01kq7sa7nmeh8a3achg92m4a94"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "no_shot",
+                    "serve",
+                    "backhand_slice",
+                    "forehand_slice",
+                    "backhand",
+                    "forehand"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-05-04 15:13:33.820848",
+            "last_update_time": "2026-05-04 15:13:33.820857",
+            "model_owner_uuid": "d2a55444-90f1-7018-9a49-b90c3a197d0b",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [],
+                "artifacts": [],
+                "last_update_time": "2026-05-04 15:13:56.319808",
+                "creation_time": "2026-05-04 15:13:56.319805"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

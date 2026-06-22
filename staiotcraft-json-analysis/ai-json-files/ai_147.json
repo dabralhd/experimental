@@ -1,0 +1,113 @@
+{
+    "uuid": "9158053a-4ab1-4fcb-9d52-cd6b35f79db9",
+    "ai_project_name": "ImportProject",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "last_update_time": "2026-04-07 09:59:21.557042",
+    "creation_time": "2026-03-31 09:15:12.016480",
+    "project_owner_uuid": "29836f82-9246-4b16-9f1b-7481e067c8d3",
+    "models": [
+        {
+            "uuid": "8e0e34a5-4c01-4c01-b6af-8923ef2346d7",
+            "name": "lsm6dsv16x_activity_recognition_for_mobile_1",
+            "dataset": {
+                "name": "lsm6dsv16x_activity_recognition_for_mobile_1",
+                "dataset_id": "01knkn0j1f1bnb3c83kt8rmrsm"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary",
+                    "walking",
+                    "jogging",
+                    "biking",
+                    "driving"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-04-07 09:45:13.524252",
+            "last_update_time": "2026-04-07 09:45:13.524263",
+            "model_owner_uuid": "29836f82-9246-4b16-9f1b-7481e067c8d3",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.json",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2026-04-07 11:41:09.190607",
+                "creation_time": "2026-04-07 11:41:09.190604"
+            }
+        },
+        {
+            "uuid": "5d844915-33c7-4354-acea-715f0a8e5727",
+            "name": "ism330dhcx_head_gestures",
+            "dataset": {
+                "name": "ism330dhcx_head_gestures",
+                "dataset_id": "01knkndp3dnxypqjxtmj361sf4"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "nod",
+                    "shake",
+                    "stationary",
+                    "swing",
+                    "walk"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "ism330dhcx",
+                "device": "steval-stwinbx1"
+            },
+            "creation_time": "2026-04-07 09:48:27.222040",
+            "last_update_time": "2026-04-07 09:48:27.222051",
+            "model_owner_uuid": "29836f82-9246-4b16-9f1b-7481e067c8d3"
+        },
+        {
+            "uuid": "de851a83-b956-40bc-841d-59951166aeea",
+            "name": "lsm6dsv320x_tennis_activity",
+            "dataset": {
+                "name": "lsm6dsv320x_tennis_activity",
+                "dataset_id": "01knkp1586yj5wwe4g19z29ar7"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "serve",
+                    "forehand",
+                    "backhand"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv320x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-04-07 09:59:21.440185",
+            "last_update_time": "2026-04-07 09:59:21.440195",
+            "model_owner_uuid": "29836f82-9246-4b16-9f1b-7481e067c8d3"
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

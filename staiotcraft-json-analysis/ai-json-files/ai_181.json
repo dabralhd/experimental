@@ -1,0 +1,648 @@
+{
+    "$schema": "/home/workspace/.stedgeai/schemas/ai_main_schema.json",
+    "schema_version": "v5",
+    "ai_project_name": "get_started_image_classification",
+    "uuid": "daf4c22e-5723-4932-b93d-4473e4f721c3",
+    "description": "Get started project for image classification.",
+    "version": "0.0.1",
+    "inputs": [
+        {
+            "uuid": "8f810de7-6c58-4bf8-acc8-7ed19798f598",
+            "input_type": "image",
+            "model_ref": "30f4a32f-9ebf-45f6-bf96-360d08cdfdec",
+            "logs": [
+                {
+                    "uuid": "d15d0b37-fe17-4e04-8a29-1f9b79b369d7",
+                    "name": "2021-03-08T17-27-16.000Z",
+                    "start_time": "2021-03-08T17:27:16.000Z",
+                    "end_time": "2021-03-08T17:58:16.000Z",
+                    "description": "Description of the acquisition...",
+                    "device_description": {
+                        "part_number": "OpenMV-H7-Plus",
+                        "serial_number": "",
+                        "alias": "MV1",
+                        "fw_name": "",
+                        "fw_version": "",
+                        "fw_name:": ""
+                    },
+                    "annotated": true,
+                    "start_date": "2021-03-08T17:27:16.000Z"
+                },
+                {
+                    "uuid": "15f90d68-d8f7-4c80-8451-6d4169d5cddc",
+                    "name": "2021-03-08T16-57-24.000Z",
+                    "start_time": "2021-03-08T16:57:24.000Z",
+                    "end_time": "2021-03-08T17:23:54.000Z",
+                    "description": "Description of the acquisition...",
+                    "device_description": {
+                        "part_number": "OpenMV-H7-Plus",
+                        "serial_number": "",
+                        "alias": "MV1",
+                        "fw_name": "",
+                        "fw_version": "",
+                        "fw_name:": ""
+                    },
+                    "annotated": true,
+                    "start_date": "2021-03-08T16:57:24.000Z"
+                },
+                {
+                    "uuid": "470d3bec-62e4-4a4b-bd6a-a67e1139043f",
+                    "name": "2021-03-08T13-34-04.000Z",
+                    "start_time": "2021-03-08T13:34:04.000Z",
+                    "end_time": "2021-03-08T16:45:05.000Z",
+                    "description": "Description of the acquisition...",
+                    "device_description": {
+                        "part_number": "OpenMV-H7-Plus",
+                        "serial_number": "",
+                        "alias": "MV1",
+                        "fw_name": "",
+                        "fw_version": "",
+                        "fw_name:": ""
+                    },
+                    "annotated": true,
+                    "start_date": "2021-03-08T13:34:04.000Z"
+                },
+                {
+                    "uuid": "662830f8-42c2-4377-b6b2-0e4adf3edcb1",
+                    "name": "2021-03-08T12-04-37.000Z",
+                    "start_time": "2021-03-08T12:04:37.000Z",
+                    "end_time": "2021-03-08T12:12:32.000Z",
+                    "description": "Description of the acquisition...",
+                    "device_description": {
+                        "part_number": "OpenMV-H7-Plus",
+                        "serial_number": "",
+                        "alias": "MV1",
+                        "fw_name": "",
+                        "fw_version": "",
+                        "fw_name:": ""
+                    },
+                    "annotated": true,
+                    "start_date": "2021-03-08T12:04:37.000Z"
+                },
+                {
+                    "uuid": "eb848359-ce1a-4bb0-a364-c8de743b3d00",
+                    "name": "2021-03-08T10-21-11.000Z",
+                    "start_time": "2021-03-08T10:21:11.000Z",
+                    "end_time": "2021-03-08T11:20:31.000Z",
+                    "description": "Description of the acquisition...",
+                    "device_description": {
+                        "part_number": "OpenMV-H7-Plus",
+                        "serial_number": "",
+                        "alias": "MV1",
+                        "fw_name": "",
+                        "fw_version": "",
+                        "fw_name:": ""
+                    },
+                    "annotated": true,
+                    "start_date": "2021-03-08T10:21:11.000Z"
+                }
+            ],
+            "augmentation": [
+                "TopCamera_Conformant.ipynb",
+                "TopCamera_Shape-defected.ipynb"
+            ],
+            "tools": [
+                {
+                    "name": "split_images",
+                    "version": "1.0.0",
+                    "input": "image",
+                    "model": "classifier",
+                    "output": "openmv_stm32_bin",
+                    "section": "input",
+                    "parameters": {
+                        "-i": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}",
+                        "-o": "{models_folder}/{model_folder}/{dataset_folder}",
+                        "-r": ""
+                    }
+                }
+            ]
+        },
+        {
+            "uuid": "aa26d2a2-d3a6-4810-bec3-596e7dbcfc4b",
+            "input_type": "image",
+            "model_ref": "ae1252f0-aa67-4e9f-b3e4-79a4f275cea3",
+            "logs": [
+                {
+                    "uuid": "2fad2d67-a0e7-4427-8293-010a71e01a78",
+                    "name": "2021-03-05T15-44-34.000Z",
+                    "start_time": "2021-03-05T15:44:34.000Z",
+                    "end_time": "2021-03-05T15:49:37.000Z",
+                    "description": "Description of the acquisition...",
+                    "device_description": {
+                        "part_number": "OpenMV-H7-Plus",
+                        "serial_number": "",
+                        "alias": "MV1",
+                        "fw_name": "",
+                        "fw_version": ""
+                    },
+                    "annotated": true
+                },
+                {
+                    "uuid": "9212018e-5d1e-4e49-b0e7-9ce181cca363",
+                    "name": "2021-03-05T15-44-44.000Z",
+                    "start_time": "2021-03-05T15:44:44.000Z",
+                    "end_time": "2021-03-05T15:49:36.000Z",
+                    "description": "Description of the acquisition...",
+                    "device_description": {
+                        "part_number": "OpenMV-H7-Plus",
+                        "serial_number": "",
+                        "alias": "MV1",
+                        "fw_name": "",
+                        "fw_version": ""
+                    },
+                    "annotated": true
+                },
+                {
+                    "uuid": "d6b1e579-2b5d-47f8-ae17-6bf33e3c26ef",
+                    "name": "2021-03-05T15-50-41.000Z",
+                    "start_time": "2021-03-05T15:50:41.000Z",
+                    "end_time": "2021-03-05T18:29:04.000Z",
+                    "description": "Description of the acquisition...",
+                    "device_description": {
+                        "part_number": "OpenMV-H7-Plus",
+                        "serial_number": "",
+                        "alias": "MV1",
+                        "fw_name": "",
+                        "fw_version": ""
+                    },
+                    "annotated": true
+                },
+                {
+                    "uuid": "38f9f381-2396-459d-ad19-9bfd990c986a",
+                    "name": "2021-03-05T15-50-51.000Z",
+                    "start_time": "2021-03-05T15:50:51.000Z",
+                    "end_time": "2021-03-05T18:29:03.000Z",
+                    "description": "Description of the acquisition...",
+                    "device_description": {
+                        "part_number": "OpenMV-H7-Plus",
+                        "serial_number": "",
+                        "alias": "MV1",
+                        "fw_name": "",
+                        "fw_version": ""
+                    },
+                    "annotated": true
+                },
+                {
+                    "uuid": "5147e731-feb1-4706-8055-e24eb6f45128",
+                    "name": "2021-03-08T10-21-21.000Z",
+                    "start_time": "2021-03-08T10:21:21.000Z",
+                    "end_time": "2021-03-08T11:20:30.000Z",
+                    "description": "Description of the acquisition...",
+                    "device_description": {
+                        "part_number": "OpenMV-H7-Plus",
+                        "serial_number": "",
+                        "alias": "MV1",
+                        "fw_name": "",
+                        "fw_version": ""
+                    },
+                    "annotated": true
+                },
+                {
+                    "uuid": "f9b99d44-79d3-481c-9da8-9da6b3a0426b",
+                    "name": "2021-03-08T10-21-31.000Z",
+                    "start_time": "2021-03-08T10:21:31.000Z",
+                    "end_time": "2021-03-08T11:20:29.000Z",
+                    "description": "Description of the acquisition...",
+                    "device_description": {
+                        "part_number": "OpenMV-H7-Plus",
+                        "serial_number": "",
+                        "alias": "MV1",
+                        "fw_name": "",
+                        "fw_version": ""
+                    },
+                    "annotated": true
+                },
+                {
+                    "uuid": "efb8074a-26c6-479c-b618-75e362cf9b17",
+                    "name": "2021-03-08T12-04-47.000Z",
+                    "start_time": "2021-03-08T12:04:47.000Z",
+                    "end_time": "2021-03-08T12:12:33.000Z",
+                    "description": "Description of the acquisition...",
+                    "device_description": {
+                        "part_number": "OpenMV-H7-Plus",
+                        "serial_number": "",
+                        "alias": "MV1",
+                        "fw_name": "",
+                        "fw_version": ""
+                    },
+                    "annotated": true
+                },
+                {
+                    "uuid": "de89ba0c-7d71-4e09-9ae4-0529567bbf74",
+                    "name": "2021-03-08T12-04-57.000Z",
+                    "start_time": "2021-03-08T12:04:57.000Z",
+                    "end_time": "2021-03-08T12:12:34.000Z",
+                    "description": "Description of the acquisition...",
+                    "device_description": {
+                        "part_number": "OpenMV-H7-Plus",
+                        "serial_number": "",
+                        "alias": "MV1",
+                        "fw_name": "",
+                        "fw_version": ""
+                    },
+                    "annotated": true
+                },
+                {
+                    "uuid": "3149119f-277e-40fd-8367-c061c6363051",
+                    "name": "2021-03-08T13-34-14.000Z",
+                    "start_time": "2021-03-08T13:34:14.000Z",
+                    "end_time": "2021-03-08T16:45:06.000Z",
+                    "description": "Description of the acquisition...",
+                    "device_description": {
+                        "part_number": "OpenMV-H7-Plus",
+                        "serial_number": "",
+                        "alias": "MV1",
+                        "fw_name": "",
+                        "fw_version": ""
+                    },
+                    "annotated": true
+                },
+                {
+                    "uuid": "2fad2d67-a0e7-4427-8293-010a71e01a780",
+                    "name": "2021-03-08T13-34-24.000Z",
+                    "start_time": "2021-03-08T13:34:24.000Z",
+                    "end_time": "2021-03-08T16:45:06.000Z",
+                    "description": "Description of the acquisition...",
+                    "device_description": {
+                        "part_number": "OpenMV-H7-Plus",
+                        "serial_number": "",
+                        "alias": "MV1",
+                        "fw_name": "",
+                        "fw_version": ""
+                    },
+                    "annotated": true
+                },
+                {
+                    "uuid": "2fad2d67-a0e7-4427-8293-010a71e01a781",
+                    "name": "2021-03-08T16-57-34.000Z",
+                    "start_time": "2021-03-08T16:57:34.000Z",
+                    "end_time": "2021-03-08T17:23:55.000Z",
+                    "description": "Description of the acquisition...",
+                    "device_description": {
+                        "part_number": "OpenMV-H7-Plus",
+                        "serial_number": "",
+                        "alias": "MV1",
+                        "fw_name": "",
+                        "fw_version": ""
+                    },
+                    "annotated": true
+                },
+                {
+                    "uuid": "2fad2d67-a0e7-4427-8293-010a71e01a782",
+                    "name": "2021-03-08T16-57-44.000Z",
+                    "start_time": "2021-03-08T16-57-44.000Z",
+                    "end_time": "2021-03-08T17-23-56.000Z",
+                    "description": "Description of the acquisition...",
+                    "device_description": {
+                        "part_number": "OpenMV-H7-Plus",
+                        "serial_number": "",
+                        "alias": "MV1",
+                        "fw_name": "",
+                        "fw_version": ""
+                    },
+                    "annotated": true
+                },
+                {
+                    "uuid": "2fad2d67-a0e7-4427-8293-010a71e01a783",
+                    "name": "2021-03-08T17-27-26.000Z",
+                    "start_time": "2021-03-08T17:27:26.000Z",
+                    "end_time": "2021-03-08T17:58:16.000Z",
+                    "description": "Description of the acquisition...",
+                    "device_description": {
+                        "part_number": "OpenMV-H7-Plus",
+                        "serial_number": "",
+                        "alias": "MV1",
+                        "fw_name": "",
+                        "fw_version": ""
+                    },
+                    "annotated": true
+                },
+                {
+                    "uuid": "2fad2d67-a0e7-4427-8293-010a71e01a784",
+                    "name": "2021-03-08T17-27-36.000Z",
+                    "start_time": "2021-03-08T17:27:36.000Z",
+                    "end_time": "2021-03-08T17:58:17.000Z",
+                    "description": "Description of the acquisition...",
+                    "device_description": {
+                        "part_number": "OpenMV-H7-Plus",
+                        "serial_number": "",
+                        "alias": "MV1",
+                        "fw_name": "",
+                        "fw_version": ""
+                    },
+                    "annotated": true
+                }
+            ],
+            "augmentation": [
+                "SideCamera_Conformant.ipynb",
+                "SideCamera_Color-defected.ipynb"
+            ],
+            "tools": [
+                {
+                    "name": "split_images",
+                    "version": "1.0.0",
+                    "input": "image",
+                    "model": "classifier",
+                    "output": "openmv_stm32_bin",
+                    "section": "input",
+                    "parameters": {
+                        "-i": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}",
+                        "-o": "{models_folder}/{model_folder}/{dataset_folder}",
+                        "-r": ""
+                    }
+                }
+            ]
+        }
+    ],
+    "models": [
+        {
+            "uuid": "30f4a32f-9ebf-45f6-bf96-360d08cdfdec",
+            "name": "TopCamera",
+            "stage": "modeling",
+            "model_type": "classifier",
+            "training_type": "offline",
+            "retraining": false,
+            "model_metadata": {
+                "classes": [
+                    "Conformant",
+                    "Shape-defected"
+                ]
+            },
+            "experiments": [
+                {
+                    "uuid": "41be34a6-19e6-49e4-b96d-7e8170679ef5",
+                    "name": "MobileNetV2_160x160x3",
+                    "description": "Development of a MobileNetV2 model for images of 160x160x3 resolution.",
+                    "model_dev_file": "TopCamera_MobileNetV2_160x160x3.ipynb"
+                }
+            ],
+            "tools": []
+        },
+        {
+            "uuid": "ae1252f0-aa67-4e9f-b3e4-79a4f275cea3",
+            "name": "SideCamera",
+            "stage": "modeling",
+            "model_type": "classifier",
+            "training_type": "offline",
+            "retraining": false,
+            "model_metadata": {
+                "classes": [
+                    "Conformant",
+                    "Color-defected"
+                ]
+            },
+            "experiments": [
+                {
+                    "uuid": "e78e376e-8315-4dc9-ae79-acf4fb88e51c",
+                    "name": "MobileNetV2_160x160x3",
+                    "description": "Development of a MobileNetV2 model for images of 160x160x3 resolution.",
+                    "model_dev_file": "SideCamera_MobileNetV2_160x160x3.ipynb"
+                }
+            ],
+            "tools": []
+        }
+    ],
+    "outputs": [
+        {
+            "uuid": "8fbbcf8f-2035-4fd1-9c51-64cdc115ea0c",
+            "output_type": "openmv_stm32_bin",
+            "model_ref": "30f4a32f-9ebf-45f6-bf96-360d08cdfdec",
+            "tests": [
+                {
+                    "uuid": "269dd142-054d-4862-aaf9-e1cf2ebb0149",
+                    "name": "Baseline_h5_uncompressed",
+                    "experiment_ref": "41be34a6-19e6-49e4-b96d-7e8170679ef5",
+                    "model_file": "TopCamera_MobileNetV2_160x160x3.h5",
+                    "parameters": {
+                        "compression": "1"
+                    },
+                    "reports": [
+                        "TopCamera_MobileNetV2_160x160x3_Baseline_h5_uncompressed_analyze.json"
+                    ],
+                    "outputs": []
+                },
+                {
+                    "uuid": "ff0870b5-bb8f-4c9e-a805-b40365738c4d",
+                    "name": "Baseline_tflite_uncompressed",
+                    "experiment_ref": "41be34a6-19e6-49e4-b96d-7e8170679ef5",
+                    "model_file": "TopCamera_MobileNetV2_160x160x3.tflite",
+                    "parameters": {
+                        "compression": "1"
+                    },
+                    "reports": [
+                        "TopCamera_MobileNetV2_160x160x3_Baseline_tflite_uncompressed_analyze.json"
+                    ],
+                    "outputs": []
+                },
+                {
+                    "uuid": "204e73e9-bef0-4e0a-a3e8-3505a281fea9",
+                    "name": "Baseline_tflite_compression_4",
+                    "experiment_ref": "41be34a6-19e6-49e4-b96d-7e8170679ef5",
+                    "model_file": "TopCamera_MobileNetV2_160x160x3.tflite",
+                    "parameters": {
+                        "compression": "4"
+                    },
+                    "reports": [
+                        "TopCamera_MobileNetV2_160x160x3_Baseline_tflite_compression_4_analyze.json"
+                    ],
+                    "outputs": []
+                },
+                {
+                    "uuid": "d0131d52-0e27-4d60-b652-b7f035332fae",
+                    "name": "Baseline_tflite_compression_8",
+                    "experiment_ref": "41be34a6-19e6-49e4-b96d-7e8170679ef5",
+                    "model_file": "TopCamera_MobileNetV2_160x160x3.tflite",
+                    "parameters": {
+                        "compression": "8"
+                    },
+                    "reports": [
+                        "TopCamera_MobileNetV2_160x160x3_Baseline_tflite_compression_8_analyze.json"
+                    ],
+                    "outputs": []
+                },
+                {
+                    "uuid": "589848cd-67d5-4f2d-9feb-4c29fa349109",
+                    "name": "Pruned_tflite_uncompressed",
+                    "experiment_ref": "41be34a6-19e6-49e4-b96d-7e8170679ef5",
+                    "model_file": "TopCamera_MobileNetV2_160x160x3_pruned.tflite",
+                    "parameters": {
+                        "compression": "1"
+                    },
+                    "reports": [
+                        "TopCamera_MobileNetV2_160x160x3_Pruned_tflite_uncompressed_analyze.json"
+                    ],
+                    "outputs": []
+                },
+                {
+                    "uuid": "0caf08aa-678a-4b44-abfb-3e119246055b",
+                    "name": "Pruned_Quantized_tflite_uncompressed",
+                    "experiment_ref": "41be34a6-19e6-49e4-b96d-7e8170679ef5",
+                    "model_file": "TopCamera_MobileNetV2_160x160x3_pruned_quantized.tflite",
+                    "parameters": {
+                        "compression": "1"
+                    },
+                    "reports": [
+                        "TopCamera_MobileNetV2_160x160x3_Pruned_Quantized_tflite_uncompressed_analyze.json"
+                    ],
+                    "outputs": [
+                        "TopCamera_MobileNetV2_160x160x3_Pruned_Quantized_tflite_uncompressed.bin"
+                    ]
+                }
+            ],
+            "best_test": "0caf08aa-678a-4b44-abfb-3e119246055b",
+            "tools": [
+                {
+                    "name": "stm32ai",
+                    "version": "1.4.0",
+                    "input": "image",
+                    "model": "classifier",
+                    "output": "openmv_stm32_bin",
+                    "section": "output",
+                    "parameters": {
+                        "path": "generate",
+                        "query": {
+                            "address": "",
+                            "allocate_inputs": true,
+                            "allocate_outputs": true,
+                            "binary": false,
+                            "copy_weights_at": "",
+                            "generate_fota": false,
+                            "name": "network",
+                            "split_weigths": false,
+                            "generate_full_binary": true,
+                            "return_full_binary_only": true
+                        },
+                        "headers": {
+                            "content-type": "multipart/form-data"
+                        }
+                    }
+                }
+            ],
+            "events": [],
+            "ui": {
+                "icons": []
+            }
+        },
+        {
+            "uuid": "1a0e10a4-e788-4652-b672-f0555d53bb33",
+            "output_type": "openmv_stm32_bin",
+            "model_ref": "ae1252f0-aa67-4e9f-b3e4-79a4f275cea3",
+            "tests": [
+                {
+                    "uuid": "c5e8719d-6b01-40a4-8d57-1eaf358d2f90",
+                    "name": "Baseline_h5_uncompressed",
+                    "experiment_ref": "e78e376e-8315-4dc9-ae79-acf4fb88e51c",
+                    "model_file": "SideCamera_MobileNetV2_160x160x3.h5",
+                    "parameters": {
+                        "compression": "1"
+                    },
+                    "reports": [
+                        "SideCamera_MobileNetV2_160x160x3_Baseline_h5_uncompressed_analyze.json"
+                    ],
+                    "outputs": []
+                },
+                {
+                    "uuid": "7b3b9f2e-998c-4cd6-bce9-09a4a04c2ae6",
+                    "name": "Baseline_tflite_uncompressed",
+                    "experiment_ref": "e78e376e-8315-4dc9-ae79-acf4fb88e51c",
+                    "model_file": "SideCamera_MobileNetV2_160x160x3.tflite",
+                    "parameters": {
+                        "compression": "1"
+                    },
+                    "reports": [
+                        "SideCamera_MobileNetV2_160x160x3_Baseline_tflite_uncompressed_analyze.json"
+                    ],
+                    "outputs": []
+                },
+                {
+                    "uuid": "0d04fd66-9850-4c06-9f4b-981d0eac5a1f",
+                    "name": "Baseline_tflite_compression_4",
+                    "experiment_ref": "e78e376e-8315-4dc9-ae79-acf4fb88e51c",
+                    "model_file": "SideCamera_MobileNetV2_160x160x3.tflite",
+                    "parameters": {
+                        "compression": "4"
+                    },
+                    "reports": [
+                        "SideCamera_MobileNetV2_160x160x3_Baseline_tflite_compression_4_analyze.json"
+                    ],
+                    "outputs": []
+                },
+                {
+                    "uuid": "28919821-fb60-4d76-901d-d8136be6703c",
+                    "name": "Baseline_tflite_compression_8",
+                    "experiment_ref": "e78e376e-8315-4dc9-ae79-acf4fb88e51c",
+                    "model_file": "SideCamera_MobileNetV2_160x160x3.tflite",
+                    "parameters": {
+                        "compression": "8"
+                    },
+                    "reports": [
+                        "SideCamera_MobileNetV2_160x160x3_Baseline_tflite_compression_8_analyze.json"
+                    ],
+                    "outputs": []
+                },
+                {
+                    "uuid": "4a091043-4fd9-40b3-aaf5-39b157e99537",
+                    "name": "Pruned_tflite_uncompressed",
+                    "experiment_ref": "e78e376e-8315-4dc9-ae79-acf4fb88e51c",
+                    "model_file": "SideCamera_MobileNetV2_160x160x3_pruned.tflite",
+                    "parameters": {
+                        "compression": "1"
+                    },
+                    "reports": [
+                        "SideCamera_MobileNetV2_160x160x3_Pruned_tflite_uncompressed_analyze.json"
+                    ],
+                    "outputs": []
+                },
+                {
+                    "uuid": "7ca334c4-4368-47eb-bfed-7d1a54ab46e6",
+                    "name": "Pruned_Quantized_tflite_uncompressed",
+                    "experiment_ref": "e78e376e-8315-4dc9-ae79-acf4fb88e51c",
+                    "model_file": "SideCamera_MobileNetV2_160x160x3_pruned_quantized.tflite",
+                    "parameters": {
+                        "compression": "1"
+                    },
+                    "reports": [
+                        "SideCamera_MobileNetV2_160x160x3_Pruned_Quantized_tflite_uncompressed_analyze.json"
+                    ],
+                    "outputs": [
+                        "SideCamera_MobileNetV2_160x160x3_Pruned_Quantized_tflite_uncompressed.bin"
+                    ]
+                }
+            ],
+            "best_test": "7ca334c4-4368-47eb-bfed-7d1a54ab46e6",
+            "tools": [
+                {
+                    "name": "stm32ai",
+                    "version": "1.4.0",
+                    "input": "image",
+                    "model": "classifier",
+                    "output": "openmv_stm32_bin",
+                    "section": "output",
+                    "parameters": {
+                        "path": "generate",
+                        "query": {
+                            "address": "",
+                            "allocate_inputs": true,
+                            "allocate_outputs": true,
+                            "binary": false,
+                            "copy_weights_at": "",
+                            "generate_fota": false,
+                            "name": "network",
+                            "split_weigths": false,
+                            "generate_full_binary": true,
+                            "return_full_binary_only": true
+                        },
+                        "headers": {
+                            "content-type": "multipart/form-data"
+                        }
+                    }
+                }
+            ],
+            "events": [],
+            "ui": {
+                "icons": []
+            }
+        }
+    ],
+    "deployments": []
+}

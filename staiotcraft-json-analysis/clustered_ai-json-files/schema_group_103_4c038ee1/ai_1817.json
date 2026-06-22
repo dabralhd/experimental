@@ -1,0 +1,441 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "Deployments Schema.",
+    "description": "Deployments Schema for the deployments section of an AI project file.",
+    "version": "v8",
+    "default": {},
+    "required": [
+        "deployments"
+    ],
+    "additionalProperties": true,
+    "properties": {
+        "deployments": {
+            "$id": "#/properties/deployments",
+            "type": "array",
+            "title": "Deployments section.",
+            "description": "Deployments of an AI project.",
+            "default": [],
+            "additionalItems": true,
+            "items": {
+                "anyOf": [
+                    {
+                        "$id": "#/properties/deployments/items/anyOf/0",
+                        "type": "object",
+                        "title": "A deployment instance.",
+                        "description": "Description of the deployment instance.",
+                        "default": {},
+                        "required": [
+                            "uuid",
+                            "display_name",
+                            "description",
+                            "last_update_time",
+                            "last_deploy_result",
+                            "cloud_params"
+                        ],
+                        "additionalProperties": true,
+                        "properties": {
+                            "uuid": {
+                                "$id": "#/properties/deployments/items/anyOf/0/properties/uuid",
+                                "type": "string",
+                                "title": "Deployment UUID",
+                                "description": "UUID of this deployment.",
+                                "default": ""
+                            },
+                            "display_name": {
+                                "$id": "#/properties/deployments/items/anyOf/0/properties/display_name",
+                                "type": "string",
+                                "title": "Deployment display name",
+                                "description": "Display name of the deployment.",
+                                "default": ""
+                            },
+                            "description": {
+                                "$id": "#/properties/deployments/items/anyOf/0/properties/description",
+                                "type": "string",
+                                "title": "Deployment description",
+                                "description": "Description of the deployment.",
+                                "default": ""
+                            },
+                            "last_update_time": {
+                                "$id": "#/properties/deployments/items/anyOf/0/properties/last_update_time",
+                                "type": [
+                                    "string",
+                                    "null"
+                                ],
+                                "title": "Deployment last deploy time",
+                                "description": "Last deploy time of the deployment.",
+                                "default": ""
+                            },
+                            "last_deploy_result": {
+                                "$id": "#/properties/deployments/items/anyOf/0/properties/last_deploy_result",
+                                "type": [
+                                    "string",
+                                    "null"
+                                ],
+                                "title": "Deployment last deploy result",
+                                "description": "Last deploy result of the deployment.",
+                                "default": ""
+                            },
+                            "cloud_params": {
+                                "$id": "#/properties/deployments/items/anyOf/0/properties/cloud_params",
+                                "type": "object",
+                                "title": "Cloud related parameters.",
+                                "description": "Cloud related parameters.",
+                                "default": {},
+                                "required": [
+                                    "type",
+                                    "app_url"
+                                ],
+                                "properties": {
+                                    "type": {
+                                        "$id": "#/properties/deployments/items/anyOf/0/properties/cloud_params/properties/type",
+                                        "type": "string",
+                                        "title": "Cloud application type.",
+                                        "description": "The type of the cloud application.",
+                                        "default": "",
+                                        "enum": [
+                                            "azure_iotc",
+                                            "aws",
+                                            "custom"
+                                        ]
+                                    },
+                                    "app_url": {
+                                        "$id": "#/properties/deployments/items/anyOf/0/properties/cloud_params/properties/app_url",
+                                        "type": [
+                                            "string",
+                                            "null"
+                                        ],
+                                        "title": "Application URL.",
+                                        "description": "The URL of the application.",
+                                        "default": "",
+                                        "examples": [
+                                            "https://vespucci.azureiotcentral.com/"
+                                        ]
+                                    }
+                                }
+                            },
+                            "configuration": {
+                                "$id": "#/properties/deployments/items/anyOf/0/properties/configuration",
+                                "type": "object",
+                                "title": "Configuration of the deployment.",
+                                "description": "Configuration of the deployment.",
+                                "default": {},
+                                "required": [
+                                    "leaf",
+                                    "gateway"
+                                ],
+                                "properties": {
+                                    "leaf": {
+                                        "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf",
+                                        "type": "array",
+                                        "title": "Configuration parameters of the leaf device.",
+                                        "description": "Configuration parameters of the leaf device.",
+                                        "default": [],
+                                        "additionalItems": true,
+                                        "items": {
+                                            "anyOf": [
+                                                {
+                                                    "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0",
+                                                    "type": "object",
+                                                    "title": "A leaf device instance.",
+                                                    "description": "Description of the leaf device instance.",
+                                                    "default": {},
+                                                    "required": [
+                                                        "device_id",
+                                                        "description",
+                                                        "gateway_id",
+                                                        "selected_model_name",
+                                                        "models"
+                                                    ],
+                                                    "additionalProperties": true,
+                                                    "properties": {
+                                                        "device_id": {
+                                                            "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/device_id",
+                                                            "type": "string",
+                                                            "title": "Device identifier of the leaf device.",
+                                                            "description": "Device identifier of the leaf device.",
+                                                            "default": ""
+                                                        },
+                                                        "description": {
+                                                            "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/description",
+                                                            "type": "string",
+                                                            "title": "Description of the leaf device.",
+                                                            "description": "Description of the leaf device.",
+                                                            "default": ""
+                                                        },
+                                                        "gateway_id": {
+                                                            "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/gateway_id",
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ],
+                                                            "title": "Device identifier of the gateway device.",
+                                                            "description": "Device identifier of the gateway device.",
+                                                            "default": ""
+                                                        },
+                                                        "selected_model_name": {
+                                                            "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/selected_model_name",
+                                                            "type": "string",
+                                                            "title": "Name of the selected model.",
+                                                            "description": "Name of the selected model.",
+                                                            "default": ""
+                                                        },
+                                                        "models": {
+                                                            "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leafitems/anyOf/0/properties/models",
+                                                            "type": "array",
+                                                            "title": "Available models.",
+                                                            "description": "Available models.",
+                                                            "default": [],
+                                                            "additionalItems": true,
+                                                            "items": {
+                                                                "anyOf": [
+                                                                    {
+                                                                        "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/models/items/anyOf/0",
+                                                                        "type": "object",
+                                                                        "title": "A model instance.",
+                                                                        "description": "A model instance.",
+                                                                        "default": {},
+                                                                        "required": [
+                                                                            "name",
+                                                                            "datalogging",
+                                                                            "inference"
+                                                                        ],
+                                                                        "additionalProperties": true,
+                                                                        "properties": {
+                                                                            "name": {
+                                                                                "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/models/items/anyOf/0/properties/name",
+                                                                                "type": "string",
+                                                                                "title": "Name of model.",
+                                                                                "description": "Name of the model.",
+                                                                                "default": ""
+                                                                            },
+                                                                            "datalogging": {
+                                                                                "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/models/items/anyOf/0/properties/datalogging",
+                                                                                "type": "object",
+                                                                                "title": "Parameters used in datalogging mode.",
+                                                                                "description": "Parameters used in datalogging mode.",
+                                                                                "default": {},
+                                                                                "required": [
+                                                                                    "device_template_uri",
+                                                                                    "device_template_id",
+                                                                                    "protocol",
+                                                                                    "firmware_uri"
+                                                                                ],
+                                                                                "additionalProperties": true,
+                                                                                "properties": {
+                                                                                    "device_template_uri": {
+                                                                                        "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/models/items/anyOf/0/properties/datalogging/properties/device_template_uri",
+                                                                                        "type": "string",
+                                                                                        "title": "URI of the device template of the leaf device.",
+                                                                                        "description": "URI of the device template of the leaf device.",
+                                                                                        "default": ""
+                                                                                    },
+                                                                                    "device_template_id": {
+                                                                                        "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/models/items/anyOf/0/properties/datalogging/properties/device_template_id",
+                                                                                        "type": "string",
+                                                                                        "title": "Identifier of the device template of the leaf device.",
+                                                                                        "description": "Identifier of the device template of the leaf device.",
+                                                                                        "default": ""
+                                                                                    },
+                                                                                    "protocol": {
+                                                                                        "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/models/items/anyOf/0/properties/datalogging/properties/protocol",
+                                                                                        "type": "integer",
+                                                                                        "title": "Identifier of the protocol used by the leaf device.",
+                                                                                        "description": "Identifier of the protocol used by the leaf device [0:ble;1:serial;2:libusb].",
+                                                                                        "default": ""
+                                                                                    },
+                                                                                    "firmware_uri": {
+                                                                                        "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/models/items/anyOf/0/properties/datalogging/properties/firmware_uri",
+                                                                                        "type": "string",
+                                                                                        "title": "URI of the firmware for the leaf device.",
+                                                                                        "description": "URI of the firmware for the leaf device.",
+                                                                                        "default": ""
+                                                                                    }
+                                                                                }
+                                                                            },
+                                                                            "inference": {
+                                                                                "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/models/items/anyOf/0/properties/inference",
+                                                                                "type": "object",
+                                                                                "title": "Parameters used in inference mode.",
+                                                                                "description": "Parameters used in inference mode.",
+                                                                                "default": {},
+                                                                                "required": [
+                                                                                    "device_template_uri",
+                                                                                    "device_template_id",
+                                                                                    "protocol",
+                                                                                    "firmware_uri",
+                                                                                    "ml_uri",
+                                                                                    "firmware_update"
+                                                                                ],
+                                                                                "additionalProperties": true,
+                                                                                "properties": {
+                                                                                    "device_template_uri": {
+                                                                                        "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/models/items/anyOf/0/properties/inference/properties/device_template_uri",
+                                                                                        "type": "string",
+                                                                                        "title": "URI of the device template of the leaf device.",
+                                                                                        "description": "URI of the device template of the leaf device.",
+                                                                                        "default": ""
+                                                                                    },
+                                                                                    "device_template_id": {
+                                                                                        "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/models/items/anyOf/0/properties/inference/properties/device_template_id",
+                                                                                        "type": "string",
+                                                                                        "title": "Identifier of the device template of the leaf device.",
+                                                                                        "description": "Identifier of the device template of the leaf device.",
+                                                                                        "default": ""
+                                                                                    },
+                                                                                    "protocol": {
+                                                                                        "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/models/items/anyOf/0/properties/inference/properties/protocol",
+                                                                                        "type": "integer",
+                                                                                        "title": "Identifier of the protocol used by the leaf device.",
+                                                                                        "description": "Identifier of the protocol used by the leaf device [0:ble;1:serial;2:libusb].",
+                                                                                        "default": ""
+                                                                                    },
+                                                                                    "firmware_uri": {
+                                                                                        "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/models/items/anyOf/0/properties/inference/properties/firmware_uri",
+                                                                                        "type": "string",
+                                                                                        "title": "URI of the firmware for the leaf device.",
+                                                                                        "description": "URI of the firmware for the leaf device.",
+                                                                                        "default": ""
+                                                                                    },
+                                                                                    "ml_uri": {
+                                                                                        "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/models/items/anyOf/0/properties/inference/properties/ml_uri",
+                                                                                        "type": [
+                                                                                            "string",
+                                                                                            "null"
+                                                                                        ],
+                                                                                        "title": "URI of the machine learning artifact to be run on the leaf device.",
+                                                                                        "description": "URI of the machine learning artifact to be run on the leaf device.",
+                                                                                        "default": ""
+                                                                                    },
+                                                                                    "firmware_update": {
+                                                                                        "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/models/items/anyOf/0/properties/inference/properties/firmware_update",
+                                                                                        "type": "boolean",
+                                                                                        "title": "Firmware update flag.",
+                                                                                        "description": "Flag that states wheter to perform a firmware update or not on the leaf device.",
+                                                                                        "default": false
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                ],
+                                                                "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/models/items"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items"
+                                        }
+                                    },
+                                    "gateway": {
+                                        "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/gateway",
+                                        "type": "array",
+                                        "title": "Configuration parameters of the gateway device.",
+                                        "description": "Configuration parameters of the gateway device.",
+                                        "default": [],
+                                        "additionalItems": true,
+                                        "items": {
+                                            "anyOf": [
+                                                {
+                                                    "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/gateway/items/anyOf/0",
+                                                    "type": "object",
+                                                    "title": "A gateway device instance.",
+                                                    "description": "Description of the gateway device instance.",
+                                                    "default": {},
+                                                    "required": [
+                                                        "device_id",
+                                                        "description",
+                                                        "gateway_id",
+                                                        "module_id",
+                                                        "configuration_uri",
+                                                        "device_manifest_uri",
+                                                        "device_template_uri",
+                                                        "device_template_id",
+                                                        "wifi_mode"
+                                                    ],
+                                                    "additionalProperties": true,
+                                                    "properties": {
+                                                        "device_id": {
+                                                            "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/gateway/items/anyOf/0/properties/device_id",
+                                                            "type": "string",
+                                                            "title": "Device identifier of the gateway device.",
+                                                            "description": "Device identifier of the gateway device.",
+                                                            "default": ""
+                                                        },
+                                                        "description": {
+                                                            "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/gateway/items/anyOf/0/properties/description",
+                                                            "type": "string",
+                                                            "title": "Description of the gateway device.",
+                                                            "description": "Description of the gateway device.",
+                                                            "default": ""
+                                                        },
+                                                        "gateway_id": {
+                                                            "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/gateway/items/anyOf/0/properties/gateway_id",
+                                                            "type": [
+                                                                "string",
+                                                                "null"
+                                                            ],
+                                                            "title": "Device identifier of the gateway device.",
+                                                            "description": "Device identifier of the gateway device.",
+                                                            "default": ""
+                                                        },
+                                                        "module_id": {
+                                                            "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/gateway/items/anyOf/0/properties/module_id",
+                                                            "type": "string",
+                                                            "title": "Device identifier of the main application module running on the gateway device.",
+                                                            "description": "Device identifier of the main application module running on the gateway device.",
+                                                            "default": ""
+                                                        },
+                                                        "configuration_uri": {
+                                                            "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/models/items/anyOf/0/properties/inference/properties/configuration_uri",
+                                                            "type": "string",
+                                                            "title": "URI of the configuration file of the gateway device image.",
+                                                            "description": "URI of the configuration file of the gateway device image.",
+                                                            "default": ""
+                                                        },
+                                                        "device_manifest_uri": {
+                                                            "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/models/items/anyOf/0/properties/inference/properties/device_manifest_uri",
+                                                            "type": "string",
+                                                            "title": "Identifier of the gateway device manifest.",
+                                                            "description": "Identifier of the gateway device manifest.",
+                                                            "default": ""
+                                                        },
+                                                        "device_template_uri": {
+                                                            "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/models/items/anyOf/0/properties/inference/properties/device_template_uri",
+                                                            "type": "string",
+                                                            "title": "URI of the gateway device template.",
+                                                            "description": "URI of the gateway device template.",
+                                                            "default": ""
+                                                        },
+                                                        "device_template_id": {
+                                                            "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/leaf/items/anyOf/0/properties/models/items/anyOf/0/properties/inference/properties/device_template_id",
+                                                            "type": "string",
+                                                            "title": "Identifier of the gateway device template.",
+                                                            "description": "Identifier of the gateway device template.",
+                                                            "default": ""
+                                                        },
+                                                        "wifi_mode": {
+                                                            "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/gateway/items/anyOf/0/properties/wifi_mode",
+                                                            "type": "string",
+                                                            "title": "WiFi mode.",
+                                                            "description": "Configuration mode of the WiFi of the gateway device.",
+                                                            "default": ""
+                                                        }
+                                                    }
+                                                }
+                                            ],
+                                            "$id": "#/properties/deployments/items/anyOf/0/properties/configuration/properties/gateway/items"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+                "$id": "#/properties/deployments/items"
+            }
+        }
+    }
+}

@@ -1,0 +1,88 @@
+{
+    "uuid": "bc4cefa4-4538-4d4a-a386-bfdce896860b",
+    "ai_project_name": "WiFi_Sensing",
+    "display_name": null,
+    "description": "",
+    "version": "0.0.1",
+    "inputs": [
+        {
+            "uuid": "5cc30570-30a3-4704-90a2-c3bf591d3e86",
+            "model_ref": "d82974e4-f019-49b7-86a1-8a7bfee7303b",
+            "input_type": "binary_hsd",
+            "augmentation": [],
+            "logs": [],
+            "tools": [
+                {
+                    "name": "hsdatalog_data_export_by_tags",
+                    "version": "1.1.0",
+                    "parameters": {
+                        "-o": "{models_folder}/{model_folder}/{dataset_folder}",
+                        "-f": "CSV",
+                        "-s": "all",
+                        "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+                    }
+                }
+            ]
+        }
+    ],
+    "models": [
+        {
+            "uuid": "d82974e4-f019-49b7-86a1-8a7bfee7303b",
+            "name": "Activity_Recognition",
+            "model_type": "classifier",
+            "training_type": "offline",
+            "stage": "definition",
+            "model_metadata": {
+                "classes": [
+                    "empty",
+                    "sitting",
+                    "walking",
+                    "running",
+                    "jumping"
+                ]
+            },
+            "experiments": [
+                {
+                    "uuid": "9ff5b8cc-88b1-4324-aba0-ba973949b107",
+                    "name": "Experiment_1",
+                    "description": "",
+                    "model_dev_file": "Activity_Recognition_Experiment_1.ipynb"
+                }
+            ]
+        }
+    ],
+    "outputs": [
+        {
+            "uuid": "2b9742a3-f6e0-433e-9dd5-d413428a170a",
+            "model_ref": "d82974e4-f019-49b7-86a1-8a7bfee7303b",
+            "output_type": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+            "best_test": null,
+            "tests": [],
+            "tools": [
+                {
+                    "name": "stm32ai",
+                    "version": "0.0.5",
+                    "parameters": {
+                        "path": "generate",
+                        "query": {
+                            "address": "",
+                            "allocate_inputs": true,
+                            "allocate_outputs": true,
+                            "binary": false,
+                            "copy_weights_at": "",
+                            "generate_fota": false,
+                            "name": "network",
+                            "split_weigths": false,
+                            "generate_full_binary": true,
+                            "return_full_binary_only": true
+                        },
+                        "headers": {
+                            "content-type": "multipart/form-data"
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "deployments": []
+}

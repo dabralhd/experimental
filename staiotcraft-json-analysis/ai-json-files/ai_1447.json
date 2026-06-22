@@ -1,0 +1,187 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v8",
+    "ai_project_name": "get_started_hvac_monitor_mlc",
+    "display_name": "Heating, Ventilation, and Air Conditioning",
+    "description": "Get started project for Heating, Ventilation, and Air Conditioning (HVAC) scenario run on the MLC sensor.",
+    "uuid": "9bf74e81-240f-495f-995e-56c81d64dc02",
+    "version": "1.0.0",
+    "inputs": [
+        {
+            "uuid": "e189f145-66e1-42be-93f0-f045832cac17",
+            "input_type": "binary_hsd",
+            "model_ref": "e90006d1-e37e-40fe-861a-dea7cea1ad15",
+            "logs": [
+                {
+                    "uuid": "76da057f-f4e9-4813-afea-6afcb0aea25a",
+                    "name": "20221223_16_22_28",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2022-12-23T15:22:28.461Z",
+                    "end_time": "2022-12-23T15:49:26.221Z",
+                    "device_description": {
+                        "model": "STEVAL-STWINKT1B",
+                        "serial_number": "0015002F374E50132030364B",
+                        "alias": "STWIN_001",
+                        "fw_name": "FP-SNS-DATALOG1_Datalog1",
+                        "fw_version": "1.1.0"
+                    }
+                },
+                {
+                    "uuid": "3b8e3156-2d5c-47f8-aefe-e5c504947c41",
+                    "name": "20240412_11_54_05",
+                    "annotated": false,
+                    "description": "20240412_11_54_05",
+                    "start_time": "2024-04-12T11:54:19.000Z",
+                    "end_time": "2024-04-12T11:54:38.007Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004B00435130501620333154",
+                        "alias": "STBOX_PRO_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                }
+            ],
+            "augmentation": [],
+            "tools": [
+                {
+                    "name": "hsdatalog_to_unico",
+                    "version": "1.1.0",
+                    "input": "binary_hsd",
+                    "model": "classifier",
+                    "output": "steval-stwinkt1b:mlc",
+                    "section": "input",
+                    "parameters": {
+                        "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                        "-f": "TXT",
+                        "-t": "",
+                        "-s": "all",
+                        "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+                    }
+                }
+            ]
+        }
+    ],
+    "models": [
+        {
+            "uuid": "e90006d1-e37e-40fe-861a-dea7cea1ad15",
+            "name": "hvac_monitor",
+            "description": "Model to recognize the status of an HVAC system.",
+            "stage": "modeling",
+            "model_type": "classifier",
+            "training_type": "offline",
+            "retraining": false,
+            "model_metadata": {
+                "classes": [
+                    "off",
+                    "quiet",
+                    "slow",
+                    "medium",
+                    "fast"
+                ]
+            },
+            "experiments": [
+                {
+                    "uuid": "277e5db3-0dd7-4f68-871e-b8f51d1f5de4",
+                    "name": "experiment_1",
+                    "description": "Experiment 1",
+                    "model_dev_template": null,
+                    "model_dev_file": null
+                }
+            ],
+            "tools": []
+        }
+    ],
+    "outputs": [
+        {
+            "uuid": "1ebdede4-a412-4ae8-8282-138abebfd725",
+            "output_type": "steval-stwinkt1b:mlc",
+            "model_ref": "e90006d1-e37e-40fe-861a-dea7cea1ad15",
+            "tests": [
+                {
+                    "uuid": "b6e0553e-1980-4951-80ce-e42592929d11",
+                    "name": "test_1",
+                    "experiment_ref": "277e5db3-0dd7-4f68-871e-b8f51d1f5de4",
+                    "model_file": null,
+                    "parameters": null,
+                    "reports": [
+                        "ism330dhcx_mlc_report.json"
+                    ],
+                    "outputs": [
+                        "ism330dhcx_mlc.ucf",
+                        "ism330dhcx_mlc.h"
+                    ]
+                }
+            ],
+            "best_test": "b6e0553e-1980-4951-80ce-e42592929d11",
+            "tools": [
+                {
+                    "name": "mlctools",
+                    "version": "1.0.0",
+                    "input": "binary_hsd",
+                    "model": "classifier",
+                    "output": "steval-stwinkt1b:mlc",
+                    "section": "output"
+                }
+            ],
+            "events": [],
+            "ui": null
+        }
+    ],
+    "deployments": [
+        {
+            "uuid": "eed13dd4-cf3f-488b-a079-ad5f4282cca0",
+            "display_name": "Heating, Ventilation, and Air Conditioning end-to-end system.",
+            "description": "End-to-end system deployment for Heating, Ventilation, and Air Conditioning scenario.",
+            "last_deploy_time": null,
+            "last_deploy_result": null,
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": null
+            },
+            "configuration": {
+                "leaf": [
+                    {
+                        "device_id": "leaf0",
+                        "description": "Leaf device.",
+                        "gateway_id": "gateway0",
+                        "selected_model_name": "hvac_monitor",
+                        "models": [
+                            {
+                                "name": "hvac_monitor",
+                                "datalogging": {
+                                    "device_template_uri": "https://raw.githubusercontent.com/STMicroelectronics/appconfig/release/dtmi/appconfig/steval_stwinkt1b/FP_SNS_DATALOG2_Datalog2-1.expanded.json",
+                                    "device_template_id": "dtmi:vespucci:steval_stwinkt1b:fpSnsDatalog2_datalog2;1",
+                                    "protocol": 2,
+                                    "firmware_uri": "https://raw.githubusercontent.com/STMicroelectronics/appconfig/release/bluestsdkv2/bin/steval-stwinkt1b/FP-SNS-DATALOG2_Datalog2_2_0_1.bin"
+                                },
+                                "inference": {
+                                    "device_template_uri": "e2e_system_deployment/leaf/steval_stwinkt1b/hvac_monitor_mlc-1.expanded.json",
+                                    "device_template_id": "dtmi:vespucci:steval_stwinkt1b:hvac_monitor_mlc;1",
+                                    "protocol": 1,
+                                    "firmware_uri": "e2e_system_deployment/leaf/steval_stwinkt1b/ai_inertial_steval_stwinkt1b_mlc_release_1_0_0.bin",
+                                    "ml_uri": "models/hvac_monitor/experiments/experiment_1/tests/test_1/ism330dhcx_mlc.ucf",
+                                    "firmware_update": false
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "gateway": [
+                    {
+                        "device_id": "gateway0",
+                        "description": "Gateway device.",
+                        "gateway_id": null,
+                        "module_id": "edgeMLC",
+                        "configuration_uri": "e2e_system_deployment/gateway/vespucci_config.ini.template",
+                        "device_manifest_uri": "e2e_system_deployment/gateway/mlc_gateway-2.manifest.json",
+                        "device_template_uri": "e2e_system_deployment/gateway/mlc_gateway-2.expanded.json",
+                        "device_template_id": "dtmi:vespucci:gateway:mlc_gateway;1",
+                        "wifi_mode": "off"
+                    }
+                ]
+            }
+        }
+    ]
+}

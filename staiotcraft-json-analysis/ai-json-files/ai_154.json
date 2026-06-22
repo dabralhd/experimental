@@ -1,0 +1,126 @@
+{
+    "uuid": "b2cd9e3c-2c18-4073-a6bf-3b1ba18df539",
+    "ai_project_name": "IoT_Test_Project",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2025-07-29 11:40:04.276393",
+    "creation_time": "2025-07-29 11:40:02.992889",
+    "project_owner_uuid": "29836f82-9246-4b16-9f1b-7481e067c8d3",
+    "models": [
+        {
+            "uuid": "b15776bd-7039-4550-bbdf-c80a40f01a82",
+            "name": "model1",
+            "dataset": {
+                "name": "IoT_Test_Dataset",
+                "dataset_id": "01k1ayrrrgh3npwxrs608zfn2w"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary",
+                    "motion"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-07-29 11:40:04.248919",
+            "last_update_time": "2025-07-29 11:40:04.248930",
+            "model_owner_uuid": "29836f82-9246-4b16-9f1b-7481e067c8d3",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.json",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2025-07-30 07:23:06.210647",
+                "creation_time": "2025-07-30 07:23:06.210643"
+            }
+        }
+    ],
+    "deployments": [
+        {
+            "uuid": "692ff719-a6cd-4774-a259-96fda7f9012d",
+            "description": "",
+            "display_name": "IoT_Test_System",
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": ""
+            },
+            "last_update_time": "2025-07-29 13:35:38.918674",
+            "last_deploy_result": "success",
+            "leaf": [
+                {
+                    "gateway_id": "gw_0",
+                    "description": "Leaf device at position 0.",
+                    "display_name": "leaf_0",
+                    "device_id": "699f5275-d345-4265-9644-bbe7e9a7166b",
+                    "datalogging": {
+                        "application": "5f885025-69a3-429a-bb66-03f3adb90d77",
+                        "firmware_update": false
+                    },
+                    "inference": {
+                        "application": "c234ae4b-0556-4baa-9e86-f7810ea82580",
+                        "firmware_update": false,
+                        "models": [
+                            {
+                                "artifact_type": "ucf",
+                                "component_name": "lsm6dsv16x_mlc",
+                                "model_name_reference": "model1"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "gateway": [
+                {
+                    "application": "93b95a52-e22e-4975-9166-86b7cf1f5458",
+                    "description": "Gateway device at position 0.",
+                    "display_name": "gateway_0",
+                    "device_id": "4027aaf0-a47b-4952-b458-2c51bc0f68ed",
+                    "wifi_mode": "off"
+                }
+            ]
+        }
+    ],
+    "applications": [
+        {
+            "uuid": "93b95a52-e22e-4975-9166-86b7cf1f5458",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-7.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_Gateway;7",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-7.2.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/staiotcraft_rpi_gateway_1_4_0.img.gz",
+            "module_id": "edgeMLC"
+        },
+        {
+            "uuid": "5f885025-69a3-429a-bb66-03f3adb90d77",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-7.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;7",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_3_1_0.bin",
+            "binary_id": 381,
+            "protocol": 2
+        },
+        {
+            "uuid": "c234ae4b-0556-4baa-9e86-f7810ea82580",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_STAIOTCFT_AI_Inertial-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_STAIOTCFT_AI_Inertial;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/FP-SNS-STAIOTCFT_AI_Inertial_AssetTrackingOnMLC_1_0_0.bin",
+            "binary_id": 418,
+            "protocol": 1
+        }
+    ]
+}

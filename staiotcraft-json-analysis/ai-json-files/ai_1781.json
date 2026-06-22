@@ -1,0 +1,62 @@
+{
+    "uuid": "4a31c581-07d6-44be-8cdf-4a9f1c4cf19d",
+    "ai_project_name": "my-joystick",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2025-07-21 14:38:57.542055",
+    "creation_time": "2025-07-21 14:38:56.163102",
+    "project_owner_uuid": "ea66524a-2778-4966-a6ed-340abc5bc04b",
+    "models": [
+        {
+            "uuid": "72eb62ec-93b5-4220-9616-debc8a26f506",
+            "name": "joystick-model",
+            "dataset": {
+                "name": "joystick-dataset",
+                "dataset_id": "01k0p9edcvcyzn33g68v9k8knv"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "none",
+                    "forward",
+                    "left",
+                    "right"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-07-21 14:38:57.509791",
+            "last_update_time": "2025-07-21 14:38:57.509799",
+            "model_owner_uuid": "ea66524a-2778-4966-a6ed-340abc5bc04b",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.json",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2025-07-21 14:39:52.287116",
+                "creation_time": "2025-07-21 14:39:52.287111"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

@@ -1,0 +1,132 @@
+{
+   "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+   "schema_version": "v7",
+   "ai_project_name": "get_started_mlc_ai_hvac_monitor",
+   "display_name": "Heating, Ventilation, and Air Conditioning",
+   "description": "Get started project for Heating, Ventilation, and Air Conditioning (HVAC) with the MLC sensor.",
+   "uuid": "1f728763-77ca-47b6-9370-a5bbddeb4ef1",
+   "version": "1.0.0",
+   "inputs": [
+      {
+         "uuid": "186a7deb-b35e-46c7-8aaf-37b038844c68",
+         "input_type": "binary_hsd",
+         "model_ref": "9bd5ccd7-8e23-4ea4-a427-f223b34c9182",
+         "logs": [
+            {
+               "uuid": "5b429743-455e-47f7-9afd-27ef6f2f1df8",
+               "name": "20221223_16_22_28",
+               "annotated": true,
+               "description": "",
+               "start_time": "2022-12-23T15:22:28.461Z",
+               "end_time": "2022-12-23T15:49:26.221Z",
+               "device_description": {
+                  "model": "STEVAL-STWINKT1B",
+                  "serial_number": "0015002F374E50132030364B",
+                  "alias": "STWIN_001",
+                  "fw_name": "FP-SNS-DATALOG1_Datalog1",
+                  "fw_version": "1.1.0"
+               }
+            }
+         ],
+         "augmentation": [],
+         "tools": [
+            {
+               "name": "hsdatalog_to_unico",
+               "version": "1.1.0",
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-stwinkt1b:mlc",
+               "section": "input",
+               "parameters": {
+                  "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                  "-f": "TXT",
+                  "-t": "",
+                  "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+               }
+            }
+         ]
+      }
+   ],
+   "models": [
+      {
+         "uuid": "9bd5ccd7-8e23-4ea4-a427-f223b34c9182",
+         "name": "hvac_monitor",
+         "stage": "modeling",
+         "model_type": "classifier",
+         "training_type": "offline",
+         "retraining": false,
+         "model_metadata": {
+            "classes": [
+               "off",
+               "quiet",
+               "slow",
+               "medium",
+               "fast"
+            ]
+         },
+         "experiments": [
+            {
+               "uuid": "6ddbae25-7b09-42b1-a1e4-8c516d40d0f1",
+               "name": "experiment_1",
+               "description": "Experiment 1",
+               "model_dev_template": null,
+               "model_dev_file": null
+            }
+         ],
+         "tools": []
+      }
+   ],
+   "outputs": [
+      {
+         "uuid": "3d4c397b-d5bb-4eac-8847-0eee8472c256",
+         "output_type": "steval-stwinkt1b:mlc",
+         "model_ref": "9bd5ccd7-8e23-4ea4-a427-f223b34c9182",
+         "tests": [
+            {
+               "uuid": "b361aeec-ed6d-49b6-ad04-b75e32e82af9",
+               "name": "Test 1",
+               "experiment_ref": "6ddbae25-7b09-42b1-a1e4-8c516d40d0f1",
+               "model_file": null,
+               "parameters": null,
+               "reports": [
+                  "MLC_report.json"
+               ],
+               "outputs": [
+                  "MLC_configuration.ucf"
+               ]
+            },
+            {
+               "uuid": "e46e6358-c854-4284-8919-182ec086c4a6",
+               "name": "Test 2",
+               "experiment_ref": "6ddbae25-7b09-42b1-a1e4-8c516d40d0f1",
+               "model_file": null,
+               "parameters": null,
+               "reports": [
+                  "MLC_report.json"
+               ],
+               "outputs": [
+                  "MLC_configuration.ucf"
+               ]
+            }
+         ],
+         "best_test": null,
+         "tools": [
+            {
+               "name": "mlctools",
+               "version": "1.0.0",
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-stwinkt1b:mlc",
+               "section": "output"
+            }
+         ],
+         "events": [],
+         "ui": null
+      }
+   ],
+   "deployments": [],
+   "dbstatus": {
+      "status": "unknown",
+      "message": null
+   }
+}

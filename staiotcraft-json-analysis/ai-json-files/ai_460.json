@@ -1,0 +1,39 @@
+{
+    "uuid": "2044fde9-57ae-4884-852a-9f2c53862024",
+    "ai_project_name": "JsonTest",
+    "type": null,
+    "display_name": null,
+    "description": "<h1>This is a test</h1>",
+    "version": null,
+    "schema_version": null,
+    "last_update_time": "2026-05-07 15:06:15.964371",
+    "creation_time": "2026-05-07 15:06:14.625341",
+    "project_owner_uuid": "d2a55444-90f1-7018-9a49-b90c3a197d0b",
+    "models": [
+        {
+            "uuid": "6311039f-dbce-4923-bcc3-9fe882b9e4e3",
+            "name": "ModelTest",
+            "dataset": {
+                "name": "SomeDataSet",
+                "dataset_id": "01kr1fk6jpxdm8f3thfa4m9h1b"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "none",
+                    "none1"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "ism330dhcx",
+                "device": "steval-stwinkt1b"
+            },
+            "creation_time": "2026-05-07 15:06:15.930470",
+            "last_update_time": "2026-05-07 15:06:15.930480",
+            "model_owner_uuid": "d2a55444-90f1-7018-9a49-b90c3a197d0b"
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

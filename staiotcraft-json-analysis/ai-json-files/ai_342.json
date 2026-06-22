@@ -1,0 +1,73 @@
+{
+    "uuid": "229a426c-bf69-4fde-816c-c0001fa30b25",
+    "ai_project_name": "shared-test-prj",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2026-06-16 07:25:05.822838",
+    "creation_time": "2025-07-30 09:06:23.737756",
+    "project_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508",
+    "models": [
+        {
+            "uuid": "f9e1fb95-c653-4109-8d52-840f780a0b03",
+            "name": "shared-model-test",
+            "dataset": {
+                "name": "datalog2_31",
+                "dataset_id": "01k0rwce1s8vnbapjtd12tth9y"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary",
+                    "motion"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv80x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-07-30 09:06:25.089536",
+            "last_update_time": "2025-07-30 09:06:25.089544",
+            "model_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508"
+        },
+        {
+            "uuid": "6b2752fa-5135-4a77-ba18-f8e25e37fc51",
+            "name": "hd-shared-model-test",
+            "dataset": {
+                "name": "datalog2_31",
+                "dataset_id": "01k0rwce1s8vnbapjtd12tth9y"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary",
+                    "motion"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv80x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-06-16 07:25:05.794326",
+            "last_update_time": "2026-06-16 07:25:05.794338",
+            "model_owner_uuid": "334c65a5-1495-453a-a6de-4d384a781000",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [],
+                "artifacts": [],
+                "last_update_time": "2026-06-16 07:25:30.065686",
+                "creation_time": "2026-06-16 07:25:30.065683"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": [],
+    "schema_version": null
+}

@@ -1,0 +1,14 @@
+{
+    "uuid": "44db3703-db42-47c9-9d27-605d5f4a8961",
+    "ai_project_name": "DatasetProject_865188",
+    "type": null,
+    "display_name": null,
+    "description": "Project with datasets",
+    "version": null,
+    "last_update_time": "2026-01-20 14:38:03.942344",
+    "creation_time": "2026-01-20 14:38:03.942344",
+    "project_owner_uuid": "90ab4947-c200-4776-a316-d02c3041c4b8",
+    "models": [],
+    "deployments": [],
+    "applications": []
+}

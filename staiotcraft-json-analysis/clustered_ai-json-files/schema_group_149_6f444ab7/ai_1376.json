@@ -1,0 +1,81 @@
+{
+    "uuid": "b699091e-8e85-4498-9e35-138c22696750",
+    "ai_project_name": "Wifi_sensing_scartch",
+    "display_name": null,
+    "description": "",
+    "version": "0.0.1",
+    "inputs": [
+        {
+            "uuid": "7c4c777c-5a30-4fd7-aa8a-b1387835a38d",
+            "model_ref": "2352cbb1-aa84-4f5b-af40-ff3deb4fcf61",
+            "input_type": "binary_hsd",
+            "augmentation": [],
+            "logs": [],
+            "tools": [
+                {
+                    "name": "hsdatalog_data_export_by_tags",
+                    "version": "1.1.0",
+                    "parameters": {
+                        "-o": "{models_folder}/{model_folder}/{dataset_folder}",
+                        "-f": "CSV",
+                        "-s": "all",
+                        "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+                    }
+                }
+            ]
+        }
+    ],
+    "models": [
+        {
+            "uuid": "2352cbb1-aa84-4f5b-af40-ff3deb4fcf61",
+            "name": "HAR",
+            "model_type": "classifier",
+            "training_type": "offline",
+            "stage": "definition",
+            "model_metadata": {
+                "classes": [
+                    "empty",
+                    "sitting",
+                    "walking",
+                    "running",
+                    "jumping"
+                ]
+            },
+            "experiments": []
+        }
+    ],
+    "outputs": [
+        {
+            "uuid": "3bb22fe9-55b6-4570-a044-0c9a1bb7cfb8",
+            "model_ref": "2352cbb1-aa84-4f5b-af40-ff3deb4fcf61",
+            "output_type": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+            "best_test": null,
+            "tests": [],
+            "tools": [
+                {
+                    "name": "stm32ai",
+                    "version": "0.0.5",
+                    "parameters": {
+                        "path": "generate",
+                        "query": {
+                            "address": "",
+                            "allocate_inputs": true,
+                            "allocate_outputs": true,
+                            "binary": false,
+                            "copy_weights_at": "",
+                            "generate_fota": false,
+                            "name": "network",
+                            "split_weigths": false,
+                            "generate_full_binary": true,
+                            "return_full_binary_only": true
+                        },
+                        "headers": {
+                            "content-type": "multipart/form-data"
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "deployments": []
+}

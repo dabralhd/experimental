@@ -1,0 +1,14 @@
+{
+    "uuid": "db36e775-cf17-4b62-aa88-140d996a6f40",
+    "ai_project_name": "test_project",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2025-07-04 10:39:01.198950",
+    "creation_time": "2025-07-04 10:39:01.198950",
+    "project_owner_uuid": "cc5e60fa-3d75-4dda-b1cf-4ae88cbfe007",
+    "models": [],
+    "deployments": [],
+    "applications": []
+}

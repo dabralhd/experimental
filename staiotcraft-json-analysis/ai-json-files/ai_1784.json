@@ -1,0 +1,61 @@
+{
+    "uuid": "941ecb75-b01b-41d8-a572-9f9356c3e5e3",
+    "ai_project_name": "my-usecase-project-1",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "schema_version": null,
+    "last_update_time": "2026-05-29 13:45:00.859803",
+    "creation_time": "2026-05-29 13:44:58.504045",
+    "project_owner_uuid": "ea66524a-2778-4966-a6ed-340abc5bc04b",
+    "models": [
+        {
+            "uuid": "d562db36-ba87-44d1-9f68-ff02df0fd6fb",
+            "name": "lsm6dsv16x-model",
+            "dataset": {
+                "name": "lsm6dsv16x_stationary_walking",
+                "dataset_id": "01ksszgmavaax8yt0zqcy8fmxm"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary",
+                    "walking"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-05-29 13:45:00.833668",
+            "last_update_time": "2026-05-29 13:45:00.833680",
+            "model_owner_uuid": "ea66524a-2778-4966-a6ed-340abc5bc04b",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.json",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2026-05-29 13:46:49.899935",
+                "creation_time": "2026-05-29 13:46:49.899931"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

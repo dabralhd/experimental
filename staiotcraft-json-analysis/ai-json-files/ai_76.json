@@ -1,0 +1,62 @@
+{
+    "uuid": "ad5008ce-4143-4988-923f-3310af48f6d1",
+    "ai_project_name": "fan_coil_monitoring_mlc_STWIN",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "schema_version": null,
+    "last_update_time": "2026-05-05 13:17:25.196345",
+    "creation_time": "2026-05-05 13:17:23.981862",
+    "project_owner_uuid": "363af7b3-752e-40df-855d-a5ebc3801d8e",
+    "models": [
+        {
+            "uuid": "d23cc471-8711-4047-b673-72da4494d67d",
+            "name": "fan_coil_monitoring_STWIN",
+            "dataset": {
+                "name": "FanCoilOnStwinDataset",
+                "dataset_id": "01kqw3tbs6qwyd3ae8tb7fj3bz"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "off",
+                    "low_speed",
+                    "high_speed"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "ism330dhcx",
+                "device": "steval-stwinkt1b"
+            },
+            "creation_time": "2026-05-05 13:17:25.162225",
+            "last_update_time": "2026-05-05 13:17:25.162232",
+            "model_owner_uuid": "363af7b3-752e-40df-855d-a5ebc3801d8e",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "ism330dhcx_mlc.json",
+                    "ism330dhcx_mlc.h"
+                ],
+                "last_update_time": "2026-05-05 13:17:48.792637",
+                "creation_time": "2026-05-05 13:17:48.792634"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

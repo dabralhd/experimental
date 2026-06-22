@@ -1,0 +1,122 @@
+{
+   "$schema": "/home/workspace/.assets/schemas/ai_main_schema.json",
+   "ai_project_name": "hvac_monitor",
+   "uuid": "fed3dd80-939e-4597-8c6d-4153bfad4efe",
+   "description": "HVAC power level prediction using MLC",
+   "version": "0.0.1",
+   "inputs": [
+      {
+         "uuid": "77b31abd-e6db-48a3-ac25-b773c2a53d2e",
+         "input_type": "binary_hsd",
+         "model_ref": "aa8695a8-b93b-4d42-ace3-db48b7634ce8",
+         "logs": [
+            {
+               "uuid": "190d94d2-cd39-4929-92f7-da62939ac036",
+               "name": "20221223_16_22_28",
+               "start_date": "2022-12-23T10:53:06.957Z",
+               "description": "descriptionTest",
+               "device_description": {
+                  "part_number": "STEVAL-STWINKT1",
+                  "serial_number": "0015002F374E50132030364B",
+                  "alias": "STWIN_001",
+                  "fw_name:": "FP-SNS-DATALOG1",
+                  "fw_version": "1.1.0"
+               },
+               "annotated": true
+            }
+         ],
+         "augmentation": [],
+         "tools": [
+            {
+               "name": "hsdatalog_to_unico",
+               "version": "1.1.0",
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-stwinkt1:mlc",
+               "section": "input",
+               "parameters": {
+                  "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                  "-f": "TXT",
+                  "-t": "",
+                  "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+               }
+            }
+         ]
+      }
+   ],
+   "models": [
+      {
+         "uuid": "aa8695a8-b93b-4d42-ace3-db48b7634ce8",
+         "name": "HVACmodel",
+         "stage": "modeling",
+         "model_type": "classifier",
+         "training_type": "offline",
+         "retraining": false,
+         "model_metadata": {
+            "classes": [
+               "off",
+               "quiet",
+               "slow",
+               "medium",
+               "fast"
+            ]
+         },
+         "experiments": [
+            {
+               "uuid": "3ba85ed9-5e60-4c21-b9d2-b27c062b2304",
+               "name": "HVAC_power",
+               "description": "HVAC power level predictions",
+               "model_dev_file": null
+            }
+         ],
+         "tools": []
+      }
+   ],
+   "outputs": [
+      {
+         "uuid": "d66cbdbc-2e6e-430d-8c82-b34d602d8385",
+         "output_type": "steval-stwinkt1:mlc",
+         "model_ref": "aa8695a8-b93b-4d42-ace3-db48b7634ce8",
+         "tests": [
+            {
+               "uuid": "08b42927-63be-400c-8efc-1ba271633283",
+               "name": "Test1",
+               "experiment_ref": "3ba85ed9-5e60-4c21-b9d2-b27c062b2304",
+               "model_file": null,
+               "parameters": {},
+               "reports": [],
+               "outputs": []
+            },
+            {
+               "uuid": "3f1a8330-3a30-4ebe-ab98-4b26a9534994",
+               "name": "Test2",
+               "experiment_ref": "3ba85ed9-5e60-4c21-b9d2-b27c062b2304",
+               "model_file": null,
+               "parameters": {},
+               "reports": [],
+               "outputs": []
+            }
+         ],
+         "best_test": null,
+         "tools": [
+            {
+               "name": "mlctools",
+               "version": "1.0.0",
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-stwinkt1:mlc",
+               "section": "output"
+            }
+         ],
+         "events": [],
+         "ui": {
+            "icons": []
+         }
+      }
+   ],
+   "deployments": [],
+   "dbstatus": {
+      "status": "unknown",
+      "message": null
+   }
+}

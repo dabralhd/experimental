@@ -1,0 +1,62 @@
+{
+    "uuid": "0dc3f48f-19d4-464c-a2c0-e59fb6b65345",
+    "ai_project_name": "smart_asset_tracking_on_nucleo",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "last_update_time": "2026-04-01 08:22:57.856138",
+    "creation_time": "2026-04-01 08:22:56.610506",
+    "project_owner_uuid": "363af7b3-752e-40df-855d-a5ebc3801d8e",
+    "models": [
+        {
+            "uuid": "21c0d3da-33a9-4b4a-88b6-dd69eeb828f8",
+            "name": "smart_asset_tracking_on_nucleo",
+            "dataset": {
+                "name": "smart_asset_tracking_on_nucleo",
+                "dataset_id": "01kn420qc41a1abcxtcpqq0qt0"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary_upright",
+                    "stationary_not_upright",
+                    "motion",
+                    "shaken"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "ism6hg256x",
+                "device": "nucleo-u575zi-q"
+            },
+            "creation_time": "2026-04-01 08:22:57.821405",
+            "last_update_time": "2026-04-01 08:22:57.821413",
+            "model_owner_uuid": "363af7b3-752e-40df-855d-a5ebc3801d8e",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "ism6hg256x_mlc.json",
+                    "ism6hg256x_mlc.h"
+                ],
+                "last_update_time": "2026-04-01 08:23:49.754446",
+                "creation_time": "2026-04-01 08:23:49.754444"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

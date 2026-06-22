@@ -1,0 +1,120 @@
+{
+   "uuid": "81446ce8-69fd-4678-9c1f-e25f7f7cb6f2",
+   "ai_project_name": "20240404_drilling_machine",
+   "display_name": null,
+   "description": "desc",
+   "version": "0.0.1",
+   "inputs": [
+      {
+         "uuid": "1e507ced-8a15-4632-bed2-92567a69e60c",
+         "model_ref": "7afb890a-c53d-4b49-b525-03fffefb2f4b",
+         "input_type": "binary_hsd",
+         "augmentation": [],
+         "logs": [
+            {
+               "uuid": "0df7b1fa-253a-4445-bf89-4890287a7f3d",
+               "name": "20240404_14_01_14",
+               "annotated": true,
+               "description": "20240404_14_01_14",
+               "start_time": "2024-04-04T14:01:18.000Z",
+               "end_time": "2024-04-04T14:01:49.004Z",
+               "device_description": {
+                  "part_number": "STEVAL-MKBOXPRO",
+                  "serial_number": "004A00295752501620353339",
+                  "alias": "STBOX_PRO_001",
+                  "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                  "fw_version": "1.2.1"
+               }
+            },
+            {
+               "uuid": "390fa00e-1535-4a70-9e9d-7a190d0605e3",
+               "name": "20240404_14_02_36",
+               "annotated": true,
+               "description": "20240404_14_02_36",
+               "start_time": "2024-04-04T14:02:39.000Z",
+               "end_time": "2024-04-04T14:03:13.525Z",
+               "device_description": {
+                  "part_number": "STEVAL-MKBOXPRO",
+                  "serial_number": "004A00295752501620353339",
+                  "alias": "STBOX_PRO_001",
+                  "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                  "fw_version": "1.2.1"
+               }
+            },
+            {
+               "uuid": "07ad16e3-1f7c-434c-9567-8f902ebdfb02",
+               "name": "20240404_14_04_20",
+               "annotated": true,
+               "description": "20240404_14_04_20",
+               "start_time": "2024-04-04T14:04:24.000Z",
+               "end_time": "2024-04-04T14:04:55.509Z",
+               "device_description": {
+                  "part_number": "STEVAL-MKBOXPRO",
+                  "serial_number": "004A00295752501620353339",
+                  "alias": "STBOX_PRO_001",
+                  "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                  "fw_version": "1.2.1"
+               }
+            }
+         ],
+         "tools": [
+            {
+               "name": "hsdatalog_to_unico",
+               "version": "1.1.0",
+               "parameters": {
+                  "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                  "-f": "TXT",
+                  "-t": "",
+                  "-s": "all",
+                  "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+               }
+            }
+         ]
+      }
+   ],
+   "models": [
+      {
+         "uuid": "7afb890a-c53d-4b49-b525-03fffefb2f4b",
+         "name": "states_classifier",
+         "model_type": "classifier",
+         "training_type": "offline",
+         "stage": "modeling",
+         "model_metadata": {
+            "classes": [
+               "idle",
+               "slow",
+               "fast"
+            ]
+         },
+         "experiments": [
+            {
+               "uuid": "8f5c82fb-3e8b-41e7-b62d-3740dfcbee35",
+               "name": "exp1",
+               "description": "desc",
+               "model_dev_file": null
+            }
+         ]
+      }
+   ],
+   "outputs": [
+      {
+         "uuid": "df4d28ff-254b-4a4e-8bee-2703490bc195",
+         "model_ref": "7afb890a-c53d-4b49-b525-03fffefb2f4b",
+         "output_type": "steval-mkboxpro:mlc",
+         "best_test": null,
+         "tests": [],
+         "tools": [
+            {
+               "name": "mlctools",
+               "version": "1.0.0",
+               "parameters": null
+            }
+         ]
+      }
+   ],
+   "deployments": [],
+   "dbstatus": {
+      "status": "unknown",
+      "message": null
+   }
+}

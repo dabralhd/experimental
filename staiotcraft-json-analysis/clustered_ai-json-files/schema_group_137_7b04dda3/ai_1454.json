@@ -1,0 +1,266 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v10",
+    "ai_project_name": "my_asset_tracking",
+    "display_name": "Smart Asset Tracking",
+    "description": "Classification of package conditions using the MLC to detect stationary orientation (upright or not) or moving and shaking states.\n\nWith this example, you can individually track the state of a physical item, such as a package, to monitor whether it is moving or being shaken too harshly, and whether it is still upright or not. Classification is very fast and will detect even brief events. You can also clone and retrain the model to adapt its classes to your use case, for example by tailoring the 'shaken' class to particularly strong motion or, on the contrary, by making it more sensitive for fragile items.\nTo use this example, simply position the board on top of the item, ensuring it is secured firmly. If you wish to avoid using a USB cable, you can also track it wirelessly from the ST AIoT Craft mobile app.",
+    "type": "industrial",
+    "uuid": "bbe01890-7b40-4ce9-b274-797d7f53bb37",
+    "version": "1.0.0",
+    "creation_time": "2025-02-26 15:17:30.646852",
+    "last_update_time": "2025-02-26 15:17:30.646852",
+    "models": [
+        {
+            "uuid": "032fecbe-7c11-4dad-8bd8-36433e27a59f",
+            "name": "smart_asset_tracking",
+            "description": "Model to recognize position and orientation of a tracked item, created with an Auto-ML based approach.",
+            "creation_time": "2025-02-26 15:17:30.646866",
+            "last_update_time": "2025-02-26 15:17:30.646871",
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary_upright",
+                    "stationary_not_upright",
+                    "motion",
+                    "shaken"
+                ]
+            },
+            "dataset": {
+                "dataset_id": "01jn1db7fky1qqgwg1nkqg4ss5",
+                "name": "my_asset_tracking"
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "data_sufficiency": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-ds-job",
+                            "version": null,
+                            "template_id": null
+                        }
+                    ]
+                },
+                "configuration": null,
+                "artifacts": [
+                    "activities_training.json",
+                    "counts.json",
+                    "feat_names.json",
+                    "hnne.pkl",
+                    "kmeans_cluster_labels.json",
+                    "my_kmeans.json",
+                    "my_tree.onnx",
+                    "window_size_odr_channels.json"
+                ],
+                "reports": []
+            },
+            "training": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": null
+                        },
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "artifacts": [
+                    "lsm6dsv16x_mlc.json",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "reports": [
+                    "report.json"
+                ]
+            },
+            "codegen": null,
+            "building": null
+        }
+    ],
+    "applications": [
+        {
+            "uuid": "3f2407aa-abc1-4aee-a00c-aab856a05d30",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-6.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_GATEWAY;6",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-6.1.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/edge_gateway_production_20250214_1_3_0.img.gz",
+            "module_id": "edgeMLC"
+        },
+        {
+            "uuid": "1a0e3203-5351-4161-8fc3-20f07b1bcd1c",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-6.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;6",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_3_0_0.bin",
+            "binary_id": 341,
+            "protocol": 2
+        },
+        {
+            "uuid": "07983262-e293-43db-af5e-af0b3a6bd67f",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/AI_INERTIAL-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:AI_INERTIAL;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/AI-INERTIAL_AssetTrackingOnMLC_1_2_0.bin",
+            "binary_id": 353,
+            "protocol": 1
+        },
+        {
+            "uuid": "d7fc81b1-e24a-4547-9fb4-12434b258a02",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-6.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_GATEWAY;6",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-6.1.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/edge_gateway_production_20250214_1_3_0.img.gz",
+            "module_id": "edgeMLC",
+            "binary_id": 0,
+            "protocol": 0
+        }
+    ],
+    "deployments": [
+        {
+            "uuid": "bafb846e-9097-4ab1-b557-f3096843f33f",
+            "display_name": "Smart Asset Tracking end-to-end system with SensorTile.box PRO.",
+            "description": "End-to-end system deployment for Smart Asset Tracking scenario.",
+            "last_update_time": "2025-02-26 15:18:30.966250",
+            "last_deploy_result": null,
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": null
+            },
+            "gateway": [
+                {
+                    "device_id": "35b6df6d-bbd4-41f3-a9b9-313a812bbbc1",
+                    "display_name": "gateway_0",
+                    "gateway_id": null,
+                    "description": "Gateway device at position 0.",
+                    "application": "3f2407aa-abc1-4aee-a00c-aab856a05d30",
+                    "wifi_mode": "off"
+                }
+            ],
+            "leaf": [
+                {
+                    "device_id": "48382ddf-4f04-4776-98a8-98ac205da91e",
+                    "display_name": "leaf_0",
+                    "gateway_id": "gateway_0",
+                    "description": "Leaf device at position 0.",
+                    "datalogging": {
+                        "application": "1a0e3203-5351-4161-8fc3-20f07b1bcd1c",
+                        "firmware_update": false
+                    },
+                    "inference": {
+                        "application": "07983262-e293-43db-af5e-af0b3a6bd67f",
+                        "firmware_update": false,
+                        "models": [
+                            {
+                                "model_name_reference": "smart_asset_tracking",
+                                "artifact_type": "json",
+                                "component_name": "lsm6dsv16x_mlc"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "uuid": "07594377-fdae-4978-a03f-b0077f6fe3d4",
+            "description": "test_iot_1",
+            "display_name": "test_iot_1",
+            "cloud_params": {
+                "type": "azure_custom",
+                "app_url": "https://staiotcraft-app-h4j9.azurewebsites.net/v1"
+            },
+            "last_update_time": "2025-02-26 15:31:39.693910",
+            "last_deploy_result": "success",
+            "leaf": [
+                {
+                    "gateway_id": "gateway_0",
+                    "description": "Leaf device at position 0.",
+                    "display_name": "leaf_0",
+                    "device_id": "e040ecf2-c2e9-484f-af9b-b362e2305a52",
+                    "datalogging": {
+                        "application": "1a0e3203-5351-4161-8fc3-20f07b1bcd1c",
+                        "firmware_update": false
+                    },
+                    "inference": {
+                        "application": "07983262-e293-43db-af5e-af0b3a6bd67f",
+                        "firmware_update": false,
+                        "models": [
+                            {
+                                "artifact_type": "ucf",
+                                "component_name": "lsm6dsv16x_mlc",
+                                "model_name_reference": "smart_asset_tracking"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "gateway": [
+                {
+                    "application": "3f2407aa-abc1-4aee-a00c-aab856a05d30",
+                    "description": "Gateway device at position 0.",
+                    "display_name": "gateway_0",
+                    "device_id": "1468e244-1c6d-496e-ab69-43d272f5f912",
+                    "wifi_mode": "off"
+                }
+            ]
+        },
+        {
+            "uuid": "7f6b3675-6c3c-41d7-9a18-9ac296ccad52",
+            "description": "to_delete",
+            "display_name": "to_delete",
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": ""
+            },
+            "last_update_time": "2025-05-07 12:32:40.749268",
+            "last_deploy_result": "success",
+            "leaf": [
+                {
+                    "gateway_id": "gateway_0",
+                    "description": "Leaf device at position 0.",
+                    "display_name": "leaf_0",
+                    "device_id": "48382ddf-4f04-4776-98a8-98ac205da91e",
+                    "datalogging": {
+                        "application": "1a0e3203-5351-4161-8fc3-20f07b1bcd1c",
+                        "firmware_update": false
+                    },
+                    "inference": {
+                        "application": "07983262-e293-43db-af5e-af0b3a6bd67f",
+                        "firmware_update": false,
+                        "models": [
+                            {
+                                "artifact_type": "ucf",
+                                "component_name": "lsm6dsv16x_mlc",
+                                "model_name_reference": "smart_asset_tracking"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "gateway": [
+                {
+                    "application": "3f2407aa-abc1-4aee-a00c-aab856a05d30",
+                    "description": "Gateway device at position 0.",
+                    "display_name": "gateway_0",
+                    "device_id": "35b6df6d-bbd4-41f3-a9b9-313a812bbbc1",
+                    "wifi_mode": "off"
+                }
+            ]
+        }
+    ]
+}

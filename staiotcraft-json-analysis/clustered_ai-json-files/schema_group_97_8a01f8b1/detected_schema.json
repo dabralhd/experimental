@@ -1,0 +1,332 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "ai_project_name": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "creation_time": {
+      "type": "string"
+    },
+    "last_update_time": {
+      "type": "string"
+    },
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "creation_time": {
+            "type": "string"
+          },
+          "last_update_time": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "classes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "classes",
+              "type"
+            ]
+          },
+          "dataset": {
+            "type": "object",
+            "properties": {
+              "dataset_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "dataset_id",
+              "name"
+            ]
+          },
+          "target": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "component": {
+                "type": "string"
+              },
+              "device": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "component",
+              "device",
+              "type"
+            ]
+          },
+          "data_sufficiency": {
+            "type": "object",
+            "properties": {
+              "creation_time": {
+                "type": "null"
+              },
+              "last_update_time": {
+                "type": "null"
+              },
+              "runtime": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "jobs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "version": {
+                          "type": "null"
+                        },
+                        "template_id": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "template_id",
+                        "version"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "jobs",
+                  "type"
+                ]
+              },
+              "configuration": {
+                "type": "null"
+              },
+              "artifacts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "reports": {
+                "type": "array"
+              }
+            },
+            "required": [
+              "artifacts",
+              "configuration",
+              "creation_time",
+              "last_update_time",
+              "reports",
+              "runtime"
+            ]
+          },
+          "training": {
+            "type": "object",
+            "properties": {
+              "creation_time": {
+                "type": "null"
+              },
+              "last_update_time": {
+                "type": "null"
+              },
+              "runtime": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "jobs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "version": {
+                          "type": "null"
+                        },
+                        "template_id": {
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "template_id",
+                        "version"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "jobs",
+                  "type"
+                ]
+              },
+              "configuration": {
+                "type": "string"
+              },
+              "artifacts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "reports": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "artifacts",
+              "configuration",
+              "creation_time",
+              "last_update_time",
+              "reports",
+              "runtime"
+            ]
+          },
+          "codegen": {
+            "type": "null"
+          },
+          "building": {
+            "type": "null"
+          },
+          "model_owner_uuid": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "creation_time",
+          "dataset",
+          "last_update_time",
+          "metadata",
+          "model_owner_uuid",
+          "name",
+          "target",
+          "uuid"
+        ]
+      }
+    },
+    "applications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "device_template_uri": {
+            "type": "string"
+          },
+          "device_template_id": {
+            "type": "string"
+          },
+          "device_manifest_uri": {
+            "type": "string"
+          },
+          "image_uri": {
+            "type": "string"
+          },
+          "module_id": {
+            "type": "string"
+          },
+          "binary_uri": {
+            "type": "string"
+          },
+          "binary_id": {
+            "type": "integer"
+          },
+          "protocol": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "device_template_id",
+          "device_template_uri",
+          "type",
+          "uuid"
+        ]
+      }
+    },
+    "deployments": {
+      "type": "array"
+    },
+    "project_owner_uuid": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "$schema",
+    "ai_project_name",
+    "applications",
+    "creation_time",
+    "deployments",
+    "description",
+    "display_name",
+    "last_update_time",
+    "models",
+    "project_owner_uuid",
+    "schema_version",
+    "type",
+    "uuid",
+    "version"
+  ]
+}

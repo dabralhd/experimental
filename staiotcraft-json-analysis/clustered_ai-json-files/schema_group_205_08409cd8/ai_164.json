@@ -1,0 +1,51 @@
+{
+    "uuid": "b30514b9-2c0b-43c8-9140-0eb0b1db5275",
+    "ai_project_name": "LargeProject",
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2024-08-22 15:29:44.073987",
+    "creation_time": "2024-08-22 15:29:21.978457",
+    "models": [
+        {
+            "uuid": "b492487e-7b01-4972-9ed7-fce8deeebdb1",
+            "name": "model1",
+            "dataset": {
+                "name": "LargeDataset",
+                "dataset_id": "01j5xaj5jxjgzc4v424jm6czgn"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "SW_TAG_3",
+                    "SW_TAG_4",
+                    "SW_TAG_2",
+                    "SW_TAG_1",
+                    "SW_TAG_0"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2024-08-22 15:29:44.045458",
+            "last_update_time": "2024-08-22 15:29:44.045469",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ]
+            }
+        }
+    ],
+    "deployments": []
+}

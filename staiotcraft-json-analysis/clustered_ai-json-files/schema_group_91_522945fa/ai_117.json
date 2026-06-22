@@ -1,0 +1,111 @@
+{
+    "uuid": "077a5701-8de9-406a-8e42-2ee6ce4ec861",
+    "ai_project_name": "test",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "schema_version": null,
+    "last_update_time": "2026-06-16 12:26:41.923780",
+    "creation_time": "2026-06-16 12:26:40.681242",
+    "project_owner_uuid": "b2b524e4-8011-705e-f1e3-5edf3b54a513",
+    "models": [
+        {
+            "uuid": "6264e066-4016-4941-9933-939eaff81a0b",
+            "name": "test",
+            "dataset": {
+                "name": "test_dataset",
+                "dataset_id": "01kv86bs66qym8466cgv6ffmcs"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "test_tag",
+                    "test_tag_2"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "ism330dhcx",
+                "device": "steval-stwinbx1"
+            },
+            "creation_time": "2026-06-16 12:26:41.899485",
+            "last_update_time": "2026-06-16 12:26:41.899492",
+            "model_owner_uuid": "b2b524e4-8011-705e-f1e3-5edf3b54a513"
+        }
+    ],
+    "deployments": [
+        {
+            "uuid": "cd56a3c3-0e13-4649-ab73-f57b90555991",
+            "description": "",
+            "display_name": "test_deployment",
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": ""
+            },
+            "last_update_time": "2026-06-16 12:42:57.332514",
+            "last_deploy_result": "success",
+            "leaf": [
+                {
+                    "gateway_id": "gw_0",
+                    "description": "Leaf device at position 0.",
+                    "display_name": "leaf_0",
+                    "device_id": "leaf_0",
+                    "datalogging": "b344d217-1fbe-472f-bf80-8ef9d4b08e67",
+                    "inference": {
+                        "application": "e9eb9fcb-881b-4cc6-924a-7e770f9f9a60",
+                        "firmware_update": false,
+                        "supported_applications": [
+                            "e9eb9fcb-881b-4cc6-924a-7e770f9f9a60"
+                        ],
+                        "models": [
+                            {
+                                "artifact_type": "json",
+                                "component_name": "ism330dhcx_mlc",
+                                "model_name_reference": "test"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "gateway": [
+                {
+                    "application": "73155872-0bff-4f3e-b24f-279c9389be82",
+                    "description": "Gateway device at position 0.",
+                    "display_name": "gateway_0",
+                    "device_id": "gw_0",
+                    "wifi_mode": "off"
+                }
+            ]
+        }
+    ],
+    "applications": [
+        {
+            "uuid": "73155872-0bff-4f3e-b24f-279c9389be82",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-9.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_Gateway;9",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-9.1.RC1.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/staiotcraft_rpi_gateway_1_6_0_RC1.img.gz",
+            "module_id": "edgeMLC"
+        },
+        {
+            "uuid": "b344d217-1fbe-472f-bf80-8ef9d4b08e67",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_stwinbx1/FP_SNS_DATALOG2_Datalog2-10.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_stwinbx1:FP_SNS_DATALOG2_Datalog2;10",
+            "binary_uri": "/usb/bin/steval-stwinbx1/FP-SNS-DATALOG2_Datalog2_3_2_0.bin",
+            "binary_id": 454,
+            "protocol": 2
+        },
+        {
+            "uuid": "e9eb9fcb-881b-4cc6-924a-7e770f9f9a60",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_stwinbx1/STAIOTCRAFT_AI_Inertial-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_stwinbx1:STAIOTCRAFT_AI_Inertial;1",
+            "binary_uri": "/usb/bin/steval-stwinbx1/STAIOTCRAFT_AI_Inertial_1_2_0.bin",
+            "binary_id": 485,
+            "protocol": 1
+        }
+    ]
+}

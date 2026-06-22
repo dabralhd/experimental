@@ -1,0 +1,61 @@
+{
+    "uuid": "9b4a9ab4-9b99-40ff-9fc5-1a763c9cd790",
+    "ai_project_name": "TestPrj",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2025-07-29 08:33:11.403490",
+    "creation_time": "2025-07-28 13:11:33.253289",
+    "project_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508",
+    "models": [
+        {
+            "uuid": "3a683226-8100-46c7-bd3e-798e163262cf",
+            "name": "testModel",
+            "dataset": {
+                "name": "datalog2_31",
+                "dataset_id": "01k0rwce1s8vnbapjtd12tth9y"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary",
+                    "motion"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-07-28 13:11:34.581925",
+            "last_update_time": "2025-07-28 13:11:34.581938",
+            "model_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508"
+        },
+        {
+            "uuid": "d42bdd3d-ad34-45d9-ba43-af1bc9731758",
+            "name": "cloneModel",
+            "dataset": {
+                "name": "datalog2_31",
+                "dataset_id": "01k0rwce1s8vnbapjtd12tth9y"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary",
+                    "motion"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-07-29 08:33:11.372949",
+            "last_update_time": "2025-07-29 08:33:11.372957",
+            "model_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508"
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

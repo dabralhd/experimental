@@ -1,0 +1,54 @@
+{
+    "uuid": "eea87419-7a0c-4a17-a67b-61c28396dc83",
+    "ai_project_name": "Elham_project",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2024-10-10 13:21:09.148909",
+    "creation_time": "2024-10-10 13:20:50.591475",
+    "models": [
+        {
+            "uuid": "09d6ca70-44a2-4436-8cb3-1275cfe2dc38",
+            "name": "model1",
+            "dataset": {
+                "name": "Elham_data",
+                "dataset_id": "01j9v8hvdp428rg8wbeqhx39r1"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "worn_correctly",
+                    "not_worn",
+                    "worn_on_left_shoulder",
+                    "worn_on_right_shoulder"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2024-10-10 13:21:09.104542",
+            "last_update_time": "2024-10-10 13:21:09.104553",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2024-10-22 15:50:06.495520",
+                "creation_time": "2024-10-22 15:50:06.495516"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

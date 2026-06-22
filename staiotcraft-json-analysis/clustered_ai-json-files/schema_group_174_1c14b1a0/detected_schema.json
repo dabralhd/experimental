@@ -1,0 +1,369 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "ai_project_name": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "last_update_time": {
+      "type": "string"
+    },
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "last_update_time": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "classes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "classes",
+              "type"
+            ]
+          },
+          "dataset": {
+            "type": "object",
+            "properties": {
+              "dataset_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "dataset_id",
+              "name"
+            ]
+          },
+          "target": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "component": {
+                "type": "string"
+              },
+              "device": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "component",
+              "device",
+              "type"
+            ]
+          },
+          "training": {
+            "type": "object",
+            "properties": {
+              "last_update_time": {
+                "type": "string"
+              },
+              "runtime": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "jobs": {
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "jobs",
+                  "type"
+                ]
+              },
+              "configuration": {
+                "type": "string"
+              },
+              "artifacts": {
+                "type": "array"
+              },
+              "reports": {
+                "type": "array"
+              }
+            },
+            "required": [
+              "artifacts",
+              "configuration",
+              "reports",
+              "runtime"
+            ]
+          },
+          "codegen": {
+            "type": "null"
+          },
+          "building": {
+            "type": "null"
+          },
+          "creation_time": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "dataset",
+          "last_update_time",
+          "metadata",
+          "name",
+          "target",
+          "training",
+          "uuid"
+        ]
+      }
+    },
+    "deployments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "last_update_time": {
+            "type": "string"
+          },
+          "last_deploy_result": {
+            "type": "null"
+          },
+          "cloud_params": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "app_url": {
+                "type": "null"
+              }
+            },
+            "required": [
+              "app_url",
+              "type"
+            ]
+          },
+          "configuration": {
+            "type": "object",
+            "properties": {
+              "leaf": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "device_id": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "gateway_id": {
+                      "type": "string"
+                    },
+                    "models": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "datalogging": {
+                            "type": "object",
+                            "properties": {
+                              "device_template_uri": {
+                                "type": "string"
+                              },
+                              "device_template_id": {
+                                "type": "string"
+                              },
+                              "protocol": {
+                                "type": "integer"
+                              },
+                              "firmware_uri": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "device_template_id",
+                              "device_template_uri",
+                              "firmware_uri",
+                              "protocol"
+                            ]
+                          },
+                          "inference": {
+                            "type": "object",
+                            "properties": {
+                              "device_template_uri": {
+                                "type": "string"
+                              },
+                              "device_template_id": {
+                                "type": "string"
+                              },
+                              "protocol": {
+                                "type": "integer"
+                              },
+                              "firmware_uri": {
+                                "type": "string"
+                              },
+                              "ml_uri": {
+                                "type": "string"
+                              },
+                              "firmware_update": {
+                                "type": "boolean"
+                              }
+                            },
+                            "required": [
+                              "device_template_id",
+                              "device_template_uri",
+                              "firmware_update",
+                              "firmware_uri",
+                              "ml_uri",
+                              "protocol"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "datalogging",
+                          "inference",
+                          "name"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "description",
+                    "device_id",
+                    "gateway_id",
+                    "models"
+                  ]
+                }
+              },
+              "gateway": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "device_id": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "gateway_id": {
+                      "type": "null"
+                    },
+                    "module_id": {
+                      "type": "string"
+                    },
+                    "configuration_uri": {
+                      "type": "string"
+                    },
+                    "device_manifest_uri": {
+                      "type": "string"
+                    },
+                    "device_template_uri": {
+                      "type": "string"
+                    },
+                    "device_template_id": {
+                      "type": "string"
+                    },
+                    "wifi_mode": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "configuration_uri",
+                    "description",
+                    "device_id",
+                    "device_manifest_uri",
+                    "device_template_id",
+                    "device_template_uri",
+                    "gateway_id",
+                    "module_id",
+                    "wifi_mode"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "gateway",
+              "leaf"
+            ]
+          }
+        },
+        "required": [
+          "cloud_params",
+          "configuration",
+          "description",
+          "display_name",
+          "last_deploy_result",
+          "last_update_time",
+          "uuid"
+        ]
+      }
+    },
+    "creation_time": {
+      "type": "null"
+    }
+  },
+  "required": [
+    "$schema",
+    "ai_project_name",
+    "creation_time",
+    "deployments",
+    "description",
+    "display_name",
+    "last_update_time",
+    "models",
+    "schema_version",
+    "uuid",
+    "version"
+  ]
+}

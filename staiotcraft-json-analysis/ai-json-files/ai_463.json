@@ -1,0 +1,15 @@
+{
+    "uuid": "3ce5a0c1-92d7-4fb9-96b0-ceca6c1da009",
+    "ai_project_name": "Image_Payload",
+    "type": null,
+    "display_name": null,
+    "description": "<img src=x onerror=alert(1)>",
+    "version": null,
+    "schema_version": null,
+    "last_update_time": "2026-05-07 15:14:05.048037",
+    "creation_time": "2026-05-07 15:14:05.048037",
+    "project_owner_uuid": "d2a55444-90f1-7018-9a49-b90c3a197d0b",
+    "models": [],
+    "deployments": [],
+    "applications": []
+}

@@ -1,0 +1,35 @@
+{
+    "uuid": "5de1ab7b-35bd-4c60-812f-7d484c1d5326",
+    "ai_project_name": "test_project_name_460844",
+    "type": null,
+    "display_name": null,
+    "description": "Project example description",
+    "version": "1.0.0",
+    "last_update_time": "2025-10-27 10:08:09.450921",
+    "creation_time": "2025-10-27 10:08:09.450921",
+    "project_owner_uuid": "b5feedda-585f-476d-9e40-52acec908605",
+    "models": [
+        {
+            "uuid": "08510e03-f862-4cfc-8c28-747752eee602",
+            "name": "model_example",
+            "dataset": {
+                "name": "01hy0rzc8jfhk5svwbb9reze42",
+                "dataset_id": "01hy0rzc8jfhk5svwbb9reze42"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": null
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-10-27 10:08:10.978311",
+            "last_update_time": "2025-10-27 10:08:10.978320",
+            "model_owner_uuid": "b5feedda-585f-476d-9e40-52acec908605"
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

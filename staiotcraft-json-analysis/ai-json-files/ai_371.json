@@ -1,0 +1,47 @@
+{
+    "uuid": "ff2c110b-7d14-4d3a-ab79-d5d94f49e194",
+    "ai_project_name": "MyTestProject2",
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2024-06-26 11:43:48.378939",
+    "creation_time": "2024-06-26 11:43:48.378939",
+    "models": [
+        {
+            "uuid": "2dad7c13-f0f9-4f34-949b-c1e4b6b429fb",
+            "name": "MyModel",
+            "dataset": {
+                "name": "01j1a5vywsx7a9y2qz3xc8dgx3",
+                "dataset_id": "01j1a5vywsx7a9y2qz3xc8dgx3"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary",
+                    "left_right",
+                    "up_down"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ]
+            }
+        }
+    ],
+    "deployments": []
+}
