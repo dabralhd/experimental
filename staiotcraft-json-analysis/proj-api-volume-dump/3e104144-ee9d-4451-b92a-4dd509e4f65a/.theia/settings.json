@@ -1,0 +1,9 @@
+{
+    "files.exclude": {
+        ".stedgeai": true
+    },
+"python.defaultInterpreterPath": "/usr/local/bin/python3",
+    "python.pythonPath": ".virtualenvs/inertial_classification_venv_v0.0.1/bin/python",
+    "python.venvPath": "/home/workspace/.virtualenvs",
+}
+

@@ -1,0 +1,48 @@
+{
+    "uuid": "050f24ff-23d8-4e52-9a97-625c01773581",
+    "name": "20210222_12_25_17",
+    "description": "descriptionTest",
+    "annotated": true,
+    "start_time": "",
+    "end_time": "",
+    "input_type": "binary_hsd",
+    "tags": [
+        {
+            "l": "HW_TAG_1",
+            "e": true,
+            "ta": 0.1997331083
+        },
+        {
+            "l": "still",
+            "e": true,
+            "ta": 5.636090842
+        },
+        {
+            "l": "still",
+            "e": false,
+            "ta": 117.0248322
+        },
+        {
+            "l": "walk",
+            "e": true,
+            "ta": 123.7707013
+        },
+        {
+            "l": "walk",
+            "e": false,
+            "ta": 255.4040175
+        },
+        {
+            "l": "fastwalk",
+            "e": true,
+            "ta": 263.2842706
+        },
+        {
+            "l": "fastwalk",
+            "e": false,
+            "ta": 384.8309269
+        }
+    ],
+    "project_ref": "6f148f7c-d75c-4db6-8344-802c52e18311",
+    "model_ref": "0c90cd1d-a83b-4f6f-a49e-ae8c18eced11"
+}

@@ -1,0 +1,79 @@
+{
+    "uuid": "3e032231-e1d5-470a-bbbb-cc93a2e15e26",
+    "ai_project_name": "SurfaceProject",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2024-11-19 13:17:13.055372",
+    "creation_time": "2024-11-19 13:16:43.954875",
+    "models": [
+        {
+            "uuid": "e4311ea8-49e1-4b79-a408-bfe5791b72fe",
+            "name": "model1",
+            "dataset": {
+                "name": "SurfaceDataset",
+                "dataset_id": "01jd286fgar2paxd1rqb7dw62p"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "grass",
+                    "carpet",
+                    "tiled",
+                    "gravel"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2024-11-19 13:17:13.018804",
+            "last_update_time": "2024-11-19 13:17:13.018812",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [],
+                "artifacts": [],
+                "last_update_time": "2024-11-19 13:17:23.293771",
+                "creation_time": "2024-11-19 13:17:23.293768"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": [
+        {
+            "uuid": "cc80ee86-f749-46be-9c64-46c98e5ce858",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-6.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_GATEWAY;6",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-6.1.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/edge_gateway_production_20250214_1_3_0.img.gz",
+            "module_id": "edgeMLC",
+            "binary_id": 0,
+            "protocol": 0
+        },
+        {
+            "uuid": "fb966770-b499-48fb-829d-b5703f7d5982",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-6.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;6",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_3_0_0.bin",
+            "binary_id": 341,
+            "protocol": 2
+        },
+        {
+            "uuid": "c9b2a191-4f14-4f96-8142-3208f09dd2fc",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/AI_INERTIAL-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:AI_INERTIAL;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/AI-INERTIAL_AssetTrackingOnMLC_1_2_0.bin",
+            "binary_id": 353,
+            "protocol": 1
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+{
+    "$schema": "/data/artifacts/.assets/templates/inputs/augmentation/image/schema_for_image_augmentation.json",
+    "general": {
+        "project": "Put project name here...",
+        "model": "Put model name here...",
+        "class_to_augment": "Put class name to augment here..."
+    },
+    "dataset": {
+        "image_size_x": 160,
+        "image_size_y": 160,
+        "image_size_z": 3,
+        "image_extension": ".jpg"
+    },
+    "dataset_augmentation": {
+        "rotation_range": 10,
+        "width_shift_range": 0.0,
+        "height_shift_range": 0.1,
+        "brightness_range": null,
+        "shear_range": 0.0,
+        "zoom_range": 0.0,
+        "channel_shift_range": 0.0,
+        "fill_mode": "constant",
+        "cval": 0.0,
+        "horizontal_flip": false,
+        "vertical_flip": false,
+        "rescale": 0.0,
+        "augmentation_factor": 10
+    }
+}

@@ -1,0 +1,63 @@
+{
+    "accuracy": "100.00%",
+    "accuracy_metaclassifiers": "100.0%",
+    "confusion_matrix": {
+        "drilling": {
+            "drilling": "22",
+            "idle": "0",
+            "percussive_drilling": "0",
+            "screwing": "0"
+        },
+        "idle": {
+            "drilling": "0",
+            "idle": "21",
+            "percussive_drilling": "0",
+            "screwing": "0"
+        },
+        "percussive_drilling": {
+            "drilling": "0",
+            "idle": "0",
+            "percussive_drilling": "19",
+            "screwing": "0"
+        },
+        "screwing": {
+            "drilling": "0",
+            "idle": "0",
+            "percussive_drilling": "0",
+            "screwing": "27"
+        }
+    },
+    "confusion_matrix_metaclassifiers": {
+        "drilling": {
+            "drilling": "22",
+            "idle": "0",
+            "percussive_drilling": "0",
+            "screwing": "0"
+        },
+        "idle": {
+            "drilling": "0",
+            "idle": "21",
+            "percussive_drilling": "0",
+            "screwing": "0"
+        },
+        "percussive_drilling": {
+            "drilling": "0",
+            "idle": "0",
+            "percussive_drilling": "19",
+            "screwing": "0"
+        },
+        "screwing": {
+            "drilling": "0",
+            "idle": "0",
+            "percussive_drilling": "0",
+            "screwing": "27"
+        }
+    },
+    "correctly_classified_instances": "89",
+    "correctly_classified_instances_metaclassifiers": "89",
+    "incorrectly_classified_instances": "0",
+    "incorrectly_classified_instances_metaclassifiers": "0",
+    "kappa_statistic": "100.00%",
+    "total_instances": "89",
+    "total_instances_metaclassifiers": "89"
+}

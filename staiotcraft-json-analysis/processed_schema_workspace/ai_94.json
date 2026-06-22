@@ -1,0 +1,193 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v11",
+    "ai_project_name": "nicoClone",
+    "display_name": "Head Gestures",
+    "description": "Classification of head gestures such as other, nod and shake using the MLC.\n\nWith this example, you can recognize head gestures such as nodding, shaking, and other general head movements, for applications that might involve safety helmets, VR headsets, and other forms of gear worn on the head. Since recognition can be position-dependent, you can clone this project, collect new data and retrain the model to fit it to your use case. To use this example, ensure that the board is placed firmly above the user's right ear vertically, with the USB port facing down toward the ear, and the LEDs and logos facing outward.",
+    "type": "entertainment",
+    "uuid": "ddc5eb9b-deea-4211-b762-c0762a884ecf",
+    "version": "1.0.0",
+    "creation_time": "2026-01-20 15:44:48.743339",
+    "last_update_time": "2026-01-20 15:44:48.743339",
+    "project_owner_uuid": "90ab4947-c200-4776-a316-d02c3041c4b8",
+    "models": [
+        {
+            "uuid": "378691ce-4760-41c8-8c9f-78f2238e6abf",
+            "name": "head_gestures",
+            "description": "Model to recognize head gestures, with an Auto-ML based approach.",
+            "creation_time": "2026-01-20 15:44:48.743350",
+            "last_update_time": "2026-01-20 15:44:48.743353",
+            "model_owner_uuid": "90ab4947-c200-4776-a316-d02c3041c4b8",
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "other",
+                    "nod",
+                    "shake"
+                ]
+            },
+            "dataset": {
+                "dataset_id": "01kfe18z7ak06te2agerznx5cc",
+                "name": "head_gestures"
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "data_sufficiency": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-ds-job",
+                            "version": null,
+                            "template_id": null
+                        }
+                    ]
+                },
+                "configuration": null,
+                "artifacts": [
+                    "activities_training.json",
+                    "counts.json",
+                    "feat_names.json",
+                    "kmeans_cluster_labels.json",
+                    "lda.onnx",
+                    "my_kmeans.json",
+                    "my_tree.onnx",
+                    "window_size_odr_channels.json"
+                ],
+                "reports": []
+            },
+            "training": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": null
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "artifacts": [
+                    "lsm6dsv16x_mlc.json",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "reports": [
+                    "report.json"
+                ]
+            },
+            "codegen": null,
+            "building": null
+        }
+    ],
+    "applications": [
+        {
+            "uuid": "0508e479-40e4-409c-91e6-870e66e1388f",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_Gateway;8",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.1.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/staiotcraft_rpi_gateway_1_5_0.img.gz",
+            "module_id": "edgeMLC"
+        },
+        {
+            "uuid": "cfcae783-8800-465b-a780-2e8ac674c3ab",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-7.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;7",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_3_1_0.bin",
+            "binary_id": 381,
+            "protocol": 2
+        },
+        {
+            "uuid": "3483c39e-1957-46f9-a731-4a2f3d0f0051",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_STAIOTCFT_AI_Inertial-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_STAIOTCFT_AI_Inertial;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/FP-SNS-STAIOTCFT_AI_Inertial_AssetTrackingOnMLC_1_0_0.bin",
+            "binary_id": 418,
+            "protocol": 1
+        },
+        {
+            "uuid": "31fc405d-b109-471c-b671-f58640b233f3",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/AI_SSM-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:AI_SSM;1",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/AI-SSM_1_0_0.bin",
+            "binary_id": 438,
+            "protocol": 0,
+            "bluest_v3_payload": {
+                "device_id": "0x0D",
+                "fw_id": "0x25",
+                "payload_id": "0x0001",
+                "decoding_schema": [
+                    {
+                        "component": "lsm6dsv16x_mlc",
+                        "telemetry": "label_id",
+                        "type": "int8_t"
+                    }
+                ]
+            }
+        }
+    ],
+    "deployments": [
+        {
+            "uuid": "7530d5b2-3cd6-4cef-b85d-bb4fb5448048",
+            "display_name": "Head Gestures with SensorTile.box PRO and LSM6DSV16X sensor.",
+            "description": "End-to-end system deployment for Head Gestures use case on the SensorTile.box PRO using the LSM6DSV16X sensor.",
+            "last_update_time": null,
+            "last_deploy_result": null,
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": null
+            },
+            "gateway": [
+                {
+                    "device_id": "gateway_0",
+                    "display_name": "gateway_0",
+                    "gateway_id": null,
+                    "description": "Gateway device at position 0.",
+                    "application": "788f90b7-1011-4f82-9dbe-2addd2ff9b9f",
+                    "wifi_mode": "off"
+                }
+            ],
+            "leaf": [
+                {
+                    "device_id": "leaf_0",
+                    "display_name": "leaf_0",
+                    "gateway_id": "gateway_0",
+                    "description": "Leaf device at position 0.",
+                    "datalogging": {
+                        "supported_applications": [
+                            "f5874211-cd84-40a9-847f-4638bd18477e"
+                        ],
+                        "application": "f5874211-cd84-40a9-847f-4638bd18477e",
+                        "firmware_update": false
+                    },
+                    "inference": {
+                        "supported_applications": [
+                            "b3bf71fa-b4aa-487d-8d4b-dc1c2d9fbe1e",
+                            "cbf9932f-c12a-401b-89fc-d89df73cbc67"
+                        ],
+                        "application": "b3bf71fa-b4aa-487d-8d4b-dc1c2d9fbe1e",
+                        "firmware_update": false,
+                        "models": [
+                            {
+                                "model_name_reference": "head_gestures",
+                                "artifact_type": "json",
+                                "component_name": "lsm6dsv16x_mlc"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

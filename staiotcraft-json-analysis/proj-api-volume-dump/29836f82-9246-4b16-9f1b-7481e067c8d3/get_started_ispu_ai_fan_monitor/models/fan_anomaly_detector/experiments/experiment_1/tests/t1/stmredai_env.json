@@ -1,0 +1,23 @@
+{
+    "name": "t1",
+    "service": {
+        "name": "stredai-q2c",
+        "label": "STRED for BNN",
+        "service_base_url": "http://10.50.69.11:7000/stred-ai",
+        "config_schema_uri": "/tmp/vscode-unpacked/stredai-0.0.1.vsix/extension/assets/schemas/stredaiq2c.json",
+        "type": "q2c"
+    },
+    "vespucci_project_context": {
+        "extension_name": "edgeai-project-manager",
+        "test_folder": "/home/workspace/8c1e03b5-8279-4a51-a125-c8536f2bf60d/stredl-demo/models/fan_anomaly_detector/experiments/experiment_1/tests/t1",
+        "project_name": "stredl-demo",
+        "project_id": "c34ca5cc-7260-4eac-8c8f-1b2a9c022a45",
+        "model_name": "fan_anomaly_detector",
+        "model_id": "dd9f493d-4134-4dc5-ac0c-e0daf99d204f",
+        "experiment_name": "experiment_1",
+        "experiment_id": "816c5a40-fe88-4d41-9099-abfb01cdd146",
+        "test_name": "t1",
+        "test_id": "2eedf581-3129-42fe-82a3-78695148aedd",
+        "model_file": "/home/workspace/8c1e03b5-8279-4a51-a125-c8536f2bf60d/stredl-demo/models/fan_anomaly_detector/experiments/experiment_1/application/fan_anomaly_detector_experiment_1.h5"
+    }
+}

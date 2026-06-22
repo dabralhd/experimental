@@ -1,0 +1,9 @@
+{
+    "files.exclude": {
+        ".stedgeai": true        
+    },
+    "python.defaultInterpreterPath": "334c65a5-1495-453a-a6de-4d384a781000/.virtualenvs/fan_anomaly_detector_experiment_1/bin/python",
+    "python.pythonPath": ".virtualenvs/anomaly_detection_venv_v0.0.1/bin/python",
+    "python.venvPath": "/home/workspace/.virtualenvs",
+}
+

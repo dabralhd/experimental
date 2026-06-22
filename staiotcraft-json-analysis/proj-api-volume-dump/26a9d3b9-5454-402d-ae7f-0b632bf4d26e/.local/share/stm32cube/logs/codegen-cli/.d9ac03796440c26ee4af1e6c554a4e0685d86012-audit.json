@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 50
+    },
+    "auditLog": "/home/cube/.local/share/stm32cube/logs/codegen-cli/.d9ac03796440c26ee4af1e6c554a4e0685d86012-audit.json",
+    "files": [
+        {
+            "date": 1752055608277,
+            "name": "/home/cube/.local/share/stm32cube/logs/codegen-cli/codegen-cli-2025-07-09_1752055608269.log",
+            "hash": "36cedb2b78acf521942e231149886d3893aa861cf29388072eb4244cd5c2752a"
+        }
+    ],
+    "hashType": "sha256"
+}

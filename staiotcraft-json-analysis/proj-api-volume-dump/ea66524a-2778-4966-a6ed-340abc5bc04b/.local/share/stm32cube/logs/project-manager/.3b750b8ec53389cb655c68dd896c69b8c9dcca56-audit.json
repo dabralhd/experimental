@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 50
+    },
+    "auditLog": "/home/cube/.local/share/stm32cube/logs/project-manager/.3b750b8ec53389cb655c68dd896c69b8c9dcca56-audit.json",
+    "files": [
+        {
+            "date": 1754564475707,
+            "name": "/home/cube/.local/share/stm32cube/logs/project-manager/project-manager-2025-08-07_1754564475687.log",
+            "hash": "ad1242abd6c940b4f979df5ce2ef5b41532126a300452ae2bf831f2599d863c5"
+        }
+    ],
+    "hashType": "sha256"
+}

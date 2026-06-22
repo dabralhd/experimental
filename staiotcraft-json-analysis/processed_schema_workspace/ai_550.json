@@ -1,0 +1,188 @@
+{
+    "uuid": "e5d63471-c0c6-4e28-95c2-26e5f54b170c",
+    "ai_project_name": "Extra_labels",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2025-03-11 14:09:49.303729",
+    "creation_time": "2025-01-15 10:24:57.380773",
+    "models": [
+        {
+            "uuid": "fc1d189c-a2f7-4920-8f3d-daba57bcea59",
+            "name": "Extra_labels",
+            "dataset": {
+                "name": "Extra_labels",
+                "dataset_id": "01jhmr063y0c1djq7pntnjd64q"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "not_worn",
+                    "forward_leaning",
+                    "backward_leaning",
+                    "unbalanced_left",
+                    "unbalanced_right",
+                    "proper_posture"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-01-15 13:03:13.709795",
+            "last_update_time": "2025-01-15 13:03:13.709808",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2025-01-17 16:22:56.417880",
+                "creation_time": "2025-01-17 16:22:56.417875"
+            }
+        },
+        {
+            "uuid": "8532b044-ea3d-491f-8396-aae5a359f203",
+            "name": "MI",
+            "dataset": {
+                "name": "Extra_labels",
+                "dataset_id": "01jhmr063y0c1djq7pntnjd64q"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "not_worn",
+                    "forward_leaning",
+                    "backward_leaning",
+                    "unbalanced_left",
+                    "unbalanced_right",
+                    "proper_posture"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-02-04 09:38:38.047120",
+            "last_update_time": "2025-02-04 09:38:38.047129",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2025-02-04 09:39:18.880484",
+                "creation_time": "2025-02-04 09:39:18.880480"
+            }
+        },
+        {
+            "uuid": "430a5212-2ed7-410c-91bc-f4451d0bf700",
+            "name": "MI_10filters5raw",
+            "dataset": {
+                "name": "Extra_labels",
+                "dataset_id": "01jhmr063y0c1djq7pntnjd64q"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "not_worn",
+                    "forward_leaning",
+                    "backward_leaning",
+                    "unbalanced_left",
+                    "unbalanced_right",
+                    "proper_posture"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-02-11 09:02:39.405029",
+            "last_update_time": "2025-02-11 09:02:39.405043",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2025-02-11 09:02:51.739552",
+                "creation_time": "2025-02-11 09:02:51.739546"
+            }
+        },
+        {
+            "uuid": "2cb8595a-52b1-4639-8a83-475581b35e60",
+            "name": "Cleandata",
+            "dataset": {
+                "name": "Extra_labels",
+                "dataset_id": "01jhmr063y0c1djq7pntnjd64q"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "not_worn",
+                    "forward_leaning",
+                    "backward_leaning",
+                    "unbalanced_left",
+                    "unbalanced_right",
+                    "proper_posture"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-03-11 14:09:49.265670",
+            "last_update_time": "2025-03-11 14:09:49.265685",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2025-03-11 14:10:02.004568",
+                "creation_time": "2025-03-11 14:10:02.004562"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

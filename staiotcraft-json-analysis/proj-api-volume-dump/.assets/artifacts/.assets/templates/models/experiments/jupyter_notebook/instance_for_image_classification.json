@@ -1,0 +1,41 @@
+{
+    "$schema": "/data/artifacts/.assets/templates/models/experiments/jupyter_notebook/schema_for_image_classification.json",
+    "general": {
+        "project": "Put project name here...",
+        "model": "Put model name here...",
+        "classes": ["Put list of classes here..."],
+        "experiment": "Put experiment name here..."
+    },
+    "dataset": {
+        "image_size_x": 160,
+        "image_size_y": 160,
+        "image_size_z": 3,
+        "validation_split": 0.20,
+        "class_mode": "categorical",
+        "color_mode": "rgb",
+        "seed": null,
+        "batch_size": 8,
+        "shuffle": true
+    },
+    "model": {
+        "network": "MobileNetV2",
+        "alpha": 0.35,
+        "include_top": false,
+        "optimizer": "Adam",
+        "learning_rate": 1e-4,
+        "training_metric": "accuracy",
+        "training_loss": "categorical_crossentropy",
+        "top_layer_activation_function": "linear",
+        "early_stopping_metric": "val_loss",
+        "early_stopping_mode": "min",
+        "early_stopping_patience": 20,
+        "early_stopping_restore_best_weights": true,
+        "initial_epoch": 0,
+        "epochs": 100
+    },
+    "model_optimization": {
+        "polynomial_decay_initial_sparsity": 0.20,
+        "polynomial_decay_final_sparsity": 0.50,
+        "pruning_epochs": 100
+    }
+}

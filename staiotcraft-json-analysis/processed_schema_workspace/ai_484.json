@@ -1,0 +1,62 @@
+{
+    "uuid": "64f1af4e-2794-4c70-a68a-2d7c8add4193",
+    "ai_project_name": "p",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2025-09-05 05:29:35.848811",
+    "creation_time": "2025-09-05 05:29:35.848811",
+    "project_owner_uuid": "f718fb0b-666a-4841-afd3-33dc9ea504ed",
+    "models": [
+        {
+            "uuid": "6ba2c34f-a28f-4281-ae8d-f3faad2ff471",
+            "name": "m",
+            "dataset": {
+                "name": "p",
+                "dataset_id": "01k4c5m0hxb67cae8ttzwgz94d"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary_upright",
+                    "stationary_not_upright",
+                    "motion",
+                    "shaken"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-09-05 05:29:35.848823",
+            "last_update_time": "2025-09-05 05:29:35.848825",
+            "model_owner_uuid": "f718fb0b-666a-4841-afd3-33dc9ea504ed",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.json",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2025-09-05 05:33:27.426677",
+                "creation_time": "2025-09-05 05:33:27.426675"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 50
+    },
+    "auditLog": "/home/cube/.local/share/stm32cube/logs/STM32CubeMX2/.2de9be636c50c8b480a707d4ee1697935058f622-audit.json",
+    "files": [
+        {
+            "date": 1756880059707,
+            "name": "/home/cube/.local/share/stm32cube/logs/STM32CubeMX2/STM32CubeMX2-2025-09-03_1756880059686.log",
+            "hash": "1efaa97744a61a63aee71136a11ad8d67974f58bd4c0c357ba7a738730f559bb"
+        }
+    ],
+    "hashType": "sha256"
+}

@@ -1,0 +1,2661 @@
+{
+  "version": 3,
+  "configurations": [
+    {
+      "projectId": "332f4f9c-db5c-461f-a263-b4caff3b79ce",
+      "core": "Cortex-M33",
+      "context": "NON_SECURE",
+      "instance": "NVIC1",
+      "grouping": [
+        {
+          "value": 0,
+          "description": "0 bits for subpriority, 4 bits for pre-emption priority",
+          "selected": true
+        },
+        {
+          "value": 1,
+          "description": "1 bits for subpriority, 3 bits for pre-emption priority",
+          "selected": false
+        },
+        {
+          "value": 2,
+          "description": "2 bits for subpriority, 2 bits for pre-emption priority",
+          "selected": false
+        },
+        {
+          "value": 3,
+          "description": "3 bits for subpriority, 1 bits for pre-emption priority",
+          "selected": false
+        },
+        {
+          "value": 4,
+          "description": "4 bits for subpriority, 0 bits for pre-emption priority",
+          "selected": false
+        }
+      ],
+      "priority_grouping": true,
+      "priority_bits": 4,
+      "priority_values": {
+        "priority": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "subpriority": [
+          0
+        ]
+      },
+      "interrupts": [
+        {
+          "acronyms": [
+            "NMI"
+          ],
+          "description": "Non maskable interrupt. The RCC Clock Security System (CSS) is linked to the NMI vector.",
+          "instances": [],
+          "name": "NMI",
+          "priority": -2,
+          "settable": false,
+          "type": "exception",
+          "used_at_reset": true,
+          "id": 1,
+          "subpriority": 0,
+          "used": true,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "Non-secure HardFault"
+          ],
+          "description": "Non-Secure Hard fault. All classes of fault",
+          "instances": [],
+          "name": "Non-secure HardFault",
+          "priority": -1,
+          "settable": false,
+          "type": "exception",
+          "used_at_reset": true,
+          "id": 3,
+          "subpriority": 0,
+          "used": true,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "MemManage"
+          ],
+          "description": "Memory management",
+          "instances": [],
+          "name": "MemManage",
+          "priority": 0,
+          "settable": true,
+          "type": "exception",
+          "used_at_reset": true,
+          "id": 6,
+          "subpriority": 0,
+          "used": true,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "BusFault"
+          ],
+          "description": "Pre-fetch fault, memory access fault",
+          "instances": [],
+          "name": "BusFault",
+          "priority": 0,
+          "settable": true,
+          "type": "exception",
+          "used_at_reset": true,
+          "id": 7,
+          "subpriority": 0,
+          "used": true,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "UsageFault"
+          ],
+          "description": "Undefined instruction or illegal state",
+          "instances": [],
+          "name": "UsageFault",
+          "priority": 0,
+          "settable": true,
+          "type": "exception",
+          "used_at_reset": true,
+          "id": 9,
+          "subpriority": 0,
+          "used": true,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "SVC"
+          ],
+          "description": "System service call via SWI instruction",
+          "instances": [],
+          "name": "SVC",
+          "priority": 0,
+          "settable": true,
+          "type": "exception",
+          "used_at_reset": true,
+          "id": 11,
+          "subpriority": 0,
+          "used": true,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "Debug Monitor"
+          ],
+          "description": "Monitor",
+          "instances": [],
+          "name": "Debug Monitor",
+          "priority": 0,
+          "settable": true,
+          "type": "exception",
+          "used_at_reset": true,
+          "id": 12,
+          "subpriority": 0,
+          "used": true,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "WWDG"
+          ],
+          "description": "Window Watchdog interrupt",
+          "instances": [
+            {
+              "name": "WWDG"
+            }
+          ],
+          "name": "WWDG",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 16,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "PVD_AVD"
+          ],
+          "description": "Power Voltage Monitor/Analog Voltage Monitor/VDDA voltage monitor 1/VDDA voltage monitor 2/VDDIO2 voltage monitor/VDDUSB voltage monitor",
+          "instances": [
+            {
+              "name": "EXTI16"
+            },
+            {
+              "name": "EXTI19"
+            },
+            {
+              "name": "EXTI20"
+            },
+            {
+              "name": "EXTI21"
+            },
+            {
+              "name": "EXTI22"
+            }
+          ],
+          "name": "PVD_AVD",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 17,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "RTC"
+          ],
+          "description": "RTC global non-secure interrupts",
+          "instances": [
+            {
+              "name": "RTC"
+            }
+          ],
+          "name": "RTC",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 18,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "TAMP"
+          ],
+          "description": "Tamper global interrupts",
+          "instances": [
+            {
+              "name": "TAMP"
+            }
+          ],
+          "name": "TAMP",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 20,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "RAMCFG"
+          ],
+          "description": "RAM configuration global interrupt",
+          "instances": [
+            {
+              "name": "RAMCFG"
+            }
+          ],
+          "name": "RAMCFG",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 21,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "FLASH"
+          ],
+          "description": "Flash non-secure global interrupt",
+          "instances": [
+            {
+              "name": "FLASH"
+            }
+          ],
+          "name": "FLASH",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 22,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "GTZC1",
+            "GTZC2"
+          ],
+          "description": "GTZC1 global interrupt/GTZC2 global interrupt",
+          "instances": [
+            {
+              "name": "GTZC1"
+            },
+            {
+              "name": "GTZC2"
+            }
+          ],
+          "name": "GTZC1_GTZC2",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 24,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "RCC"
+          ],
+          "description": "RCC non-secure global interrupt",
+          "instances": [
+            {
+              "name": "RCC"
+            }
+          ],
+          "name": "RCC",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 25,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "EXTI0"
+          ],
+          "description": "EXTI Line0 interrupt",
+          "instances": [
+            {
+              "name": "EXTI0"
+            }
+          ],
+          "name": "EXTI0",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 27,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "EXTI1"
+          ],
+          "description": "EXTI Line1 interrupt",
+          "instances": [
+            {
+              "name": "EXTI1"
+            }
+          ],
+          "name": "EXTI1",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 28,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "EXTI2"
+          ],
+          "description": "EXTI Line2 interrupt",
+          "instances": [
+            {
+              "name": "EXTI2"
+            }
+          ],
+          "name": "EXTI2",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 29,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "EXTI3"
+          ],
+          "description": "EXTI Line3 interrupt",
+          "instances": [
+            {
+              "name": "EXTI3"
+            }
+          ],
+          "name": "EXTI3",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 30,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "EXTI4"
+          ],
+          "description": "EXTI Line4 interrupt",
+          "instances": [
+            {
+              "name": "EXTI4"
+            }
+          ],
+          "name": "EXTI4",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 31,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "EXTI5"
+          ],
+          "description": "EXTI Line5 interrupt",
+          "instances": [
+            {
+              "name": "EXTI5"
+            }
+          ],
+          "name": "EXTI5",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 32,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "EXTI6"
+          ],
+          "description": "EXTI Line6 interrupt",
+          "instances": [
+            {
+              "name": "EXTI6"
+            }
+          ],
+          "name": "EXTI6",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 33,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "EXTI7"
+          ],
+          "description": "EXTI Line7 interrupt",
+          "instances": [
+            {
+              "name": "EXTI7"
+            }
+          ],
+          "name": "EXTI7",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 34,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "EXTI8"
+          ],
+          "description": "EXTI Line8 interrupt",
+          "instances": [
+            {
+              "name": "EXTI8"
+            }
+          ],
+          "name": "EXTI8",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 35,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "EXTI9"
+          ],
+          "description": "EXTI Line9 interrupt",
+          "instances": [
+            {
+              "name": "EXTI9"
+            }
+          ],
+          "name": "EXTI9",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 36,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "EXTI10"
+          ],
+          "description": "EXTI Line10 interrupt",
+          "instances": [
+            {
+              "name": "EXTI10"
+            }
+          ],
+          "name": "EXTI10",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 37,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "EXTI11"
+          ],
+          "description": "EXTI Line11 interrupt",
+          "instances": [
+            {
+              "name": "EXTI11"
+            }
+          ],
+          "name": "EXTI11",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 38,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "EXTI12"
+          ],
+          "description": "EXTI Line12 interrupt",
+          "instances": [
+            {
+              "name": "EXTI12"
+            }
+          ],
+          "name": "EXTI12",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 39,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "EXTI13"
+          ],
+          "description": "EXTI Line13 interrupt",
+          "instances": [
+            {
+              "name": "EXTI13"
+            }
+          ],
+          "name": "EXTI13",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 40,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "EXTI14"
+          ],
+          "description": "EXTI Line14 interrupt",
+          "instances": [
+            {
+              "name": "EXTI14"
+            }
+          ],
+          "name": "EXTI14",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 41,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "EXTI15"
+          ],
+          "description": "EXTI Line15 interrupt",
+          "instances": [
+            {
+              "name": "EXTI15"
+            }
+          ],
+          "name": "EXTI15",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 42,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "IWDG"
+          ],
+          "description": "Independent watchdog interrupt",
+          "instances": [
+            {
+              "name": "IWDG"
+            }
+          ],
+          "name": "IWDG",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 43,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "SAES"
+          ],
+          "description": "Secure AES",
+          "instances": [
+            {
+              "name": "SAES"
+            }
+          ],
+          "name": "SAES",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 44,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "GPDMA1_CH0"
+          ],
+          "description": "GPDMA1 channel0 global interrupt",
+          "instances": [
+            {
+              "name": "GPDMA1"
+            }
+          ],
+          "name": "GPDMA1_CH0",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 45,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "GPDMA1_CH1"
+          ],
+          "description": "GPDMA1 channel1 global interrupt",
+          "instances": [
+            {
+              "name": "GPDMA1"
+            }
+          ],
+          "name": "GPDMA1_CH1",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 46,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "GPDMA1_CH2"
+          ],
+          "description": "GPDMA1 channel2 global interrupt",
+          "instances": [
+            {
+              "name": "GPDMA1"
+            }
+          ],
+          "name": "GPDMA1_CH2",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 47,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "GPDMA1_CH3"
+          ],
+          "description": "GPDMA1 channel3 global interrupt",
+          "instances": [
+            {
+              "name": "GPDMA1"
+            }
+          ],
+          "name": "GPDMA1_CH3",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 48,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "GPDMA1_CH4"
+          ],
+          "description": "GPDMA1 channel4 global interrupt",
+          "instances": [
+            {
+              "name": "GPDMA1"
+            }
+          ],
+          "name": "GPDMA1_CH4",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 49,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "GPDMA1_CH5"
+          ],
+          "description": "GPDMA1 channel5 global interrupt",
+          "instances": [
+            {
+              "name": "GPDMA1"
+            }
+          ],
+          "name": "GPDMA1_CH5",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 50,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "GPDMA1_CH6"
+          ],
+          "description": "GPDMA1 channel6 global interrupt",
+          "instances": [
+            {
+              "name": "GPDMA1"
+            }
+          ],
+          "name": "GPDMA1_CH6",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 51,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "GPDMA1_CH7"
+          ],
+          "description": "GPDMA1 channel7 global interrupt",
+          "instances": [
+            {
+              "name": "GPDMA1"
+            }
+          ],
+          "name": "GPDMA1_CH7",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 52,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "ADC1"
+          ],
+          "description": "ADC1 global interrupt",
+          "instances": [
+            {
+              "name": "ADC1"
+            }
+          ],
+          "name": "ADC1",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 53,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "DAC1"
+          ],
+          "description": "DAC1 global interrupt",
+          "instances": [
+            {
+              "name": "DAC1"
+            }
+          ],
+          "name": "DAC1",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 54,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "FDCAN1_IT0"
+          ],
+          "description": "FDCAN1 Interrupt 0",
+          "instances": [
+            {
+              "name": "FDCAN1"
+            }
+          ],
+          "name": "FDCAN1_IT0",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 55,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "FDCAN1_IT1"
+          ],
+          "description": "FDCAN1 Interrupt 1",
+          "instances": [
+            {
+              "name": "FDCAN1"
+            }
+          ],
+          "name": "FDCAN1_IT1",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 56,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "TIM1_BRK_TERR_IERR"
+          ],
+          "description": "TIM1 Break/TIM1 Transition error/TIM1 Index error",
+          "instances": [
+            {
+              "name": "TIM1"
+            }
+          ],
+          "name": "TIM1_BRK_TERR_IERR",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 57,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "TIM1_UPD"
+          ],
+          "description": "TIM1 Update",
+          "instances": [
+            {
+              "name": "TIM1"
+            }
+          ],
+          "name": "TIM1_UPD",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 58,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "TIM1_TRGI_COM_DIR_IDX"
+          ],
+          "description": "TIM1 trigger and commutation/TIM1 Direction Change interrupt/TIM1 Index",
+          "instances": [
+            {
+              "name": "TIM1"
+            }
+          ],
+          "name": "TIM1_TRGI_COM_DIR_IDX",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 59,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "TIM1_CC"
+          ],
+          "description": "TIM1 capture compare interrupt",
+          "instances": [
+            {
+              "name": "TIM1"
+            }
+          ],
+          "name": "TIM1_CC",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 60,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "TIM2"
+          ],
+          "description": "TIM2 global interrupt",
+          "instances": [
+            {
+              "name": "TIM2"
+            }
+          ],
+          "name": "TIM2",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 61,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "TIM3"
+          ],
+          "description": "TIM3 global interrupt",
+          "instances": [
+            {
+              "name": "TIM3"
+            }
+          ],
+          "name": "TIM3",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 62,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "TIM4"
+          ],
+          "description": "TIM4 global interrupt",
+          "instances": [
+            {
+              "name": "TIM4"
+            }
+          ],
+          "name": "TIM4",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 63,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "TIM5"
+          ],
+          "description": "TIM5 global interrupt",
+          "instances": [
+            {
+              "name": "TIM5"
+            }
+          ],
+          "name": "TIM5",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 64,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "TIM6"
+          ],
+          "description": "TIM6 global interrupt",
+          "instances": [
+            {
+              "name": "TIM6"
+            }
+          ],
+          "name": "TIM6",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 65,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "TIM7"
+          ],
+          "description": "TIM7 global interrupt",
+          "instances": [
+            {
+              "name": "TIM7"
+            }
+          ],
+          "name": "TIM7",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 66,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "TIM8_BRK_TERR_IERR"
+          ],
+          "description": "TIM8 Break interrupt/TIM8 Transition error/TIM8 Index error",
+          "instances": [
+            {
+              "name": "TIM8"
+            }
+          ],
+          "name": "TIM8_BRK_TERR_IERR",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 67,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "TIM8_UPD"
+          ],
+          "description": "TIM8 Update interrupt",
+          "instances": [
+            {
+              "name": "TIM8"
+            }
+          ],
+          "name": "TIM8_UPD",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 68,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "TIM8_TRGI_COM_DIR_IDX"
+          ],
+          "description": "TIM8 trigger and commutation interrupt/TIM8 Direction Change interrupt/TIM8 Index",
+          "instances": [
+            {
+              "name": "TIM8"
+            }
+          ],
+          "name": "TIM8_TRGI_COM_DIR_IDX",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 69,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "TIM8_CC"
+          ],
+          "description": "TIM8 capture compare interrupt",
+          "instances": [
+            {
+              "name": "TIM8"
+            }
+          ],
+          "name": "TIM8_CC",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 70,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "I2C1_EV"
+          ],
+          "description": "I2C1 event interrupt",
+          "instances": [
+            {
+              "name": "I2C1"
+            }
+          ],
+          "name": "I2C1_EV",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 71,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "I2C1_ERR"
+          ],
+          "description": "I2C1 error interrupt",
+          "instances": [
+            {
+              "name": "I2C1"
+            }
+          ],
+          "name": "I2C1_ERR",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 72,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "I2C2_EV"
+          ],
+          "description": "I2C2 event interrupt",
+          "instances": [
+            {
+              "name": "I2C2"
+            }
+          ],
+          "name": "I2C2_EV",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 73,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "I2C2_ERR"
+          ],
+          "description": "I2C2 error interrupt",
+          "instances": [
+            {
+              "name": "I2C2"
+            }
+          ],
+          "name": "I2C2_ERR",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 74,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "SPI1"
+          ],
+          "description": "SPI1 global interrupt",
+          "instances": [
+            {
+              "name": "SPI1"
+            }
+          ],
+          "name": "SPI1",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 75,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "SPI2"
+          ],
+          "description": "SPI2 global interrupt",
+          "instances": [
+            {
+              "name": "SPI2"
+            }
+          ],
+          "name": "SPI2",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 76,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "USART1"
+          ],
+          "description": "USART1 global interrupt",
+          "instances": [
+            {
+              "name": "USART1"
+            }
+          ],
+          "name": "USART1",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 77,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "USART2"
+          ],
+          "description": "USART2 global interrupt",
+          "instances": [
+            {
+              "name": "USART2"
+            }
+          ],
+          "name": "USART2",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 78,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "USART3"
+          ],
+          "description": "USART3 global interrupt",
+          "instances": [
+            {
+              "name": "USART3"
+            }
+          ],
+          "name": "USART3",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 79,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "UART4"
+          ],
+          "description": "UART4 global interrupt",
+          "instances": [
+            {
+              "name": "UART4"
+            }
+          ],
+          "name": "UART4",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 80,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "UART5"
+          ],
+          "description": "UART5 global interrupt",
+          "instances": [
+            {
+              "name": "UART5"
+            }
+          ],
+          "name": "UART5",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 81,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "LPUART1"
+          ],
+          "description": "LPUART global interrupt",
+          "instances": [
+            {
+              "name": "LPUART1"
+            }
+          ],
+          "name": "LPUART1",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 82,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "LPTIM1"
+          ],
+          "description": "LPTIM1 global interrupt",
+          "instances": [
+            {
+              "name": "LPTIM1"
+            }
+          ],
+          "name": "LPTIM1",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 83,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "LPTIM2"
+          ],
+          "description": "LPTIM2 global interrupt",
+          "instances": [
+            {
+              "name": "LPTIM2"
+            }
+          ],
+          "name": "LPTIM2",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 84,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "TIM15"
+          ],
+          "description": "TIM15 global interrupt",
+          "instances": [
+            {
+              "name": "TIM15"
+            }
+          ],
+          "name": "TIM15",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 85,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "TIM16"
+          ],
+          "description": "TIM16 global interrupt",
+          "instances": [
+            {
+              "name": "TIM16"
+            }
+          ],
+          "name": "TIM16",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 86,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "TIM17"
+          ],
+          "description": "TIM17 global interrupt",
+          "instances": [
+            {
+              "name": "TIM17"
+            }
+          ],
+          "name": "TIM17",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 87,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "COMP"
+          ],
+          "description": "COMP1/COMP2",
+          "instances": [
+            {
+              "name": "EXTI17"
+            },
+            {
+              "name": "EXTI18"
+            }
+          ],
+          "name": "COMP",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 88,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "OTG_FS"
+          ],
+          "description": "USB OTG FS global interrupt",
+          "instances": [
+            {
+              "name": "OTG_FS"
+            }
+          ],
+          "name": "OTG_FS",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 89,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "CRS"
+          ],
+          "description": "Clock Recovery System global interrupt",
+          "instances": [
+            {
+              "name": "CRS"
+            }
+          ],
+          "name": "CRS",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 90,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "FMC"
+          ],
+          "description": "FSMC global interrupt",
+          "instances": [
+            {
+              "name": "FMC"
+            }
+          ],
+          "name": "FMC",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 91,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "OCTOSPI1"
+          ],
+          "description": "OCTOSPI1 global interrupt",
+          "instances": [
+            {
+              "name": "OCTOSPI1"
+            }
+          ],
+          "name": "OCTOSPI1",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 92,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "PWR_S3WU"
+          ],
+          "description": "PWR wakeup from Stop 3 interrupt",
+          "instances": [
+            {
+              "name": "PWR_S3WU"
+            }
+          ],
+          "name": "PWR_S3WU",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 93,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "SDMMC1"
+          ],
+          "description": "SDMMC1 global interrupt",
+          "instances": [
+            {
+              "name": "SDMMC1"
+            }
+          ],
+          "name": "SDMMC1",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 94,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "SDMMC2"
+          ],
+          "description": "SDMMC2 global interrupt",
+          "instances": [
+            {
+              "name": "SDMMC2"
+            }
+          ],
+          "name": "SDMMC2",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 95,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "GPDMA1_CH8"
+          ],
+          "description": "GPDMA1 channel8 global interrupt",
+          "instances": [
+            {
+              "name": "GPDMA1"
+            }
+          ],
+          "name": "GPDMA1_CH8",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 96,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "GPDMA1_CH9"
+          ],
+          "description": "GPDMA1 channel9 global interrupt",
+          "instances": [
+            {
+              "name": "GPDMA1"
+            }
+          ],
+          "name": "GPDMA1_CH9",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 97,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "GPDMA1_CH10"
+          ],
+          "description": "GPDMA1 channel10 global interrupt",
+          "instances": [
+            {
+              "name": "GPDMA1"
+            }
+          ],
+          "name": "GPDMA1_CH10",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 98,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "GPDMA1_CH11"
+          ],
+          "description": "GPDMA1 channel11 global interrupt",
+          "instances": [
+            {
+              "name": "GPDMA1"
+            }
+          ],
+          "name": "GPDMA1_CH11",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 99,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "GPDMA1_CH12"
+          ],
+          "description": "GPDMA1 channel12 global interrupt",
+          "instances": [
+            {
+              "name": "GPDMA1"
+            }
+          ],
+          "name": "GPDMA1_CH12",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 100,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "GPDMA1_CH13"
+          ],
+          "description": "GPDMA1 channel13 global interrupt",
+          "instances": [
+            {
+              "name": "GPDMA1"
+            }
+          ],
+          "name": "GPDMA1_CH13",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 101,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "GPDMA1_CH14"
+          ],
+          "description": "GPDMA1 channel14 global interrupt",
+          "instances": [
+            {
+              "name": "GPDMA1"
+            }
+          ],
+          "name": "GPDMA1_CH14",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 102,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "GPDMA1_CH15"
+          ],
+          "description": "GPDMA1 channel15 global interrupt",
+          "instances": [
+            {
+              "name": "GPDMA1"
+            }
+          ],
+          "name": "GPDMA1_CH15",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 103,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "I2C3_EV"
+          ],
+          "description": "I2C3 event interrupt",
+          "instances": [
+            {
+              "name": "I2C3"
+            }
+          ],
+          "name": "I2C3_EV",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 104,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "I2C3_ERR"
+          ],
+          "description": "I2C3 error interrupt",
+          "instances": [
+            {
+              "name": "I2C3"
+            }
+          ],
+          "name": "I2C3_ERR",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 105,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "SAI1_A",
+            "SAI1_B"
+          ],
+          "description": "SAI1 global interrupt",
+          "instances": [
+            {
+              "name": "SAI1"
+            }
+          ],
+          "name": "SAI1_A_B",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 106,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "SAI2_A",
+            "SAI2_B"
+          ],
+          "description": "SAI2 global interrupt",
+          "instances": [
+            {
+              "name": "SAI2"
+            }
+          ],
+          "name": "SAI2_A_B",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 107,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "TSC"
+          ],
+          "description": "TSC global interrupt",
+          "instances": [
+            {
+              "name": "TSC"
+            }
+          ],
+          "name": "TSC",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 108,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "AES"
+          ],
+          "description": "AES global interrupt",
+          "instances": [
+            {
+              "name": "AES"
+            }
+          ],
+          "name": "AES",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 109,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "RNG"
+          ],
+          "description": "RNG global interrupt",
+          "instances": [
+            {
+              "name": "RNG"
+            }
+          ],
+          "name": "RNG",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 110,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "FPU"
+          ],
+          "description": "Floating point interrupt",
+          "instances": [
+            {
+              "name": "FPU"
+            }
+          ],
+          "name": "FPU",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 111,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "HASH"
+          ],
+          "description": "HASH interrupt",
+          "instances": [
+            {
+              "name": "HASH"
+            }
+          ],
+          "name": "HASH",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 112,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "PKA"
+          ],
+          "description": "PKA global interrupt",
+          "instances": [
+            {
+              "name": "PKA"
+            }
+          ],
+          "name": "PKA",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 113,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "LPTIM3"
+          ],
+          "description": "LPTIM3 global interrupt",
+          "instances": [
+            {
+              "name": "LPTIM3"
+            }
+          ],
+          "name": "LPTIM3",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 114,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "SPI3"
+          ],
+          "description": "SPI3 global interrupt",
+          "instances": [
+            {
+              "name": "SPI3"
+            }
+          ],
+          "name": "SPI3",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 115,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "I2C4_ERR"
+          ],
+          "description": "I2C4 error interrupt",
+          "instances": [
+            {
+              "name": "I2C4"
+            }
+          ],
+          "name": "I2C4_ERR",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 116,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "I2C4_EV"
+          ],
+          "description": "I2C4 event interrupt",
+          "instances": [
+            {
+              "name": "I2C4"
+            }
+          ],
+          "name": "I2C4_EV",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 117,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "MDF1_FLT0"
+          ],
+          "description": "MDF1 Filter 0 global interrupt",
+          "instances": [
+            {
+              "name": "MDF1"
+            }
+          ],
+          "name": "MDF1_FLT0",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 118,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "MDF1_FLT1"
+          ],
+          "description": "MDF1 Filter 1 global interrupt",
+          "instances": [
+            {
+              "name": "MDF1"
+            }
+          ],
+          "name": "MDF1_FLT1",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 119,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "MDF1_FLT2"
+          ],
+          "description": "MDF1 Filter 2 global interrupt",
+          "instances": [
+            {
+              "name": "MDF1"
+            }
+          ],
+          "name": "MDF1_FLT2",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 120,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "MDF1_FLT3"
+          ],
+          "description": "MDF1 Filter 3 global interrupt",
+          "instances": [
+            {
+              "name": "MDF1"
+            }
+          ],
+          "name": "MDF1_FLT3",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 121,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "UCPD1"
+          ],
+          "description": "UCPD1 global interrupt",
+          "instances": [
+            {
+              "name": "UCPD1"
+            }
+          ],
+          "name": "UCPD1",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 122,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "ICACHE"
+          ],
+          "description": "ICACHE global interrupt",
+          "instances": [
+            {
+              "name": "ICACHE"
+            }
+          ],
+          "name": "ICACHE",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 123,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "OTFDEC1"
+          ],
+          "description": "OTFDEC1 secure global interrupt",
+          "instances": [
+            {
+              "name": "OTFDEC1"
+            }
+          ],
+          "name": "OTFDEC1",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 124,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "OTFDEC2"
+          ],
+          "description": "OTFDEC2 secure global interrupt",
+          "instances": [
+            {
+              "name": "OTFDEC2"
+            }
+          ],
+          "name": "OTFDEC2",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 125,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "LPTIM4"
+          ],
+          "description": "LPTIM4 global interrupt",
+          "instances": [
+            {
+              "name": "LPTIM4"
+            }
+          ],
+          "name": "LPTIM4",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 126,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "DCACHE1"
+          ],
+          "description": "DCACHE1 global interrupt",
+          "instances": [
+            {
+              "name": "DCACHE1"
+            }
+          ],
+          "name": "DCACHE1",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 127,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "ADF1_FLT0"
+          ],
+          "description": "ADF1 interrupt",
+          "instances": [
+            {
+              "name": "ADF1"
+            }
+          ],
+          "name": "ADF1_FLT0",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 128,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "ADC4"
+          ],
+          "description": "ADC4 global interrupt",
+          "instances": [
+            {
+              "name": "ADC4"
+            }
+          ],
+          "name": "ADC4",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 129,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "LPDMA1_CH0"
+          ],
+          "description": "LPDMA1 SmartRun channel 0 global interrupt",
+          "instances": [
+            {
+              "name": "LPDMA1"
+            }
+          ],
+          "name": "LPDMA1_CH0",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 130,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "LPDMA1_CH1"
+          ],
+          "description": "LPDMA1 SmartRun channel 1 global interrupt",
+          "instances": [
+            {
+              "name": "LPDMA1"
+            }
+          ],
+          "name": "LPDMA1_CH1",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 131,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "LPDMA1_CH2"
+          ],
+          "description": "LPDMA1 SmartRun channel 2 global interrupt",
+          "instances": [
+            {
+              "name": "LPDMA1"
+            }
+          ],
+          "name": "LPDMA1_CH2",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 132,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "LPDMA1_CH3"
+          ],
+          "description": "LPDMA1 SmartRun channel 3 global interrupt",
+          "instances": [
+            {
+              "name": "LPDMA1"
+            }
+          ],
+          "name": "LPDMA1_CH3",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 133,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "DMA2D"
+          ],
+          "description": "DMA2D global interrupt",
+          "instances": [
+            {
+              "name": "DMA2D"
+            }
+          ],
+          "name": "DMA2D",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 134,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "DCMI_PSSI"
+          ],
+          "description": "DCMI/PSSI global interrupt",
+          "instances": [
+            {
+              "name": "DCMI_PSSI"
+            }
+          ],
+          "name": "DCMI_PSSI",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 135,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "OCTOSPI2"
+          ],
+          "description": "OCTOSPI2 global global interrupt",
+          "instances": [
+            {
+              "name": "OCTOSPI2"
+            }
+          ],
+          "name": "OCTOSPI2",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 136,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "MDF1_FLT4"
+          ],
+          "description": "MDF1 Filter 4 global interrupt",
+          "instances": [
+            {
+              "name": "MDF1"
+            }
+          ],
+          "name": "MDF1_FLT4",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 137,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "MDF1_FLT5"
+          ],
+          "description": "MDF1 Filter 5 global interrupt",
+          "instances": [
+            {
+              "name": "MDF1"
+            }
+          ],
+          "name": "MDF1_FLT5",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 138,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "CORDIC"
+          ],
+          "description": "CORDIC interrupt",
+          "instances": [
+            {
+              "name": "CORDIC"
+            }
+          ],
+          "name": "CORDIC",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 139,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "FMAC"
+          ],
+          "description": "FMAC interrupt",
+          "instances": [
+            {
+              "name": "FMAC"
+            }
+          ],
+          "name": "FMAC",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 140,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        },
+        {
+          "acronyms": [
+            "LSECSS",
+            "MSI_PLL_UNLOCK"
+          ],
+          "description": "LSE CSSD interrupt/MSI PLL UNLOCK",
+          "instances": [
+            {
+              "name": "EXTI23"
+            }
+          ],
+          "name": "EXTI23",
+          "priority": 0,
+          "settable": true,
+          "type": "peripheral",
+          "used_at_reset": false,
+          "id": 141,
+          "subpriority": 0,
+          "used": false,
+          "default": true
+        }
+      ],
+      "needs": []
+    }
+  ],
+  "resourceNeeds": []
+}

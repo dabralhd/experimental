@@ -1,0 +1,44 @@
+{
+    "$schema": "/home/workspace/.stedgeai/templates/models/experiments/jupyter_notebook/schema_for_image_classification.json",
+    "general": {
+        "project": "get_started_image_classification",
+        "model": "SideCamera",
+        "classes": [
+            "Conformant",
+            "Color-defected"
+        ],
+        "experiment": "MobileNetV2_160x160x3"
+    },
+    "dataset": {
+        "image_size_x": 160,
+        "image_size_y": 160,
+        "image_size_z": 3,
+        "validation_split": 0.2,
+        "class_mode": "categorical",
+        "color_mode": "rgb",
+        "seed": 42,
+        "batch_size": 8,
+        "shuffle": true
+    },
+    "model": {
+        "network": "MobileNetV2",
+        "alpha": 0.35,
+        "include_top": false,
+        "training_optimizer": "Adam",
+        "learning_rate": 1e-6,
+        "training_loss": "categorical_crossentropy",
+        "training_metric": "accuracy",
+        "top_layer_activation_function": "softmax",
+        "early_stopping_metric": "val_loss",
+        "early_stopping_mode": "min",
+        "early_stopping_patience": 20,
+        "early_stopping_restore_best_weights": true,
+        "initial_epoch": 0,
+        "epochs": 100
+    },
+    "model_optimization": {
+        "polynomial_decay_initial_sparsity": 0.2,
+        "polynomial_decay_final_sparsity": 0.5,
+        "pruning_epochs": 100
+    }
+}

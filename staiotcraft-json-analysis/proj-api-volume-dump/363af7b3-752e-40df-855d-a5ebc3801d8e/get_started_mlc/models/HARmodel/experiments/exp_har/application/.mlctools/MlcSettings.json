@@ -1,0 +1,97 @@
+{
+    "date": "Tue Jun 01 2021 04:41:12 GMT",
+    "datalogs": [
+        {
+            "name": "20210222_12_25_17_fastwalk_ISM330DHCX_dataLog_0.txt",
+            "label": "fastwalk",
+            "arff_processed": true
+        },
+        {
+            "name": "20210222_12_25_17_still_ISM330DHCX_dataLog_0.txt",
+            "label": "still",
+            "arff_processed": true
+        },
+        {
+            "name": "20210222_12_25_17_walk_ISM330DHCX_dataLog_0.txt",
+            "label": "walk",
+            "arff_processed": true
+        }
+    ],
+    "generated_filters": [
+        {
+            "filter_name": "filter_1",
+            "type": "IIR2",
+            "input": "Acc_V",
+            "f_low": 1.093359375,
+            "f_high": 1.47109375,
+            "b1": 0.04367859185788755,
+            "b2": 0.0,
+            "b3": -0.04367859185788755,
+            "a2": -1.8234521831628454,
+            "a3": 0.9126428162842247,
+            "gain": 1.0
+        }
+    ],
+    "generated_features": [
+        {
+            "feature_name": "VARIANCE",
+            "input": "Acc_V"
+        },
+        {
+            "feature_name": "MINIMUM",
+            "input": "Acc_X",
+            "sign": "signed"
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Acc_V_filter_1"
+        },
+        {
+            "feature_name": "PEAK_TO_PEAK",
+            "input": "Acc_V_filter_1"
+        }
+    ],
+    "features_arff": [
+        "F1_VAR_on_ACC_V",
+        "F2_MIN_on_ACC_X",
+        "F3_MEAN_on_filter_IIR2_on_ACC_V",
+        "F4_PeakToPeak_on_filter_IIR2_on_ACC_V"
+    ],
+    "best_model": {
+        "time": "Fri Dec 16 2022 09:53:42 GMT",
+        "version": 1,
+        "accuracy": 1
+    },
+    "confusion_matrix": {
+        "fastwalk": {
+            "fastwalk": 14,
+            "still": 0,
+            "walk": 0
+        },
+        "still": {
+            "fastwalk": 0,
+            "still": 13,
+            "walk": 0
+        },
+        "walk": {
+            "fastwalk": 0,
+            "still": 0,
+            "walk": 16
+        }
+    },
+    "model_accuracy_history": [
+        {
+            "num": 1,
+            "time": "Fri Dec 16 2022 09:53:43 GMT",
+            "accuracy": 1
+        }
+    ],
+    "label_counts": {
+        "fastwalk": 14,
+        "still": 13,
+        "walk": 16
+    },
+    "features_arff_used": [
+        "F2_MIN_on_ACC_X"
+    ]
+}

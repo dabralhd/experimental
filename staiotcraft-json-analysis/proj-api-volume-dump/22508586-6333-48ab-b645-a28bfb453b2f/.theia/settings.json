@@ -1,0 +1,7 @@
+{
+    "files.exclude": {
+        ".stedgeai": true
+    },
+    "python.venvPath": "/home/workspace/.virtualenvs",
+}
+

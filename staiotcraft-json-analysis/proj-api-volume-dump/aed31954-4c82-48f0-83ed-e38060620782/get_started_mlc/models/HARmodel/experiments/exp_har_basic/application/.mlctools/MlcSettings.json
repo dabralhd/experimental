@@ -1,0 +1,64 @@
+{
+    "date": "Wed Jun 02 2021 06:19:46 GMT",
+    "datalogs": [
+        {
+            "name": "20210222_12_25_17_fastwalk_ISM330DHCX_dataLog_0.txt",
+            "label": "fastwalk",
+            "arff_processed": true
+        },
+        {
+            "name": "20210222_12_25_17_still_ISM330DHCX_dataLog_0.txt",
+            "label": "still",
+            "arff_processed": true
+        },
+        {
+            "name": "20210222_12_25_17_walk_ISM330DHCX_dataLog_0.txt",
+            "label": "walk",
+            "arff_processed": true
+        }
+    ],
+    "features_arff": [
+        "F1_MEAN_on_ACC_X",
+        "F2_MEAN_on_ACC_Y",
+        "F3_MEAN_on_ACC_Z"
+    ],
+    "best_model": {
+        "time": "Wed Jun 02 2021 06:25:11 GMT",
+        "version": 1,
+        "accuracy": 1
+    },
+    "confusion_matrix": {
+        "fastwalk": {
+            "fastwalk": 235,
+            "still": 0,
+            "walk": 0
+        },
+        "still": {
+            "fastwalk": 0,
+            "still": 215,
+            "walk": 0
+        },
+        "walk": {
+            "fastwalk": 0,
+            "still": 0,
+            "walk": 255
+        }
+    },
+    "model_accuracy_history": [
+        {
+            "num": 1,
+            "time": "Wed Jun 02 2021 06:25:11 GMT",
+            "accuracy": 1
+        }
+    ],
+    "label_counts": {
+        "fastwalk": 235,
+        "still": 215,
+        "walk": 255
+    },
+    "features_arff_used": [
+        "F1_MEAN_on_ACC_X",
+        "F2_MEAN_on_ACC_Y",
+        "F3_MEAN_on_ACC_Z"
+    ]
+}

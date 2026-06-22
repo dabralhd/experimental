@@ -1,0 +1,36 @@
+{
+   "name": "mfcc_Test",
+   "edge_ai_context": {
+      "extension_name": "edgeai-project-manager",
+      "test_folder": "/home/workspace/8c1e03b5-8279-4a51-a125-c8536f2bf60d/get_started_vibration_classification/models/vibration_model_4_classes/experiments/mfcc/tests/Test",
+      "project_name": "get_started_vibration_classification",
+      "project_id": "45c93ff4-f7fd-48d3-9a39-6c67570521b8",
+      "model_name": "vibration_model_4_classes",
+      "model_id": "d8ed5389-1b42-4a3f-bf62-ccae1a4a5eac",
+      "experiment_name": "mfcc",
+      "experiment_id": "85bd1ae4-de08-4414-b621-3a67d31fca9e",
+      "test_name": "Test",
+      "test_id": "5cdd2880-9795-46d7-b37a-d658d377581e",
+      "output_type": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+      "model_file": "/home/workspace/8c1e03b5-8279-4a51-a125-c8536f2bf60d/get_started_vibration_classification/models/vibration_model_4_classes/experiments/mfcc/application/vibration_model_4_classes_mfcc.h5"
+   },
+   "last_configuration": {
+      "cube_ai_environment_name": "mfcc_Test",
+      "target": "pnpl-ai-dpu:1.0.0",
+      "platform": "steval-stwinbx1:mcu",
+      "allocate_inputs": true,
+      "compression": "1",
+      "name": "network",
+      "split_weigths": false,
+      "generate_full_binary": true,
+      "model_file": "/home/workspace/8c1e03b5-8279-4a51-a125-c8536f2bf60d/get_started_vibration_classification/models/vibration_model_4_classes/experiments/mfcc/application/vibration_model_4_classes_mfcc.h5"
+   },
+   "output_reports": {
+      "rom": 42576,
+      "ram": 736,
+      "input_ram": 512,
+      "output_ram": 16,
+      "complexity": 10816,
+      "parameters": 10644
+   }
+}

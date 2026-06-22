@@ -1,0 +1,60 @@
+{
+    "uuid": "e6a72322-c5df-4969-8fd6-9ec58fb59dec",
+    "ai_project_name": "test-project-803",
+    "type": null,
+    "display_name": null,
+    "description": "My Project description",
+    "version": "0.0.1",
+    "last_update_time": "2025-09-26 06:54:45.694142",
+    "creation_time": "2025-09-26 06:50:04.069557",
+    "project_owner_uuid": "334c65a5-1495-453a-a6de-4d384a781000",
+    "models": [
+        {
+            "uuid": "c596ad9c-bae3-449e-995e-b9b5842fd4c7",
+            "name": "test-model-803",
+            "dataset": {
+                "name": "test-dataset-803",
+                "dataset_id": "dataset-abcxyz-123"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "x",
+                    "y",
+                    "z"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-09-26 06:54:45.657817",
+            "last_update_time": "2025-09-26 06:54:45.657825",
+            "model_owner_uuid": "334c65a5-1495-453a-a6de-4d384a781000",
+            "training": {
+                "runtime": {
+                    "type": "test-activity-803",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job-806",
+                            "version": null,
+                            "template_id": "QWERTY806"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report_new.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv80x.ucf"
+                ],
+                "last_update_time": "2025-12-15 04:38:24.313006",
+                "creation_time": "2025-12-15 04:38:24.313004"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

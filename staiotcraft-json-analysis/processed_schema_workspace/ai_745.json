@@ -1,0 +1,61 @@
+{
+    "uuid": "7bd0edbb-0c88-4931-88c8-13ce90418244",
+    "ai_project_name": "Test",
+    "type": null,
+    "display_name": null,
+    "description": "this is a test",
+    "version": "1.0.0",
+    "last_update_time": "2026-02-12 01:22:34.222119",
+    "creation_time": "2026-02-12 01:21:02.297603",
+    "project_owner_uuid": "d316d96e-a667-4338-9c1f-a6c7fdb33fda",
+    "models": [
+        {
+            "uuid": "d61abaae-32e4-410a-8020-9ee6bf00d488",
+            "name": "project_model",
+            "dataset": {
+                "name": "fan_coil_monitoring_on_stwin",
+                "dataset_id": "01k97khw646e8vke25cyhwe8ta"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "still",
+                    "low_vibration",
+                    "high_vibration"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "ism330dhcx",
+                "device": "steval-stwinbx1"
+            },
+            "creation_time": "2026-02-12 01:22:34.198522",
+            "last_update_time": "2026-02-12 01:22:34.198530",
+            "model_owner_uuid": "d316d96e-a667-4338-9c1f-a6c7fdb33fda",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "ism330dhcx_mlc.json",
+                    "ism330dhcx_mlc.h"
+                ],
+                "last_update_time": "2026-02-12 01:22:53.020711",
+                "creation_time": "2026-02-12 01:22:53.020709"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

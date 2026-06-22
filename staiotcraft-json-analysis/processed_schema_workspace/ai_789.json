@@ -1,0 +1,112 @@
+{
+   "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+   "ai_project_name": "man_down_new",
+   "uuid": "1918602d-15a7-4182-a63a-b52054942f32",
+   "description": "",
+   "version": "0.0.1",
+   "inputs": [
+      {
+         "uuid": "a7a955d3-815a-4f7e-bd6b-a54d5ec8c8dc",
+         "input_type": "binary_hsd",
+         "model_ref": "67dba17c-5954-4ca5-8ae9-20282799f735",
+         "logs": [
+             {
+"uuid": "1de01000-2de8-4dc8-88e7-5add99abca07",
+"name": "20230101_12_00_00",
+"annotated": true,
+"description": "20230101_12_00_00",
+"start_time": "2000-01-01T00:00:59.000Z",
+"end_time": "2000-01-01T00:01:22.506Z",
+"device_description": {
+"part_number": null,
+"serial_number": "005100335752501520353339",
+"alias": "STBOX_PRO_001",
+"fw_name": "FP-SNS-DATALOG2_Datalog2",
+"fw_version": "1.1.0"
+}
+}
+],
+         "augmentation": [],
+         "tools": [
+            {
+               "name": "hsdatalog_to_unico",
+               "version": "1.1.0",
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-mkboxpro:mlc",
+               "section": "input",
+               "parameters": {
+                  "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                  "-f": "TXT",
+                  "-t": "",
+                  "-s": "all",
+                  "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+               }
+            }
+         ]
+      }
+   ],
+   "models": [
+      {
+         "uuid": "67dba17c-5954-4ca5-8ae9-20282799f735",
+         "name": "man_down_dt",
+         "stage": "modeling",
+         "model_type": "classifier",
+         "training_type": "offline",
+         "retraining": false,
+         "model_metadata": {
+            "classes": [
+               "fall",
+               "nofall"
+            ]
+         },
+         "experiments": [
+            {
+               "uuid": "3fb3bc91-cad7-446a-9cbd-54fa2f86c364",
+               "name": "man_down_exp",
+               "description": "testing",
+               "model_dev_file": null
+            }
+         ],
+         "tools": []
+      }
+   ],
+   "outputs": [
+      {
+         "uuid": "0301f061-9264-4563-864a-c627815ed257",
+         "output_type": "steval-mkboxpro:mlc",
+         "model_ref": "67dba17c-5954-4ca5-8ae9-20282799f735",
+         "tests": [
+            {
+               "uuid": "4162d032-5b30-4382-aa80-c1eda1fdfa9e",
+               "name": "man_down_test",
+               "experiment_ref": "3fb3bc91-cad7-446a-9cbd-54fa2f86c364",
+               "model_file": null,
+               "parameters": {},
+               "reports": [],
+               "outputs": []
+            }
+         ],
+         "best_test": null,
+         "tools": [
+            {
+               "name": "mlctools",
+               "version": "1.0.0",
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-mkboxpro:mlc",
+               "section": "output"
+            }
+         ],
+         "events": [],
+         "ui": {
+            "icons": []
+         }
+      }
+   ],
+   "deployments": [],
+   "dbstatus": {
+      "status": "unknown",
+      "message": null
+   }
+}

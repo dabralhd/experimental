@@ -1,0 +1,313 @@
+{
+    "type": "object",
+    "properties": {
+        "sensors": {
+            "title": "Sensors",
+            "type": "object",
+            "default": {},
+            "properties": {
+                "ism330dhcx_acc": {
+                    "title": "ism330dhcx - Accelerometer",
+                    "type": "object",
+                    "default": {},
+                    "properties": {
+                        "fs": {
+                            "title": "FS - Full-Scale",
+                            "type": "string",
+                            "enum": [
+                                "2.0",
+                                "4.0",
+                                "8.0",
+                                "16.0"
+                            ],
+                            "default": "8.0"
+                        },
+                        "odr": {
+                            "title": "ODR - Output data rate",
+                            "type": "string",
+                            "enum": [
+                                "12.5",
+                                "26.0",
+                                "52.0",
+                                "104.0",
+                                "208.0",
+                                "416.0",
+                                "833.0",
+                                "1666.0",
+                                "3332.0",
+                                "6667.0"
+                            ],
+                            "default": "1666.0"
+                        }
+                    }
+                }
+            }
+        },
+        "pre_processing": {
+            "type": "object",
+            "default": {},
+            "properties": {
+                "input_buffer_size": {
+                    "type": "number",
+                    "default": 512
+                },
+                "shift_samples": {
+                    "type": "number",
+                    "default": 10
+                },
+                "functions": {
+                    "type": "array",
+                    "default": [],
+                    "items": {
+                        "anyOf": [
+                            {
+                                "title": "Axis selection",
+                                "$ref": "#/definitions/axis_selection"
+                            },
+                            {
+                                "title": "Mean removal",
+                                "$ref": "#/definitions/mean_removal"
+                            },
+                            {
+                                "title": "Signal normalization",
+                                "$ref": "#/definitions/signal_normalization"
+                            },
+                            {
+                                "title": "Hanning",
+                                "$ref": "#/definitions/hanning"
+                            },
+                            {
+                                "title": "FFT",
+                                "$ref": "#/definitions/fft"
+                            },
+                            {
+                                "title": "MFCC",
+                                "$ref": "#/definitions/mfcc"
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        "ai_processing": {
+            "type": "object",
+            "default": {},
+            "properties": {
+                "network_name": {
+                    "type": "string",
+                    "default": "network"
+                }
+            }
+        },
+        "post_processing": {
+            "type": "object",
+            "default": {},
+            "properties": {}
+        }
+    },
+    "definitions": {
+        "axis_selection": {
+            "type": "object",
+            "default": {},
+            "required": [
+                "name",
+                "parameters"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "enum": [
+                        "axis_selection"
+                    ],
+                    "default": "axis_selection"
+                },
+                "parameters": {
+                    "type": "object",
+                    "default": {},
+                    "required": [
+                        "axes"
+                    ],
+                    "properties": {
+                        "axes": {
+                            "type": "array",
+                            "default": ["X"],
+                            "items": {
+                                "type": "string",
+                                "enum": [
+                                    "X",
+                                    "Y",
+                                    "Z"
+                                ]
+                            },
+                            "minContains": 1,
+                            "maxContains": 3,
+                            "uniqueItems": true
+                        }
+                    }
+                }
+            }
+        },
+        "mean_removal": {
+            "type": "object",
+            "default": {},
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "enum": [
+                        "mean_removal"
+                    ],
+                    "default": "mean_removal"
+                }
+            }
+        },
+        "signal_normalization": {
+            "type": "object",
+            "default": {},
+            "required": [
+                "name",
+                "parameters"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "enum": [
+                        "signal_normalization"
+                    ],
+                    "default": "signal_normalization"
+                },
+                "parameters": {
+                    "type": "object",
+                    "default": {},
+                    "required": [
+                        "peak_to_peak",
+                        "offset"
+                    ],
+                    "properties": {
+                        "peak_to_peak": {
+                            "type": "string",
+                            "default": "2.0"
+                        },
+                        "offset": {
+                            "type": "string",
+                            "default": "0.0"
+                        }
+                    }
+                }
+            }
+        },
+        "hanning": {
+            "type": "object",
+            "default": {},
+            "required": [
+                "name",
+                "parameters"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "enum": [
+                        "hanning"
+                    ],
+                    "default": "hanning"
+                },
+                "parameters": {
+                    "type": "object",
+                    "default": {},
+                    "required": [
+                        "signal_windowing"
+                    ],
+                    "properties": {
+                        "signal_windowing": {
+                            "type": "string",
+                            "enum": [
+                                "RECTANGULAR",
+                                "HANNING"
+                            ],
+                            "default": "HANNING"
+                        }
+                    }
+                }
+            }
+        },
+        "fft": {
+            "type": "object",
+            "default": {},
+            "required": [
+                "name",
+                "parameters"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "enum": [
+                        "fft"
+                    ],
+                    "default": "fft"
+                },
+                "parameters": {
+                    "type": "object",
+                    "default": {},
+                    "required": [
+                        "signal_windowing"
+                    ],
+                    "properties": {
+                        "signal_windowing": {
+                            "type": "string",
+                            "enum": [
+                                "RECTANGULAR",
+                                "HANNING"
+                            ],
+                            "default": "HANNING"
+                        }
+                    }
+                }
+            }
+        },
+        "mfcc": {
+            "type": "object",
+            "default": {},
+            "required": [
+                "name",
+                "parameters"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "enum": [
+                        "mfcc"
+                    ],
+                    "default": "mfcc"
+                },
+                "parameters": {
+                    "type": "object",
+                    "default": {},
+                    "required": [
+                        "triangular_filters_scale",
+                        "signal_windowing"
+                    ],
+                    "properties": {
+                        "triangular_filters_scale": {
+                            "type": "string",
+                            "enum": [
+                                "TRIANGULAR_FILTERS_SCALE_HZ",
+                                "TRIANGULAR_FILTERS_SCALE_MEL"
+                            ],
+                            "default": "TRIANGULAR_FILTERS_SCALE_HZ"
+                        },
+                        "signal_windowing": {
+                            "type": "string",
+                            "enum": [
+                                "RECTANGULAR",
+                                "HANNING"
+                            ],
+                            "default": "HANNING"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

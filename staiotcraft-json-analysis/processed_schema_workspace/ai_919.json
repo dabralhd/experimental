@@ -1,0 +1,242 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v11",
+    "ai_project_name": "Gesture",
+    "display_name": "Head Gestures",
+    "description": "Classification of head gestures such as other, nod and shake using the MLC.\n\nWith this example, you can recognize head gestures such as nodding, shaking, and other general head movements, for applications that might involve safety helmets, VR headsets, and other forms of gear worn on the head. Since recognition can be position-dependent, you can clone this project, collect new data and retrain the model to fit it to your use case. To use this example, ensure that the board is placed firmly above the user's right ear vertically, with the USB port facing down toward the ear, and the LEDs and logos facing outward.",
+    "type": "entertainment",
+    "uuid": "d6fa74cd-9904-43a2-8f53-5ad5f98c05f0",
+    "version": "1.0.0",
+    "creation_time": "2025-12-16 11:14:07.349277",
+    "last_update_time": "2025-12-17 14:45:31.783724",
+    "project_owner_uuid": "90ab4947-c200-4776-a316-d02c3041c4b8",
+    "models": [
+        {
+            "uuid": "40f5c1ab-539d-41ec-a263-c39d3cf28b79",
+            "name": "head_gestures",
+            "description": "Model to recognize head gestures, with an Auto-ML based approach.",
+            "creation_time": "2025-12-16 11:14:07.349289",
+            "last_update_time": "2025-12-16 11:14:07.349291",
+            "model_owner_uuid": "90ab4947-c200-4776-a316-d02c3041c4b8",
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "other",
+                    "nod",
+                    "shake"
+                ]
+            },
+            "dataset": {
+                "dataset_id": "01kckdw5j0nbmxzttn0nmqymmg",
+                "name": "head_gestures"
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "data_sufficiency": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-ds-job",
+                            "version": null,
+                            "template_id": null
+                        }
+                    ]
+                },
+                "configuration": null,
+                "artifacts": [
+                    "activities_training.json",
+                    "counts.json",
+                    "feat_names.json",
+                    "kmeans_cluster_labels.json",
+                    "lda.onnx",
+                    "my_kmeans.json",
+                    "my_tree.onnx",
+                    "window_size_odr_channels.json"
+                ],
+                "reports": []
+            },
+            "training": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": null
+                        },
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "artifacts": [
+                    "lsm6dsv16x_mlc.json",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "reports": [
+                    "report.json"
+                ]
+            },
+            "codegen": null,
+            "building": null
+        },
+        {
+            "uuid": "60f84b77-e81a-4163-bff1-735561648933",
+            "name": "test",
+            "dataset": {
+                "name": "blq",
+                "dataset_id": "01kcpcadgchv711r9cpkxvxvb4"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": []
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16bx",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-12-17 14:44:41.778208",
+            "last_update_time": "2025-12-17 14:44:41.778215",
+            "model_owner_uuid": "f8fc1cd4-0b2c-43b5-8a90-f3b8d1a0b1a2"
+        },
+        {
+            "uuid": "c059b98c-1666-4fc1-97d9-40ea2f3b3d6c",
+            "name": "nico",
+            "dataset": {
+                "name": "head_gestures",
+                "dataset_id": "01kckdw5j0nbmxzttn0nmqymmg"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "other",
+                    "nod",
+                    "shake"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-12-17 14:45:31.751084",
+            "last_update_time": "2025-12-17 14:45:31.751094",
+            "model_owner_uuid": "f8fc1cd4-0b2c-43b5-8a90-f3b8d1a0b1a2"
+        }
+    ],
+    "applications": [
+        {
+            "uuid": "34e52208-1389-458e-a6aa-711af11b8cf6",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_Gateway;8",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.1.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/staiotcraft_rpi_gateway_1_5_0.img.gz",
+            "module_id": "edgeMLC"
+        },
+        {
+            "uuid": "b6b23325-634a-4d32-837a-d59da524588c",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-7.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;7",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_3_1_0.bin",
+            "binary_id": 381,
+            "protocol": 2
+        },
+        {
+            "uuid": "192073a9-9629-46ed-8902-45f9fc8e5263",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_STAIOTCFT_AI_Inertial-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_STAIOTCFT_AI_Inertial;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/FP-SNS-STAIOTCFT_AI_Inertial_AssetTrackingOnMLC_1_0_0.bin",
+            "binary_id": 418,
+            "protocol": 1
+        },
+        {
+            "uuid": "fcb75e24-de90-4241-ab2f-fe8c7f33de36",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/AI_SSM-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:AI_SSM;1",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/AI-SSM_1_0_0.bin",
+            "binary_id": 438,
+            "protocol": 0,
+            "bluest_v3_payload": {
+                "device_id": "0x0D",
+                "fw_id": "0x25",
+                "payload_id": "0x0001",
+                "decoding_schema": [
+                    {
+                        "component": "lsm6dsv16x_mlc",
+                        "telemetry": "label_id",
+                        "type": "int8_t"
+                    }
+                ]
+            }
+        }
+    ],
+    "deployments": [
+        {
+            "uuid": "bed8f96f-5d5d-4ad7-ba64-2cfd10b30607",
+            "display_name": "Head Gestures with SensorTile.box PRO and LSM6DSV16X sensor.",
+            "description": "End-to-end system deployment for Head Gestures use case on the SensorTile.box PRO using the LSM6DSV16X sensor.",
+            "last_update_time": null,
+            "last_deploy_result": null,
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": null
+            },
+            "gateway": [
+                {
+                    "device_id": "gateway_0",
+                    "display_name": "gateway_0",
+                    "gateway_id": null,
+                    "description": "Gateway device at position 0.",
+                    "application": "0468895f-1824-4f17-bf3b-b34126655fc2",
+                    "wifi_mode": "off"
+                }
+            ],
+            "leaf": [
+                {
+                    "device_id": "leaf_0",
+                    "display_name": "leaf_0",
+                    "gateway_id": "gateway_0",
+                    "description": "Leaf device at position 0.",
+                    "datalogging": {
+                        "supported_applications": [
+                            "3b72a063-a9ea-4ba5-8f70-f723d61a1efa"
+                        ],
+                        "application": "3b72a063-a9ea-4ba5-8f70-f723d61a1efa",
+                        "firmware_update": false
+                    },
+                    "inference": {
+                        "supported_applications": [
+                            "3db86259-6025-44bf-afa0-0c56b87ab035",
+                            "43824f21-05fe-43af-a4d8-5dc771a01109"
+                        ],
+                        "application": "3db86259-6025-44bf-afa0-0c56b87ab035",
+                        "firmware_update": false,
+                        "models": [
+                            {
+                                "model_name_reference": "head_gestures",
+                                "artifact_type": "json",
+                                "component_name": "lsm6dsv16x_mlc"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

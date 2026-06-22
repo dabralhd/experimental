@@ -1,0 +1,63 @@
+{
+    "accuracy": "98.50%",
+    "accuracy_metaclassifiers": "98.5%",
+    "confusion_matrix": {
+        "motion": {
+            "motion": "711",
+            "shaken": "1",
+            "stationary_not_upright": "6",
+            "stationary_upright": "6"
+        },
+        "shaken": {
+            "motion": "6",
+            "shaken": "512",
+            "stationary_not_upright": "0",
+            "stationary_upright": "0"
+        },
+        "stationary_not_upright": {
+            "motion": "13",
+            "shaken": "0",
+            "stationary_not_upright": "636",
+            "stationary_upright": "0"
+        },
+        "stationary_upright": {
+            "motion": "4",
+            "shaken": "5",
+            "stationary_not_upright": "0",
+            "stationary_upright": "839"
+        }
+    },
+    "confusion_matrix_metaclassifiers": {
+        "motion": {
+            "motion": "711",
+            "shaken": "1",
+            "stationary_not_upright": "6",
+            "stationary_upright": "6"
+        },
+        "shaken": {
+            "motion": "6",
+            "shaken": "512",
+            "stationary_not_upright": "0",
+            "stationary_upright": "0"
+        },
+        "stationary_not_upright": {
+            "motion": "13",
+            "shaken": "0",
+            "stationary_not_upright": "636",
+            "stationary_upright": "0"
+        },
+        "stationary_upright": {
+            "motion": "4",
+            "shaken": "5",
+            "stationary_not_upright": "0",
+            "stationary_upright": "839"
+        }
+    },
+    "correctly_classified_instances": "2698",
+    "correctly_classified_instances_metaclassifiers": "2698",
+    "incorrectly_classified_instances": "41",
+    "incorrectly_classified_instances_metaclassifiers": "41",
+    "kappa_statistic": "97.98%",
+    "total_instances": "2739",
+    "total_instances_metaclassifiers": "2739"
+}

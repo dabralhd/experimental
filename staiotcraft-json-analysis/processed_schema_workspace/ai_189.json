@@ -1,0 +1,15 @@
+{
+    "uuid": "930a482c-9284-4c24-8af8-e398e0d2d51e",
+    "ai_project_name": "ExampleAttack",
+    "type": null,
+    "display_name": null,
+    "description": "<svg><script>alert(\"I can do something malicious\")</script></svg>",
+    "version": null,
+    "schema_version": null,
+    "last_update_time": "2026-05-07 15:40:54.885012",
+    "creation_time": "2026-05-07 15:40:54.885012",
+    "project_owner_uuid": "d2a55444-90f1-7018-9a49-b90c3a197d0b",
+    "models": [],
+    "deployments": [],
+    "applications": []
+}

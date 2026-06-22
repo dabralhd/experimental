@@ -1,0 +1,138 @@
+{
+    "sensor": "ISM330DHCX",
+    "sensor_settings": {
+        "accelerometer_fs": "2 g",
+        "accelerometer_odr": "104 Hz",
+        "gyroscope_fs": "2000 dps",
+        "gyroscope_odr": "104 Hz",
+        "mlc_odr": "26 Hz",
+        "input_type": "accelerometer_only",
+        "window_length": 52,
+        "decision_tree_count": 1,
+        "thresh_n_percentage": 0.05,
+        "thresh_accu_to_take": 0.05
+    },
+    "filters": [
+        {
+            "uuid": "6debaaf0-13db-4211-a160-421b7b06c657",
+            "input": "Acc_V2",
+            "a2": 1.56840717619461,
+            "a3": 0.775679511049613,
+            "gain": 0.112160244475193,
+            "filter_name": "filter_1",
+            "type": "BP"
+        },
+        {
+            "uuid": "44716a93-7942-4f43-b520-20adbaa954f0",
+            "input": "Acc_V2",
+            "b1": 0.0133592000278565,
+            "b2": 0.026718400055713,
+            "b3": 0.0133592000278565,
+            "a2": -1.64745998107698,
+            "a3": 0.7008967811884032,
+            "filter_name": "filter_2",
+            "type": "IIR2"
+        }
+    ],
+    "features": [
+        {
+            "uuid": "7f921d05-6951-4cab-b46b-817ad2eab062",
+            "feature_name": "MEAN",
+            "input": "Acc_X",
+            "sign": "unsigned"
+        },
+        {
+            "uuid": "aa140c77-b37b-4db7-9fca-6d57365f8e0b",
+            "feature_name": "MEAN",
+            "input": "Acc_Y",
+            "sign": "unsigned"
+        },
+        {
+            "uuid": "a701205c-cb48-4241-8356-ffb9bf10d065",
+            "feature_name": "MEAN",
+            "input": "Acc_Z",
+            "sign": "unsigned"
+        },
+        {
+            "uuid": "691a40e2-027c-4cb2-8b0d-a08e41f94a70",
+            "feature_name": "MEAN",
+            "input": "Acc_V2"
+        },
+        {
+            "uuid": "9af7565f-8f3f-4ccb-8b29-34af246794c0",
+            "feature_name": "VARIANCE",
+            "input": "Acc_X"
+        },
+        {
+            "uuid": "08943d9b-36fd-452e-ba0d-30f726c0441f",
+            "feature_name": "VARIANCE",
+            "input": "Acc_Y"
+        },
+        {
+            "uuid": "3c1a7bb9-2451-4cbe-8aab-ce588dd6d1a2",
+            "feature_name": "VARIANCE",
+            "input": "Acc_Z"
+        },
+        {
+            "uuid": "66488d74-1c0c-43d9-b5b0-bd13cf5c99c9",
+            "feature_name": "VARIANCE",
+            "input": "Acc_V2"
+        },
+        {
+            "uuid": "4d9fe68c-5eed-4646-8d69-0bf2f89ecdc3",
+            "feature_name": "ENERGY",
+            "input": "Acc_V2"
+        },
+        {
+            "uuid": "92e3d7f0-b93d-4d6e-8456-94c8ab0196c9",
+            "feature_name": "ENERGY",
+            "input": "Acc_V2_filter_1"
+        },
+        {
+            "uuid": "113ec147-4a16-4b6f-8b4b-4fa403aacbc2",
+            "feature_name": "ENERGY",
+            "input": "Acc_V2_filter_2"
+        },
+        {
+            "uuid": "a90b4db5-8670-44c5-a466-b7c533f6850b",
+            "feature_name": "ZERO_CROSSING",
+            "input": "Acc_V2_filter_1",
+            "threshold": 0.4
+        },
+        {
+            "uuid": "c61e2db5-4a95-4404-9786-f5e4d36768a1",
+            "feature_name": "ZERO_CROSSING",
+            "input": "Acc_V2_filter_2",
+            "threshold": 35
+        },
+        {
+            "uuid": "8e5c9ad5-b253-4f97-aeb9-d178db18edd9",
+            "feature_name": "PEAK_TO_PEAK",
+            "input": "Acc_V"
+        }
+    ],
+    "results": [
+        {
+            "label": "still",
+            "value": 0
+        },
+        {
+            "label": "walk",
+            "value": 32
+        },
+        {
+            "label": "fastwalk",
+            "value": 64
+        }
+    ],
+    "metaclassifiers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+    ]
+}

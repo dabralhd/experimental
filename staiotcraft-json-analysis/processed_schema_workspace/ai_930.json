@@ -1,0 +1,62 @@
+{
+    "uuid": "17e00796-1b0f-4858-a366-eeadcfb9c53f",
+    "ai_project_name": "demo-project",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "schema_version": null,
+    "last_update_time": "2026-06-15 13:13:34.487511",
+    "creation_time": "2026-06-15 13:13:32.142133",
+    "project_owner_uuid": "1bdf5802-558d-4df1-88d5-2277d96efd01",
+    "models": [
+        {
+            "uuid": "b5acda42-9c91-4d0c-a08e-4b9a3b560339",
+            "name": "demo-model",
+            "dataset": {
+                "name": "lsm6dsv16x_stationary_motion_shaken",
+                "dataset_id": "01kv5pbmp5n68tgtv8ze365gbf"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary",
+                    "motion",
+                    "shaken"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-06-15 13:13:34.461495",
+            "last_update_time": "2026-06-15 13:13:34.461505",
+            "model_owner_uuid": "1bdf5802-558d-4df1-88d5-2277d96efd01",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.json",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2026-06-15 13:15:04.962036",
+                "creation_time": "2026-06-15 13:15:04.962034"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

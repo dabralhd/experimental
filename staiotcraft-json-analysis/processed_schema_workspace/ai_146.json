@@ -1,0 +1,244 @@
+{
+   "uuid": "f759c75f-0788-444a-a60a-db52eb4caa15",
+   "ai_project_name": "20240309_mlc_demo",
+   "display_name": null,
+   "description": "",
+   "version": "0.0.1",
+   "inputs": [
+      {
+         "uuid": "e4603ecd-4760-4944-8561-9498ffaa7e30",
+         "model_ref": "fcdc76c7-3f14-47da-950e-0d167c40eb56",
+         "input_type": "binary_hsd",
+         "augmentation": [],
+         "logs": [
+            {
+               "uuid": "213aabca-33cd-4d43-b1af-96040c12acd5",
+               "name": "20240309_07_53_25",
+               "annotated": true,
+               "description": "20240309_07_53_25",
+               "start_time": "2000-01-01T00:00:52.000Z",
+               "end_time": "2000-01-01T00:01:35.016Z",
+               "device_description": {
+                  "part_number": "FP-SNS-DATALOG2",
+                  "serial_number": "004A00295752501620353339",
+                  "alias": "STBOX_PRO_001",
+                  "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                  "fw_version": "2.0.1"
+               }
+            },
+            {
+               "uuid": "2f6b1dbf-078f-4c09-93c6-75d40994a023",
+               "name": "20240309_08_50_36",
+               "annotated": true,
+               "description": "20240309_08_50_36",
+               "start_time": "2000-01-01T00:57:20.000Z",
+               "end_time": "2000-01-01T00:58:14.504Z",
+               "device_description": {
+                  "part_number": "FP-SNS-DATALOG2",
+                  "serial_number": "004A00295752501620353339",
+                  "alias": "STBOX_PRO_001",
+                  "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                  "fw_version": "2.0.1"
+               }
+            }
+         ],
+         "tools": [
+            {
+               "name": "hsdatalog_to_unico",
+               "version": "1.1.0",
+               "parameters": {
+                  "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                  "-f": "TXT",
+                  "-t": "",
+                  "-s": "all",
+                  "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+               }
+            }
+         ]
+      },
+      {
+         "uuid": "295ec1d0-c202-42a0-9163-efa17ce178f8",
+         "model_ref": "e2c3d0c7-ed82-491f-8b2b-632d29010104",
+         "input_type": "binary_hsd",
+         "augmentation": [],
+         "logs": [
+            {
+               "uuid": "1022d91c-135f-4687-8e58-e0ae2ad84a2e",
+               "name": "20240309_11_31_04",
+               "annotated": true,
+               "description": "20240309_11_31_04",
+               "start_time": "2000-01-01T00:43:23.000Z",
+               "end_time": "2000-01-01T00:44:21.503Z",
+               "device_description": {
+                  "part_number": "FP-SNS-DATALOG2",
+                  "serial_number": "004A00295752501620353339",
+                  "alias": "STBOX_PRO_001",
+                  "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                  "fw_version": "2.0.1"
+               }
+            },
+            {
+               "uuid": "0b0c2ae5-1471-4159-985a-4f501fa5d242",
+               "name": "20240309_11_32_43",
+               "annotated": true,
+               "description": "20240309_11_32_43",
+               "start_time": "2000-01-01T00:45:00.000Z",
+               "end_time": "2000-01-01T00:45:48.004Z",
+               "device_description": {
+                  "part_number": "FP-SNS-DATALOG2",
+                  "serial_number": "004A00295752501620353339",
+                  "alias": "STBOX_PRO_001",
+                  "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                  "fw_version": "2.0.1"
+               }
+            },
+            {
+               "uuid": "1b336939-3665-454e-9134-f3f32b05aef8",
+               "name": "20240309_11_38_16",
+               "annotated": true,
+               "description": "20240309_11_38_16",
+               "start_time": "2000-01-01T00:50:28.000Z",
+               "end_time": "2000-01-01T00:51:34.505Z",
+               "device_description": {
+                  "part_number": "FP-SNS-DATALOG2",
+                  "serial_number": "004A00295752501620353339",
+                  "alias": "STBOX_PRO_001",
+                  "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                  "fw_version": "2.0.1"
+               }
+            }
+         ],
+         "tools": [
+            {
+               "name": "hsdatalog_to_unico",
+               "version": "1.1.0",
+               "parameters": {
+                  "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                  "-f": "TXT",
+                  "-t": "",
+                  "-s": "all",
+                  "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+               }
+            }
+         ]
+      }
+   ],
+   "models": [
+      {
+         "uuid": "fcdc76c7-3f14-47da-950e-0d167c40eb56",
+         "name": "horizontal_vertical_moves",
+         "model_type": "classifier",
+         "training_type": "offline",
+         "stage": "modeling",
+         "model_metadata": {
+            "classes": [
+               "none",
+               "horizontal",
+               "vertical"
+            ]
+         },
+         "experiments": [
+            {
+               "uuid": "01a186e5-6102-4276-be6e-93ee13d6c355",
+               "name": "experiment3",
+               "description": "",
+               "model_dev_file": null
+            },
+            {
+               "uuid": "01c77880-fe18-46cc-a8f0-07f80aacf9ed",
+               "name": "automl",
+               "description": "",
+               "model_dev_file": null
+            },
+            {
+               "uuid": "f7652288-bcb6-47de-8731-a6e0021abb53",
+               "name": "expertml",
+               "description": "",
+               "model_dev_file": null
+            }
+         ]
+      },
+      {
+         "uuid": "e2c3d0c7-ed82-491f-8b2b-632d29010104",
+         "name": "horizontal_vertical_moves_more_data",
+         "model_type": "classifier",
+         "training_type": "offline",
+         "stage": "modeling",
+         "model_metadata": {
+            "classes": [
+               "none",
+               "horizontal",
+               "vertical"
+            ]
+         },
+         "experiments": [
+            {
+               "uuid": "5d7ce2ad-8ce2-468e-96ca-ef39c2591109",
+               "name": "expertml",
+               "description": "",
+               "model_dev_file": null
+            }
+         ]
+      }
+   ],
+   "outputs": [
+      {
+         "uuid": "c6db1982-659f-402f-a029-88db0fa18128",
+         "model_ref": "fcdc76c7-3f14-47da-950e-0d167c40eb56",
+         "output_type": "steval-mkboxpro:mlc",
+         "best_test": "3dea79a0-293c-447d-a69e-994de47c27cc",
+         "tests": [
+            {
+               "uuid": "61f3d195-2b4a-4ffe-b41a-77a6b195f800",
+               "name": "output3",
+               "experiment_ref": "01a186e5-6102-4276-be6e-93ee13d6c355",
+               "model_file": null,
+               "parameters": [],
+               "reports": [
+                  "lsm6dsv16x_mlc_report.json"
+               ],
+               "outputs": [
+                  "lsm6dsv16x_mlc.ucf",
+                  "lsm6dsv16x_mlc.h"
+               ]
+            }
+         ],
+         "tools": [
+            {
+               "name": "mlctools",
+               "version": "1.0.0",
+               "parameters": null
+            }
+         ]
+      },
+      {
+         "uuid": "d597e8e4-79e6-4456-8a50-298779195aec",
+         "model_ref": "e2c3d0c7-ed82-491f-8b2b-632d29010104",
+         "output_type": "steval-mkboxpro:mlc",
+         "best_test": null,
+         "tests": [
+            {
+               "uuid": "9166cca4-0eb5-4f73-b362-96a56266c3ca",
+               "name": "expertml",
+               "experiment_ref": "5d7ce2ad-8ce2-468e-96ca-ef39c2591109",
+               "model_file": null,
+               "parameters": {},
+               "reports": [],
+               "outputs": []
+            }
+         ],
+         "tools": [
+            {
+               "name": "mlctools",
+               "version": "1.0.0",
+               "parameters": null
+            }
+         ]
+      }
+   ],
+   "deployments": [],
+   "dbstatus": {
+      "status": "unknown",
+      "message": null
+   }
+}

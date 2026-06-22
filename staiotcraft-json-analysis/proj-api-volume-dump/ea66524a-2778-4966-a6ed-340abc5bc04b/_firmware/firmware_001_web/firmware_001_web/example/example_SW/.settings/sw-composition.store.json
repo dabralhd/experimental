@@ -1,0 +1,532 @@
+{
+  "componentModel": {
+    "version": 2,
+    "$type": "http://st.com/schema/sw-composer#//SWComposition",
+    "id": "e8f85374-5d17-4ae2-8935-22e984ff7cde",
+    "components": [
+      {
+        "$type": "http://st.com/schema/sw-composer#//SingleInstanceSWComponent",
+        "id": "4293558a-655a-447c-85ba-a33f45c33611",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32CubeMX2 Config:RCC@0.2.0#RCC Init",
+        "label": "STM32CubeMX2 Config:RCC",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//MultiInstanceSWComponent",
+        "id": "b5054d43-4f24-402d-b2aa-910a8e58c4bf",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32CubeMX2 Config:ICACHE@0.2.0#HAL CORE Init and ICACHE",
+        "label": "STM32CubeMX2 Config:ICACHE",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "25a8dc5c-e40e-4602-96a2-a64ccc0d0404",
+        "componentDescriptionId": "ARM.CMSIS.6.2.0$ARM::CMSIS:CORE@6.1.1#ARMv6_7_8-M Device",
+        "label": "CORE",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "737c4ec7-87aa-4647-b2d0-ffc966fbdfdc",
+        "componentDescriptionId": "STMicroelectronics.template_no_os.0.6.3$STMicroelectronics::Application:project_templates&template no os@0.6.3#template no os dependencies",
+        "label": "project_templates:template no os",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "07b534b0-2f54-4f97-8f1b-fbf9979203ca",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32 HAL:CORTEX@0.2.0#HAL CORTEX",
+        "label": "STM32 HAL:CORTEX",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "a0b4ee7d-03dd-42c4-9de6-56168627e895",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32 HAL:Core@0.2.0#HAL Common",
+        "label": "STM32 HAL:Core",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "0b602db3-8151-4f63-af3e-3d603e8955ed",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32 HAL:EXTI@0.2.0#HAL EXTI",
+        "label": "STM32 HAL:EXTI",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "c39ae566-6a95-4485-b6a9-ed6e75ab6d21",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32 HAL:FLASH_ITF@0.2.0#HAL FLASH",
+        "label": "STM32 HAL:FLASH_ITF",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "16990142-875d-490e-9726-750293dc7c87",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32 HAL:GPIO@0.2.0#HAL GPIO",
+        "label": "STM32 HAL:GPIO",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "f21914a9-4b5a-4a04-9e97-37aca96b78b0",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32 HAL:ICACHE@0.1.0#HAL ICACHE",
+        "label": "STM32 HAL:ICACHE",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "e331e74c-8a06-4382-a440-7af1bd74dd38",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32 HAL:PWR@0.1.0#HAL PWR",
+        "label": "STM32 HAL:PWR",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "fb7dd4f0-eac2-4da9-b8b5-09776ae90ceb",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32 HAL:RCC@0.1.0#HAL RCC",
+        "label": "STM32 HAL:RCC",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "f5235444-01fd-4a13-b388-ea3e9f778a99",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32 LL:BUS@0.1.0#LL",
+        "label": "STM32 LL:BUS",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "294a2623-44ee-4afd-85ea-916bed237c9c",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32 LL:Common@0.1.0#CMSIS Core",
+        "label": "STM32 LL:Common",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "b1a3c614-56b4-4445-8b0c-298595196d51",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32 LL:EXTI@0.1.0#LL",
+        "label": "STM32 LL:EXTI",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "2f3835b2-d474-479e-8c23-d6d859393a8b",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32 LL:FLASH@0.1.0#LL",
+        "label": "STM32 LL:FLASH",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "21edac4b-df17-43c7-bc71-719e3e7686bf",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32 LL:GPIO@0.1.0#LL",
+        "label": "STM32 LL:GPIO",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "45a3736a-584e-4a9c-ac14-a1b26b55c96d",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32 LL:ICACHE@0.1.0#LL",
+        "label": "STM32 LL:ICACHE",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "1f639e2d-fa9f-4466-87d7-046a2380134d",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32 LL:PWR@0.1.0#LL",
+        "label": "STM32 LL:PWR",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "b913f4b2-8b6d-42e7-88f1-7ea1d72c37ee",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32 LL:RCC@0.1.0#LL",
+        "label": "STM32 LL:RCC",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SingleInstanceSWComponent",
+        "id": "5b486afc-65e8-45d3-9cae-41189141b954",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32CubeMX2 Config:CORE@0.2.0#HAL Generated code",
+        "label": "STM32CubeMX2 Config:CORE",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "6172ad65-e36d-4fa7-80d9-646b9edf8509",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32CubeMX2 Config:Generated Code@0.2.0#HAL Common",
+        "label": "STM32CubeMX2 Config:Generated Code",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SingleInstanceSWComponent",
+        "id": "f32bf884-e75a-44dd-a090-8d13cd2989db",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32CubeMX2 Config:System@0.2.0#HAL System Init",
+        "label": "STM32CubeMX2 Config:System",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "13555e5c-ffbd-4c7e-a970-3af227c81301",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32CubeMX2 Config:def@0.2.0#HAL Common",
+        "label": "STM32CubeMX2 Config:def",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "159c8b97-fb77-41fc-8ae0-c6a9ff8137eb",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_dfp.2.0.0-beta.1$STMicroelectronics::Device:Startup@2.0.0-beta.1#STM32C5",
+        "label": "Startup",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "f0803709-0c7f-4196-aa42-f57906c0d7bf",
+        "componentDescriptionId": "STMicroelectronics.syscalls.0.2.1$STMicroelectronics::Utility:syscalls&Template syscalls@0.2.0",
+        "label": "syscalls:Template syscalls",
+        "expanded": true,
+        "userAdded": true
+      },
+      {
+        "$type": "http://st.com/schema/sw-composer#//SWComponent",
+        "id": "b98faa74-d92f-48df-a98e-5723c23ff4d3",
+        "componentDescriptionId": "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32 HAL:timebases&SYSTICK@0.0.0#Timebase NONE",
+        "label": "STM32 HAL:SYSTICK",
+        "expanded": true,
+        "userAdded": false
+      }
+    ]
+  },
+  "notation": {
+    "version": 1,
+    "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Diagram",
+    "$id": "dc9c0b75-2250-4532-9cf0-89c7cbc8e2c5",
+    "semanticElement": {
+      "uri": "e8f85374-5d17-4ae2-8935-22e984ff7cde"
+    },
+    "elements": [
+      {
+        "$id": "06452818-a2be-468c-861e-7ca2f5ff0636",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "4293558a-655a-447c-85ba-a33f45c33611"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "d31b1e3d-a678-4ad0-8e08-e47b6ac3389f",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "b5054d43-4f24-402d-b2aa-910a8e58c4bf"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "d0c8b311-68ba-47e7-99da-df6c74f0a0a6",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "25a8dc5c-e40e-4602-96a2-a64ccc0d0404"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "bd70e557-ab93-45f0-91df-164e0de9ed9a",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "737c4ec7-87aa-4647-b2d0-ffc966fbdfdc"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "dc83b999-6e70-463a-874d-caebe63a98a9",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "07b534b0-2f54-4f97-8f1b-fbf9979203ca"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "5bc7b093-8b36-481d-9fdb-9a0c7d19b3f2",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "a0b4ee7d-03dd-42c4-9de6-56168627e895"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "f1c557be-2e47-4ab5-9353-e3a11994702f",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "0b602db3-8151-4f63-af3e-3d603e8955ed"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "95d801b6-a378-45b5-9bbb-941c4afa6745",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "c39ae566-6a95-4485-b6a9-ed6e75ab6d21"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "be80cc2e-8549-4af2-9d97-0668f4605c34",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "16990142-875d-490e-9726-750293dc7c87"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "7d5c7135-acaf-4e92-af28-9af919c56dbf",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "f21914a9-4b5a-4a04-9e97-37aca96b78b0"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "ed6371fa-0621-478a-927e-2ce65becf951",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "e331e74c-8a06-4382-a440-7af1bd74dd38"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "d318d4f9-3fa1-493f-9a47-625175ffc967",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "fb7dd4f0-eac2-4da9-b8b5-09776ae90ceb"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "50d4059f-35ff-45b1-9fc7-8a20f5cf2022",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "f5235444-01fd-4a13-b388-ea3e9f778a99"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "5f1a1553-e357-47c5-811f-27260148eeb9",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "294a2623-44ee-4afd-85ea-916bed237c9c"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "a1ffac11-5c78-458b-b611-7cfd079738e3",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "b1a3c614-56b4-4445-8b0c-298595196d51"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "cc4a115b-d86c-43ab-b234-f16ea9a16379",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "2f3835b2-d474-479e-8c23-d6d859393a8b"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "66e72bd6-4e73-4212-8a73-a94ab43fa01e",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "21edac4b-df17-43c7-bc71-719e3e7686bf"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "4313541a-0080-460b-93d2-630f5417bffb",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "45a3736a-584e-4a9c-ac14-a1b26b55c96d"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "affbd793-f524-4d94-9568-1ebca5611fd0",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "1f639e2d-fa9f-4466-87d7-046a2380134d"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "0959be72-9446-4819-b086-bca8e0630834",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "b913f4b2-8b6d-42e7-88f1-7ea1d72c37ee"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "375a4781-a328-402d-9e66-d6d48a8f6114",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "5b486afc-65e8-45d3-9cae-41189141b954"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "2704a0a0-dead-47c7-8d55-ce6434416394",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "6172ad65-e36d-4fa7-80d9-646b9edf8509"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "94cd2486-8ed1-4db9-a878-744f40172d0d",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "f32bf884-e75a-44dd-a090-8d13cd2989db"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "ddd3c5af-beb2-46b4-8f39-35691c6a7d63",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "13555e5c-ffbd-4c7e-a970-3af227c81301"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "058cace6-7618-403a-9fe1-a2de2c44f3b2",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "159c8b97-fb77-41fc-8ae0-c6a9ff8137eb"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "92581917-1f28-469d-8796-e608c81772af",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "f0803709-0c7f-4196-aa42-f57906c0d7bf"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      {
+        "$id": "9ce5cd75-f225-44eb-8d62-4b4d020e3f7a",
+        "$type": "http://www.eclipse.org/emfcloud/modelserver/notation#//Shape",
+        "semanticElement": {
+          "uri": "b98faa74-d92f-48df-a98e-5723c23ff4d3"
+        },
+        "position": {
+          "x": 0,
+          "y": 0
+        }
+      }
+    ]
+  }
+}

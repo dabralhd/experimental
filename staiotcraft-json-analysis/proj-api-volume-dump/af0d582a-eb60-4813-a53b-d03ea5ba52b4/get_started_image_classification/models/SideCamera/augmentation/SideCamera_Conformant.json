@@ -1,0 +1,29 @@
+{
+    "$schema": "/home/workspace/.stedgeai/templates/inputs/augmentation/image/schema_for_image_augmentation.json",
+    "general": {
+        "project": "get_started_image_classification",
+        "model": "SideCamera",
+        "class_to_augment": "Conformant"
+    },
+    "dataset": {
+        "image_size_x": 160,
+        "image_size_y": 160,
+        "image_size_z": 3,
+        "image_extension": ".jpg"
+    },
+    "dataset_augmentation": {
+        "rotation_range": 3,
+        "width_shift_range": 0,
+        "height_shift_range": 0.1,
+        "brightness_range": null,
+        "shear_range": 0,
+        "zoom_range": 0,
+        "channel_shift_range": 0,
+        "fill_mode": "constant",
+        "cval": 0,
+        "horizontal_flip": false,
+        "vertical_flip": false,
+        "rescale": 0,
+        "augmentation_factor": 5
+    }
+}

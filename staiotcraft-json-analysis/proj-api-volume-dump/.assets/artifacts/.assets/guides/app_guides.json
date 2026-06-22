@@ -1,0 +1,52 @@
+{
+    "guides":[
+        {
+            "id": "virtualenv_config",
+            "title": "Python virtual env",
+            "description": "How to configure virtual environments for jupyter notebook and python scripts",
+            "logo": null
+        },
+        {
+            "id": "vscode_ext_hsdatalog",
+            "title": "HSDatalog",
+            "description": "HSDatalog VSCode extension for STWIN board",
+            "logo": "vscode.png"
+        },
+        {
+            "id": "vscode_ext_project_manager",
+            "title": "Project manager",
+            "description": "VSCode extension for Vespucci project management",
+            "logo": "vscode.png"
+        },
+        {
+            "id": "vscode_ext_project_manager_nn_classifier",
+            "title": "NN Classifier",
+            "description": "How to train a Neural Network Classifier",
+            "logo": null
+        },
+        {
+            "id": "vscode_ext_project_manager_anomaly_detector",
+            "title": "Anomaly detector",
+            "description": "How to train an Anomaly Detector model",
+            "logo": null
+        },
+        {
+            "id": "vscode_ext_stm32cube.ai",
+            "title": "STM32Cube.AI",
+            "description": "VSCode extension for the STM32Cube.AI tool",
+            "logo": "vscode.png"
+        },
+	    {
+            "id": "vscode_ext_mlctools",
+            "title": "MLCTools",
+            "description": "VSCode extension for MLCTools",
+            "logo": "vscode.png"
+        },
+        {
+            "id": "vscode_ext_stredlai",
+            "title": "STREDL.AI",
+            "description": "VSCode extension for the STREDL.AI tool",
+            "logo": "vscode.png"
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+{
+    "uuid": "aefe8dc2-7dc9-11eb-982a-801f12c9386f",
+    "name": "2021-03-05T15:44:44.000Z",
+    "description": "Description of the acquisition...",
+    "project_ref": "get_started_image_classification",
+    "model_ref": "SideCamera",
+    "input_type": "image",
+    "annotated": true,
+    "start_time": "2021-03-05T15:44:44.000Z",
+    "end_time": "2021-03-05T15:49:36.000Z",
+    "tags": [
+        {
+            "f": "img_CAM_3_SVGA_05.03.2021-15.44.40.588.jpg",
+            "r": "SVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_3_160x160_05.03.2021-15.44.42.669.jpg",
+            "r": "160x160",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_3_QVGA_05.03.2021-15.44.44.344.jpg",
+            "r": "QVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_3_VGA_05.03.2021-15.44.46.227.jpg",
+            "r": "VGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_3_HD_05.03.2021-15.44.48.094.jpg",
+            "r": "HD",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_3_SVGA_05.03.2021-15.49.28.713.jpg",
+            "r": "SVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_3_160x160_05.03.2021-15.49.30.808.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_3_QVGA_05.03.2021-15.49.32.391.jpg",
+            "r": "QVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_3_VGA_05.03.2021-15.49.33.813.jpg",
+            "r": "VGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_3_HD_05.03.2021-15.49.35.681.jpg",
+            "r": "HD",
+            "l": "Conformant",
+            "ta": ""
+        }
+    ],
+    "lux": -1
+}

@@ -1,0 +1,62 @@
+{
+    "uuid": "35ba3ae3-5014-4854-a440-77dae82d6ad1",
+    "ai_project_name": "gps-buddy",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "schema_version": null,
+    "last_update_time": "2026-06-09 13:51:05.015219",
+    "creation_time": "2026-06-09 13:51:02.660402",
+    "project_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508",
+    "models": [
+        {
+            "uuid": "bf1f3939-909a-499f-ba2d-56414c0fa78d",
+            "name": "gps-buddy",
+            "dataset": {
+                "name": "lis2dux12_static_vibration_shake",
+                "dataset_id": "01ktp9hz29fsrpxft3zx9f31pd"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "static",
+                    "vibration",
+                    "shake"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lis2dux12",
+                "device": "nucleo-u575zi-q"
+            },
+            "creation_time": "2026-06-09 13:51:04.990064",
+            "last_update_time": "2026-06-09 13:51:04.990077",
+            "model_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lis2dux12_mlc.json",
+                    "lis2dux12_mlc.h"
+                ],
+                "last_update_time": "2026-06-09 13:52:36.687800",
+                "creation_time": "2026-06-09 13:52:36.687798"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

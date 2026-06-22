@@ -1,0 +1,156 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v11",
+    "ai_project_name": "testIoT",
+    "display_name": "Human Activity Recognition",
+    "description": "Classification of sitting, standing, running and walking activities using the MLC.\n\nThis example allows to recognize some common human activities (such as sitting, standing, running and walking) that may be relevant for wearable applications. To use this example effectively, place the board on the outside of the right wrist and secure it firmly. Make sure it is oriented in such a way that the USB port faces upward toward the shoulder, with the LEDs and logos visible and facing outward. In case you need a different placement on the wrist or want to add some more movements of your own, just clone the project into your workspace, collect a new dataset, and retrain the model.",
+    "type": "entertainment",
+    "uuid": "8006336b-b4fb-4755-886c-44ee9865f334",
+    "version": "1.0.0",
+    "creation_time": "2026-03-30 08:37:04.584381",
+    "last_update_time": "2026-03-30 08:37:04.584381",
+    "project_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508",
+    "models": [
+        {
+            "uuid": "777d1cc5-5ca0-48fc-b077-a96e800080f1",
+            "name": "human_activity_recognition",
+            "description": "Model to classify human activities, with an Auto-ML based approach.",
+            "creation_time": "2026-03-30 08:37:04.584396",
+            "last_update_time": "2026-03-30 08:37:04.584399",
+            "model_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508",
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "sitting",
+                    "standing",
+                    "running",
+                    "walking"
+                ]
+            },
+            "dataset": {
+                "dataset_id": "01kmyy7bjs6yhvt2f2mrbbte7q",
+                "name": "human_activity_recognition"
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "data_sufficiency": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-ds-job",
+                            "version": null,
+                            "template_id": null
+                        }
+                    ]
+                },
+                "configuration": null,
+                "artifacts": [
+                    "activities_training.json",
+                    "counts.json",
+                    "feat_names.json",
+                    "kmeans_cluster_labels.json",
+                    "lda.onnx",
+                    "my_kmeans.json",
+                    "my_tree.onnx",
+                    "window_size_odr_channels.json"
+                ],
+                "reports": []
+            },
+            "training": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": null
+                        },
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "artifacts": [
+                    "lsm6dsv16x_mlc.json",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "reports": [
+                    "report.json"
+                ]
+            },
+            "codegen": null,
+            "building": null
+        }
+    ],
+    "applications": [
+        {
+            "uuid": "88f31f16-ea92-445b-80b7-e1a125f7d1f3",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_Gateway;8",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.1.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/staiotcraft_rpi_gateway_1_5_0.img.gz",
+            "module_id": "edgeMLC"
+        },
+        {
+            "uuid": "77617cd9-8896-4104-ae39-2d96607f9a9c",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-7.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;7",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_3_1_0.bin",
+            "binary_id": 381,
+            "protocol": 2
+        },
+        {
+            "uuid": "77617cd9-8896-4104-ae39-2d96607f9a9d",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/STAIOTCFT-SDATALOG_DemoAccGyroMLC.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:STAIOTCFT-SDATALOG_DemoAccGyroMLC;7",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/STAIOTCFT-SDATALOG_DemoAccGyroMLC_1_0_0.bin",
+            "binary_id": 381,
+            "protocol": 2
+        },
+        {
+            "uuid": "76868c1b-df21-44a6-a935-dbaa06735c11",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_STAIOTCFT_AI_Inertial-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_STAIOTCFT_AI_Inertial;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/FP-SNS-STAIOTCFT_AI_Inertial_AssetTrackingOnMLC_1_0_0.bin",
+            "binary_id": 418,
+            "protocol": 1
+        },
+        {
+            "uuid": "d847e9e0-eec2-4902-97fc-ba76b57c8cbc",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/AI_SSM-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:AI_SSM;1",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/AI-SSM_1_0_0.bin",
+            "binary_id": 438,
+            "protocol": 0,
+            "bluest_v3_payload": {
+                "device_id": "0x0D",
+                "fw_id": "0x25",
+                "payload_id": "0x0001",
+                "decoding_schema": [
+                    {
+                        "component": "lsm6dsv16x_mlc",
+                        "telemetry": "label_id",
+                        "type": "int8_t"
+                    }
+                ]
+            }
+        }
+    ],
+    "deployments": []
+}

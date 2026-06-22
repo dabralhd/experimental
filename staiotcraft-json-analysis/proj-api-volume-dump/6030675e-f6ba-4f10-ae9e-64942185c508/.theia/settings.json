@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        ".stedgeai": true
+    },
+    "python.defaultInterpreterPath": "/usr/local/bin/python3",
+    "python.venvFolders": ["/home/workspace/.virtualenvs"],
+    "python.pythonPath": "/usr/local/bin/python3",
+    "python.venvPath": "/home/workspace/.virtualenvs",
+}
+

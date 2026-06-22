@@ -1,0 +1,339 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v8",
+    "ai_project_name": "get_started_motor_classification_mcu",
+    "display_name": "Motor Classification",
+    "description": "Get started project for motor classification scenario run on the MCU.",
+    "uuid": "43c6068f-aee7-47f7-b4b8-15b419086f03",
+    "version": "1.0.0",
+    "inputs": [
+        {
+            "uuid": "761a12c0-42eb-4e50-a78f-4e04ef13b7f0",
+            "input_type": "binary_hsd",
+            "model_ref": "4ee1467a-dd75-4216-a2e5-7c774464ae61",
+            "logs": [
+                {
+                    "uuid": "80026a08-3e8a-46fb-9919-520ef7846a5e",
+                    "name": "20230612_12_16_48",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2023-06-12T12:16:47.000Z",
+                    "end_time": "2023-06-12T12:19:52.786Z",
+                    "device_description": {
+                        "part_number": "STEVAL-STWINBX1",
+                        "serial_number": "0040002B4841500520363230",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "1.1.0"
+                    }
+                }
+            ],
+            "augmentation": [],
+            "tools": [
+                {
+                    "input": "binary_hsd",
+                    "model": "classifier",
+                    "output": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+                    "section": "input",
+                    "name": "hsdatalog_data_export_by_tags",
+                    "comments": "Converts HSD raw data files into CSV data format for STREDL tool.",
+                    "version": "2.0.0",
+                    "uri": "{stedgeai_folder_path}/tools/inputs/HSD_PythonSDK_v2.0.0/hsdatalog_data_export_by_tags.py",
+                    "runtime": "python3",
+                    "parameters": {
+                        "-o": "{models_folder}/{model_folder}/{dataset_folder}",
+                        "-f": "CSV",
+                        "-s": "all",
+                        "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+                    }
+                }
+            ]
+        },
+        {
+            "uuid": "8c71f029-b2a3-49a4-9075-9e0b99aae684",
+            "input_type": "binary_hsd",
+            "model_ref": "f2909a19-5eeb-4cb9-b6dc-a505ab961f67",
+            "logs": [
+                {
+                    "uuid": "7408e111-dc8c-4d17-9a5d-90a8c6c16d7d",
+                    "name": "20230613_07_16_41",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2023-06-13T07:16:41.000Z",
+                    "end_time": "2023-06-13T07:21:32.812Z",
+                    "device_description": {
+                        "part_number": "STEVAL-STWINBX1",
+                        "serial_number": "0040002B4841500520363230",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "1.1.0"
+                    }
+                }
+            ],
+            "augmentation": [],
+            "tools": [
+                {
+                    "input": "binary_hsd",
+                    "model": "classifier",
+                    "output": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+                    "section": "input",
+                    "name": "hsdatalog_data_export_by_tags",
+                    "comments": "Converts HSD raw data files into CSV data format for STREDL tool.",
+                    "version": "2.0.0",
+                    "uri": "{stedgeai_folder_path}/tools/inputs/HSD_PythonSDK_v2.0.0/hsdatalog_data_export_by_tags.py",
+                    "runtime": "python3",
+                    "parameters": {
+                        "-o": "{models_folder}/{model_folder}/{dataset_folder}",
+                        "-f": "CSV",
+                        "-s": "all",
+                        "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+                    }
+                }
+            ]
+        }
+    ],
+    "models": [
+        {
+            "uuid": "4ee1467a-dd75-4216-a2e5-7c774464ae61",
+            "name": "vibration_model_2_classes",
+            "description": "Model to classify vibration data in two classes.",
+            "stage": "modeling",
+            "model_type": "classifier",
+            "training_type": "offline",
+            "retraining": false,
+            "model_metadata": {
+                "classes": [
+                    "slow",
+                    "fast"
+                ]
+            },
+            "experiments": [
+                {
+                    "uuid": "1b5db361-2ac4-4f79-b3c3-18945083559f",
+                    "name": "mfcc",
+                    "description": "Classification of vibration data with MFCCs.",
+                    "model_dev_template": "inertial_classification",
+                    "model_dev_file": "vibration_model_2_classes_mfcc.ipynb",
+                    "virtual_environment": {
+                        "type": "pre_canned",
+                        "name": "inertial_classification_venv",
+                        "version": "v0.0.1"
+                    }
+                }
+            ],
+            "tools": []
+        },
+        {
+            "uuid": "f2909a19-5eeb-4cb9-b6dc-a505ab961f67",
+            "name": "vibration_model_4_classes",
+            "description": "Model to classify vibration data in four classes.",
+            "stage": "modeling",
+            "model_type": "classifier",
+            "training_type": "offline",
+            "retraining": false,
+            "model_metadata": {
+                "classes": [
+                    "slow",
+                    "fast",
+                    "slow_with_disturbance",
+                    "fast_with_disturbance"
+                ]
+            },
+            "experiments": [
+                {
+                    "uuid": "73a58155-f769-495c-98d8-6b65e9983503",
+                    "name": "mfcc",
+                    "description": "Classification of vibration data with MFCCs.",
+                    "model_dev_template": "inertial_classification",
+                    "model_dev_file": "vibration_model_4_classes_mfcc.ipynb",
+                    "virtual_environment": {
+                        "type": "pre_canned",
+                        "name": "inertial_classification_venv",
+                        "version": "v0.0.1"
+                    }
+                }
+            ],
+            "tools": []
+        }
+    ],
+    "outputs": [
+        {
+            "uuid": "ed6e0b5b-749a-4233-8e64-edf4d9f2c5f9",
+            "output_type": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+            "model_ref": "4ee1467a-dd75-4216-a2e5-7c774464ae61",
+            "tests": [
+                {
+                    "uuid": "6e7274f5-1943-4bac-8e84-900aea23fecc",
+                    "name": "Test",
+                    "experiment_ref": "1b5db361-2ac4-4f79-b3c3-18945083559f",
+                    "model_file": "vibration_model_2_classes_mfcc.h5",
+                    "parameters": {
+                        "compression": "1"
+                    },
+                    "reports": [
+                        "vibration_model_2_classes_mfcc_Test_analyze.json"
+                    ],
+                    "outputs": [
+                        "vibration_model_2_classes_mfcc_Test.bin"
+                    ]
+                }
+            ],
+            "best_test": "6e7274f5-1943-4bac-8e84-900aea23fecc",
+            "tools": [
+                {
+                    "name": "stm32ai",
+                    "version": "0.0.5",
+                    "input": "binary_hsd",
+                    "model": "classifier",
+                    "output": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+                    "section": "output",
+                    "parameters": {
+                        "path": "generate",
+                        "query": {
+                            "address": "",
+                            "allocate_inputs": true,
+                            "allocate_outputs": true,
+                            "binary": false,
+                            "copy_weights_at": "",
+                            "generate_fota": false,
+                            "name": "network",
+                            "split_weigths": false,
+                            "generate_full_binary": true,
+                            "return_full_binary_only": true
+                        },
+                        "headers": {
+                            "content-type": "multipart/form-data"
+                        }
+                    }
+                }
+            ],
+            "events": [],
+            "ui": null
+        },
+        {
+            "uuid": "88dd70dc-7a09-4850-9b07-3e4fd2514195",
+            "output_type": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+            "model_ref": "f2909a19-5eeb-4cb9-b6dc-a505ab961f67",
+            "tests": [
+                {
+                    "uuid": "c654842d-7472-4570-b4ee-5a46b278b2ad",
+                    "name": "Test",
+                    "experiment_ref": "73a58155-f769-495c-98d8-6b65e9983503",
+                    "model_file": "vibration_model_4_classes_mfcc.h5",
+                    "parameters": {
+                        "compression": "1"
+                    },
+                    "reports": [
+                        "vibration_model_4_classes_mfcc_Test_analyze.json"
+                    ],
+                    "outputs": [
+                        "vibration_model_4_classes_mfcc_Test.bin"
+                    ]
+                }
+            ],
+            "best_test": "c654842d-7472-4570-b4ee-5a46b278b2ad",
+            "tools": [
+                {
+                    "name": "stm32ai",
+                    "version": "0.0.5",
+                    "input": "binary_hsd",
+                    "model": "classifier",
+                    "output": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+                    "section": "output",
+                    "parameters": {
+                        "path": "generate",
+                        "query": {
+                            "address": "",
+                            "allocate_inputs": true,
+                            "allocate_outputs": true,
+                            "binary": false,
+                            "copy_weights_at": "",
+                            "generate_fota": false,
+                            "name": "network",
+                            "split_weigths": false,
+                            "generate_full_binary": true,
+                            "return_full_binary_only": true
+                        },
+                        "headers": {
+                            "content-type": "multipart/form-data"
+                        }
+                    }
+                }
+            ],
+            "events": [],
+            "ui": null
+        }
+    ],
+    "deployments": [
+        {
+            "uuid": "2bdf1ce8-6984-4457-aa85-f4f08170bbe9",
+            "display_name": "Motor Classification end-to-end system.",
+            "description": "End-to-end system deployment for Motor Classification scenario.",
+            "last_deploy_time": "2023-10-20T13:52:06.733Z",
+            "last_deploy_result": "deploy_success",
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": "demostlinks"
+            },
+            "configuration": {
+                "leaf": [
+                    {
+                        "device_id": "leaf0",
+                        "description": "Leaf device.",
+                        "gateway_id": "gateway0",
+                        "selected_model_name": "vibration_model_2_classes",
+                        "models": [
+                            {
+                                "name": "vibration_model_2_classes",
+                                "datalogging": {
+                                    "device_template_uri": "https://raw.githubusercontent.com/STMicroelectronics/appconfig/release/dtmi/appconfig/steval_stwinbx1/FP_SNS_DATALOG2_Datalog2-4.expanded.json",
+                                    "device_template_id": "dtmi:appconfig:steval_stwinbx1:FP_SNS_DATALOG2_Datalog2;4",
+                                    "protocol": 2,
+                                    "firmware_uri": "https://raw.githubusercontent.com/STMicroelectronics/appconfig/release/bluestsdkv2/bin/steval-stwinbx1/FP-SNS-DATALOG2_Datalog2_2_0_0.bin"
+                                },
+                                "inference": {
+                                    "device_template_uri": "e2e_system_deployment/leaf/steval_stwinbx1/pnpl_ai_dpu-1.expanded.json",
+                                    "device_template_id": "dtmi:vespucci:steval_stwinbx1:pnpl_ai_dpu;1",
+                                    "protocol": 1,
+                                    "firmware_uri": "models/vibration_model_2_classes/experiments/mfcc/tests/Test/vibration_model_2_classes_mfcc_Test.bin",
+                                    "ml_uri": null,
+                                    "firmware_update": true
+                                }
+                            },
+                            {
+                                "name": "vibration_model_4_classes",
+                                "datalogging": {
+                                    "device_template_uri": "https://raw.githubusercontent.com/STMicroelectronics/appconfig/release/dtmi/appconfig/steval_stwinbx1/FP_SNS_DATALOG2_Datalog2-4.expanded.json",
+                                    "device_template_id": "dtmi:appconfig:steval_stwinbx1:FP_SNS_DATALOG2_Datalog2;4",
+                                    "protocol": 2,
+                                    "firmware_uri": "https://raw.githubusercontent.com/STMicroelectronics/appconfig/release/bluestsdkv2/bin/steval-stwinbx1/FP-SNS-DATALOG2_Datalog2_2_0_0.bin"
+                                },
+                                "inference": {
+                                    "device_template_uri": "e2e_system_deployment/leaf/steval_stwinbx1/pnpl_ai_dpu-1.expanded.json",
+                                    "device_template_id": "dtmi:vespucci:steval_stwinbx1:pnpl_ai_dpu;1",
+                                    "protocol": 1,
+                                    "firmware_uri": "models/vibration_model_4_classes/experiments/mfcc/tests/Test/vibration_model_4_classes_mfcc_Test.bin",
+                                    "ml_uri": null,
+                                    "firmware_update": true
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "gateway": [
+                    {
+                        "device_id": "gateway0",
+                        "description": "Gateway device.",
+                        "gateway_id": null,
+                        "module_id": "edgeMotorClassificationMCU",
+                        "configuration_uri": "e2e_system_deployment/gateway/vespucci_config.ini.template",
+                        "device_manifest_uri": "e2e_system_deployment/gateway/motor_classification_mcu_gateway-2.manifest.json",
+                        "device_template_uri": "e2e_system_deployment/gateway/motor_classification_mcu_gateway-2.expanded.json",
+                        "device_template_id": "dtmi:vespucci:gateway:motor_classification_mcu_gateway;1",
+                        "wifi_mode": "off"
+                    }
+                ]
+            }
+        }
+    ]
+}

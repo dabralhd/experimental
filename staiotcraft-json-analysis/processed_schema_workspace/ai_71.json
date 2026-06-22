@@ -1,0 +1,287 @@
+{
+   "$schema": "/home/workspace/.stedgeai/schemas/ai_main_schema.json",
+   "ai_project_name": "get_started_vibration_classification",
+   "uuid": "45c93ff4-f7fd-48d3-9a39-6c67570521b8",
+   "description": "",
+   "version": "0.0.1",
+   "inputs": [
+      {
+         "uuid": "5e4cde50-cd58-48cb-9b9b-e03ec615674e",
+         "input_type": "binary_hsd",
+         "model_ref": "befc1629-35e4-41f9-a1fe-737ef0d49acc",
+         "logs": [
+            {
+               "uuid": "3acb1061-40c1-43f6-a604-54125b76e1b6",
+               "name": "20221124_08_55_48",
+               "annotated": true,
+               "description": "",
+               "start_time": "2022-11-24T08:55:48.000Z",
+               "end_time": "2022-11-24T09:00:37.783Z",
+               "device_description": {
+                  "part_number": null,
+                  "serial_number": "004100514841500520363230",
+                  "alias": null,
+                  "fw_name": null,
+                  "fw_version": null
+               }
+            },
+            {
+               "uuid": "13b4de4c-3477-4cb0-9e0d-fd7a22a0802b",
+               "name": "20221214_09_1\u0006",
+               "annotated": true,
+               "description": "20221214_09_10_14",
+               "start_time": "2022-12-14T09:10:18.916Z",
+               "end_time": "2022-12-14T09:11:13.752Z",
+               "device_description": {
+                  "part_number": "STEVAL-STWINKT1B",
+                  "serial_number": "001E00295652500420303153",
+                  "alias": "STWIN_001",
+                  "fw_name": "FP-SNS-DATALOG1",
+                  "fw_version": "1.4.0"
+               }
+            }
+         ],
+         "augmentation": [],
+         "tools": [
+            {
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+               "section": "input",
+               "name": "hsdatalog_data_export_by_tags",
+               "comments": "Converts HSD raw data files into CSV data format for STREDL tool.",
+               "version": "2.0.0",
+               "uri": "{stedgeai_folder_path}/tools/inputs/HSD_PythonSDK_v2.0.0/hsdatalog_data_export_by_tags.py",
+               "runtime": "python3",
+               "parameters": {
+                  "-o": "{models_folder}/{model_folder}/{dataset_folder}",
+                  "-f": "CSV",
+                  "-s": "all",
+                  "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+               }
+            }
+         ]
+      },
+      {
+         "uuid": "946a43b4-afdb-46f9-b9a1-e7e200a43d3g",
+         "input_type": "binary_hsd",
+         "model_ref": "d8ed5389-1b42-4a3f-bf62-ccae1a4a5eac",
+         "logs": [
+            {
+               "uuid": "0a9eef07-2c29-425f-b074-14c9538d6959",
+               "name": "20221124_10_22_25",
+               "annotated": true,
+               "description": "",
+               "start_time": "2022-11-24T10:22:25.000Z",
+               "end_time": "2022-11-24T10:27:42.574Z",
+               "device_description": {
+                  "part_number": null,
+                  "serial_number": "004100514841500520363230",
+                  "alias": null,
+                  "fw_name": null,
+                  "fw_version": null
+               }
+            },
+            {
+               "uuid": "0746164e-4794-489f-8143-ca9064cca198",
+               "name": "20221124_14_53_22",
+               "annotated": true,
+               "description": "",
+               "start_time": "2022-11-24T14:53:22.000Z",
+               "end_time": "2022-11-24T14:58:43.372Z",
+               "device_description": {
+                  "part_number": null,
+                  "serial_number": "004100514841500520363230",
+                  "alias": null,
+                  "fw_name": null,
+                  "fw_version": null
+               }
+            }
+         ],
+         "augmentation": [],
+         "tools": [
+            {
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+               "section": "input",
+               "name": "hsdatalog_data_export_by_tags",
+               "comments": "Converts HSD raw data files into CSV data format for STREDL tool.",
+               "version": "2.0.0",
+               "uri": "{stedgeai_folder_path}/tools/inputs/HSD_PythonSDK_v2.0.0/hsdatalog_data_export_by_tags.py",
+               "runtime": "python3",
+               "parameters": {
+                  "-o": "{models_folder}/{model_folder}/{dataset_folder}",
+                  "-f": "CSV",
+                  "-s": "all",
+                  "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+               }
+            }
+         ]
+      }
+   ],
+   "models": [
+      {
+         "uuid": "befc1629-35e4-41f9-a1fe-737ef0d49acc",
+         "name": "vibration_model_2_classes",
+         "stage": "modeling",
+         "model_type": "classifier",
+         "training_type": "offline",
+         "retraining": false,
+         "model_metadata": {
+            "classes": [
+               "slow",
+               "fast"
+            ]
+         },
+         "experiments": [
+            {
+               "uuid": "ac18d183-6b73-4afb-b005-dee55aa3a300",
+               "name": "mfcc",
+               "description": "",
+               "model_dev_file": "vibration_model_2_classes_mfcc.ipynb"
+            }
+         ],
+         "tools": []
+      },
+      {
+         "uuid": "d8ed5389-1b42-4a3f-bf62-ccae1a4a5eac",
+         "name": "vibration_model_4_classes",
+         "model_ref": "befc1629-35e4-41f9-a1fe-737ef0d49acc",
+         "stage": "modeling",
+         "model_type": "classifier",
+         "training_type": "offline",
+         "retraining": false,
+         "model_metadata": {
+            "classes": [
+               "slow",
+               "fast",
+               "slow_with_disturbance",
+               "fast_with_disturbance"
+            ]
+         },
+         "experiments": [
+            {
+               "uuid": "85bd1ae4-de08-4414-b621-3a67d31fca9e",
+               "name": "mfcc",
+               "description": "",
+               "model_dev_file": "vibration_model_4_classes_mfcc.ipynb"
+            }
+         ],
+         "tools": []
+      }
+   ],
+   "outputs": [
+      {
+         "uuid": "c43c4b22-5b8b-497e-a6c2-de0b95609bee",
+         "output_type": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+         "model_ref": "befc1629-35e4-41f9-a1fe-737ef0d49acc",
+         "tests": [
+            {
+               "uuid": "5310679e-3886-414e-9ec6-331a07707411",
+               "name": "Test",
+               "experiment_ref": "ac18d183-6b73-4afb-b005-dee55aa3a300",
+               "model_file": "vibration_model_2_classes_mfcc.h5",
+               "parameters": {
+                  "compression": "1"
+               },
+               "reports": [
+                  "vibration_model_2_classes_mfcc_Test_analyze.json"
+               ],
+               "outputs": [
+                  "vibration_model_2_classes_mfcc_Test.bin"
+               ]
+            }
+         ],
+         "tools": [
+            {
+               "name": "stm32ai",
+               "version": "0.0.5",
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+               "section": "output",
+               "parameters": {
+                  "path": "generate",
+                  "query": {
+                     "address": "",
+                     "allocate_inputs": true,
+                     "allocate_outputs": true,
+                     "binary": false,
+                     "copy_weights_at": "",
+                     "generate_fota": false,
+                     "name": "network",
+                     "split_weigths": false,
+                     "generate_full_binary": true,
+                     "return_full_binary_only": true
+                  },
+                  "headers": {
+                     "content-type": "multipart/form-data"
+                  }
+               }
+            }
+         ],
+         "events": [],
+         "ui": {
+            "icons": []
+         },
+         "best_test": "5310679e-3886-414e-9ec6-331a07707411"
+      },
+      {
+         "uuid": "2e3bbf3d-1702-4a03-86c2-d46952a9eb5f",
+         "output_type": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+         "model_ref": "d8ed5389-1b42-4a3f-bf62-ccae1a4a5eac",
+         "tests": [
+            {
+               "uuid": "5cdd2880-9795-46d7-b37a-d658d377581e",
+               "name": "Test",
+               "experiment_ref": "85bd1ae4-de08-4414-b621-3a67d31fca9e",
+               "model_file": "vibration_model_4_classes_mfcc.h5",
+               "parameters": {
+                  "compression": "1"
+               },
+               "reports": [
+                  "vibration_model_4_classes_mfcc_Test_analyze.json"
+               ],
+               "outputs": [
+                  "vibration_model_4_classes_mfcc_Test.bin"
+               ]
+            }
+         ],
+         "tools": [
+            {
+               "name": "stm32ai",
+               "version": "0.0.5",
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+               "section": "output",
+               "parameters": {
+                  "path": "generate",
+                  "query": {
+                     "address": "",
+                     "allocate_inputs": true,
+                     "allocate_outputs": true,
+                     "binary": false,
+                     "copy_weights_at": "",
+                     "generate_fota": false,
+                     "name": "network",
+                     "split_weigths": false,
+                     "generate_full_binary": true,
+                     "return_full_binary_only": true
+                  },
+                  "headers": {
+                     "content-type": "multipart/form-data"
+                  }
+               }
+            }
+         ],
+         "events": [],
+         "ui": {
+            "icons": []
+         },
+         "best_test": "5cdd2880-9795-46d7-b37a-d658d377581e"
+      }
+   ],
+   "deployments": []
+}

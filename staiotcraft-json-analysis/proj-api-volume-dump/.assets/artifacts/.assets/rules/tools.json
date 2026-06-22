@@ -1,0 +1,1183 @@
+{
+    "tools": [
+        {
+            "input": "binary_hsd",
+            "model": "classifier",
+            "output": "steval-stwinkt1b:mlc",
+            "section": "input",
+            "name": "hsdatalog_to_unico",
+            "comments": "Converts HSD raw data files to input for Unico tool.",
+            "version": "1.1.0",
+            "uri": "{stedgeai_folder_path}/tools/inputs/HSD_PythonSDK/examples/hsdatalog_to_unico.py",
+            "runtime": "python3",
+            "help_arguments": [
+                {
+                    "argument": "acq_folder",
+                    "help": "Acquisition folder.",
+                    "default": ".",
+                    "type": "string"
+                }
+            ],
+            "help_parameters": [
+                {
+                    "short_option": "-o",
+                    "long_option": "--output_folder",
+                    "help": "Output folder (this will be created if it doesn't exist).",
+                    "type": "string",
+                    "default": "."
+                },
+                {
+                    "short_option": "-s",
+                    "long_option": "--sensor_name",
+                    "help": "Sensor Name - use \"all\" to extract all active sensors data, otherwise select a specific sensor by name.",
+                    "type": "string",
+                    "default": "all"
+                },
+                {
+                    "short_option": "-st",
+                    "long_option": "--start_time",
+                    "help": "Start Time - Data conversion will start from this time (seconds)",
+                    "type": "int",
+                    "default": 0
+                },
+                {
+                    "short_option": "-et",
+                    "long_option": "--end_time",
+                    "help": "End Time - Data conversion will end up in this time (seconds)",
+                    "type": "int",
+                    "default": -1
+                },
+                {
+                    "short_option": "-t'",
+                    "long_option": "--use_datalog_tags",
+                    "is_flag": true,
+                    "help": "Enable this flag to include information about annotations taken during acquisition (if any) in the exported data",
+                    "default": false
+                },
+                {
+                    "short_option": "-f'",
+                    "long_option": "--out_format",
+                    "help": "Select exported data format",
+                    "type": "string",
+                    "choice": ["TXT", "CSV", "TSV"],
+                    "case_sensitive": false
+                },
+                {
+                    "short_option": "-d'",
+                    "long_option": "--debug",
+                    "is_flag": true,
+                    "help": "[DEBUG] Check for corrupted data and timestamps",
+                    "default": false
+                },
+                {
+                    "short_option": "-h",
+                    "long_option": "--help",
+                    "is_flag": true,
+                    "is_eager": true,
+                    "expose_value": false,
+                    "callback": "show_help",
+                    "help": "Show this message and exit."
+                }
+            ],
+            "tools_parameters": {
+                "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                "-f": "TXT",
+                "-t": "",
+                "-s": "all",
+                "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+            }
+        },
+        {
+            "input": "binary_hsd",
+            "model": "classifier",
+            "output": "steval-stwinbx1:mlc",
+            "section": "input",
+            "name": "hsdatalog_to_unico",
+            "comments": "Converts HSD raw data files to input for Unico tool.",
+            "version": "1.1.0",
+            "uri": "{stedgeai_folder_path}/tools/inputs/HSD_PythonSDK/examples/hsdatalog_to_unico.py",
+            "runtime": "python3",
+            "help_arguments": [
+                {
+                    "argument": "acq_folder",
+                    "help": "Acquisition folder.",
+                    "default": ".",
+                    "type": "string"
+                }
+            ],
+            "help_parameters": [
+                {
+                    "short_option": "-o",
+                    "long_option": "--output_folder",
+                    "help": "Output folder (this will be created if it doesn't exist).",
+                    "type": "string",
+                    "default": "."
+                },
+                {
+                    "short_option": "-s",
+                    "long_option": "--sensor_name",
+                    "help": "Sensor Name - use \"all\" to extract all active sensors data, otherwise select a specific sensor by name.",
+                    "type": "string",
+                    "default": "ISM330DHCX"
+                },
+                {
+                    "short_option": "-st",
+                    "long_option": "--start_time",
+                    "help": "Start Time - Data conversion will start from this time (seconds)",
+                    "type": "int",
+                    "default": 0
+                },
+                {
+                    "short_option": "-et",
+                    "long_option": "--end_time",
+                    "help": "End Time - Data conversion will end up in this time (seconds)",
+                    "type": "int",
+                    "default": -1
+                },
+                {
+                    "short_option": "-t'",
+                    "long_option": "--use_datalog_tags",
+                    "is_flag": true,
+                    "help": "Enable this flag to include information about annotations taken during acquisition (if any) in the exported data",
+                    "default": false
+                },
+                {
+                    "short_option": "-f'",
+                    "long_option": "--out_format",
+                    "help": "Select exported data format",
+                    "type": "string",
+                    "choice": [
+                        "TXT",
+                        "CSV",
+                        "TSV"
+                    ],
+                    "case_sensitive": false
+                },
+                {
+                    "short_option": "-d'",
+                    "long_option": "--debug",
+                    "is_flag": true,
+                    "help": "[DEBUG] Check for corrupted data and timestamps",
+                    "default": false
+                },
+                {
+                    "short_option": "-h",
+                    "long_option": "--help",
+                    "is_flag": true,
+                    "is_eager": true,
+                    "expose_value": false,
+                    "callback": "show_help",
+                    "help": "Show this message and exit."
+                }
+            ],
+            "tools_parameters": {
+                "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                "-f": "TXT",
+                "-t": "",
+                "-s": "all",
+                "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+            }
+        },
+        {
+            "input": "binary_hsd",
+            "model": "classifier",
+            "output": "steval-mkboxpro:mlc",
+            "section": "input",
+            "name": "hsdatalog_to_unico",
+            "comments": "Converts HSD raw data files to input for Unico tool.",
+            "version": "1.1.0",
+            "uri": "{stedgeai_folder_path}/tools/inputs/HSD_PythonSDK/examples/hsdatalog_to_unico.py",
+            "runtime": "python3",
+            "help_arguments": [
+                {
+                    "argument": "acq_folder",
+                    "help": "Acquisition folder.",
+                    "default": ".",
+                    "type": "string"
+                }
+            ],
+            "help_parameters": [
+                {
+                    "short_option": "-o",
+                    "long_option": "--output_folder",
+                    "help": "Output folder (this will be created if it doesn't exist).",
+                    "type": "string",
+                    "default": "."
+                },
+                {
+                    "short_option": "-s",
+                    "long_option": "--sensor_name",
+                    "help": "Sensor Name - use \"all\" to extract all active sensors data, otherwise select a specific sensor by name.",
+                    "type": "string",
+                    "default": "ISM330DHCX"
+                },
+                {
+                    "short_option": "-st",
+                    "long_option": "--start_time",
+                    "help": "Start Time - Data conversion will start from this time (seconds)",
+                    "type": "int",
+                    "default": 0
+                },
+                {
+                    "short_option": "-et",
+                    "long_option": "--end_time",
+                    "help": "End Time - Data conversion will end up in this time (seconds)",
+                    "type": "int",
+                    "default": -1
+                },
+                {
+                    "short_option": "-t'",
+                    "long_option": "--use_datalog_tags",
+                    "is_flag": true,
+                    "help": "Enable this flag to include information about annotations taken during acquisition (if any) in the exported data",
+                    "default": false
+                },
+                {
+                    "short_option": "-f'",
+                    "long_option": "--out_format",
+                    "help": "Select exported data format",
+                    "type": "string",
+                    "choice": [
+                        "TXT",
+                        "CSV",
+                        "TSV"
+                    ],
+                    "case_sensitive": false
+                },
+                {
+                    "short_option": "-d'",
+                    "long_option": "--debug",
+                    "is_flag": true,
+                    "help": "[DEBUG] Check for corrupted data and timestamps",
+                    "default": false
+                },
+                {
+                    "short_option": "-h",
+                    "long_option": "--help",
+                    "is_flag": true,
+                    "is_eager": true,
+                    "expose_value": false,
+                    "callback": "show_help",
+                    "help": "Show this message and exit."
+                }
+            ],
+            "tools_parameters": {
+                "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                "-f": "TXT",
+                "-t": "",
+                "-s": "all",
+                "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+            }
+        },
+        {
+            "input": "binary_hsd",
+            "model": "anomaly_detector",
+            "output": "steval-stwinkt1b:ispu",
+            "section": "input",
+            "name": "hsdatalog_data_export_by_tags",
+            "comments": "Converts HSD raw data files into CSV data format for the ISPU.",
+            "version": "1.1.0",
+            "uri": "{stedgeai_folder_path}/tools/inputs/HSD_PythonSDK/examples/hsdatalog_data_export_by_tags.py",
+            "runtime": "python3",
+            "help_arguments": [
+                {
+                    "argument": "acq_folder",
+                    "help": "Acquisition folder.",
+                    "default": ".",
+                    "type": "string"
+                }
+            ],
+            "help_parameters": [
+                {
+                    "short_option": "-st",
+                    "long_option": "--start_time",
+                    "help": "Start Time - Data conversion will start from this time (seconds)",
+                    "type": "int",
+                    "default": 0
+                },
+                {
+                    "short_option": "-et",
+                    "long_option": "--end_time",
+                    "help": "End Time - Data conversion will end up in this time (seconds)",
+                    "type": "int",
+                    "default": -1
+                },
+                {
+                    "short_option": "-it",
+                    "long_option": "--ignore_datalog_tags",
+                    "is_flag": true,
+                    "help": "Use this flag to ignore information about annotations taken during acquisition (if any) in the exported data",
+                    "default": false
+                },
+                {
+                    "short_option": "-f",
+                    "long_option": "--out_format",
+                    "help": "Select exported data format",
+                    "type": "string",
+                    "choice": ["TXT", "CSV", "TSV"],
+                    "case_sensitive": false
+                },
+                {
+                    "short_option": "-d",
+                    "long_option": "--debug",
+                    "is_flag": true,
+                    "help": "[DEBUG] Check for corrupted data and timestamps",
+                    "default": false
+                },
+                {
+                    "short_option": "-h",
+                    "long_option": "--help",
+                    "is_flag": true,
+                    "is_eager": true,
+                    "expose_value": false,
+                    "callback": "show_help",
+                    "help": "Show this message and exit."
+                }
+            ],
+            "tools_parameters": {
+                "-o": "{models_folder}/{model_folder}/{dataset_folder}",
+                "-f": "CSV",
+                "-s": "all",
+                "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+            }
+        },
+        {
+            "input": "binary_hsd",
+            "model": "classifier",
+            "output": "steval-stwinkt1b:ispu",
+            "section": "input",
+            "name": "hsdatalog_data_export_by_tags",
+            "comments": "Converts HSD raw data files into CSV data format for the ISPU.",
+            "version": "1.1.0",
+            "uri": "{stedgeai_folder_path}/tools/inputs/HSD_PythonSDK/examples/hsdatalog_data_export_by_tags.py",
+            "runtime": "python3",
+            "help_arguments": [
+                {
+                    "argument": "acq_folder",
+                    "help": "Acquisition folder.",
+                    "default": ".",
+                    "type": "string"
+                }
+            ],
+            "help_parameters": [
+                {
+                    "short_option": "-st",
+                    "long_option": "--start_time",
+                    "help": "Start Time - Data conversion will start from this time (seconds)",
+                    "type": "int",
+                    "default": 0
+                },
+                {
+                    "short_option": "-et",
+                    "long_option": "--end_time",
+                    "help": "End Time - Data conversion will end up in this time (seconds)",
+                    "type": "int",
+                    "default": -1
+                },
+                {
+                    "short_option": "-it",
+                    "long_option": "--ignore_datalog_tags",
+                    "is_flag": true,
+                    "help": "Use this flag to ignore information about annotations taken during acquisition (if any) in the exported data",
+                    "default": false
+                },
+                {
+                    "short_option": "-f",
+                    "long_option": "--out_format",
+                    "help": "Select exported data format",
+                    "type": "string",
+                    "choice": ["TXT", "CSV", "TSV"],
+                    "case_sensitive": false
+                },
+                {
+                    "short_option": "-d",
+                    "long_option": "--debug",
+                    "is_flag": true,
+                    "help": "[DEBUG] Check for corrupted data and timestamps",
+                    "default": false
+                },
+                {
+                    "short_option": "-h",
+                    "long_option": "--help",
+                    "is_flag": true,
+                    "is_eager": true,
+                    "expose_value": false,
+                    "callback": "show_help",
+                    "help": "Show this message and exit."
+                }
+            ],
+            "tools_parameters": {
+                "-o": "{models_folder}/{model_folder}/{dataset_folder}",
+                "-f": "CSV",
+                "-s": "all",
+                "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+            }
+        },
+        {
+            "input": "binary_hsd",
+            "model": "anomaly_detector",
+            "output": "steval-stwinkt1b:mcu:pnpl-ai-dpu:1.0.0",
+            "section": "input",
+            "name": "hsdatalog_data_export_by_tags",
+            "comments": "Converts HSD raw data files into CSV data format for the ISPU.",
+            "version": "1.1.0",
+            "uri": "{stedgeai_folder_path}/tools/inputs/HSD_PythonSDK/examples/hsdatalog_data_export_by_tags.py",
+            "runtime": "python3",
+            "help_arguments": [
+                {
+                    "argument": "acq_folder",
+                    "help": "Acquisition folder.",
+                    "default": ".",
+                    "type": "string"
+                }
+            ],
+            "help_parameters": [
+                {
+                    "short_option": "-st",
+                    "long_option": "--start_time",
+                    "help": "Start Time - Data conversion will start from this time (seconds)",
+                    "type": "int",
+                    "default": 0
+                },
+                {
+                    "short_option": "-et",
+                    "long_option": "--end_time",
+                    "help": "End Time - Data conversion will end up in this time (seconds)",
+                    "type": "int",
+                    "default": -1
+                },
+                {
+                    "short_option": "-it",
+                    "long_option": "--ignore_datalog_tags",
+                    "is_flag": true,
+                    "help": "Use this flag to ignore information about annotations taken during acquisition (if any) in the exported data",
+                    "default": false
+                },
+                {
+                    "short_option": "-f",
+                    "long_option": "--out_format",
+                    "help": "Select exported data format",
+                    "type": "string",
+                    "choice": ["TXT", "CSV", "TSV"],
+                    "case_sensitive": false
+                },
+                {
+                    "short_option": "-d",
+                    "long_option": "--debug",
+                    "is_flag": true,
+                    "help": "[DEBUG] Check for corrupted data and timestamps",
+                    "default": false
+                },
+                {
+                    "short_option": "-h",
+                    "long_option": "--help",
+                    "is_flag": true,
+                    "is_eager": true,
+                    "expose_value": false,
+                    "callback": "show_help",
+                    "help": "Show this message and exit."
+                }
+            ],
+            "tools_parameters": {
+                "-o": "{models_folder}/{model_folder}/{dataset_folder}",
+                "-f": "CSV",
+                "-s": "all",
+                "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+            }
+        },
+        {
+            "input": "binary_hsd",
+            "model": "anomaly_detector",
+            "output": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+            "section": "input",
+            "name": "hsdatalog_data_export_by_tags",
+            "comments": "Converts HSD raw data files into CSV data format for the ISPU.",
+            "version": "1.1.0",
+            "uri": "{stedgeai_folder_path}/tools/inputs/HSD_PythonSDK/examples/hsdatalog_data_export_by_tags.py",
+            "runtime": "python3",
+            "help_arguments": [
+                {
+                    "argument": "acq_folder",
+                    "help": "Acquisition folder.",
+                    "default": ".",
+                    "type": "string"
+                }
+            ],
+            "help_parameters": [
+                {
+                    "short_option": "-st",
+                    "long_option": "--start_time",
+                    "help": "Start Time - Data conversion will start from this time (seconds)",
+                    "type": "int",
+                    "default": 0
+                },
+                {
+                    "short_option": "-et",
+                    "long_option": "--end_time",
+                    "help": "End Time - Data conversion will end up in this time (seconds)",
+                    "type": "int",
+                    "default": -1
+                },
+                {
+                    "short_option": "-it",
+                    "long_option": "--ignore_datalog_tags",
+                    "is_flag": true,
+                    "help": "Use this flag to ignore information about annotations taken during acquisition (if any) in the exported data",
+                    "default": false
+                },
+                {
+                    "short_option": "-f",
+                    "long_option": "--out_format",
+                    "help": "Select exported data format",
+                    "type": "string",
+                    "choice": ["TXT", "CSV", "TSV"],
+                    "case_sensitive": false
+                },
+                {
+                    "short_option": "-d",
+                    "long_option": "--debug",
+                    "is_flag": true,
+                    "help": "[DEBUG] Check for corrupted data and timestamps",
+                    "default": false
+                },
+                {
+                    "short_option": "-h",
+                    "long_option": "--help",
+                    "is_flag": true,
+                    "is_eager": true,
+                    "expose_value": false,
+                    "callback": "show_help",
+                    "help": "Show this message and exit."
+                }
+            ],
+            "tools_parameters": {
+                "-o": "{models_folder}/{model_folder}/{dataset_folder}",
+                "-f": "CSV",
+                "-s": "all",
+                "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+            }
+        },
+        {
+            "input": "binary_hsd",
+            "model": "classifier",
+            "output": "steval-stwinkt1b:mcu:pnpl-ai-dpu:1.0.0",
+            "section": "input",
+            "name": "hsdatalog_data_export_by_tags",
+            "comments": "Converts HSD raw data files into CSV data format for the ISPU.",
+            "version": "1.1.0",
+            "uri": "{stedgeai_folder_path}/tools/inputs/HSD_PythonSDK/examples/hsdatalog_data_export_by_tags.py",
+            "runtime": "python3",
+            "help_arguments": [
+                {
+                    "argument": "acq_folder",
+                    "help": "Acquisition folder.",
+                    "default": ".",
+                    "type": "string"
+                }
+            ],
+            "help_parameters": [
+                {
+                    "short_option": "-st",
+                    "long_option": "--start_time",
+                    "help": "Start Time - Data conversion will start from this time (seconds)",
+                    "type": "int",
+                    "default": 0
+                },
+                {
+                    "short_option": "-et",
+                    "long_option": "--end_time",
+                    "help": "End Time - Data conversion will end up in this time (seconds)",
+                    "type": "int",
+                    "default": -1
+                },
+                {
+                    "short_option": "-it",
+                    "long_option": "--ignore_datalog_tags",
+                    "is_flag": true,
+                    "help": "Use this flag to ignore information about annotations taken during acquisition (if any) in the exported data",
+                    "default": false
+                },
+                {
+                    "short_option": "-f",
+                    "long_option": "--out_format",
+                    "help": "Select exported data format",
+                    "type": "string",
+                    "choice": ["TXT", "CSV", "TSV"],
+                    "case_sensitive": false
+                },
+                {
+                    "short_option": "-d",
+                    "long_option": "--debug",
+                    "is_flag": true,
+                    "help": "[DEBUG] Check for corrupted data and timestamps",
+                    "default": false
+                },
+                {
+                    "short_option": "-h",
+                    "long_option": "--help",
+                    "is_flag": true,
+                    "is_eager": true,
+                    "expose_value": false,
+                    "callback": "show_help",
+                    "help": "Show this message and exit."
+                }
+            ],
+            "tools_parameters": {
+                "-o": "{models_folder}/{model_folder}/{dataset_folder}",
+                "-f": "CSV",
+                "-s": "all",
+                "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+            }
+        },
+        {
+            "input": "binary_hsd",
+            "model": "classifier",
+            "output": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+            "section": "input",
+            "name": "hsdatalog_data_export_by_tags",
+            "comments": "Converts HSD raw data files into CSV data format for the ISPU.",
+            "version": "1.1.0",
+            "uri": "{stedgeai_folder_path}/tools/inputs/HSD_PythonSDK/examples/hsdatalog_data_export_by_tags.py",
+            "runtime": "python3",
+            "help_arguments": [
+                {
+                    "argument": "acq_folder",
+                    "help": "Acquisition folder.",
+                    "default": ".",
+                    "type": "string"
+                }
+            ],
+            "help_parameters": [
+                {
+                    "short_option": "-st",
+                    "long_option": "--start_time",
+                    "help": "Start Time - Data conversion will start from this time (seconds)",
+                    "type": "int",
+                    "default": 0
+                },
+                {
+                    "short_option": "-et",
+                    "long_option": "--end_time",
+                    "help": "End Time - Data conversion will end up in this time (seconds)",
+                    "type": "int",
+                    "default": -1
+                },
+                {
+                    "short_option": "-it",
+                    "long_option": "--ignore_datalog_tags",
+                    "is_flag": true,
+                    "help": "Use this flag to ignore information about annotations taken during acquisition (if any) in the exported data",
+                    "default": false
+                },
+                {
+                    "short_option": "-f",
+                    "long_option": "--out_format",
+                    "help": "Select exported data format",
+                    "type": "string",
+                    "choice": ["TXT", "CSV", "TSV"],
+                    "case_sensitive": false
+                },
+                {
+                    "short_option": "-d",
+                    "long_option": "--debug",
+                    "is_flag": true,
+                    "help": "[DEBUG] Check for corrupted data and timestamps",
+                    "default": false
+                },
+                {
+                    "short_option": "-h",
+                    "long_option": "--help",
+                    "is_flag": true,
+                    "is_eager": true,
+                    "expose_value": false,
+                    "callback": "show_help",
+                    "help": "Show this message and exit."
+                }
+            ],
+            "tools_parameters": {
+                "-o": "{models_folder}/{model_folder}/{dataset_folder}",
+                "-f": "CSV",
+                "-s": "all",
+                "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+            }
+        },
+        {
+            "input": "image",
+            "model": "classifier",
+            "output": "openmv-cam-h7-plus:mcu:openmv-cubeai:5.2.0",
+            "section": "input",
+            "name": "split_images",
+            "comments": "Splits images of a log into folders by models, resolution, and classes.",
+            "version": "1.0.0",
+            "uri": "{stedgeai_folder_path}/tools/inputs/image/split_images.py",
+            "runtime": "python3",
+            "help_arguments": [],
+            "help_parameters": [
+                {
+                    "short_option": "-i",
+                    "long_option": "--input_folder",
+                    "help": "Input folder.",
+                    "default": ".",
+                    "type": "string"
+                },
+                {
+                    "short_option": "-o",
+                    "long_option": "--output_folder",
+                    "help": "Output folder.",
+                    "default": ".",
+                    "type": "string"
+                },
+                {
+                    "short_option": "-r",
+                    "long_option": "--resolution",
+                    "help": "Split by resolution.",
+                    "default": "",
+                    "type": "string"
+                }
+            ],
+            "tools_parameters": {
+                "-i": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}",
+                "-o": "{models_folder}/{model_folder}/{dataset_folder}",
+                "-r": ""
+            }
+        },
+        {
+            "input": "binary_hsd",
+            "model": "classifier",
+            "output": "steval-stwinkt1b:mlc",
+            "section": "output",
+            "name": "mlctools",
+            "comments": "Tool for processing MLC files.",
+            "version": "1.0.0",
+            "container": "mlctools",
+            "container_version": "1.0.0",
+            "uri": "",
+            "runtime": "python3",
+            "help_arguments": [],
+            "help_parameters": [
+                {
+                    "short_option": "-i",
+                    "long_option": "--input_folder",
+                    "help": "Input folder.",
+                    "default": ".",
+                    "type": "string"
+                },
+                {
+                    "short_option": "-o",
+                    "long_option": "--output_folder",
+                    "help": "Output folder.",
+                    "default": ".",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "input": "binary_hsd",
+            "model": "classifier",
+            "output": "steval-stwinbx1:mlc",
+            "section": "output",
+            "name": "mlctools",
+            "comments": "Tool for processing MLC files.",
+            "version": "1.0.0",
+            "container": "mlctools",
+            "container_version": "1.0.0",
+            "uri": "",
+            "runtime": "python3",
+            "help_arguments": [],
+            "help_parameters": [
+                {
+                    "short_option": "-i",
+                    "long_option": "--input_folder",
+                    "help": "Input folder.",
+                    "default": ".",
+                    "type": "string"
+                },
+                {
+                    "short_option": "-o",
+                    "long_option": "--output_folder",
+                    "help": "Output folder.",
+                    "default": ".",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "input": "binary_hsd",
+            "model": "classifier",
+            "output": "steval-mkboxpro:mlc",
+            "section": "output",
+            "name": "mlctools",
+            "comments": "Tool for processing MLC files.",
+            "version": "1.0.0",
+            "container": "mlctools",
+            "container_version": "1.0.0",
+            "uri": "",
+            "runtime": "python3",
+            "help_arguments": [],
+            "help_parameters": [
+                {
+                    "short_option": "-i",
+                    "long_option": "--input_folder",
+                    "help": "Input folder.",
+                    "default": ".",
+                    "type": "string"
+                },
+                {
+                    "short_option": "-o",
+                    "long_option": "--output_folder",
+                    "help": "Output folder.",
+                    "default": ".",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "input": "image",
+            "model": "classifier",
+            "output": "openmv-cam-h7-plus:mcu:openmv-cubeai:5.2.0",
+            "section": "output",
+            "name": "stm32ai",
+            "comments": "Tool for generating binaries from a neural network.",
+            "version": "0.0.5",
+            "container": "cube-ai",
+            "container_version": "0.1.0",
+            "uri": "",
+            "runtime": "",
+            "help_arguments": [],
+            "help_parameters": [
+                {
+                    "short_option": "-i",
+                    "long_option": "--input_folder",
+                    "help": "Input folder.",
+                    "default": ".",
+                    "type": "string"
+                },
+                {
+                    "short_option": "-o",
+                    "long_option": "--output_folder",
+                    "help": "Output folder.",
+                    "default": ".",
+                    "type": "string"
+                }
+            ],
+            "tests_parameters": {
+                "query": {
+                    "compression": "none"
+                }
+            },
+            "tools_parameters": {
+                "path": "generate",
+                "query": {
+                    "address": "",
+                    "allocate_inputs": true,
+                    "allocate_outputs": true,
+                    "binary": false,
+                    "copy_weights_at": "",
+                    "generate_fota": false,
+                    "name": "network",
+                    "split_weigths": false,
+                    "generate_full_binary": true,
+                    "return_full_binary_only": true
+                },
+                "headers":{
+                    "content-type": "multipart/form-data"
+                }
+            }            
+        },
+        {
+            "input": "binary_hsd",
+            "model": "anomaly_detector",
+            "output": "steval-stwinkt1b:ispu",
+            "section": "output",
+            "name": "stredai",
+            "comments": "Tool for generating artifacts for the ISPU.",
+            "version": "1.0.0",
+            "container": "placeholder_container",
+            "container_version": "1.0.0",
+            "uri": "",
+            "runtime": "http",
+            "help_arguments": [],
+            "help_parameters": []
+        },
+        {
+            "input": "binary_hsd",
+            "model": "classifier",
+            "output": "steval-stwinkt1b:ispu",
+            "section": "output",
+            "name": "stredai",
+            "comments": "Tool for generating artifacts for the ISPU.",
+            "version": "1.0.0",
+            "container": "placeholder_container",
+            "container_version": "1.0.0",
+            "uri": "",
+            "runtime": "http",
+            "help_arguments": [],
+            "help_parameters": []
+        },
+        {
+            "input": "binary_hsd",
+            "model": "classifier",
+            "output": "fp_ai_monitor1",
+            "section": "output",
+            "name": "stm32ai",
+            "comments": "Tool for generating binaries from a neural network.",
+            "version": "0.0.5",
+            "container": "cube-ai",
+            "container_version": "0.1.0",
+            "uri": "",
+            "runtime": "",
+            "help_arguments": [],
+            "help_parameters": [
+                {
+                    "short_option": "-i",
+                    "long_option": "--input_folder",
+                    "help": "Input folder.",
+                    "default": ".",
+                    "type": "string"
+                },
+                {
+                    "short_option": "-o",
+                    "long_option": "--output_folder",
+                    "help": "Output folder.",
+                    "default": ".",
+                    "type": "string"
+                }
+            ],
+            "tests_parameters": {
+                "query": {
+                    "compression": "none"
+                }
+            },
+            "tools_parameters": {
+                "path": "generate",
+                "query": {
+                    "address": "",
+                    "allocate_inputs": true,
+                    "allocate_outputs": true,
+                    "binary": false,
+                    "copy_weights_at": "",
+                    "generate_fota": false,
+                    "name": "network",
+                    "split_weigths": false,
+                    "generate_full_binary": true,
+                    "return_full_binary_only": true
+                },
+                "headers":{
+                    "content-type": "multipart/form-data"
+                }
+            }            
+        },
+        {
+            "input": "binary_hsd",
+            "model": "classifier",
+            "output": "steval-stwinkt1b:mcu:pnpl-ai-dpu:1.0.0",
+            "section": "output",
+            "name": "stm32ai",
+            "comments": "Tool for generating binaries from a neural network.",
+            "version": "0.0.5",
+            "container": "cube-ai",
+            "container_version": "0.1.0",
+            "uri": "",
+            "runtime": "",
+            "help_arguments": [],
+            "help_parameters": [
+                {
+                    "short_option": "-i",
+                    "long_option": "--input_folder",
+                    "help": "Input folder.",
+                    "default": ".",
+                    "type": "string"
+                },
+                {
+                    "short_option": "-o",
+                    "long_option": "--output_folder",
+                    "help": "Output folder.",
+                    "default": ".",
+                    "type": "string"
+                }
+            ],
+            "tests_parameters": {
+                "query": {
+                    "compression": "none"
+                }
+            },
+            "tools_parameters": {
+                "path": "generate",
+                "query": {
+                    "address": "",
+                    "allocate_inputs": true,
+                    "allocate_outputs": true,
+                    "binary": false,
+                    "copy_weights_at": "",
+                    "generate_fota": false,
+                    "name": "network",
+                    "split_weigths": false,
+                    "generate_full_binary": true,
+                    "return_full_binary_only": true
+                },
+                "headers":{
+                    "content-type": "multipart/form-data"
+                }
+            }            
+        },
+        {
+            "input": "binary_hsd",
+            "model": "classifier",
+            "output": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+            "section": "output",
+            "name": "stm32ai",
+            "comments": "Tool for generating binaries from a neural network.",
+            "version": "0.0.5",
+            "container": "cube-ai",
+            "container_version": "0.1.0",
+            "uri": "",
+            "runtime": "",
+            "help_arguments": [],
+            "help_parameters": [
+                {
+                    "short_option": "-i",
+                    "long_option": "--input_folder",
+                    "help": "Input folder.",
+                    "default": ".",
+                    "type": "string"
+                },
+                {
+                    "short_option": "-o",
+                    "long_option": "--output_folder",
+                    "help": "Output folder.",
+                    "default": ".",
+                    "type": "string"
+                }
+            ],
+            "tests_parameters": {
+                "query": {
+                    "compression": "none"
+                }
+            },
+            "tools_parameters": {
+                "path": "generate",
+                "query": {
+                    "address": "",
+                    "allocate_inputs": true,
+                    "allocate_outputs": true,
+                    "binary": false,
+                    "copy_weights_at": "",
+                    "generate_fota": false,
+                    "name": "network",
+                    "split_weigths": false,
+                    "generate_full_binary": true,
+                    "return_full_binary_only": true
+                },
+                "headers":{
+                    "content-type": "multipart/form-data"
+                }
+            }            
+        },
+        {
+            "input": "binary_hsd",
+            "model": "anomaly_detector",
+            "output": "steval-stwinkt1b:mcu:pnpl-ai-dpu:1.0.0",
+            "section": "output",
+            "name": "stm32ai",
+            "comments": "Tool for generating binaries from a neural network.",
+            "version": "0.0.5",
+            "container": "cube-ai",
+            "container_version": "0.1.0",
+            "uri": "",
+            "runtime": "",
+            "help_arguments": [],
+            "help_parameters": [
+                {
+                    "short_option": "-i",
+                    "long_option": "--input_folder",
+                    "help": "Input folder.",
+                    "default": ".",
+                    "type": "string"
+                },
+                {
+                    "short_option": "-o",
+                    "long_option": "--output_folder",
+                    "help": "Output folder.",
+                    "default": ".",
+                    "type": "string"
+                }
+            ],
+            "tests_parameters": {
+                "query": {
+                    "compression": "none"
+                }
+            },
+            "tools_parameters": {
+                "path": "generate",
+                "query": {
+                    "address": "",
+                    "allocate_inputs": true,
+                    "allocate_outputs": true,
+                    "binary": false,
+                    "copy_weights_at": "",
+                    "generate_fota": false,
+                    "name": "network",
+                    "split_weigths": false,
+                    "generate_full_binary": true,
+                    "return_full_binary_only": true
+                },
+                "headers":{
+                    "content-type": "multipart/form-data"
+                }
+            }            
+        },
+        {
+            "input": "binary_hsd",
+            "model": "anomaly_detector",
+            "output": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+            "section": "output",
+            "name": "stm32ai",
+            "comments": "Tool for generating binaries from a neural network.",
+            "version": "0.0.5",
+            "container": "cube-ai",
+            "container_version": "0.1.0",
+            "uri": "",
+            "runtime": "",
+            "help_arguments": [],
+            "help_parameters": [
+                {
+                    "short_option": "-i",
+                    "long_option": "--input_folder",
+                    "help": "Input folder.",
+                    "default": ".",
+                    "type": "string"
+                },
+                {
+                    "short_option": "-o",
+                    "long_option": "--output_folder",
+                    "help": "Output folder.",
+                    "default": ".",
+                    "type": "string"
+                }
+            ],
+            "tests_parameters": {
+                "query": {
+                    "compression": "none"
+                }
+            },
+            "tools_parameters": {
+                "path": "generate",
+                "query": {
+                    "address": "",
+                    "allocate_inputs": true,
+                    "allocate_outputs": true,
+                    "binary": false,
+                    "copy_weights_at": "",
+                    "generate_fota": false,
+                    "name": "network",
+                    "split_weigths": false,
+                    "generate_full_binary": true,
+                    "return_full_binary_only": true
+                },
+                "headers":{
+                    "content-type": "multipart/form-data"
+                }
+            }            
+        }
+    ]
+}

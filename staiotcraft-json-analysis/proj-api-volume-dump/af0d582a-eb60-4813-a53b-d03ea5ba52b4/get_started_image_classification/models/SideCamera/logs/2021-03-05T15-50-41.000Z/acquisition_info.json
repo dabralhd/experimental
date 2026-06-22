@@ -1,0 +1,4166 @@
+{
+    "uuid": "8a00359c-7dca-11eb-8971-801f12c9386e",
+    "name": "2021-03-05T15:50:41.000Z",
+    "description": "Description of the acquisition...",
+    "project_ref": "get_started_image_classification",
+    "model_ref": "SideCamera",
+    "input_type": "image",
+    "annotated": true,
+    "start_time": "2021-03-05T15:50:41.000Z",
+    "end_time": "2021-03-05T18:29:04.000Z",
+    "tags": [
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-15.51.10.015.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-15.51.11.961.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-15.51.13.428.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-15.51.14.988.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-15.52.44.260.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-15.52.46.231.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-15.52.47.776.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-15.52.49.436.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-15.53.27.721.jpg",
+            "r": "SVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-15.53.29.873.jpg",
+            "r": "160x160",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-15.53.31.515.jpg",
+            "r": "QVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-15.53.33.264.jpg",
+            "r": "VGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-15.54.09.810.jpg",
+            "r": "SVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-15.54.11.773.jpg",
+            "r": "160x160",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-15.54.13.241.jpg",
+            "r": "QVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-15.54.14.932.jpg",
+            "r": "VGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-15.54.52.733.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-15.54.54.886.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-15.54.56.495.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-15.54.57.958.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-15.55.25.970.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-15.55.28.013.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-15.55.29.486.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-15.55.31.211.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-15.56.35.833.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-15.56.37.785.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-15.56.39.461.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-15.56.41.148.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-15.57.13.506.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-15.57.15.450.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-15.57.17.114.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-15.57.18.680.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-15.57.41.327.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-15.57.43.289.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-15.57.44.893.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-15.57.47.018.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-15.59.01.896.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-15.59.03.879.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-15.59.05.500.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-15.59.07.030.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-15.59.26.321.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-15.59.28.287.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-15.59.29.929.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-15.59.31.639.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.00.12.206.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.00.14.176.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.00.15.881.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.00.17.628.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.00.39.569.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.00.41.531.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.00.43.126.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.00.44.728.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.01.27.905.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.01.29.875.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.01.31.512.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.01.33.174.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.04.07.257.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.04.09.304.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.04.10.790.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.04.12.257.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.13.03.779.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.13.05.726.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.13.07.399.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.13.08.986.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.15.27.992.jpg",
+            "r": "SVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.15.29.950.jpg",
+            "r": "160x160",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.15.31.485.jpg",
+            "r": "QVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.15.33.170.jpg",
+            "r": "VGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.16.01.641.jpg",
+            "r": "SVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.16.03.709.jpg",
+            "r": "160x160",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.16.05.516.jpg",
+            "r": "QVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.16.07.101.jpg",
+            "r": "VGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.16.30.180.jpg",
+            "r": "SVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.16.32.137.jpg",
+            "r": "160x160",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.16.33.744.jpg",
+            "r": "QVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.16.35.338.jpg",
+            "r": "VGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.16.56.322.jpg",
+            "r": "SVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.16.58.283.jpg",
+            "r": "160x160",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.17.00.050.jpg",
+            "r": "QVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.17.01.632.jpg",
+            "r": "VGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.17.26.467.jpg",
+            "r": "SVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.17.28.530.jpg",
+            "r": "160x160",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.17.30.012.jpg",
+            "r": "QVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.17.31.477.jpg",
+            "r": "VGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.21.55.515.jpg",
+            "r": "SVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.21.57.586.jpg",
+            "r": "160x160",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.22.05.752.jpg",
+            "r": "VGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.22.31.822.jpg",
+            "r": "SVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.22.33.972.jpg",
+            "r": "160x160",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.22.35.787.jpg",
+            "r": "QVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.22.37.573.jpg",
+            "r": "VGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.23.17.603.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.23.19.562.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.23.21.288.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.23.23.500.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.23.46.647.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.23.48.646.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.23.50.195.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.23.51.806.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.24.26.669.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.24.28.637.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.24.30.250.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.24.31.877.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.24.55.571.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.24.57.622.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.24.59.240.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.25.00.979.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.25.16.206.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.25.18.166.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.25.19.781.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.25.21.474.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.25.46.271.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.25.48.240.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.25.49.804.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.25.51.295.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.37.45.027.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.37.47.007.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.37.48.694.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.37.50.331.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.38.16.056.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.38.18.031.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.38.19.655.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.38.21.400.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.38.41.473.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.38.43.572.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.38.45.282.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.38.46.972.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.39.18.063.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.39.20.035.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.39.21.814.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.39.23.505.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.39.45.046.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.39.47.022.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.39.48.880.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.39.50.631.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.40.13.315.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.40.15.280.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.40.16.905.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.40.18.547.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.40.35.998.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.40.37.957.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.40.39.660.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.40.41.450.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.40.54.862.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.40.57.078.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.40.58.878.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.41.00.522.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.41.30.438.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.41.32.399.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.41.34.037.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.41.35.811.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.41.53.543.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.41.55.602.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.41.57.278.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.41.59.005.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.42.13.245.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.42.15.212.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.42.16.874.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.42.18.557.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.42.53.882.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.42.56.033.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.42.57.587.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.42.59.069.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.43.36.084.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.43.38.062.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.43.39.743.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.43.41.556.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.44.08.958.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.44.10.935.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.44.12.523.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.44.14.239.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.44.53.706.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.44.55.706.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.44.57.513.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.44.59.158.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.45.14.124.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.45.16.114.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.45.17.710.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.45.19.184.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.45.41.458.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.45.43.433.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.45.45.166.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.45.46.873.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.46.20.168.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.46.22.184.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.46.23.684.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.46.25.195.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.47.51.382.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.47.53.476.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.47.55.129.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.47.56.762.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.48.17.478.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.48.19.505.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.48.21.157.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.48.22.791.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.48.50.945.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.48.52.926.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.48.54.573.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.48.56.520.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.49.13.559.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.49.15.648.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.49.17.414.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.49.19.072.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.49.44.338.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.49.46.307.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.49.48.075.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.49.49.934.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.50.08.713.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.50.10.873.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.50.12.520.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.50.14.142.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.50.29.957.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.50.31.919.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.50.33.510.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.50.35.234.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.51.05.367.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.51.07.347.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.51.09.084.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.51.10.754.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.51.37.573.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.51.39.575.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.51.41.315.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.51.42.974.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.51.59.369.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.52.01.343.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.52.02.971.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.52.04.483.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-16.52.41.312.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-16.52.43.282.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-16.52.44.831.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-16.52.46.416.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.03.05.738.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.03.07.747.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.03.09.239.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.03.10.892.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.03.33.396.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.03.35.393.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.03.36.880.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.03.38.914.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.04.17.066.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.04.19.033.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.04.20.802.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.04.22.528.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.04.49.065.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.04.51.031.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.04.52.982.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.04.55.047.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.05.14.972.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.05.17.313.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.05.18.959.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.05.20.503.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.05.46.470.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.05.48.447.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.05.49.980.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.05.51.537.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.06.24.589.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.06.26.560.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.06.28.244.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.06.29.998.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.07.35.828.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.07.37.805.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.07.39.438.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.07.41.062.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.08.10.519.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.08.12.515.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.08.14.254.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.08.16.117.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.08.33.080.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.08.35.152.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.08.36.631.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.08.38.107.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.09.53.819.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.09.55.799.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.09.57.444.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.10.03.751.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.10.21.016.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.10.23.018.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.10.24.683.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.10.26.229.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.10.44.596.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.10.46.574.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.10.48.238.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.10.49.841.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.11.06.574.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.11.08.637.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.11.10.384.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.11.12.266.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.11.39.346.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.11.41.330.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.11.43.038.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.11.44.752.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.12.23.771.jpg",
+            "r": "SVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.12.25.773.jpg",
+            "r": "160x160",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.12.27.429.jpg",
+            "r": "QVGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.12.29.125.jpg",
+            "r": "VGA",
+            "l": "Shape-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.13.15.598.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.13.17.556.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.13.19.134.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.13.20.921.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.13.52.391.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.13.54.527.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.13.56.240.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.13.57.701.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.14.22.616.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.14.24.588.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.14.26.608.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.14.28.231.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.15.04.442.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.15.06.426.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.15.08.090.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.15.09.785.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.15.31.086.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.15.33.070.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.15.34.830.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.15.36.506.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.15.48.351.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.15.50.407.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.15.51.893.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.15.53.373.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.16.34.992.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.16.36.988.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.16.38.650.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.17.07.516.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.17.09.486.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.17.11.120.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.17.12.786.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.17.43.929.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.17.45.969.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.17.47.620.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.17.49.245.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.18.34.875.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.18.36.882.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.18.38.496.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.18.40.064.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.19.01.486.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.19.03.455.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.19.05.098.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.19.06.787.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.19.55.428.jpg",
+            "r": "SVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.19.57.495.jpg",
+            "r": "160x160",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.19.59.137.jpg",
+            "r": "QVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.20.00.827.jpg",
+            "r": "VGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.20.17.798.jpg",
+            "r": "SVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.20.19.768.jpg",
+            "r": "160x160",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.20.21.416.jpg",
+            "r": "QVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.20.23.222.jpg",
+            "r": "VGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.20.47.390.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.20.49.360.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.20.50.840.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.20.52.910.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.21.11.350.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.21.13.332.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.21.15.091.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.21.16.787.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.21.38.447.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.21.40.410.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.21.42.036.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.21.44.225.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.22.12.979.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.22.15.057.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.22.16.712.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.22.18.508.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.22.37.217.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.22.39.195.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.22.40.684.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.22.42.692.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.23.10.746.jpg",
+            "r": "SVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.23.12.812.jpg",
+            "r": "160x160",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.23.14.498.jpg",
+            "r": "QVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.23.16.360.jpg",
+            "r": "VGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.39.44.930.jpg",
+            "r": "SVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.39.46.938.jpg",
+            "r": "160x160",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.39.48.530.jpg",
+            "r": "QVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.39.50.295.jpg",
+            "r": "VGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.40.32.026.jpg",
+            "r": "SVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.40.34.000.jpg",
+            "r": "160x160",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.40.35.870.jpg",
+            "r": "QVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.40.37.505.jpg",
+            "r": "VGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.41.40.484.jpg",
+            "r": "SVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.41.42.584.jpg",
+            "r": "160x160",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.41.44.290.jpg",
+            "r": "QVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.41.45.937.jpg",
+            "r": "VGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.42.03.644.jpg",
+            "r": "SVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.42.05.654.jpg",
+            "r": "160x160",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.42.07.315.jpg",
+            "r": "QVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.42.09.189.jpg",
+            "r": "VGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.42.34.887.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.42.36.954.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.42.38.699.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.42.40.596.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.42.57.839.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.42.59.858.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.43.01.589.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.43.03.443.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.43.27.845.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.43.29.972.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.43.31.550.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.43.33.453.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.43.54.525.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.43.56.524.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.43.58.075.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.43.59.864.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.44.16.270.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.44.18.270.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.44.19.762.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.44.21.234.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.44.49.309.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.44.51.292.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.44.52.901.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.44.54.482.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.45.11.786.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.45.13.769.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.45.15.750.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.45.17.397.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.45.37.000.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.45.39.095.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.45.40.724.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.45.42.603.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.45.57.113.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.45.59.084.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.46.00.591.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.46.02.512.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.46.22.839.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.46.24.902.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.46.26.476.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.46.28.039.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.46.46.213.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.46.48.215.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.46.49.693.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.46.51.250.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.47.57.274.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.47.59.267.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.48.00.783.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.48.02.258.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.48.34.979.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.48.36.978.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.48.38.751.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.48.40.373.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.48.55.675.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.49.04.565.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.49.06.130.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.49.31.479.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.49.33.486.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.49.34.983.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.49.36.591.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.49.55.320.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.49.57.386.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.49.59.039.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.50.00.939.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.50.16.809.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.50.18.772.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.50.20.371.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.50.22.003.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.50.46.913.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.50.48.916.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.50.50.636.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.50.52.221.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.51.07.607.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.51.09.673.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.51.11.483.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.51.13.130.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.51.26.183.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.51.28.252.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.51.29.732.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.51.31.297.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.51.49.171.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.51.51.195.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.51.53.180.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.51.54.790.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.52.12.465.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.52.14.498.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.52.16.377.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.52.18.085.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.52.45.265.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.52.47.242.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.52.48.976.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.52.50.809.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.53.10.324.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.53.12.303.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.53.14.174.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.53.15.867.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-17.53.35.586.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-17.53.37.554.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-17.53.39.134.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-17.53.40.740.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.06.26.890.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.06.28.963.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.06.30.477.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.06.32.702.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.06.48.788.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.06.50.842.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.06.52.893.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.06.54.532.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.07.18.730.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.07.21.083.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.07.22.896.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.07.24.427.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.07.35.732.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.07.37.701.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.07.39.453.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.07.41.166.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.08.00.910.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.08.02.935.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.08.04.660.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.08.06.314.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.08.21.289.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.08.23.261.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.08.24.994.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.08.26.562.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.08.45.670.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.08.47.738.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.08.49.487.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.08.51.269.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.09.05.048.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.09.07.024.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.09.08.860.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.09.10.410.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.09.30.118.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.09.32.129.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.09.33.696.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.09.35.286.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.10.15.249.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.10.17.349.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.10.19.092.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.10.20.771.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.10.42.786.jpg",
+            "r": "SVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.10.44.755.jpg",
+            "r": "160x160",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.10.46.374.jpg",
+            "r": "QVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.10.47.942.jpg",
+            "r": "VGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.11.08.475.jpg",
+            "r": "SVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.11.10.459.jpg",
+            "r": "160x160",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.11.12.282.jpg",
+            "r": "QVGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.11.13.969.jpg",
+            "r": "VGA",
+            "l": "Conformant",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.11.38.377.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.11.40.370.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.11.42.025.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.11.43.869.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.11.59.958.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.12.02.021.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.12.03.502.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.12.05.162.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.12.24.008.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.12.25.981.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.12.27.469.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.12.28.946.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.13.06.964.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.13.09.020.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.13.10.987.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.13.12.764.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.13.40.216.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.13.42.203.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.13.43.850.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.13.45.499.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.14.06.239.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.14.08.207.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.14.09.850.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.14.11.401.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.14.35.286.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.14.37.613.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.14.39.489.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.14.41.099.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.15.02.523.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.15.04.513.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.15.06.294.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.15.07.923.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.15.34.265.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.15.36.245.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.15.37.973.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.15.39.961.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.15.56.617.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.15.58.684.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.16.00.239.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.16.01.916.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.16.26.391.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.16.28.381.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.16.30.069.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.16.36.645.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.17.06.008.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.17.07.987.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.17.09.665.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.17.11.383.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.17.30.776.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.17.32.754.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.17.34.546.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.17.36.218.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.17.49.438.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.17.51.413.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.17.53.179.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.17.54.907.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.18.13.896.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.18.15.877.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.18.17.661.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.18.19.180.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.18.33.534.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.18.35.518.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.18.37.254.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.18.38.918.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.19.01.220.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.19.03.279.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.19.04.790.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.19.06.270.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.19.18.416.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.19.20.388.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.19.21.921.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.19.23.510.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.19.40.190.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.19.42.171.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.19.44.139.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.19.45.599.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.20.00.945.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.20.02.921.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.20.04.595.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.20.06.211.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.20.26.067.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.20.28.078.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.20.29.869.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.20.31.422.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.20.43.833.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.20.45.896.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.20.47.415.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.20.49.012.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.21.15.894.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.21.17.874.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.21.19.420.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.21.21.196.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.21.35.100.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.21.37.178.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.21.38.666.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.21.40.152.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.22.10.938.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.22.12.929.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.22.14.764.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.22.16.343.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.22.29.169.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.22.31.292.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.22.33.273.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.22.35.025.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.22.58.089.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.23.00.070.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.23.01.926.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.23.03.796.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.23.23.188.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.23.25.343.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.23.26.978.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.23.28.654.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.24.12.641.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.24.14.663.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.24.16.436.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.24.18.166.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.24.34.949.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.24.37.024.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.24.38.801.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.25.06.148.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.25.08.161.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.25.09.833.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.25.11.474.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.25.25.790.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.25.27.905.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.25.29.576.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.25.31.400.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.25.54.931.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.25.56.906.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.25.58.395.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.25.59.977.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.26.10.883.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.26.12.955.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.26.14.682.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.26.16.295.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.26.37.177.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.26.39.161.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.26.40.870.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.26.42.521.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.26.55.950.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.26.57.933.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.26.59.573.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.27.01.407.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.27.25.520.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.27.27.534.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.27.29.225.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.27.30.909.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.27.45.390.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.27.47.383.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.27.48.980.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.27.50.773.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.28.08.663.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.28.10.847.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.28.12.338.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.28.14.058.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_SVGA_05.03.2021-18.28.58.022.jpg",
+            "r": "SVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_160x160_05.03.2021-18.29.00.003.jpg",
+            "r": "160x160",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_QVGA_05.03.2021-18.29.01.588.jpg",
+            "r": "QVGA",
+            "l": "Color-defected",
+            "ta": ""
+        },
+        {
+            "f": "img_CAM_2_VGA_05.03.2021-18.29.03.079.jpg",
+            "r": "VGA",
+            "l": "Color-defected",
+            "ta": ""
+        }
+    ],
+    "lux": -1
+}

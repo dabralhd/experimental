@@ -1,0 +1,35 @@
+{
+   "name": "MobileNetV2_160x160x3_Pruned_Quantized_tflite_uncompressed",
+   "edge_ai_context": {
+      "extension_name": "edgeai-project-manager",
+      "test_folder": "/home/workspace/7581a06a-adeb-449a-a14d-ff9df1411f4c/get_started_image_classification/models/SideCamera/experiments/MobileNetV2_160x160x3/tests/Pruned_Quantized_tflite_uncompressed",
+      "project_name": "get_started_image_classification",
+      "project_id": "d49f96f0-d7b5-4481-9949-24b7a2222c9e",
+      "model_name": "SideCamera",
+      "model_id": "571b5c93-39ab-4c59-a0be-68cacc40c0a5",
+      "experiment_name": "MobileNetV2_160x160x3",
+      "experiment_id": "5dab36fb-c3bd-4328-b9a0-e76f9b4c195f",
+      "test_name": "Pruned_Quantized_tflite_uncompressed",
+      "test_id": "522cc8b0-ba20-4d9a-b23c-9871554f0a2f",
+      "output_type": "openmv_stm32_bin",
+      "model_file": "/home/workspace/7581a06a-adeb-449a-a14d-ff9df1411f4c/get_started_image_classification/models/SideCamera/experiments/MobileNetV2_160x160x3/application/SideCamera_MobileNetV2_160x160x3_pruned_quantized.tflite"
+   },
+   "last_configuration": {
+      "cube_ai_environment_name": "MobileNetV2_160x160x3_Pruned_Quantized_tflite_uncompressed",
+      "target": "open_mv",
+      "allocate_inputs": true,
+      "compression": "1",
+      "name": "network",
+      "split_weigths": false,
+      "generate_full_binary": true,
+      "model_file": "/home/workspace/7581a06a-adeb-449a-a14d-ff9df1411f4c/get_started_image_classification/models/SideCamera/experiments/MobileNetV2_160x160x3/application/SideCamera_MobileNetV2_160x160x3_pruned_quantized.tflite"
+   },
+   "output_reports": {
+      "rom": 176392,
+      "ram": 358912,
+      "input_ram": 76800,
+      "output_ram": 2,
+      "complexity": 26748294,
+      "parameters": 162634
+   }
+}

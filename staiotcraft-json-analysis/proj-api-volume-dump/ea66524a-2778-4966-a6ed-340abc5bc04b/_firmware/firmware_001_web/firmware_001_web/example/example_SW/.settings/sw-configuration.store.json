@@ -1,0 +1,340 @@
+{
+  "software": {
+    "model": {
+      "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32CubeMX2 Config:RCC@0.2.0#RCC Init": [
+        {
+          "index": 0,
+          "instanceId": "5996aead-b2d5-4a42-8e73-d6568bae1ae2",
+          "name": "MyRCC_1",
+          "entity": "peripheral.rcc",
+          "settings": {
+            "parameters": {
+              "info": {
+                "labels": [],
+                "layer": "HAL",
+                "init_type": "called"
+              },
+              "main": {
+                "periph_clocks_init": 0,
+                "flash_latency": 1,
+                "flash_programming_delay": 0
+              },
+              "additional": {
+                "hse": {
+                  "state": "OFF"
+                },
+                "lse": {
+                  "state": "OFF"
+                },
+                "hsi": {
+                  "enable_in_stop_mode": false
+                },
+                "psi": {
+                  "enable_in_stop_mode": false
+                },
+                "clk_outputs": {
+                  "mco1": false,
+                  "mco2": false,
+                  "lsco": false
+                }
+              },
+              "system": {
+                "gpio": {},
+                "nvic": {},
+                "exti": {}
+              }
+            }
+          }
+        }
+      ],
+      "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32CubeMX2 Config:ICACHE@0.2.0#HAL CORE Init and ICACHE": [
+        {
+          "index": 1,
+          "instanceId": "97609cc9-abb9-4b9c-914b-25fe1f89067e",
+          "name": "MyICACHE_1",
+          "entity": "peripheral.icache",
+          "settings": {
+            "parameters": {
+              "info": {
+                "labels": [],
+                "layer": "HAL",
+                "init_type": "called"
+              },
+              "Basic": {
+                "UseDefault": true
+              },
+              "Additional": {
+                "AssociativityMode": "2WAYS",
+                "MemoryAddressRemap": false,
+                "Monitors": {
+                  "HitMonitor": false,
+                  "MissMonitor": false
+                }
+              },
+              "System": {
+                "NVIC_Settings": {
+                  "EnableInterruption": false
+                }
+              }
+            }
+          }
+        }
+      ],
+      "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32CubeMX2 Config:CORE@0.2.0#HAL Generated code": [
+        {
+          "index": 2,
+          "instanceId": "144d5abf-38c7-47a5-af6e-6443225415a3",
+          "name": "MyCORE_1",
+          "entity": "unknown",
+          "settings": {
+            "parameters": {
+              "info": {
+                "common": {
+                  "check_param": false,
+                  "secure_check_param": false,
+                  "check_process_state": false,
+                  "assert_dbg_param": false,
+                  "assert_dbg_state": false,
+                  "hal_mutex": false,
+                  "timebase_feature": {
+                    "hal_timebase_selection": "SYSTICK"
+                  },
+                  "vdd_value": 0
+                },
+                "adc_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO"
+                },
+                "aes_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO",
+                  "use_hal_aes_suspend_resume": true,
+                  "use_hal_aes_ccm_algo": false,
+                  "use_hal_aes_ctr_algo": false,
+                  "use_hal_aes_ecb_cbc_algo": false,
+                  "use_hal_aes_gcm_gmac_algo": false
+                },
+                "comp_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO",
+                  "use_hal_comp_exti": true,
+                  "use_hal_comp_window_mode": false
+                },
+                "cordic_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO"
+                },
+                "crc_feature": {
+                  "user_data": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO"
+                },
+                "crs_feature": {
+                  "user_data": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO",
+                  "get_last_errors": false,
+                  "use_register_callback": false
+                },
+                "dac_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO",
+                  "use_dac_dual_channel": false
+                },
+                "dma_feature": {
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO"
+                },
+                "exti_feature": {
+                  "use_register_callback": false,
+                  "user_data": false
+                },
+                "fdcan_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO"
+                },
+                "flash_feature": {
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO",
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "prefetch_enable": true,
+                  "use_hal_flash_erase_by_addr": true,
+                  "use_hal_flash_erase_page": true,
+                  "use_hal_flash_erase_bank": true,
+                  "use_hal_flash_mass_erase": true,
+                  "use_hal_flash_ecc": true,
+                  "use_hal_flash_ob_edata": true,
+                  "use_hal_flash_program_by_addr": true
+                },
+                "flash_itf_feature": {
+                  "use_hal_flash_itf_ecc": true
+                },
+                "gpio_feature": {
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO"
+                },
+                "hash_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO"
+                },
+                "hcd_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "use_hal_hcd_usb_double_buffer": false,
+                  "use_hal_hcd_usb_ep_type_isoc": false,
+                  "use_hal_hcd_max_channel_nb": 16
+                },
+                "i2c_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO"
+                },
+                "i3c_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO"
+                },
+                "i2s_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO"
+                },
+                "icache_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false
+                },
+                "iwdg_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "use_hal_iwdg_time_unit": "HAL_IWDG_TIME_UNIT_MS",
+                  "use_hal_iwdg_hardware_start": false
+                },
+                "lptim_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO"
+                },
+                "opamp_feature": {
+                  "user_data": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO",
+                  "use_hal_opamp_calibrate_parallel": false
+                },
+                "pcd_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "use_hal_pcd_usb_double_buffer": true,
+                  "use_hal_pcd_usb_lpm": true,
+                  "use_hal_pcd_usb_bcd": true,
+                  "use_hal_pcd_usb_ep_type_isoc": true,
+                  "use_hal_pcd_max_endpoint_nb": 16
+                },
+                "pka_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO"
+                },
+                "rcc_feature": {
+                  "use_hal_rcc_reset_periph_clock_management": false,
+                  "use_hal_rcc_reset_rtc_domain": false
+                },
+                "rng_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO"
+                },
+                "smartcard_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "use_hal_smartcard_fifo": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO"
+                },
+                "smbus_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO"
+                },
+                "spi_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO"
+                },
+                "tim_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO"
+                },
+                "uart_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO"
+                },
+                "usart_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "get_last_errors": false,
+                  "use_hal_usart_fifo": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO"
+                },
+                "wwdg_feature": {
+                  "use_register_callback": false,
+                  "user_data": false,
+                  "clk_enable_model": "HAL_CLK_ENABLE_NO",
+                  "use_hal_wwdg_time_unit": "HAL_WWDG_TIME_UNIT_MS",
+                  "use_hal_wwdg_hardware_start": false
+                }
+              }
+            }
+          }
+        }
+      ],
+      "STMicroelectronics.stm32c5xx_hal_drivers.2.0.0-alpha.2.0$STMicroelectronics::Device:STM32CubeMX2 Config:System@0.2.0#HAL System Init": [
+        {
+          "index": 3,
+          "instanceId": "003668ea-719e-49ef-8308-2e1e23d24890",
+          "name": "MySystem_1",
+          "entity": "unknown",
+          "settings": {
+            "parameters": {
+              "icache_enable": true,
+              "code_generation": {
+                "isr_handler": false,
+                "optim_enable": false,
+                "strategy": "HW"
+              },
+              "debug": {
+                "assert_dbg_param": false,
+                "assert_dbg_state": false
+              }
+            }
+          }
+        }
+      ]
+    },
+    "version": 2
+  }
+}

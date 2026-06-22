@@ -1,0 +1,39 @@
+{
+    "uuid": "ef36b770-457b-4603-9f84-2c48049f51a5",
+    "ai_project_name": "DatasetBug_Renamed",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "last_update_time": "2026-04-27 13:18:02.965604",
+    "creation_time": "2026-04-27 13:18:01.359219",
+    "project_owner_uuid": "72e55424-2031-70b8-e336-074935f590c2",
+    "models": [
+        {
+            "uuid": "1a21bcc9-3c97-4354-8b0d-617a59fbba13",
+            "name": "ModelBug",
+            "dataset": {
+                "name": "MyFirstName",
+                "dataset_id": "01kq7hdvckkghc9ashh7aeq01q"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "class1",
+                    "class2",
+                    "class3"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-04-27 13:18:02.941147",
+            "last_update_time": "2026-04-27 13:18:02.941153",
+            "model_owner_uuid": "72e55424-2031-70b8-e336-074935f590c2"
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

@@ -1,0 +1,107 @@
+{
+    "uuid": "5d8e7c44-c195-47ac-b417-5c8c104e66b0",
+    "ai_project_name": "VladimirJANOUSEK",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2025-10-15 16:23:48.181107",
+    "creation_time": "2025-10-15 15:59:47.461214",
+    "project_owner_uuid": "ea66524a-2778-4966-a6ed-340abc5bc04b",
+    "models": [
+        {
+            "uuid": "83277dba-194c-47e9-b5d8-e39f0a0b8a24",
+            "name": "m1",
+            "dataset": {
+                "name": "VladimirJANOUSEKds",
+                "dataset_id": "01k7m9nwnd3a4nazv5kcyfxjn1"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "none",
+                    "1",
+                    "2"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv80x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-10-15 16:17:59.369018",
+            "last_update_time": "2025-10-15 16:17:59.369027",
+            "model_owner_uuid": "ea66524a-2778-4966-a6ed-340abc5bc04b",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv80x_mlc.json",
+                    "lsm6dsv80x_mlc.h"
+                ],
+                "last_update_time": "2025-10-15 16:18:06.063105",
+                "creation_time": "2025-10-15 16:18:06.063102"
+            }
+        },
+        {
+            "uuid": "a21a2b09-8234-4ea4-8361-9e47d54fe1a7",
+            "name": "m2",
+            "dataset": {
+                "name": "VladimirJANOUSEKds",
+                "dataset_id": "01k7m9nwnd3a4nazv5kcyfxjn1"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "none",
+                    "1",
+                    "2"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv320x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-10-15 16:23:48.150438",
+            "last_update_time": "2025-10-15 16:23:48.150445",
+            "model_owner_uuid": "ea66524a-2778-4966-a6ed-340abc5bc04b",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv320x_mlc.json",
+                    "lsm6dsv320x_mlc.h"
+                ],
+                "last_update_time": "2025-10-15 16:23:55.684469",
+                "creation_time": "2025-10-15 16:23:55.684463"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

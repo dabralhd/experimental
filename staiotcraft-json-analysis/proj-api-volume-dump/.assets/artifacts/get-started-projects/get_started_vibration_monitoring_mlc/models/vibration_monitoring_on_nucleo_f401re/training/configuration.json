@@ -1,0 +1,208 @@
+{
+    "name": "ISM6HG256X",
+    "type": "auto",
+    "accelerometer_fs": "4 g",
+    "accelerometer_odr": "30 Hz",
+    "accelerometer_high_g_fs": null,
+    "accelerometer_high_g_odr": null,
+    "gyroscope_fs": null,
+    "gyroscope_odr": null,
+    "mlc_odr": "30 Hz",
+    "input_type": "accelerometer_only",
+    "window_length": "53",
+    "datalogs": [
+        {
+            "filename": "no_vibration/20260310_10_35_47_0_5va6gzyp.csv",
+            "label": "no_vibration",
+            "accelerometer_fs": "4 g",
+            "accelerometer_odr": "30 Hz"
+        },
+        {
+            "filename": "low_vibration/20260310_10_36_50_0_pppizwvl.csv",
+            "label": "low_vibration",
+            "accelerometer_fs": "4 g",
+            "accelerometer_odr": "30 Hz"
+        },
+        {
+            "filename": "high_vibration/20260310_10_37_46_0_fwrt3zah.csv",
+            "label": "high_vibration",
+            "accelerometer_fs": "4 g",
+            "accelerometer_odr": "30 Hz"
+        }
+    ],
+    "subgroups_per_dt": 4,
+    "max_dectrees": 8,
+    "max_results_per_dt": 16,
+    "filters": [],
+    "features": [
+        {
+            "feature_name": "MEAN",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "VARIANCE",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "ENERGY",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "PEAK_TO_PEAK",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MINIMUM",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MAXIMUM",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Acc_Y",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Acc_Z",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Acc_V",
+            "signed": false,
+            "threshold": false,
+            "fifo": false
+        }
+    ],
+    "decision_tree_count": 1,
+    "dectrees": [
+        {
+            "metaclassifier": [
+                0,
+                0,
+                0,
+                0
+            ],
+            "results": [
+                {
+                    "label": "no_vibration",
+                    "value": 0
+                },
+                {
+                    "label": "low_vibration",
+                    "value": 4
+                },
+                {
+                    "label": "high_vibration",
+                    "value": 8
+                }
+            ],
+            "filename": "/tmp/workspace/dt.txt"
+        }
+    ],
+    "calculated_filters": [],
+    "calculated_features": [
+        {
+            "feature_name": "MEAN",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "VARIANCE",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "ENERGY",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "PEAK_TO_PEAK",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MINIMUM",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MAXIMUM",
+            "input": "Acc_X",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Acc_Y",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Acc_Z",
+            "signed": true,
+            "threshold": false,
+            "fifo": false
+        },
+        {
+            "feature_name": "MEAN",
+            "input": "Acc_V",
+            "signed": false,
+            "threshold": false,
+            "fifo": false
+        }
+    ],
+    "calculated_window_length": "53",
+    "features_output_filename": "/tmp/workspace/features.arff",
+    "dectree_features": [
+        "F1_MEAN_ACC_X",
+        "F2_VARIANCE_ACC_X",
+        "F3_ENERGY_ACC_X",
+        "F4_PEAK_TO_PEAK_ACC_X",
+        "F5_MINIMUM_ACC_X",
+        "F6_MAXIMUM_ACC_X",
+        "F7_MEAN_ACC_Y",
+        "F8_MEAN_ACC_Z",
+        "F9_ABS_MEAN_ACC_V"
+    ],
+    "config_output_filename": "/tmp/workspace/ism6hg256x_mlc.json"
+}

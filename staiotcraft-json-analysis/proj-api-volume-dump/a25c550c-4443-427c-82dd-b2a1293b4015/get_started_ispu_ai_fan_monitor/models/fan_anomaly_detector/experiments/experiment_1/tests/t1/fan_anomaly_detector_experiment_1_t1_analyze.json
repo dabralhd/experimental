@@ -1,0 +1,10 @@
+{
+    "rom_bytes": 7296,
+    "ram_bytes": 1168,
+    "ram_io_input_bytes": 128,
+    "ram_io_output_bytes": 128,
+    "complexity_macc": 12288,
+    "complexity_binary_macc": 12288,
+    "parameters_number": 25632,
+    "estimated_inference_time_ms": 54.68
+}

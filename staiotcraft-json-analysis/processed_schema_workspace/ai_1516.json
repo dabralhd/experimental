@@ -1,0 +1,117 @@
+{
+    "uuid": "f579261c-4131-49f1-abc6-a37d490afebd",
+    "ai_project_name": "ProjectTeamTest_BR_US",
+    "type": null,
+    "display_name": null,
+    "description": "testing project sharing features - Crosby and Lucas",
+    "version": null,
+    "last_update_time": "2026-04-24 15:09:11.275822",
+    "creation_time": "2026-04-24 15:07:29.287070",
+    "project_owner_uuid": "72e55424-2031-70b8-e336-074935f590c2",
+    "models": [
+        {
+            "uuid": "e05c1471-cc9e-4837-b09d-596e161260fe",
+            "name": "ModelTestLucas",
+            "dataset": {
+                "name": "DatasetLucas",
+                "dataset_id": "01kq00k8738s5j0k16vgpj9ddh"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "up",
+                    "down",
+                    "shaking_z",
+                    "motion_z"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-04-24 15:09:11.253521",
+            "last_update_time": "2026-04-24 15:09:11.253531",
+            "model_owner_uuid": "72e55424-2031-70b8-e336-074935f590c2",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.json",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2026-04-24 15:09:27.743882",
+                "creation_time": "2026-04-24 15:09:27.743880"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": [
+        {
+            "uuid": "17565c18-edc8-4c05-b3b7-b3f4f9c28470",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_Gateway;8",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.1.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/staiotcraft_rpi_gateway_1_5_0.img.gz",
+            "module_id": "edgeMLC"
+        },
+        {
+            "uuid": "5bcb4f9e-acab-41b8-8f6c-db672c6d9cbb",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-8.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;8",
+            "binary_uri": "/usb/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_3_2_0.bin",
+            "binary_id": 451,
+            "protocol": 2
+        },
+        {
+            "uuid": "7462dc2c-9c12-4208-9de7-bd27ffa121a5",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/STAIOTCRAFT_SDATALOG-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:STAIOTCRAFT_SDATALOG;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/STAIOTCRAFT_SDATALOG_1_0_0.bin",
+            "binary_id": 517,
+            "protocol": 2
+        },
+        {
+            "uuid": "e3dfd086-432f-48a7-90b9-5f2b7eee60e3",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/STAIOTCRAFT_SDATALOG_RUST-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:STAIOTCRAFT_SDATALOG_RUST;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/STAIOTCRAFT_SDATALOG_RUST_1_0_0.bin",
+            "binary_id": 516,
+            "protocol": 2
+        },
+        {
+            "uuid": "1769a8fa-dff1-46eb-ac4a-5fe4a3dbb503",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/STAIOTCRAFT_AI_Inertial-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:STAIOTCRAFT_AI_Inertial;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/STAIOTCRAFT_AI_Inertial_1_2_0.bin",
+            "binary_id": 484,
+            "protocol": 1
+        },
+        {
+            "uuid": "872487bc-ad26-49db-ad11-13b49061abc6",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/STAIOTCRAFT_AI_SSM-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:STAIOTCRAFT_AI_SSM;1",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/STAIOTCRAFT_AI_SSM_1_0_0.bin",
+            "binary_id": 529,
+            "protocol": 0
+        }
+    ]
+}

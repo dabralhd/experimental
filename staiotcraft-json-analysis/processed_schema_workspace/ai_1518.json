@@ -1,0 +1,50 @@
+{
+    "uuid": "baaefc7e-0c01-4ca4-87c2-73a845982d9d",
+    "ai_project_name": "test1",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "last_update_time": "2026-04-22 20:15:08.773356",
+    "creation_time": "2026-04-22 20:14:35.832399",
+    "project_owner_uuid": "72e55424-2031-70b8-e336-074935f590c2",
+    "models": [
+        {
+            "uuid": "f06aeef1-0c3b-4ec2-847e-a3372cf40a66",
+            "name": "modelname",
+            "dataset": {
+                "name": "datasetname",
+                "dataset_id": "01kpvda1fzrvrsas50znzcr1ht"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "class1",
+                    "class2",
+                    "class3"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-04-22 20:15:08.745264",
+            "last_update_time": "2026-04-22 20:15:08.745271",
+            "model_owner_uuid": "72e55424-2031-70b8-e336-074935f590c2",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [],
+                "artifacts": [],
+                "last_update_time": "2026-04-22 20:15:46.904647",
+                "creation_time": "2026-04-22 20:15:46.904645"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

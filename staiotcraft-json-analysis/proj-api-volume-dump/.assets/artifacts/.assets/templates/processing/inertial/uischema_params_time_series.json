@@ -1,0 +1,111 @@
+{
+  "type": "Categorization",
+  "elements": [
+    {
+      "type": "Category",
+      "label": "Sensors",
+      "elements": [
+        {
+          "type": "Group",
+          "label": "ism330dhcx - Accelerometer",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/sensors/properties/ism330dhcx_acc/properties/fs",
+              "label": "FS"
+            },
+            {
+              "type": "Control",
+              "scope": "#/properties/sensors/properties/ism330dhcx_acc/properties/odr",
+              "label": "ODR"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Category",
+      "label": "Pre-processing",
+      "elements": [
+        {
+          "type": "Control",
+          "scope": "#/properties/pre_processing",
+          "label": "Pre-Processing",
+          "elements": [
+            {
+              "type": "Control",
+              "scope": "#/properties/input_buffer_size",
+              "label": "Input buffer size"
+            },
+            {
+              "type": "Control",
+              "label": "Functions",
+              "scope": "#/properties/functions",
+              "options": {
+                "detail": {
+                  "type": "HorizontalLayout",
+                  "label": "Function",
+                  "elements": [
+                    {
+                        "type": "Control",
+                        "scope": "#/properties/name",
+                        "label": "Function name"
+                    },
+                    {
+                        "type": "Control",
+                        "scope": "#/properties/parameters/properties/axis_selection",
+                        "label": "Axis selection",
+                        "rule": {
+                          "effect": "HIDE",
+                          "condition": {
+                            "scope": "#/properties/name",
+                            "schema": { "enum": ["mfcc", "mean_removal"] }
+                          }
+                        }
+                    },
+                    {
+                      "type": "Control",
+                      "scope": "#/properties/parameters/properties/signal_window",
+                      "label": "Signal Window",
+                      "rule": {
+                        "effect": "HIDE",
+                        "condition": {
+                          "scope": "#/properties/name",
+                          "schema": { "enum": ["axis_selection", "mean_removal"] }
+                        }
+                      }
+                    }
+                  ]
+                }
+              } 
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "Category",
+      "label": "AI-Processing",
+      "elements": [
+        {
+          "type": "Control",
+          "scope": "#/properties/ai_processing",
+          "label": "AI-Processing",
+          "elements": []
+        }
+      ]
+    },
+    {
+      "type": "Category",
+      "label": "Post-processing",
+      "elements": [
+        {
+          "type": "Control",
+          "scope": "#/properties/post_processing",
+          "label": "Post-Processing",
+          "elements": []
+        }
+      ]
+    }
+  ]
+}

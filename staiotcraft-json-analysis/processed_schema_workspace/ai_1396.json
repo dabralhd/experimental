@@ -1,0 +1,139 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v11",
+    "uuid": "800fdf9a-d7e5-4112-9b85-393b216ceebc",
+    "ai_project_name": "cloned-terrain-1",
+    "type": "industrial",
+    "display_name": "Terrain Classification with MLC",
+    "description": "Classification of terrain using the MLC, including smooth, rough, and stationary terrains.\n\nThis example leverages the accelerometer sensor.",
+    "version": "1.0.0",
+    "creation_time": "2026-04-08 09:36:53.218513",
+    "last_update_time": "2026-04-08 09:36:53.218513",
+    "project_owner_uuid": "e00afa85-9293-43e8-b3cc-1c9498fe9fe3",
+    "models": [
+        {
+            "uuid": "32309520-6ba4-48aa-b32e-d7295f87e285",
+            "name": "terrain_classification_mlc_model",
+            "description": "MLC model for classifying terrain as smooth, rough, or stationary.",
+            "dataset": {
+                "name": "TerrainClassificationDataset",
+                "dataset_id": "01knp77bhgyf9be2ahk462qmp5"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "SMOOTH",
+                    "ROUGH",
+                    "STATIONARY"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16bx",
+                "device": "steval-robkit1"
+            },
+            "creation_time": "2026-04-08 09:36:53.218526",
+            "last_update_time": "2026-04-08 09:36:53.218529",
+            "model_owner_uuid": "e00afa85-9293-43e8-b3cc-1c9498fe9fe3",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": null
+                        },
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16bx_mlc.json",
+                    "lsm6dsv16bx_mlc.h"
+                ],
+                "last_update_time": null,
+                "creation_time": null
+            }
+        }
+    ],
+    "applications": [
+        {
+            "uuid": "5d6db132-3022-44d4-85b0-136464f7f3a4",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_Gateway;8",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.1.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/staiotcraft_rpi_gateway_1_5_0.img.gz",
+            "module_id": "edgeMLC"
+        },
+        {
+            "uuid": "204cf016-b4e8-4e9a-b1a4-52f504d41d01",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval-robkit1/STSW_ROBKIT1-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_robkit1:STSW_ROBKIT1;1",
+            "binary_uri": "/bluestsdkv2/bin/steval-robkit1/STSW-ROBKIT1_2_1_0.bin",
+            "binary_id": 478,
+            "protocol": 0
+        }
+    ],
+    "deployments": [
+        {
+            "uuid": "7eaced50-99f5-4ad8-9933-b92ac9a0996e",
+            "display_name": "Terrain Classification with STEVAL-Robkit1 and LSM6DSV16BX sensor.",
+            "description": "End-to-end system deployment for Terrain Classification use case on the STEVAL-Robkit1 using the LSM6DSV16BX sensor.",
+            "last_update_time": null,
+            "last_deploy_result": null,
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": null
+            },
+            "gateway": [
+                {
+                    "device_id": "gateway_0",
+                    "display_name": "gateway_0",
+                    "gateway_id": null,
+                    "description": "Gateway device at position 0.",
+                    "application": "5d6db132-3022-44d4-85b0-136464f7f3a4",
+                    "wifi_mode": "off"
+                }
+            ],
+            "leaf": [
+                {
+                    "device_id": "leaf_0",
+                    "display_name": "leaf_0",
+                    "gateway_id": "gateway_0",
+                    "description": "Leaf device at position 0.",
+                    "datalogging": {
+                        "supported_applications": [
+                            "204cf016-b4e8-4e9a-b1a4-52f504d41d01"
+                        ],
+                        "application": "204cf016-b4e8-4e9a-b1a4-52f504d41d01",
+                        "firmware_update": false
+                    },
+                    "inference": {
+                        "supported_applications": [
+                            "204cf016-b4e8-4e9a-b1a4-52f504d41d01"
+                        ],
+                        "application": "204cf016-b4e8-4e9a-b1a4-52f504d41d01",
+                        "firmware_update": false,
+                        "models": [
+                            {
+                                "model_name_reference": "terrain_classiification_mlc_model",
+                                "artifact_type": "json",
+                                "component_name": "lsm6dsv16bx_mlc"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

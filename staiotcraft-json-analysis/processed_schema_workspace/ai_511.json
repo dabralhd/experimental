@@ -1,0 +1,105 @@
+{
+    "uuid": "3289704f-88c4-4924-b6a6-e1743d94e62d",
+    "ai_project_name": "BackpackMonitoringTEST",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "last_update_time": "2026-03-09 09:21:59.981839",
+    "creation_time": "2026-02-20 10:46:32.281929",
+    "project_owner_uuid": "363af7b3-752e-40df-855d-a5ebc3801d8e",
+    "models": [
+        {
+            "uuid": "59b2cc9a-ae2a-4c02-9398-22306516e8ee",
+            "name": "BackpackMonitoringModelTEST",
+            "dataset": {
+                "name": "BackpackMonitoring",
+                "dataset_id": "01khx9r090ntgvb9f3djp0tz7s"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "backward_leaning",
+                    "proper_posture"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-02-20 10:46:33.499171",
+            "last_update_time": "2026-02-20 10:46:33.499181",
+            "model_owner_uuid": "363af7b3-752e-40df-855d-a5ebc3801d8e",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.json",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2026-02-20 10:46:44.126482",
+                "creation_time": "2026-02-20 10:46:44.126480"
+            }
+        },
+        {
+            "uuid": "d863e397-7e75-42c4-93f3-28f9e75d1c77",
+            "name": "ap_clone",
+            "dataset": {
+                "name": "BackpackMonitoring",
+                "dataset_id": "01khx9r090ntgvb9f3djp0tz7s"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "backward_leaning",
+                    "proper_posture"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-03-09 09:21:59.941377",
+            "last_update_time": "2026-03-09 09:21:59.941384",
+            "model_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.json",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2026-03-09 09:22:06.984994",
+                "creation_time": "2026-03-09 09:22:06.984992"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

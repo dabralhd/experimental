@@ -1,0 +1,135 @@
+{
+   "uuid": "ae80487a-ff7b-49b9-a2af-0cd08aa8f18a",
+   "ai_project_name": "Frequency Detection",
+   "display_name": null,
+   "description": "",
+   "version": "0.0.1",
+   "inputs": [
+      {
+         "uuid": "276a4fc9-e6a0-4e68-a04e-2a263b934487",
+         "model_ref": "810b5528-4820-42e4-9241-e090577f4b15",
+         "input_type": "binary_hsd",
+         "augmentation": [],
+         "logs": [
+            {
+               "uuid": "1cb78391-11c3-4469-a82d-976c2e6af705",
+               "name": "20231213_14_06_53",
+               "annotated": true,
+               "description": "20231213_14_06_53",
+               "start_time": "2000-01-01T00:01:30.000Z",
+               "end_time": "2000-01-01T00:04:50.528Z",
+               "device_description": {
+                  "part_number": "STEVAL-MKBOXPRO",
+                  "serial_number": "004B00235752501720353339",
+                  "alias": "STBOX_PRO_001",
+                  "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                  "fw_version": "1.2.1"
+               }
+            },
+            {
+               "uuid": "3f6e98d3-3e84-4978-ae14-2cd93e84b064",
+               "name": "20231214_14_22_37",
+               "annotated": true,
+               "description": "20231214_14_22_37",
+               "start_time": "2000-01-01T00:01:09.000Z",
+               "end_time": "2000-01-01T00:04:41.036Z",
+               "device_description": {
+                  "part_number": "STEVAL-MKBOXPRO",
+                  "serial_number": "004B00235752501720353339",
+                  "alias": "STBOX_PRO_001",
+                  "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                  "fw_version": "1.2.1"
+               }
+            }
+         ],
+         "tools": [
+            {
+               "name": "hsdatalog_to_unico",
+               "version": "1.1.0",
+               "parameters": {
+                  "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                  "-f": "TXT",
+                  "-t": "",
+                  "-s": "all",
+                  "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+               }
+            }
+         ]
+      }
+   ],
+   "models": [
+      {
+         "uuid": "810b5528-4820-42e4-9241-e090577f4b15",
+         "name": "model1",
+         "model_type": "classifier",
+         "training_type": "offline",
+         "stage": "modeling",
+         "model_metadata": {
+            "classes": [
+               "low",
+               "medium",
+               "high"
+            ]
+         },
+         "experiments": [
+            {
+               "uuid": "071de6b5-d952-4ced-9965-506d4c2238b3",
+               "name": "Experiment1",
+               "description": "",
+               "model_dev_file": null
+            },
+            {
+               "uuid": "172e37b3-4294-4a5c-8590-c3da8325e99f",
+               "name": "Experiment2",
+               "description": "",
+               "model_dev_file": null
+            }
+         ]
+      }
+   ],
+   "outputs": [
+      {
+         "uuid": "eb123140-1d02-4d43-a61e-39bc8222cae2",
+         "model_ref": "810b5528-4820-42e4-9241-e090577f4b15",
+         "output_type": "steval-mkboxpro:mlc",
+         "best_test": null,
+         "tests": [
+            {
+               "uuid": "1ce90180-e31b-4ac5-bead-9260e601dbfc",
+               "name": "Output1",
+               "experiment_ref": "071de6b5-d952-4ced-9965-506d4c2238b3",
+               "model_file": null,
+               "parameters": {},
+               "reports": [],
+               "outputs": []
+            },
+            {
+               "uuid": "dfcebcce-3b0a-47b7-b9ab-ef119a7c2495",
+               "name": "Output2",
+               "experiment_ref": "172e37b3-4294-4a5c-8590-c3da8325e99f",
+               "model_file": null,
+               "parameters": [],
+               "reports": [
+                  "lsm6dsv16x_mlc_report.json"
+               ],
+               "outputs": [
+                  "lsm6dsv16x_mlc.ucf",
+                  "lsm6dsv16x_mlc.h"
+               ]
+            }
+         ],
+         "tools": [
+            {
+               "name": "mlctools",
+               "version": "1.0.0",
+               "parameters": null
+            }
+         ]
+      }
+   ],
+   "deployments": [],
+   "dbstatus": {
+      "status": "unknown",
+      "message": null
+   }
+}

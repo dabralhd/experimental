@@ -1,0 +1,54 @@
+{
+    "jobs": [
+        {
+            "uuid": "20",
+            "name": "Log conversion (HARmodel / 20221213_15_20_57)",
+            "start_time": "2022-12-13T15:32:22.583886",
+            "end_time": "2022-12-13T15:32:29.498122",
+            "state": "success",
+            "state_description": "Terminated (return code: '0'). 'Log conversion (HARmodel / 20221213_15_20_57)' / 'main_rest_api-N/A' / 'log_conversion'",
+            "operation_type": "log_conversion",
+            "executer_id": "main_rest_api-N/A"
+        },
+        {
+            "uuid": "28",
+            "name": "Log conversion (HARmodel / 20221213_15_40_23)",
+            "start_time": "2022-12-13T15:42:04.582089",
+            "end_time": "2022-12-13T15:42:10.390119",
+            "state": "success",
+            "state_description": "Terminated (return code: '0'). 'Log conversion (HARmodel / 20221213_15_40_23)' / 'main_rest_api-N/A' / 'log_conversion'",
+            "operation_type": "log_conversion",
+            "executer_id": "main_rest_api-N/A"
+        },
+        {
+            "uuid": "33",
+            "name": "Log conversion (HARmodel / 20221214_07_46_29)",
+            "start_time": "2022-12-14T07:50:07.382161",
+            "end_time": "2022-12-14T07:50:12.489707",
+            "state": "success",
+            "state_description": "Terminated (return code: '0'). 'Log conversion (HARmodel / 20221214_07_46_29)' / 'main_rest_api-N/A' / 'log_conversion'",
+            "operation_type": "log_conversion",
+            "executer_id": "main_rest_api-N/A"
+        },
+        {
+            "uuid": "38",
+            "name": "Log conversion (HARmodel / 20221214_08_1\u0006)",
+            "start_time": "2022-12-14T08:14:52.382145",
+            "end_time": "2022-12-14T08:14:57.585948",
+            "state": "success",
+            "state_description": "Terminated (return code: '0'). 'Log conversion (HARmodel / 20221214_08_1\u0006)' / 'main_rest_api-N/A' / 'log_conversion'",
+            "operation_type": "log_conversion",
+            "executer_id": "main_rest_api-N/A"
+        },
+        {
+            "uuid": "43",
+            "name": "Log conversion (vibration_model_2_classes / 20221214_09_1\u0006)",
+            "start_time": "2022-12-14T09:11:39.583935",
+            "end_time": "2022-12-14T09:11:45.291666",
+            "state": "success",
+            "state_description": "Terminated (return code: '0'). 'Log conversion (vibration_model_2_classes / 20221214_09_1\u0006)' / 'main_rest_api-N/A' / 'log_conversion'",
+            "operation_type": "log_conversion",
+            "executer_id": "main_rest_api-N/A"
+        }
+    ]
+}

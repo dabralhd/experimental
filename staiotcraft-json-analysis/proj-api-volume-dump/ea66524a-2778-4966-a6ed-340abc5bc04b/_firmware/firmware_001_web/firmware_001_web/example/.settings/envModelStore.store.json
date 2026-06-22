@@ -1,0 +1,14 @@
+{
+  "envVar": {
+    "CORE_PROJECT_TIMEBASE": {
+      "name": "CORE_PROJECT_TIMEBASE",
+      "value": "SYSTICK",
+      "originator": "144d5abf-38c7-47a5-af6e-6443225415a3"
+    },
+    "SYSTEM_PROJECT_CODEGEN_STRATEGY": {
+      "name": "SYSTEM_PROJECT_CODEGEN_STRATEGY",
+      "value": "HW",
+      "originator": "003668ea-719e-49ef-8308-2e1e23d24890"
+    }
+  }
+}

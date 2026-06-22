@@ -1,0 +1,29 @@
+{
+    "Name": "20221214_09_1\u0006",
+    "Description": "20221214_09_10_14",
+    "UUIDAcquisition": "13b4de4c-3477-4cb0-9e0d-fd7a22a0802b",
+    "start_time": "2022-12-14T09:10:18.916Z",
+    "end_time": "2022-12-14T09:11:13.752Z",
+    "Tags": [
+        {
+            "t": 2.115603775,
+            "Label": "slow",
+            "Enable": true
+        },
+        {
+            "t": 4.795634591666666,
+            "Label": "slow",
+            "Enable": false
+        },
+        {
+            "t": 6.260123725,
+            "Label": "fast",
+            "Enable": true
+        },
+        {
+            "t": 10.657097099999998,
+            "Label": "fast",
+            "Enable": false
+        }
+    ]
+}

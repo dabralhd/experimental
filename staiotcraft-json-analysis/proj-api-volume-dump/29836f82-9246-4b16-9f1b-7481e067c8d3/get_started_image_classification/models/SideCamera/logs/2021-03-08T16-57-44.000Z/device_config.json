@@ -1,0 +1,11 @@
+{
+    "device": {
+        "device_info": {
+            "part_number": "OpenMV-H7-Plus",
+            "serial_number": "",
+            "alias": "MV1",
+            "fw_name": "",
+            "fw_version": ""
+        }
+    }
+}

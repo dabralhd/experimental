@@ -1,0 +1,33 @@
+{
+    "uuid": "29fc5c73-0c33-46d0-b327-b5352a064882",
+    "name": "20210728_18_03_56",
+    "description": "descriptionTest",
+    "annotated": true,
+    "start_time": "",
+    "end_time": "",
+    "input_type": "binary_hsd",
+    "tags": [
+        {
+            "l": "train",
+            "e": true,
+            "ta": 7.791170367
+        },
+        {
+            "l": "train",
+            "e": false,
+            "ta": 22.23522535
+        },
+        {
+            "l": "test",
+            "e": true,
+            "ta": 25.55671783
+        },
+        {
+            "l": "test",
+            "e": false,
+            "ta": 48.82604957
+        }
+    ],
+    "project_ref": "c34ca5cc-7260-4eac-8c8f-1b2a9c022a45",
+    "model_ref": "dd9f493d-4134-4dc5-ac0c-e0daf99d204f"
+}

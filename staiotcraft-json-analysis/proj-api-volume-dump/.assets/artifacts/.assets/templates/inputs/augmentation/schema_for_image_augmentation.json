@@ -1,0 +1,219 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "ST Edge.AI Schema for image augmentation.",
+    "description": "ST Edge.AI Schema to configure image augmentation jupyter notebook template.",
+    "version": "v1",
+    "required": [
+        "general",
+        "dataset",
+        "dataset_augmentation"
+    ],
+    "properties": {
+        "general": {
+            "$id": "#/properties/general",
+            "type": "object",
+            "title": "General parameters.",
+            "description": "General parameters.",
+            "default": {},
+            "required": [
+                "project",
+                "model",
+                "class_to_augment"
+            ],
+            "properties": {
+                "project": {
+                    "$id": "#/properties/general/properties/project",
+                    "type": "string",
+                    "title": "Project name.",
+                    "description": "Name of the project.",
+                    "default": ""
+                },
+                "model": {
+                    "$id": "#/properties/general/properties/model",
+                    "type": "string",
+                    "title": "Model name.",
+                    "description": "Name of the model.",
+                    "default": ""
+                },
+                "class_to_augment": {
+                    "$id": "#/properties/general/properties/class_to_augment",
+                    "type": "string",
+                    "title": "Class name to augment.",
+                    "description": "Name of the class to augment.",
+                    "default": ""
+                }
+            }
+        },
+        "dataset": {
+            "$id": "#/properties/dataset",
+            "type": "object",
+            "title": "Dataset parameters.",
+            "description": "Dataset parameters.",
+            "default": {},
+            "required": [
+                "image_size_x",
+                "image_size_y",
+                "image_size_z",
+                "image_extension"
+            ],
+            "properties": {
+                "image_size_x": {
+                    "$id": "#/properties/dataset/properties/image_size_x",
+                    "type": "integer",
+                    "title": "Image size X.",
+                    "description": "Integer. Horizontal size of the image.",
+                    "default": 160
+                },
+                "image_size_y": {
+                    "$id": "#/properties/dataset/properties/image_size_y",
+                    "type": "integer",
+                    "title": "Image size Y.",
+                    "description": "Integer. Vertical size of the image.",
+                    "default": 160
+                },
+                "image_size_z": {
+                    "$id": "#/properties/dataset/properties/image_size_z",
+                    "type": "integer",
+                    "title": "Image size Z.",
+                    "description": "Integer. Number of channels of the image. Valid values: 1, 3, 4",
+                    "default": 3
+                },
+                "image_extension": {
+                    "$id": "#/properties/dataset/properties/validation_split",
+                    "type": "string",
+                    "title": "Image extension.",
+                    "description": "Extension of the image files.",
+                    "enum": [
+                        ".jpg",
+                        ".png",
+                        ".bmp"
+                    ],
+                    "default": ".jpg"
+                }
+            }
+        },
+        "dataset_augmentation": {
+            "$id": "#/properties/dataset_augmentation",
+            "type": "object",
+            "title": "Dataset augmentation parameters.",
+            "description": "Dataset augmentation parameters.",
+            "default": {},
+            "required": [
+                "rotation_range",
+                "width_shift_range",
+                "height_shift_range",
+                "brightness_range",
+                "shear_range",
+                "zoom_range",
+                "channel_shift_range",
+                "fill_mode",
+                "cval",
+                "horizontal_flip",
+                "vertical_flip",
+                "rescale",
+                "augmentation_factor"
+            ],
+            "properties": {
+                "rotation_range": {
+                    "$id": "#/properties/dataset_augmentation/properties/rotation_range",
+                    "type": "integer",
+                    "title": "Rotation range.",
+                    "description": "Int. Degree range for random rotations.",
+                    "default": 10
+                },
+                "width_shift_range": {
+                    "$id": "#/properties/dataset_augmentation/properties/width_shift_range",
+                    "type": "number",
+                    "title": "Width shift range.",
+                    "description": "Float if 0 < x < 1: fraction of width. Integer if x >= 1: pixels.",
+                    "default": 0.1
+                },
+                "height_shift_range": {
+                    "$id": "#/properties/dataset_augmentation/properties/height_shift_range",
+                    "type": "number",
+                    "title": "Height shift range.",
+                    "description": "Float if 0 < x < 1: fraction of height. Integer if x >= 1: pixels.",
+                    "default": 0.1
+                },
+                "brightness_range": {
+                    "$id": "#/properties/dataset_augmentation/properties/brightness_range",
+                    "type": ["number", "null"],
+                    "title": "Brightness range.",
+                    "description": "Tuple or list of two floats. Range for picking a brightness shift value from.",
+                    "default": null
+                },
+                "shear_range": {
+                    "$id": "#/properties/dataset_augmentation/properties/shear_range",
+                    "type": "number",
+                    "title": "Shear range.",
+                    "description": "Float. Shear Intensity (shear angle in counter-clockwise direction in degrees).",
+                    "default": 0.0
+                },
+                "zoom_range": {
+                    "$id": "#/properties/dataset_augmentation/properties/zoom_range",
+                    "type": "number",
+                    "title": "Shear range.",
+                    "description": "Float or [lower, upper]. Range for random zoom. If float, [lower, upper] = [1-zoom_range, 1+zoom_range].",
+                    "default": 0.0
+                },
+                "channel_shift_range": {
+                    "$id": "#/properties/dataset_augmentation/properties/channel_shift_range",
+                    "type": "number",
+                    "title": "Channel shift range.",
+                    "description": "Float. Range for random channel shifts.",
+                    "default": 0.0
+                },
+                "fill_mode": {
+                    "$id": "#/properties/dataset_augmentation/properties/fill_mode",
+                    "type": "string",
+                    "title": "Fill mode.",
+                    "description": "Points outside the boundaries of the input are filled according to the given mode.",
+                    "enum": [
+                        "constant",
+                        "nearest",
+                        "reflect",
+                        "wrap"
+                    ],
+                    "default": "nearest"
+                },
+                "cval": {
+                    "$id": "#/properties/dataset_augmentation/properties/cval",
+                    "type": "number",
+                    "title": "Constant filling value.",
+                    "description": "Float or Integer. Value used for points outside the boundaries when fill_mode is \"constant\".",
+                    "default": 0.0
+                },
+                "horizontal_flip": {
+                    "$id": "#/properties/dataset_augmentation/properties/horizontal_flip",
+                    "type": "boolean",
+                    "title": "Horizontal flip.",
+                    "description": "Boolean. Randomly flip inputs horizontally.",
+                    "default": false
+                },
+                "vertical_flip": {
+                    "$id": "#/properties/dataset_augmentation/properties/vertical_flip",
+                    "type": "boolean",
+                    "title": "Vertical flip.",
+                    "description": "Boolean. Randomly flip inputs vertically.",
+                    "default": false
+                },
+                "rescale": {
+                    "$id": "#/properties/dataset_augmentation/properties/rescale",
+                    "type": ["number", "null"],
+                    "title": "Rescaling factor.",
+                    "description": "Float. If None, no rescaling is applied, otherwise we multiply the data by the value provided (after applying all other transformations).",
+                    "default": null
+                },
+                "augmentation_factor": {
+                    "$id": "#/properties/dataset_augmentation/properties/augmentation_factor",
+                    "type": "integer",
+                    "title": "Augmentation factor.",
+                    "description": "Integer. Augment the number of images by this factor.",
+                    "default": 10
+                }
+            }
+        }
+    }
+}

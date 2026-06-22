@@ -1,0 +1,39 @@
+{
+    "annotated": true,
+    "c_type": 2,
+    "data_ext": ".dat",
+    "description": "",
+    "end_time": "2022-11-24T10:27:42.574Z",
+    "input_type": "binary_hsd",
+    "interface": 1,
+    "model_name": "vibration_model_4_classes",
+    "model_ref": "d8ed5389-1b42-4a3f-bf62-ccae1a4a5eac",
+    "name": "20221124_10_22_25",
+    "project_name": "get_started_vibration_classification",
+    "project_ref": "45c93ff4-f7fd-48d3-9a39-6c67570521b8",
+    "schema_version": "2.0.0",
+    "start_time": "2022-11-24T10:22:25.000Z",
+    "tags": [
+        {
+            "e": true,
+            "l": "slow_with_disturbance",
+            "ta": "2022-11-24T10:22:38.207Z"
+        },
+        {
+            "e": false,
+            "l": "slow_with_disturbance",
+            "ta": "2022-11-24T10:25:05.256Z"
+        },
+        {
+            "e": true,
+            "l": "fast_with_disturbance",
+            "ta": "2022-11-24T10:25:14.332Z"
+        },
+        {
+            "e": false,
+            "l": "fast_with_disturbance",
+            "ta": "2022-11-24T10:27:32.860Z"
+        }
+    ],
+    "uuid": "0a9eef07-2c29-425f-b074-14c9538d6959"
+}

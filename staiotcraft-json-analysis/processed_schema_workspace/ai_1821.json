@@ -1,0 +1,60 @@
+{
+    "uuid": "65bceec9-eebc-4e83-ba74-eb9607cdd3c0",
+    "ai_project_name": "test-project-834",
+    "type": null,
+    "display_name": null,
+    "description": "My Project description",
+    "version": "0.0.1",
+    "last_update_time": "2025-09-26 06:56:07.648579",
+    "creation_time": "2025-09-26 06:51:27.206835",
+    "project_owner_uuid": "334c65a5-1495-453a-a6de-4d384a781000",
+    "models": [
+        {
+            "uuid": "e53d8dd1-afb3-4c8c-905f-440a5d2d7731",
+            "name": "test-model-834",
+            "dataset": {
+                "name": "test-dataset-803",
+                "dataset_id": "dataset-abcxyz-123"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "x",
+                    "y",
+                    "z"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-09-26 06:56:07.614794",
+            "last_update_time": "2025-09-26 06:56:07.614801",
+            "model_owner_uuid": "334c65a5-1495-453a-a6de-4d384a781000",
+            "training": {
+                "runtime": {
+                    "type": "test-activity-834",
+                    "jobs": [
+                        {
+                            "name": "test-artifact-job-842",
+                            "version": null,
+                            "template_id": "QWERTY842"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report_new.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv80x.ucf"
+                ],
+                "last_update_time": "2025-12-15 04:40:43.116934",
+                "creation_time": "2025-12-15 04:40:43.116932"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

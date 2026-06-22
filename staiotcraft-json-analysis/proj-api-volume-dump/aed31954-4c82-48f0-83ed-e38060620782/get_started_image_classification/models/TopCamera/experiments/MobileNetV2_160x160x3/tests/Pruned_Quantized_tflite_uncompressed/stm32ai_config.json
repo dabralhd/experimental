@@ -1,0 +1,35 @@
+{
+   "name": "MobileNetV2_160x160x3_Pruned_Quantized_tflite_uncompressed",
+   "edge_ai_context": {
+      "extension_name": "edgeai-project-manager",
+      "test_folder": "/home/workspace/7581a06a-adeb-449a-a14d-ff9df1411f4c/get_started_image_classification/models/TopCamera/experiments/MobileNetV2_160x160x3/tests/Pruned_Quantized_tflite_uncompressed",
+      "project_name": "get_started_image_classification",
+      "project_id": "d49f96f0-d7b5-4481-9949-24b7a2222c9e",
+      "model_name": "TopCamera",
+      "model_id": "8a62eb68-fe60-4a3e-ba7d-afe2c20b35b5",
+      "experiment_name": "MobileNetV2_160x160x3",
+      "experiment_id": "c2b93102-ad07-4c2d-b1e3-3c3fde8b0261",
+      "test_name": "Pruned_Quantized_tflite_uncompressed",
+      "test_id": "522cc8b0-ba20-4d9a-b23c-9871554f0a2e",
+      "output_type": "openmv_stm32_bin",
+      "model_file": "/home/workspace/7581a06a-adeb-449a-a14d-ff9df1411f4c/get_started_image_classification/models/TopCamera/experiments/MobileNetV2_160x160x3/application/TopCamera_MobileNetV2_160x160x3_pruned_quantized.tflite"
+   },
+   "last_configuration": {
+      "cube_ai_environment_name": "MobileNetV2_160x160x3_Pruned_Quantized_tflite_uncompressed",
+      "target": "open_mv",
+      "allocate_inputs": true,
+      "compression": "1",
+      "name": "network",
+      "split_weigths": false,
+      "generate_full_binary": true,
+      "model_file": "/home/workspace/7581a06a-adeb-449a-a14d-ff9df1411f4c/get_started_image_classification/models/TopCamera/experiments/MobileNetV2_160x160x3/application/TopCamera_MobileNetV2_160x160x3_pruned_quantized.tflite"
+   },
+   "output_reports": {
+      "rom": 176392,
+      "ram": 358912,
+      "input_ram": 76800,
+      "output_ram": 2,
+      "complexity": 26748294,
+      "parameters": 162634
+   }
+}

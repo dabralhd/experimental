@@ -1,0 +1,113 @@
+{
+    "uuid": "8e751acd-918f-4b2f-8505-a4e4eddd7ed9",
+    "ai_project_name": "tennis_activity",
+    "type": null,
+    "display_name": null,
+    "description": "The tennis activity recognition algorithm classifies different type of tennis shots: backhand, forehand, serve, slice-forehand, and slice-backhand.\nThis solution is a key enabler for sports analytics aimed at improving tennis performance based on smart rackets able to provide real-time feedback during training, analyzing shot patterns and techniques.",
+    "version": "1.0.0",
+    "last_update_time": "2025-09-15 16:26:56.433266",
+    "creation_time": "2025-09-08 15:00:00.991061",
+    "project_owner_uuid": "ea66524a-2778-4966-a6ed-340abc5bc04b",
+    "models": [
+        {
+            "uuid": "b3099fd7-ed7a-459b-ad47-135a85c2dc71",
+            "name": "model_80x",
+            "dataset": {
+                "name": "tennis_activity_80x",
+                "dataset_id": "01k4t07ydxcbcrsnr9h3ksda8n"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "no_shot",
+                    "serve",
+                    "backhand_slice",
+                    "forehand_slice",
+                    "backhand",
+                    "forehand"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv80x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-09-15 16:26:33.474287",
+            "last_update_time": "2025-09-15 16:26:33.474294",
+            "model_owner_uuid": "ea66524a-2778-4966-a6ed-340abc5bc04b",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv80x_mlc.json",
+                    "lsm6dsv80x_mlc.h"
+                ],
+                "last_update_time": "2025-09-15 16:27:04.727593",
+                "creation_time": "2025-09-15 16:27:04.727591"
+            }
+        },
+        {
+            "uuid": "8022b39d-b4f2-486f-bd00-d98267791618",
+            "name": "model_320x",
+            "dataset": {
+                "name": "tennis_activity_320",
+                "dataset_id": "01k572gw6mrtwbqx5764t8xrtn"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "no_shot",
+                    "serve",
+                    "backhand_slice",
+                    "forehand_slice",
+                    "backhand",
+                    "forehand"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv320x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-09-15 16:26:56.412050",
+            "last_update_time": "2025-09-15 16:26:56.412058",
+            "model_owner_uuid": "ea66524a-2778-4966-a6ed-340abc5bc04b",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv320x_mlc.json",
+                    "lsm6dsv320x_mlc.h"
+                ],
+                "last_update_time": "2025-09-15 16:28:05.813657",
+                "creation_time": "2025-09-15 16:28:05.813654"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

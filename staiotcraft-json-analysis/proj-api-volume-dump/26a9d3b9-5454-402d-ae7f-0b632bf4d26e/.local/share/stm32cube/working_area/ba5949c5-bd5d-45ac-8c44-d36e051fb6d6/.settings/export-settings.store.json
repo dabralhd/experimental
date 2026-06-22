@@ -1,0 +1,119 @@
+{
+  "layout": {
+    "defaultInstallationFolderBase": "misc",
+    "useCustomInstallPaths": true,
+    "customPackPaths": [
+      {
+        "packName": "ARM.CMSIS.6.1.0",
+        "folder": "arch/CMSIS"
+      },
+      {
+        "packName": "STMicroelectronics.aps6408l-3obmx_hw-part.0.0.13",
+        "folder": "misc/STMicroelectronics.aps6408l-3obmx_hw-part.0.0.13"
+      },
+      {
+        "packName": "STMicroelectronics.b-u585i-iot02a_hw-board.0.0.20",
+        "folder": "misc/STMicroelectronics.b-u585i-iot02a_hw-board.0.0.20"
+      },
+      {
+        "packName": "STMicroelectronics.button_hw-part.0.0.2",
+        "folder": "misc/STMicroelectronics.button_hw-part.0.0.2"
+      },
+      {
+        "packName": "STMicroelectronics.crystal_hw-part.0.0.3",
+        "folder": "misc/STMicroelectronics.crystal_hw-part.0.0.3"
+      },
+      {
+        "packName": "STMicroelectronics.emw3080_hw-part.0.0.11",
+        "folder": "misc/STMicroelectronics.emw3080_hw-part.0.0.11"
+      },
+      {
+        "packName": "STMicroelectronics.hts221_hw-part.0.0.13",
+        "folder": "misc/STMicroelectronics.hts221_hw-part.0.0.13"
+      },
+      {
+        "packName": "STMicroelectronics.iis2mdc_hw-part.0.0.11",
+        "folder": "misc/STMicroelectronics.iis2mdc_hw-part.0.0.11"
+      },
+      {
+        "packName": "STMicroelectronics.ism330dhcx_hw-part.0.0.12",
+        "folder": "misc/STMicroelectronics.ism330dhcx_hw-part.0.0.12"
+      },
+      {
+        "packName": "STMicroelectronics.led_hw-part.0.0.2",
+        "folder": "misc/STMicroelectronics.led_hw-part.0.0.2"
+      },
+      {
+        "packName": "STMicroelectronics.lps22hh_hw-part.0.0.11",
+        "folder": "misc/STMicroelectronics.lps22hh_hw-part.0.0.11"
+      },
+      {
+        "packName": "STMicroelectronics.m24256-df_hw-part.0.0.12",
+        "folder": "misc/STMicroelectronics.m24256-df_hw-part.0.0.12"
+      },
+      {
+        "packName": "STMicroelectronics.mp23db01hp_hw-part.0.0.9",
+        "folder": "misc/STMicroelectronics.mp23db01hp_hw-part.0.0.9"
+      },
+      {
+        "packName": "STMicroelectronics.mx25lm51245_hw-part.0.0.10",
+        "folder": "misc/STMicroelectronics.mx25lm51245_hw-part.0.0.10"
+      },
+      {
+        "packName": "STMicroelectronics.st-link_hw-part.0.0.2",
+        "folder": "misc/STMicroelectronics.st-link_hw-part.0.0.2"
+      },
+      {
+        "packName": "STMicroelectronics.stm32u5xx_dfp.2.0.0-beta.1",
+        "folder": "misc/STMicroelectronics.stm32u5xx_dfp.2.0.0-beta.1"
+      },
+      {
+        "packName": "STMicroelectronics.stm32u5xx_hal_drivers.2.0.0-beta.1.1",
+        "folder": "misc/STMicroelectronics.stm32u5xx_hal_drivers.2.0.0-beta.1.1"
+      },
+      {
+        "packName": "STMicroelectronics.stm32wb5mmg_ble_at_hw-part.0.0.4",
+        "folder": "misc/STMicroelectronics.stm32wb5mmg_ble_at_hw-part.0.0.4"
+      },
+      {
+        "packName": "STMicroelectronics.stsafe-a110_hw-part.0.0.12",
+        "folder": "misc/STMicroelectronics.stsafe-a110_hw-part.0.0.12"
+      },
+      {
+        "packName": "STMicroelectronics.syscalls.0.2.1",
+        "folder": "misc/STMicroelectronics.syscalls.0.2.1"
+      },
+      {
+        "packName": "STMicroelectronics.tcpp03-m20_hw-part.0.0.8",
+        "folder": "misc/STMicroelectronics.tcpp03-m20_hw-part.0.0.8"
+      },
+      {
+        "packName": "STMicroelectronics.template_no_os.0.6.3",
+        "folder": "misc/STMicroelectronics.template_no_os.0.6.3"
+      },
+      {
+        "packName": "STMicroelectronics.veml3235_hw-part.0.0.2",
+        "folder": "misc/STMicroelectronics.veml3235_hw-part.0.0.2"
+      },
+      {
+        "packName": "STMicroelectronics.veml6030_hw-part.0.0.11",
+        "folder": "misc/STMicroelectronics.veml6030_hw-part.0.0.11"
+      },
+      {
+        "packName": "STMicroelectronics.vl53l5cx_hw-part.0.0.10",
+        "folder": "misc/STMicroelectronics.vl53l5cx_hw-part.0.0.10"
+      }
+    ]
+  },
+  "export": {
+    "configurations": {
+      "EWARM": {
+        "outputPath": "Proje-v516_ewarm",
+        "buildTarget": ".debug_IAR+B-U585I-IOT02A",
+        "exportSource": "include-packs-from-local",
+        "removeBoard": true
+      }
+    },
+    "lastUsedFormat": "EWARM"
+  }
+}

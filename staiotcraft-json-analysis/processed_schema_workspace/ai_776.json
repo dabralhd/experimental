@@ -1,0 +1,112 @@
+{
+    "uuid": "b6eba37f-6e1d-4adc-8eed-9d629ef6b3a2",
+    "ai_project_name": "PrivateTest",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2025-02-21 10:56:05.520624",
+    "creation_time": "2025-02-21 10:55:44.603676",
+    "models": [
+        {
+            "uuid": "8d22fe15-18a1-4573-9881-df377ca6b4da",
+            "name": "PrivateModel",
+            "dataset": {
+                "name": "TestWithSensorAndCSV2",
+                "dataset_id": "01jjm52er9hj220nddm7xbh00j"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "nod",
+                    "shake",
+                    "other",
+                    "newClass"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "ism330dhcx",
+                "device": "steval-stwinkt1b"
+            },
+            "creation_time": "2025-02-21 10:56:05.493492",
+            "last_update_time": "2025-02-21 10:56:05.493503"
+        }
+    ],
+    "deployments": [
+        {
+            "uuid": "1713c53a-79cf-4df4-88d9-100b338a007b",
+            "description": "",
+            "display_name": "PrivateIotTest",
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": ""
+            },
+            "last_update_time": "2025-02-21 10:56:37.901872",
+            "last_deploy_result": "success",
+            "leaf": [
+                {
+                    "gateway_id": "gw_0",
+                    "description": "Leaf device at position 0.",
+                    "display_name": "leaf_0",
+                    "device_id": "leaf_0",
+                    "datalogging": {
+                        "application": "3380d2c9-7385-4c6b-b6b1-486c49b75056",
+                        "firmware_update": false
+                    },
+                    "inference": {
+                        "application": "ddb5544d-fe60-4041-9a84-cd4934d8560f",
+                        "firmware_update": false,
+                        "models": [
+                            {
+                                "artifact_type": "ucf",
+                                "component_name": "ism330dhcx_mlc",
+                                "model_name_reference": "PrivateModel"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "gateway": [
+                {
+                    "application": "3a34e70d-ca24-45d0-9e76-c61c305fa630",
+                    "description": "Gateway device at position 0.",
+                    "display_name": "gateway_0",
+                    "device_id": "gw_0",
+                    "wifi_mode": "off"
+                }
+            ]
+        }
+    ],
+    "applications": [
+        {
+            "uuid": "3a34e70d-ca24-45d0-9e76-c61c305fa630",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-6.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_GATEWAY;6",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-6.1.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/edge_gateway_production_20250208_1_3_0.img.gz",
+            "module_id": "edgeMLC",
+            "binary_id": 0,
+            "protocol": 0
+        },
+        {
+            "uuid": "3380d2c9-7385-4c6b-b6b1-486c49b75056",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_stwinkt1b/FP_SNS_DATALOG2_Datalog2-4.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_stwinkt1b:FP_SNS_DATALOG2_Datalog2;4",
+            "binary_uri": "/bluestsdkv2/bin/steval-stwinkt1b/FP-SNS-DATALOG2_Datalog2_3_0_0.bin",
+            "binary_id": 340,
+            "protocol": 2
+        },
+        {
+            "uuid": "ddb5544d-fe60-4041-9a84-cd4934d8560f",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_stwinkt1b/AI_INERTIAL-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_stwinkt1b:AI_INERTIAL;1",
+            "binary_uri": "/usb/bin/steval-stwinkt1b/AI-INERTIAL_VibrationMonitoringOnMLC_1_2_0.bin",
+            "binary_id": 361,
+            "protocol": 1
+        }
+    ]
+}

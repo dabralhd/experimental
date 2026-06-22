@@ -1,0 +1,126 @@
+{
+    "$schema": "/home/workspace/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v6",
+    "ai_project_name": "get_started_ispu_ai_fan_monitor",
+    "description": "Get started project for anomaly detection on the ISPU platform.",
+    "uuid": "fa1d9756-1dc6-4493-a52c-0a88488941e4",
+    "version": "1.0.0",
+    "inputs": [
+        {
+            "uuid": "c26d5927-5464-4a8c-bdc0-c5adf6a89e8d",
+            "input_type": "binary_hsd",
+            "model_ref": "e2da8bdc-cc07-45cb-a563-4f158ce8cbc7",
+            "logs": [
+                {
+                    "uuid": "ae632566-e975-4bb4-b537-3d66ad52d456",
+                    "name": "20210728_18_03_56",
+                    "start_date": "",
+                    "description": "descriptionTest",
+                    "device_description": {
+                        "part_number": "STEVAL-STWINKT1B",
+                        "serial_number": "002D00075852500E20383257",
+                        "alias": "STWIN_001",
+                        "fw_name:": "FP-SNS-DATALOG1",
+                        "fw_version": "1.2.0"
+                    },
+                    "annotated": true
+                },
+                {
+                    "uuid": "25e6605c-d41c-407f-8266-31ad714b901c",
+                    "name": "20211005_10_46_42",
+                    "start_date": "2021-10-05T08:46:46.746Z",
+                    "description": "descriptionTest",
+                    "device_description": {
+                        "part_number": "STEVAL-STWINKT1B",
+                        "serial_number": "001D000C334E50122039324B",
+                        "alias": "STWIN_001",
+                        "fw_name:": "FP-SNS-DATALOG1",
+                        "fw_version": "1.1.0"
+                    },
+                    "annotated": true
+                }
+            ],
+            "augmentation": [],
+            "tools": [
+                {
+                    "input": "binary_hsd",
+                    "model": "anomaly_detector",
+                    "name": "hsdatalog_data_export_by_tags",
+                    "output": "stred_bin",
+                    "parameters": {
+                        "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}",
+                        "-f": "CSV",
+                        "-o": "{models_folder}/{model_folder}/{dataset_folder}",
+                        "-s": "all",
+                        "-t": ""
+                    },
+                    "section": "input",
+                    "version": "1.1.0"
+                }
+            ]
+        }
+    ],
+    "models": [
+        {
+            "uuid": "e2da8bdc-cc07-45cb-a563-4f158ce8cbc7",
+            "name": "fan_anomaly_detector",
+            "stage": "modeling",
+            "model_type": "anomaly_detector",
+            "training_type": "offline",
+            "retraining": false,
+            "model_metadata": {
+                "classes": [
+                    "train",
+                    "test"
+                ]
+            },
+            "experiments": [
+                {
+                    "uuid": "94b53343-909f-4574-8413-cbb490455cbb",
+                    "name": "experiment_1",
+                    "description": "Experiment for fan anomaly detector",
+                    "model_dev_file": "fan_anomaly_detector_experiment_1.ipynb"
+                }
+            ],
+            "tools": []
+        }
+    ],
+    "outputs": [
+        {
+            "uuid": "c9e8107f-b735-407f-82c7-90011f9c4c05",
+            "output_type": "stred_bin",
+            "model_ref": "e2da8bdc-cc07-45cb-a563-4f158ce8cbc7",
+            "tests": [
+                {
+                    "uuid": "fb441940-3ee4-48f0-aa13-54012882f141",
+                    "name": "t1",
+                    "experiment_ref": "94b53343-909f-4574-8413-cbb490455cbb",
+                    "model_file": "fan_anomaly_detector_experiment_1.h5",
+                    "parameters": {
+                        "$schema": "/tmp/vscode-unpacked/stredai-0.0.1.vsix/extension/assets/schemas/stredaiq2c.json"
+                    },
+                    "reports": [
+                        "fan_anomaly_detector_experiment_1_t1_analyze.json"
+                    ],
+                    "outputs": [
+                        "fan_anomaly_detector_experiment_1_t1.ucf"
+                    ]
+                }
+            ],
+            "best_test": null,
+            "tools": [
+                {
+                    "name": "stredai",
+                    "version": "1.0.0",
+                    "input": "binary_hsd",
+                    "model": "anomaly_detector",
+                    "output": "stred_bin",
+                    "section": "output"
+                }
+            ],
+            "events": [],
+            "ui": null
+        }
+    ],
+    "deployments": []
+}

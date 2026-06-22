@@ -1,0 +1,233 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v7",
+    "ai_project_name": "get_started_mlc_ai_hvac_monitor",
+    "display_name": "Heating, Ventilation, and Air Conditioning",
+    "description": "Get started project for Heating, Ventilation, and Air Conditioning (HVAC) with the MLC sensor.",
+    "uuid": "adff7b49-1e7d-49d5-a98c-272ad81adb1b",
+    "version": "1.0.0",
+    "inputs": [
+        {
+            "uuid": "02805fae-56b0-4702-97c5-3fa7e12ff251",
+            "input_type": "binary_hsd",
+            "model_ref": "96998480-64af-415c-bd4d-77e7f210663d",
+            "logs": [
+                {
+                    "uuid": "881b221a-57fc-4785-8358-017ec27d6567",
+                    "name": "20221223_16_22_28",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2022-12-23T15:22:28.461Z",
+                    "end_time": "2022-12-23T15:49:26.221Z",
+                    "device_description": {
+                        "model": "STEVAL-STWINKT1B",
+                        "serial_number": "0015002F374E50132030364B",
+                        "alias": "STWIN_001",
+                        "fw_name": "FP-SNS-DATALOG1_Datalog1",
+                        "fw_version": "1.1.0"
+                    }
+                },
+                {
+                    "uuid": "71ee8dd6-2c69-4fdf-a189-abd538565739",
+                    "name": "20231002_12_30_34",
+                    "annotated": false,
+                    "description": "",
+                    "start_time": "2023-10-02T12:30:34.000Z",
+                    "end_time": "2023-10-02T12:30:36.246Z",
+                    "device_description": {
+                        "part_number": "STEVAL-STWINBX1",
+                        "serial_number": "004300504841500520363230",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "1.2.0"
+                    }
+                },
+                {
+                    "uuid": "7ac7a1bc-78db-4430-acbc-ae49746fe94a",
+                    "name": "Wed Sept 13 2023 07:26:20",
+                    "annotated": false,
+                    "description": "",
+                    "start_time": "2023-09-13T07:26:21.000Z",
+                    "end_time": "2023-09-13T07:26:32.227Z",
+                    "device_description": {
+                        "part_number": "STEVAL-STWINBX1",
+                        "serial_number": "004300484841500520363230",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "1.2.0"
+                    }
+                },
+                {
+                    "uuid": "6a4c3820-33f4-48a0-8324-79b84b7f3484",
+                    "name": "20231003_15_21_09",
+                    "annotated": false,
+                    "description": "",
+                    "start_time": "2023-10-03T15:21:09.000Z",
+                    "end_time": "2023-10-03T15:21:21.577Z",
+                    "device_description": {
+                        "part_number": "STEVAL-STWINBX1",
+                        "serial_number": "004300504841500520363230",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "1.2.0"
+                    }
+                },
+                {
+                    "uuid": "1048c077-655f-43f3-aed7-160a6cb2364f",
+                    "name": "20231005_12_07_53",
+                    "annotated": false,
+                    "description": "",
+                    "start_time": "2023-10-05T12:07:54.000Z",
+                    "end_time": "2023-10-05T12:10:34.493Z",
+                    "device_description": {
+                        "part_number": "STEVAL-STWINBX1",
+                        "serial_number": "004300504841500520363230",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "1.2.0"
+                    }
+                },
+                {
+                    "uuid": "40cd1e9b-1fe3-4408-bc3f-586e6fb1fbf6",
+                    "name": "20231201_14_15_18",
+                    "annotated": false,
+                    "description": "",
+                    "start_time": "2023-12-01T14:15:18.000Z",
+                    "end_time": "2023-12-01T14:15:21.768Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004300484841500520363230",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "0dcb50ae-361f-4eaf-b2d4-2c686eca3a9b",
+                    "name": "20231201_12_14_41",
+                    "annotated": false,
+                    "description": "",
+                    "start_time": "2023-12-01T12:14:41.000Z",
+                    "end_time": "2023-12-01T12:14:46.028Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004300484841500520363230",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "0b6384ef-0b6c-48e9-9641-4c960065f456",
+                    "name": "20231201_14_25_54",
+                    "annotated": false,
+                    "description": "",
+                    "start_time": "2023-12-01T14:25:55.000Z",
+                    "end_time": "2023-12-01T14:26:07.915Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004300484841500520363230",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                }
+            ],
+            "augmentation": [],
+            "tools": [
+                {
+                    "name": "hsdatalog_to_unico",
+                    "version": "1.1.0",
+                    "input": "binary_hsd",
+                    "model": "classifier",
+                    "output": "steval-stwinkt1b:mlc",
+                    "section": "input",
+                    "parameters": {
+                        "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                        "-f": "TXT",
+                        "-t": "",
+                        "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+                    }
+                }
+            ]
+        }
+    ],
+    "models": [
+        {
+            "uuid": "96998480-64af-415c-bd4d-77e7f210663d",
+            "name": "hvac_monitor",
+            "stage": "modeling",
+            "model_type": "classifier",
+            "training_type": "offline",
+            "retraining": false,
+            "model_metadata": {
+                "classes": [
+                    "off",
+                    "quiet",
+                    "slow",
+                    "medium",
+                    "fast"
+                ]
+            },
+            "experiments": [
+                {
+                    "uuid": "7dd20475-f9a2-4cff-9f98-edff759d7833",
+                    "name": "experiment_1",
+                    "description": "Experiment 1",
+                    "model_dev_template": null,
+                    "model_dev_file": null
+                }
+            ],
+            "tools": []
+        }
+    ],
+    "outputs": [
+        {
+            "uuid": "2d5806e9-5ab1-428a-8a7c-6066c46d67b2",
+            "output_type": "steval-stwinkt1b:mlc",
+            "model_ref": "96998480-64af-415c-bd4d-77e7f210663d",
+            "tests": [
+                {
+                    "uuid": "a34cea35-893c-4434-a6ad-20a95649c07c",
+                    "name": "Test 1",
+                    "experiment_ref": "7dd20475-f9a2-4cff-9f98-edff759d7833",
+                    "model_file": null,
+                    "parameters": null,
+                    "reports": [
+                        "MLC_report.json"
+                    ],
+                    "outputs": [
+                        "MLC_configuration.ucf"
+                    ]
+                },
+                {
+                    "uuid": "f194593a-97dc-4623-8144-ca23285a3a2a",
+                    "name": "Test 2",
+                    "experiment_ref": "7dd20475-f9a2-4cff-9f98-edff759d7833",
+                    "model_file": null,
+                    "parameters": null,
+                    "reports": [
+                        "MLC_report.json"
+                    ],
+                    "outputs": [
+                        "MLC_configuration.ucf"
+                    ]
+                }
+            ],
+            "best_test": "f194593a-97dc-4623-8144-ca23285a3a2a",
+            "tools": [
+                {
+                    "name": "mlctools",
+                    "version": "1.0.0",
+                    "input": "binary_hsd",
+                    "model": "classifier",
+                    "output": "steval-stwinkt1b:mlc",
+                    "section": "output"
+                }
+            ],
+            "events": [],
+            "ui": null
+        }
+    ],
+    "deployments": []
+}

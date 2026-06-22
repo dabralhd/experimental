@@ -1,0 +1,268 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v10",
+    "ai_project_name": "get_started_asset_tracking_mlc",
+    "display_name": "Asset Tracking",
+    "description": "Get started project for asset tracking scenario on the MLC sensor.",
+    "uuid": "uuid_to_replace_project",
+    "version": "1.0.0",
+    "creation_time": null,
+    "last_update_time": null,
+    "models": [
+        {
+            "uuid": "uuid_to_replace_model1",
+            "name": "asset_tracking",
+            "description": "Model to recognize position and orientation of a tracked item, created with an Auto-ML based approach.",
+            "creation_time": null,
+            "last_update_time": null,
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary_upright",
+                    "stationary_not_upright",
+                    "motion",
+                    "shaken"
+                ]
+            },
+            "dataset": {
+                "dataset_id": "01hv7e9pqyr726z7s13hskrz3d",
+                "name": "asset_tracking"
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "data-sufficiency": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-ds-job",
+                            "version": null,
+                            "template_id": null
+                        }
+                    ]
+                },
+                "configuration": null,
+                "artifacts": [
+                    "activities_training.json",
+                    "counts.json",
+                    "feat_names.json",
+                    "hnne.pkl",
+                    "kmeans_cluster_labels.json",
+                    "my_kmeans.json",
+                    "my_tree.onnx",
+                    "my_tree.txt",
+                    "shap.pkl",
+                    "window_size_odr_channels.json"
+                ],
+                "reports": []
+            },
+            "training": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": null
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "reports": [
+                    "report.json"
+                ]
+            },
+            "codegen": null,
+            "building": null
+        },
+        {
+            "uuid": "uuid_to_replace_model2",
+            "name": "fan_coil",
+            "description": "Model to classify the behaviour of a fan coil, created with an Auto-ML based approach.",
+            "creation_time": null,
+            "last_update_time": null,
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "slow",
+                    "fast"
+                ]
+            },
+            "dataset": {
+                "dataset_id": "01hv7e9pqyr726z7s13hskrz3d",
+                "name": "fan_coil"
+            },
+            "target": {
+                "type": "ispu",
+                "component": "ism330is",
+                "device": "steval-mkboxpro"
+            },
+            "data-sufficiency": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-ds-job",
+                            "version": null,
+                            "template_id": null
+                        }
+                    ]
+                },
+                "configuration": null,
+                "artifacts": [
+                    "activities_training.json",
+                    "counts.json",
+                    "feat_names.json",
+                    "hnne.pkl",
+                    "kmeans_cluster_labels.json",
+                    "my_kmeans.json",
+                    "my_tree.onnx",
+                    "my_tree.txt",
+                    "shap.pkl",
+                    "window_size_odr_channels.json"
+                ],
+                "reports": []
+            },
+            "training": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": null
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "artifacts": [
+                    "ism330is_ispu.ucf",
+                    "ism330is_ispu.h"
+                ],
+                "reports": [
+                    "report.json"
+                ]
+            },
+            "codegen": null,
+            "building": null
+        }
+    ],
+    "applications": [
+        {
+            "uuid": "uuid_to_replace_application1",
+            "type": "gateway",
+            "device_template_uri": "<reference-to-s3-bucket>/gateway/dtmi/appconfig/gateway/mlc_gateway-4.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:mlc_gateway;4",
+            "device_manifest_uri": "<reference-to-s3-bucket>/gateway/dtmi/appconfig/gateway/mlc_gateway-4.manifest.arm64v8.json",
+            "image_uri": "<reference-to-s3-bucket>/gateway/images/raspberrypi/edge_gateway_20240214163242_v1.1.0-rc3.img.gz",
+            "module_id": "edgeMLC"
+        }
+        {
+            "uuid": "uuid_to_replace_application2",
+            "type": "datalogging",
+            "device_template_uri": "https://raw.githubusercontent.com/STMicroelectronics/appconfig/release/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-5.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;5",
+            "binary_uri": "https://raw.githubusercontent.com/STMicroelectronics/appconfig/release/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_2_2_0.bin",
+            "binary_id": 281,
+            "protocol": 2
+        },
+        {
+            "uuid": "uuid_to_replace_application3",
+            "type": "inference",
+            "device_template_uri": "https://raw.githubusercontent.com/STMicroelectronics/appconfig/release/dtmi/appconfig/steval_mkboxpro/ai_inertial_mlc-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:ai_inertial_mlc;1",
+            "binary_uri": "https://raw.githubusercontent.com/STMicroelectronics/appconfig/release/usb/bin/steval-mkboxpro/ai_inertial_steval_mkboxpro_mlc_release_1_0_0.bin",
+            "binary_id": -1,
+            "protocol": 1
+        },
+    ],
+    "deployments": [
+		{
+            "uuid": "uuid_to_replace_deployment1",
+            "display_name": "Asset Tracking end-to-end system.",
+            "description": "End-to-end system deployment for Asset Tracking scenario.",
+            "last_update_time": null,
+            "last_deploy_result": null,
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": null
+            },
+            "gateway": [
+                {
+                    "device_id": "gateway_0",
+                    "gateway_id": null,
+                    "description": "Gateway device at position 0.",
+                    "application": "uuid_to_replace_application1",
+                    "wifi_mode": "off"
+                }
+            ],
+            "leaf": [
+                {
+                    "device_id": "leaf_0",
+                    "gateway_id": "gateway_0",
+                    "description": "Leaf device at position 0.",
+                    "datalogging": {
+                        "application": "uuid_to_replace_application2",
+                        "firmware_update": false
+                    },
+                    "inference": {
+                        "application": "uuid_to_replace_application3",
+                        "firmware_update": false,
+                        "models": [
+                            {
+                                "model_name_reference": "asset_tracking",
+                                "artifact_type": "ucf",
+                                "component_name": "lsm6dsv16x_acc"
+                            },
+                        ]
+                    }
+                },
+                {
+                    "device_id": "leaf_1",
+                    "gateway_id": "gateway_0",
+                    "description": "Leaf device at position 1.",
+                    "datalogging": {
+                        "application": "uuid_to_replace_application2",
+                        "firmware_update": false
+                    },
+                    "inference": {
+                        "application": "uuid_to_replace_inference3",
+                        "firmware_update": false,
+                        "models": [
+                            {
+                                "model_name_reference": "asset_tracking",
+                                "artifact_type": "ucf",
+                                "component_name": "lsm6dsv16x_acc_1"
+                            },
+                            {
+                                "model_name_reference": "asset_tracking",
+                                "artifact_type": "ucf",
+                                "component_name": "lsm6dsv16x_acc_2"
+                            },
+                            {
+                                "model_name_reference": "fan_coil",
+                                "artifact": "ucf",
+                                "component_name": "ism330is_ispu"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

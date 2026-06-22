@@ -1,0 +1,45 @@
+{
+    "accuracy": "97.25%",
+    "accuracy_metaclassifiers": "97.25%",
+    "confusion_matrix": {
+        "ROUGH": {
+            "ROUGH": "33",
+            "SMOOTH": "2",
+            "STATIONARY": "2"
+        },
+        "SMOOTH": {
+            "ROUGH": "1",
+            "SMOOTH": "95",
+            "STATIONARY": "0"
+        },
+        "STATIONARY": {
+            "ROUGH": "0",
+            "SMOOTH": "0",
+            "STATIONARY": "49"
+        }
+    },
+    "confusion_matrix_metaclassifiers": {
+        "ROUGH": {
+            "ROUGH": "33",
+            "SMOOTH": "2",
+            "STATIONARY": "2"
+        },
+        "SMOOTH": {
+            "ROUGH": "1",
+            "SMOOTH": "95",
+            "STATIONARY": "0"
+        },
+        "STATIONARY": {
+            "ROUGH": "0",
+            "SMOOTH": "0",
+            "STATIONARY": "49"
+        }
+    },
+    "correctly_classified_instances": "177",
+    "correctly_classified_instances_metaclassifiers": "177",
+    "incorrectly_classified_instances": "5",
+    "incorrectly_classified_instances_metaclassifiers": "5",
+    "kappa_statistic": "95.46%",
+    "total_instances": "182",
+    "total_instances_metaclassifiers": "182"
+}
