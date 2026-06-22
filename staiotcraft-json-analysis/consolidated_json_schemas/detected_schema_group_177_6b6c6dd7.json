@@ -1,0 +1,397 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": "string"
+    },
+    "ai_project_name": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "input_type": {
+            "type": "string"
+          },
+          "model_ref": {
+            "type": "string"
+          },
+          "logs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "uuid": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "annotated": {
+                  "type": "boolean"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "start_time": {
+                  "type": "string"
+                },
+                "end_time": {
+                  "type": "string"
+                },
+                "device_description": {
+                  "type": "object",
+                  "properties": {
+                    "model": {
+                      "type": "string"
+                    },
+                    "serial_number": {
+                      "type": "string"
+                    },
+                    "alias": {
+                      "type": "string"
+                    },
+                    "fw_name": {
+                      "type": "string"
+                    },
+                    "fw_version": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "alias",
+                    "fw_name",
+                    "fw_version",
+                    "model",
+                    "serial_number"
+                  ]
+                }
+              },
+              "required": [
+                "annotated",
+                "description",
+                "device_description",
+                "end_time",
+                "name",
+                "start_time",
+                "uuid"
+              ]
+            }
+          },
+          "augmentation": {
+            "type": "array"
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                },
+                "input": {
+                  "type": "string"
+                },
+                "model": {
+                  "type": "string"
+                },
+                "output": {
+                  "type": "string"
+                },
+                "section": {
+                  "type": "string"
+                },
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "-o": {
+                      "type": "string"
+                    },
+                    "-f": {
+                      "type": "string"
+                    },
+                    "-t": {
+                      "type": "string"
+                    },
+                    "-s": {
+                      "type": "string"
+                    },
+                    "": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "",
+                    "-f",
+                    "-o",
+                    "-s",
+                    "-t"
+                  ]
+                }
+              },
+              "required": [
+                "input",
+                "model",
+                "name",
+                "output",
+                "parameters",
+                "section",
+                "version"
+              ]
+            }
+          }
+        },
+        "required": [
+          "augmentation",
+          "input_type",
+          "logs",
+          "model_ref",
+          "tools",
+          "uuid"
+        ]
+      }
+    },
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "stage": {
+            "type": "string"
+          },
+          "model_type": {
+            "type": "string"
+          },
+          "training_type": {
+            "type": "string"
+          },
+          "retraining": {
+            "type": "boolean"
+          },
+          "model_metadata": {
+            "type": "object",
+            "properties": {
+              "classes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "classes"
+            ]
+          },
+          "experiments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "uuid": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "model_dev_template": {
+                  "type": "null"
+                },
+                "model_dev_file": {
+                  "type": "null"
+                }
+              },
+              "required": [
+                "description",
+                "model_dev_file",
+                "model_dev_template",
+                "name",
+                "uuid"
+              ]
+            }
+          },
+          "tools": {
+            "type": "array"
+          }
+        },
+        "required": [
+          "experiments",
+          "model_metadata",
+          "model_type",
+          "name",
+          "retraining",
+          "stage",
+          "tools",
+          "training_type",
+          "uuid"
+        ]
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "output_type": {
+            "type": "string"
+          },
+          "model_ref": {
+            "type": "string"
+          },
+          "tests": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "uuid": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "experiment_ref": {
+                  "type": "string"
+                },
+                "model_file": {
+                  "type": "null"
+                },
+                "parameters": {
+                  "type": "null"
+                },
+                "reports": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "outputs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "experiment_ref",
+                "model_file",
+                "name",
+                "outputs",
+                "parameters",
+                "reports",
+                "uuid"
+              ]
+            }
+          },
+          "best_test": {
+            "type": "null"
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                },
+                "input": {
+                  "type": "string"
+                },
+                "model": {
+                  "type": "string"
+                },
+                "output": {
+                  "type": "string"
+                },
+                "section": {
+                  "type": "string"
+                },
+                "parameters": {
+                  "type": "null"
+                }
+              },
+              "required": [
+                "input",
+                "model",
+                "name",
+                "output",
+                "parameters",
+                "section",
+                "version"
+              ]
+            }
+          },
+          "events": {
+            "type": "array"
+          },
+          "ui": {
+            "type": "null"
+          }
+        },
+        "required": [
+          "best_test",
+          "events",
+          "model_ref",
+          "output_type",
+          "tests",
+          "tools",
+          "ui",
+          "uuid"
+        ]
+      }
+    },
+    "deployments": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "$schema",
+    "ai_project_name",
+    "deployments",
+    "description",
+    "display_name",
+    "inputs",
+    "models",
+    "outputs",
+    "schema_version",
+    "uuid",
+    "version"
+  ]
+}
