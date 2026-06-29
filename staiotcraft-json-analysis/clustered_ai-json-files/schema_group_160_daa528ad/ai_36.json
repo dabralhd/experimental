@@ -1,0 +1,144 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v7",
+    "ai_project_name": "get_started_mlc_ai_hvac_monitor_2",
+    "display_name": "Heating, Ventilation, and Air Conditioning",
+    "description": "Get started project for Heating, Ventilation, and Air Conditioning (HVAC) with the MLC sensor.",
+    "uuid": "c7171ce9-6131-4207-a92f-e3032e8dcf8b",
+    "version": "1.0.0",
+    "inputs": [
+        {
+            "uuid": "bd89dddc-76b5-4845-8e52-31c5172f8458",
+            "input_type": "binary_hsd",
+            "model_ref": "5797aa32-f9a1-4209-958e-d3bd8aaeaaac",
+            "logs": [
+                {
+                    "uuid": "5b6ced11-603d-4993-840a-10c2eb5c8906",
+                    "name": "20221223_16_22_28",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2022-12-23T15:22:28.461Z",
+                    "end_time": "2022-12-23T15:49:26.221Z",
+                    "device_description": {
+                        "model": "STEVAL-STWINKT1B",
+                        "serial_number": "0015002F374E50132030364B",
+                        "alias": "STWIN_001",
+                        "fw_name": "FP-SNS-DATALOG1_Datalog1",
+                        "fw_version": "1.1.0"
+                    }
+                },
+                {
+                    "uuid": "7eba53c5-2bbf-4442-8a6f-61592496ccc2",
+                    "name": "Fri Sept 15 2023 15:51:29",
+                    "annotated": false,
+                    "description": "",
+                    "start_time": "2023-09-15T15:51:30.000Z",
+                    "end_time": "2023-09-15T15:51:33.899Z",
+                    "device_description": {
+                        "part_number": "STEVAL-STWINBX1",
+                        "serial_number": "004300484841500520363230",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "1.2.0"
+                    }
+                }
+            ],
+            "augmentation": [],
+            "tools": [
+                {
+                    "name": "hsdatalog_to_unico",
+                    "version": "1.1.0",
+                    "input": "binary_hsd",
+                    "model": "classifier",
+                    "output": "steval-stwinkt1b:mlc",
+                    "section": "input",
+                    "parameters": {
+                        "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                        "-f": "TXT",
+                        "-t": "",
+                        "-s": "all",
+                        "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+                    }
+                }
+            ]
+        }
+    ],
+    "models": [
+        {
+            "uuid": "5797aa32-f9a1-4209-958e-d3bd8aaeaaac",
+            "name": "hvac_monitor",
+            "stage": "modeling",
+            "model_type": "classifier",
+            "training_type": "offline",
+            "retraining": false,
+            "model_metadata": {
+                "classes": [
+                    "off",
+                    "quiet",
+                    "slow",
+                    "medium",
+                    "fast"
+                ]
+            },
+            "experiments": [
+                {
+                    "uuid": "9af6e2f6-4e8d-43ef-82f6-e4e9d9ec406f",
+                    "name": "experiment_1",
+                    "description": "Experiment 1",
+                    "model_dev_template": null,
+                    "model_dev_file": null
+                }
+            ],
+            "tools": []
+        }
+    ],
+    "outputs": [
+        {
+            "uuid": "ce154e84-f46b-4931-8bf8-da0b369f26cc",
+            "output_type": "steval-stwinkt1b:mlc",
+            "model_ref": "5797aa32-f9a1-4209-958e-d3bd8aaeaaac",
+            "tests": [
+                {
+                    "uuid": "44c0940d-9edd-40c4-a94d-579fe43a3c6e",
+                    "name": "Test 1",
+                    "experiment_ref": "9af6e2f6-4e8d-43ef-82f6-e4e9d9ec406f",
+                    "model_file": null,
+                    "parameters": null,
+                    "reports": [
+                        "MLC_report.json"
+                    ],
+                    "outputs": [
+                        "MLC_configuration.ucf"
+                    ]
+                },
+                {
+                    "uuid": "312255ba-f7f4-40d8-9cb3-a57174f3dcf7",
+                    "name": "Test 2",
+                    "experiment_ref": "9af6e2f6-4e8d-43ef-82f6-e4e9d9ec406f",
+                    "model_file": null,
+                    "parameters": null,
+                    "reports": [
+                        "MLC_report.json"
+                    ],
+                    "outputs": [
+                        "MLC_configuration.ucf"
+                    ]
+                }
+            ],
+            "best_test": null,
+            "tools": [
+                {
+                    "name": "mlctools",
+                    "version": "1.0.0",
+                    "input": "binary_hsd",
+                    "model": "classifier",
+                    "output": "steval-stwinkt1b:mlc",
+                    "section": "output"
+                }
+            ],
+            "events": [],
+            "ui": null
+        }
+    ],
+    "deployments": []
+}

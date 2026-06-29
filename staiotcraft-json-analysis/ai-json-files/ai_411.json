@@ -1,0 +1,48 @@
+{
+    "uuid": "94a44813-8404-49ec-8aa5-9e84bb60769b",
+    "ai_project_name": "kettle",
+    "type": null,
+    "display_name": null,
+    "description": "\nMLC for boiling water in kettle\n",
+    "version": "1.0.0",
+    "last_update_time": "2024-10-03 11:45:22.721711",
+    "creation_time": "2024-10-03 11:27:19.650823",
+    "models": [
+        {
+            "uuid": "0d31d495-6186-481e-981f-af6a97d60391",
+            "name": "uno",
+            "dataset": {
+                "name": "kettle_project",
+                "dataset_id": "01j9926zmgp7xenytfnqycxdy5"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "heat_up",
+                    "stationary",
+                    "boil"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2024-10-03 11:45:22.689867",
+            "last_update_time": "2024-10-03 11:45:22.689876",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [],
+                "artifacts": [],
+                "last_update_time": "2024-10-03 11:45:34.672797",
+                "creation_time": "2024-10-03 11:45:34.672794"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

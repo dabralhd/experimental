@@ -1,0 +1,11 @@
+{
+    "uuid": "72b3c9a2-41ed-4a82-b857-735575336b20",
+    "ai_project_name": "YOLO",
+    "display_name": null,
+    "description": ".",
+    "version": "0.0.1",
+    "inputs": [],
+    "models": [],
+    "outputs": [],
+    "deployments": []
+}

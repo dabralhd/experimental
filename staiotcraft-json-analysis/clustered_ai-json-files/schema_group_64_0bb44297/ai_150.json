@@ -1,0 +1,122 @@
+{
+    "uuid": "db21b997-17a2-4e75-88b6-19220400b109",
+    "ai_project_name": "Demo_Project",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "schema_version": null,
+    "last_update_time": "2026-05-26 13:51:37.717570",
+    "creation_time": "2026-05-19 13:49:06.202742",
+    "project_owner_uuid": "29836f82-9246-4b16-9f1b-7481e067c8d3",
+    "models": [
+        {
+            "uuid": "98fd52b8-0a3f-4ca7-acf1-44e90dabb77b",
+            "name": "joystick_monitoring",
+            "dataset": {
+                "name": "joystick_monitoring",
+                "dataset_id": "01ks07wa5v40hgfr05vdsgzwc6"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "none",
+                    "forward",
+                    "left",
+                    "right"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-05-19 13:49:07.642413",
+            "last_update_time": "2026-05-19 13:49:07.642424",
+            "model_owner_uuid": "29836f82-9246-4b16-9f1b-7481e067c8d3",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [],
+                "artifacts": [],
+                "last_update_time": "2026-05-19 13:49:22.313473",
+                "creation_time": "2026-05-19 13:49:22.313470"
+            }
+        },
+        {
+            "uuid": "359dd0fd-80e2-4c78-8910-6bdc32342e4c",
+            "name": "human_activity_recognition",
+            "dataset": {
+                "name": "human_activity_recognition",
+                "dataset_id": "01ks0bxhxw1ykkcq7gfmnh2c9w"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "running",
+                    "walking",
+                    "standing",
+                    "sitting"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-05-19 14:59:06.271231",
+            "last_update_time": "2026-05-19 14:59:06.271240",
+            "model_owner_uuid": "29836f82-9246-4b16-9f1b-7481e067c8d3"
+        },
+        {
+            "uuid": "2adfac57-bb9a-4c96-a789-ec7f35e462e6",
+            "name": "model1",
+            "dataset": {
+                "name": "dataset1",
+                "dataset_id": "01kshv13qrchky3dckdym6qtym"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary",
+                    "motion"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "ism6hg256x",
+                "device": "nucleo-u575zi-q"
+            },
+            "creation_time": "2026-05-26 13:51:37.691946",
+            "last_update_time": "2026-05-26 13:51:37.691955",
+            "model_owner_uuid": "29836f82-9246-4b16-9f1b-7481e067c8d3",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "ism6hg256x_mlc.json",
+                    "ism6hg256x_mlc.h"
+                ],
+                "last_update_time": "2026-05-26 13:52:11.474937",
+                "creation_time": "2026-05-26 13:52:11.474933"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

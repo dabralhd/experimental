@@ -1,0 +1,39 @@
+{
+    "uuid": "f09221cf-1f1f-49f3-a17c-fc8db66234ce",
+    "ai_project_name": "TestJS_Script",
+    "type": null,
+    "display_name": null,
+    "description": "<script>alert('Hi from Burlington');</script>",
+    "version": null,
+    "schema_version": null,
+    "last_update_time": "2026-05-07 15:09:04.165366",
+    "creation_time": "2026-05-07 15:09:02.659601",
+    "project_owner_uuid": "d2a55444-90f1-7018-9a49-b90c3a197d0b",
+    "models": [
+        {
+            "uuid": "e8b087f1-fb55-4ec0-8dff-964f53e0c022",
+            "name": "dontmatter",
+            "dataset": {
+                "name": "SomeDataSet",
+                "dataset_id": "01kr1fk6jpxdm8f3thfa4m9h1b"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "none",
+                    "none1"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-05-07 15:09:04.131809",
+            "last_update_time": "2026-05-07 15:09:04.131822",
+            "model_owner_uuid": "d2a55444-90f1-7018-9a49-b90c3a197d0b"
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

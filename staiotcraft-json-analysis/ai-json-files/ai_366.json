@@ -1,0 +1,104 @@
+{
+   "uuid": "2d88d991-4bc4-4cca-9c22-b7f9d5d29bc0",
+   "ai_project_name": "shake_test",
+   "display_name": null,
+   "description": "",
+   "version": "0.0.1",
+   "inputs": [
+      {
+         "uuid": "8ce44172-0b7b-493b-9f80-50a443ba1fe4",
+         "model_ref": "0d67b4ef-ebb0-4f15-a17f-6e4099e6dcfe",
+         "input_type": "binary_hsd",
+         "augmentation": [],
+         "logs": [
+            {
+               "uuid": "1350b390-392a-4330-8e06-03e31158f283",
+               "name": "20230620_12_23_54",
+               "annotated": true,
+               "description": "20230620_12_23_54",
+               "start_time": "2000-01-01T00:04:03.000Z",
+               "end_time": "2000-01-01T00:06:03.459Z",
+               "device_description": {
+                  "part_number": null,
+                  "serial_number": "00560033353650012039374E",
+                  "alias": "STWIN_BOX_001",
+                  "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                  "fw_version": "1.0.1"
+               }
+            }
+         ],
+         "tools": [
+            {
+               "name": "hsdatalog_to_unico",
+               "version": "1.1.0",
+               "parameters": {
+                  "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                  "-f": "TXT",
+                  "-t": "",
+                  "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+               }
+            }
+         ]
+      }
+   ],
+   "models": [
+      {
+         "uuid": "0d67b4ef-ebb0-4f15-a17f-6e4099e6dcfe",
+         "name": "model1",
+         "model_type": "classifier",
+         "training_type": "offline",
+         "stage": "modeling",
+         "model_metadata": {
+            "classes": [
+               "Stationary",
+               "UpDown",
+               "LeftRight",
+               "Twist"
+            ]
+         },
+         "experiments": [
+            {
+               "uuid": "9a1876cd-63e9-4081-b90a-3f4b24680fc9",
+               "name": "Experiment1",
+               "description": "",
+               "model_dev_file": null
+            }
+         ]
+      }
+   ],
+   "outputs": [
+      {
+         "uuid": "eb286691-7dcd-4570-a534-d141add0807c",
+         "model_ref": "0d67b4ef-ebb0-4f15-a17f-6e4099e6dcfe",
+         "output_type": "steval-stwinbx1:mlc",
+         "tests": [
+            {
+               "uuid": "d12c1f85-3e91-4c51-8cd8-35e855cf99a7",
+               "name": "Test1",
+               "experiment_ref": "9a1876cd-63e9-4081-b90a-3f4b24680fc9",
+               "model_file": null,
+               "parameters": [],
+               "reports": [
+                  "MLC_report.json"
+               ],
+               "outputs": [
+                  "MLC_configuration.ucf",
+                  "MLC_configuration.h"
+               ]
+            }
+         ],
+         "tools": [
+            {
+               "name": "mlctools",
+               "version": "1.0.0",
+               "parameters": null
+            }
+         ]
+      }
+   ],
+   "deployments": [],
+   "dbstatus": {
+      "status": "unknown",
+      "message": null
+   }
+}

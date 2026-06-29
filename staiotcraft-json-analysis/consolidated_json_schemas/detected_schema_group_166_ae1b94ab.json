@@ -1,0 +1,278 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "ai_project_name": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "input_type": {
+            "type": "string"
+          },
+          "model_ref": {
+            "type": "string"
+          },
+          "logs": {
+            "type": "array"
+          },
+          "augmentation": {
+            "type": "array"
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                },
+                "input": {
+                  "type": "string"
+                },
+                "model": {
+                  "type": "string"
+                },
+                "output": {
+                  "type": "string"
+                },
+                "section": {
+                  "type": "string"
+                },
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "-o": {
+                      "type": "string"
+                    },
+                    "-f": {
+                      "type": "string"
+                    },
+                    "-s": {
+                      "type": "string"
+                    },
+                    "": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "",
+                    "-f",
+                    "-o",
+                    "-s"
+                  ]
+                }
+              },
+              "required": [
+                "input",
+                "model",
+                "name",
+                "output",
+                "parameters",
+                "section",
+                "version"
+              ]
+            }
+          }
+        },
+        "required": [
+          "augmentation",
+          "input_type",
+          "logs",
+          "model_ref",
+          "tools",
+          "uuid"
+        ]
+      }
+    },
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "stage": {
+            "type": "string"
+          },
+          "model_type": {
+            "type": "string"
+          },
+          "training_type": {
+            "type": "string"
+          },
+          "retraining": {
+            "type": "boolean"
+          },
+          "model_metadata": {
+            "type": "object",
+            "properties": {
+              "classes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "classes"
+            ]
+          },
+          "experiments": {
+            "type": "array"
+          },
+          "tools": {
+            "type": "array"
+          }
+        },
+        "required": [
+          "experiments",
+          "model_metadata",
+          "model_type",
+          "name",
+          "retraining",
+          "stage",
+          "tools",
+          "training_type",
+          "uuid"
+        ]
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "output_type": {
+            "type": "string"
+          },
+          "model_ref": {
+            "type": "string"
+          },
+          "tests": {
+            "type": "array"
+          },
+          "best_test": {
+            "type": "null"
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                },
+                "input": {
+                  "type": "string"
+                },
+                "model": {
+                  "type": "string"
+                },
+                "output": {
+                  "type": "string"
+                },
+                "section": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "input",
+                "model",
+                "name",
+                "output",
+                "section",
+                "version"
+              ]
+            }
+          },
+          "events": {
+            "type": "array"
+          },
+          "ui": {
+            "type": "object",
+            "properties": {
+              "icons": {
+                "type": "array"
+              }
+            },
+            "required": [
+              "icons"
+            ]
+          }
+        },
+        "required": [
+          "best_test",
+          "events",
+          "model_ref",
+          "output_type",
+          "tests",
+          "tools",
+          "ui",
+          "uuid"
+        ]
+      }
+    },
+    "deployments": {
+      "type": "array"
+    },
+    "dbstatus": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "message",
+        "status"
+      ]
+    }
+  },
+  "required": [
+    "$schema",
+    "ai_project_name",
+    "dbstatus",
+    "deployments",
+    "description",
+    "inputs",
+    "models",
+    "outputs",
+    "uuid",
+    "version"
+  ]
+}

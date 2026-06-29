@@ -1,0 +1,35 @@
+{
+    "uuid": "8607c197-ffde-40ff-893e-cfb0d504fa91",
+    "ai_project_name": "tew",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "last_update_time": "2026-01-20 11:27:17.520558",
+    "creation_time": "2026-01-20 11:27:16.287145",
+    "project_owner_uuid": "f8fc1cd4-0b2c-43b5-8a90-f3b8d1a0b1a2",
+    "models": [
+        {
+            "uuid": "4041ddf8-959b-4f1e-8482-1249b75f07c1",
+            "name": "te",
+            "dataset": {
+                "name": "tes",
+                "dataset_id": "01kfdjhbdnt7s27f1f9m04y5zc"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": []
+            },
+            "target": {
+                "type": "mlc",
+                "component": "ism330dhcx",
+                "device": "steval-stwinkt1b"
+            },
+            "creation_time": "2026-01-20 11:27:17.492779",
+            "last_update_time": "2026-01-20 11:27:17.492787",
+            "model_owner_uuid": "f8fc1cd4-0b2c-43b5-8a90-f3b8d1a0b1a2"
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

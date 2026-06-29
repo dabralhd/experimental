@@ -1,0 +1,61 @@
+{
+    "uuid": "f61ec68c-e6bb-47c9-9253-a7c2b19413bd",
+    "ai_project_name": "poc-p",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "schema_version": null,
+    "last_update_time": "2026-06-05 09:38:13.088033",
+    "creation_time": "2026-06-05 09:38:10.723015",
+    "project_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508",
+    "models": [
+        {
+            "uuid": "23c5dda8-46c0-481a-a376-0271b0a49dfd",
+            "name": "poc-m",
+            "dataset": {
+                "name": "lsm6dsv16x_static_walking",
+                "dataset_id": "01ktbj2hfa7d2rna7d1yqfk9tc"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "static",
+                    "walking"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-06-05 09:38:13.063403",
+            "last_update_time": "2026-06-05 09:38:13.063413",
+            "model_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.json",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2026-06-05 09:39:55.776570",
+                "creation_time": "2026-06-05 09:39:55.776566"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

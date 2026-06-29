@@ -1,0 +1,97 @@
+{
+    "uuid": "c975dd72-37dc-4efa-b96b-e73274fe694d",
+    "ai_project_name": "test_project_33",
+    "type": null,
+    "display_name": null,
+    "description": "Project example description",
+    "version": "1.0.0",
+    "last_update_time": "2025-12-15 08:18:45.597121",
+    "creation_time": "2025-12-15 08:18:45.597121",
+    "project_owner_uuid": "66f916f1-2386-4a92-80f0-13fb55329c79",
+    "models": [],
+    "deployments": [
+        {
+            "uuid": "777389b5-57b4-4d93-ac37-497a53aa246b",
+            "description": "End-to-end system deployment for Tennis Activity Recognition use case on the SensorTile.box PRO using the LSM6DSV80X sensor.",
+            "display_name": "Tennis Activity Recognition",
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": null
+            },
+            "last_update_time": "2025-12-15 08:18:49.629693",
+            "last_deploy_result": "success",
+            "leaf": [
+                {
+                    "gateway_id": "gateway_0",
+                    "description": "Leaf device at position 0.",
+                    "display_name": "leaf_0",
+                    "device_id": "leaf_0",
+                    "datalogging": {
+                        "application": "2b05ee28-ec39-40ab-88b0-c0ad64ed7357",
+                        "firmware_update": false,
+                        "supported_applications": []
+                    },
+                    "inference": {
+                        "application": "9d62c861-e66d-45a0-ae6b-0eab94cc8b4b",
+                        "firmware_update": false,
+                        "supported_applications": [],
+                        "models": [
+                            {
+                                "artifact_type": "json",
+                                "component_name": "lsm6dsv16x_mlc",
+                                "model_name_reference": "tennis_activity_recognition_80x"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "gateway": [
+                {
+                    "application": "be095058-9e05-471e-9970-20f0c9c4e963",
+                    "description": "Gateway device at position 0.",
+                    "display_name": "gateway_0",
+                    "device_id": "gateway_0",
+                    "wifi_mode": "off"
+                }
+            ]
+        }
+    ],
+    "applications": [
+        {
+            "uuid": "be095058-9e05-471e-9970-20f0c9c4e963",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_Gateway;8",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.1.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/staiotcraft_rpi_gateway_1_5_0.img.gz",
+            "module_id": "edgeMLC"
+        },
+        {
+            "uuid": "2b05ee28-ec39-40ab-88b0-c0ad64ed7357",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-7.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;7",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_3_1_0.bin",
+            "binary_id": 381,
+            "protocol": 2
+        },
+        {
+            "uuid": "9d62c861-e66d-45a0-ae6b-0eab94cc8b4b",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_STAIOTCFT_AI_Inertial-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_STAIOTCFT_AI_Inertial;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/FP-SNS-STAIOTCFT_AI_Inertial_AssetTrackingOnMLC_1_0_0.bin",
+            "binary_id": 418,
+            "protocol": 1
+        },
+        {
+            "uuid": "17349799-1098-4aa5-a96a-46d1f294fb22",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/AI_SSM-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:AI_SSM;1",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/AI-SSM_1_0_0.bin",
+            "binary_id": 438,
+            "protocol": 0
+        }
+    ]
+}

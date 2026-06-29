@@ -1,0 +1,75 @@
+{
+    "uuid": "199c79a9-d744-4231-a684-64d3f9fcf14b",
+    "ai_project_name": "stm32ai-modelzoo",
+    "display_name": null,
+    "description": "people detection",
+    "version": "0.0.1",
+    "inputs": [
+        {
+            "uuid": "849fa242-e51b-44e7-b29b-51732f7a0a98",
+            "model_ref": "1a171a92-6828-4c75-a991-eb9b595b3f77",
+            "input_type": "image",
+            "augmentation": [],
+            "logs": [],
+            "tools": [
+                {
+                    "name": "split_images",
+                    "version": "1.0.0",
+                    "parameters": {
+                        "-i": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}",
+                        "-o": "{models_folder}/{model_folder}/{dataset_folder}",
+                        "-r": ""
+                    }
+                }
+            ]
+        }
+    ],
+    "models": [
+        {
+            "uuid": "1a171a92-6828-4c75-a991-eb9b595b3f77",
+            "name": "test",
+            "model_type": "classifier",
+            "training_type": "offline",
+            "stage": "definition",
+            "model_metadata": {
+                "classes": [
+                    "people"
+                ]
+            },
+            "experiments": []
+        }
+    ],
+    "outputs": [
+        {
+            "uuid": "5462fdc2-6dfc-4932-94e0-ced24a0a5ae0",
+            "model_ref": "1a171a92-6828-4c75-a991-eb9b595b3f77",
+            "output_type": "openmv-cam-h7-plus:mcu:openmv-cubeai:5.2.0",
+            "tests": [],
+            "tools": [
+                {
+                    "name": "stm32ai",
+                    "version": "0.0.5",
+                    "parameters": {
+                        "path": "generate",
+                        "query": {
+                            "address": "",
+                            "allocate_inputs": true,
+                            "allocate_outputs": true,
+                            "binary": false,
+                            "copy_weights_at": "",
+                            "generate_fota": false,
+                            "name": "network",
+                            "split_weigths": false,
+                            "generate_full_binary": true,
+                            "return_full_binary_only": true
+                        },
+                        "headers": {
+                            "content-type": "multipart/form-data"
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "deployments": []
+}

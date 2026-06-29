@@ -1,0 +1,392 @@
+{
+    "uuid": "2a2e234f-5583-4d65-81af-6f7b0de94ab3",
+    "ai_project_name": "coco-MLC",
+    "display_name": null,
+    "description": "",
+    "version": "0.0.1",
+    "inputs": [
+        {
+            "uuid": "cc0666ea-abce-45b0-ada8-bb0e34647e86",
+            "model_ref": "8a5ecdc6-d64a-4a74-a369-0e8385bdaf71",
+            "input_type": "binary_hsd",
+            "augmentation": [],
+            "logs": [
+                {
+                    "uuid": "05bcb867-3681-4753-a986-009707dc39d7",
+                    "name": "20231204_07_33_53",
+                    "annotated": true,
+                    "description": "20231204_07_33_53",
+                    "start_time": "2000-01-01T01:11:04.000Z",
+                    "end_time": "2000-01-01T01:14:22.624Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "000D00205047501820303034",
+                        "alias": "STWIN_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.0"
+                    }
+                },
+                {
+                    "uuid": "1c921f11-086a-477b-88c5-76f83f8abab5",
+                    "name": "20231205_06_51_13",
+                    "annotated": true,
+                    "description": "20231205_06_51_13",
+                    "start_time": "2000-01-01T00:00:50.000Z",
+                    "end_time": "2000-01-01T00:04:21.507Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "000D00205047501820303034",
+                        "alias": "STWIN_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.0"
+                    }
+                },
+                {
+                    "uuid": "33ae6f2f-1da9-4f35-a289-127c0a0f52b8",
+                    "name": "20231206_06_33_51",
+                    "annotated": true,
+                    "description": "20231206_06_33_51",
+                    "start_time": "2000-01-01T00:12:03.000Z",
+                    "end_time": "2000-01-01T00:16:02.522Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "0031002D374E50132030364B",
+                        "alias": "STWIN_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.0"
+                    }
+                }
+            ],
+            "tools": [
+                {
+                    "name": "hsdatalog_to_unico",
+                    "version": "1.1.0",
+                    "parameters": {
+                        "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                        "-f": "TXT",
+                        "-t": "",
+                        "-s": "all",
+                        "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+                    }
+                }
+            ]
+        },
+        {
+            "uuid": "53931519-301d-4cf8-9eac-816aa3942a23",
+            "model_ref": "d65a9c7b-2c89-430f-92aa-ecd104d65574",
+            "input_type": "binary_hsd",
+            "augmentation": [],
+            "logs": [
+                {
+                    "uuid": "1ef173da-14ba-46ec-9324-b172263fbd27",
+                    "name": "20231204_08_36_40",
+                    "annotated": true,
+                    "description": "20231204_08_36_40",
+                    "start_time": "2000-01-01T00:08:13.000Z",
+                    "end_time": "2000-01-01T00:10:01.011Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "000D00205047501820303034",
+                        "alias": "STWIN_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.0"
+                    }
+                },
+                {
+                    "uuid": "33ae6f2f-1da9-4f35-a289-127c0a0f52b8",
+                    "name": "20231206_06_33_51",
+                    "annotated": true,
+                    "description": "20231206_06_33_51",
+                    "start_time": "2000-01-01T00:12:03.000Z",
+                    "end_time": "2000-01-01T00:16:02.522Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "0031002D374E50132030364B",
+                        "alias": "STWIN_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.0"
+                    }
+                }
+            ],
+            "tools": [
+                {
+                    "name": "hsdatalog_to_unico",
+                    "version": "1.1.0",
+                    "parameters": {
+                        "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                        "-f": "TXT",
+                        "-t": "",
+                        "-s": "all",
+                        "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+                    }
+                }
+            ]
+        },
+        {
+            "uuid": "4337b1e7-6ae2-4559-8316-726fb6763a9c",
+            "model_ref": "2efad9b6-8d0a-4db2-b37c-1f495b3bd4b4",
+            "input_type": "binary_hsd",
+            "augmentation": [],
+            "logs": [
+                {
+                    "uuid": "33ae6f2f-1da9-4f35-a289-127c0a0f52b8",
+                    "name": "20231206_06_33_51",
+                    "annotated": true,
+                    "description": "20231206_06_33_51",
+                    "start_time": "2000-01-01T00:12:03.000Z",
+                    "end_time": "2000-01-01T00:16:02.522Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "0031002D374E50132030364B",
+                        "alias": "STWIN_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.0"
+                    }
+                }
+            ],
+            "tools": [
+                {
+                    "name": "hsdatalog_to_unico",
+                    "version": "1.1.0",
+                    "parameters": {
+                        "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                        "-f": "TXT",
+                        "-t": "",
+                        "-s": "all",
+                        "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+                    }
+                }
+            ]
+        },
+        {
+            "uuid": "9d6a96fb-6ef1-4627-87db-85d9cb9342b3",
+            "model_ref": "f1e29cc8-18bb-4f90-bbfe-da9df1054130",
+            "input_type": "binary_hsd",
+            "augmentation": [],
+            "logs": [
+                {
+                    "uuid": "33ae6f2f-1da9-4f35-a289-127c0a0f52b8",
+                    "name": "20231206_06_33_51",
+                    "annotated": true,
+                    "description": "20231206_06_33_51",
+                    "start_time": "2000-01-01T00:12:03.000Z",
+                    "end_time": "2000-01-01T00:16:02.522Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "0031002D374E50132030364B",
+                        "alias": "STWIN_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.0"
+                    }
+                }
+            ],
+            "tools": [
+                {
+                    "name": "hsdatalog_to_unico",
+                    "version": "1.1.0",
+                    "parameters": {
+                        "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                        "-f": "TXT",
+                        "-t": "",
+                        "-s": "all",
+                        "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+                    }
+                }
+            ]
+        }
+    ],
+    "models": [
+        {
+            "uuid": "8a5ecdc6-d64a-4a74-a369-0e8385bdaf71",
+            "name": "m-mlc",
+            "model_type": "classifier",
+            "training_type": "offline",
+            "stage": "modeling",
+            "model_metadata": {
+                "classes": [
+                    "static",
+                    "pickup",
+                    "doubletap"
+                ]
+            },
+            "experiments": [
+                {
+                    "uuid": "b33d1ef5-1618-4974-b273-f88c5044678d",
+                    "name": "exp1",
+                    "description": "",
+                    "model_dev_file": "template_for_empty.ipynb"
+                }
+            ]
+        },
+        {
+            "uuid": "d65a9c7b-2c89-430f-92aa-ecd104d65574",
+            "name": "m_mlc1204",
+            "model_type": "classifier",
+            "training_type": "offline",
+            "stage": "modeling",
+            "model_metadata": {
+                "classes": [
+                    "static",
+                    "pickup",
+                    "doubletap"
+                ]
+            },
+            "experiments": [
+                {
+                    "uuid": "dc7ae8bb-b5b5-4ef6-b960-0172c6801f8b",
+                    "name": "exp1",
+                    "description": "",
+                    "model_dev_file": null
+                }
+            ]
+        },
+        {
+            "uuid": "2efad9b6-8d0a-4db2-b37c-1f495b3bd4b4",
+            "name": "m_mlc1212",
+            "model_type": "classifier",
+            "training_type": "offline",
+            "stage": "definition",
+            "model_metadata": {
+                "classes": [
+                    "static",
+                    "pickup",
+                    "doubletap"
+                ]
+            },
+            "experiments": [
+                {
+                    "uuid": "bd4eadf3-ab59-45a3-9aed-5778e707f7ee",
+                    "name": "exp1",
+                    "description": "",
+                    "model_dev_file": null
+                }
+            ]
+        },
+        {
+            "uuid": "f1e29cc8-18bb-4f90-bbfe-da9df1054130",
+            "name": "mlc1213",
+            "model_type": "classifier",
+            "training_type": "offline",
+            "stage": "modeling",
+            "model_metadata": {
+                "classes": [
+                    "static",
+                    "pickup",
+                    "dtap"
+                ]
+            },
+            "experiments": [
+                {
+                    "uuid": "371e5949-a09a-4b1f-b149-72f109a53c5e",
+                    "name": "exp1",
+                    "description": "",
+                    "model_dev_file": null
+                }
+            ]
+        }
+    ],
+    "outputs": [
+        {
+            "uuid": "9f691920-288b-4baf-b52d-f178f311106f",
+            "model_ref": "8a5ecdc6-d64a-4a74-a369-0e8385bdaf71",
+            "output_type": "steval-stwinkt1b:mlc",
+            "tests": [
+                {
+                    "uuid": "474f7a6b-b322-450e-bbf3-a487f6022b91",
+                    "name": "test1",
+                    "experiment_ref": "b33d1ef5-1618-4974-b273-f88c5044678d",
+                    "model_file": "",
+                    "outputs": [],
+                    "reports": [],
+                    "parameters": {}
+                }
+            ],
+            "tools": [
+                {
+                    "name": "mlctools",
+                    "version": "1.0.0",
+                    "parameters": null
+                }
+            ]
+        },
+        {
+            "uuid": "0879dc91-2726-4812-89c3-bd86c16b5e61",
+            "model_ref": "d65a9c7b-2c89-430f-92aa-ecd104d65574",
+            "output_type": "steval-stwinkt1b:mlc",
+            "tests": [
+                {
+                    "uuid": "782e9599-5587-485b-a8f2-40f5c63d8ae2",
+                    "name": "test1",
+                    "experiment_ref": "dc7ae8bb-b5b5-4ef6-b960-0172c6801f8b",
+                    "model_file": "",
+                    "outputs": [],
+                    "reports": [],
+                    "parameters": {}
+                }
+            ],
+            "tools": [
+                {
+                    "name": "mlctools",
+                    "version": "1.0.0",
+                    "parameters": null
+                }
+            ]
+        },
+        {
+            "uuid": "8d1d2686-68b1-4f4f-ad47-bb0714ac6ae2",
+            "model_ref": "2efad9b6-8d0a-4db2-b37c-1f495b3bd4b4",
+            "output_type": "steval-stwinkt1b:mlc",
+            "tests": [
+                {
+                    "uuid": "ce936e85-c78f-484e-a6ba-9b5ea450ab59",
+                    "name": "test1",
+                    "experiment_ref": "bd4eadf3-ab59-45a3-9aed-5778e707f7ee",
+                    "model_file": "",
+                    "outputs": [],
+                    "reports": [],
+                    "parameters": {}
+                }
+            ],
+            "tools": [
+                {
+                    "name": "mlctools",
+                    "version": "1.0.0",
+                    "parameters": null
+                }
+            ]
+        },
+        {
+            "uuid": "170c05f7-2a70-434b-a134-293189310576",
+            "model_ref": "f1e29cc8-18bb-4f90-bbfe-da9df1054130",
+            "output_type": "steval-stwinkt1b:mlc",
+            "tests": [
+                {
+                    "uuid": "2274f292-4d1e-4e98-8d0e-60240d07f751",
+                    "name": "test1",
+                    "experiment_ref": "371e5949-a09a-4b1f-b149-72f109a53c5e",
+                    "model_file": "",
+                    "outputs": [
+                        "ism330dhcx_mlc.ucf",
+                        "ism330dhcx_mlc.h"
+                    ],
+                    "reports": [
+                        "ism330dhcx_mlc_report.json"
+                    ],
+                    "parameters": []
+                }
+            ],
+            "tools": [
+                {
+                    "name": "mlctools",
+                    "version": "1.0.0",
+                    "parameters": null
+                }
+            ]
+        }
+    ],
+    "deployments": [],
+    "dbstatus": {
+        "status": "unknown",
+        "message": null
+    }
+}

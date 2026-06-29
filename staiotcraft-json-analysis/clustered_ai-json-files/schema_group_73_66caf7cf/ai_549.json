@@ -1,0 +1,54 @@
+{
+    "uuid": "6e1f4032-387c-4975-9dbf-30486838d6f9",
+    "ai_project_name": "In_pocket_reduced_ODR",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2024-12-12 08:27:01.183724",
+    "creation_time": "2024-12-12 08:26:37.816932",
+    "models": [
+        {
+            "uuid": "ec75338d-e953-4ca6-98a0-4d5c0a8a9221",
+            "name": "In_pocket_reduced_ODR",
+            "dataset": {
+                "name": "In_pocket_reduced_ODR",
+                "dataset_id": "01jetc4g1q9kz4z4gtazhf20n2"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "worn_correctly",
+                    "worn_on_right_shoulder",
+                    "worn_on_left_shoulder",
+                    "not_worn"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2024-12-12 08:27:01.144770",
+            "last_update_time": "2024-12-12 08:27:01.144780",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2025-01-08 12:40:47.359475",
+                "creation_time": "2025-01-08 12:40:47.359470"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

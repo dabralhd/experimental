@@ -1,0 +1,79 @@
+{
+   "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+   "ai_project_name": "test_proj",
+   "uuid": "036f3582-0eb3-4c0b-8d01-85b96f3bfb33",
+   "description": "test_proj",
+   "version": "0.0.1",
+   "inputs": [
+      {
+         "uuid": "36fef3d9-fdb3-4908-b157-f45a5a1d2132",
+         "input_type": "binary_hsd",
+         "model_ref": "6376dff0-da1a-434a-88ff-ed0dc68b81b9",
+         "logs": [],
+         "augmentation": [],
+         "tools": [
+            {
+               "name": "hsdatalog_to_unico",
+               "version": "1.1.0",
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-stwinkt1b:mlc",
+               "section": "input",
+               "parameters": {
+                  "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                  "-f": "TXT",
+                  "-t": "",
+                  "-s": "all",
+                  "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+               }
+            }
+         ]
+      }
+   ],
+   "models": [
+      {
+         "uuid": "6376dff0-da1a-434a-88ff-ed0dc68b81b9",
+         "name": "ClassNameForAModel",
+         "stage": "definition",
+         "model_type": "classifier",
+         "training_type": "offline",
+         "retraining": false,
+         "model_metadata": {
+            "classes": [
+               "c1",
+               "c2"
+            ]
+         },
+         "experiments": [],
+         "tools": []
+      }
+   ],
+   "outputs": [
+      {
+         "uuid": "e7c703bf-e7eb-410c-9b6a-18c64a680c53",
+         "output_type": "steval-stwinkt1b:mlc",
+         "model_ref": "6376dff0-da1a-434a-88ff-ed0dc68b81b9",
+         "tests": [],
+         "best_test": null,
+         "tools": [
+            {
+               "name": "mlctools",
+               "version": "1.0.0",
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-stwinkt1b:mlc",
+               "section": "output"
+            }
+         ],
+         "events": [],
+         "ui": {
+            "icons": []
+         }
+      }
+   ],
+   "deployments": [],
+   "dbstatus": {
+      "status": "unknown",
+      "message": null
+   }
+}

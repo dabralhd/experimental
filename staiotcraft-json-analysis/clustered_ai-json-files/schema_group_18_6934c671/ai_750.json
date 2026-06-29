@@ -1,0 +1,14 @@
+{
+    "uuid": "f33f77e3-4f2a-4688-8920-225f65157925",
+    "ai_project_name": "test-project-group-from-scratch_TC_3_p",
+    "type": null,
+    "display_name": null,
+    "description": "My Project description",
+    "version": "0.0.1",
+    "last_update_time": "2025-07-31 06:36:04.542215",
+    "creation_time": "2025-07-31 06:36:04.542215",
+    "project_owner_uuid": "66f916f1-2386-4a92-80f0-13fb55329c79",
+    "models": [],
+    "deployments": [],
+    "applications": []
+}

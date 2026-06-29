@@ -1,0 +1,53 @@
+{
+    "uuid": "083680e2-7487-44ba-ad8a-b8c0e834e95b",
+    "ai_project_name": "LargeMovementProject",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2024-11-20 15:02:24.687858",
+    "creation_time": "2024-11-20 13:49:13.319906",
+    "models": [
+        {
+            "uuid": "19df8b2e-4e73-4e57-a12c-8c3b25012ec0",
+            "name": "model1",
+            "dataset": {
+                "name": "LargeMovement",
+                "dataset_id": "01jd4rz65smgxfwvwx2pg4bf2p"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "still",
+                    "up-down",
+                    "left-right"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2024-11-20 13:49:36.266567",
+            "last_update_time": "2024-11-20 13:49:36.266575",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2024-11-20 14:55:18.594342",
+                "creation_time": "2024-11-20 14:55:18.594338"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

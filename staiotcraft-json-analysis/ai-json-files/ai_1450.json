@@ -1,0 +1,599 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v8",
+    "ai_project_name": "get_started_har_monitor_mlc",
+    "display_name": "Human Activity Recognition",
+    "description": "Get started project for Human Activity Recognition (HAR) scenario run on the MLC sensor.",
+    "uuid": "7eafc3f9-16b7-40bb-8d60-1c5581bece3a",
+    "version": "1.0.0",
+    "inputs": [
+        {
+            "uuid": "fd315f58-1b8d-4b3e-94c2-71d1b4bb3df9",
+            "input_type": "binary_hsd",
+            "model_ref": "39784f1c-2bbb-49ec-8914-01a668e1a418",
+            "logs": [
+                {
+                    "uuid": "616a8b00-1a75-42b5-9203-694c1699ba85",
+                    "name": "20231206_17_32_04",
+                    "annotated": false,
+                    "description": "",
+                    "start_time": "2023-12-06T17:32:05.000Z",
+                    "end_time": "2023-12-06T17:32:20.288Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "60060e88-70c3-444c-ae81-31222ebafaeb",
+                    "name": "20231211_14_53_28",
+                    "annotated": false,
+                    "description": "",
+                    "start_time": "2023-12-11T14:53:29.000Z",
+                    "end_time": "2023-12-11T14:53:52.119Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "3d1da021-36c4-467a-a5b7-79e846c7fb8a",
+                    "name": "20231211_14_51_15",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2023-12-11T14:51:15.000Z",
+                    "end_time": "2023-12-11T14:51:38.715Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "2eeb3d0d-4593-4704-b1a9-067f482fd6c4",
+                    "name": "20231213_09_12_20",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2023-12-13T09:12:20.000Z",
+                    "end_time": "2023-12-13T09:13:10.411Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "062e1a34-19ef-4b91-b88c-97ea4da5aeb2",
+                    "name": "20231213_09_08_28",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2023-12-13T09:08:29.000Z",
+                    "end_time": "2023-12-13T09:08:58.193Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "77db9f8f-5b23-4370-9b0b-fccb25f818c8",
+                    "name": "20231212_13_54_34",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2023-12-12T13:54:35.000Z",
+                    "end_time": "2023-12-12T13:54:55.666Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "56e6b0ae-7304-490e-9e9e-f7b37cd57386",
+                    "name": "20231213_10_09_25",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2023-12-13T10:09:25.000Z",
+                    "end_time": "2023-12-13T10:09:58.457Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "2bc1c54f-31fb-44e9-a735-81e66ae2990c",
+                    "name": "20231213_12_04_26",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2023-12-13T12:04:27.000Z",
+                    "end_time": "2023-12-13T12:04:53.336Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "2f2391b9-0354-4a70-b235-4eac1ac8975a",
+                    "name": "20240118_16_28_50",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2024-01-18T16:28:50.000Z",
+                    "end_time": "2024-01-18T16:29:13.017Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "1945054a-36e4-46f6-9b90-36f33dd56437",
+                    "name": "20240122_11_56_45",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2024-01-22T11:56:45.000Z",
+                    "end_time": "2024-01-22T11:57:08.861Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "546351e2-2d59-41a2-845d-f86248a3ca3e",
+                    "name": "20240122_12_01_35",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2024-01-22T12:01:35.000Z",
+                    "end_time": "2024-01-22T12:01:57.578Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "06fbba7f-3e0b-49f2-ba8c-065414a34b9d",
+                    "name": "20240123_08_39_08",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2024-01-23T08:39:09.000Z",
+                    "end_time": "2024-01-23T08:39:36.483Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "4794ce76-05a1-4558-8e76-bf0979e2cf1e",
+                    "name": "20240124_13_40_13",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2024-01-24T13:40:13.000Z",
+                    "end_time": "2024-01-24T13:40:39.865Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "3f531a8a-517e-4d6a-b850-92995e5db4ed",
+                    "name": "20240124_11_58_53",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2024-01-24T11:58:53.000Z",
+                    "end_time": "2024-01-24T11:59:17.389Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "1d78fe43-1f4c-4fca-aa17-10185166c88d",
+                    "name": "20240123_08_54_25",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2024-01-23T08:54:25.000Z",
+                    "end_time": "2024-01-23T08:55:01.821Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "22cfc3df-6988-48dc-bf16-a582568bd882",
+                    "name": "20240124_13_43_48",
+                    "annotated": false,
+                    "description": "",
+                    "start_time": "2024-01-24T13:43:49.000Z",
+                    "end_time": "2024-01-24T13:46:56.176Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "336b6633-3acf-4b5f-a1bb-a9553540f8f9",
+                    "name": "20240123_09_08_15",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2024-01-23T09:08:15.000Z",
+                    "end_time": "2024-01-23T09:08:27.982Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "6e16a947-5482-418c-96fc-64ef0f338c6f",
+                    "name": "20240129_15_28_42",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2024-01-29T15:28:41.000Z",
+                    "end_time": "2024-01-29T15:29:00.282Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "63de132b-48e8-4d69-b934-859e274727df",
+                    "name": "20240125_16_19_10",
+                    "annotated": false,
+                    "description": "",
+                    "start_time": "2024-01-25T16:19:11.000Z",
+                    "end_time": "2024-01-25T16:19:14.228Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "2652acb3-125a-47bd-abbf-10d63858cca0",
+                    "name": "20240223_15_23_23",
+                    "annotated": false,
+                    "description": "",
+                    "start_time": "2024-02-23T15:23:03.000Z",
+                    "end_time": "2024-02-23T15:23:22.114Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.1.0"
+                    }
+                },
+                {
+                    "uuid": "3374e982-031e-484d-baa3-1cdb30dc3d47",
+                    "name": "20240223_16_23_06",
+                    "annotated": false,
+                    "description": "",
+                    "start_time": "2024-02-23T16:23:07.000Z",
+                    "end_time": "2024-02-23T16:23:24.731Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.1.0"
+                    }
+                },
+                {
+                    "uuid": "3e6cc41e-3f3e-474e-9a67-62b823f5a37a",
+                    "name": "20240223_16_05_19",
+                    "annotated": false,
+                    "description": "",
+                    "start_time": "2024-02-23T16:05:20.000Z",
+                    "end_time": "2024-02-23T16:05:30.765Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.1.0"
+                    }
+                },
+                {
+                    "uuid": "2d0657a6-2506-4ce6-8215-ca3322fc141e",
+                    "name": "20240223_15_58_13",
+                    "annotated": false,
+                    "description": "",
+                    "start_time": "2024-02-23T15:58:14.000Z",
+                    "end_time": "2024-02-23T15:58:31.027Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.1.0"
+                    }
+                },
+                {
+                    "uuid": "3f7cb97a-38c8-4f6f-afee-ca121502066b",
+                    "name": "20240223_17_19_53",
+                    "annotated": false,
+                    "description": "",
+                    "start_time": "2024-02-23T17:19:54.000Z",
+                    "end_time": "2024-02-23T17:20:02.751Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.1.0"
+                    }
+                },
+                {
+                    "uuid": "1a3e2cf3-0b41-4b01-8844-ce7d1a82d4b0",
+                    "name": "20240315_09_50_44",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2024-03-15T09:50:22.000Z",
+                    "end_time": "2024-03-15T09:50:42.728Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.1.0"
+                    }
+                },
+                {
+                    "uuid": "37aed4c2-3354-4640-a1ce-cf0029900ff5",
+                    "name": "20240313_15_10_29",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2024-03-13T15:10:03.000Z",
+                    "end_time": "2024-03-13T15:10:28.142Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.1.0"
+                    }
+                },
+                {
+                    "uuid": "2e73790e-33e2-4559-bf12-deb7157a0441",
+                    "name": "20240315_10_00_09",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2024-03-15T09:59:37.000Z",
+                    "end_time": "2024-03-15T10:00:08.206Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004100535752501720353339",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.1.0"
+                    }
+                }
+            ],
+            "augmentation": [],
+            "tools": [
+                {
+                    "name": "hsdatalog_to_unico",
+                    "version": "1.1.0",
+                    "input": "binary_hsd",
+                    "model": "classifier",
+                    "output": "steval-stwinkt1b:mlc",
+                    "section": "input",
+                    "parameters": {
+                        "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                        "-f": "TXT",
+                        "-t": "",
+                        "-s": "all",
+                        "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+                    }
+                }
+            ]
+        }
+    ],
+    "models": [
+        {
+            "uuid": "39784f1c-2bbb-49ec-8914-01a668e1a418",
+            "name": "HAR_Model",
+            "description": "Model to recognize the activity a person is doing.",
+            "stage": "modeling",
+            "model_type": "classifier",
+            "training_type": "offline",
+            "retraining": false,
+            "model_metadata": {
+                "classes": [
+                    "still",
+                    "walk",
+                    "fastwalk"
+                ]
+            },
+            "experiments": [
+                {
+                    "uuid": "dcf5dd3c-13d4-4bfc-b21a-1170b1212eee",
+                    "name": "Exp_HAR",
+                    "description": "HAR experiment.",
+                    "model_dev_template": null,
+                    "model_dev_file": null
+                },
+                {
+                    "uuid": "69390ab8-add5-44ad-a536-06f779713eae",
+                    "name": "Exp_HAR_Basic",
+                    "description": "Basic HAR experiment.",
+                    "model_dev_template": null,
+                    "model_dev_file": null
+                }
+            ],
+            "tools": []
+        }
+    ],
+    "outputs": [
+        {
+            "uuid": "f9d14630-53c8-4a62-b5bd-892745615684",
+            "output_type": "steval-stwinkt1b:mlc",
+            "model_ref": "39784f1c-2bbb-49ec-8914-01a668e1a418",
+            "tests": [
+                {
+                    "uuid": "0137948c-b57f-4274-86f4-b591646f2cb8",
+                    "name": "Test_HAR_1",
+                    "experiment_ref": "dcf5dd3c-13d4-4bfc-b21a-1170b1212eee",
+                    "model_file": null,
+                    "parameters": null,
+                    "reports": [
+                        "ism330dhcx_mlc_report.json"
+                    ],
+                    "outputs": [
+                        "ism330dhcx_mlc.ucf",
+                        "ism330dhcx_mlc.h"
+                    ]
+                },
+                {
+                    "uuid": "afac7e09-ec8d-47fb-96b3-179c971b7113",
+                    "name": "Test_HAR_2",
+                    "experiment_ref": "69390ab8-add5-44ad-a536-06f779713eae",
+                    "model_file": null,
+                    "parameters": null,
+                    "reports": [
+                        "ism330dhcx_mlc_report.json"
+                    ],
+                    "outputs": [
+                        "ism330dhcx_mlc.ucf",
+                        "ism330dhcx_mlc.h"
+                    ]
+                },
+                {
+                    "uuid": "aac80000-553f-46c1-a052-ec43220af6ca",
+                    "name": "Test_HAR_3",
+                    "experiment_ref": "dcf5dd3c-13d4-4bfc-b21a-1170b1212eee",
+                    "model_file": null,
+                    "parameters": [],
+                    "reports": [
+                        "ism330dhcx_mlc_report.json"
+                    ],
+                    "outputs": [
+                        "ism330dhcx_mlc.ucf",
+                        "ism330dhcx_mlc.h"
+                    ]
+                }
+            ],
+            "best_test": "0137948c-b57f-4274-86f4-b591646f2cb8",
+            "tools": [
+                {
+                    "name": "mlctools",
+                    "version": "1.0.0",
+                    "input": "binary_hsd",
+                    "model": "classifier",
+                    "output": "steval-stwinkt1b:mlc",
+                    "section": "output"
+                }
+            ],
+            "events": [],
+            "ui": null
+        }
+    ],
+    "deployments": [
+        {
+            "uuid": "51f522b5-2260-4710-9a6d-824d3bd69a55",
+            "display_name": "Human Activity Recognition end-to-end system.",
+            "description": "End-to-end system deployment for Human Activity Recognition scenario.",
+            "last_deploy_time": null,
+            "last_deploy_result": null,
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": null
+            },
+            "configuration": {
+                "leaf": [
+                    {
+                        "device_id": "leaf0",
+                        "description": "Leaf device.",
+                        "gateway_id": "gateway0",
+                        "selected_model_name": "HAR_Model",
+                        "models": [
+                            {
+                                "name": "HAR_Model",
+                                "datalogging": {
+                                    "device_template_uri": "https://raw.githubusercontent.com/STMicroelectronics/appconfig/release/dtmi/appconfig/steval_stwinkt1b/FP_SNS_DATALOG2_Datalog2-1.expanded.json",
+                                    "device_template_id": "dtmi:vespucci:steval_stwinkt1b:fpSnsDatalog2_datalog2;1",
+                                    "protocol": 2,
+                                    "firmware_uri": "https://raw.githubusercontent.com/STMicroelectronics/appconfig/release/bluestsdkv2/bin/steval-stwinkt1b/FP-SNS-DATALOG2_Datalog2_2_0_0.bin"
+                                },
+                                "inference": {
+                                    "device_template_uri": "e2e_system_deployment/leaf/steval_stwinkt1b/har_monitor_mlc-1.expanded.json",
+                                    "device_template_id": "dtmi:vespucci:steval_stwinkt1b:har_monitor_mlc;1",
+                                    "protocol": 1,
+                                    "firmware_uri": "e2e_system_deployment/leaf/steval_stwinkt1b/ai_inertial_steval_stwinkt1b_mlc_release_1_0_0.bin",
+                                    "ml_uri": "models/HAR_Model/experiments/Exp_HAR/tests/Test_HAR_1/ism330dhcx_mlc.ucf",
+                                    "firmware_update": false
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "gateway": [
+                    {
+                        "device_id": "gateway0",
+                        "description": "Gateway device.",
+                        "gateway_id": null,
+                        "module_id": "edgeMLC",
+                        "configuration_uri": "e2e_system_deployment/gateway/vespucci_config.ini.template",
+                        "device_manifest_uri": "e2e_system_deployment/gateway/mlc_gateway-1.manifest.json",
+                        "device_template_uri": "e2e_system_deployment/gateway/mlc_gateway-1.expanded.json",
+                        "device_template_id": "dtmi:vespucci:gateway:mlc_gateway;1",
+                        "wifi_mode": "off"
+                    }
+                ]
+            }
+        }
+    ],
+    "dbstatus": {
+        "status": "unknown",
+        "message": null
+    }
+}

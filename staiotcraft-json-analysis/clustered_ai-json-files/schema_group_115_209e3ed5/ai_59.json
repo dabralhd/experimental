@@ -1,0 +1,80 @@
+{
+   "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+   "ai_project_name": "temp",
+   "uuid": "3e3b5ac3-b95c-4342-9ad8-25cdca6998c1",
+   "description": "temp project to test",
+   "version": "0.0.1",
+   "inputs": [
+      {
+         "uuid": "3dfdf3b1-0f96-454f-a116-f0b672c0449d",
+         "input_type": "binary_hsd",
+         "model_ref": "cc29e1c7-513c-4c88-b139-e1666f5de932",
+         "logs": [],
+         "augmentation": [],
+         "tools": [
+            {
+               "name": "hsdatalog_to_unico",
+               "version": "1.1.0",
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-stwinkt1b:mlc",
+               "section": "input",
+               "parameters": {
+                  "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                  "-f": "TXT",
+                  "-t": "",
+                  "-s": "all",
+                  "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+               }
+            }
+         ]
+      }
+   ],
+   "models": [
+      {
+         "uuid": "cc29e1c7-513c-4c88-b139-e1666f5de932",
+         "name": "model123",
+         "stage": "definition",
+         "model_type": "classifier",
+         "training_type": "offline",
+         "retraining": false,
+         "model_metadata": {
+            "classes": [
+               "left_right",
+               "up_down",
+               "stationary"
+            ]
+         },
+         "experiments": [],
+         "tools": []
+      }
+   ],
+   "outputs": [
+      {
+         "uuid": "eff78b32-c90f-4c95-bc68-7195ea20f094",
+         "output_type": "steval-stwinkt1b:mlc",
+         "model_ref": "cc29e1c7-513c-4c88-b139-e1666f5de932",
+         "tests": [],
+         "best_test": null,
+         "tools": [
+            {
+               "name": "mlctools",
+               "version": "1.0.0",
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-stwinkt1b:mlc",
+               "section": "output"
+            }
+         ],
+         "events": [],
+         "ui": {
+            "icons": []
+         }
+      }
+   ],
+   "deployments": [],
+   "dbstatus": {
+      "status": "ok",
+      "message": null
+   }
+}

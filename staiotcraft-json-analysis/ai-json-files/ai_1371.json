@@ -1,0 +1,276 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v11",
+    "ai_project_name": "tennisBug",
+    "display_name": "Tennis Activity Recognition",
+    "description": "Classification of tennis shots using the MLC, including forehand, backhand, slice-forehand, slice-backhand, and serve strokes.\n\nThis example leverages both the accelerometer and the gyroscope sensors to better detect the movements. To use this example effectively, plug the DIL24 extension onto the board and place the board on the outside of the right wrist and secure it firmly. Make sure it is oriented in such a way that the two buttons are facing toward your shoulder, with the LEDs and logos visible and facing outward. In case you need a different placement on the wrist or want to add some more movements of your own, just clone the project into your workspace, collect a new dataset, and retrain the model.",
+    "type": "entertainment",
+    "uuid": "ed456569-727d-41a4-99d3-84b065b79d6f",
+    "version": "1.0.0",
+    "creation_time": "2026-01-23 08:55:12.163228",
+    "last_update_time": "2026-01-23 08:55:12.163228",
+    "project_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508",
+    "models": [
+        {
+            "uuid": "9bb74d8e-1e3a-419c-bf31-4cc753e4ccb9",
+            "name": "tennis_activity_recognition_80x",
+            "description": "Model to recognize tennis shots, with an Auto-ML based approach.",
+            "creation_time": "2026-01-23 08:55:12.163240",
+            "last_update_time": "2026-01-23 08:55:12.163245",
+            "model_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508",
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "no_shot",
+                    "serve",
+                    "backhand_slice",
+                    "forehand_slice",
+                    "backhand",
+                    "forehand"
+                ]
+            },
+            "dataset": {
+                "dataset_id": "01kfn113mxbztaxw5ptxpvgkcg",
+                "name": "tennis_activity_80x"
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv80x",
+                "device": "steval-mkboxpro"
+            },
+            "data_sufficiency": null,
+            "training": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": null
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "artifacts": [
+                    "lsm6dsv80x_mlc.json",
+                    "lsm6dsv80x_mlc.h"
+                ],
+                "reports": [
+                    "report.json"
+                ]
+            },
+            "codegen": null,
+            "building": null
+        },
+        {
+            "uuid": "a0ca616c-6993-461d-9784-2d362c68a14f",
+            "name": "tennis_activity_recognition_320x",
+            "description": "Model to recognize tennis shots, with an Auto-ML based approach.",
+            "creation_time": "2026-01-23 08:55:12.163243",
+            "last_update_time": "2026-01-23 08:55:12.163248",
+            "model_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508",
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "no_shot",
+                    "serve",
+                    "backhand_slice",
+                    "forehand_slice",
+                    "backhand",
+                    "forehand"
+                ]
+            },
+            "dataset": {
+                "dataset_id": "01kfn1153f5vchqacjantxt7wz",
+                "name": "tennis_activity_320"
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv320x",
+                "device": "steval-mkboxpro"
+            },
+            "data_sufficiency": null,
+            "training": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": null
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "artifacts": [
+                    "lsm6dsv320x_mlc.json",
+                    "lsm6dsv320x_mlc.h"
+                ],
+                "reports": [
+                    "report.json"
+                ]
+            },
+            "codegen": null,
+            "building": null
+        }
+    ],
+    "applications": [
+        {
+            "uuid": "398ead15-277f-4209-8637-3b2dbd0496ef",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_Gateway;8",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.1.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/staiotcraft_rpi_gateway_1_5_0.img.gz",
+            "module_id": "edgeMLC"
+        },
+        {
+            "uuid": "623a748b-22a4-44ea-8325-7056cf47c71a",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-7.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;7",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_3_1_0.bin",
+            "binary_id": 381,
+            "protocol": 2
+        },
+        {
+            "uuid": "1b27e12a-e4fe-48ae-ba53-b01ccf93a7f2",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_STAIOTCFT_AI_Inertial-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_STAIOTCFT_AI_Inertial;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/FP-SNS-STAIOTCFT_AI_Inertial_AssetTrackingOnMLC_1_0_0.bin",
+            "binary_id": 418,
+            "protocol": 1
+        },
+        {
+            "uuid": "bc9d18d1-ef8d-4f1b-8a39-8aceea69349b",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/AI_SSM-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:AI_SSM;1",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/AI-SSM_1_0_0.bin",
+            "binary_id": 438,
+            "protocol": 0,
+            "bluest_v3_payload": {
+                "device_id": "0x0D",
+                "fw_id": "0x25",
+                "payload_id": "0x0001",
+                "description": "Environmental Monitor",
+                "decoding_schema": [
+                    {
+                        "component": "lsm6dsv16x_mlc",
+                        "telemetry": "label_id",
+                        "type": "int8_t"
+                    }
+                ]
+            }
+        }
+    ],
+    "deployments": [
+        {
+            "uuid": "2ca81d09-beac-4633-80d1-a31aba71db34",
+            "display_name": "Tennis Activity Recognition with SensorTile.box PRO and LSM6DSV80X sensor.",
+            "description": "End-to-end system deployment for Tennis Activity Recognition use case on the SensorTile.box PRO using the LSM6DSV80X sensor.",
+            "last_update_time": null,
+            "last_deploy_result": null,
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": null
+            },
+            "gateway": [
+                {
+                    "device_id": "gateway_0",
+                    "display_name": "gateway_0",
+                    "gateway_id": null,
+                    "description": "Gateway device at position 0.",
+                    "application": "ca387779-2556-4fd7-9076-5674ae0374bc",
+                    "wifi_mode": "off"
+                }
+            ],
+            "leaf": [
+                {
+                    "device_id": "leaf_0",
+                    "display_name": "leaf_0",
+                    "gateway_id": "gateway_0",
+                    "description": "Leaf device at position 0.",
+                    "datalogging": {
+                        "supported_applications": [
+                            "38374ed2-190c-461b-8c06-199db3880071"
+                        ],
+                        "application": "38374ed2-190c-461b-8c06-199db3880071",
+                        "firmware_update": false
+                    },
+                    "inference": {
+                        "supported_applications": [
+                            "5034b61f-d6cc-4214-aad5-15f2e3031e70",
+                            "5ac0b221-5a4d-4d29-9a2b-8776ce0d0cd1"
+                        ],
+                        "application": "5034b61f-d6cc-4214-aad5-15f2e3031e70",
+                        "firmware_update": false,
+                        "models": [
+                            {
+                                "model_name_reference": "tennis_activity_recognition_80x",
+                                "artifact_type": "json",
+                                "component_name": "lsm6dsv16x_mlc"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "uuid": "089fb286-9e6b-41fe-9d8a-d6136d11efdb",
+            "display_name": "Tennis Activity Recognition with SensorTile.box PRO and LSM6DSV320X sensor.",
+            "description": "End-to-end system deployment for Tennis Activity Recognition use case on the SensorTile.box PRO using the LSM6DSV320X sensor.",
+            "last_update_time": null,
+            "last_deploy_result": null,
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": null
+            },
+            "gateway": [
+                {
+                    "device_id": "gateway_0",
+                    "display_name": "gateway_0",
+                    "gateway_id": null,
+                    "description": "Gateway device at position 0.",
+                    "application": "ca387779-2556-4fd7-9076-5674ae0374bc",
+                    "wifi_mode": "off"
+                }
+            ],
+            "leaf": [
+                {
+                    "device_id": "leaf_0",
+                    "display_name": "leaf_0",
+                    "gateway_id": "gateway_0",
+                    "description": "Leaf device at position 0.",
+                    "datalogging": {
+                        "supported_applications": [
+                            "38374ed2-190c-461b-8c06-199db3880071"
+                        ],
+                        "application": "38374ed2-190c-461b-8c06-199db3880071",
+                        "firmware_update": false
+                    },
+                    "inference": {
+                        "supported_applications": [
+                            "5034b61f-d6cc-4214-aad5-15f2e3031e70",
+                            "5ac0b221-5a4d-4d29-9a2b-8776ce0d0cd1"
+                        ],
+                        "application": "5034b61f-d6cc-4214-aad5-15f2e3031e70",
+                        "firmware_update": false,
+                        "models": [
+                            {
+                                "model_name_reference": "tennis_activity_recognition_320x",
+                                "artifact_type": "json",
+                                "component_name": "lsm6dsv16x_mlc"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

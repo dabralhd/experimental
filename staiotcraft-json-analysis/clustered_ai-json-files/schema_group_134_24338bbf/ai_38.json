@@ -1,0 +1,177 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v7",
+    "ai_project_name": "get_started_mlc_ai_har_monitor",
+    "display_name": "Human Activity Recognition",
+    "description": "Get started project for Human Activity Recognition (HAR) with the MLC sensor.",
+    "uuid": "2b2a3202-c26e-4149-a110-2c3c349d173f",
+    "version": "1.0.0",
+    "inputs": [
+        {
+            "uuid": "78c7bd99-12f4-4531-8d93-63ec17780be4",
+            "input_type": "binary_hsd",
+            "model_ref": "173a79d7-aa18-47bf-95f2-80f548709456",
+            "logs": [
+                {
+                    "uuid": "fa3312b5-085b-4190-8df1-c8f45798b5a1",
+                    "name": "20210222_12_25_17",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "",
+                    "end_time": "",
+                    "device_description": {
+                        "model": "STEVAL-STWINKT1B",
+                        "serial_number": "0019001B374E50132030364B",
+                        "alias": "STWIN_001",
+                        "fw_name": "FP-SNS-DATALOG1_Datalog1",
+                        "fw_version": "1.0.0"
+                    }
+                },
+                {
+                    "uuid": "60216ff5-61d6-4b2f-b8b6-14df12ef82d1",
+                    "name": "STWIN.Box_acquisition",
+                    "annotated": false,
+                    "description": "",
+                    "start_time": "2022-10-17T13:19:39.000Z",
+                    "end_time": "2022-10-17T13:20:05.199Z",
+                    "device_description": {
+                        "part_number": null,
+                        "serial_number": "0050004B353650042034314B",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2",
+                        "fw_version": "0.9.0"
+                    }
+                },
+                {
+                    "uuid": "6d9ba4b9-274b-4bdd-a41b-9c9234cea89e",
+                    "name": "20231201_14_35_08",
+                    "annotated": false,
+                    "description": "",
+                    "start_time": "2023-12-01T14:35:09.000Z",
+                    "end_time": "2023-12-01T14:35:15.778Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004300504841500520363230",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                },
+                {
+                    "uuid": "4e1567b3-4554-4e6c-8981-90287648754e",
+                    "name": "20231201_14_34_42",
+                    "annotated": false,
+                    "description": "",
+                    "start_time": "2023-12-01T14:34:43.000Z",
+                    "end_time": "2023-12-01T14:34:53.799Z",
+                    "device_description": {
+                        "part_number": "FP-SNS-DATALOG2",
+                        "serial_number": "004300504841500520363230",
+                        "alias": "STWIN_BOX_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "2.0.1"
+                    }
+                }
+            ],
+            "augmentation": [],
+            "tools": [
+                {
+                    "name": "hsdatalog_to_unico",
+                    "version": "1.1.0",
+                    "input": "binary_hsd",
+                    "model": "classifier",
+                    "output": "steval-stwinkt1b:mlc",
+                    "section": "input",
+                    "parameters": {
+                        "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                        "-f": "TXT",
+                        "-t": "",
+                        "-s": "all",
+                        "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+                    }
+                }
+            ]
+        }
+    ],
+    "models": [
+        {
+            "uuid": "173a79d7-aa18-47bf-95f2-80f548709456",
+            "name": "HAR_Model",
+            "description": "Model to recognize the activity a person is doing.",
+            "stage": "modeling",
+            "model_type": "classifier",
+            "training_type": "offline",
+            "retraining": false,
+            "model_metadata": {
+                "classes": [
+                    "still",
+                    "walk",
+                    "fastwalk"
+                ]
+            },
+            "experiments": [
+                {
+                    "uuid": "581e0501-126e-4b9a-a54d-1ddca8c6d646",
+                    "name": "Exp_HAR",
+                    "description": "HAR experiment.",
+                    "model_dev_template": null,
+                    "model_dev_file": null
+                },
+                {
+                    "uuid": "9f7fd38b-8508-4ba4-8190-2aacec2a1376",
+                    "name": "Exp_HAR_Basic",
+                    "description": "Basic HAR experiment.",
+                    "model_dev_template": null,
+                    "model_dev_file": null
+                }
+            ],
+            "tools": []
+        }
+    ],
+    "outputs": [
+        {
+            "uuid": "b614600d-3179-49c5-86bc-da66cae18005",
+            "output_type": "steval-stwinkt1b:mlc",
+            "model_ref": "173a79d7-aa18-47bf-95f2-80f548709456",
+            "tests": [
+                {
+                    "uuid": "c83a1929-12d7-4bec-a885-657b6e7278fb",
+                    "name": "Test_HAR_1",
+                    "experiment_ref": "581e0501-126e-4b9a-a54d-1ddca8c6d646",
+                    "model_file": null,
+                    "parameters": null,
+                    "reports": [],
+                    "outputs": [
+                        "MLC_configuration.ucf"
+                    ]
+                },
+                {
+                    "uuid": "175ddf57-79ce-44cb-9c6f-13f7b3383b75",
+                    "name": "Test_HAR_1",
+                    "experiment_ref": "9f7fd38b-8508-4ba4-8190-2aacec2a1376",
+                    "model_file": null,
+                    "parameters": null,
+                    "reports": [],
+                    "outputs": [
+                        "MLC_configuration.ucf"
+                    ]
+                }
+            ],
+            "best_test": "c83a1929-12d7-4bec-a885-657b6e7278fb",
+            "tools": [
+                {
+                    "name": "mlctools",
+                    "version": "1.0.0",
+                    "input": "binary_hsd",
+                    "model": "classifier",
+                    "output": "steval-stwinkt1b:mlc",
+                    "section": "output",
+                    "parameters": null
+                }
+            ],
+            "events": [],
+            "ui": null
+        }
+    ],
+    "deployments": []
+}

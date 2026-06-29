@@ -1,0 +1,117 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v11",
+    "ai_project_name": "project_name_440728",
+    "display_name": "Smart Asset Tracking",
+    "description": "Classification of package conditions using the MLC to detect stationary orientation (upright or not) or moving and shaking states.\n\nWith this example, you can individually track the state of a physical item, such as a package, to monitor whether it is moving or being shaken too harshly, and whether it is still upright or not. Classification detects even brief events. You can clone and retrain the model to adapt classes to your use case, for example by tailoring the 'shaken' class to particularly strong motion or, conversely, by making it more sensitive for fragile items. To use this example, simply position the board on top of the item, ensuring it is secured firmly.",
+    "type": "industrial",
+    "uuid": "70053185-9620-401b-b939-21176496f7c5",
+    "version": "1.0.0",
+    "creation_time": "2025-11-11 15:09:54.792948",
+    "last_update_time": "2025-11-11 15:09:54.792948",
+    "project_owner_uuid": "90ab4947-c200-4776-a316-d02c3041c4b8",
+    "models": [],
+    "applications": [
+        {
+            "uuid": "283a8897-b287-490f-9657-219c83250d2c",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_Gateway;8",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.1.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/staiotcraft_rpi_gateway_1_5_0.img.gz",
+            "module_id": "edgeMLC"
+        },
+        {
+            "uuid": "ac15b304-bad0-4f9a-8e41-565175c347ad",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-7.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;7",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_3_1_0.bin",
+            "binary_id": 381,
+            "protocol": 2
+        },
+        {
+            "uuid": "f84c51b5-a952-4bbe-b0db-70b472bff23d",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_STAIOTCFT_AI_Inertial-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_STAIOTCFT_AI_Inertial;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/FP-SNS-STAIOTCFT_AI_Inertial_AssetTrackingOnMLC_1_0_0.bin",
+            "binary_id": 418,
+            "protocol": 1
+        },
+        {
+            "uuid": "87b2b658-015a-4c9d-b04e-fbcc74b91a83",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/AI_SSM-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:AI_SSM;1",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/AI-SSM_1_0_0.bin",
+            "binary_id": 438,
+            "protocol": 0,
+            "bluest_v3_payload": {
+                "device_id": "0x0D",
+                "fw_id": "0x25",
+                "payload_id": "0x0001",
+                "decoding_schema": [
+                    {
+                        "component": "lsm6dsv16x_mlc",
+                        "telemetry": "label_id",
+                        "type": "int8_t"
+                    }
+                ]
+            }
+        }
+    ],
+    "deployments": [
+        {
+            "uuid": "6e32ab20-0fc9-4ba2-bbc1-5f4beae7385b",
+            "display_name": "Smart Asset Tracking with SensorTile.box PRO and LSM6DSV16X sensor.",
+            "description": "End-to-end system deployment for Smart Asset Tracking use case on the SensorTile.box PRO using the LSM6DSV16X sensor.",
+            "last_update_time": null,
+            "last_deploy_result": null,
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": null
+            },
+            "gateway": [
+                {
+                    "device_id": "gateway_0",
+                    "display_name": "gateway_0",
+                    "gateway_id": null,
+                    "description": "Gateway device at position 0.",
+                    "application": "584de7c8-a1c5-46bd-beb7-1a098b159adc",
+                    "wifi_mode": "off"
+                }
+            ],
+            "leaf": [
+                {
+                    "device_id": "leaf_0",
+                    "display_name": "leaf_0",
+                    "gateway_id": "gateway_0",
+                    "description": "Leaf device at position 0.",
+                    "datalogging": {
+                        "supported_applications": [
+                            "ed629090-c9e9-4135-b538-7c7b8a012476"
+                        ],
+                        "application": "ed629090-c9e9-4135-b538-7c7b8a012476",
+                        "firmware_update": false
+                    },
+                    "inference": {
+                        "supported_applications": [
+                            "479688a3-be78-4a1c-8fcc-f9af85687862",
+                            "6b3bee1b-9bf9-4d7d-9306-53d935e710d2"
+                        ],
+                        "application": "479688a3-be78-4a1c-8fcc-f9af85687862",
+                        "firmware_update": false,
+                        "models": [
+                            {
+                                "model_name_reference": "smart_asset_tracking",
+                                "artifact_type": "json",
+                                "component_name": "lsm6dsv16x_mlc"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

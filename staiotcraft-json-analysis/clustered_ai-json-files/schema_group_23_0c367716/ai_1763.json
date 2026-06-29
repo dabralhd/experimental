@@ -1,0 +1,135 @@
+{
+   "uuid": "3248ed80-4342-40cb-90bd-6866f6018e56",
+   "ai_project_name": "20240402_drilling_machine",
+   "display_name": null,
+   "description": "",
+   "version": "0.0.1",
+   "inputs": [
+      {
+         "uuid": "f2b29a50-1efa-4846-8502-48725bdf7388",
+         "model_ref": "cb276db1-9128-45bb-8985-14c0ede1c2e7",
+         "input_type": "binary_hsd",
+         "augmentation": [],
+         "logs": [
+            {
+               "uuid": "2e64af6b-38dd-4bd0-99f3-1e3f2e61ca90",
+               "name": "20240402_17_38_45",
+               "annotated": true,
+               "description": "20240402_17_38_45",
+               "start_time": "2024-04-02T17:39:05.000Z",
+               "end_time": "2024-04-02T17:39:38.523Z",
+               "device_description": {
+                  "part_number": "STEVAL-MKBOXPRO",
+                  "serial_number": "004A00295752501620353339",
+                  "alias": "STBOX_PRO_001",
+                  "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                  "fw_version": "1.2.1"
+               }
+            },
+            {
+               "uuid": "2031de20-2c11-4c00-afa9-b1e50437c711",
+               "name": "20240402_17_37_56",
+               "annotated": true,
+               "description": "20240402_17_37_56",
+               "start_time": "2024-04-02T17:37:58.000Z",
+               "end_time": "2024-04-02T17:38:32.023Z",
+               "device_description": {
+                  "part_number": "STEVAL-MKBOXPRO",
+                  "serial_number": "004A00295752501620353339",
+                  "alias": "STBOX_PRO_001",
+                  "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                  "fw_version": "1.2.1"
+               }
+            },
+            {
+               "uuid": "1fdd6159-2b28-4260-a44b-3a010fdcaf5f",
+               "name": "20240402_17_44_06",
+               "annotated": true,
+               "description": "20240402_17_44_06",
+               "start_time": "2024-04-02T17:44:10.000Z",
+               "end_time": "2024-04-02T17:44:38.508Z",
+               "device_description": {
+                  "part_number": "STEVAL-MKBOXPRO",
+                  "serial_number": "004A00295752501620353339",
+                  "alias": "STBOX_PRO_001",
+                  "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                  "fw_version": "1.2.1"
+               }
+            }
+         ],
+         "tools": [
+            {
+               "name": "hsdatalog_to_unico",
+               "version": "1.1.0",
+               "parameters": {
+                  "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                  "-f": "TXT",
+                  "-t": "",
+                  "-s": "all",
+                  "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+               }
+            }
+         ]
+      }
+   ],
+   "models": [
+      {
+         "uuid": "cb276db1-9128-45bb-8985-14c0ede1c2e7",
+         "name": "state_detector",
+         "model_type": "classifier",
+         "training_type": "offline",
+         "stage": "modeling",
+         "model_metadata": {
+            "classes": [
+               "idle",
+               "slow",
+               "fast"
+            ]
+         },
+         "experiments": [
+            {
+               "uuid": "03eed8df-a784-40b8-94ae-56de0cf8e2eb",
+               "name": "e1",
+               "description": "e1",
+               "model_dev_file": null
+            }
+         ]
+      }
+   ],
+   "outputs": [
+      {
+         "uuid": "e6f97a98-920e-4557-a9f0-504e97b25372",
+         "model_ref": "cb276db1-9128-45bb-8985-14c0ede1c2e7",
+         "output_type": "steval-mkboxpro:mlc",
+         "best_test": null,
+         "tests": [
+            {
+               "uuid": "1bd63332-e051-41b4-8b6e-6a935ba01188",
+               "name": "t1",
+               "experiment_ref": "03eed8df-a784-40b8-94ae-56de0cf8e2eb",
+               "model_file": null,
+               "parameters": [],
+               "reports": [
+                  "lsm6dsv16x_mlc_report.json"
+               ],
+               "outputs": [
+                  "lsm6dsv16x_mlc.ucf",
+                  "lsm6dsv16x_mlc.h"
+               ]
+            }
+         ],
+         "tools": [
+            {
+               "name": "mlctools",
+               "version": "1.0.0",
+               "parameters": null
+            }
+         ]
+      }
+   ],
+   "deployments": [],
+   "dbstatus": {
+      "status": "unknown",
+      "message": null
+   }
+}

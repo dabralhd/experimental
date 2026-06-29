@@ -1,0 +1,14 @@
+{
+    "uuid": "a3069b98-9acf-4f73-b354-619c82aa7e07",
+    "ai_project_name": "VSM01Test",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "last_update_time": "2026-02-24 10:31:23.809265",
+    "creation_time": "2026-02-24 10:31:23.809265",
+    "project_owner_uuid": "6d5f93a8-ac97-4edb-92cb-ffcc7af0d21c",
+    "models": [],
+    "deployments": [],
+    "applications": []
+}

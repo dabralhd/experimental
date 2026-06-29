@@ -1,0 +1,125 @@
+{
+    "$schema": "/home/workspace/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v6",
+    "ai_project_name": "get_started_mlc",
+    "description": "Get started project for the MLC platform.",
+    "uuid": "e978825c-0e13-4739-8995-df4da81f1b7a",
+    "version": "1.0.0",
+    "inputs": [
+        {
+            "uuid": "8167953c-0b1d-40a8-8898-88df2bcb41c8",
+            "input_type": "binary_hsd",
+            "model_ref": "850f17ad-4c2d-4e4a-a074-33d240dde7b0",
+            "logs": [
+                {
+                    "uuid": "69d71e96-f266-4726-b2e8-11e27e7c3cfa",
+                    "name": "20210222_12_25_17",
+                    "start_date": "",
+                    "description": "descriptionTest",
+                    "device_description": {
+                        "part_number": "STEVAL-STWINKT1",
+                        "serial_number": "0019001B374E50132030364B",
+                        "alias": "STWIN_001",
+                        "fw_name:": "FP-SNS-DATALOG1",
+                        "fw_version": "1.0.0"
+                    },
+                    "annotated": true
+                }
+            ],
+            "augmentation": [],
+            "tools": [
+                {
+                    "name": "hsdatalog_to_unico",
+                    "version": "1.1.0",
+                    "input": "binary_hsd",
+                    "model": "classifier",
+                    "output": "mlc",
+                    "section": "input",
+                    "parameters": {
+                        "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                        "-f": "TXT",
+                        "-t": "",
+                        "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+                    }
+                }
+            ]
+        }
+    ],
+    "models": [
+        {
+            "uuid": "850f17ad-4c2d-4e4a-a074-33d240dde7b0",
+            "name": "HARmodel",
+            "stage": "modeling",
+            "model_type": "classifier",
+            "training_type": "offline",
+            "retraining": false,
+            "model_metadata": {
+                "classes": [
+                    "still",
+                    "walk",
+                    "fastwalk"
+                ]
+            },
+            "experiments": [
+                {
+                    "uuid": "0e04c1d1-9832-4ec1-b3d6-90262c834348",
+                    "name": "exp_har",
+                    "description": "har experiment",
+                    "model_dev_file": null
+                },
+                {
+                    "uuid": "2c5eb634-bb03-4ed8-ae68-c597ab1f11a1",
+                    "name": "exp_har_basic",
+                    "description": "basic HAR experiment",
+                    "model_dev_file": null
+                }
+            ],
+            "tools": []
+        }
+    ],
+    "outputs": [
+        {
+            "uuid": "b7313e85-70e7-449a-9d34-0db4dc7f15aa",
+            "output_type": "mlc",
+            "model_ref": "850f17ad-4c2d-4e4a-a074-33d240dde7b0",
+            "tests": [
+                {
+                    "uuid": "bcb781c5-7bd7-48ae-8e28-5ac5a3be17d2",
+                    "name": "test_har_1",
+                    "experiment_ref": "0e04c1d1-9832-4ec1-b3d6-90262c834348",
+                    "model_file": null,
+                    "parameters": [],
+                    "reports": [],
+                    "outputs": [
+                        "MLC_configuration.ucf"
+                    ]
+                },
+                {
+                    "uuid": "bcb781c5-7bd7-48ae-8e28-5ac5a3be17d2",
+                    "name": "test_har_1",
+                    "experiment_ref": "2c5eb634-bb03-4ed8-ae68-c597ab1f11a1",
+                    "model_file": null,
+                    "parameters": [],
+                    "reports": [],
+                    "outputs": [
+                        "MLC_configuration.ucf"
+                    ]
+                }
+            ],
+            "best_test": null,
+            "tools": [
+                {
+                    "name": "mlctools",
+                    "version": "1.0.0",
+                    "input": "binary_hsd",
+                    "model": "classifier",
+                    "output": "mlc",
+                    "section": "output"
+                }
+            ],
+            "events": [],
+            "ui": null
+        }
+    ],
+    "deployments": []
+}

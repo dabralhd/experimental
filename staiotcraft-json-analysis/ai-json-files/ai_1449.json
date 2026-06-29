@@ -1,0 +1,11 @@
+{
+   "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+   "ai_project_name": "test ispu",
+   "uuid": "2a6fc904-d783-40c9-b2fa-21d9316f492b",
+   "description": "test ispu",
+   "version": "0.0.1",
+   "inputs": [],
+   "models": [],
+   "outputs": [],
+   "deployments": []
+}

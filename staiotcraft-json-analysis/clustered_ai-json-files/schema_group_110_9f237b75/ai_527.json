@@ -1,0 +1,40 @@
+{
+    "uuid": "dbb2d99f-1990-44cb-b00e-c7177abfe481",
+    "ai_project_name": "MEMS_characterisation",
+    "type": null,
+    "display_name": null,
+    "description": "Fake project to test MEMS characterization simulator, launched with jobctrl-api",
+    "version": "1.0.0",
+    "last_update_time": "2024-12-04 17:03:26.988807",
+    "creation_time": "2024-12-04 16:58:45.626906",
+    "models": [
+        {
+            "uuid": "5120c1f5-d0d7-4761-bbac-c63e7fe15bb6",
+            "name": "fake_model",
+            "dataset": {
+                "name": "poli_lab_acquisitions",
+                "dataset_id": "01je99x2c2f6sfn52qt6rhsgp3"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "50Hz",
+                    "20Hz",
+                    "10Hz",
+                    "5Hz",
+                    "3Hz",
+                    "0Hz"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2024-12-04 17:03:26.958771",
+            "last_update_time": "2024-12-04 17:03:26.958781"
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

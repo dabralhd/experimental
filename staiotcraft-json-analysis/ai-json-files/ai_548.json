@@ -1,0 +1,54 @@
+{
+    "uuid": "9482c0f2-e1e4-4a53-a6b1-d1ad42fa2da9",
+    "ai_project_name": "In_pocket_Diverse",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2024-11-22 16:08:12.780259",
+    "creation_time": "2024-11-22 16:07:51.485885",
+    "models": [
+        {
+            "uuid": "5ef8cede-3397-462c-9bb2-acf2a902f0aa",
+            "name": "In_pocket_Diverse",
+            "dataset": {
+                "name": "In_pocket_Diverce",
+                "dataset_id": "01jda9gz0d7zfhp8w796w1wyv0"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "worn_on_right_shoulder",
+                    "not_worn",
+                    "worn_on_left_shoulder",
+                    "worn_correctly"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2024-11-22 16:08:12.749542",
+            "last_update_time": "2024-11-22 16:08:12.749552",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2024-12-10 17:39:21.083918",
+                "creation_time": "2024-12-10 17:39:21.083915"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

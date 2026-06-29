@@ -1,0 +1,133 @@
+{
+    "uuid": "5b5443d0-623e-4120-b553-21517f4e4201",
+    "ai_project_name": "SmartAssetTrackingNucleoPj",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "last_update_time": "2026-06-03 12:11:59.869137",
+    "creation_time": "2026-03-27 11:54:38.691251",
+    "project_owner_uuid": "363af7b3-752e-40df-855d-a5ebc3801d8e",
+    "models": [
+        {
+            "uuid": "e030d6ec-1ca2-4272-b506-1ebb12371d8d",
+            "name": "SmartAssetTrackingModel",
+            "dataset": {
+                "name": "SmartAssetTracking",
+                "dataset_id": "01kmqj3pwc1g1thg67bswvf2fj"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary_upright",
+                    "stationary_not_upright",
+                    "motion",
+                    "shaken"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "ism6hg256x",
+                "device": "nucleo-u575zi-q"
+            },
+            "creation_time": "2026-03-27 11:54:39.944210",
+            "last_update_time": "2026-03-27 11:54:39.944216",
+            "model_owner_uuid": "363af7b3-752e-40df-855d-a5ebc3801d8e",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "ism6hg256x_mlc.json",
+                    "ism6hg256x_mlc.h"
+                ],
+                "last_update_time": "2026-03-27 11:54:52.142393",
+                "creation_time": "2026-03-27 11:54:52.142391"
+            }
+        },
+        {
+            "uuid": "e4cc7777-c637-4e88-a470-5400108e63b3",
+            "name": "test-export",
+            "dataset": {
+                "name": "SmartAssetTracking",
+                "dataset_id": "01kmqj3pwc1g1thg67bswvf2fj"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary_upright",
+                    "stationary_not_upright",
+                    "motion",
+                    "shaken"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "ism6hg256x",
+                "device": "nucleo-u575zi-q"
+            },
+            "creation_time": "2026-06-03 11:48:44.414239",
+            "last_update_time": "2026-06-03 11:48:44.414251",
+            "model_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "ism6hg256x_mlc.json",
+                    "ism6hg256x_mlc.h"
+                ],
+                "last_update_time": "2026-06-03 12:00:36.194117",
+                "creation_time": "2026-06-03 12:00:36.194114"
+            }
+        },
+        {
+            "uuid": "06b686a5-ff52-4c3d-97b2-83789656537e",
+            "name": "my-model",
+            "dataset": {
+                "name": "BackpackMonitoring",
+                "dataset_id": "01khx9r090ntgvb9f3djp0tz7s"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "backward_leaning",
+                    "proper_posture"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-06-03 12:11:59.838550",
+            "last_update_time": "2026-06-03 12:11:59.838563",
+            "model_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508"
+        }
+    ],
+    "deployments": [],
+    "applications": [],
+    "schema_version": null
+}

@@ -1,0 +1,369 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "ai_project_name": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "input_type": {
+            "type": "string"
+          },
+          "model_ref": {
+            "type": "string"
+          },
+          "logs": {
+            "type": "array"
+          },
+          "augmentation": {
+            "type": "array"
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                },
+                "input": {
+                  "type": "string"
+                },
+                "model": {
+                  "type": "string"
+                },
+                "output": {
+                  "type": "string"
+                },
+                "section": {
+                  "type": "string"
+                },
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "-i": {
+                      "type": "string"
+                    },
+                    "-o": {
+                      "type": "string"
+                    },
+                    "-r": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "-i",
+                    "-o",
+                    "-r"
+                  ]
+                }
+              },
+              "required": [
+                "input",
+                "model",
+                "name",
+                "output",
+                "parameters",
+                "section",
+                "version"
+              ]
+            }
+          }
+        },
+        "required": [
+          "augmentation",
+          "input_type",
+          "logs",
+          "model_ref",
+          "tools",
+          "uuid"
+        ]
+      }
+    },
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "stage": {
+            "type": "string"
+          },
+          "model_type": {
+            "type": "string"
+          },
+          "training_type": {
+            "type": "string"
+          },
+          "retraining": {
+            "type": "boolean"
+          },
+          "model_metadata": {
+            "type": "object",
+            "properties": {
+              "classes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "classes"
+            ]
+          },
+          "experiments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "uuid": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "model_dev_file": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "description",
+                "model_dev_file",
+                "name",
+                "uuid"
+              ]
+            }
+          },
+          "tools": {
+            "type": "array"
+          }
+        },
+        "required": [
+          "experiments",
+          "model_metadata",
+          "model_type",
+          "name",
+          "retraining",
+          "stage",
+          "tools",
+          "training_type",
+          "uuid"
+        ]
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "output_type": {
+            "type": "string"
+          },
+          "model_ref": {
+            "type": "string"
+          },
+          "tests": {
+            "type": "array"
+          },
+          "best_test": {
+            "type": "null"
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                },
+                "input": {
+                  "type": "string"
+                },
+                "model": {
+                  "type": "string"
+                },
+                "output": {
+                  "type": "string"
+                },
+                "section": {
+                  "type": "string"
+                },
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string"
+                    },
+                    "query": {
+                      "type": "object",
+                      "properties": {
+                        "address": {
+                          "type": "string"
+                        },
+                        "allocate_inputs": {
+                          "type": "boolean"
+                        },
+                        "allocate_outputs": {
+                          "type": "boolean"
+                        },
+                        "binary": {
+                          "type": "boolean"
+                        },
+                        "copy_weights_at": {
+                          "type": "string"
+                        },
+                        "generate_fota": {
+                          "type": "boolean"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "split_weigths": {
+                          "type": "boolean"
+                        },
+                        "generate_full_binary": {
+                          "type": "boolean"
+                        },
+                        "return_full_binary_only": {
+                          "type": "boolean"
+                        }
+                      },
+                      "required": [
+                        "address",
+                        "allocate_inputs",
+                        "allocate_outputs",
+                        "binary",
+                        "copy_weights_at",
+                        "generate_fota",
+                        "generate_full_binary",
+                        "name",
+                        "return_full_binary_only",
+                        "split_weigths"
+                      ]
+                    },
+                    "headers": {
+                      "type": "object",
+                      "properties": {
+                        "content-type": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "content-type"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "headers",
+                    "path",
+                    "query"
+                  ]
+                }
+              },
+              "required": [
+                "input",
+                "model",
+                "name",
+                "output",
+                "parameters",
+                "section",
+                "version"
+              ]
+            }
+          },
+          "events": {
+            "type": "array"
+          },
+          "ui": {
+            "type": "object",
+            "properties": {
+              "icons": {
+                "type": "array"
+              }
+            },
+            "required": [
+              "icons"
+            ]
+          }
+        },
+        "required": [
+          "best_test",
+          "events",
+          "model_ref",
+          "output_type",
+          "tests",
+          "tools",
+          "ui",
+          "uuid"
+        ]
+      }
+    },
+    "deployments": {
+      "type": "array"
+    },
+    "dbstatus": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "message",
+        "status"
+      ]
+    }
+  },
+  "required": [
+    "$schema",
+    "ai_project_name",
+    "dbstatus",
+    "deployments",
+    "description",
+    "inputs",
+    "models",
+    "outputs",
+    "uuid",
+    "version"
+  ]
+}

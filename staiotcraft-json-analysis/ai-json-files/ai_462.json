@@ -1,0 +1,15 @@
+{
+    "uuid": "2f00c6d9-5acf-4716-9490-ea595d25ba91",
+    "ai_project_name": "svg",
+    "type": null,
+    "display_name": null,
+    "description": "<svg onload=alert(1)>",
+    "version": null,
+    "schema_version": null,
+    "last_update_time": "2026-05-07 15:18:26.178278",
+    "creation_time": "2026-05-07 15:18:26.178278",
+    "project_owner_uuid": "d2a55444-90f1-7018-9a49-b90c3a197d0b",
+    "models": [],
+    "deployments": [],
+    "applications": []
+}

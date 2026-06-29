@@ -1,0 +1,36 @@
+{
+    "uuid": "ca4cf044-4b02-42e8-a055-bdf09f1d8d38",
+    "ai_project_name": "prjModelAndDataset",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2025-06-29 10:28:10.421846",
+    "creation_time": "2025-06-29 10:28:08.890134",
+    "models": [
+        {
+            "uuid": "b01fc8e9-adf9-4925-9916-2dc2d43f98ed",
+            "name": "prjModelAndDataset",
+            "dataset": {
+                "name": "testGroupDataset1",
+                "dataset_id": "01jyxknr0h0rm9xkz6rrggedgg"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "c1"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv80x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-06-29 10:28:10.397314",
+            "last_update_time": "2025-06-29 10:28:10.397322",
+            "model_owner_uuid": "fv7er6m9prcy7emqeb531xwj10"
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

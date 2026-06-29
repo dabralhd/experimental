@@ -1,0 +1,96 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "Main Schema.",
+    "description": "Main Schema for an AI project file.",
+    "version": "v8",
+    "required": [
+        "ai_project_name",
+        "display_name",
+        "description",
+        "uuid",
+        "version",
+        "creation_time",
+        "last_update_time",
+        "models",
+        "deployments"
+    ],
+    "properties": {
+        "ai_project_name": {
+            "$id": "#/properties/ai_project_name",
+            "type": "string",
+            "title": "AI project name.",
+            "description": "The AI project name.",
+            "default": ""
+        },
+        "display_name": {
+            "$id": "#/properties/display_name",
+            "type": "string",
+            "title": "AI project display name.",
+            "description": "The AI project display name.",
+            "default": ""
+        },
+        "description": {
+            "$id": "#/properties/description",
+            "type": "string",
+            "title": "The AI project description",
+            "description": "A short description about what the project is about.",
+            "default": ""
+        },
+        "uuid": {
+            "$id": "#/properties/uuid",
+            "type": "string",
+            "title": "The UUID Schema.",
+            "description": "A unique identifier for the project: use right-click + 'Generate UUID'.",
+            "examples": [
+                "99ee6781-a950-48af-83a8-2285fa34eb92"
+            ]
+        },
+        "version": {
+            "$id": "#/properties/version",
+            "type": "string",
+            "title": "The AI project version.",
+            "description": "The version of the AI project (x.y.z).",
+            "pattern": "^[0-9].[0-9].[0-9]$",
+            "default": "1.0.0"
+        },
+        "creation_time": {
+            "$id": "#/properties/creation_time",
+            "type": "string",
+            "title": "The AI project creation time.",
+            "description": "The creation timestamp of the AI project (x.y.z).",
+            "pattern": "YYYY-MM-DDTHH:MM:SS.mmmZ",
+            "default": ""
+        },
+        "last_update_time": {
+            "$id": "#/properties/last_update_time",
+            "type": "string",
+            "title": "The AI project creation time.",
+            "description": "The last update timestamp of the AI project (x.y.z).",
+            "pattern": "YYYY-MM-DDTHH:MM:SS.mmmZ",
+            "default": ""
+        },
+        "owner": {
+            "$id": "#/properties/owner",
+            "type": "string",
+            "title": "The AI project owner.",
+            "description": "The owner/author of the AI project."
+        },
+        "reference": {
+            "$id": "#/properties/reference",
+            "type": "string",
+            "title": "The reference to father project (if any).",
+            "description": "A reference to a related project (UUID).",
+            "default": ""
+        },
+        "models": {
+            "$ref": "./ai_models_schema.json#/properties/models",
+            "description": "Models Schema for the models section of an AI project file."
+        },
+        "deployments": {
+            "$ref": "./ai_deployments_schema.json#/properties/deployments",
+            "description": "Deployments Schema for the deployments section of an AI project file."
+        }
+    }
+}

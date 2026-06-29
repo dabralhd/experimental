@@ -1,0 +1,13 @@
+{
+    "uuid": "629c1a5e-ddaa-4cbc-84d7-4081a463516d",
+    "ai_project_name": "SegmentationTest",
+    "type": null,
+    "display_name": null,
+    "description": "Simple project to test the Assisted Segmentation",
+    "version": "1.0.0",
+    "last_update_time": "2025-06-13 09:16:49.915308",
+    "creation_time": "2025-06-13 09:16:49.915308",
+    "models": [],
+    "deployments": [],
+    "applications": []
+}

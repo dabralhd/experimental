@@ -1,0 +1,54 @@
+{
+    "uuid": "826f6f91-7110-4bfa-bd15-2e7002c3c7b0",
+    "ai_project_name": "Merged",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2024-11-22 15:13:38.828942",
+    "creation_time": "2024-11-22 15:13:17.225331",
+    "models": [
+        {
+            "uuid": "3cb17d20-0d9f-4338-b022-e988898ddfe6",
+            "name": "model1",
+            "dataset": {
+                "name": "In_pocket_merged",
+                "dataset_id": "01jc12mtftmc8eg8smdh28bepc"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "not_worn",
+                    "worn_correctly",
+                    "worn_on_left_shoulder",
+                    "worn_on_right_shoulder"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2024-11-22 15:13:38.792079",
+            "last_update_time": "2024-11-22 15:13:38.792088",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2024-11-25 08:48:49.976639",
+                "creation_time": "2024-11-25 08:48:49.976636"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

@@ -1,0 +1,11 @@
+{
+   "$schema": "/home/workspace/.assets/schemas/ai_main_schema.json",
+   "ai_project_name": "anomaly",
+   "uuid": "9bfd06e8-186c-455b-951e-fe8641ea6641",
+   "description": "test project for FAN AE",
+   "version": "0.0.1",
+   "inputs": [],
+   "models": [],
+   "outputs": [],
+   "deployments": []
+}

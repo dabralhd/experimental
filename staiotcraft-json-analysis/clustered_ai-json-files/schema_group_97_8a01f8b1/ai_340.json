@@ -1,0 +1,150 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v10",
+    "ai_project_name": "bug-em-shared",
+    "display_name": "Smart Asset Tracking",
+    "description": "Classification of package conditions using the MLC to detect stationary orientation (upright or not) or moving and shaking states.\n\nWith this example, you can individually track the state of a physical item, such as a package, to monitor whether it is moving or being shaken too harshly, and whether it is still upright or not. Classification is very fast and will detect even brief events. You can also clone and retrain the model to adapt its classes to your use case, for example by tailoring the 'shaken' class to particularly strong motion or, on the contrary, by making it more sensitive for fragile items.\nTo use this example, simply position the board on top of the item, ensuring it is secured firmly. If you wish to avoid using a USB cable, you can also track it wirelessly from the ST AIoT Craft mobile app.",
+    "type": "industrial",
+    "uuid": "6af7703e-4a68-4e51-96ac-543cd86e13cb",
+    "version": "1.0.0",
+    "creation_time": "2025-07-03 12:32:59.192417",
+    "last_update_time": "2025-07-03 13:10:12.840677",
+    "models": [
+        {
+            "uuid": "8de86b77-775f-4b62-9416-9e63761a1585",
+            "name": "smart_asset_tracking",
+            "description": "Model to recognize position and orientation of a tracked item, created with an Auto-ML based approach.",
+            "creation_time": "2025-07-03 12:32:59.192430",
+            "last_update_time": "2025-07-03 12:32:59.192433",
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary_upright",
+                    "stationary_not_upright",
+                    "motion",
+                    "shaken"
+                ]
+            },
+            "dataset": {
+                "dataset_id": "01jz84d8gsnjpc12crg09set9q",
+                "name": "bug-em-shared"
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "data_sufficiency": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-ds-job",
+                            "version": null,
+                            "template_id": null
+                        }
+                    ]
+                },
+                "configuration": null,
+                "artifacts": [
+                    "activities_training.json",
+                    "counts.json",
+                    "feat_names.json",
+                    "hnne.pkl",
+                    "kmeans_cluster_labels.json",
+                    "my_kmeans.json",
+                    "my_tree.onnx",
+                    "window_size_odr_channels.json"
+                ],
+                "reports": []
+            },
+            "training": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": null
+                        },
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "artifacts": [
+                    "lsm6dsv16x_mlc.json",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "reports": [
+                    "report.json"
+                ]
+            },
+            "codegen": null,
+            "building": null,
+            "model_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508"
+        },
+        {
+            "uuid": "132b0958-4260-4a3b-9f6e-05df15dc6bbe",
+            "name": "deleteMe",
+            "dataset": {
+                "name": "testDatalog",
+                "dataset_id": "01jy6gx0fk81x73zvg492r4k43"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "c1",
+                    "c2",
+                    "unlabeled"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv80x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-07-03 13:10:12.808109",
+            "last_update_time": "2025-07-03 13:10:12.808121",
+            "model_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508"
+        }
+    ],
+    "applications": [
+        {
+            "uuid": "708ca69b-e4b6-4508-bc4c-6b05145b7bdf",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-6.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_GATEWAY;6",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-6.1.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/edge_gateway_production_20250214_1_3_0.img.gz",
+            "module_id": "edgeMLC"
+        },
+        {
+            "uuid": "c16e0062-28dd-48d0-b7ad-102d8b5ffc3e",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-6.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;6",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_3_0_0.bin",
+            "binary_id": 341,
+            "protocol": 2
+        },
+        {
+            "uuid": "574d8959-324f-49ac-92e4-7841136e9291",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/AI_INERTIAL-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:AI_INERTIAL;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/AI-INERTIAL_AssetTrackingOnMLC_1_2_0.bin",
+            "binary_id": 353,
+            "protocol": 1
+        }
+    ],
+    "deployments": [],
+    "project_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508"
+}

@@ -1,0 +1,55 @@
+{
+    "uuid": "1c1ca49b-fea7-4529-9243-31c8128ca269",
+    "ai_project_name": "ActivityRecognition",
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2024-09-20 16:56:40.215142",
+    "creation_time": "2024-09-20 16:56:24.088441",
+    "models": [
+        {
+            "uuid": "20e87b81-e8fd-4c3a-a20d-dee1f8d8fe8b",
+            "name": "model1",
+            "dataset": {
+                "name": "ActivityRecognition",
+                "dataset_id": "01j81yjpnjwnv03eqzdx119k4f"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "standing",
+                    "sitting",
+                    "walking",
+                    "jogging",
+                    "upstairs",
+                    "downstairs"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2024-09-20 16:56:40.183587",
+            "last_update_time": "2024-09-20 16:56:40.183596",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2024-11-15 11:09:14.673686",
+                "creation_time": "2024-11-15 11:09:14.673684"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}
