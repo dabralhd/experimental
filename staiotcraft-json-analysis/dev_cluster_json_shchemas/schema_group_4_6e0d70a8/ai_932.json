@@ -1,0 +1,299 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v10",
+    "ai_project_name": "fan",
+    "display_name": "Fan Coil Monitoring",
+    "description": "Classify fan coil vibrations from still, low vibration to high vibration.\n\nStick the board on top of the fan coil emitting air, with the buttons facing out and the USB plug towards the ground. This ensures accurate vibration detection and classification. The project can be adapted and re-trained on a motor or a pump.",
+    "type": "industrial",
+    "uuid": "7655b8d2-2311-405a-be9f-975c310bcf80",
+    "version": "1.0.0",
+    "creation_time": "2024-10-30 13:41:29.994542",
+    "last_update_time": "2024-10-30 13:41:29.994542",
+    "models": [
+        {
+            "uuid": "8190ce8a-1e6e-4231-99ce-c1bdea93651b",
+            "name": "fan_coil_monitoring",
+            "description": "Model to monitor a fan coil, created with an Auto-ML based approach.",
+            "creation_time": "2024-10-30 13:41:29.994557",
+            "last_update_time": "2024-10-30 13:41:29.994567",
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "still",
+                    "low_vibration",
+                    "high_vibration"
+                ]
+            },
+            "dataset": {
+                "dataset_id": "01jbethwz54rvf4tfv6bj5jvvz",
+                "name": "fan"
+            },
+            "target": {
+                "type": "mlc",
+                "component": "ism330dhcx",
+                "device": "steval-stwinbx1"
+            },
+            "data_sufficiency": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-ds-job",
+                            "version": null,
+                            "template_id": null
+                        }
+                    ]
+                },
+                "configuration": null,
+                "artifacts": [
+                    "activities_training.json",
+                    "counts.json",
+                    "feat_names.json",
+                    "hnne.pkl",
+                    "kmeans_cluster_labels.json",
+                    "my_kmeans.json",
+                    "my_tree.onnx",
+                    "window_size_odr_channels.json"
+                ],
+                "reports": []
+            },
+            "training": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": null
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "artifacts": [
+                    "ism330dhcx_mlc.ucf",
+                    "ism330dhcx_mlc.h"
+                ],
+                "reports": [
+                    "report.json"
+                ]
+            },
+            "codegen": null,
+            "building": null
+        },
+        {
+            "uuid": "ea8d941a-cdf9-4ec4-ba61-54123bdbd91d",
+            "name": "fan_coil_monitoring_on_stwin",
+            "description": "Model to monitor a fan coil on STWIN, created with an Auto-ML based approach.",
+            "creation_time": "2024-10-30 13:41:29.994561",
+            "last_update_time": "2024-10-30 13:41:29.994572",
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "still",
+                    "low_vibration",
+                    "high_vibration"
+                ]
+            },
+            "dataset": {
+                "dataset_id": "01jbethysw0axdtshyrxj0pk0y",
+                "name": "fan"
+            },
+            "target": {
+                "type": "mlc",
+                "component": "ism330dhcx",
+                "device": "steval-stwinkt1b"
+            },
+            "data_sufficiency": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-ds-job",
+                            "version": null,
+                            "template_id": null
+                        }
+                    ]
+                },
+                "configuration": null,
+                "artifacts": [
+                    "activities_training.json",
+                    "counts.json",
+                    "feat_names.json",
+                    "hnne.pkl",
+                    "kmeans_cluster_labels.json",
+                    "my_kmeans.json",
+                    "my_tree.onnx",
+                    "window_size_odr_channels.json"
+                ],
+                "reports": []
+            },
+            "training": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": null
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "artifacts": [
+                    "ism330dhcx_mlc.ucf",
+                    "ism330dhcx_mlc.h"
+                ],
+                "reports": [
+                    "report.json"
+                ]
+            },
+            "codegen": null,
+            "building": null
+        }
+    ],
+    "applications": [
+        {
+            "uuid": "934a8b2c-8bfe-457c-897f-e1b2bd0dc5d3",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-5.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_GATEWAY;5",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-5.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/edge_gateway_production_20241030_1_2_0_rc2.img.gz",
+            "module_id": "edgeMLC"
+        },
+        {
+            "uuid": "7b2ea47a-e8d0-401c-b42e-52c56aa77ad9",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_stwinbx1/FP_SNS_DATALOG2_Datalog2-6.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_stwinbx1:FP_SNS_DATALOG2_Datalog2;6",
+            "binary_uri": "/bluestsdkv2/bin/steval-stwinbx1/FP-SNS-DATALOG2_Datalog2_2_2_0.bin",
+            "binary_id": 279,
+            "protocol": 2
+        },
+        {
+            "uuid": "255b1baf-8cd1-40a5-bc26-d2bedc7e986f",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_stwinbx1/AI_INERTIAL-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_stwinbx1:AI_INERTIAL;1",
+            "binary_uri": "/usb/bin/steval-stwinbx1/AI-INERTIAL_VibrationMonitoringOnMLC_1_1_0.bin",
+            "binary_id": 332,
+            "protocol": 1
+        },
+        {
+            "uuid": "880a8941-1673-4ae8-9a48-a589d810a0bc",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_stwinkt1b/FP_SNS_DATALOG2_Datalog2-3.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_stwinkt1b:FP_SNS_DATALOG2_Datalog2;3",
+            "binary_uri": "/bluestsdkv2/bin/steval-stwinkt1b/FP-SNS-DATALOG2_Datalog2_2_2_0.bin",
+            "binary_id": 280,
+            "protocol": 2
+        },
+        {
+            "uuid": "23011bb3-feaf-4265-8d2c-334224a4666c",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_stwinkt1b/AI_INERTIAL-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_stwinkt1b:AI_INERTIAL;1",
+            "binary_uri": "/usb/bin/steval-stwinkt1b/AI-INERTIAL_VibrationMonitoringOnMLC_1_1_0.bin",
+            "binary_id": 330,
+            "protocol": 1
+        }
+    ],
+    "deployments": [
+        {
+            "uuid": "84e4b7b2-4c54-4da4-a86b-cc22f936f355",
+            "display_name": "Fan Coil Monitoring end-to-end system with STWIN.box.",
+            "description": "End-to-end system deployment for Fan Coil Monitoring scenario.",
+            "last_update_time": null,
+            "last_deploy_result": null,
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": null
+            },
+            "gateway": [
+                {
+                    "device_id": "gateway_0",
+                    "display_name": "gateway_0",
+                    "gateway_id": null,
+                    "description": "Gateway device at position 0.",
+                    "application": "934a8b2c-8bfe-457c-897f-e1b2bd0dc5d3",
+                    "wifi_mode": "off"
+                }
+            ],
+            "leaf": [
+                {
+                    "device_id": "leaf_0",
+                    "display_name": "leaf_0",
+                    "gateway_id": "gateway_0",
+                    "description": "Leaf device at position 0.",
+                    "datalogging": {
+                        "application": "7b2ea47a-e8d0-401c-b42e-52c56aa77ad9",
+                        "firmware_update": false
+                    },
+                    "inference": {
+                        "application": "255b1baf-8cd1-40a5-bc26-d2bedc7e986f",
+                        "firmware_update": false,
+                        "models": [
+                            {
+                                "model_name_reference": "fan_coil_monitoring",
+                                "artifact_type": "ucf",
+                                "component_name": "ism330dhcx_mlc"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "uuid": "69b41d21-e92d-4b4d-9b0e-d0be0e905218",
+            "display_name": "Fan Coil Monitoring end-to-end system with STWIN.",
+            "description": "End-to-end system deployment for Fan Coil Monitoring scenario.",
+            "last_update_time": null,
+            "last_deploy_result": null,
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": null
+            },
+            "gateway": [
+                {
+                    "device_id": "gateway_0",
+                    "display_name": "gateway_0",
+                    "gateway_id": null,
+                    "description": "Gateway device at position 0.",
+                    "application": "934a8b2c-8bfe-457c-897f-e1b2bd0dc5d3",
+                    "wifi_mode": "off"
+                }
+            ],
+            "leaf": [
+                {
+                    "device_id": "leaf_0",
+                    "display_name": "leaf_0",
+                    "gateway_id": "gateway_0",
+                    "description": "Leaf device at position 0.",
+                    "datalogging": {
+                        "application": "880a8941-1673-4ae8-9a48-a589d810a0bc",
+                        "firmware_update": false
+                    },
+                    "inference": {
+                        "application": "23011bb3-feaf-4265-8d2c-334224a4666c",
+                        "firmware_update": false,
+                        "models": [
+                            {
+                                "model_name_reference": "fan_coil_monitoring_on_stwin",
+                                "artifact_type": "ucf",
+                                "component_name": "ism330dhcx_mlc"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

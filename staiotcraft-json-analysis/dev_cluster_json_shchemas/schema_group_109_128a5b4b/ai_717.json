@@ -1,0 +1,15 @@
+{
+    "uuid": "b18fe5ce-43de-4ebb-8ab4-ae95765411d6",
+    "ai_project_name": "TESTNOW",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "schema_version": null,
+    "last_update_time": "2026-06-09 12:25:31.788822",
+    "creation_time": "2026-06-09 12:25:31.788822",
+    "project_owner_uuid": "aaf6e357-1841-4fc6-8096-c1e7d0adae20",
+    "models": [],
+    "deployments": [],
+    "applications": []
+}

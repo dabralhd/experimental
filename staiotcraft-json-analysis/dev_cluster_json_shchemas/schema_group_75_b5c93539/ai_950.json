@@ -1,0 +1,11 @@
+{
+   "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+   "ai_project_name": "test",
+   "uuid": "71c46c6c-8d79-4b18-8768-acbb79598fca",
+   "description": "",
+   "version": "0.0.1",
+   "inputs": [],
+   "models": [],
+   "outputs": [],
+   "deployments": []
+}

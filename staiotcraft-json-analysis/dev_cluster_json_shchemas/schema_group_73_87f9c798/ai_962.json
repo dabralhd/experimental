@@ -1,0 +1,98 @@
+{
+    "uuid": "880d8634-7b27-4680-bea6-5f87ca160b9d",
+    "ai_project_name": "AirBlowerStateRecognition",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "last_update_time": "2026-03-09 09:18:23.366533",
+    "creation_time": "2026-03-09 08:34:45.003541",
+    "project_owner_uuid": "363af7b3-752e-40df-855d-a5ebc3801d8e",
+    "models": [
+        {
+            "uuid": "bd5db11e-2383-46bc-b17d-dfaa8292e1a6",
+            "name": "AirBlowerStateRecognitionModel",
+            "dataset": {
+                "name": "AirBlowerStateRecognitionData",
+                "dataset_id": "01kk8vr097sp023e6xqps8v4hs"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "off",
+                    "low_speed",
+                    "high_speed",
+                    "clogged"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "iis2dulpx",
+                "device": "nucleo-u575zi-q"
+            },
+            "creation_time": "2026-03-09 08:34:45.003551",
+            "last_update_time": "2026-03-09 08:34:45.003554",
+            "model_owner_uuid": "363af7b3-752e-40df-855d-a5ebc3801d8e",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [],
+                "artifacts": [],
+                "last_update_time": "2026-03-06 11:55:59.133551",
+                "creation_time": "2026-03-06 11:55:59.133549"
+            }
+        },
+        {
+            "uuid": "49c168b8-1786-4baa-bdd2-252c11c7ab97",
+            "name": "ap_clone",
+            "dataset": {
+                "name": "AirBlowerStateRecognitionData",
+                "dataset_id": "01kk8vr097sp023e6xqps8v4hs"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "off",
+                    "low_speed",
+                    "high_speed",
+                    "clogged"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "iis2dulpx",
+                "device": "nucleo-u575zi-q"
+            },
+            "creation_time": "2026-03-09 09:18:23.330171",
+            "last_update_time": "2026-03-09 09:18:23.330180",
+            "model_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "iis2dulpx_mlc.json",
+                    "iis2dulpx_mlc.h"
+                ],
+                "last_update_time": "2026-03-09 09:18:37.633987",
+                "creation_time": "2026-03-09 09:18:37.633985"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

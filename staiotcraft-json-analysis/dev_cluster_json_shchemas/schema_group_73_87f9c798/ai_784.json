@@ -1,0 +1,63 @@
+{
+    "uuid": "a4c1bef4-db2b-42d3-98b4-5b528bac2a1e",
+    "ai_project_name": "High-G-Shocks",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "last_update_time": "2026-04-14 15:41:09.615669",
+    "creation_time": "2026-04-14 15:41:09.615669",
+    "project_owner_uuid": "73dd2f22-6f54-431e-a42c-fca7db9d0eb4",
+    "models": [
+        {
+            "uuid": "d62e43b1-8cd4-4e46-84e1-9366819d1359",
+            "name": "Main",
+            "dataset": {
+                "name": "Shock-Dataset",
+                "dataset_id": "01kp6aen75hj0gr7f2qx9eb67n"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "crash",
+                    "bumps",
+                    "movetilt",
+                    "movelinear",
+                    "immobile"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "ism6hg256x",
+                "device": "nucleo-u575zi-q"
+            },
+            "creation_time": "2026-04-14 15:41:09.615681",
+            "last_update_time": "2026-04-14 15:41:09.615683",
+            "model_owner_uuid": "73dd2f22-6f54-431e-a42c-fca7db9d0eb4",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "ism6hg256x_mlc.json",
+                    "ism6hg256x_mlc.h"
+                ],
+                "last_update_time": "2026-04-10 12:58:03.753412",
+                "creation_time": "2026-04-10 12:58:03.753409"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

@@ -1,0 +1,1511 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "$id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "default": {
+      "type": "object"
+    },
+    "required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": {
+      "type": "boolean"
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "deployments": {
+          "type": "object",
+          "properties": {
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "default": {
+              "type": "array"
+            },
+            "additionalItems": {
+              "type": "boolean"
+            },
+            "items": {
+              "type": "object",
+              "properties": {
+                "anyOf": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "$id": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "default": {
+                        "type": "object"
+                      },
+                      "required": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "boolean"
+                      },
+                      "properties": {
+                        "type": "object",
+                        "properties": {
+                          "uuid": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "default",
+                              "description",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "display_name": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "default",
+                              "description",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "description": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "default",
+                              "description",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "last_update_time": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "default",
+                              "description",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "last_deploy_result": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "default",
+                              "description",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "cloud_params": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "object"
+                              },
+                              "required": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "properties": {
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$id": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "string"
+                                      },
+                                      "title": {
+                                        "type": "string"
+                                      },
+                                      "description": {
+                                        "type": "string"
+                                      },
+                                      "default": {
+                                        "type": "string"
+                                      },
+                                      "enum": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    },
+                                    "required": [
+                                      "$id",
+                                      "default",
+                                      "description",
+                                      "enum",
+                                      "title",
+                                      "type"
+                                    ]
+                                  },
+                                  "app_url": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$id": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "title": {
+                                        "type": "string"
+                                      },
+                                      "description": {
+                                        "type": "string"
+                                      },
+                                      "default": {
+                                        "type": "string"
+                                      },
+                                      "examples": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    },
+                                    "required": [
+                                      "$id",
+                                      "default",
+                                      "description",
+                                      "examples",
+                                      "title",
+                                      "type"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "app_url",
+                                  "type"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "default",
+                              "description",
+                              "properties",
+                              "required",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "configuration": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "object"
+                              },
+                              "required": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "properties": {
+                                "type": "object",
+                                "properties": {
+                                  "leaf": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$id": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "string"
+                                      },
+                                      "title": {
+                                        "type": "string"
+                                      },
+                                      "description": {
+                                        "type": "string"
+                                      },
+                                      "default": {
+                                        "type": "array"
+                                      },
+                                      "additionalItems": {
+                                        "type": "boolean"
+                                      },
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "anyOf": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                "$id": {
+                                                  "type": "string"
+                                                },
+                                                "type": {
+                                                  "type": "string"
+                                                },
+                                                "title": {
+                                                  "type": "string"
+                                                },
+                                                "description": {
+                                                  "type": "string"
+                                                },
+                                                "default": {
+                                                  "type": "object"
+                                                },
+                                                "required": {
+                                                  "type": "array",
+                                                  "items": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "additionalProperties": {
+                                                  "type": "boolean"
+                                                },
+                                                "properties": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "device_id": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "description": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "gateway_id": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "array",
+                                                          "items": {
+                                                            "type": "string"
+                                                          }
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "selected_model_name": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "models": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "array"
+                                                        },
+                                                        "additionalItems": {
+                                                          "type": "boolean"
+                                                        },
+                                                        "items": {
+                                                          "type": "object",
+                                                          "properties": {
+                                                            "anyOf": {
+                                                              "type": "array",
+                                                              "items": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                  "$id": {
+                                                                    "type": "string"
+                                                                  },
+                                                                  "type": {
+                                                                    "type": "string"
+                                                                  },
+                                                                  "title": {
+                                                                    "type": "string"
+                                                                  },
+                                                                  "description": {
+                                                                    "type": "string"
+                                                                  },
+                                                                  "default": {
+                                                                    "type": "object"
+                                                                  },
+                                                                  "required": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                      "type": "string"
+                                                                    }
+                                                                  },
+                                                                  "additionalProperties": {
+                                                                    "type": "boolean"
+                                                                  },
+                                                                  "properties": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                      "name": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                          "$id": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "type": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "title": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "description": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "default": {
+                                                                            "type": "string"
+                                                                          }
+                                                                        },
+                                                                        "required": [
+                                                                          "$id",
+                                                                          "default",
+                                                                          "description",
+                                                                          "title",
+                                                                          "type"
+                                                                        ]
+                                                                      },
+                                                                      "datalogging": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                          "$id": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "type": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "title": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "description": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "default": {
+                                                                            "type": "object"
+                                                                          },
+                                                                          "required": {
+                                                                            "type": "array",
+                                                                            "items": {
+                                                                              "type": "string"
+                                                                            }
+                                                                          },
+                                                                          "additionalProperties": {
+                                                                            "type": "boolean"
+                                                                          },
+                                                                          "properties": {
+                                                                            "type": "object",
+                                                                            "properties": {
+                                                                              "device_template_uri": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "$id": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "type": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "title": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "description": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "default": {
+                                                                                    "type": "string"
+                                                                                  }
+                                                                                },
+                                                                                "required": [
+                                                                                  "$id",
+                                                                                  "default",
+                                                                                  "description",
+                                                                                  "title",
+                                                                                  "type"
+                                                                                ]
+                                                                              },
+                                                                              "device_template_id": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "$id": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "type": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "title": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "description": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "default": {
+                                                                                    "type": "string"
+                                                                                  }
+                                                                                },
+                                                                                "required": [
+                                                                                  "$id",
+                                                                                  "default",
+                                                                                  "description",
+                                                                                  "title",
+                                                                                  "type"
+                                                                                ]
+                                                                              },
+                                                                              "protocol": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "$id": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "type": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "title": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "description": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "default": {
+                                                                                    "type": "string"
+                                                                                  }
+                                                                                },
+                                                                                "required": [
+                                                                                  "$id",
+                                                                                  "default",
+                                                                                  "description",
+                                                                                  "title",
+                                                                                  "type"
+                                                                                ]
+                                                                              },
+                                                                              "firmware_uri": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "$id": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "type": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "title": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "description": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "default": {
+                                                                                    "type": "string"
+                                                                                  }
+                                                                                },
+                                                                                "required": [
+                                                                                  "$id",
+                                                                                  "default",
+                                                                                  "description",
+                                                                                  "title",
+                                                                                  "type"
+                                                                                ]
+                                                                              }
+                                                                            },
+                                                                            "required": [
+                                                                              "device_template_id",
+                                                                              "device_template_uri",
+                                                                              "firmware_uri",
+                                                                              "protocol"
+                                                                            ]
+                                                                          }
+                                                                        },
+                                                                        "required": [
+                                                                          "$id",
+                                                                          "additionalProperties",
+                                                                          "default",
+                                                                          "description",
+                                                                          "properties",
+                                                                          "required",
+                                                                          "title",
+                                                                          "type"
+                                                                        ]
+                                                                      },
+                                                                      "inference": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                          "$id": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "type": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "title": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "description": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "default": {
+                                                                            "type": "object"
+                                                                          },
+                                                                          "required": {
+                                                                            "type": "array",
+                                                                            "items": {
+                                                                              "type": "string"
+                                                                            }
+                                                                          },
+                                                                          "additionalProperties": {
+                                                                            "type": "boolean"
+                                                                          },
+                                                                          "properties": {
+                                                                            "type": "object",
+                                                                            "properties": {
+                                                                              "device_template_uri": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "$id": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "type": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "title": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "description": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "default": {
+                                                                                    "type": "string"
+                                                                                  }
+                                                                                },
+                                                                                "required": [
+                                                                                  "$id",
+                                                                                  "default",
+                                                                                  "description",
+                                                                                  "title",
+                                                                                  "type"
+                                                                                ]
+                                                                              },
+                                                                              "device_template_id": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "$id": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "type": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "title": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "description": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "default": {
+                                                                                    "type": "string"
+                                                                                  }
+                                                                                },
+                                                                                "required": [
+                                                                                  "$id",
+                                                                                  "default",
+                                                                                  "description",
+                                                                                  "title",
+                                                                                  "type"
+                                                                                ]
+                                                                              },
+                                                                              "protocol": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "$id": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "type": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "title": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "description": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "default": {
+                                                                                    "type": "string"
+                                                                                  }
+                                                                                },
+                                                                                "required": [
+                                                                                  "$id",
+                                                                                  "default",
+                                                                                  "description",
+                                                                                  "title",
+                                                                                  "type"
+                                                                                ]
+                                                                              },
+                                                                              "firmware_uri": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "$id": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "type": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "title": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "description": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "default": {
+                                                                                    "type": "string"
+                                                                                  }
+                                                                                },
+                                                                                "required": [
+                                                                                  "$id",
+                                                                                  "default",
+                                                                                  "description",
+                                                                                  "title",
+                                                                                  "type"
+                                                                                ]
+                                                                              },
+                                                                              "ml_uri": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "$id": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "type": {
+                                                                                    "type": "array",
+                                                                                    "items": {
+                                                                                      "type": "string"
+                                                                                    }
+                                                                                  },
+                                                                                  "title": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "description": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "default": {
+                                                                                    "type": "string"
+                                                                                  }
+                                                                                },
+                                                                                "required": [
+                                                                                  "$id",
+                                                                                  "default",
+                                                                                  "description",
+                                                                                  "title",
+                                                                                  "type"
+                                                                                ]
+                                                                              },
+                                                                              "firmware_update": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "$id": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "type": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "title": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "description": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "default": {
+                                                                                    "type": "boolean"
+                                                                                  }
+                                                                                },
+                                                                                "required": [
+                                                                                  "$id",
+                                                                                  "default",
+                                                                                  "description",
+                                                                                  "title",
+                                                                                  "type"
+                                                                                ]
+                                                                              }
+                                                                            },
+                                                                            "required": [
+                                                                              "device_template_id",
+                                                                              "device_template_uri",
+                                                                              "firmware_update",
+                                                                              "firmware_uri",
+                                                                              "ml_uri",
+                                                                              "protocol"
+                                                                            ]
+                                                                          }
+                                                                        },
+                                                                        "required": [
+                                                                          "$id",
+                                                                          "additionalProperties",
+                                                                          "default",
+                                                                          "description",
+                                                                          "properties",
+                                                                          "required",
+                                                                          "title",
+                                                                          "type"
+                                                                        ]
+                                                                      }
+                                                                    },
+                                                                    "required": [
+                                                                      "datalogging",
+                                                                      "inference",
+                                                                      "name"
+                                                                    ]
+                                                                  }
+                                                                },
+                                                                "required": [
+                                                                  "$id",
+                                                                  "additionalProperties",
+                                                                  "default",
+                                                                  "description",
+                                                                  "properties",
+                                                                  "required",
+                                                                  "title",
+                                                                  "type"
+                                                                ]
+                                                              }
+                                                            },
+                                                            "$id": {
+                                                              "type": "string"
+                                                            }
+                                                          },
+                                                          "required": [
+                                                            "$id",
+                                                            "anyOf"
+                                                          ]
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "additionalItems",
+                                                        "default",
+                                                        "description",
+                                                        "items",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "description",
+                                                    "device_id",
+                                                    "gateway_id",
+                                                    "models",
+                                                    "selected_model_name"
+                                                  ]
+                                                }
+                                              },
+                                              "required": [
+                                                "$id",
+                                                "additionalProperties",
+                                                "default",
+                                                "description",
+                                                "properties",
+                                                "required",
+                                                "title",
+                                                "type"
+                                              ]
+                                            }
+                                          },
+                                          "$id": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "$id",
+                                          "anyOf"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "$id",
+                                      "additionalItems",
+                                      "default",
+                                      "description",
+                                      "items",
+                                      "title",
+                                      "type"
+                                    ]
+                                  },
+                                  "gateway": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$id": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "string"
+                                      },
+                                      "title": {
+                                        "type": "string"
+                                      },
+                                      "description": {
+                                        "type": "string"
+                                      },
+                                      "default": {
+                                        "type": "array"
+                                      },
+                                      "additionalItems": {
+                                        "type": "boolean"
+                                      },
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "anyOf": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                "$id": {
+                                                  "type": "string"
+                                                },
+                                                "type": {
+                                                  "type": "string"
+                                                },
+                                                "title": {
+                                                  "type": "string"
+                                                },
+                                                "description": {
+                                                  "type": "string"
+                                                },
+                                                "default": {
+                                                  "type": "object"
+                                                },
+                                                "required": {
+                                                  "type": "array",
+                                                  "items": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "additionalProperties": {
+                                                  "type": "boolean"
+                                                },
+                                                "properties": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "device_id": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "description": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "gateway_id": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "array",
+                                                          "items": {
+                                                            "type": "string"
+                                                          }
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "module_id": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "configuration_uri": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "device_manifest_uri": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "device_template_uri": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "device_template_id": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "wifi_mode": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "configuration_uri",
+                                                    "description",
+                                                    "device_id",
+                                                    "device_manifest_uri",
+                                                    "device_template_id",
+                                                    "device_template_uri",
+                                                    "gateway_id",
+                                                    "module_id",
+                                                    "wifi_mode"
+                                                  ]
+                                                }
+                                              },
+                                              "required": [
+                                                "$id",
+                                                "additionalProperties",
+                                                "default",
+                                                "description",
+                                                "properties",
+                                                "required",
+                                                "title",
+                                                "type"
+                                              ]
+                                            }
+                                          },
+                                          "$id": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "$id",
+                                          "anyOf"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "$id",
+                                      "additionalItems",
+                                      "default",
+                                      "description",
+                                      "items",
+                                      "title",
+                                      "type"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "gateway",
+                                  "leaf"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "default",
+                              "description",
+                              "properties",
+                              "required",
+                              "title",
+                              "type"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "cloud_params",
+                          "configuration",
+                          "description",
+                          "display_name",
+                          "last_deploy_result",
+                          "last_update_time",
+                          "uuid"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "$id",
+                      "additionalProperties",
+                      "default",
+                      "description",
+                      "properties",
+                      "required",
+                      "title",
+                      "type"
+                    ]
+                  }
+                },
+                "$id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "$id",
+                "anyOf"
+              ]
+            }
+          },
+          "required": [
+            "$id",
+            "additionalItems",
+            "default",
+            "description",
+            "items",
+            "title",
+            "type"
+          ]
+        }
+      },
+      "required": [
+        "deployments"
+      ]
+    }
+  },
+  "required": [
+    "$id",
+    "$schema",
+    "additionalProperties",
+    "default",
+    "description",
+    "properties",
+    "required",
+    "title",
+    "type",
+    "version"
+  ]
+}

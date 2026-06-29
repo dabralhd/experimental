@@ -1,0 +1,14 @@
+{
+    "uuid": "82aa54c5-fab1-4b9e-871c-1cd5e6bc2975",
+    "ai_project_name": "test-project-210",
+    "type": null,
+    "display_name": null,
+    "description": "My Project description",
+    "version": "0.0.1",
+    "last_update_time": "2025-08-21 09:44:17.214173",
+    "creation_time": "2025-08-21 09:44:17.214173",
+    "project_owner_uuid": "334c65a5-1495-453a-a6de-4d384a781000",
+    "models": [],
+    "deployments": [],
+    "applications": []
+}

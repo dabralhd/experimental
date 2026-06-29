@@ -1,0 +1,14 @@
+{
+    "uuid": "0c9e3d48-ff4c-4d67-8f27-b58c2c3c4c8f",
+    "ai_project_name": "RobkitProject",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "last_update_time": "2026-02-25 11:05:07.561709",
+    "creation_time": "2026-02-25 11:05:06.186462",
+    "project_owner_uuid": "26a9d3b9-5454-402d-ae7f-0b632bf4d26e",
+    "models": [],
+    "deployments": [],
+    "applications": []
+}

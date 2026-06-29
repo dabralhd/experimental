@@ -1,0 +1,88 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v10",
+    "ai_project_name": "asset-cloned-18-02-25",
+    "display_name": "Smart Asset Tracking",
+    "description": "Packages condition classification to detect stationary (upright or not), moving and shaking states using the MLC.\n\nStick the board on top of the box and start tracking it.",
+    "type": "industrial",
+    "uuid": "920aafcc-79e4-4109-8441-8945c1277054",
+    "version": "1.0.0",
+    "creation_time": "2025-02-18 10:51:44.153447",
+    "last_update_time": "2025-02-18 10:51:44.153447",
+    "models": [],
+    "applications": [
+        {
+            "uuid": "02ff98b5-b0f4-48f8-813c-77373e5b8233",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-6.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_GATEWAY;6",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-6.1.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/edge_gateway_production_20250208_1_3_0.img.gz",
+            "module_id": "edgeMLC"
+        },
+        {
+            "uuid": "36f036bb-35dc-467b-9aff-09eea4e978e8",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-6.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;6",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_3_0_0.bin",
+            "binary_id": 341,
+            "protocol": 2
+        },
+        {
+            "uuid": "f4892f1e-e821-410a-983f-64cc82e5938c",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/AI_INERTIAL-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:AI_INERTIAL;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/AI-INERTIAL_AssetTrackingOnMLC_1_2_0.bin",
+            "binary_id": 353,
+            "protocol": 1
+        }
+    ],
+    "deployments": [
+        {
+            "uuid": "b47f4d8c-2aa0-4167-af0a-9835713a6e4c",
+            "display_name": "Smart Asset Tracking end-to-end system with SensorTile.box PRO.",
+            "description": "End-to-end system deployment for Smart Asset Tracking scenario.",
+            "last_update_time": "2025-02-18 10:54:36.750296",
+            "last_deploy_result": null,
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": null
+            },
+            "gateway": [
+                {
+                    "device_id": "276018c2-0d54-4d02-add8-ff9d3e497719",
+                    "display_name": "gateway_0",
+                    "gateway_id": null,
+                    "description": "Gateway device at position 0.",
+                    "application": "02ff98b5-b0f4-48f8-813c-77373e5b8233",
+                    "wifi_mode": "off"
+                }
+            ],
+            "leaf": [
+                {
+                    "device_id": "29e3140c-ad6f-4203-a4e2-73159621d266",
+                    "display_name": "leaf_0",
+                    "gateway_id": "gateway_0",
+                    "description": "Leaf device at position 0.",
+                    "datalogging": {
+                        "application": "36f036bb-35dc-467b-9aff-09eea4e978e8",
+                        "firmware_update": false
+                    },
+                    "inference": {
+                        "application": "f4892f1e-e821-410a-983f-64cc82e5938c",
+                        "firmware_update": false,
+                        "models": [
+                            {
+                                "model_name_reference": "smart_asset_tracking",
+                                "artifact_type": "ucf",
+                                "component_name": "lsm6dsv16x_mlc"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

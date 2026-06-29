@@ -1,0 +1,62 @@
+{
+    "uuid": "49762fed-3e59-42e0-875d-3128c175c5c4",
+    "ai_project_name": "fan_coil_monitoring_mlc",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "schema_version": null,
+    "last_update_time": "2026-05-05 12:57:03.329377",
+    "creation_time": "2026-05-05 12:57:02.109463",
+    "project_owner_uuid": "363af7b3-752e-40df-855d-a5ebc3801d8e",
+    "models": [
+        {
+            "uuid": "791520e4-5ac8-49d5-9efd-cae2092236fb",
+            "name": "fan_coil_monitoring",
+            "dataset": {
+                "name": "FanCoilDataset",
+                "dataset_id": "01kqw2wvqcsx1ya4stgkkd84e7"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "off",
+                    "low_speed",
+                    "high_speed"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "ism330dhcx",
+                "device": "steval-stwinbx1"
+            },
+            "creation_time": "2026-05-05 12:57:03.297128",
+            "last_update_time": "2026-05-05 12:57:03.297137",
+            "model_owner_uuid": "363af7b3-752e-40df-855d-a5ebc3801d8e",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "ism330dhcx_mlc.json",
+                    "ism330dhcx_mlc.h"
+                ],
+                "last_update_time": "2026-05-05 12:57:13.160082",
+                "creation_time": "2026-05-05 12:57:13.160080"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

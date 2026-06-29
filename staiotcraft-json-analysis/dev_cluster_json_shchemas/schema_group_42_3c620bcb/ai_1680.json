@@ -1,0 +1,202 @@
+{
+    "uuid": "dcdfa93c-8d88-44d7-9ece-cbba7b22a95b",
+    "ai_project_name": "e2e_test_project",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "schema_version": null,
+    "last_update_time": "2026-05-06 11:02:56.047606",
+    "creation_time": "2026-05-06 10:26:18.750431",
+    "project_owner_uuid": "29836f82-9246-4b16-9f1b-7481e067c8d3",
+    "models": [
+        {
+            "uuid": "f60117fb-87cd-4d67-9982-d8d124c37658",
+            "name": "model_lsm6dsv32x",
+            "dataset": {
+                "name": "dataset_lsm6dsv32x",
+                "dataset_id": "01kqyd5xb660e43mk0p3z68t10"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "walking",
+                    "jogging",
+                    "other"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv32x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-05-06 10:26:19.954814",
+            "last_update_time": "2026-05-06 10:26:19.954823",
+            "model_owner_uuid": "29836f82-9246-4b16-9f1b-7481e067c8d3",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv32x_mlc.json",
+                    "lsm6dsv32x_mlc.h"
+                ],
+                "last_update_time": "2026-05-06 10:27:28.186688",
+                "creation_time": "2026-05-06 10:27:28.186685"
+            }
+        },
+        {
+            "uuid": "02a4dd1a-fb67-4fd5-b67c-dec467cb4a18",
+            "name": "model_lsm6dsv16bx",
+            "dataset": {
+                "name": "dataset_lsm6dsv16bx",
+                "dataset_id": "01kqydtd48gpcn833mwerhdp4b"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "jogging",
+                    "other",
+                    "walking"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16bx",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-05-06 10:37:29.848226",
+            "last_update_time": "2026-05-06 10:37:29.848236",
+            "model_owner_uuid": "29836f82-9246-4b16-9f1b-7481e067c8d3",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16bx_mlc.json",
+                    "lsm6dsv16bx_mlc.h"
+                ],
+                "last_update_time": "2026-05-06 10:37:48.867838",
+                "creation_time": "2026-05-06 10:37:48.867835"
+            }
+        },
+        {
+            "uuid": "f7e8f1e4-5835-45bc-9198-4f2ac40effc5",
+            "name": "model_ism6hg256x",
+            "dataset": {
+                "name": "dataset_ism6hg256x",
+                "dataset_id": "01kqye6htw0h9xny693b0dxtb3"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary_upright",
+                    "stationary_not_upright",
+                    "shaken",
+                    "motion"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "ism6hg256x",
+                "device": "nucleo-u575zi-q"
+            },
+            "creation_time": "2026-05-06 11:02:11.461904",
+            "last_update_time": "2026-05-06 11:02:11.461914",
+            "model_owner_uuid": "29836f82-9246-4b16-9f1b-7481e067c8d3",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "ism6hg256x_mlc.json",
+                    "ism6hg256x_mlc.h"
+                ],
+                "last_update_time": "2026-05-06 11:03:42.461654",
+                "creation_time": "2026-05-06 11:03:42.461650"
+            }
+        },
+        {
+            "uuid": "35f8680a-067a-449c-866e-ae4e64e1509b",
+            "name": "model_iis2dulpx",
+            "dataset": {
+                "name": "dataset_iis2dulpx",
+                "dataset_id": "01kqyexnp65zdgf4g2d74hgpkm"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "off",
+                    "low_speed",
+                    "high_speed",
+                    "clogged"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "iis2dulpx",
+                "device": "nucleo-u575zi-q"
+            },
+            "creation_time": "2026-05-06 11:02:56.016426",
+            "last_update_time": "2026-05-06 11:02:56.016436",
+            "model_owner_uuid": "29836f82-9246-4b16-9f1b-7481e067c8d3",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "iis2dulpx_mlc.json",
+                    "iis2dulpx_mlc.h"
+                ],
+                "last_update_time": "2026-05-06 11:05:19.794103",
+                "creation_time": "2026-05-06 11:05:19.794099"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

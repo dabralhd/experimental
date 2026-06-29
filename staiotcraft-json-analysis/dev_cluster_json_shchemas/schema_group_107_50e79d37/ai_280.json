@@ -1,0 +1,48 @@
+{
+    "uuid": "0d82f8b9-0c32-42f1-843d-05c55ad364ef",
+    "ai_project_name": "20240705_automode_ux_test",
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2024-07-08 11:07:37.059488",
+    "creation_time": "2024-07-08 11:07:37.059488",
+    "models": [
+        {
+            "uuid": "3b19d40a-5816-4387-a39d-69bf323d14f0",
+            "name": "test_asset_tracking",
+            "dataset": {
+                "name": "01j28ygx292cn24cxc4s8gs23e",
+                "dataset_id": "01j28ygx292cn24cxc4s8gs23e"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary_upright",
+                    "stationary_not_upright",
+                    "motion",
+                    "shaken"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ]
+            }
+        }
+    ],
+    "deployments": []
+}

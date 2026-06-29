@@ -1,0 +1,62 @@
+{
+    "uuid": "bf352b16-eeb1-4197-bc8c-3275205f6dcb",
+    "ai_project_name": "Andrea_Project",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "last_update_time": "2026-03-30 07:56:36.378869",
+    "creation_time": "2026-03-30 07:56:35.125434",
+    "project_owner_uuid": "29836f82-9246-4b16-9f1b-7481e067c8d3",
+    "models": [
+        {
+            "uuid": "c9c65a3f-52ef-42fa-90fc-65a4f6158276",
+            "name": "model1",
+            "dataset": {
+                "name": "Dataset2",
+                "dataset_id": "01kmytgt7s2r0qdeg6y3xh90p5"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "shaken",
+                    "motion",
+                    "stationary_not_upright",
+                    "stationary_upright"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "ism6hg256x",
+                "device": "nucleo-u575zi-q"
+            },
+            "creation_time": "2026-03-30 07:56:36.353654",
+            "last_update_time": "2026-03-30 07:56:36.353661",
+            "model_owner_uuid": "29836f82-9246-4b16-9f1b-7481e067c8d3",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "ism6hg256x_mlc.json",
+                    "ism6hg256x_mlc.h"
+                ],
+                "last_update_time": "2026-03-30 07:56:56.466155",
+                "creation_time": "2026-03-30 07:56:56.466152"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

@@ -1,0 +1,61 @@
+{
+    "uuid": "c798ba31-c6bc-4756-80ef-eb95a44a73cd",
+    "ai_project_name": "prjOnly",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2025-06-29 10:10:18.641176",
+    "creation_time": "2025-06-29 09:52:16.728752",
+    "models": [
+        {
+            "uuid": "7fe3516b-7e34-4c9b-bd44-8c77484c2e04",
+            "name": "modelOnly",
+            "dataset": {
+                "name": "TestDataset",
+                "dataset_id": "01jwx1kzmh30htvhw9bckncd50"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary",
+                    "motion",
+                    "unlabeled"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv80x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-06-29 09:59:39.545109",
+            "last_update_time": "2025-06-29 09:59:39.545118",
+            "model_owner_uuid": "fv7er6m9prcy7emqeb531xwj10"
+        },
+        {
+            "uuid": "c2d22abe-bdc7-4a2b-8ab3-836bd4b9550f",
+            "name": "modelAndDataset",
+            "dataset": {
+                "name": "testGroupDataset",
+                "dataset_id": "01jyxjn1metvne6b0v1w9d6wvj"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "c1",
+                    "c2"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv80x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-06-29 10:10:18.617236",
+            "last_update_time": "2025-06-29 10:10:18.617243",
+            "model_owner_uuid": "fv7er6m9prcy7emqeb531xwj10"
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

@@ -1,0 +1,157 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v10",
+    "ai_project_name": "Project_name_893065",
+    "display_name": "Smart Asset Tracking",
+    "description": "Packages condition classification using MLC to detect stationary (upright or not), moving and shaking states.\n\nSimply hold the board as a box and start testing it.",
+    "type": "industrial",
+    "uuid": "98f38bff-97de-4ea8-aa52-6e11ea2c7d62",
+    "version": "1.0.0",
+    "creation_time": "2024-10-02 21:14:14.834670",
+    "last_update_time": "2024-10-02 21:14:14.834670",
+    "models": [
+        {
+            "uuid": "6601649d-ca46-460e-9c8a-2f38496d9a96",
+            "name": "smart_asset_tracking",
+            "description": "Model to recognize position and orientation of a tracked item, created with an Auto-ML based approach.",
+            "creation_time": "2024-10-02 21:14:14.834687",
+            "last_update_time": "2024-10-02 21:14:14.834692",
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary_upright",
+                    "stationary_not_upright",
+                    "motion",
+                    "shaken"
+                ]
+            },
+            "dataset": {
+                "dataset_id": "01j97has169nd5wdvg200djd10",
+                "name": "Asset Tracking"
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "data_sufficiency": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-ds-job",
+                            "version": null,
+                            "template_id": null
+                        }
+                    ]
+                },
+                "configuration": null,
+                "artifacts": [
+                    "activities_training.json",
+                    "counts.json",
+                    "feat_names.json",
+                    "hnne.pkl",
+                    "kmeans_cluster_labels.json",
+                    "my_kmeans.json",
+                    "my_tree.onnx",
+                    "my_tree.txt",
+                    "window_size_odr_channels.json"
+                ],
+                "reports": []
+            },
+            "training": {
+                "creation_time": "2024-10-02 21:15:02.753945",
+                "last_update_time": "2024-10-02 21:15:02.753948",
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "reports": [
+                    "report.json"
+                ]
+            },
+            "codegen": null,
+            "building": null
+        }
+    ],
+    "applications": [
+        {
+            "uuid": "a4d87757-c020-4771-9ddb-8382c7ab95ad",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-5.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_GATEWAY;5",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-5.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/edge_gateway_production_20241001_1_2_0_rc1.img.gz",
+            "module_id": "edgeMLC"
+        },
+        {
+            "uuid": "a668807f-c28e-4449-862d-c114b09f62f5",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-5.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;5",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_2_2_0.bin",
+            "binary_id": 281,
+            "protocol": 2
+        },
+        {
+            "uuid": "aaaa3c66-d8de-4deb-bef2-41a7f3ccf725",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/AI_INERTIAL-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:AI_INERTIAL;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/AI-INERTIAL_AssetTrackingOnMLC_1_1_0.bin",
+            "binary_id": 336,
+            "protocol": 1
+        }
+    ],
+    "deployments": [
+        {
+            "uuid": "73b4d2e0-1b55-43c4-81ae-47cd4b02a561",
+            "display_name": "Smart Asset Tracking end-to-end system with SensorTile.box PRO.",
+            "description": "End-to-end system deployment for Smart Asset Tracking scenario.",
+            "last_update_time": null,
+            "last_deploy_result": null,
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": null
+            },
+            "gateway": [
+                {
+                    "device_id": "gateway_0",
+                    "gateway_id": null,
+                    "description": "Gateway device at position 0.",
+                    "application": "a4d87757-c020-4771-9ddb-8382c7ab95ad",
+                    "wifi_mode": "off"
+                }
+            ],
+            "leaf": [
+                {
+                    "device_id": "leaf_0",
+                    "gateway_id": "gateway_0",
+                    "description": "Leaf device at position 0.",
+                    "datalogging": {
+                        "application": "a668807f-c28e-4449-862d-c114b09f62f5",
+                        "firmware_update": false
+                    },
+                    "inference": {
+                        "application": "aaaa3c66-d8de-4deb-bef2-41a7f3ccf725",
+                        "firmware_update": false,
+                        "models": [
+                            {
+                                "model_name_reference": "smart_asset_tracking",
+                                "artifact_type": "ucf",
+                                "component_name": "lsm6dsv16x_mlc"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

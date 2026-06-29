@@ -1,0 +1,101 @@
+{
+   "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+   "ai_project_name": "gpmmz_object_detection",
+   "uuid": "3d833e2d-c86d-49bb-9665-f3a2e3d1c338",
+   "description": "",
+   "version": "0.0.1",
+   "inputs": [
+      {
+         "uuid": "bea9909b-bdfe-4c6c-bcd2-0607e98e4f32",
+         "input_type": "image",
+         "model_ref": "11a4d43b-eddb-4855-9aab-6e5f2b4c4ea4",
+         "logs": [],
+         "augmentation": [],
+         "tools": [
+            {
+               "name": "split_images",
+               "version": "1.0.0",
+               "input": "image",
+               "model": "classifier",
+               "output": "openmv-cam-h7-plus:mcu:openmv-cubeai:5.2.0",
+               "section": "input",
+               "parameters": {
+                  "-i": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}",
+                  "-o": "{models_folder}/{model_folder}/{dataset_folder}",
+                  "-r": ""
+               }
+            }
+         ]
+      }
+   ],
+   "models": [
+      {
+         "uuid": "11a4d43b-eddb-4855-9aab-6e5f2b4c4ea4",
+         "name": "SSD_Mobilenet_v1",
+         "stage": "modeling",
+         "model_type": "classifier",
+         "training_type": "offline",
+         "retraining": false,
+         "model_metadata": {
+            "classes": [
+               "person"
+            ]
+         },
+         "experiments": [
+            {
+               "uuid": "6c76a87f-e206-4d3e-a0c2-9ff599fa7903",
+               "name": "224x224x3_0.25",
+               "description": "",
+               "model_dev_file": "SSD_Mobilenet_v1_224x224x3_0.25.ipynb"
+            }
+         ],
+         "tools": []
+      }
+   ],
+   "outputs": [
+      {
+         "uuid": "20d74c5c-3de3-45a1-8e9f-5d296c7a4a5f",
+         "output_type": "openmv-cam-h7-plus:mcu:openmv-cubeai:5.2.0",
+         "model_ref": "11a4d43b-eddb-4855-9aab-6e5f2b4c4ea4",
+         "tests": [],
+         "best_test": null,
+         "tools": [
+            {
+               "name": "stm32ai",
+               "version": "0.0.5",
+               "input": "image",
+               "model": "classifier",
+               "output": "openmv-cam-h7-plus:mcu:openmv-cubeai:5.2.0",
+               "section": "output",
+               "parameters": {
+                  "path": "generate",
+                  "query": {
+                     "address": "",
+                     "allocate_inputs": true,
+                     "allocate_outputs": true,
+                     "binary": false,
+                     "copy_weights_at": "",
+                     "generate_fota": false,
+                     "name": "network",
+                     "split_weigths": false,
+                     "generate_full_binary": true,
+                     "return_full_binary_only": true
+                  },
+                  "headers": {
+                     "content-type": "multipart/form-data"
+                  }
+               }
+            }
+         ],
+         "events": [],
+         "ui": {
+            "icons": []
+         }
+      }
+   ],
+   "deployments": [],
+   "dbstatus": {
+      "status": "unknown",
+      "message": null
+   }
+}

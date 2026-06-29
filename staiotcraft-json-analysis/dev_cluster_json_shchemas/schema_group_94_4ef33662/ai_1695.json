@@ -1,0 +1,58 @@
+{
+    "uuid": "3338642e-ba19-4ab0-9801-8b9d05b99c65",
+    "ai_project_name": "TestProject",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2025-06-04 09:35:08.117907",
+    "creation_time": "2025-06-04 09:34:44.737944",
+    "models": [
+        {
+            "uuid": "08aaee36-0790-44d0-9116-77bfb0a8f8be",
+            "name": "model1",
+            "dataset": {
+                "name": "TestDataset",
+                "dataset_id": "01jwx4nhr2ma9m1ms875gpcdwf"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary",
+                    "motion"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-06-04 09:35:08.087454",
+            "last_update_time": "2025-06-04 09:35:08.087467",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.json",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2025-06-04 09:35:17.294643",
+                "creation_time": "2025-06-04 09:35:17.294637"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

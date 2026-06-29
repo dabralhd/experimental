@@ -1,0 +1,38 @@
+{
+    "uuid": "c43f14ac-61e7-461f-95e9-a714400e7534",
+    "ai_project_name": "bug",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "last_update_time": "2025-11-26 14:05:56.419917",
+    "creation_time": "2025-11-26 14:05:55.218239",
+    "project_owner_uuid": "ea66524a-2778-4966-a6ed-340abc5bc04b",
+    "models": [
+        {
+            "uuid": "d6e62844-1035-4b05-9084-512ac5de198a",
+            "name": "bugm",
+            "dataset": {
+                "name": "bugd",
+                "dataset_id": "01kb07ra4ca6p81nrr7awz65n7"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "c",
+                    "b"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "ism330dhcx",
+                "device": "steval-stwinkt1b"
+            },
+            "creation_time": "2025-11-26 14:05:56.393180",
+            "last_update_time": "2025-11-26 14:05:56.393189",
+            "model_owner_uuid": "ea66524a-2778-4966-a6ed-340abc5bc04b"
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

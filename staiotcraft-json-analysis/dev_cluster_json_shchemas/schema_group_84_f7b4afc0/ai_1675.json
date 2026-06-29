@@ -1,0 +1,224 @@
+{
+   "$schema": "/home/workspace/.assets/schemas/ai_main_schema.json",
+   "ai_project_name": "stwinbox",
+   "uuid": "cf7ad1f3-5a83-4810-97a8-90eed1bb80d8",
+   "description": "stwinbox project",
+   "version": "0.0.1",
+   "inputs": [
+      {
+         "uuid": "c371ffed-6443-489a-ae9f-10463bcf827f",
+         "input_type": "binary_hsd",
+         "model_ref": "5f4a8f58-b4ce-4ebb-813e-df7e1f99c4ee",
+         "logs": [
+            {
+               "uuid": "3225490b-1487-423b-860c-be6616fe7c62",
+               "name": "20230504_07_07_02",
+               "annotated": true,
+               "description": "20230504_07_07_02",
+               "start_time": "2000-01-01T00:00:45.000Z",
+               "end_time": "2000-01-01T00:01:28.893Z",
+               "device_description": {
+                  "part_number": null,
+                  "serial_number": "004300385752501720353339",
+                  "alias": "STWIN_BOX_001",
+                  "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                  "fw_version": "1.1.0"
+               }
+            },
+            {
+               "uuid": "1ddd5f69-3d31-4dae-ac4d-056d1d785c01",
+               "name": "20230504_07_13_43",
+               "annotated": true,
+               "description": "20230504_07_13_43",
+               "start_time": "2023-05-04T07:13:51.540Z",
+               "end_time": "2023-05-04T07:14:41.879Z",
+               "device_description": {
+                  "part_number": "STEVAL-STWINKT1B",
+                  "serial_number": "0009002A374E50132030364B",
+                  "alias": "STWIN_001",
+                  "fw_name": "FP-SNS-DATALOG1",
+                  "fw_version": "1.4.0"
+               }
+            }
+         ],
+         "augmentation": [],
+         "tools": [
+            {
+               "name": "hsdatalog_to_unico",
+               "version": "1.1.0",
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-stwinkt1:mlc",
+               "section": "input",
+               "parameters": {
+                  "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                  "-f": "TXT",
+                  "-t": "",
+                  "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+               }
+            }
+         ]
+      },
+      {
+         "uuid": "2577e0a2-f54c-4cb1-ba3f-2769e7c534f5",
+         "input_type": "binary_hsd",
+         "model_ref": "394b02fc-089a-4d7e-a8f5-d0eafcfb797d",
+         "logs": [
+            {
+               "uuid": "1a5b39f2-14c9-40aa-992c-0ca02255b8b3",
+               "name": "20230420_08_48_19",
+               "annotated": true,
+               "description": "20230420_08_48_19",
+               "start_time": "2023-04-20T08:48:26.938Z",
+               "end_time": "2023-04-20T08:49:40.200Z",
+               "device_description": {
+                  "part_number": "STEVAL-STWINKT1B",
+                  "serial_number": "00310020374E50132030364B",
+                  "alias": "STWIN_001",
+                  "fw_name": "FP-SNS-DATALOG1",
+                  "fw_version": "1.3.0"
+               }
+            }
+         ],
+         "augmentation": [],
+         "tools": [
+            {
+               "name": "hsdatalog_to_unico",
+               "version": "1.1.0",
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-stwinkt1:mlc",
+               "section": "input",
+               "parameters": {
+                  "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                  "-f": "TXT",
+                  "-t": "",
+                  "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+               }
+            }
+         ]
+      }
+   ],
+   "models": [
+      {
+         "uuid": "5f4a8f58-b4ce-4ebb-813e-df7e1f99c4ee",
+         "name": "stwinbox-model",
+         "stage": "modeling",
+         "model_type": "classifier",
+         "training_type": "offline",
+         "retraining": false,
+         "model_metadata": {
+            "classes": [
+               "stationary",
+               "updown"
+            ]
+         },
+         "experiments": [
+            {
+               "uuid": "9df3e3ef-089e-44c1-a9d9-a6e1b0bb41f7",
+               "name": "stwinbox-experiment",
+               "description": "stwinbox experiment",
+               "model_dev_file": null
+            }
+         ],
+         "tools": []
+      },
+      {
+         "uuid": "394b02fc-089a-4d7e-a8f5-d0eafcfb797d",
+         "name": "test0405",
+         "stage": "modeling",
+         "model_type": "classifier",
+         "training_type": "offline",
+         "retraining": false,
+         "model_metadata": {
+            "classes": [
+               "fast",
+               "slow"
+            ]
+         },
+         "experiments": [
+            {
+               "uuid": "92dc9fe8-be42-409c-b34c-104b29654e48",
+               "name": "exp",
+               "description": "exp",
+               "model_dev_file": null
+            }
+         ],
+         "tools": []
+      }
+   ],
+   "outputs": [
+      {
+         "uuid": "c7cb8b74-3d50-4bd5-9313-d553fa5a4d25",
+         "output_type": "steval-stwinkt1:mlc",
+         "model_ref": "5f4a8f58-b4ce-4ebb-813e-df7e1f99c4ee",
+         "tests": [
+            {
+               "uuid": "f61ace66-3950-46c6-b1a4-176e3de5fe6c",
+               "name": "stwinbox-test",
+               "experiment_ref": "9df3e3ef-089e-44c1-a9d9-a6e1b0bb41f7",
+               "model_file": null,
+               "parameters": [],
+               "reports": [
+                  "MLC_report.json"
+               ],
+               "outputs": [
+                  "MLC_configuration.ucf",
+                  "MLC_configuration.h"
+               ]
+            }
+         ],
+         "best_test": null,
+         "tools": [
+            {
+               "name": "mlctools",
+               "version": "1.0.0",
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-stwinkt1:mlc",
+               "section": "output"
+            }
+         ],
+         "events": [],
+         "ui": {
+            "icons": []
+         }
+      },
+      {
+         "uuid": "1d2bacf7-094d-4f92-b8bc-0b4526c29c3c",
+         "output_type": "steval-stwinkt1:mlc",
+         "model_ref": "394b02fc-089a-4d7e-a8f5-d0eafcfb797d",
+         "tests": [
+            {
+               "uuid": "ad3bba64-34aa-4995-9863-8cd3249e5fcd",
+               "name": "test1",
+               "experiment_ref": "92dc9fe8-be42-409c-b34c-104b29654e48",
+               "model_file": null,
+               "parameters": {},
+               "reports": [],
+               "outputs": []
+            }
+         ],
+         "best_test": null,
+         "tools": [
+            {
+               "name": "mlctools",
+               "version": "1.0.0",
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-stwinkt1:mlc",
+               "section": "output"
+            }
+         ],
+         "events": [],
+         "ui": {
+            "icons": []
+         }
+      }
+   ],
+   "deployments": [],
+   "dbstatus": {
+      "status": "unknown",
+      "message": null
+   }
+}

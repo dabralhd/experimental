@@ -1,0 +1,58 @@
+{
+    "uuid": "df230b06-c49e-48a9-a2f8-8d6191c9306a",
+    "ai_project_name": "STWIN_project",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2025-03-18 12:08:47.286156",
+    "creation_time": "2025-03-18 12:05:38.809936",
+    "models": [
+        {
+            "uuid": "61ad5f96-d4a0-485b-ae4a-1164d2de0dfc",
+            "name": "model1",
+            "dataset": {
+                "name": "STWIN_dataset",
+                "dataset_id": "01jpmjnphvvd78y8q4ct57zese"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary",
+                    "movement"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "ism330dhcx",
+                "device": "steval-stwinbx1"
+            },
+            "creation_time": "2025-03-18 12:08:47.254023",
+            "last_update_time": "2025-03-18 12:08:47.254032",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "ism330dhcx_mlc.json",
+                    "ism330dhcx_mlc.h"
+                ],
+                "last_update_time": "2025-03-18 12:09:00.949548",
+                "creation_time": "2025-03-18 12:09:00.949543"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

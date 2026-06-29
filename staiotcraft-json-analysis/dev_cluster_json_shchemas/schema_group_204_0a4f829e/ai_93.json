@@ -1,0 +1,51 @@
+{
+    "uuid": "19b814bd-0af6-4523-9278-a826569e45e7",
+    "ai_project_name": "auto-expert-test",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2025-09-04 13:53:13.326029",
+    "creation_time": "2025-09-04 13:53:12.074849",
+    "project_owner_uuid": "ea66524a-2778-4966-a6ed-340abc5bc04b",
+    "models": [
+        {
+            "uuid": "2c012cd3-d77f-4e06-b80f-a18b97dcc4e2",
+            "name": "model",
+            "dataset": {
+                "name": "20250904-test-1",
+                "dataset_id": "01k4a5s9c03jqg0e45cedfqber"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary_upright",
+                    "stationary_not_upright",
+                    "motion",
+                    "shaken"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-09-04 13:53:13.283575",
+            "last_update_time": "2025-09-04 13:53:13.283586",
+            "model_owner_uuid": "ea66524a-2778-4966-a6ed-340abc5bc04b",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [],
+                "artifacts": [],
+                "last_update_time": "2025-09-04 13:53:23.862889",
+                "creation_time": "2025-09-04 13:53:23.862886"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

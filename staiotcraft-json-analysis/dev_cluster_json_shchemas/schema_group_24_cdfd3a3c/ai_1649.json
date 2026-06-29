@@ -1,0 +1,62 @@
+{
+    "uuid": "d4214777-5de1-4a02-8a97-8d8a44d57cd2",
+    "ai_project_name": "project_1",
+    "display_name": null,
+    "description": "",
+    "version": "0.0.1",
+    "inputs": [
+        {
+            "uuid": "c1f58d5a-6571-4c64-946d-ef8eaf4f21fa",
+            "model_ref": "d9ff6b93-8e34-4235-9e23-a9a26cf01537",
+            "input_type": "binary_hsd",
+            "augmentation": [],
+            "logs": [],
+            "tools": [
+                {
+                    "name": "hsdatalog_to_unico",
+                    "version": "1.1.0",
+                    "parameters": {
+                        "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                        "-f": "TXT",
+                        "-t": "",
+                        "-s": "all",
+                        "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+                    }
+                }
+            ]
+        }
+    ],
+    "models": [
+        {
+            "uuid": "d9ff6b93-8e34-4235-9e23-a9a26cf01537",
+            "name": "model_1",
+            "model_type": "classifier",
+            "training_type": "offline",
+            "stage": "definition",
+            "model_metadata": {
+                "classes": [
+                    "a",
+                    "b",
+                    "c"
+                ]
+            },
+            "experiments": []
+        }
+    ],
+    "outputs": [
+        {
+            "uuid": "2673411a-7507-41aa-bba0-ce42d035b0c5",
+            "model_ref": "d9ff6b93-8e34-4235-9e23-a9a26cf01537",
+            "output_type": "steval-stwinkt1b:mlc",
+            "tests": [],
+            "tools": [
+                {
+                    "name": "mlctools",
+                    "version": "1.0.0",
+                    "parameters": null
+                }
+            ]
+        }
+    ],
+    "deployments": []
+}

@@ -1,0 +1,42 @@
+{
+    "uuid": "c9370295-ffda-4f03-bc0a-748007d72ed8",
+    "ai_project_name": "Door Knock Detection",
+    "display_name": null,
+    "description": "",
+    "version": "0.0.1",
+    "inputs": [
+        {
+            "uuid": "a9b58538-6847-4408-8587-31c4b4d19738",
+            "model_ref": "9df3a069-e382-46c2-9b7a-67836442cfca",
+            "input_type": "binary_hsd",
+            "augmentation": [],
+            "logs": [],
+            "tools": []
+        }
+    ],
+    "models": [
+        {
+            "uuid": "9df3a069-e382-46c2-9b7a-67836442cfca",
+            "name": "Dense_network_1",
+            "model_type": "classifier",
+            "training_type": "offline",
+            "stage": "definition",
+            "model_metadata": {
+                "classes": [
+                    "2"
+                ]
+            },
+            "experiments": []
+        }
+    ],
+    "outputs": [
+        {
+            "uuid": "9ba3f4c5-c274-43fd-bde5-41884c65b6da",
+            "model_ref": "9df3a069-e382-46c2-9b7a-67836442cfca",
+            "output_type": "steval-stwinbx1:ispu",
+            "tests": [],
+            "tools": []
+        }
+    ],
+    "deployments": []
+}

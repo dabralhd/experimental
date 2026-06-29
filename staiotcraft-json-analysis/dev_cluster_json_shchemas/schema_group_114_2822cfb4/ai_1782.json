@@ -1,0 +1,106 @@
+{
+   "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+   "ai_project_name": "get_started_chair_monitor_ispu",
+   "uuid": "22e894a1-4456-4291-bdd1-92c33d844b12",
+   "description": "",
+   "version": "0.0.1",
+   "inputs": [
+      {
+         "uuid": "ec1dbfb5-11b7-4403-b1bb-079927e57698",
+         "input_type": "binary_hsd",
+         "model_ref": "cacc280b-8e60-4d5d-aa78-54fff3f97219",
+         "logs": [],
+         "augmentation": [],
+         "tools": [
+            {
+               "name": "hsdatalog_data_export_by_tags",
+               "version": "1.1.0",
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+               "section": "input",
+               "parameters": {
+                  "-o": "{models_folder}/{model_folder}/{dataset_folder}",
+                  "-f": "CSV",
+                  "-s": "all",
+                  "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+               }
+            }
+         ]
+      }
+   ],
+   "models": [
+      {
+         "uuid": "cacc280b-8e60-4d5d-aa78-54fff3f97219",
+         "name": "chair_monitor",
+         "stage": "modeling",
+         "model_type": "classifier",
+         "training_type": "offline",
+         "retraining": false,
+         "model_metadata": {
+            "classes": [
+               "idle",
+               "move",
+               "rotate",
+               "stand_up",
+               "sit_down"
+            ]
+         },
+         "experiments": [
+            {
+               "uuid": "a7443d1d-9ac2-4477-8b42-e00b52d08560",
+               "name": "chair_cnn",
+               "description": "",
+               "model_dev_file": "chair_monitor_chair_cnn.ipynb"
+            }
+         ],
+         "tools": []
+      }
+   ],
+   "outputs": [
+      {
+         "uuid": "cb2132cd-f3dc-4f72-a7c4-70ce93afbd87",
+         "output_type": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+         "model_ref": "cacc280b-8e60-4d5d-aa78-54fff3f97219",
+         "tests": [],
+         "best_test": null,
+         "tools": [
+            {
+               "name": "stm32ai",
+               "version": "0.0.5",
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-stwinbx1:mcu:pnpl-ai-dpu:1.0.0",
+               "section": "output",
+               "parameters": {
+                  "path": "generate",
+                  "query": {
+                     "address": "",
+                     "allocate_inputs": true,
+                     "allocate_outputs": true,
+                     "binary": false,
+                     "copy_weights_at": "",
+                     "generate_fota": false,
+                     "name": "network",
+                     "split_weigths": false,
+                     "generate_full_binary": true,
+                     "return_full_binary_only": true
+                  },
+                  "headers": {
+                     "content-type": "multipart/form-data"
+                  }
+               }
+            }
+         ],
+         "events": [],
+         "ui": {
+            "icons": []
+         }
+      }
+   ],
+   "deployments": [],
+   "dbstatus": {
+      "status": "unknown",
+      "message": null
+   }
+}

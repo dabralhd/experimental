@@ -31,3 +31,10 @@ Total JSON files processed: 48
   -> Group 8 (99da8e24): Packed 1 files into sat_clustered/schema_group_8_99da8e24
 
 Success! Your clusters are ready inside the 'sat_clustered' directory.
+
+## Mehodology
+
+1. download all ai_project*.json files from DEV cluster
+2. Preprocessing
+  - rename them to ai_<idx>.json
+  - 

@@ -1,0 +1,94 @@
+{
+    "uuid": "8c6c96b3-e8d8-48ff-beee-cec5296e61b6",
+    "ai_project_name": "joystick-project",
+    "type": null,
+    "display_name": null,
+    "description": "Project for the EdgeAI workshop",
+    "version": "1.0.0",
+    "last_update_time": "2025-02-11 08:49:38.437982",
+    "creation_time": "2025-02-10 14:50:31.048658",
+    "models": [
+        {
+            "uuid": "338e7bcc-7ea8-4bad-8fbe-b93b2b53d7ba",
+            "name": "joystick-model",
+            "dataset": {
+                "name": "joystick-dataset",
+                "dataset_id": "01jkr4n8qyxjaevd07svfd2g1m"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "none",
+                    "forward",
+                    "right",
+                    "left"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-02-10 14:51:45.404634",
+            "last_update_time": "2025-02-10 14:51:45.404651",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2025-02-10 14:51:55.166897",
+                "creation_time": "2025-02-10 14:51:55.166891"
+            }
+        },
+        {
+            "uuid": "4653a8b1-8d04-43ab-8b6c-fbd4ac9b017c",
+            "name": "refined-joystick-model",
+            "dataset": {
+                "name": "refined-joystick-dataset",
+                "dataset_id": "01jkt2w06d5nb03ryhss6ra3kt"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "none",
+                    "left",
+                    "right",
+                    "forward"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-02-11 08:49:38.402795",
+            "last_update_time": "2025-02-11 08:49:38.402806",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2025-02-11 08:49:45.650704",
+                "creation_time": "2025-02-11 08:49:45.650699"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

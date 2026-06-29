@@ -1,0 +1,139 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v9",
+    "ai_project_name": "Project_name_24532",
+    "display_name": "Asset Tracking",
+    "description": "Get started project for asset tracking scenario run on the MLC sensor.",
+    "uuid": "372c8fd6-9856-4225-b427-42cd6168a72b",
+    "version": "1.0.0",
+    "creation_time": "2024-08-15 07:58:17.995191",
+    "last_update_time": "2024-08-15 07:58:17.995191",
+    "models": [
+        {
+            "uuid": "50cafa64-71c2-4800-ab25-02131e8d3f4f",
+            "name": "asset_tracking",
+            "description": "Model to recognize position and orientation of a tracked item, with an Auto-ML based approach.",
+            "creation_time": "2024-08-15 07:58:17.995206",
+            "last_update_time": "2024-08-15 07:58:17.995209",
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary_upright",
+                    "stationary_not_upright",
+                    "motion",
+                    "shaken"
+                ]
+            },
+            "dataset": {
+                "dataset_id": "01j5agpx8h03ha8cjxe6n6b1d1",
+                "name": "Dataset for the asset tracking get started project"
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "data-sufficiency": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-ds-job",
+                            "version": null,
+                            "template_id": null
+                        }
+                    ]
+                },
+                "configuration": null,
+                "artifacts": [
+                    "activities_training.json",
+                    "counts.json",
+                    "feat_names.json",
+                    "hnne.pkl",
+                    "kmeans_cluster_labels.json",
+                    "my_kmeans.json",
+                    "my_tree.onnx",
+                    "my_tree.txt",
+                    "shap.pkl",
+                    "window_size_odr_channels.json"
+                ],
+                "reports": []
+            },
+            "training": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "reports": [
+                    "report.json"
+                ]
+            },
+            "codegen": null,
+            "building": null
+        }
+    ],
+    "deployments": [
+        {
+            "uuid": "499d62a4-3ebc-4899-9c7d-c08d812bc0c2",
+            "display_name": "Asset Tracking end-to-end system.",
+            "description": "End-to-end system deployment for Asset Tracking scenario.",
+            "last_update_time": null,
+            "last_deploy_result": null,
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": null
+            },
+            "configuration": {
+                "leaf": [
+                    {
+                        "device_id": "leaf_0",
+                        "description": "Leaf device at position 0.",
+                        "gateway_id": "gateway_0",
+                        "selected_model_name": "asset_tracking",
+                        "models": [
+                            {
+                                "name": "asset_tracking",
+                                "datalogging": {
+                                    "device_template_uri": "https://raw.githubusercontent.com/STMicroelectronics/appconfig/release/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-4.expanded.json",
+                                    "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;4",
+                                    "protocol": 2,
+                                    "firmware_uri": "https://raw.githubusercontent.com/STMicroelectronics/appconfig/release/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_2_1_1.bin"
+                                },
+                                "inference": {
+                                    "device_template_uri": "e2e_system_deployment/leaf/steval_mkboxpro/asset_tracking_mlc-1.expanded.json",
+                                    "device_template_id": "dtmi:vespucci:steval_mkboxpro:asset_tracking_mlc;1",
+                                    "protocol": 1,
+                                    "firmware_uri": "e2e_system_deployment/leaf/steval_mkboxpro/ai_inertial_steval_mkboxpro_mlc_release_1_0_0.bin",
+                                    "ml_uri": "models/asset_tracking/training/lsm6dsv16x_mlc.ucf",
+                                    "firmware_update": false
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "gateway": [
+                    {
+                        "device_id": "gateway_0",
+                        "description": "Gateway device at position 0.",
+                        "gateway_id": null,
+                        "module_id": "edgeMLC",
+                        "configuration_uri": "e2e_system_deployment/gateway/vespucci_config.ini.template",
+                        "device_manifest_uri": "e2e_system_deployment/gateway/mlc_gateway-2.manifest.json",
+                        "device_template_uri": "e2e_system_deployment/gateway/mlc_gateway-2.expanded.json",
+                        "device_template_id": "dtmi:vespucci:gateway:mlc_gateway;1",
+                        "wifi_mode": "off"
+                    }
+                ]
+            }
+        }
+    ]
+}

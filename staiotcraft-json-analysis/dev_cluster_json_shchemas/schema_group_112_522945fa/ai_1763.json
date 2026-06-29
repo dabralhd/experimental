@@ -1,0 +1,139 @@
+{
+    "uuid": "cfe3d3d2-df3b-4c94-b349-fb0e7146795d",
+    "ai_project_name": "test",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "schema_version": null,
+    "last_update_time": "2026-06-18 16:52:01.471107",
+    "creation_time": "2026-06-18 16:51:58.184846",
+    "project_owner_uuid": "1bdf5802-558d-4df1-88d5-2277d96efd01",
+    "models": [
+        {
+            "uuid": "9fa329cf-d7bc-42ca-82cb-d367b3c99b43",
+            "name": "model",
+            "dataset": {
+                "name": "dataset",
+                "dataset_id": "01kvdtatb6184ns911hdv76102"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "a",
+                    "b"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-06-18 16:52:01.444185",
+            "last_update_time": "2026-06-18 16:52:01.444194",
+            "model_owner_uuid": "1bdf5802-558d-4df1-88d5-2277d96efd01"
+        }
+    ],
+    "deployments": [
+        {
+            "uuid": "c75db8c3-8995-4eb9-8e64-e55cdb7b96f4",
+            "description": "",
+            "display_name": "test",
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": ""
+            },
+            "last_update_time": "2026-06-18 16:53:51.057112",
+            "last_deploy_result": "success",
+            "leaf": [
+                {
+                    "gateway_id": "0d08af4a-0161-44e9-90bf-a15ad4a598b5",
+                    "description": "Leaf device at position 0.",
+                    "display_name": "leaf",
+                    "device_id": "79fd4ffa-74dc-4608-bf41-cb2b690b7127",
+                    "datalogging": "b62282a9-9560-4f6a-b8cf-6054bfd554ef",
+                    "inference": {
+                        "application": "a89edeef-b583-4b77-8cc4-ec83c1e86aa8",
+                        "firmware_update": false,
+                        "supported_applications": [
+                            "a89edeef-b583-4b77-8cc4-ec83c1e86aa8",
+                            "d02d5670-720a-4813-b244-d6ea8718d819"
+                        ],
+                        "models": [
+                            {
+                                "artifact_type": "json",
+                                "component_name": "lsm6dsv16x_mlc",
+                                "model_name_reference": "model"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "gateway": [
+                {
+                    "application": "a981c6c7-6f0d-45c6-8be8-e0ef63d9bb5b",
+                    "description": "Gateway device at position 0.",
+                    "display_name": "gateway_0",
+                    "device_id": "0d08af4a-0161-44e9-90bf-a15ad4a598b5",
+                    "wifi_mode": "off"
+                }
+            ]
+        }
+    ],
+    "applications": [
+        {
+            "uuid": "a981c6c7-6f0d-45c6-8be8-e0ef63d9bb5b",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-9.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_Gateway;9",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-9.1.RC1.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/staiotcraft_rpi_gateway_1_6_0_RC1.img.gz",
+            "module_id": "edgeMLC"
+        },
+        {
+            "uuid": "b62282a9-9560-4f6a-b8cf-6054bfd554ef",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-8.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;8",
+            "binary_uri": "/usb/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_3_2_0.bin",
+            "binary_id": 451,
+            "protocol": 2
+        },
+        {
+            "uuid": "2eb5a3ac-c434-46f2-ad13-ddd1abe3f15b",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/STAIOTCRAFT_SDATALOG-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:STAIOTCRAFT_SDATALOG;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/STAIOTCRAFT_SDATALOG_1_0_0.bin",
+            "binary_id": 517,
+            "protocol": 2
+        },
+        {
+            "uuid": "b9b0a7b7-49a0-48b6-bd1e-734a6a83c927",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/STAIOTCRAFT_SDATALOG_RUST-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:STAIOTCRAFT_SDATALOG_RUST;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/STAIOTCRAFT_SDATALOG_RUST_1_0_0.bin",
+            "binary_id": 516,
+            "protocol": 2
+        },
+        {
+            "uuid": "a89edeef-b583-4b77-8cc4-ec83c1e86aa8",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/STAIOTCRAFT_AI_Inertial-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:STAIOTCRAFT_AI_Inertial;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/STAIOTCRAFT_AI_Inertial_1_2_0.bin",
+            "binary_id": 484,
+            "protocol": 1
+        },
+        {
+            "uuid": "d02d5670-720a-4813-b244-d6ea8718d819",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/STAIOTCRAFT_AI_SSM-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:STAIOTCRAFT_AI_SSM;1",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/STAIOTCRAFT_AI_SSM_1_0_0.bin",
+            "binary_id": 529,
+            "protocol": 0
+        }
+    ]
+}

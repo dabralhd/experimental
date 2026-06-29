@@ -1,0 +1,40 @@
+{
+    "uuid": "ea53ccc7-de2b-472b-9e57-30b8cfd5782f",
+    "ai_project_name": "p",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2025-09-05 05:28:23.733991",
+    "creation_time": "2025-09-05 05:28:22.515099",
+    "project_owner_uuid": "f718fb0b-666a-4841-afd3-33dc9ea504ed",
+    "models": [
+        {
+            "uuid": "4d481fa7-34b5-4357-8b2a-3b22023748ab",
+            "name": "m",
+            "dataset": {
+                "name": "sat",
+                "dataset_id": "01k4c5gy1y06hk54bf8x3tnwf8"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary_upright",
+                    "stationary_not_upright",
+                    "motion",
+                    "shaken"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2025-09-05 05:28:23.707705",
+            "last_update_time": "2025-09-05 05:28:23.707710",
+            "model_owner_uuid": "f718fb0b-666a-4841-afd3-33dc9ea504ed"
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

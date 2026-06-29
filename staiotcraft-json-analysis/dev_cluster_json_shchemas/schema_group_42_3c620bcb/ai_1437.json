@@ -1,0 +1,142 @@
+{
+    "uuid": "edde23b7-253b-49d2-8a59-d8f198696919",
+    "ai_project_name": "brand_new_project",
+    "type": null,
+    "display_name": null,
+    "description": "This is a new project",
+    "version": null,
+    "schema_version": null,
+    "last_update_time": "2026-05-25 13:46:07.712048",
+    "creation_time": "2026-05-20 08:15:52.868666",
+    "project_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508",
+    "models": [
+        {
+            "uuid": "55cb30a6-8f7b-41e4-88c1-fd4b777ac5a2",
+            "name": "m",
+            "dataset": {
+                "name": "lis",
+                "dataset_id": "01ks2baxfr2yz0c8enrfgpxdpq"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary",
+                    "motion"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2026-05-20 09:45:49.326482",
+            "last_update_time": "2026-05-20 09:45:49.326497",
+            "model_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [],
+                "artifacts": [],
+                "last_update_time": "2026-05-20 09:46:05.099122",
+                "creation_time": "2026-05-20 09:46:05.099118"
+            }
+        },
+        {
+            "uuid": "9fe0b14e-0589-4b42-8afe-771f03fed5c3",
+            "name": "m1",
+            "dataset": {
+                "name": "lis",
+                "dataset_id": "01ks2baxfr2yz0c8enrfgpxdpq"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary",
+                    "motion",
+                    "shaken"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "iis2dulpx",
+                "device": "nucleo-u575zi-q"
+            },
+            "creation_time": "2026-05-20 09:49:56.496629",
+            "last_update_time": "2026-05-20 09:49:56.496638",
+            "model_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "iis2dulpx_mlc.json",
+                    "iis2dulpx_mlc.h"
+                ],
+                "last_update_time": "2026-05-20 09:50:10.381186",
+                "creation_time": "2026-05-20 09:50:10.381182"
+            }
+        },
+        {
+            "uuid": "eaf18e90-44f1-4760-8b29-0e1adf4f107c",
+            "name": "lis2dux12-model",
+            "dataset": {
+                "name": "lis2dux12-dataset",
+                "dataset_id": "01ksfnsw27nk8qp39ejq9z6yar"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "static",
+                    "vibration",
+                    "shake"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lis2dux12",
+                "device": "nucleo-u575zi-q"
+            },
+            "creation_time": "2026-05-25 13:46:07.683001",
+            "last_update_time": "2026-05-25 13:46:07.683012",
+            "model_owner_uuid": "6030675e-f6ba-4f10-ae9e-64942185c508",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lis2dux12_mlc.json",
+                    "lis2dux12_mlc.h"
+                ],
+                "last_update_time": "2026-05-25 13:46:50.974255",
+                "creation_time": "2026-05-25 13:46:50.974252"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

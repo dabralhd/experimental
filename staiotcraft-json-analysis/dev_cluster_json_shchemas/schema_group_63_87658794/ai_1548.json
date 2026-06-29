@@ -1,0 +1,121 @@
+{
+   "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+   "ai_project_name": "Activity",
+   "uuid": "7b5accc5-cdbb-4c8f-ada9-5a6360fe1daa",
+   "description": "",
+   "version": "0.0.1",
+   "inputs": [
+      {
+         "uuid": "ebd17a48-a211-4bf8-b61a-b72cf52dcbc7",
+         "input_type": "binary_hsd",
+         "model_ref": "2bdc2575-659c-4763-8aa1-13bd0b604260",
+         "logs": [
+            {
+               "uuid": "4160eb9c-10b7-48cd-9490-09e8a3df7f4f",
+               "name": "20230720_12_00_00",
+               "start_date": "2023-01-01T12:00:00.000Z",
+               "description": "descriptionTest",
+               "device_description": {
+                  "part_number": "STEVAL-STWINKT1B",
+                  "serial_number": "0015002F374E50132030364B",
+                  "alias": "STWIN_001",
+                  "fw_name": "FP-SNS-DATALOG1_Datalog1",
+                  "fw_version": "1.1.0"
+               },
+               "annotated": true
+            }
+         ],
+         "augmentation": [],
+         "tools": [
+            {
+               "name": "hsdatalog_to_unico",
+               "version": "1.1.0",
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-stwinkt1b:mlc",
+               "section": "input",
+               "parameters": {
+                  "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                  "-f": "TXT",
+                  "-t": "",
+                  "-s": "all",
+                  "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+               }
+            }
+         ]
+      }
+   ],
+   "models": [
+      {
+         "uuid": "2bdc2575-659c-4763-8aa1-13bd0b604260",
+         "name": "activity",
+         "stage": "modeling",
+         "model_type": "classifier",
+         "training_type": "offline",
+         "retraining": false,
+         "model_metadata": {
+            "classes": [
+               "lr",
+               "s",
+               "ud"
+            ]
+         },
+         "experiments": [
+            {
+               "uuid": "227e83d7-ae54-44be-aae8-4f6738ce3f05",
+               "name": "Experiment1",
+               "description": "testing",
+               "model_dev_file": null
+            }
+         ],
+         "tools": []
+      }
+   ],
+   "outputs": [
+      {
+         "uuid": "cd34b67f-b749-4d5b-8503-27b7925b5da6",
+         "output_type": "steval-stwinkt1b:mlc",
+         "model_ref": "2bdc2575-659c-4763-8aa1-13bd0b604260",
+         "tests": [
+            {
+               "uuid": "cc7b0e83-8873-41cd-b90e-b7b6909eae55",
+               "name": "test1",
+               "experiment_ref": "227e83d7-ae54-44be-aae8-4f6738ce3f05",
+               "model_file": null,
+               "parameters": {},
+               "reports": [],
+               "outputs": []
+            },
+            {
+               "uuid": "895599f1-3b45-4dbe-9ad2-fa3942867787",
+               "name": "test2",
+               "experiment_ref": "227e83d7-ae54-44be-aae8-4f6738ce3f05",
+               "model_file": null,
+               "parameters": {},
+               "reports": [],
+               "outputs": []
+            }
+         ],
+         "best_test": null,
+         "tools": [
+            {
+               "name": "mlctools",
+               "version": "1.0.0",
+               "input": "binary_hsd",
+               "model": "classifier",
+               "output": "steval-stwinkt1b:mlc",
+               "section": "output"
+            }
+         ],
+         "events": [],
+         "ui": {
+            "icons": []
+         }
+      }
+   ],
+   "deployments": [],
+   "dbstatus": {
+      "status": "unknown",
+      "message": null
+   }
+}

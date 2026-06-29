@@ -1,0 +1,62 @@
+{
+    "uuid": "4e134104-6281-4e2d-9d34-271b02b5de4e",
+    "ai_project_name": "SharedPjForNucleo",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "last_update_time": "2026-03-30 07:08:05.876557",
+    "creation_time": "2026-03-30 07:08:04.665642",
+    "project_owner_uuid": "363af7b3-752e-40df-855d-a5ebc3801d8e",
+    "models": [
+        {
+            "uuid": "6122f2c7-56a5-406c-af73-8592493d1a4f",
+            "name": "SmartAssetTracking",
+            "dataset": {
+                "name": "SmartAssetTracking",
+                "dataset_id": "01kmys366pdp8ybgjq87rkdjmr"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary_upright",
+                    "stationary_not_upright",
+                    "motion",
+                    "shaken"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "ism6hg256x",
+                "device": "nucleo-u575zi-q"
+            },
+            "creation_time": "2026-03-30 07:08:05.851118",
+            "last_update_time": "2026-03-30 07:08:05.851126",
+            "model_owner_uuid": "363af7b3-752e-40df-855d-a5ebc3801d8e",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": "01J3QGW4RYFHA34N3Z3WPS97GH"
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "ism6hg256x_mlc.json",
+                    "ism6hg256x_mlc.h"
+                ],
+                "last_update_time": "2026-03-30 07:08:18.875506",
+                "creation_time": "2026-03-30 07:08:18.875504"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

@@ -1,0 +1,38 @@
+{
+    "uuid": "dc147cc2-4f99-4813-b778-574b76eff343",
+    "ai_project_name": "test",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": null,
+    "last_update_time": "2026-03-16 11:42:11.249629",
+    "creation_time": "2026-03-16 11:42:09.864169",
+    "project_owner_uuid": "26a9d3b9-5454-402d-ae7f-0b632bf4d26e",
+    "models": [
+        {
+            "uuid": "93360710-8fcf-4142-9faa-9e0466983ba7",
+            "name": "Test-1",
+            "dataset": {
+                "name": "New-Robkit-Dataset",
+                "dataset_id": "01k9yk09jfmppcj11ybf5t0jmk"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "Rough",
+                    "Smooth"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16bx",
+                "device": "steval-robkit1"
+            },
+            "creation_time": "2026-03-16 11:42:11.217637",
+            "last_update_time": "2026-03-16 11:42:11.217645",
+            "model_owner_uuid": "26a9d3b9-5454-402d-ae7f-0b632bf4d26e"
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

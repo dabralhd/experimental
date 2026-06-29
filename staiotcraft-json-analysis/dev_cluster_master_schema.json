@@ -1,0 +1,4121 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "schema_version": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "ai_project_name": {
+      "type": "string"
+    },
+    "display_name": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "description": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "type": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "uuid": {
+      "type": "string"
+    },
+    "version": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "creation_time": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "last_update_time": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "project_owner_uuid": {
+      "type": [
+        "null",
+        "string"
+      ]
+    },
+    "models": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "creation_time": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "last_update_time": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "model_owner_uuid": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "metadata": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "classes": {
+                "anyOf": [
+                  {
+                    "type": "null"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            },
+            "required": [
+              "classes",
+              "type"
+            ]
+          },
+          "dataset": {
+            "type": "object",
+            "properties": {
+              "dataset_id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "dataset_id",
+              "name"
+            ]
+          },
+          "target": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "component": {
+                "type": "string"
+              },
+              "device": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "component",
+              "device",
+              "type"
+            ]
+          },
+          "data_sufficiency": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "creation_time": {
+                    "type": "null"
+                  },
+                  "last_update_time": {
+                    "type": "null"
+                  },
+                  "runtime": {
+                    "type": "object",
+                    "properties": {
+                      "type": {
+                        "type": "string"
+                      },
+                      "jobs": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "version": {
+                              "type": "null"
+                            },
+                            "template_id": {
+                              "type": "null"
+                            }
+                          },
+                          "required": [
+                            "name",
+                            "template_id",
+                            "version"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "jobs",
+                      "type"
+                    ]
+                  },
+                  "configuration": {
+                    "type": "null"
+                  },
+                  "artifacts": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  "reports": {
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "artifacts",
+                  "configuration",
+                  "creation_time",
+                  "last_update_time",
+                  "reports",
+                  "runtime"
+                ]
+              }
+            ]
+          },
+          "training": {
+            "type": "object",
+            "properties": {
+              "creation_time": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "last_update_time": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              },
+              "runtime": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "jobs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "version": {
+                          "type": "null"
+                        },
+                        "template_id": {
+                          "type": [
+                            "null",
+                            "string"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "template_id",
+                        "version"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "jobs",
+                  "type"
+                ]
+              },
+              "configuration": {
+                "type": "string"
+              },
+              "artifacts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "reports": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "artifacts",
+              "configuration",
+              "reports",
+              "runtime"
+            ]
+          },
+          "codegen": {
+            "type": "null"
+          },
+          "building": {
+            "type": "null"
+          },
+          "model_type": {
+            "type": "string"
+          },
+          "stage": {
+            "type": "string"
+          },
+          "training_type": {
+            "type": "string"
+          },
+          "retraining": {
+            "type": "boolean"
+          },
+          "model_metadata": {
+            "type": "object",
+            "properties": {
+              "classes": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": [
+              "classes"
+            ]
+          },
+          "experiments": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "uuid": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "model_dev_template": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "model_dev_file": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "virtual_environment": {
+                  "type": "object",
+                  "properties": {
+                    "type": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "version": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "type",
+                    "version"
+                  ]
+                }
+              },
+              "required": [
+                "description",
+                "model_dev_file",
+                "name",
+                "uuid"
+              ]
+            }
+          },
+          "tools": {
+            "type": "array"
+          },
+          "model_ref": {
+            "type": "string"
+          },
+          "data-sufficiency": {
+            "type": "object",
+            "properties": {
+              "creation_time": {
+                "type": "null"
+              },
+              "last_update_time": {
+                "type": "null"
+              },
+              "runtime": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "jobs": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "version": {
+                          "type": "null"
+                        },
+                        "template_id": {
+                          "type": "null"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "template_id",
+                        "version"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "jobs",
+                  "type"
+                ]
+              },
+              "configuration": {
+                "type": "null"
+              },
+              "artifacts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "reports": {
+                "type": "array"
+              }
+            },
+            "required": [
+              "artifacts",
+              "configuration",
+              "creation_time",
+              "last_update_time",
+              "reports",
+              "runtime"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "uuid"
+        ]
+      }
+    },
+    "applications": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "device_template_uri": {
+            "type": "string"
+          },
+          "device_template_id": {
+            "type": "string"
+          },
+          "device_manifest_uri": {
+            "type": "string"
+          },
+          "image_uri": {
+            "type": "string"
+          },
+          "module_id": {
+            "type": "string"
+          },
+          "binary_uri": {
+            "type": "string"
+          },
+          "binary_id": {
+            "type": "integer"
+          },
+          "protocol": {
+            "type": "integer"
+          },
+          "bluest_v3_payload": {
+            "type": "object",
+            "properties": {
+              "device_id": {
+                "type": "string"
+              },
+              "fw_id": {
+                "type": "string"
+              },
+              "payload_id": {
+                "type": "string"
+              },
+              "decoding_schema": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "component": {
+                      "type": "string"
+                    },
+                    "telemetry": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    },
+                    "length": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "component",
+                    "telemetry",
+                    "type"
+                  ]
+                }
+              },
+              "description": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "decoding_schema",
+              "device_id",
+              "fw_id",
+              "payload_id"
+            ]
+          },
+          "bluestv3_payload": {
+            "type": "object",
+            "properties": {
+              "device_id": {
+                "type": "string"
+              },
+              "fw_id": {
+                "type": "string"
+              },
+              "payload_id": {
+                "type": "string"
+              },
+              "decoding_schema": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "telemetry": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "telemetry",
+                    "type"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "decoding_schema",
+              "device_id",
+              "fw_id",
+              "payload_id"
+            ]
+          }
+        },
+        "required": [
+          "device_template_id",
+          "device_template_uri",
+          "type",
+          "uuid"
+        ]
+      }
+    },
+    "deployments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "display_name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "last_update_time": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "last_deploy_result": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "cloud_params": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "type": "string"
+              },
+              "app_url": {
+                "type": [
+                  "null",
+                  "string"
+                ]
+              }
+            },
+            "required": [
+              "app_url",
+              "type"
+            ]
+          },
+          "gateway": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "device_id": {
+                  "type": "string"
+                },
+                "display_name": {
+                  "type": "string"
+                },
+                "gateway_id": {
+                  "type": "null"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "application": {
+                  "type": "string"
+                },
+                "wifi_mode": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "application",
+                "description",
+                "device_id",
+                "wifi_mode"
+              ]
+            }
+          },
+          "leaf": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "device_id": {
+                  "type": "string"
+                },
+                "display_name": {
+                  "type": "string"
+                },
+                "gateway_id": {
+                  "type": "string"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "datalogging": {
+                  "anyOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "supported_applications": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "application": {
+                          "type": "string"
+                        },
+                        "firmware_update": {
+                          "type": "boolean"
+                        },
+                        "models": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "model_name_reference": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "model_name_reference"
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "application",
+                        "firmware_update"
+                      ]
+                    }
+                  ]
+                },
+                "inference": {
+                  "type": "object",
+                  "properties": {
+                    "supported_applications": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "application": {
+                      "type": "string"
+                    },
+                    "firmware_update": {
+                      "type": "boolean"
+                    },
+                    "models": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "model_name_reference": {
+                            "type": "string"
+                          },
+                          "artifact_type": {
+                            "type": "string"
+                          },
+                          "component_name": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "artifact_type",
+                          "component_name",
+                          "model_name_reference"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "application",
+                    "firmware_update",
+                    "models"
+                  ]
+                }
+              },
+              "required": [
+                "datalogging",
+                "description",
+                "device_id",
+                "gateway_id"
+              ]
+            }
+          },
+          "last_deploy_time": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "configuration": {
+            "type": "object",
+            "properties": {
+              "leaf": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "device_id": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "gateway_id": {
+                      "type": "string"
+                    },
+                    "selected_model_name": {
+                      "type": "string"
+                    },
+                    "models": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "datalogging": {
+                            "type": "object",
+                            "properties": {
+                              "device_template_uri": {
+                                "type": "string"
+                              },
+                              "device_template_id": {
+                                "type": "string"
+                              },
+                              "protocol": {
+                                "type": "integer"
+                              },
+                              "firmware_uri": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "device_template_id",
+                              "device_template_uri",
+                              "firmware_uri",
+                              "protocol"
+                            ]
+                          },
+                          "inference": {
+                            "type": "object",
+                            "properties": {
+                              "device_template_uri": {
+                                "type": "string"
+                              },
+                              "device_template_id": {
+                                "type": "string"
+                              },
+                              "protocol": {
+                                "type": "integer"
+                              },
+                              "firmware_uri": {
+                                "type": "string"
+                              },
+                              "ml_uri": {
+                                "type": [
+                                  "null",
+                                  "string"
+                                ]
+                              },
+                              "firmware_update": {
+                                "type": "boolean"
+                              }
+                            },
+                            "required": [
+                              "device_template_id",
+                              "device_template_uri",
+                              "firmware_update",
+                              "firmware_uri",
+                              "ml_uri",
+                              "protocol"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "datalogging",
+                          "inference",
+                          "name"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "description",
+                    "device_id",
+                    "gateway_id",
+                    "models"
+                  ]
+                }
+              },
+              "gateway": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "device_id": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "gateway_id": {
+                      "type": "null"
+                    },
+                    "module_id": {
+                      "type": "string"
+                    },
+                    "configuration_uri": {
+                      "type": "string"
+                    },
+                    "device_manifest_uri": {
+                      "type": "string"
+                    },
+                    "device_template_uri": {
+                      "type": "string"
+                    },
+                    "device_template_id": {
+                      "type": "string"
+                    },
+                    "wifi_mode": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "description",
+                    "device_id",
+                    "device_manifest_uri",
+                    "device_template_id",
+                    "device_template_uri",
+                    "gateway_id",
+                    "module_id",
+                    "wifi_mode"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "gateway",
+              "leaf"
+            ]
+          }
+        },
+        "required": [
+          "cloud_params",
+          "description",
+          "display_name",
+          "last_deploy_result",
+          "uuid"
+        ]
+      }
+    },
+    "inputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "input_type": {
+            "type": "string"
+          },
+          "model_ref": {
+            "type": "string"
+          },
+          "logs": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "uuid": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "annotated": {
+                  "type": "boolean"
+                },
+                "description": {
+                  "type": "string"
+                },
+                "start_time": {
+                  "type": "string"
+                },
+                "end_time": {
+                  "type": "string"
+                },
+                "device_description": {
+                  "type": "object",
+                  "properties": {
+                    "part_number": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "serial_number": {
+                      "type": "string"
+                    },
+                    "alias": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "fw_name": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "fw_version": {
+                      "type": [
+                        "null",
+                        "string"
+                      ]
+                    },
+                    "model": {
+                      "type": "string"
+                    },
+                    "fw_name:": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "alias",
+                    "fw_version",
+                    "serial_number"
+                  ]
+                },
+                "start_date": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "annotated",
+                "description",
+                "device_description",
+                "name",
+                "uuid"
+              ]
+            }
+          },
+          "augmentation": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                },
+                "input": {
+                  "type": "string"
+                },
+                "model": {
+                  "type": "string"
+                },
+                "output": {
+                  "type": "string"
+                },
+                "section": {
+                  "type": "string"
+                },
+                "parameters": {
+                  "type": "object",
+                  "properties": {
+                    "-o": {
+                      "type": "string"
+                    },
+                    "-f": {
+                      "type": "string"
+                    },
+                    "-t": {
+                      "type": "string"
+                    },
+                    "-s": {
+                      "type": "string"
+                    },
+                    "": {
+                      "type": "string"
+                    },
+                    "-i": {
+                      "type": "string"
+                    },
+                    "-r": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "-o"
+                  ]
+                },
+                "comments": {
+                  "type": "string"
+                },
+                "uri": {
+                  "type": "string"
+                },
+                "runtime": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "parameters",
+                "version"
+              ]
+            }
+          }
+        },
+        "required": [
+          "augmentation",
+          "input_type",
+          "logs",
+          "model_ref",
+          "tools",
+          "uuid"
+        ]
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "uuid": {
+            "type": "string"
+          },
+          "output_type": {
+            "type": "string"
+          },
+          "model_ref": {
+            "type": "string"
+          },
+          "tests": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "uuid": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "experiment_ref": {
+                  "type": "string"
+                },
+                "model_file": {
+                  "type": [
+                    "null",
+                    "string"
+                  ]
+                },
+                "parameters": {
+                  "anyOf": [
+                    {
+                      "type": [
+                        "array",
+                        "null"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "compression": {
+                          "type": "string"
+                        },
+                        "$schema": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "reports": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  ]
+                },
+                "outputs": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "required": [
+                "experiment_ref",
+                "model_file",
+                "name",
+                "outputs",
+                "parameters",
+                "reports",
+                "uuid"
+              ]
+            }
+          },
+          "best_test": {
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          "tools": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "version": {
+                  "type": "string"
+                },
+                "input": {
+                  "type": "string"
+                },
+                "model": {
+                  "type": "string"
+                },
+                "output": {
+                  "type": "string"
+                },
+                "section": {
+                  "type": "string"
+                },
+                "parameters": {
+                  "anyOf": [
+                    {
+                      "type": "null"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "path": {
+                          "type": "string"
+                        },
+                        "query": {
+                          "type": "object",
+                          "properties": {
+                            "address": {
+                              "type": "string"
+                            },
+                            "allocate_inputs": {
+                              "type": "boolean"
+                            },
+                            "allocate_outputs": {
+                              "type": "boolean"
+                            },
+                            "binary": {
+                              "type": "boolean"
+                            },
+                            "copy_weights_at": {
+                              "type": "string"
+                            },
+                            "generate_fota": {
+                              "type": "boolean"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "split_weigths": {
+                              "type": "boolean"
+                            },
+                            "generate_full_binary": {
+                              "type": "boolean"
+                            },
+                            "return_full_binary_only": {
+                              "type": "boolean"
+                            }
+                          },
+                          "required": [
+                            "address",
+                            "allocate_inputs",
+                            "allocate_outputs",
+                            "binary",
+                            "copy_weights_at",
+                            "generate_fota",
+                            "generate_full_binary",
+                            "name",
+                            "return_full_binary_only",
+                            "split_weigths"
+                          ]
+                        },
+                        "headers": {
+                          "type": "object",
+                          "properties": {
+                            "content-type": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "content-type"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "headers",
+                        "path",
+                        "query"
+                      ]
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "name",
+                "version"
+              ]
+            }
+          },
+          "events": {
+            "type": "array"
+          },
+          "ui": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "icons": {
+                    "type": "array"
+                  }
+                },
+                "required": [
+                  "icons"
+                ]
+              }
+            ]
+          }
+        },
+        "required": [
+          "model_ref",
+          "output_type",
+          "tests",
+          "tools",
+          "uuid"
+        ]
+      }
+    },
+    "dbstatus": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string"
+        },
+        "message": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "message",
+        "status"
+      ]
+    },
+    "$id": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "default": {
+      "type": "object"
+    },
+    "required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "additionalProperties": {
+      "type": "boolean"
+    },
+    "properties": {
+      "type": "object",
+      "properties": {
+        "deployments": {
+          "type": "object",
+          "properties": {
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "default": {
+              "type": "array"
+            },
+            "additionalItems": {
+              "type": "boolean"
+            },
+            "items": {
+              "type": "object",
+              "properties": {
+                "anyOf": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "$id": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "default": {
+                        "type": "object"
+                      },
+                      "required": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "boolean"
+                      },
+                      "properties": {
+                        "type": "object",
+                        "properties": {
+                          "uuid": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "default",
+                              "description",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "display_name": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "default",
+                              "description",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "description": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "default",
+                              "description",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "last_update_time": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "default",
+                              "description",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "last_deploy_result": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "default",
+                              "description",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "cloud_params": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "object"
+                              },
+                              "required": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "properties": {
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$id": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "string"
+                                      },
+                                      "title": {
+                                        "type": "string"
+                                      },
+                                      "description": {
+                                        "type": "string"
+                                      },
+                                      "default": {
+                                        "type": "string"
+                                      },
+                                      "enum": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    },
+                                    "required": [
+                                      "$id",
+                                      "default",
+                                      "description",
+                                      "enum",
+                                      "title",
+                                      "type"
+                                    ]
+                                  },
+                                  "app_url": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$id": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "title": {
+                                        "type": "string"
+                                      },
+                                      "description": {
+                                        "type": "string"
+                                      },
+                                      "default": {
+                                        "type": "string"
+                                      },
+                                      "examples": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    },
+                                    "required": [
+                                      "$id",
+                                      "default",
+                                      "description",
+                                      "examples",
+                                      "title",
+                                      "type"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "app_url",
+                                  "type"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "default",
+                              "description",
+                              "properties",
+                              "required",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "configuration": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "object"
+                              },
+                              "required": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "properties": {
+                                "type": "object",
+                                "properties": {
+                                  "leaf": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$id": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "string"
+                                      },
+                                      "title": {
+                                        "type": "string"
+                                      },
+                                      "description": {
+                                        "type": "string"
+                                      },
+                                      "default": {
+                                        "type": "array"
+                                      },
+                                      "additionalItems": {
+                                        "type": "boolean"
+                                      },
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "anyOf": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                "$id": {
+                                                  "type": "string"
+                                                },
+                                                "type": {
+                                                  "type": "string"
+                                                },
+                                                "title": {
+                                                  "type": "string"
+                                                },
+                                                "description": {
+                                                  "type": "string"
+                                                },
+                                                "default": {
+                                                  "type": "object"
+                                                },
+                                                "required": {
+                                                  "type": "array",
+                                                  "items": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "additionalProperties": {
+                                                  "type": "boolean"
+                                                },
+                                                "properties": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "device_id": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "description": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "gateway_id": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "array",
+                                                          "items": {
+                                                            "type": "string"
+                                                          }
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "selected_model_name": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "models": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "array"
+                                                        },
+                                                        "additionalItems": {
+                                                          "type": "boolean"
+                                                        },
+                                                        "items": {
+                                                          "type": "object",
+                                                          "properties": {
+                                                            "anyOf": {
+                                                              "type": "array",
+                                                              "items": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                  "$id": {
+                                                                    "type": "string"
+                                                                  },
+                                                                  "type": {
+                                                                    "type": "string"
+                                                                  },
+                                                                  "title": {
+                                                                    "type": "string"
+                                                                  },
+                                                                  "description": {
+                                                                    "type": "string"
+                                                                  },
+                                                                  "default": {
+                                                                    "type": "object"
+                                                                  },
+                                                                  "required": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                      "type": "string"
+                                                                    }
+                                                                  },
+                                                                  "additionalProperties": {
+                                                                    "type": "boolean"
+                                                                  },
+                                                                  "properties": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                      "name": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                          "$id": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "type": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "title": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "description": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "default": {
+                                                                            "type": "string"
+                                                                          }
+                                                                        },
+                                                                        "required": [
+                                                                          "$id",
+                                                                          "default",
+                                                                          "description",
+                                                                          "title",
+                                                                          "type"
+                                                                        ]
+                                                                      },
+                                                                      "datalogging": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                          "$id": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "type": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "title": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "description": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "default": {
+                                                                            "type": "object"
+                                                                          },
+                                                                          "required": {
+                                                                            "type": "array",
+                                                                            "items": {
+                                                                              "type": "string"
+                                                                            }
+                                                                          },
+                                                                          "additionalProperties": {
+                                                                            "type": "boolean"
+                                                                          },
+                                                                          "properties": {
+                                                                            "type": "object",
+                                                                            "properties": {
+                                                                              "device_template_uri": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "$id": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "type": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "title": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "description": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "default": {
+                                                                                    "type": "string"
+                                                                                  }
+                                                                                },
+                                                                                "required": [
+                                                                                  "$id",
+                                                                                  "default",
+                                                                                  "description",
+                                                                                  "title",
+                                                                                  "type"
+                                                                                ]
+                                                                              },
+                                                                              "device_template_id": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "$id": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "type": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "title": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "description": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "default": {
+                                                                                    "type": "string"
+                                                                                  }
+                                                                                },
+                                                                                "required": [
+                                                                                  "$id",
+                                                                                  "default",
+                                                                                  "description",
+                                                                                  "title",
+                                                                                  "type"
+                                                                                ]
+                                                                              },
+                                                                              "protocol": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "$id": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "type": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "title": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "description": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "default": {
+                                                                                    "type": "string"
+                                                                                  }
+                                                                                },
+                                                                                "required": [
+                                                                                  "$id",
+                                                                                  "default",
+                                                                                  "description",
+                                                                                  "title",
+                                                                                  "type"
+                                                                                ]
+                                                                              },
+                                                                              "firmware_uri": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "$id": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "type": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "title": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "description": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "default": {
+                                                                                    "type": "string"
+                                                                                  }
+                                                                                },
+                                                                                "required": [
+                                                                                  "$id",
+                                                                                  "default",
+                                                                                  "description",
+                                                                                  "title",
+                                                                                  "type"
+                                                                                ]
+                                                                              }
+                                                                            },
+                                                                            "required": [
+                                                                              "device_template_id",
+                                                                              "device_template_uri",
+                                                                              "firmware_uri",
+                                                                              "protocol"
+                                                                            ]
+                                                                          }
+                                                                        },
+                                                                        "required": [
+                                                                          "$id",
+                                                                          "additionalProperties",
+                                                                          "default",
+                                                                          "description",
+                                                                          "properties",
+                                                                          "required",
+                                                                          "title",
+                                                                          "type"
+                                                                        ]
+                                                                      },
+                                                                      "inference": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                          "$id": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "type": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "title": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "description": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "default": {
+                                                                            "type": "object"
+                                                                          },
+                                                                          "required": {
+                                                                            "type": "array",
+                                                                            "items": {
+                                                                              "type": "string"
+                                                                            }
+                                                                          },
+                                                                          "additionalProperties": {
+                                                                            "type": "boolean"
+                                                                          },
+                                                                          "properties": {
+                                                                            "type": "object",
+                                                                            "properties": {
+                                                                              "device_template_uri": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "$id": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "type": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "title": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "description": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "default": {
+                                                                                    "type": "string"
+                                                                                  }
+                                                                                },
+                                                                                "required": [
+                                                                                  "$id",
+                                                                                  "default",
+                                                                                  "description",
+                                                                                  "title",
+                                                                                  "type"
+                                                                                ]
+                                                                              },
+                                                                              "device_template_id": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "$id": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "type": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "title": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "description": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "default": {
+                                                                                    "type": "string"
+                                                                                  }
+                                                                                },
+                                                                                "required": [
+                                                                                  "$id",
+                                                                                  "default",
+                                                                                  "description",
+                                                                                  "title",
+                                                                                  "type"
+                                                                                ]
+                                                                              },
+                                                                              "protocol": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "$id": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "type": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "title": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "description": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "default": {
+                                                                                    "type": "string"
+                                                                                  }
+                                                                                },
+                                                                                "required": [
+                                                                                  "$id",
+                                                                                  "default",
+                                                                                  "description",
+                                                                                  "title",
+                                                                                  "type"
+                                                                                ]
+                                                                              },
+                                                                              "firmware_uri": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "$id": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "type": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "title": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "description": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "default": {
+                                                                                    "type": "string"
+                                                                                  }
+                                                                                },
+                                                                                "required": [
+                                                                                  "$id",
+                                                                                  "default",
+                                                                                  "description",
+                                                                                  "title",
+                                                                                  "type"
+                                                                                ]
+                                                                              },
+                                                                              "ml_uri": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "$id": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "type": {
+                                                                                    "type": "array",
+                                                                                    "items": {
+                                                                                      "type": "string"
+                                                                                    }
+                                                                                  },
+                                                                                  "title": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "description": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "default": {
+                                                                                    "type": "string"
+                                                                                  }
+                                                                                },
+                                                                                "required": [
+                                                                                  "$id",
+                                                                                  "default",
+                                                                                  "description",
+                                                                                  "title",
+                                                                                  "type"
+                                                                                ]
+                                                                              },
+                                                                              "firmware_update": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "$id": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "type": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "title": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "description": {
+                                                                                    "type": "string"
+                                                                                  },
+                                                                                  "default": {
+                                                                                    "type": "boolean"
+                                                                                  }
+                                                                                },
+                                                                                "required": [
+                                                                                  "$id",
+                                                                                  "default",
+                                                                                  "description",
+                                                                                  "title",
+                                                                                  "type"
+                                                                                ]
+                                                                              }
+                                                                            },
+                                                                            "required": [
+                                                                              "device_template_id",
+                                                                              "device_template_uri",
+                                                                              "firmware_update",
+                                                                              "firmware_uri",
+                                                                              "ml_uri",
+                                                                              "protocol"
+                                                                            ]
+                                                                          }
+                                                                        },
+                                                                        "required": [
+                                                                          "$id",
+                                                                          "additionalProperties",
+                                                                          "default",
+                                                                          "description",
+                                                                          "properties",
+                                                                          "required",
+                                                                          "title",
+                                                                          "type"
+                                                                        ]
+                                                                      }
+                                                                    },
+                                                                    "required": [
+                                                                      "datalogging",
+                                                                      "inference",
+                                                                      "name"
+                                                                    ]
+                                                                  }
+                                                                },
+                                                                "required": [
+                                                                  "$id",
+                                                                  "additionalProperties",
+                                                                  "default",
+                                                                  "description",
+                                                                  "properties",
+                                                                  "required",
+                                                                  "title",
+                                                                  "type"
+                                                                ]
+                                                              }
+                                                            },
+                                                            "$id": {
+                                                              "type": "string"
+                                                            }
+                                                          },
+                                                          "required": [
+                                                            "$id",
+                                                            "anyOf"
+                                                          ]
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "additionalItems",
+                                                        "default",
+                                                        "description",
+                                                        "items",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "description",
+                                                    "device_id",
+                                                    "gateway_id",
+                                                    "models",
+                                                    "selected_model_name"
+                                                  ]
+                                                }
+                                              },
+                                              "required": [
+                                                "$id",
+                                                "additionalProperties",
+                                                "default",
+                                                "description",
+                                                "properties",
+                                                "required",
+                                                "title",
+                                                "type"
+                                              ]
+                                            }
+                                          },
+                                          "$id": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "$id",
+                                          "anyOf"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "$id",
+                                      "additionalItems",
+                                      "default",
+                                      "description",
+                                      "items",
+                                      "title",
+                                      "type"
+                                    ]
+                                  },
+                                  "gateway": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$id": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "string"
+                                      },
+                                      "title": {
+                                        "type": "string"
+                                      },
+                                      "description": {
+                                        "type": "string"
+                                      },
+                                      "default": {
+                                        "type": "array"
+                                      },
+                                      "additionalItems": {
+                                        "type": "boolean"
+                                      },
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "anyOf": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                "$id": {
+                                                  "type": "string"
+                                                },
+                                                "type": {
+                                                  "type": "string"
+                                                },
+                                                "title": {
+                                                  "type": "string"
+                                                },
+                                                "description": {
+                                                  "type": "string"
+                                                },
+                                                "default": {
+                                                  "type": "object"
+                                                },
+                                                "required": {
+                                                  "type": "array",
+                                                  "items": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "additionalProperties": {
+                                                  "type": "boolean"
+                                                },
+                                                "properties": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "device_id": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "description": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "gateway_id": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "array",
+                                                          "items": {
+                                                            "type": "string"
+                                                          }
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "module_id": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "configuration_uri": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "device_manifest_uri": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "device_template_uri": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "device_template_id": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    },
+                                                    "wifi_mode": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "string"
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "default",
+                                                        "description",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    }
+                                                  },
+                                                  "required": [
+                                                    "configuration_uri",
+                                                    "description",
+                                                    "device_id",
+                                                    "device_manifest_uri",
+                                                    "device_template_id",
+                                                    "device_template_uri",
+                                                    "gateway_id",
+                                                    "module_id",
+                                                    "wifi_mode"
+                                                  ]
+                                                }
+                                              },
+                                              "required": [
+                                                "$id",
+                                                "additionalProperties",
+                                                "default",
+                                                "description",
+                                                "properties",
+                                                "required",
+                                                "title",
+                                                "type"
+                                              ]
+                                            }
+                                          },
+                                          "$id": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "$id",
+                                          "anyOf"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "$id",
+                                      "additionalItems",
+                                      "default",
+                                      "description",
+                                      "items",
+                                      "title",
+                                      "type"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "gateway",
+                                  "leaf"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "default",
+                              "description",
+                              "properties",
+                              "required",
+                              "title",
+                              "type"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "cloud_params",
+                          "configuration",
+                          "description",
+                          "display_name",
+                          "last_deploy_result",
+                          "last_update_time",
+                          "uuid"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "$id",
+                      "additionalProperties",
+                      "default",
+                      "description",
+                      "properties",
+                      "required",
+                      "title",
+                      "type"
+                    ]
+                  }
+                },
+                "$id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "$id",
+                "anyOf"
+              ]
+            },
+            "$ref": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "description"
+          ]
+        },
+        "ai_project_name": {
+          "type": "object",
+          "properties": {
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "default": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "$id",
+            "default",
+            "description",
+            "title",
+            "type"
+          ]
+        },
+        "display_name": {
+          "type": "object",
+          "properties": {
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "default": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "$id",
+            "default",
+            "description",
+            "title",
+            "type"
+          ]
+        },
+        "description": {
+          "type": "object",
+          "properties": {
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "default": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "$id",
+            "default",
+            "description",
+            "title",
+            "type"
+          ]
+        },
+        "uuid": {
+          "type": "object",
+          "properties": {
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "examples": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "$id",
+            "description",
+            "examples",
+            "title",
+            "type"
+          ]
+        },
+        "version": {
+          "type": "object",
+          "properties": {
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "pattern": {
+              "type": "string"
+            },
+            "default": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "$id",
+            "default",
+            "description",
+            "pattern",
+            "title",
+            "type"
+          ]
+        },
+        "creation_time": {
+          "type": "object",
+          "properties": {
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "pattern": {
+              "type": "string"
+            },
+            "default": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "$id",
+            "default",
+            "description",
+            "pattern",
+            "title",
+            "type"
+          ]
+        },
+        "last_update_time": {
+          "type": "object",
+          "properties": {
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "pattern": {
+              "type": "string"
+            },
+            "default": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "$id",
+            "default",
+            "description",
+            "pattern",
+            "title",
+            "type"
+          ]
+        },
+        "owner": {
+          "type": "object",
+          "properties": {
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "$id",
+            "description",
+            "title",
+            "type"
+          ]
+        },
+        "reference": {
+          "type": "object",
+          "properties": {
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "default": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "$id",
+            "default",
+            "description",
+            "title",
+            "type"
+          ]
+        },
+        "models": {
+          "type": "object",
+          "properties": {
+            "$ref": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "$id": {
+              "type": "string"
+            },
+            "type": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "default": {
+              "type": "array"
+            },
+            "additionalItems": {
+              "type": "boolean"
+            },
+            "items": {
+              "type": "object",
+              "properties": {
+                "anyOf": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "$id": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "default": {
+                        "type": "object"
+                      },
+                      "required": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "additionalProperties": {
+                        "type": "boolean"
+                      },
+                      "properties": {
+                        "type": "object",
+                        "properties": {
+                          "uuid": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "default",
+                              "description",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "name": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "default",
+                              "description",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "description": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "default",
+                              "description",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "creation_time": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "pattern": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "default",
+                              "description",
+                              "pattern",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "last_update_time": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "pattern": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "string"
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "default",
+                              "description",
+                              "pattern",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "metadata": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "object"
+                              },
+                              "required": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "additionalProperties": {
+                                "type": "boolean"
+                              },
+                              "properties": {
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$id": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "string"
+                                      },
+                                      "title": {
+                                        "type": "string"
+                                      },
+                                      "description": {
+                                        "type": "string"
+                                      },
+                                      "default": {
+                                        "type": "string"
+                                      },
+                                      "enum": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    },
+                                    "required": [
+                                      "$id",
+                                      "default",
+                                      "description",
+                                      "enum",
+                                      "title",
+                                      "type"
+                                    ]
+                                  },
+                                  "classes": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$id": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "string"
+                                      },
+                                      "title": {
+                                        "type": "string"
+                                      },
+                                      "description": {
+                                        "type": "string"
+                                      },
+                                      "default": {
+                                        "type": "array"
+                                      },
+                                      "additionalItems": {
+                                        "type": "boolean"
+                                      },
+                                      "items": {
+                                        "type": "object",
+                                        "properties": {
+                                          "anyOf": {
+                                            "type": "array",
+                                            "items": {
+                                              "type": "object",
+                                              "properties": {
+                                                "$id": {
+                                                  "type": "string"
+                                                },
+                                                "type": {
+                                                  "type": "string"
+                                                },
+                                                "title": {
+                                                  "type": "string"
+                                                },
+                                                "description": {
+                                                  "type": "string"
+                                                },
+                                                "default": {
+                                                  "type": "string"
+                                                }
+                                              },
+                                              "required": [
+                                                "$id",
+                                                "default",
+                                                "description",
+                                                "title",
+                                                "type"
+                                              ]
+                                            }
+                                          },
+                                          "$id": {
+                                            "type": "string"
+                                          }
+                                        },
+                                        "required": [
+                                          "$id",
+                                          "anyOf"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "$id",
+                                      "additionalItems",
+                                      "default",
+                                      "description",
+                                      "items",
+                                      "title",
+                                      "type"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "classes",
+                                  "type"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "additionalProperties",
+                              "default",
+                              "description",
+                              "properties",
+                              "required",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "dataset": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "object"
+                              },
+                              "required": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "additionalProperties": {
+                                "type": "boolean"
+                              },
+                              "properties": {
+                                "type": "object",
+                                "properties": {
+                                  "dataset_id": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$id": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "string"
+                                      },
+                                      "title": {
+                                        "type": "string"
+                                      },
+                                      "description": {
+                                        "type": "string"
+                                      },
+                                      "default": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "$id",
+                                      "default",
+                                      "description",
+                                      "title",
+                                      "type"
+                                    ]
+                                  },
+                                  "name": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$id": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "string"
+                                      },
+                                      "title": {
+                                        "type": "string"
+                                      },
+                                      "description": {
+                                        "type": "string"
+                                      },
+                                      "default": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "$id",
+                                      "default",
+                                      "description",
+                                      "title",
+                                      "type"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "dataset_id",
+                                  "name"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "additionalProperties",
+                              "default",
+                              "description",
+                              "properties",
+                              "required",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "target": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "object"
+                              },
+                              "required": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "additionalProperties": {
+                                "type": "boolean"
+                              },
+                              "properties": {
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$id": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "string"
+                                      },
+                                      "title": {
+                                        "type": "string"
+                                      },
+                                      "description": {
+                                        "type": "string"
+                                      },
+                                      "default": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "$id",
+                                      "default",
+                                      "description",
+                                      "title",
+                                      "type"
+                                    ]
+                                  },
+                                  "component": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$id": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "string"
+                                      },
+                                      "title": {
+                                        "type": "string"
+                                      },
+                                      "description": {
+                                        "type": "string"
+                                      },
+                                      "default": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "$id",
+                                      "default",
+                                      "description",
+                                      "title",
+                                      "type"
+                                    ]
+                                  },
+                                  "device": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$id": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "string"
+                                      },
+                                      "title": {
+                                        "type": "string"
+                                      },
+                                      "description": {
+                                        "type": "string"
+                                      },
+                                      "default": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "$id",
+                                      "default",
+                                      "description",
+                                      "title",
+                                      "type"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "component",
+                                  "device",
+                                  "type"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "additionalProperties",
+                              "default",
+                              "description",
+                              "properties",
+                              "required",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "training": {
+                            "type": "object",
+                            "properties": {
+                              "$id": {
+                                "type": "string"
+                              },
+                              "type": {
+                                "type": "string"
+                              },
+                              "title": {
+                                "type": "string"
+                              },
+                              "description": {
+                                "type": "string"
+                              },
+                              "default": {
+                                "type": "object"
+                              },
+                              "required": {
+                                "type": "array",
+                                "items": {
+                                  "type": "string"
+                                }
+                              },
+                              "additionalProperties": {
+                                "type": "boolean"
+                              },
+                              "properties": {
+                                "type": "object",
+                                "properties": {
+                                  "creation_time": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$id": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "string"
+                                      },
+                                      "title": {
+                                        "type": "string"
+                                      },
+                                      "description": {
+                                        "type": "string"
+                                      },
+                                      "pattern": {
+                                        "type": "string"
+                                      },
+                                      "default": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "$id",
+                                      "default",
+                                      "description",
+                                      "pattern",
+                                      "title",
+                                      "type"
+                                    ]
+                                  },
+                                  "last_update_time": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$id": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "string"
+                                      },
+                                      "title": {
+                                        "type": "string"
+                                      },
+                                      "description": {
+                                        "type": "string"
+                                      },
+                                      "pattern": {
+                                        "type": "string"
+                                      },
+                                      "default": {
+                                        "type": "string"
+                                      }
+                                    },
+                                    "required": [
+                                      "$id",
+                                      "default",
+                                      "description",
+                                      "pattern",
+                                      "title",
+                                      "type"
+                                    ]
+                                  },
+                                  "runtime": {
+                                    "type": "object",
+                                    "properties": {
+                                      "$id": {
+                                        "type": "string"
+                                      },
+                                      "type": {
+                                        "type": "string"
+                                      },
+                                      "title": {
+                                        "type": "string"
+                                      },
+                                      "description": {
+                                        "type": "string"
+                                      },
+                                      "default": {
+                                        "type": "object"
+                                      },
+                                      "required": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      },
+                                      "additionalProperties": {
+                                        "type": "boolean"
+                                      },
+                                      "properties": {
+                                        "type": "object",
+                                        "properties": {
+                                          "type": {
+                                            "type": "object",
+                                            "properties": {
+                                              "$id": {
+                                                "type": "string"
+                                              },
+                                              "type": {
+                                                "type": "string"
+                                              },
+                                              "title": {
+                                                "type": "string"
+                                              },
+                                              "description": {
+                                                "type": "string"
+                                              },
+                                              "default": {
+                                                "type": "string"
+                                              },
+                                              "enum": {
+                                                "type": "array",
+                                                "items": {
+                                                  "type": "string"
+                                                }
+                                              }
+                                            },
+                                            "required": [
+                                              "$id",
+                                              "default",
+                                              "description",
+                                              "enum",
+                                              "title",
+                                              "type"
+                                            ]
+                                          },
+                                          "jobs": {
+                                            "type": "object",
+                                            "properties": {
+                                              "$id": {
+                                                "type": "string"
+                                              },
+                                              "type": {
+                                                "type": "string"
+                                              },
+                                              "title": {
+                                                "type": "string"
+                                              },
+                                              "description": {
+                                                "type": "string"
+                                              },
+                                              "default": {
+                                                "type": "array"
+                                              },
+                                              "additionalItems": {
+                                                "type": "boolean"
+                                              },
+                                              "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "anyOf": {
+                                                    "type": "array",
+                                                    "items": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "$id": {
+                                                          "type": "string"
+                                                        },
+                                                        "type": {
+                                                          "type": "string"
+                                                        },
+                                                        "title": {
+                                                          "type": "string"
+                                                        },
+                                                        "description": {
+                                                          "type": "string"
+                                                        },
+                                                        "default": {
+                                                          "type": "object"
+                                                        },
+                                                        "required": {
+                                                          "type": "array",
+                                                          "items": {
+                                                            "type": "string"
+                                                          }
+                                                        },
+                                                        "additionalProperties": {
+                                                          "type": "boolean"
+                                                        },
+                                                        "properties": {
+                                                          "type": "object",
+                                                          "properties": {
+                                                            "name": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "$id": {
+                                                                  "type": "string"
+                                                                },
+                                                                "type": {
+                                                                  "type": "string"
+                                                                },
+                                                                "title": {
+                                                                  "type": "string"
+                                                                },
+                                                                "description": {
+                                                                  "type": "string"
+                                                                },
+                                                                "default": {
+                                                                  "type": "string"
+                                                                }
+                                                              },
+                                                              "required": [
+                                                                "$id",
+                                                                "default",
+                                                                "description",
+                                                                "title",
+                                                                "type"
+                                                              ]
+                                                            },
+                                                            "version": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "$id": {
+                                                                  "type": "string"
+                                                                },
+                                                                "type": {
+                                                                  "type": "string"
+                                                                },
+                                                                "title": {
+                                                                  "type": "string"
+                                                                },
+                                                                "description": {
+                                                                  "type": "string"
+                                                                },
+                                                                "default": {
+                                                                  "type": "string"
+                                                                }
+                                                              },
+                                                              "required": [
+                                                                "$id",
+                                                                "default",
+                                                                "description",
+                                                                "title",
+                                                                "type"
+                                                              ]
+                                                            },
+                                                            "template_id": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "$id": {
+                                                                  "type": "string"
+                                                                },
+                                                                "type": {
+                                                                  "type": "string"
+                                                                },
+                                                                "title": {
+                                                                  "type": "string"
+                                                                },
+                                                                "description": {
+                                                                  "type": "string"
+                                                                },
+                                                                "default": {
+                                                                  "type": "string"
+                                                                }
+                                                              },
+                                                              "required": [
+                                                                "$id",
+                                                                "default",
+                                                                "description",
+                                                                "title",
+                                                                "type"
+                                                              ]
+                                                            }
+                                                          },
+                                                          "required": [
+                                                            "name",
+                                                            "template_id",
+                                                            "version"
+                                                          ]
+                                                        }
+                                                      },
+                                                      "required": [
+                                                        "$id",
+                                                        "additionalProperties",
+                                                        "default",
+                                                        "description",
+                                                        "properties",
+                                                        "required",
+                                                        "title",
+                                                        "type"
+                                                      ]
+                                                    }
+                                                  },
+                                                  "$id": {
+                                                    "type": "string"
+                                                  }
+                                                },
+                                                "required": [
+                                                  "$id",
+                                                  "anyOf"
+                                                ]
+                                              }
+                                            },
+                                            "required": [
+                                              "$id",
+                                              "additionalItems",
+                                              "default",
+                                              "description",
+                                              "items",
+                                              "title",
+                                              "type"
+                                            ]
+                                          }
+                                        },
+                                        "required": [
+                                          "jobs",
+                                          "type"
+                                        ]
+                                      }
+                                    },
+                                    "required": [
+                                      "$id",
+                                      "additionalProperties",
+                                      "default",
+                                      "description",
+                                      "properties",
+                                      "required",
+                                      "title",
+                                      "type"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "creation_time",
+                                  "last_update_time",
+                                  "runtime"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "$id",
+                              "additionalProperties",
+                              "default",
+                              "description",
+                              "properties",
+                              "required",
+                              "title",
+                              "type"
+                            ]
+                          },
+                          "codegen": {
+                            "type": "object"
+                          },
+                          "building": {
+                            "type": "object"
+                          }
+                        },
+                        "required": [
+                          "building",
+                          "codegen",
+                          "creation_time",
+                          "dataset",
+                          "description",
+                          "last_update_time",
+                          "metadata",
+                          "name",
+                          "target",
+                          "training",
+                          "uuid"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "$id",
+                      "additionalProperties",
+                      "default",
+                      "description",
+                      "properties",
+                      "required",
+                      "title",
+                      "type"
+                    ]
+                  }
+                },
+                "$id": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "$id",
+                "anyOf"
+              ]
+            }
+          },
+          "required": [
+            "description"
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "description",
+    "version"
+  ]
+}

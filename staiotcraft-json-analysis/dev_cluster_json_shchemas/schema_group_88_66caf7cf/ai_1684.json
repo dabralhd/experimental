@@ -1,0 +1,54 @@
+{
+    "uuid": "b695d677-6ba2-40c9-8520-c49541253490",
+    "ai_project_name": "InstrumentsProject",
+    "type": null,
+    "display_name": null,
+    "description": "",
+    "version": "1.0.0",
+    "last_update_time": "2024-11-29 11:52:49.758897",
+    "creation_time": "2024-11-29 11:52:21.632230",
+    "models": [
+        {
+            "uuid": "27a874f3-e479-498d-9b31-4abd73742ce7",
+            "name": "model1",
+            "dataset": {
+                "name": "InstrumentsDataset",
+                "dataset_id": "01jdvnh9v29ynxz6rwa2k86t8z"
+            },
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary",
+                    "drums",
+                    "guitar",
+                    "violin"
+                ]
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "creation_time": "2024-11-29 11:52:49.728782",
+            "last_update_time": "2024-11-29 11:52:49.728789",
+            "training": {
+                "runtime": {
+                    "type": "job",
+                    "jobs": []
+                },
+                "configuration": "configuration.json",
+                "reports": [
+                    "report.json"
+                ],
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "last_update_time": "2024-12-02 13:07:47.055072",
+                "creation_time": "2024-12-02 13:07:47.055067"
+            }
+        }
+    ],
+    "deployments": [],
+    "applications": []
+}

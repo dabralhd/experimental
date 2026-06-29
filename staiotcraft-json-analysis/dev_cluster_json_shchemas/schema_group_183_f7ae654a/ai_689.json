@@ -1,0 +1,305 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v10",
+    "ai_project_name": "satr2",
+    "display_name": "Smart Asset Tracking",
+    "description": "Packages condition classification using MLC to detect stationary (upright or not), moving and shaking states.\n\nSimply hold the board as a box and start testing it.",
+    "type": "industrial",
+    "uuid": "f0a04218-8d5c-4305-a862-aead094f9349",
+    "version": "1.0.0",
+    "creation_time": "2024-10-04 17:28:06.039340",
+    "last_update_time": "2024-10-04 17:28:06.039340",
+    "models": [
+        {
+            "uuid": "e425eae1-91f7-4585-8412-35f07178d496",
+            "name": "smart_asset_tracking",
+            "description": "Model to recognize position and orientation of a tracked item, created with an Auto-ML based approach.",
+            "creation_time": "2024-10-04 17:28:06.039354",
+            "last_update_time": "2024-10-04 17:28:06.039358",
+            "metadata": {
+                "type": "classifier",
+                "classes": [
+                    "stationary_upright",
+                    "stationary_not_upright",
+                    "motion",
+                    "shaken"
+                ]
+            },
+            "dataset": {
+                "dataset_id": "01j9c9649bmhhm6qhj1s8sp6cx",
+                "name": "Asset Tracking"
+            },
+            "target": {
+                "type": "mlc",
+                "component": "lsm6dsv16x",
+                "device": "steval-mkboxpro"
+            },
+            "data_sufficiency": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-ds-job",
+                            "version": null,
+                            "template_id": null
+                        }
+                    ]
+                },
+                "configuration": null,
+                "artifacts": [
+                    "activities_training.json",
+                    "counts.json",
+                    "feat_names.json",
+                    "hnne.pkl",
+                    "kmeans_cluster_labels.json",
+                    "my_kmeans.json",
+                    "my_tree.onnx",
+                    "my_tree.txt",
+                    "window_size_odr_channels.json"
+                ],
+                "reports": []
+            },
+            "training": {
+                "creation_time": null,
+                "last_update_time": null,
+                "runtime": {
+                    "type": "job",
+                    "jobs": [
+                        {
+                            "name": "mlctools-job",
+                            "version": null,
+                            "template_id": null
+                        }
+                    ]
+                },
+                "configuration": "configuration.json",
+                "artifacts": [
+                    "lsm6dsv16x_mlc.ucf",
+                    "lsm6dsv16x_mlc.h"
+                ],
+                "reports": [
+                    "report.json"
+                ]
+            },
+            "codegen": null,
+            "building": null
+        }
+    ],
+    "applications": [
+        {
+            "uuid": "221db446-f281-4ce1-98a3-3b4479f54ac1",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-5.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_GATEWAY;5",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_GATEWAY-5.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/edge_gateway_production_20241001_1_2_0_rc1.img.gz",
+            "module_id": "edgeMLC"
+        },
+        {
+            "uuid": "8c8365b2-c885-44ee-80d9-5fc5144ccccc",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-5.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;5",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_2_2_0.bin",
+            "binary_id": 281,
+            "protocol": 2
+        },
+        {
+            "uuid": "761a2be3-388a-4818-8fe6-0c85233936aa",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/AI_INERTIAL-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:AI_INERTIAL;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/AI-INERTIAL_AssetTrackingOnMLC_1_1_0.bin",
+            "binary_id": 336,
+            "protocol": 1
+        },
+        {
+            "uuid": "98ca867f-c6a5-4b9f-8dce-f245833db9c0",
+            "type": "gateway",
+            "device_template_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.expanded.json",
+            "device_template_id": "dtmi:appconfig:gateway:MLC_Gateway;8",
+            "device_manifest_uri": "/e2e_systems/gateway/dtmi/appconfig/gateway/MLC_Gateway-8.1.manifest.arm64v8.json",
+            "image_uri": "/e2e_systems/gateway/images/raspberrypi/staiotcraft_rpi_gateway_1_5_0.img.gz",
+            "module_id": "edgeMLC"
+        },
+        {
+            "uuid": "fe1bbcd1-4703-43c2-b1f1-c79578598112",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-8.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;8",
+            "binary_uri": "/usb/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_3_2_0.bin",
+            "binary_id": 451,
+            "protocol": 2
+        },
+        {
+            "uuid": "28f59e91-76df-4237-87fe-d36ee6306c8c",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/STAIOTCRAFT_SDATALOG-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:STAIOTCRAFT_SDATALOG;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/STAIOTCRAFT_SDATALOG_1_0_0.bin",
+            "binary_id": 517,
+            "protocol": 2
+        },
+        {
+            "uuid": "96ca4c57-e660-454f-aa36-de139f6d37ff",
+            "type": "datalogging",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/STAIOTCRAFT_SDATALOG_RUST-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:STAIOTCRAFT_SDATALOG_RUST;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/STAIOTCRAFT_SDATALOG_RUST_1_0_0.bin",
+            "binary_id": 516,
+            "protocol": 2
+        },
+        {
+            "uuid": "62f01633-efb7-46ef-aa30-8a487ff5abc6",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/STAIOTCRAFT_AI_Inertial-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:STAIOTCRAFT_AI_Inertial;1",
+            "binary_uri": "/usb/bin/steval-mkboxpro/STAIOTCRAFT_AI_Inertial_1_2_0.bin",
+            "binary_id": 484,
+            "protocol": 1
+        },
+        {
+            "uuid": "2bc20675-bf04-411e-a20f-ca55546bf461",
+            "type": "inference",
+            "device_template_uri": "/dtmi/appconfig/steval_mkboxpro/STAIOTCRAFT_AI_SSM-1.expanded.json",
+            "device_template_id": "dtmi:appconfig:steval_mkboxpro:STAIOTCRAFT_AI_SSM;1",
+            "binary_uri": "/bluestsdkv2/bin/steval-mkboxpro/STAIOTCRAFT_AI_SSM_1_0_0.bin",
+            "binary_id": 529,
+            "protocol": 0
+        }
+    ],
+    "deployments": [
+        {
+            "uuid": "4de59392-0b41-4f98-a55b-962ff696728c",
+            "display_name": "Smart Asset Tracking end-to-end system with SensorTile.box PRO.",
+            "description": "End-to-end system deployment for Smart Asset Tracking scenario.",
+            "last_update_time": null,
+            "last_deploy_result": null,
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": null
+            },
+            "gateway": [
+                {
+                    "device_id": "gateway_0",
+                    "gateway_id": null,
+                    "description": "Gateway device at position 0.",
+                    "application": "221db446-f281-4ce1-98a3-3b4479f54ac1",
+                    "wifi_mode": "off"
+                }
+            ],
+            "leaf": [
+                {
+                    "device_id": "leaf_0",
+                    "gateway_id": "gateway_0",
+                    "description": "Leaf device at position 0.",
+                    "datalogging": {
+                        "application": "8c8365b2-c885-44ee-80d9-5fc5144ccccc",
+                        "firmware_update": false
+                    },
+                    "inference": {
+                        "application": "761a2be3-388a-4818-8fe6-0c85233936aa",
+                        "firmware_update": false,
+                        "models": [
+                            {
+                                "model_name_reference": "smart_asset_tracking",
+                                "artifact_type": "ucf",
+                                "component_name": "lsm6dsv16x_mlc"
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "uuid": "324d0646-592c-4780-8bca-a21299572238",
+            "description": "",
+            "display_name": "260512",
+            "cloud_params": {
+                "type": "azure_iotc",
+                "app_url": ""
+            },
+            "last_update_time": "2026-05-12 09:40:14.856219",
+            "last_deploy_result": "success",
+            "leaf": [
+                {
+                    "gateway_id": "21066569-06f1-4ed8-9abc-1becf1a2b115",
+                    "description": "Leaf device at position 0.",
+                    "display_name": "leaf_0",
+                    "device_id": "2acfea96-0174-442e-b95f-0f0c6b86cb93",
+                    "datalogging": "fe1bbcd1-4703-43c2-b1f1-c79578598112",
+                    "inference": {
+                        "application": "62f01633-efb7-46ef-aa30-8a487ff5abc6",
+                        "firmware_update": false,
+                        "supported_applications": [
+                            "62f01633-efb7-46ef-aa30-8a487ff5abc6",
+                            "2bc20675-bf04-411e-a20f-ca55546bf461"
+                        ],
+                        "models": [
+                            {
+                                "artifact_type": "json",
+                                "component_name": "lsm6dsv16x_mlc",
+                                "model_name_reference": "smart_asset_tracking"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "gateway_id": "21066569-06f1-4ed8-9abc-1becf1a2b115",
+                    "description": "Leaf device at position 0.",
+                    "display_name": "79df52bc-0a75-4124-8cc1-a3094e9ea8aa",
+                    "device_id": "1fa1f601-68dd-413e-bea0-4ca6592bc6c0",
+                    "datalogging": "fe1bbcd1-4703-43c2-b1f1-c79578598112",
+                    "inference": {
+                        "application": "62f01633-efb7-46ef-aa30-8a487ff5abc6",
+                        "firmware_update": false,
+                        "supported_applications": [
+                            "62f01633-efb7-46ef-aa30-8a487ff5abc6",
+                            "2bc20675-bf04-411e-a20f-ca55546bf461"
+                        ],
+                        "models": [
+                            {
+                                "artifact_type": "json",
+                                "component_name": "lsm6dsv16x_mlc",
+                                "model_name_reference": "smart_asset_tracking"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "gateway_id": "21066569-06f1-4ed8-9abc-1becf1a2b115",
+                    "description": "Leaf device at position 0.",
+                    "display_name": "81dd75ac-ea83-4341-9813-ae783e4ae2d6",
+                    "device_id": "ee6892d0-4a64-4213-91e6-5b3a2a59e0f0",
+                    "datalogging": "fe1bbcd1-4703-43c2-b1f1-c79578598112",
+                    "inference": {
+                        "application": "62f01633-efb7-46ef-aa30-8a487ff5abc6",
+                        "firmware_update": false,
+                        "supported_applications": [
+                            "62f01633-efb7-46ef-aa30-8a487ff5abc6",
+                            "2bc20675-bf04-411e-a20f-ca55546bf461"
+                        ],
+                        "models": [
+                            {
+                                "artifact_type": "json",
+                                "component_name": "lsm6dsv16x_mlc",
+                                "model_name_reference": "smart_asset_tracking"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "gateway": [
+                {
+                    "application": "98ca867f-c6a5-4b9f-8dce-f245833db9c0",
+                    "description": "Gateway device at position 0.",
+                    "display_name": "gateway_0",
+                    "device_id": "21066569-06f1-4ed8-9abc-1becf1a2b115",
+                    "wifi_mode": "off"
+                }
+            ]
+        }
+    ]
+}

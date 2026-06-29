@@ -1,0 +1,290 @@
+{
+    "$schema": "/data/artifacts/.assets/schemas/ai_main_schema.json",
+    "schema_version": "v7",
+    "ai_project_name": "get_started_mlc_asset_tracking",
+    "display_name": "Asset Tracking",
+    "description": "Get started project for Asset Tracking with the MLC sensor.",
+    "uuid": "229be18d-d650-4c53-a6b4-06ecc15c7dbb",
+    "version": "1.0.0",
+    "inputs": [
+        {
+            "uuid": "3eb43de1-a342-45d2-a62d-63532af4d4ff",
+            "input_type": "binary_hsd",
+            "model_ref": "790e4307-37da-4045-a0d8-1c4633419f4c",
+            "logs": [
+                {
+                    "uuid": "cb880b85-7b7a-479b-8575-2518df533d32",
+                    "name": "20230721_11_07_57",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2000-01-01T00:01:01.000Z",
+                    "end_time": "2000-01-01T00:06:51.019Z",
+                    "device_description": {
+                        "part_number": null,
+                        "serial_number": "005100335752501520353339",
+                        "alias": "STBOX_PRO_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "1.1.0"
+                    }
+                },
+                {
+                    "uuid": "eb13692e-8dfd-46a5-bda6-d7311bce90fe",
+                    "name": "20230721_11_15_46",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2000-01-01T00:08:35.000Z",
+                    "end_time": "2000-01-01T00:16:06.536Z",
+                    "device_description": {
+                        "part_number": null,
+                        "serial_number": "005100335752501520353339",
+                        "alias": "STBOX_PRO_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "1.1.0"
+                    }
+                },
+                {
+                    "uuid": "1547ee3f-3e8a-46b2-9c07-f6693143971c",
+                    "name": "20230825_09_38_14",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2023-08-25T09:38:14.000Z",
+                    "end_time": "2023-08-25T09:39:48.742Z",
+                    "device_description": {
+                        "part_number": "STEVAL-MKBOXPRO",
+                        "serial_number": "005100335752501520353339",
+                        "alias": "STBOX_PRO_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "1.2.1"
+                    }
+                },
+                {
+                    "uuid": "1397f1c1-0278-4fe5-a122-49a0231f7a59",
+                    "name": "20230829_14_29_35",
+                    "annotated": true,
+                    "description": "",
+                    "start_time": "2023-08-29T14:29:35.000Z",
+                    "end_time": "2023-08-29T14:31:31.409Z",
+                    "device_description": {
+                        "part_number": "STEVAL-MKBOXPRO",
+                        "serial_number": "004B00235752501720353339",
+                        "alias": "STBOX_PRO_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "1.2.1"
+                    }
+                },
+                {
+                    "uuid": "25bc4e7b-265b-49e2-8590-d2132730912b",
+                    "name": "20230904_12_55_10",
+                    "annotated": true,
+                    "description": "20230904_12_55_10",
+                    "start_time": "2000-01-01T00:01:18.000Z",
+                    "end_time": "2000-01-01T00:04:40.517Z",
+                    "device_description": {
+                        "part_number": "STEVAL-MKBOXPRO",
+                        "serial_number": "005100335752501520353339",
+                        "alias": "STBOX_PRO_001",
+                        "fw_name": "FP-SNS-DATALOG2_Datalog2",
+                        "fw_version": "1.2.1"
+                    }
+                }
+            ],
+            "augmentation": [],
+            "tools": [
+                {
+                    "name": "hsdatalog_to_unico",
+                    "version": "1.1.0",
+                    "input": "binary_hsd",
+                    "model": "classifier",
+                    "output": "steval-mkboxpro:mlc",
+                    "section": "input",
+                    "parameters": {
+                        "-o": "{models_folder}/{model_folder}/{dataset_folder}/{log_folder}",
+                        "-f": "TXT",
+                        "-t": "",
+                        "-s": "all",
+                        "": "{models_folder}/{model_folder}/{logs_folder}/{log_folder}"
+                    }
+                }
+            ]
+        }
+    ],
+    "models": [
+        {
+            "uuid": "790e4307-37da-4045-a0d8-1c4633419f4c",
+            "name": "asset_tracking",
+            "stage": "modeling",
+            "model_type": "classifier",
+            "training_type": "offline",
+            "retraining": false,
+            "model_metadata": {
+                "classes": [
+                    "stationary_upright",
+                    "stationary_not_upright",
+                    "motion",
+                    "shaken"
+                ]
+            },
+            "experiments": [
+                {
+                    "uuid": "ba508c80-7ebe-46fc-958f-b18233da196d",
+                    "name": "experiment_1",
+                    "description": "Experiment 1",
+                    "model_dev_file": null
+                },
+                {
+                    "uuid": "96256387-ea0b-4f4e-9d93-ccf9128e054f",
+                    "name": "experiment_2",
+                    "description": "",
+                    "model_dev_file": null
+                },
+                {
+                    "uuid": "6658886e-53ce-45b4-89d7-17e69e9089f4",
+                    "name": "experiment_3",
+                    "description": "",
+                    "model_dev_file": null
+                },
+                {
+                    "uuid": "37cd289e-5e9d-492b-bf8c-4dd43b96ece9",
+                    "name": "experiment_4",
+                    "description": "",
+                    "model_dev_file": null
+                }
+            ],
+            "tools": []
+        }
+    ],
+    "outputs": [
+        {
+            "uuid": "a6424d2e-7a1f-4d31-8770-fb6669497db7",
+            "output_type": "steval-mkboxpro:mlc",
+            "model_ref": "790e4307-37da-4045-a0d8-1c4633419f4c",
+            "tests": [
+                {
+                    "uuid": "78ec497a-e47a-4e5e-a9a6-03a4023e2686",
+                    "name": "test_1",
+                    "experiment_ref": "ba508c80-7ebe-46fc-958f-b18233da196d",
+                    "model_file": null,
+                    "parameters": [],
+                    "reports": [
+                        "lsm6dsv16x_mlc_report.json"
+                    ],
+                    "outputs": [
+                        "lsm6dsv16x_mlc.ucf",
+                        "lsm6dsv16x_mlc.h"
+                    ]
+                },
+                {
+                    "uuid": "8173c0fd-83ad-4953-bae1-8a143554617e",
+                    "name": "test_2",
+                    "experiment_ref": "96256387-ea0b-4f4e-9d93-ccf9128e054f",
+                    "model_file": null,
+                    "parameters": [],
+                    "reports": [
+                        "lsm6dsv16x_mlc_report.json"
+                    ],
+                    "outputs": [
+                        "lsm6dsv16x_mlc.ucf",
+                        "lsm6dsv16x_mlc.h"
+                    ]
+                },
+                {
+                    "uuid": "bd5852fb-a806-45fb-9738-c8137bab76ca",
+                    "name": "test_3",
+                    "experiment_ref": "6658886e-53ce-45b4-89d7-17e69e9089f4",
+                    "model_file": null,
+                    "parameters": {},
+                    "reports": [],
+                    "outputs": []
+                },
+                {
+                    "uuid": "4417e112-85fb-444e-9d82-114e5779559f",
+                    "name": "test_4",
+                    "experiment_ref": "37cd289e-5e9d-492b-bf8c-4dd43b96ece9",
+                    "model_file": null,
+                    "parameters": [],
+                    "reports": [
+                        "lsm6dsv16x_mlc_report.json"
+                    ],
+                    "outputs": [
+                        "lsm6dsv16x_mlc.ucf",
+                        "lsm6dsv16x_mlc.h"
+                    ]
+                }
+            ],
+            "best_test": "4417e112-85fb-444e-9d82-114e5779559f",
+            "tools": [
+                {
+                    "name": "mlctools",
+                    "version": "1.0.0",
+                    "input": "binary_hsd",
+                    "model": "classifier",
+                    "output": "steval-mkboxpro:mlc",
+                    "section": "output"
+                }
+            ],
+            "events": [],
+            "ui": {
+                "icons": []
+            }
+        }
+    ],
+    "deployments": [
+        {
+            "uuid": "727ef166-77e1-45b6-b40e-c0e5c4ab48de",
+            "display_name": "Asset Tracking Classification end-to-end system.",
+            "description": "Full end-to-end system deployment for an asset tracking use case.",
+            "last_deploy_time": "2023-09-06T07:21:47.364Z",
+            "last_deploy_result": "undeploy_success",
+            "cloud_params": {
+                "type": "azure_ioc",
+                "app_url": "mvp03-miroslav"
+            },
+            "configuration": {
+                "leaf": [
+                    {
+                        "device_id": "leaf-miroslav",
+                        "description": "Leaf device for asset tracking scenario.",
+                        "gateway_id": "gateway-miroslav",
+                        "selected_model_name": "asset_tracking",
+                        "models": [
+                            {
+                                "name": "asset_tracking",
+                                "datalogging": {
+                                    "device_template_uri": "https://raw.githubusercontent.com/STMicroelectronics/appconfig/release/dtmi/appconfig/steval_mkboxpro/FP_SNS_DATALOG2_Datalog2-2.expanded.json",
+                                    "device_template_id": "dtmi:appconfig:steval_mkboxpro:FP_SNS_DATALOG2_Datalog2;2",
+                                    "protocol": 2,
+                                    "firmware_uri": "https://raw.githubusercontent.com/STMicroelectronics/appconfig/release/bluestsdkv2/bin/steval-mkboxpro/FP-SNS-DATALOG2_Datalog2_1_2_1.bin"
+                                },
+                                "inference": {
+                                    "device_template_uri": "e2e_system_deployment/leaf/asset_tracking_mlc_steval-mkboxpro.json",
+                                    "device_template_id": "dtmi:vespucci:steval_mkboxpro:asset_tracking_mlc;1",
+                                    "protocol": 1,
+                                    "firmware_uri": "e2e_system_deployment/leaf/ai_inertial_analysis_steval_mkboxpro_1_0_0.bin",
+                                    "ml_uri": "models/asset_tracking/experiments/experiment_1/tests/test_1/lsm6dsv16x_mlc.ucf",
+                                    "firmware_update": false
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "gateway": [
+                    {
+                        "device_id": "gateway-miroslav",
+                        "description": "Gateway for asset tracking scenario.",
+                        "gateway_id": null,
+                        "module_id": "edgeAssetTrackingMLC",
+                        "configuration_uri": "e2e_system_deployment/gateway/vespucci_config.ini.template",
+                        "device_manifest_uri": "e2e_system_deployment/gateway/asset_tracking_mlc_gateway-1.manifest.json",
+                        "device_template_uri": "e2e_system_deployment/gateway/asset_tracking_mlc_gateway-1.expanded.json",
+                        "device_template_id": "dtmi:vespucci:gateway:asset_tracking_mlc_gateway;2",
+                        "wifi_mode": "off"
+                    }
+                ]
+            }
+        }
+    ],
+    "dbstatus": {
+        "status": "unknown",
+        "message": null
+    }
+}
