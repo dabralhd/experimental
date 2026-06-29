@@ -1,8 +1,0 @@
-{
-    "files.exclude": {
-        ".stedgeai": true
-    },
-    "python.pythonPath": ".virtualenvs/anomaly_detection_venv_v0.0.1/bin/python",
-    "python.venvPath": "/home/workspace/.virtualenvs",
-}
-

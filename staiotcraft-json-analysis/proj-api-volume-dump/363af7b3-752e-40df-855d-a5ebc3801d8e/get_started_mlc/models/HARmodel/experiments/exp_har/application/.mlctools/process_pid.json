@@ -1,6 +1,0 @@
-{
-    "action": "mlc",
-    "is_running": false,
-    "message": "MLC configuration file was successfully generated.",
-    "message_status": "info"
-}

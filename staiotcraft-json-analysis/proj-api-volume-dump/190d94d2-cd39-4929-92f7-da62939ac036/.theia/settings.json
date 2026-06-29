@@ -1,8 +1,0 @@
-{
-    "files.exclude": {
-        ".stedgeai": true
-    },
-    "python.pythonPath": "/usr/local/bin/python3",
-    "python.venvPath": "190d94d2-cd39-4929-92f7-da62939ac036/.virtualenvs"
-}
-

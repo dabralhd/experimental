@@ -1,8 +1,0 @@
-{
-   "rom": 42120,
-   "ram": 736,
-   "input_ram": 512,
-   "output_ram": 8,
-   "complexity": 10672,
-   "parameters": 10530
-}

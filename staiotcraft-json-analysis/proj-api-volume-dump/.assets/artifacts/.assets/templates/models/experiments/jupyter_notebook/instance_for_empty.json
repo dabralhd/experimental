@@ -1,9 +1,0 @@
-{
-    "$schema": "/data/artifacts/.assets/templates/models/experiments/jupyter_notebook/schema_for_empty.json",
-    "general": {
-        "project": "Put project name here...",
-        "model": "Put model name here...",
-        "classes": ["Put list of classes here..."],
-        "experiment": "Put experiment name here..."
-    }
-}
