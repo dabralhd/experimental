@@ -1,0 +1,3 @@
+## gemini
+
+1. I have 50+ json files which represent the evolution of a json data schema. These files are located in 'sat_example_projects_ai_json_files' directory and are named in a way that indicates their date of creation using yyyyddmm_*.json format. I want to analyze these files to understand how the schema has evolved over time and map it to 4 canonical baseline schemas located in 'target_schemas/' directory. I need to create a mapping script that can programmatically cluster these files based on their structural compatibility with the target schemas.
